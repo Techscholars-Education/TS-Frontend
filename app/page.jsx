@@ -1,3 +1,8 @@
+import Heading from "@/components/Home/Heading";
 export default function Home() {
-  return <h1 className="text-center text-9xl">Hello TechScholars</h1>;
+  return (
+    <section>
+      <Heading />
+    </section>
+  );
 }
