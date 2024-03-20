@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import arrowRight from "../../public/Home/arrow-right.svg";
-import parents from "../../public/Home/parents.jpg";
+import Nature from "../../public/Home/Nature.jpg";
 import Marquee from "react-fast-marquee";
 import quoteup from "../../public/Home/quoteup.svg";
 import star from "../../public/Home/star.svg";
@@ -14,7 +14,7 @@ const Testimonials = () => {
         </h5>
 
         <h2 className="text-darkBlue font-bold text-5xl text-center mt-10 mb-6 font-Poppins ">
-          What our parents have to say about us.
+          What our Nature have to say about us.
         </h2>
 
         <p className="text-base text-darkBlue/70 text-center">
@@ -28,8 +28,8 @@ const Testimonials = () => {
           <Image src={arrowRight}></Image>
         </div>
 
-        <div className="flex w-4/6 ">
-          <Image className=" mx-auto" src={parents}></Image>
+        <div className="flex w-5/6 ">
+          <Image className=" mx-auto" src={Nature}></Image>
         </div>
 
         <div className="bg-yellowish flex justify-center items-center w-16 h-16">

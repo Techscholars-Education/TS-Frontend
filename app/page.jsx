@@ -4,6 +4,7 @@ import Benefits from "@/components/Home/Benefits";
 import Curriculum from "@/components/Home/Curriculum";
 import About from "@/components/Home/About";
 import Testimonials from "@/components/Home/Testimonials";
+import Studenttest from "@/components/Home/Studenttest";
 export default function Home() {
   return (
     <section>
@@ -24,6 +25,8 @@ export default function Home() {
       <Curriculum />
       <About />
       <Testimonials />
+
+      <Studenttest />
     </section>
   );
 }
