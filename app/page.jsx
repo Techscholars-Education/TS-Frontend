@@ -5,6 +5,7 @@ import Curriculum from "@/components/Home/Curriculum";
 import About from "@/components/Home/About";
 import Testimonials from "@/components/Home/Testimonials";
 import Studenttest from "@/components/Home/Studenttest";
+import Aboutapp from "@/components/Home/Aboutapp";
 export default function Home() {
   return (
     <section>
@@ -27,6 +28,7 @@ export default function Home() {
       <Testimonials />
 
       <Studenttest />
+      <Aboutapp />
     </section>
   );
 }

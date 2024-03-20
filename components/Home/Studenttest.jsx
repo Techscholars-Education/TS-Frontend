@@ -24,7 +24,7 @@ const Studenttest = () => {
                 dolor sit amet, consectetur adipisicing elit. Corrupti, ducimus!
               </p>
               <div className="flex items-center space-x-4">
-                <div className="h-10 w-10 bg-black rounded-full"></div>
+                <div className="h-10 w-10 bg-yellowish rounded-full"></div>
                 <div>
                   <h3 className="text-darkBlue font-semibold">Naina Sharma</h3>
                   <p className="text-darkBlue/70">Dav School</p>
@@ -44,7 +44,7 @@ const Studenttest = () => {
                 dolor sit amet, consectetur adipisicing elit. Corrupti, ducimus!
               </p>
               <div className="flex items-center space-x-4">
-                <div className="h-10 w-10 bg-black rounded-full"></div>
+                <div className="h-10 w-10 bg-yellowish rounded-full"></div>
                 <div>
                   <h3 className="text-darkBlue font-semibold">Naina Sharma</h3>
                   <p className="text-darkBlue/70">Dav School</p>
@@ -64,7 +64,7 @@ const Studenttest = () => {
                 dolor sit amet, consectetur adipisicing elit. Corrupti, ducimus!
               </p>
               <div className="flex items-center space-x-4">
-                <div className="h-10 w-10 bg-black rounded-full"></div>
+                <div className="h-10 w-10 bg-yellowish rounded-full"></div>
                 <div>
                   <h3 className="text-darkBlue font-semibold">Naina Sharma</h3>
                   <p className="text-darkBlue/70">Dav School</p>
