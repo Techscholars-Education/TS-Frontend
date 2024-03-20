@@ -9,7 +9,7 @@ const Mobile = () => {
       <div className="w-1/2 flex justify-center ">
         <Image src={Phonepic}></Image>
       </div>
-      <div className=" w-1/2 flex flex-col justify-center items-center space-y-4  pt-24">
+      <div className=" w-1/2 flex flex-col justify-center items-center space-y-4 ">
         <div>
           <h2 className="text-6xl font-semibold text-darkBlue leading-normal">
             Start achieving your acadamic excellence <br />
