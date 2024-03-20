@@ -44,7 +44,7 @@ const Testimonials = () => {
         direction="left"
         speed={50}
       >
-        <div className="border-2 border-yellowish p-4 rounded-xl mx-4 max-w-xl ">
+        <div className="border-2 border-yellowish bg-white p-4 rounded-xl mx-4 max-w-xl  ">
           <div>
             <Image src={quoteup} />
           </div>
