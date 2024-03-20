@@ -1,6 +1,7 @@
 import Heading from "@/components/Home/Heading";
 import Hero from "@/components/Home/Hero";
 import Benefits from "@/components/Home/Benefits";
+import Curriculum from "@/components/Home/Curriculum";
 export default function Home() {
   return (
     <section>
@@ -17,6 +18,8 @@ export default function Home() {
           Get Started
         </button>
       </div>
+
+      <Curriculum />
     </section>
   );
 }

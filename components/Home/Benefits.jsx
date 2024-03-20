@@ -7,7 +7,7 @@ import login from "../../public/Home/login.svg";
 const Benefits = () => {
   return (
     <div className=" w-9/12 mx-auto flex justify-between items-center ">
-      <div className="font-Poppins inline-block space-y-2 text-center">
+      <div className="font-Poppins inline-block space-y-4 text-center">
         <div>
           <Image className="mx-auto" src={ratings}></Image>
         </div>
@@ -22,7 +22,7 @@ const Benefits = () => {
           </p>
         </div>
       </div>
-      <div className="font-Poppins inline-block space-y-2 text-center">
+      <div className="font-Poppins inline-block space-y-4 text-center">
         <div>
           <Image className="mx-auto" src={schdule_time}></Image>
         </div>
@@ -37,7 +37,7 @@ const Benefits = () => {
           </p>
         </div>
       </div>
-      <div className="font-Poppins inline-block space-y-2 text-center">
+      <div className="font-Poppins inline-block space-y-4 text-center">
         <div>
           <Image className="mx-auto" src={live_class}></Image>
         </div>
@@ -52,7 +52,7 @@ const Benefits = () => {
           </p>
         </div>
       </div>
-      <div className="font-Poppins inline-block space-y-2 text-center">
+      <div className="font-Poppins inline-block space-y-4 text-center">
         <div>
           <Image className="mx-auto" src={login}></Image>
         </div>
