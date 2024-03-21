@@ -14,7 +14,7 @@ export default function Home() {
       <Hero />
       <Benefits />
 
-      <div className="text-center my-20 space-y-8">
+      <div className="text-center my-20 space-y-8 font-Poppins">
         <h2 className="text-darkBlue font-bold text-5xl text-center ">
           Bharat's Best Educational Platform
         </h2>
