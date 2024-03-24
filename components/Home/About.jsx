@@ -1,9 +1,5 @@
 import React from "react";
-import Image from "next/image";
-import arrowRight from "../../public/Home/arrow-right.svg";
-import laptop from "../../public/Home/laptop.svg";
-import Agreement from "../../public/Home/Agreement.svg";
-import mentor from "../../public/Home/mentor.svg";
+import Aboutslider from "./Aboutslider";
 const About = () => {
   return (
     <section className="bg-gray-100 py-12 font-Poppins w-11/12 mx-auto">
@@ -21,66 +17,7 @@ const About = () => {
         </p>
       </div>
 
-      <div className="flex justify-between items-center my-16">
-        <div className="bg-white flex justify-center items-center w-16 h-16">
-          <Image src={arrowRight}></Image>
-        </div>
-
-        <div className="flex gap-16 font-Poppins">
-          <div className="max-w-sm rounded overflow-hidden ">
-            <Image
-              className="w-full"
-              src={laptop}
-              alt="Sunset in the mountains"
-            />
-            <div className="px-6 py-4">
-              <div className="font-base text-lg mb-2">Every Sunday</div>
-              <div className="font-bold text-3xl text-darkBlue mb-2">
-                Scholarship admission exam
-              </div>
-              <p className="text-darkBlue text-base">
-                Techscholars scholarship test
-              </p>
-            </div>
-          </div>
-          <div className="max-w-sm rounded overflow-hidden ">
-            <Image
-              className="w-full"
-              src={Agreement}
-              alt="Sunset in the mountains"
-            />
-            <div className="px-6 py-4">
-              <div className="font-base text-lg mb-2">Contact Us</div>
-              <div className="font-bold text-3xl text-darkBlue mb-2">
-                Schedule a call with our councillor
-              </div>
-              <p className="text-darkBlue text-base">
-                Learn what techscholars can offer
-              </p>
-            </div>
-          </div>
-          <div className="max-w-sm rounded overflow-hidden ">
-            <Image
-              className="w-10/12"
-              src={mentor}
-              alt="Sunset in the mountains"
-            />
-            <div className="px-6 py-4">
-              <div className="font-base text-lg mb-2">Faculty</div>
-              <div className="font-bold text-3xl text-darkBlue mb-2">
-                Personalized expert mentorship
-              </div>
-              <p className="text-darkBlue text-base">
-                Attention on what you need
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-yellowish flex justify-center items-center w-16 h-16">
-          <Image className="rotate-180" src={arrowRight}></Image>
-        </div>
-      </div>
+      <Aboutslider />
 
       <h5 className="text-lg w-5/6 mx-auto my-4 text-start font-semibold text-darkBlue">
         Impact of our services
