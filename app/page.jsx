@@ -8,10 +8,12 @@ import Studenttest from "@/components/Home/Studenttest";
 import Aboutapp from "@/components/Home/Aboutapp";
 import Footer from "@/components/Footer";
 import Head from "next/head";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
     <section>
+      <Navbar/>
       <Heading />
       <Hero />
       <Benefits />

@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
+
 import Image from "next/image";
 import laptop from "../../public/Home/laptop.svg";
 import Agreement from "../../public/Home/Agreement.svg";
