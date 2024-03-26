@@ -4,6 +4,9 @@ import Benefits from "@/components/Home/Benefits";
 import Curriculum from "@/components/Home/Curriculum";
 import About from "@/components/Home/About";
 import Testimonials from "@/components/Home/Testimonials";
+import Studenttest from "@/components/Home/Studenttest";
+import Aboutapp from "@/components/Home/Aboutapp";
+import Footer from "@/components/Footer";
 import Head from "next/head";
 
 export default function Home() {
@@ -26,6 +29,10 @@ export default function Home() {
       <Curriculum />
       <About />
       <Testimonials />
+
+      <Studenttest />
+      <Aboutapp />
+      <Footer />
     </section>
   );
   return (
