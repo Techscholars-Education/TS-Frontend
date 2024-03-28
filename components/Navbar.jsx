@@ -37,7 +37,7 @@ const Navbar = () => {
            Login
           </button>
           </Link>
-          <Link href='/signup'>
+          <Link href='/signin'>
           <button className=" border border-black/40 rounded-xl px-4 py-2 bg-yellowish text-lg text-neutral-800 hover:-translate-y-2  duration-300  auth-btn">
             Signup
           </button>

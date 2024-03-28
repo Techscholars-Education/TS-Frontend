@@ -13,7 +13,7 @@ import Navbar from "@/components/Navbar";
 export default function Home() {
   return (
     <section>
-      <Navbar/>
+      <Navbar />
       <Heading />
       <Hero />
       <Benefits />
@@ -43,6 +43,11 @@ export default function Home() {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@100..900&display=swap" rel="stylesheet" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></link>
+
       </Head>
       <h1 className="text-center text-9xl">Hello TechScholars</h1>
     </>
