@@ -1,20 +1,11 @@
 import React from "react";
-import Card from "./Card";
+import Card from "../Course/Card";
 
-const Course = () => {
+const Service = () => {
   return (
     <>
-      <div className="bg-slate-100 font-Poppins">
-        <div className="flex justify-center mt-8">
-          <button className="bg-darkBlue p-2 px-4 text-white rounded-md">
-            IIT BATCH
-          </button>
-          <button className="rounded-md p-2 px-4 border ml-3">JEE BATCH</button>
-          <button className="rounded-md p-2 px-4 border ml-3">
-            NEET BATCH
-          </button>
-        </div>
-        <div className="flex justify-center items-center my-8 flex-col">
+      <div className="bg-slate-100 font-Poppins py-10 ">
+        <div className="flex justify-center items-center  flex-col">
           <h1 className="font-semibold text-5xl text-darkBlue ">
             Welcome Harsh
           </h1>
@@ -23,7 +14,7 @@ const Course = () => {
           </span>
         </div>
 
-        <div className="flex justify-center w-[100vw] mt-4 ">
+        <div className="flex justify-center  mt-4 ">
           <Card />
           <Card />
           <Card />
@@ -42,4 +33,4 @@ const Course = () => {
   );
 };
 
-export default Course;
+export default Service;
