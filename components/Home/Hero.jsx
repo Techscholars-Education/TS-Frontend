@@ -6,7 +6,7 @@ import TangledArrow from "../../public/Home/TangledArrow.svg";
 import Image from "next/image";
 const Hero = () => {
   return (
-    <section className=" relative">
+    <section className=" relative ">
       <div className="py-10 flex flex-col justify-center items-center  ">
         {/* Main heading */}
         <h1 className="text-7xl text-darkBlue font-normal font-Poppins text-center leading-normal relative inline-block ">
