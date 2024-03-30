@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import Slider from "react-slick";
-
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 import laptop from "../../public/Home/laptop.svg";
 import Agreement from "../../public/Home/Agreement.svg";
@@ -17,7 +17,7 @@ function SampleNextArrow(props) {
   return (
     <div
       onClick={onClick}
-      className="bg-yellowish hover:scale-125 duration-300 transition-all flex  justify-center items-center w-16 h-16  cursor-pointer absolute z-10 top-[50%] -right-20"
+      className="bg-yellowish hover:scale-125 duration-300 transition-all flex  justify-center items-center w-16 h-16  cursor-pointer absolute z-10 top-[50%] -right-16"
     >
       <Image className="rotate-180" src={arrowRight}></Image>
     </div>
@@ -92,7 +92,7 @@ const Aboutslider = () => {
   ];
 
   return (
-    <section className=" relative w-11/12 mx-auto my-24 ">
+    <section className=" relative w-11/12 mx-auto my-10 ">
       <div>
         <Slider className="flex justify-center items-center" {...settings}>
           {data.map((item) => {

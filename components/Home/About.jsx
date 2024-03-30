@@ -2,7 +2,7 @@ import React from "react";
 import Aboutslider from "./Aboutslider";
 const About = () => {
   return (
-    <section className="bg-gray-100 py-12 font-Poppins w-11/12 mx-auto">
+    <section className="bg-gray-100 py-12 font-Poppins w-11/12 mx-auto ">
       <div className=" w-9/12 mx-auto rounded-xl">
         <h5 className="text-lg text-center font-bold text-darkBlue font-Poppins">
           About Us
