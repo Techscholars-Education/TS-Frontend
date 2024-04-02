@@ -6,16 +6,7 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        Inter: ["Inter", "sans serif"],
-        Poppins: ["Poppins", "sans serif"],
-      },
-      colors: {
-        yellowish: "#FFE01B",
-        darkBlue: " #001B3F",
-      },
-    },
+    extend: {},
   },
   plugins: [],
 };
