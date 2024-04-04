@@ -10,7 +10,7 @@ const Councillor = () => {
           Get in Touch with our Councillor
         </h1>
 
-        <p p className="text-xl text-darkBlue">
+        <p className="text-xl text-darkBlue">
           Set your future milestones with us
         </p>
       </div>
@@ -60,7 +60,7 @@ const Councillor = () => {
           <div className="flex justify-between  ">
             <h3>Pick out a slot for our councilor to call you</h3>
           </div>
-          <label for="timing">Choose a Time:</label>
+          <label htmlFor="timing">Choose a Time:</label>
           <select
             className="bg-white border-2 w-full rounded-xl p-2 outline-none"
             name="timing"

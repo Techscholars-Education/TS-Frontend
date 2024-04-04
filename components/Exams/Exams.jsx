@@ -10,7 +10,7 @@ const Exams = () => {
           Apply for TS-SAT (Scholarship Admission Test)
         </h1>
 
-        <p p className="text-xl text-darkBlue">
+        <p className="text-xl text-darkBlue">
           Be in the Top 5%ile and get upto 50% Scholarship
         </p>
       </div>
