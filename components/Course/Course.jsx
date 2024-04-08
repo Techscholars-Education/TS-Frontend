@@ -15,13 +15,17 @@ const Course = () => {
             <Card/>
             <Card/>
         </div>
-        <div className='flex justify-center mt-24 '>
-            <button className='bg-[#002657] text-white w-[200px] h-[48px] rounded-[10px] mx-8'>Back</button>
-            <button className='w-[200px] h-[52px] border-2  border-[#DCDCDC] rounded-[10px]'>Back to home</button>
+        <div className="flex justify-center mt-24 ">
+          <button className="bg-darkBlue text-white w-44 h-12 rounded-xl mx-8">
+            Back
+          </button>
+          <button className="w-44 h-12 border-2  border-[#DCDCDC] rounded-xl">
+            Back to home
+          </button>
         </div>
-     </div>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Course
+export default Course;

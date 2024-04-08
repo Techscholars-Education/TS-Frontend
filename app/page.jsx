@@ -1,4 +1,3 @@
-import Heading from "@/components/Home/Heading";
 import Hero from "@/components/Home/Hero";
 import Benefits from "@/components/Home/Benefits";
 import Curriculum from "@/components/Home/Curriculum";
@@ -7,14 +6,13 @@ import Testimonials from "@/components/Home/Testimonials";
 import Studenttest from "@/components/Home/Studenttest";
 import Aboutapp from "@/components/Home/Aboutapp";
 import Footer from "@/components/Footer";
-import Head from "next/head";
+
 import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <section>
+    <section className="bg-gray-100">
       <Navbar />
-      <Heading />
       <Hero />
       <Benefits />
 
@@ -36,20 +34,5 @@ export default function Home() {
       <Aboutapp />
       <Footer />
     </section>
-  );
-  return (
-    <>
-      <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@100..900&display=swap" rel="stylesheet" />
-
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></link>
-
-      </Head>
-      <h1 className="text-center text-9xl">Hello TechScholars</h1>
-    </>
   );
 }
