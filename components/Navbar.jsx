@@ -10,7 +10,7 @@ const Navbar = () => {
       <nav className=" w-9/12 mx-auto flex justify-between items-center py-2">
         <div className="flex items-center">
           <Image className="w-16 h-16" src={Logo}></Image>
-          <h2 className="font-Poppins text-lg font-medium">TECHSCHOLARS</h2>
+          <h2 className="font-Inter text-lg font-medium">TECHSCHOLARS</h2>
         </div>
         <ul className="font-Poppins flex gap-10  text-lg ">
           <li>
