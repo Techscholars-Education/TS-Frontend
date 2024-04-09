@@ -7,63 +7,63 @@ import login from "../../public/Home/login.svg";
 const Benefits = () => {
   return (
     <div className=" w-9/12 mx-auto flex justify-between items-center ">
-      <div className="font-Poppins inline-block space-y-4 text-center">
+      <div className="font-Poppins inline-block space-y-2 text-center">
         <div>
-          <Image className="mx-auto" src={ratings}></Image>
+          <Image className="mx-auto mb-4" src={ratings}></Image>
         </div>
         <div>
-          <h4 className="text-lg font-semibold text-darkBlue">
+          <h4 className="text-xl font-semibold text-darkBlue">
             High Quality Classes
           </h4>
         </div>
-        <div>
+        <div className="w-4/5 mx-auto">
           <p className="text-darkBlue font-base">
-            With an essence of our expert faculty.
+            Experience unmatched quality in our courses: from basics to advanced
+            mastery.
           </p>
         </div>
       </div>
-      <div className="font-Poppins inline-block space-y-4 text-center">
+      <div className="font-Poppins inline-block space-y-2 text-center">
         <div>
-          <Image className="mx-auto" src={schdule_time}></Image>
+          <Image className="mx-auto mb-4" src={schdule_time}></Image>
         </div>
         <div>
-          <h4 className="text-lg font-semibold text-darkBlue">
+          <h4 className="text-xl font-semibold text-darkBlue">
             Doubt Solving Classes
           </h4>
         </div>
-        <div>
+        <div className="w-4/5 mx-auto">
           <p className="text-darkBlue font-base">
-            With an essence of our expert faculty.
+            Unlock clarity in our Doubt Solving Classes: dedicated sessions with
+            expert guidance.
           </p>
         </div>
       </div>
-      <div className="font-Poppins inline-block space-y-4 text-center">
+      <div className="font-Poppins inline-block space-y-2 text-center">
         <div>
-          <Image className="mx-auto" src={live_class}></Image>
+          <Image className="mx-auto mb-4" src={live_class}></Image>
         </div>
         <div>
-          <h4 className="text-lg font-semibold text-darkBlue">
-            High Quality Classes
-          </h4>
+          <h4 className="text-xl font-semibold text-darkBlue">Weekly tests</h4>
         </div>
-        <div>
+        <div className="w-4/5 mx-auto">
           <p className="text-darkBlue font-base">
-            With an essence of our expert faculty.
+            Embark on a journey of assessment excellence with our All India test
+            series
           </p>
         </div>
       </div>
-      <div className="font-Poppins inline-block space-y-4 text-center">
+      <div className="font-Poppins inline-block space-y-2 text-center">
         <div>
-          <Image className="mx-auto" src={login}></Image>
+          <Image className="mx-auto mb-4" src={login}></Image>
         </div>
         <div>
-          <h4 className="text-lg font-semibold text-darkBlue">
-            High Quality Classes
-          </h4>
+          <h4 className="text-xl font-semibold text-darkBlue">DPPs</h4>
         </div>
-        <div>
+        <div className="w-4/5 mx-auto">
           <p className="text-darkBlue font-base">
-            With an essence of our expert faculty.
+            Dive into enriched learning with our meticulously curated DPP and
+            Study Material
           </p>
         </div>
       </div>
