@@ -11,7 +11,7 @@ const PricingTable = () => {
     {
       id: 1,
       title: "Package1",
-      price: "0/m",
+      price: "1999",
       features: [
         { feature: "1 user" },
         { feature: "1 connected calendar" },
@@ -22,7 +22,7 @@ const PricingTable = () => {
     {
       id: 2,
       title: "Package2",
-      price: "$5/m",
+      price: "7999",
       features: [
         { feature: "1 user" },
         { feature: "Up to 2 connected calendars" },
@@ -33,7 +33,7 @@ const PricingTable = () => {
     {
       id: 3,
       title: "Package3",
-      price: "$10/m",
+      price: "17999",
       features: [
         { feature: "Per user in company domain" },
         { feature: "Single calendar integrations" },
@@ -90,16 +90,18 @@ const PricingTable = () => {
                   variants={item}
                   whileHover={{ scale: 1.1, color: "white" }}
                 >
-                  <div className="text-2xl font-semibold text-center mb-6">
+                  <div className="text-4xl font-semibold text-center mb-3">
                     {packageItem.title}
                   </div>
-                  <div className="flex items-center  mx-auto mb-3">
-                    <div className="text-4xl font-bold mr-2 text-center">
+                  <div className="flex items-center  mx-auto mb-2 font-Poppins">
+                    <div className="text-4xl font-semibold mr-2 text-center relative ">
+                      <span className="text-lg text-gray-500 absolute top-0 -left-4 ">
+                        &#8377;
+                      </span>
                       {packageItem.price}
+                      <span className="text-lg text-gray-500 ">/m</span>
                     </div>
-                    <div className="text-gray-500">
-                      {packageItem.currency || "Am"}
-                    </div>
+                    <div className="text-gray-500">{packageItem.currency}</div>
                   </div>
                   <ul className="list-disc group-hover:text-white list-inside text-gray-700 space-y-2">
                     {packageItem.features.map((feature) => (

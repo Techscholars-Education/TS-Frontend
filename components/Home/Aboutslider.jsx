@@ -92,7 +92,7 @@ const Aboutslider = () => {
   ];
 
   return (
-    <section className=" relative w-11/12 mx-auto my-10 ">
+    <section className=" relative w-11/12 mx-auto mt-20 ">
       <div>
         <Slider className="flex justify-center items-center" {...settings}>
           {data.map((item) => {

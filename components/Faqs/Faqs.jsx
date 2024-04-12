@@ -41,9 +41,7 @@ const Faqs = () => {
         <h1 className="text-5xl text-darkBlue font-semibold">
           Frequently Asked Questions
         </h1>
-        <p p className="text-lg text-darkBlue">
-          Clear your doubts
-        </p>
+        <p className="text-lg text-darkBlue">Clear your doubts</p>
       </div>
 
       <div className="m-2 space-y-6 w-1/2 mx-auto">

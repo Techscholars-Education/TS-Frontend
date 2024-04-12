@@ -1,33 +1,55 @@
 "use client";
 import React from "react";
 import { ReactTyped } from "react-typed";
+import Image from "next/image";
 import search from "../../public/Home/search.svg";
 import TangledArrow from "../../public/Home/TangledArrow.svg";
-import Image from "next/image";
+import { motion } from "framer-motion";
+
 const Hero = () => {
   return (
-    <section className=" relative ">
-      <div className="py-10 flex flex-col justify-center items-center  ">
+    <section className=" relative mb-16 ">
+      <motion.div
+        variants={{
+          hidden: { opacity: 0, translateY: 90 },
+          visible: { opacity: 1, translateY: 0 },
+        }}
+        initial="hidden"
+        animate="visible"
+        className="py-10 flex flex-col justify-center items-center  "
+      >
         {/* Main heading */}
-        <h1 className="text-7xl text-darkBlue font-normal font-Poppins text-center leading-normal relative inline-block ">
-          Be in the Top 1%
-        </h1>
-        <h2 className="bg-yellow-100 text-4xl font-normal rounded-l-lg border-r-4 border-yellowish relative px-2 py-2  font-Poppins ">
-          Our Courses are{" "}
-          <ReactTyped
-            strings={["by the Toppers", "for the Toppers"]}
-            typeSpeed={90}
-            backSpeed={60}
-            cursorChar=""
-            loop
-          />
-          <span className="text-base absolute bg-yellowish px-6 py-2 font-semibold top-0 left-[100%] ">
-            TechScholars
-          </span>
-        </h2>
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ ease: [0.6, 0.01, 0.05, 0.95], duration: 0.3 }}
+        >
+          <h1 className="text-7xl text-darkBlue font-normal font-Poppins text-center leading-normal relative inline-block ">
+            Be in the Top 1%
+            <br />
+            with our{" "}
+            <span className="bg-yellow-100 text-7xl font-normal rounded-l-lg border-r-4 border-yellowish relative px-2 py-2  font-Poppins ">
+              <ReactTyped
+                strings={[
+                  "expert faculties",
+                  "doubt clearing support",
+                  "All India test series",
+                  "live mentorship sessions",
+                ]}
+                typeSpeed={90}
+                backSpeed={60}
+                cursorChar=""
+                loop
+              />
+              <span className="text-base absolute bg-yellowish px-6 py-2 font-semibold top-0 left-[100%] ">
+                TechScholars
+              </span>
+            </span>
+          </h1>
+        </motion.div>
 
         {/* Sub heading */}
-        <div className="my-12 text-center">
+        <div className="mt-16 text-center">
           <p className="font-Poppins text-base md:text-lg lg:text-xl text-darkBlue tracking-wider">
             Transforming average students into toppers with our innovative
             teaching with our services.
@@ -35,7 +57,7 @@ const Hero = () => {
         </div>
 
         {/* Search bar */}
-        <div className=" my-6 w-5/12 mx-auto px-5 py-4 rounded-xl bg-white flex items-center shadow-md ">
+        <div className=" mt-16 w-5/12 mx-auto px-5 py-4 rounded-xl bg-white flex items-center shadow-md ">
           <div>
             <Image className="w-12" src={search}></Image>
           </div>
@@ -54,10 +76,10 @@ const Hero = () => {
         </div>
 
         <Image
-          className="absolute hidden lg:block  left-0 xl:left-20  2xl:top-[42%] 2xl:left-[20%] w-28 mx-10 lg:mx-0 "
+          className="absolute hidden lg:block  left-0 xl:left-20  2xl:top-[50%] 2xl:left-[16%] w-28 mx-10 lg:mx-0 "
           src={TangledArrow}
         ></Image>
-      </div>
+      </motion.div>
     </section>
   );
 };
