@@ -14,17 +14,12 @@ const Navbar = () => {
         </div>
         <ul className="font-Poppins flex gap-10  text-lg ">
           <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
             <Link href="/course">Courses</Link>
           </li>
           <li>
-            <Link href="/services">Services</Link>
+            <Link href="/exams">Scholarship</Link>
           </li>
-          <li>
-            <Link href="/exams">Exams</Link>
-          </li>
+
           <li>
             <Link
               href="/councillor
