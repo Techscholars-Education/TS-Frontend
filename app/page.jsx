@@ -6,7 +6,7 @@ import Testimonials from "@/components/Home/Testimonials";
 import Studenttest from "@/components/Home/Studenttest";
 import Aboutapp from "@/components/Home/Aboutapp";
 import Footer from "@/components/Footer";
-
+import Packages from "@/components/Home/Packages";
 import Navbar from "@/components/Navbar";
 
 export default function Home() {
@@ -28,6 +28,7 @@ export default function Home() {
 
       <Curriculum />
       <About />
+      <Packages />
       <Testimonials />
 
       <Studenttest />

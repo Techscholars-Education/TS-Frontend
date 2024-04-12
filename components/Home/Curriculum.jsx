@@ -3,9 +3,10 @@ import Image from "next/image";
 import jee from "../../public/Home/jee.svg";
 import neet from "../../public/Home/neet.svg";
 import foundation from "../../public/Home/foundation.svg";
+
 const Curriculum = () => {
   return (
-    <section className="bg-yellowish py-12">
+    <section className="bg-yellowish py-16">
       <div className=" w-9/12 mx-auto  rounded-xl">
         <h5 className="text-lg text-center font-bold text-darkBlue font-Poppins">
           Curriculum
@@ -91,26 +92,6 @@ const Curriculum = () => {
                 10<sup>th</sup> Class
               </li>
             </ul>
-          </div>
-        </div>
-
-        <div className="my-20 flex  space-x-4 w-11/12 mx-auto font-Poppins">
-          <div className=" space-y-4 w-3/6 ">
-            <h5 className="text-lg text-start font-bold text-darkBlue">
-              Benefits
-            </h5>
-
-            <h2 className="text-darkBlue font-bold text-5xl">
-              Benefits when using our services
-            </h2>
-          </div>
-          <div className="space-y-4 w-3/6 flex justify-center items-center">
-            <p className="text-lg font-Poppins ">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatibus optio commodi sunt! Ducimus error quisquam doloribus
-              ad mollitia eligendi repellendus, aliquam dolore odit ea vero
-              laudantium voluptate optio, inventore facilis.
-            </p>
           </div>
         </div>
       </div>
