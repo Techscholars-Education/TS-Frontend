@@ -71,6 +71,12 @@ const PricingTable = () => {
       <div>
         <Navbar />
         <CourseList />
+        <div className='flex justify-center items-center my-8 flex-col'>
+                <h1 className='font-[600] text-[44px] text-[#002657] '>
+                    Welcome Harsh
+                </h1>
+                <span className='font-[500] text-[20px] text-[#002657] '>Select your package</span>
+            </div>
         <div className="flex justify-center items-center font-Poppins ">
           <div className="p-4  w-full max-w-screen-lg flex flex-col justify-center items-center ">
             <motion.div
@@ -82,13 +88,13 @@ const PricingTable = () => {
               {packages.map((packageItem) => (
                 <motion.div
                   key={packageItem.id}
-                  className={` py-10  group flex flex-col justify-center hover:bg-darkBlue mx-2 p-4 sm:mb-0 rounded-lg border border-darkBlue ${
+                  className={` py-10  group flex flex-col justify-center hover:bg-[#FFE01B] mx-2 p-4 sm:mb-0 rounded-lg border border-darkBlue ${
                     hoveredPackage === packageItem.id ? "scale-110" : ""
                   }`}
                   onHoverStart={() => setHoveredPackage(packageItem.id)}
                   onHoverEnd={() => setHoveredPackage(null)}
                   variants={item}
-                  whileHover={{ scale: 1.1, color: "white" }}
+                  whileHover={{ scale: 1.1 }}
                 >
                   <div className="text-4xl font-semibold text-center mb-3">
                     {packageItem.title}
@@ -103,7 +109,7 @@ const PricingTable = () => {
                     </div>
                     <div className="text-gray-500">{packageItem.currency}</div>
                   </div>
-                  <ul className="list-disc group-hover:text-white list-inside text-gray-700 space-y-2">
+                  <ul className="list-disc  list-inside text-gray-700 space-y-2">
                     {packageItem.features.map((feature) => (
                       <li key={feature.feature}>{feature.feature}</li>
                     ))}
