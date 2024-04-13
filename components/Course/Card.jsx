@@ -1,6 +1,10 @@
 "use client";
 import Image from "next/image";
 import React from "react";
+import Avatar from '@mui/material/Avatar';
+import AvatarGroup from '@mui/material/AvatarGroup';
+import Logo from '../../public/Logo.svg'
+import JEE from '../../public/Course/JEE.jpg'
 
 const Card = () => {
   return (
@@ -9,12 +13,20 @@ const Card = () => {
         <div>
           <Image
             className="w-full rounded-xl "
-            src={require("../../app/assets/course.png")}
+            src={JEE}
           />
         </div>
         <div className="flex justify-center">
-          <div className="rounded-full w-4/6 py-1 relative bottom-2 flex justify-center bg-slate-200">
-            hello
+          <div className="rounded-full w-4/6 py-1 relative bottom-6 flex justify-center bg-slate-200">
+            <AvatarGroup
+              renderSurplus={(surplus) => <span>+{surplus.toString()[0]}k</span>}
+              total={4251}
+            >
+              <Avatar alt="Remy Sharp" src={require("../../app/assets/course.png")} />
+              <Avatar alt="Travis Howard" src={require("../../app/assets/course.png")} />
+              <Avatar alt="Agnes Walker" src={require("../../app/assets/course.png")} />
+              <Avatar alt="Trevor Henderson" src={require("../../app/assets/course.png")} />
+            </AvatarGroup>
           </div>
         </div>
 
@@ -22,7 +34,7 @@ const Card = () => {
           <div className="mb-4">
             <p className="font-base text-xs  ">1-28 july 2022</p>
             <h3 className="font-semibold text-lg text-darkBlue ">
-              Product Management basic-Course
+              JEE
             </h3>
             <span className="font-base text-xs text-slate-800">
               Product Management Masterclass, you will learn with Sarah Johnson
@@ -30,12 +42,9 @@ const Card = () => {
             </span>
           </div>
           <div className="flex justify-between mt-2">
-            <p className="text-orange-600 text-[16.68px] font-[700]">
-              $380{" "}
-              <span className="font-base text-md text-darkBlue ">$500</span>
-            </p>
-            <button className="bg-darkBlue  p-2 px-4 rounded-md text-md text-white">
-              Enroll Now
+            
+            <button className="bg-darkBlue  p-2 px-4 rounded-md text-sm text-white">
+              <a href="/payment">Explore</a>
             </button>
           </div>
         </div>

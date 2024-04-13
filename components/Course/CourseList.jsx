@@ -1,18 +1,36 @@
+'use client'
 import React from 'react'
+import { useState } from 'react';
 
 const CourseList = () => {
+    const [activeBatch, setActiveBatch] = useState('IIT');
+
+  const handleClick = (batch) => {
+    setActiveBatch(batch);
+  };
     return (
-        <div> <div className='flex justify-center mt-8'>
-            <button className='bg-[#002657] p-2 px-4 text-white rounded-md'>IIT BATCH</button>
-            <button className='rounded-md p-2 px-4 border ml-3'>JEE BATCH</button>
-            <button className='rounded-md p-2 px-4 border ml-3'>NEET BATCH</button>
-        </div>
-            <div className='flex justify-center items-center my-8 flex-col'>
-                <h1 className='font-[600] text-[44px] text-[#002657] '>
-                    Welcome Harsh
-                </h1>
-                <span className='font-[500] text-[20px] text-[#002657] '>Select your package</span>
-            </div></div>
+        <div>  <div className='flex justify-center mt-8'>
+        <button
+          className={`rounded-md p-2 px-4 border ml-3 ${activeBatch === 'IIT' ? 'bg-[#002657] p-2 px-4 text-white' : ''}`}
+          onClick={() => handleClick('IIT')}
+        >
+          JEE BATCH
+        </button>
+        <button
+          className={`rounded-md p-2 px-4 border ml-3 ${activeBatch === 'JEE' ? 'bg-[#002657] p-2 px-4 text-white' : ''}`}
+          onClick={() => handleClick('JEE')}
+        >
+          JEE BATCH
+        </button>
+        <button
+          className={`rounded-md p-2 px-4 border ml-3 ${activeBatch === 'NEET' ? 'bg-[#002657] p-2 px-4 text-white' : ''}`}
+          onClick={() => handleClick('NEET')}
+        >
+          NEET BATCH
+        </button>
+      </div>
+            
+            </div>
     )
 }
 
