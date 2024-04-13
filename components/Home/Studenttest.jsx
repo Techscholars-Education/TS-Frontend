@@ -4,18 +4,26 @@ import border from "../../public/Home/border.svg";
 import quotation from "../../public/Home/quotation.svg";
 const Studenttest = () => {
   return (
-    <section className="bg-gray-100 pb-12 font-Poppins w-11/12 mx-auto">
-      <div className=" w-9/12 mx-auto rounded-xl">
-        <h5 className="text-lg text-center font-bold text-darkBlue font-Poppins">
-          Testimonials
-        </h5>
+    <section className="bg-gray-100 pb-12 font-Poppins mx-auto">
+      <div className="  mx-auto rounded-xl">
+        <p className="text-darkBlue font-base text-xl text-center mt-10 mb-6 font-Poppins w-9/12 mx-auto ">
+          Maximize your potential with Techscholars personalised mentorship,
+          performance analytics, and collaborative community
+        </p>
+        <div className="text-center my-10">
+          <button className=" font-Poppins text-darkBlue border border-black/40 rounded-xl px-10 py-3 bg-yellowish text-2xl font-medium  hover:-translate-y-2  duration-300  auth-btn">
+            Get started
+          </button>
+          <p className="text-darkBlue font-base text-xl text-center mt-10 mb-6 font-Poppins ">
+            Testimonials
+          </p>
 
-        <h2 className="text-darkBlue font-bold text-5xl text-center mt-10 mb-6 font-Poppins ">
-          What our Students have to say for us.
-        </h2>
-
-        <div className="flex space-x-10 my-24">
-          <div className="relative  ">
+          <h2 className="text-5xl font-semibold text-center text-darkBlue">
+            What our students have to say for us
+          </h2>
+        </div>
+        <div className="flex space-x-10 my-24  justify-center ">
+          <div className="relative ">
             <Image src={border}></Image>
             <div className=" max-w-sm absolute top-10 left-4 px-3 space-y-4">
               <p className=" leading-relaxed">
@@ -35,7 +43,7 @@ const Studenttest = () => {
               <Image src={quotation}></Image>
             </div>
           </div>
-          <div className="relative  ">
+          <div className="relative ">
             <Image src={border}></Image>
             <div className=" max-w-sm absolute top-10 left-4 px-3 space-y-4">
               <p className=" leading-relaxed">

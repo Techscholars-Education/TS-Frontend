@@ -57,20 +57,20 @@ const Packages = () => {
               key={packageItem.id}
               className={`${
                 packageItem.id === 2 ? "scale-125 bg-yellowish " : "exam-card"
-              } h-[50vh] bg-white  group flex flex-col  justify-center transition-all duration-300 hover:bg-yellowish shadow-xl mx-2 w-1/4 px-10 py-0 sm:mb-0 rounded-lg border-2 border-darkBlue `}
+              }  bg-white  group flex flex-col  justify-center transition-all duration-300 hover:bg-yellowish shadow-xl mx-2 w-1/4 px-10 sm:mb-0 py-6 rounded-lg border-2 border-darkBlue `}
             >
-              <div className="text-4xl text-darkBlue font-semibold text-center mb-3 font-Poppins ">
+              <div className="text-2xl text-darkBlue font-semibold text-center font-Poppins pb-2">
                 {packageItem.title}
               </div>
               {packageItem.id === 2 ? (
-                <p className="text-darkBlue font-Poppins text-center pb-6 text-2xl">
+                <p className="text-darkBlue font-Poppins text-center text-base ">
                   (Popular)
                 </p>
               ) : (
                 <></>
               )}
               <div className="flex items-center text-darkBlue  mx-auto mb-2 font-Poppins">
-                <div className="text-6xl font-semibold mr-2 text-center relative  ">
+                <div className="text-5xl font-semibold mr-2 text-center relative  ">
                   <span className="text-lg text-gray-500 absolute top-0 -left-4 ">
                     &#8377;
                   </span>
@@ -78,14 +78,20 @@ const Packages = () => {
                 </div>
                 <div className="text-gray-500">{packageItem.currency}</div>
               </div>
-              <ul className="list-none  list-inside text-darkBlue space-y-2 font-Poppins">
-                {packageItem.features.map((feature) => (
-                  <li className="flex items-center " key={feature.feature}>
-                    <MdDone className="mr-3" /> {feature.feature}
+              <ul className="list-none text-darkBlue space-y-2 font-Poppins ">
+                {packageItem.features.map((feature, index) => (
+                  <li
+                    className={`flex items-center ${
+                      packageItem.features.length - index <= 2 ? "blur-sm" : ""
+                    }`}
+                    key={feature.feature}
+                  >
+                    <MdDone className="mr-3" />
+                    {feature.feature}
                   </li>
                 ))}
               </ul>
-              <div className="flex justify-center align-middle mt-8">
+              <div className="flex justify-center align-middle">
                 <button className="w-40 h-12 mt-4 py-2 px-4 group-hover:bg-white group-hover:text-darkBlue bg-darkBlue text-white  font-Poppins  rounded-lg focus:outline-none focus:shadow-outline">
                   Purchase Now
                 </button>
@@ -93,6 +99,12 @@ const Packages = () => {
             </div>
           ))}
         </div>
+      </div>
+
+      <div className="w-full flex justify-center items-center mt-24">
+        <button className=" font-Poppins text-white border  border-black/40 rounded-xl px-10 py-3 bg-darkBlue text-2xl font-medium  hover:-translate-y-2  duration-300  auth-btn">
+          Get started
+        </button>
       </div>
     </section>
   );

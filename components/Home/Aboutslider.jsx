@@ -17,7 +17,7 @@ function SampleNextArrow(props) {
   return (
     <div
       onClick={onClick}
-      className="bg-yellowish hover:scale-125 duration-300 transition-all flex  justify-center items-center w-16 h-16  cursor-pointer absolute z-10 top-[50%] -right-16"
+      className="bg-yellowish hover:scale-125 duration-300 transition-all flex  justify-center items-center w-16 h-16  cursor-pointer absolute z-10 top-[40%] -right-16"
     >
       <Image className="rotate-180" src={arrowRight}></Image>
     </div>
@@ -29,7 +29,7 @@ function SamplePrevArrow(props) {
   return (
     <div
       onClick={onClick}
-      className="bg-white hover:scale-125 duration-300 transition-all flex  justify-center items-center w-16 h-16  cursor-pointer absolute z-10 top-[50%] -left-20"
+      className="bg-white hover:scale-125 duration-300 transition-all flex  justify-center items-center w-16 h-16  cursor-pointer absolute z-10 top-[40%] -left-20"
     >
       <Image src={arrowRight}></Image>
     </div>
@@ -97,23 +97,22 @@ const Aboutslider = () => {
         <Slider className="flex justify-center items-center" {...settings}>
           {data.map((item) => {
             return (
-              <div
-                key={item.id}
-                className=" flex justify-center items-center max-w-2xl "
-              >
+              <div key={item.id} className=" flex justify-center items-center ">
                 <Image
                   className=" mx-auto "
                   src={item.image}
                   alt="Sunset in the mountains"
                 />
-                <div className="px-6 py-4  h-2/5 text-center ">
-                  <div className="font-base text-lg mb-2 text-center">
-                    {item.top}
+                <div className="px-6 py-4  h-2/5  ">
+                  <div className="font-base text-lg mb-2 text-start">
+                    {item.top}s
                   </div>
-                  <div className="font-bold text-3xl text-darkBlue mb-2">
+                  <div className="font-medium text-start text-3xl text-darkBlue mb-2">
                     {item.mid}
                   </div>
-                  <p className="text-darkBlue text-base">{item.bottom}</p>
+                  <p className="text-darkBlue text-base text-start">
+                    {item.bottom}
+                  </p>
                 </div>
               </div>
             );
