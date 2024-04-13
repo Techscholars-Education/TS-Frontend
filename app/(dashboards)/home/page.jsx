@@ -1,12 +1,12 @@
-import LeftNavigation from '@/components/LeftNavigation/LeftNavigation'
-import React from 'react'
+import LeftNavigation from "@/components/LeftNavigation/LeftNavigation";
+import React from "react";
 
 const Home = () => {
   return (
     <>
-    <LeftNavigation/>
+      <LeftNavigation />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
