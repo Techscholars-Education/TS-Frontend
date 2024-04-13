@@ -5,17 +5,11 @@ import ratings from "../../public/Home/ratings.svg";
 import schdule_time from "../../public/Home/schdule_time.svg";
 import live_class from "../../public/Home/live_class.svg";
 import login from "../../public/Home/login.svg";
-import { motion } from "framer-motion";
 
 const Benefits = () => {
   return (
-    <div className=" w-9/12 mx-auto flex justify-between items-center ">
-      <motion.div
-        initial={{ opacity: 0, x: -100, scale: 0.8 }}
-        animate={{ opacity: 1, x: 0, scale: 1 }}
-        transition={{ ease: [0.6, 0.01, 0.05, 0.95], duration: 0.7 }}
-        className="font-Poppins inline-block space-y-2 text-center"
-      >
+    <div className=" w-11/12 mx-auto flex justify-between items-center  ">
+      <div className="font-Poppins inline-block space-y-2 text-center">
         <div>
           <Image className="mx-auto mb-4" src={ratings}></Image>
         </div>
@@ -30,13 +24,8 @@ const Benefits = () => {
             mastery.
           </p>
         </div>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, x: -100 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ ease: [0.6, 0.01, 0.05, 0.95], duration: 0.7 }}
-        className="font-Poppins inline-block space-y-2 text-center"
-      >
+      </div>
+      <div className="font-Poppins inline-block space-y-2 text-center">
         <div>
           <Image className="mx-auto mb-4" src={schdule_time}></Image>
         </div>
@@ -51,13 +40,8 @@ const Benefits = () => {
             expert guidance.
           </p>
         </div>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, x: 100 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ ease: [0.6, 0.01, 0.05, 0.95], duration: 0.7 }}
-        className="font-Poppins inline-block space-y-2 text-center"
-      >
+      </div>
+      <div className="font-Poppins inline-block space-y-2 text-center">
         <div>
           <Image className="mx-auto mb-4" src={live_class}></Image>
         </div>
@@ -70,13 +54,8 @@ const Benefits = () => {
             series
           </p>
         </div>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, x: 100 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ ease: [0.6, 0.01, 0.05, 0.95], duration: 0.7 }}
-        className="font-Poppins inline-block space-y-2 text-center"
-      >
+      </div>
+      <div className="font-Poppins inline-block space-y-2 text-center">
         <div>
           <Image className="mx-auto mb-4" src={login}></Image>
         </div>
@@ -89,7 +68,7 @@ const Benefits = () => {
             Study Material
           </p>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };

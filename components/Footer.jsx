@@ -49,7 +49,7 @@ const Footer = () => {
             />
           </div>
           <div>
-            <button className="text-2xl bg-darkBlue text-white w-1/3 px-4 py-3 rounded-xl">
+            <button className="text-2xl bg-darkBlue text-white w-2/5 px-4 py-3 rounded-xl">
               Send Message
             </button>
           </div>
