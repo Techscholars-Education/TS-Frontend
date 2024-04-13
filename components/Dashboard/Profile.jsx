@@ -73,7 +73,7 @@ const Profile = () => {
           <label htmlFor="Phone">Phone number</label>
           <input
             className="outline-none p-3 bg-gray-100 border rounded-xl"
-            placeholder="Please enter your full name"
+            placeholder="Please enter your phone number"
             type="number"
           />
         </div>
