@@ -1,6 +1,5 @@
-import Navbar from "@/components/Navbar";
 import "./globals.css";
-
+import NextTopLoader from "nextjs-toploader";
 export const metadata = {
   title: "TechScholars",
   description: "India's Best Education Platform",
@@ -9,8 +8,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body >
-        {/* <Navbar /> */}
+      <body>
+        <NextTopLoader color="#FFE01B" height={6} />
         {children}
       </body>
     </html>

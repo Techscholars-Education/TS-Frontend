@@ -10,26 +10,23 @@ const Navbar = () => {
       <nav className=" w-9/12 mx-auto flex justify-between items-center py-2">
         <div className="flex items-center">
           <Image className="w-16 h-16" src={Logo}></Image>
-          <h2 className="font-Poppins text-lg font-base">TECHSCHOLARS</h2>
+          <h2 className="font-Inter text-lg font-medium">TECHSCHOLARS</h2>
         </div>
         <ul className="font-Poppins flex gap-10  text-lg ">
           <li>
             <Link href="/course">Courses</Link>
           </li>
           <li>
-            <Link href="/service">Service</Link>
+            <Link href="/exams">Scholarship</Link>
           </li>
+
           <li>
-            <Link href="/payment">Payment</Link>
-          </li>
-          <li>
-            <Link href="/">Partners</Link>
-          </li>
-          <li>
-            <Link href="/">Exams</Link>
-          </li>
-          <li>
-            <Link href="/">About Us</Link>
+            <Link
+              href="/councillor
+            "
+            >
+              Councillor
+            </Link>
           </li>
         </ul>
 
@@ -39,7 +36,7 @@ const Navbar = () => {
               Login
             </button>
           </Link>
-          <Link href="/signup">
+          <Link href="/signin">
             <button className=" border border-black/40 rounded-xl px-4 py-2 bg-yellowish text-lg text-neutral-800 hover:-translate-y-2  duration-300  auth-btn">
               Signup
             </button>
