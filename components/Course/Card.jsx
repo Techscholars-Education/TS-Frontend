@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import Avatar from "@mui/material/Avatar";
 import AvatarGroup from "@mui/material/AvatarGroup";
-import course from "../../app/assets/course.png";
+import jeePoster from "../../public/Course/jeePoster.jpg";
 
 const Card = (props) => {
   return (
@@ -20,10 +20,10 @@ const Card = (props) => {
               )}
               total={4251}
             >
-              <Avatar alt="Remy Sharp" src={course} />
-              <Avatar alt="Travis Howard" src={course} />
-              <Avatar alt="Agnes Walker" src={course} />
-              <Avatar alt="Trevor Henderson" src={course} />
+              <Avatar alt="Remy Sharp" src={jeePoster} />
+              <Avatar alt="Travis Howard" src={jeePoster} />
+              <Avatar alt="Agnes Walker" src={jeePoster} />
+              <Avatar alt="Trevor Henderson" src={jeePoster} />
             </AvatarGroup>
           </div>
         </div>

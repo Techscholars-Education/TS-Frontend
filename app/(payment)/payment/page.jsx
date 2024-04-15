@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import CourseList from "@/components/Course/CourseList";
 
-const PricingTable = () => {
+const page = () => {
   const [hoveredPackage, setHoveredPackage] = useState(null);
 
   const packages = [
@@ -139,4 +139,4 @@ const PricingTable = () => {
   );
 };
 
-export default PricingTable;
+export default page;

@@ -1,5 +1,5 @@
-import Image from "next/image";
 import React from "react";
+import Image from "next/image";
 import { FaLessThan } from "react-icons/fa";
 import Logo from "../public/Logo.svg";
 import Link from "next/link";

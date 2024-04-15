@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import React from "react";
 import Service from "@/components/Service/Service";
 
-const service = () => {
+const page = () => {
   return (
     <>
       <Navbar />
@@ -11,4 +11,4 @@ const service = () => {
   );
 };
 
-export default service;
+export default page;

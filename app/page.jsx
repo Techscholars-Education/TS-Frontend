@@ -10,7 +10,9 @@ import Footer from "@/components/Footer";
 import Packages from "@/components/Home/Packages";
 import Navbar from "@/components/Navbar";
 
-export default function Home() {
+import React from "react";
+
+const Home = () => {
   return (
     <section className="bg-gray-100">
       <Navbar />
@@ -19,7 +21,7 @@ export default function Home() {
 
       <div className="text-center my-20 space-y-8">
         <h2 className="text-darkBlue font-semibold text-4xl text-center font-Poppins ">
-          Bharat’s Most Trusted Educational platform
+          h Bharats Most Trusted Educational platform
         </h2>
 
         <div>
@@ -43,4 +45,6 @@ export default function Home() {
       <Footer />
     </section>
   );
-}
+};
+
+export default Home;

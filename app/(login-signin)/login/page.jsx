@@ -3,7 +3,7 @@ import Sidenavigation from "@/components/Sidenavigation";
 import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 
-const Login = () => {
+const page = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -91,4 +91,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default page;

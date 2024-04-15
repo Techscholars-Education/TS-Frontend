@@ -5,7 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import Box from "@mui/material/Box";
 import LinearProgress from "@mui/material/LinearProgress";
 
-const Login = () => {
+const page = () => {
   const [userData, setUserData] = useState({
     email: "",
     fNmae: "",
@@ -156,4 +156,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default page;

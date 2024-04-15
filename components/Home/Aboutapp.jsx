@@ -4,7 +4,7 @@ import Phonepic from "../../public/Home/Phonepic.png";
 import playstore from "../../public/Home/playstore.svg";
 import applestore from "../../public/Home/applestore.svg";
 import Logo from "../../public/Logo.svg";
-const Mobile = () => {
+const Aboutapp = () => {
   return (
     <section className="flex  w-11/12 mx-auto font-Poppins space-x-10 ">
       <div className="w-1/2 flex justify-center  relative ">
@@ -36,4 +36,4 @@ const Mobile = () => {
   );
 };
 
-export default Mobile;
+export default Aboutapp;
