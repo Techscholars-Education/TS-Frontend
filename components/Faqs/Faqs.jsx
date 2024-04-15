@@ -50,7 +50,7 @@ const Faqs = () => {
             <div
               key={item.id}
               className="group flex flex-col gap-2 rounded-lg p-5 text-darkBlue border-2 shadow-lg"
-              tabindex="1"
+              tabIndex="1"
             >
               <div className="flex cursor-pointer items-center justify-between">
                 <span className="text-xl"> {item.question} </span>

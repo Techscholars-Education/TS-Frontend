@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import border from "../../public/Home/border.svg";
 import quotation from "../../public/Home/quotation.svg";
+import Link from "next/link";
 const Studenttest = () => {
   return (
     <section className="bg-gray-100 pb-12 font-Poppins mx-auto">
@@ -11,9 +12,12 @@ const Studenttest = () => {
           performance analytics, and collaborative community
         </p>
         <div className="text-center my-10">
-          <button className=" font-Poppins text-darkBlue border border-black/40 rounded-xl px-10 py-3 bg-yellowish text-2xl font-medium  hover:-translate-y-2  duration-300  auth-btn">
+          <Link
+            href="/course"
+            className=" font-Poppins text-darkBlue border border-black/40 rounded-xl px-10 py-3 bg-yellowish text-2xl font-medium  hover:-translate-y-2  duration-300  auth-btn"
+          >
             Get started
-          </button>
+          </Link>
           <p className="text-darkBlue font-base text-xl text-center mt-10 mb-6 font-Poppins ">
             Testimonials
           </p>

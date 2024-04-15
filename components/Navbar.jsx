@@ -1,12 +1,11 @@
 import React from "react";
 import Logo from "@/public/Logo.svg";
 import Link from "next/link";
-
 import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <header className=" bg-gray-100  sticky top-0 z-50 ">
+    <header className=" bg-gray-100  sticky left-0 right-0 top-0 z-[50] ">
       <nav className=" w-9/12 mx-auto flex justify-between items-center py-2">
         <div className="flex items-center">
           <Image className="w-16 h-16" src={Logo}></Image>
