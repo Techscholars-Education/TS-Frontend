@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-
+import Image from "next/image";
 const Faqs = () => {
   const [Faqs, _] = useState([
     {
@@ -54,7 +54,7 @@ const Faqs = () => {
             >
               <div className="flex cursor-pointer items-center justify-between">
                 <span className="text-xl"> {item.question} </span>
-                <img
+                <Image
                   src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
                   className="h-2 w-3 transition-all duration-500 group-focus:-rotate-180 invert "
                 />
