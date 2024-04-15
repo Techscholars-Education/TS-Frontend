@@ -71,12 +71,14 @@ const PricingTable = () => {
       <div>
         <Navbar />
         <CourseList />
-        <div className='flex justify-center items-center my-8 flex-col'>
-                <h1 className='font-[600] text-[44px] text-[#002657] '>
-                    Welcome Harsh
-                </h1>
-                <span className='font-[500] text-[20px] text-[#002657] '>Select your package</span>
-            </div>
+        <div className="flex justify-center items-center my-8 flex-col">
+          <h1 className="font-[600] text-[44px] text-[#002657] ">
+            Welcome Harsh
+          </h1>
+          <span className="font-[500] text-[20px] text-[#002657] ">
+            Select your package
+          </span>
+        </div>
         <div className="flex justify-center items-center font-Poppins ">
           <div className="p-4  w-full max-w-screen-lg flex flex-col justify-center items-center ">
             <motion.div
@@ -138,4 +140,3 @@ const PricingTable = () => {
 };
 
 export default PricingTable;
-
