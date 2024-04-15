@@ -4,6 +4,7 @@ import React from "react";
 import Avatar from "@mui/material/Avatar";
 import AvatarGroup from "@mui/material/AvatarGroup";
 import JEE from "../../public/Course/JEE.jpg";
+import course from "../../app/assets/course.png";
 
 const Card = () => {
   return (
@@ -20,22 +21,10 @@ const Card = () => {
               )}
               total={4251}
             >
-              <Avatar
-                alt="Remy Sharp"
-                src={require("../../app/assets/course.png")}
-              />
-              <Avatar
-                alt="Travis Howard"
-                src={require("../../app/assets/course.png")}
-              />
-              <Avatar
-                alt="Agnes Walker"
-                src={require("../../app/assets/course.png")}
-              />
-              <Avatar
-                alt="Trevor Henderson"
-                src={require("../../app/assets/course.png")}
-              />
+              <Avatar alt="Remy Sharp" src={course} />
+              <Avatar alt="Travis Howard" src={course} />
+              <Avatar alt="Agnes Walker" src={course} />
+              <Avatar alt="Trevor Henderson" src={course} />
             </AvatarGroup>
           </div>
         </div>

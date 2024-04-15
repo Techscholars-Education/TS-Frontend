@@ -12,13 +12,13 @@ const Sidenavigation = () => {
           <Link href="/">
             <FaLessThan color="#FFE01B" size={20} />
           </Link>
-          <Image className="w-16 h-16" src={Logo}></Image>
-          <span className="text-[#FFE01B] font-[700] text-[16px] font-Inter ">
+          <Image className="w-10 mx-4" src={Logo}></Image>
+          <span className="text-yellowish font-semibold text-lg font-Inter ">
             TECHSCHOLARS
           </span>
         </nav>
         <div className="py-16 px-10">
-          <span className="text-[#FFE01B] font-base text-4xl uppercase">
+          <span className="text-yellowish font-base text-4xl uppercase">
             Climb your way up to the pathway you envision
           </span>
         </div>

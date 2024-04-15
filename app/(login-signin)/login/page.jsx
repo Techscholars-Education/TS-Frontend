@@ -25,9 +25,9 @@ const Login = () => {
       <div className="flex w-full h-screen font-Poppins">
         <Sidenavigation />
         <div className="flex flex-col justify-center items-center h-screen w-full ">
-          <nav className="flex justify-end w-[60vw] pt-12 ">
+          <nav className="flex w-full justify-end pt-12 ">
             <span>Don’t have an account?</span>
-            <a href="/signin" className="font-[600] ml-2">
+            <a href="/signin" className="font-lg font-semibold mr-10 ml-2">
               Sign Up
             </a>
           </nav>
