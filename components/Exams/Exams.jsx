@@ -19,7 +19,7 @@ const Exams = () => {
 
       <div className="w-9/12  mx-auto p-10 flex justify-between flex-wrap ">
         <div className=" w-1/2 flex justify-center items-center">
-          <Image src={Lightbulb} alt="idea svg"></Image>
+          <Image src={Lightbulb} alt="idea-svg"></Image>
         </div>
 
         <form className=" w-1/2 space-y-4 " action="submit">

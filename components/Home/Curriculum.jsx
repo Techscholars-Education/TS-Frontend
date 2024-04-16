@@ -20,7 +20,7 @@ const Curriculum = () => {
         <div className="space-x-10 flex justify-center items-center">
           <div className=" w-1/3  font-Poppins border-2 border-darkBlue p-6  hover:rotate-0 hover:skew-x-0 hover:skew-y-0 duration-500 exam-card rounded-2xl">
             <div className=" bg-darkBlue rounded-full h-20 w-20 flex justify-center items-center p-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-500 drop-shadow-md">
-              <Image className="h-8 w-8  " src={jee}></Image>
+              <Image className="h-8 w-8 " src={jee} alt="student-icon"></Image>
             </div>
 
             <div className="p-4">
@@ -46,7 +46,7 @@ const Curriculum = () => {
           </div>
           <div className=" w-1/3  font-Poppins border-2 border-darkBlue p-6  hover:rotate-0 hover:skew-x-0 hover:skew-y-0 duration-500 exam-card rounded-2xl">
             <div className=" bg-darkBlue rounded-full h-20 w-20 flex justify-center items-center p-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-500 drop-shadow-md">
-              <Image className="h-8 w-8  " src={neet}></Image>
+              <Image className="h-8 w-8  " src={neet} alt="book-icon"></Image>
             </div>
 
             <div className="p-4">
@@ -72,7 +72,11 @@ const Curriculum = () => {
           </div>
           <div className=" w-1/3  font-Poppins border-2 border-darkBlue p-6  hover:rotate-0 hover:skew-x-0 hover:skew-y-0 duration-500 exam-card rounded-2xl">
             <div className=" bg-darkBlue rounded-full h-20 w-20 flex justify-center items-center p-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-500 drop-shadow-md">
-              <Image className="h-8 w-8  " src={foundation}></Image>
+              <Image
+                className="h-8 w-8  "
+                src={foundation}
+                alt="digital-education"
+              ></Image>
             </div>
 
             <div className="p-4">

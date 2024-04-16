@@ -46,7 +46,7 @@ const Hero = () => {
         {/* Search bar */}
         <div className=" mt-16 w-7/12 mx-auto px-5 py-4 rounded-xl bg-white flex items-center shadow-md ">
           <div>
-            <Image className="w-12" src={search}></Image>
+            <Image className="w-12" src={search} alt="search-icon"></Image>
           </div>
           <div className="font-Poppins w-full mx-2">
             <input
@@ -65,6 +65,7 @@ const Hero = () => {
         <Image
           className="absolute hidden lg:block  left-0 xl:left-48 xl:top-[50%]  2xl:top-[50%] 2xl:left-[16%] w-20 mx-10 lg:mx-0 "
           src={TangledArrow}
+          alt="tangled-arrow"
         ></Image>
       </div>
     </section>

@@ -19,7 +19,7 @@ function SampleNextArrow(props) {
       onClick={onClick}
       className="bg-yellowish hover:scale-125 duration-300 transition-all flex  justify-center items-center w-16 h-16  cursor-pointer absolute z-10 top-[40%] -right-16"
     >
-      <Image className="rotate-180" src={arrowRight}></Image>
+      <Image className="rotate-180" src={arrowRight} alt="right-arrow"></Image>
     </div>
   );
 }
@@ -31,7 +31,7 @@ function SamplePrevArrow(props) {
       onClick={onClick}
       className="bg-white hover:scale-125 duration-300 transition-all flex  justify-center items-center w-16 h-16  cursor-pointer absolute z-10 top-[40%] -left-20"
     >
-      <Image src={arrowRight}></Image>
+      <Image src={arrowRight} alt="left-arrow"></Image>
     </div>
   );
 }
