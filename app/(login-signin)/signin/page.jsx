@@ -1,11 +1,11 @@
 "use client";
-import Sidenavigation from "@/components/Sidenavigation";
 import React, { useState } from "react";
+import Sidenavigation from "@/components/Sidenavigation";
 import { FcGoogle } from "react-icons/fc";
 import Box from "@mui/material/Box";
 import LinearProgress from "@mui/material/LinearProgress";
 
-const page = () => {
+const Page = () => {
   const [userData, setUserData] = useState({
     email: "",
     fNmae: "",
@@ -156,4 +156,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

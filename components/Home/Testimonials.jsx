@@ -1,11 +1,25 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import arrowRight from "../../public/Home/arrow-right.svg";
 import Nature from "../../public/Home/Nature.jpg";
-import Marquee from "react-fast-marquee";
 import quoteup from "../../public/Home/quoteup.svg";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import star from "../../public/Home/star.svg";
+
 const Testimonials = () => {
+  const settings = {
+    // dots: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 1000,
+    cssEase: "linear",
+  };
   return (
     <section className="bg-gray-100 pb-12 font-Poppins w-full mx-auto">
       <div className=" w-9/12 mx-auto rounded-xl">
@@ -32,40 +46,95 @@ const Testimonials = () => {
         </div>
       </div>
 
-      {/* Testimonials */}
-      <Marquee
-        className="flex space-x-4"
-        autoFill={true}
-        direction="left"
-        speed={50}
-      >
-        <div className="border-2 border-yellowish bg-white p-4 rounded-xl mx-4 max-w-xl  ">
+      {/* Testimonials slider*/}
+      <div className="slider-container">
+        <Slider {...settings}>
           <div>
-            <Image src={quoteup} />
-          </div>
+            <div className="border-2 border-yellowish bg-white p-4 rounded-xl mx-4 max-w-xl  ">
+              <div>
+                <Image src={quoteup} />
+              </div>
 
-          <div className="my-6">
-            <p className="text-base text-darkBlue/70">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione,
-              laboriosam. Lorem ipsum, dolor sit amet consectetur adipisicing
-              elit. Nam, voluptate. Lorem ipsum dolor sit amet consectetur
-              adipisicing elit.
-            </p>
-          </div>
+              <div className="my-6">
+                <p className="text-base text-darkBlue/70">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Ratione, laboriosam. Lorem ipsum, dolor sit amet consectetur
+                  adipisicing elit. Nam, voluptate. Lorem ipsum dolor sit amet
+                  consectetur adipisicing elit.
+                </p>
+              </div>
 
-          <div className="flex items-center justify-between font-Poppins ">
-            <div className="w-1/2 flex items-center space-x-4">
-              <div className="w-16 h-16 rounded-full bg-yellowish"></div>
+              <div className="flex items-center justify-between font-Poppins ">
+                <div className="w-1/2 flex items-center space-x-4">
+                  <div className="w-16 h-16 rounded-full bg-yellowish"></div>
 
-              <h4 className="font-semibold text-darkBlue">John Doe</h4>
+                  <h4 className="font-semibold text-darkBlue">John Doe</h4>
+                </div>
+                <div className="flex justify-center items-center space-x-4">
+                  <Image src={star}></Image>
+                  <p className="text-darkBlue font-semibold">4.3</p>
+                </div>
+              </div>
             </div>
-            <div className="flex justify-center items-center space-x-4">
-              <Image src={star}></Image>
-              <p className="text-darkBlue font-semibold">4.3</p>
+          </div>
+          <div>
+            <div className="border-2 border-yellowish bg-white p-4 rounded-xl mx-4 max-w-xl  ">
+              <div>
+                <Image src={quoteup} />
+              </div>
+
+              <div className="my-6">
+                <p className="text-base text-darkBlue/70">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Ratione, laboriosam. Lorem ipsum, dolor sit amet consectetur
+                  adipisicing elit. Nam, voluptate. Lorem ipsum dolor sit amet
+                  consectetur adipisicing elit.
+                </p>
+              </div>
+
+              <div className="flex items-center justify-between font-Poppins ">
+                <div className="w-1/2 flex items-center space-x-4">
+                  <div className="w-16 h-16 rounded-full bg-yellowish"></div>
+
+                  <h4 className="font-semibold text-darkBlue">John Doe</h4>
+                </div>
+                <div className="flex justify-center items-center space-x-4">
+                  <Image src={star}></Image>
+                  <p className="text-darkBlue font-semibold">4.3</p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </Marquee>
+          <div>
+            <div className="border-2 border-yellowish bg-white p-4 rounded-xl mx-4 max-w-xl  ">
+              <div>
+                <Image src={quoteup} />
+              </div>
+
+              <div className="my-6">
+                <p className="text-base text-darkBlue/70">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Ratione, laboriosam. Lorem ipsum, dolor sit amet consectetur
+                  adipisicing elit. Nam, voluptate. Lorem ipsum dolor sit amet
+                  consectetur adipisicing elit.
+                </p>
+              </div>
+
+              <div className="flex items-center justify-between font-Poppins ">
+                <div className="w-1/2 flex items-center space-x-4">
+                  <div className="w-16 h-16 rounded-full bg-yellowish"></div>
+
+                  <h4 className="font-semibold text-darkBlue">John Doe</h4>
+                </div>
+                <div className="flex justify-center items-center space-x-4">
+                  <Image src={star}></Image>
+                  <p className="text-darkBlue font-semibold">4.3</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Slider>
+      </div>
     </section>
   );
 };

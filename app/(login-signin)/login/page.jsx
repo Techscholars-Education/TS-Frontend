@@ -1,9 +1,9 @@
 "use client";
-import Sidenavigation from "@/components/Sidenavigation";
 import React, { useState } from "react";
+import Sidenavigation from "@/components/Sidenavigation";
 import { FcGoogle } from "react-icons/fc";
 
-const page = () => {
+const Page = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -91,4 +91,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

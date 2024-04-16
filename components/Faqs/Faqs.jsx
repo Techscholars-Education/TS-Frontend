@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import Image from "next/image";
+import { FaChevronDown } from "react-icons/fa";
 const Faqs = () => {
   const [Faqs, _] = useState([
     {
@@ -54,10 +54,7 @@ const Faqs = () => {
             >
               <div className="flex cursor-pointer items-center justify-between">
                 <span className="text-xl"> {item.question} </span>
-                <Image
-                  src="https://upload.wikimedia.org/wikipedia/commons/9/96/Chevron-icon-drop-down-menu-WHITE.png"
-                  className="h-2 w-3 transition-all duration-500 group-focus:-rotate-180 invert "
-                />
+                <FaChevronDown className="h-2 w-3 transition-all duration-500 group-focus:-rotate-180 " />
               </div>
               <div className="invisible h-auto max-h-0 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000">
                 {item.ans}

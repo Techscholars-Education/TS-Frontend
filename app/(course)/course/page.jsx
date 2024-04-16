@@ -6,7 +6,6 @@ const page = () => {
   return (
     <>
       <Navbar />
-
       <div className="flex">
         <Course />
       </div>

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import CourseList from "@/components/Course/CourseList";
 
-const page = () => {
+const Page = () => {
   const [hoveredPackage, setHoveredPackage] = useState(null);
 
   const packages = [
@@ -139,4 +139,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
