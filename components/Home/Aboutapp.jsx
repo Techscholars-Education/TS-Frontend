@@ -1,13 +1,20 @@
 import React from "react";
 import Image from "next/image";
-import Phonepic from "../../public/Home/Phonepic.svg";
+import Phonepic from "../../public/Home/Phonepic.png";
 import playstore from "../../public/Home/playstore.svg";
 import applestore from "../../public/Home/applestore.svg";
-const Mobile = () => {
+import Logo from "../../public/Logo.svg";
+const Aboutapp = () => {
   return (
     <section className="flex  w-11/12 mx-auto font-Poppins space-x-10 ">
-      <div className="w-1/2 flex justify-center ">
+      <div className="w-1/2 flex justify-center  relative ">
         <Image src={Phonepic}></Image>
+        <div className="flex justify-center items-center absolute top-36 space-x-3">
+          <Image src={Logo}></Image>
+          <h4 className="font-Poppins  text-yellowish font-semibold">
+            TECHSCHOLARS
+          </h4>
+        </div>
       </div>
       <div className=" w-1/2 flex flex-col justify-center items-center space-y-4  pl-10 ">
         <div>
@@ -29,4 +36,4 @@ const Mobile = () => {
   );
 };
 
-export default Mobile;
+export default Aboutapp;

@@ -1,11 +1,11 @@
 "use client";
-import Sidenavigation from "@/components/Sidenavigation";
 import React, { useState } from "react";
+import Sidenavigation from "@/components/Sidenavigation";
 import { FcGoogle } from "react-icons/fc";
 import Box from "@mui/material/Box";
 import LinearProgress from "@mui/material/LinearProgress";
 
-const Login = () => {
+const Page = () => {
   const [userData, setUserData] = useState({
     email: "",
     fNmae: "",
@@ -45,10 +45,10 @@ const Login = () => {
       <div className="flex w-full h-screen font-Poppins">
         <Sidenavigation />
         <div className="flex flex-col justify-center items-center h-screen w-full ">
-          <nav className="flex justify-end w-[60vw] pt-12 ">
+          <nav className="flex w-full justify-end pt-12 ">
             <span>Already have an account?</span>
-            <a href="/login" className="font-[600] ml-2">
-              Log in
+            <a href="/login" className="font-lg font-semibold mr-10 ml-2">
+              Login
             </a>
           </nav>
           <div className="flex flex-col justify-center items-center h-screen w-full">
@@ -156,4 +156,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Page;

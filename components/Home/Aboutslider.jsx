@@ -4,12 +4,12 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
-import laptop from "../../public/Home/laptop.svg";
-import Agreement from "../../public/Home/Agreement.svg";
-import mentor from "../../public/Home/mentor.svg";
-import bubble from "../../public/Home/bubble.svg";
-import sheet from "../../public/Home/sheet.svg";
-import mansion from "../../public/Home/mansion.svg";
+import first from "../../public/Home/first.png";
+import second from "../../public/Home/second.png";
+import third from "../../public/Home/third.png";
+import fourth from "../../public/Home/fourth.png";
+import fifth from "../../public/Home/fifth.png";
+import sixth from "../../public/Home/sixth.png";
 import arrowRight from "../../public/Home/arrow-right.svg";
 
 function SampleNextArrow(props) {
@@ -49,42 +49,42 @@ const Aboutslider = () => {
   const data = [
     {
       id: 1,
-      image: laptop,
+      image: first,
       top: "Every Sunday",
       mid: "Scholarship Admission Exam",
       bottom: "Techsholars scholarship test",
     },
     {
       id: 2,
-      image: Agreement,
+      image: second,
       top: "Contact Us",
       mid: "Schedule a call with our councillor",
       bottom: "Know what we can offer",
     },
     {
       id: 3,
-      image: mentor,
+      image: third,
       top: "Faculty",
       mid: "Personalised expert mentorship",
       bottom: "Attention on what you want",
     },
     {
       id: 4,
-      image: bubble,
+      image: fourth,
       top: "Every Sunday",
       mid: "Student Community",
       bottom: "Techsholars scholarship test",
     },
     {
       id: 5,
-      image: sheet,
+      image: fifth,
       top: "Every Sunday",
       mid: "Performance analysis",
       bottom: "Techsholars scholarship test",
     },
     {
       id: 6,
-      image: mansion,
+      image: sixth,
       top: "Every Sunday",
       mid: "House of Techscholars",
       bottom: "Techsholars scholarship test",
@@ -99,18 +99,18 @@ const Aboutslider = () => {
             return (
               <div key={item.id} className=" flex justify-center items-center ">
                 <Image
-                  className=" mx-auto "
+                  className=" mx-auto w-80  "
                   src={item.image}
-                  alt="Sunset in the mountains"
+                  alt="Benefit Images"
                 />
-                <div className="px-6 py-4  h-2/5  ">
-                  <div className="font-base text-lg mb-2 text-start">
-                    {item.top}s
+                <div className="px-6 py-4 w-4/5 mx-auto  ">
+                  <div className="font-base text-lg mb-2 text-start ">
+                    {item.top}
                   </div>
-                  <div className="font-medium text-start text-3xl text-darkBlue mb-2">
+                  <div className="font-medium text-start text-4xl text-darkBlue mb-2  min-h-20">
                     {item.mid}
                   </div>
-                  <p className="text-darkBlue text-base text-start">
+                  <p className="text-darkBlue text-base text-start ">
                     {item.bottom}
                   </p>
                 </div>

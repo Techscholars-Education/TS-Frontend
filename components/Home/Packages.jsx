@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 import { MdDone } from "react-icons/md";
 const Packages = () => {
@@ -91,10 +92,13 @@ const Packages = () => {
                   </li>
                 ))}
               </ul>
-              <div className="flex justify-center align-middle">
-                <button className="w-40 h-12 mt-4 py-2 px-4 group-hover:bg-white group-hover:text-darkBlue bg-darkBlue text-white  font-Poppins  rounded-lg focus:outline-none focus:shadow-outline">
+              <div className="flex justify-center py-4 items-center ">
+                <Link
+                  href="/course"
+                  className="w-40 text-center  py-4 px-4  group-hover:bg-white group-hover:text-darkBlue bg-darkBlue text-white  font-Poppins  rounded-lg "
+                >
                   Purchase Now
-                </button>
+                </Link>
               </div>
             </div>
           ))}
@@ -102,9 +106,12 @@ const Packages = () => {
       </div>
 
       <div className="w-full flex justify-center items-center mt-24">
-        <button className=" font-Poppins text-white border  border-black/40 rounded-xl px-10 py-3 bg-darkBlue text-2xl font-medium  hover:-translate-y-2  duration-300  auth-btn">
+        <Link
+          href="/course"
+          className=" font-Poppins text-white border  border-black/40 rounded-xl px-10 py-3 bg-darkBlue text-2xl font-medium  hover:-translate-y-2  duration-300  auth-btn"
+        >
           Get started
-        </button>
+        </Link>
       </div>
     </section>
   );

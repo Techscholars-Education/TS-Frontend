@@ -1,5 +1,6 @@
 import "./globals.css";
 import NextTopLoader from "nextjs-toploader";
+
 export const metadata = {
   title: "TechScholars",
   description: "India's Best Education Platform",

@@ -1,16 +1,20 @@
 import React from "react";
 import Logo from "@/public/Logo.svg";
 import Link from "next/link";
-
 import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <header className=" bg-gray-100  sticky top-0 z-50 ">
+    <header className=" bg-gray-100  sticky left-0 right-0 top-0 z-[50] ">
       <nav className=" w-9/12 mx-auto flex justify-between items-center py-2">
         <div className="flex items-center">
           <Image className="w-16 h-16" src={Logo}></Image>
-          <h2 className="font-Inter text-lg font-medium">TECHSCHOLARS</h2>
+          <Link
+            href="/"
+            className="font-Inter text-lg font-medium cursor-pointer pl-4 transition-all duration-300"
+          >
+            TECHSCHOLARS
+          </Link>
         </div>
         <ul className="font-Poppins flex gap-10  text-lg ">
           <li>
@@ -43,7 +47,7 @@ const Navbar = () => {
           </Link>
         </div>
       </nav>
-      <div className="bg-yellowish">
+      <div className="bg-yellowish drop-shadow-2xl">
         <p className="font-Inter text-darkBlue font-semibold text-center py-2 text-md tracking-widest uppercase font-base">
           Your unfair advantage - Accelerate your journey towards success!
         </p>

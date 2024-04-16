@@ -32,7 +32,7 @@ const Footer = () => {
 
       <div className=" w-2/5 flex flex-col  ">
         <h2 className="text-darkBlue text-4xl font-semibold my-10 ">
-          Let's Get in Touch
+          Lets Get in Touch
         </h2>
 
         <form className="flex flex-col space-y-4">
