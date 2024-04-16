@@ -12,7 +12,11 @@ const Sidenavigation = () => {
           <Link href="/">
             <FaLessThan color="#FFE01B" size={20} />
           </Link>
-          <Image className="w-10 mx-4" src={Logo}></Image>
+          <Image
+            className="w-10 mx-4"
+            src={Logo}
+            alt="Techscholars-Logo"
+          ></Image>
           <span className="text-yellowish font-semibold text-lg font-Inter ">
             TECHSCHOLARS
           </span>

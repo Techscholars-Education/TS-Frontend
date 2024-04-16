@@ -10,7 +10,11 @@ const Card = (props) => {
     <>
       <div className="flex flex-col rounded-xl bg-slate-100 w-[296px] h-[428px] mx-6 font-Poppins">
         <div>
-          <Image className="w-full rounded-xl " src={props.image} />
+          <Image
+            className="w-full rounded-xl "
+            alt="course-posters"
+            src={props.image}
+          />
         </div>
         <div className="flex justify-center">
           <div className="rounded-full w-4/6 py-1 relative bottom-6 flex justify-center bg-slate-200">

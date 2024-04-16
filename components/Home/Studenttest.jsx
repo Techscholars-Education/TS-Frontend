@@ -28,7 +28,7 @@ const Studenttest = () => {
         </div>
         <div className="flex space-x-10 my-24  justify-center ">
           <div className="relative ">
-            <Image src={border}></Image>
+            <Image src={border} alt="yellow-border "></Image>
             <div className=" max-w-sm absolute top-10 left-4 px-3 space-y-4">
               <p className=" leading-relaxed">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
@@ -44,11 +44,11 @@ const Studenttest = () => {
               </div>
             </div>
             <div className="absolute bottom-0 right-0">
-              <Image src={quotation}></Image>
+              <Image src={quotation} alt="quotation"></Image>
             </div>
           </div>
           <div className="relative ">
-            <Image src={border}></Image>
+            <Image src={border} alt="yellow-border"></Image>
             <div className=" max-w-sm absolute top-10 left-4 px-3 space-y-4">
               <p className=" leading-relaxed">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
@@ -64,11 +64,11 @@ const Studenttest = () => {
               </div>
             </div>
             <div className="absolute bottom-0 right-0">
-              <Image src={quotation}></Image>
+              <Image src={quotation} alt="quotation"></Image>
             </div>
           </div>
           <div className="relative  ">
-            <Image src={border}></Image>
+            <Image src={border} alt="yellow-border"></Image>
             <div className=" max-w-sm absolute top-10 left-4 px-3 space-y-4">
               <p className=" leading-relaxed">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
@@ -84,7 +84,7 @@ const Studenttest = () => {
               </div>
             </div>
             <div className="absolute bottom-0 right-0">
-              <Image src={quotation}></Image>
+              <Image src={quotation} alt="quotation"></Image>
             </div>
           </div>
         </div>
