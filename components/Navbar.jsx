@@ -8,7 +8,11 @@ const Navbar = () => {
     <header className=" bg-gray-100  sticky left-0 right-0 top-0 z-[50] ">
       <nav className=" w-9/12 mx-auto flex justify-between items-center py-2">
         <div className="flex items-center">
-          <Image className="w-16 h-16" src={Logo}></Image>
+          <Image
+            className="w-16 h-16"
+            src={Logo}
+            alt="Techscholars-Logo"
+          ></Image>
           <Link
             href="/"
             className="font-Inter text-lg font-medium cursor-pointer pl-4 transition-all duration-300"

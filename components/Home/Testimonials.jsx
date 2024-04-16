@@ -11,7 +11,6 @@ import star from "../../public/Home/star.svg";
 
 const Testimonials = () => {
   const settings = {
-    // dots: true,
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -34,15 +33,15 @@ const Testimonials = () => {
 
       <div className="flex justify-between items-center my-16 w-11/12 mx-auto">
         <div className="bg-white flex justify-center items-center w-16 h-16">
-          <Image src={arrowRight}></Image>
+          <Image src={arrowRight} alt="arrow"></Image>
         </div>
 
         <div className="flex w-5/6 ">
-          <Image className=" mx-auto" src={Nature}></Image>
+          <Image className=" mx-auto" alt="nature" src={Nature}></Image>
         </div>
 
         <div className="bg-yellowish flex justify-center items-center w-16 h-16">
-          <Image className="rotate-180" src={arrowRight}></Image>
+          <Image className="rotate-180" alt="arrow" src={arrowRight}></Image>
         </div>
       </div>
 
@@ -52,7 +51,7 @@ const Testimonials = () => {
           <div>
             <div className="border-2 border-yellowish bg-white p-4 rounded-xl mx-4 max-w-xl  ">
               <div>
-                <Image src={quoteup} />
+                <Image src={quoteup} alt="quoteup" />
               </div>
 
               <div className="my-6">
@@ -71,7 +70,7 @@ const Testimonials = () => {
                   <h4 className="font-semibold text-darkBlue">John Doe</h4>
                 </div>
                 <div className="flex justify-center items-center space-x-4">
-                  <Image src={star}></Image>
+                  <Image src={star} alt="rating-star"></Image>
                   <p className="text-darkBlue font-semibold">4.3</p>
                 </div>
               </div>
@@ -80,7 +79,7 @@ const Testimonials = () => {
           <div>
             <div className="border-2 border-yellowish bg-white p-4 rounded-xl mx-4 max-w-xl  ">
               <div>
-                <Image src={quoteup} />
+                <Image src={quoteup} alt="quoteup" />
               </div>
 
               <div className="my-6">
@@ -99,7 +98,7 @@ const Testimonials = () => {
                   <h4 className="font-semibold text-darkBlue">John Doe</h4>
                 </div>
                 <div className="flex justify-center items-center space-x-4">
-                  <Image src={star}></Image>
+                  <Image src={star} alt="rating-star"></Image>
                   <p className="text-darkBlue font-semibold">4.3</p>
                 </div>
               </div>
@@ -108,7 +107,7 @@ const Testimonials = () => {
           <div>
             <div className="border-2 border-yellowish bg-white p-4 rounded-xl mx-4 max-w-xl  ">
               <div>
-                <Image src={quoteup} />
+                <Image src={quoteup} alt="quoteup" />
               </div>
 
               <div className="my-6">
@@ -127,7 +126,7 @@ const Testimonials = () => {
                   <h4 className="font-semibold text-darkBlue">John Doe</h4>
                 </div>
                 <div className="flex justify-center items-center space-x-4">
-                  <Image src={star}></Image>
+                  <Image src={star} alt="rating-star"></Image>
                   <p className="text-darkBlue font-semibold">4.3</p>
                 </div>
               </div>

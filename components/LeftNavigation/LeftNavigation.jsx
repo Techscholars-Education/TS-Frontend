@@ -16,7 +16,11 @@ const LeftNavigation = () => {
     <nav className="min-h-screen bg-slate-50  w-64 py-8 px-4 flex flex-col justify-between">
       <div className="mx-auto">
         <div className="flex items-center ">
-          <Image className="w-12 h-12" src={Logo}></Image>
+          <Image
+            className="w-12 h-12"
+            src={Logo}
+            alt="Techscholars-Logo"
+          ></Image>
           <h1 className="text-gray-800 font-semibold ">TECHSCHOLARS</h1>
         </div>
         <ul className="mt-20 mx-auto font-Poppins">

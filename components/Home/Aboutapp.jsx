@@ -8,9 +8,9 @@ const Aboutapp = () => {
   return (
     <section className="flex  w-11/12 mx-auto font-Poppins space-x-10 ">
       <div className="w-1/2 flex justify-center  relative ">
-        <Image src={Phonepic}></Image>
+        <Image src={Phonepic} alt="Techscholar-app-image"></Image>
         <div className="flex justify-center items-center absolute top-36 space-x-3">
-          <Image src={Logo}></Image>
+          <Image src={Logo} alt="Techscholar-logo"></Image>
           <h4 className="font-Poppins  text-yellowish font-semibold">
             TECHSCHOLARS
           </h4>
@@ -25,10 +25,18 @@ const Aboutapp = () => {
         </div>
         <div className="w-full space-x-4 ">
           <button>
-            <Image className="w-60" src={playstore}></Image>
+            <Image
+              className="w-60"
+              src={playstore}
+              alt="play-store-icon"
+            ></Image>
           </button>
           <button>
-            <Image className="w-60" src={applestore}></Image>
+            <Image
+              className="w-60"
+              src={applestore}
+              alt="app-store-icon"
+            ></Image>
           </button>
         </div>
       </div>

@@ -11,7 +11,7 @@ const Benefits = () => {
     <div className=" w-11/12 mx-auto flex justify-between items-center  ">
       <div className="font-Poppins inline-block space-y-2 text-center">
         <div>
-          <Image className="mx-auto mb-4" src={ratings}></Image>
+          <Image className="mx-auto mb-4" src={ratings} alt="star-icon"></Image>
         </div>
         <div>
           <h4 className="text-xl font-semibold text-darkBlue">
@@ -27,7 +27,11 @@ const Benefits = () => {
       </div>
       <div className="font-Poppins inline-block space-y-2 text-center">
         <div>
-          <Image className="mx-auto mb-4" src={schdule_time}></Image>
+          <Image
+            className="mx-auto mb-4"
+            src={schdule_time}
+            alt="managing-time"
+          ></Image>
         </div>
         <div>
           <h4 className="text-xl font-semibold text-darkBlue">
@@ -43,7 +47,11 @@ const Benefits = () => {
       </div>
       <div className="font-Poppins inline-block space-y-2 text-center">
         <div>
-          <Image className="mx-auto mb-4" src={live_class}></Image>
+          <Image
+            className="mx-auto mb-4"
+            src={live_class}
+            alt="live-class"
+          ></Image>
         </div>
         <div>
           <h4 className="text-xl font-semibold text-darkBlue">Weekly tests</h4>
@@ -57,7 +65,7 @@ const Benefits = () => {
       </div>
       <div className="font-Poppins inline-block space-y-2 text-center">
         <div>
-          <Image className="mx-auto mb-4" src={login}></Image>
+          <Image className="mx-auto mb-4" src={login} alt="login-icon"></Image>
         </div>
         <div>
           <h4 className="text-xl font-semibold text-darkBlue">DPPs</h4>

@@ -21,7 +21,7 @@ const Home = () => {
 
       <div className="text-center my-20 space-y-8">
         <h2 className="text-darkBlue font-semibold text-4xl text-center font-Poppins ">
-          h Bharats Most Trusted Educational platform
+          Bharat&apos;s Most Trusted Educational platform
         </h2>
 
         <div>
