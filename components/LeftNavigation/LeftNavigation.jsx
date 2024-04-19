@@ -15,9 +15,9 @@ const LeftNavigation = () => {
   return (
     <nav className="min-h-screen bg-slate-50  w-64 py-8 px-4 flex flex-col justify-between">
       <div className="mx-auto">
-        <div className="flex items-center ">
+        <div className="flex items-center space-x-2 ">
           <Image
-            className="w-12 h-12"
+            className="w-10 h-10"
             src={Logo}
             alt="Techscholars-Logo"
           ></Image>
