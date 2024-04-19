@@ -6,7 +6,7 @@ const Communitycards = (props) => {
   return (
     <div className="bg-white max-w-xs  font-Poppins rounded-xl p-6">
       <div className="rounded-xl">
-        <Image src={Community} />
+        <Image src={Community} alt="community-icon" />
       </div>
 
       <div className="my-5 flex justify-between">

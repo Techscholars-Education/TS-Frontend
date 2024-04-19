@@ -95,7 +95,7 @@ const Packages = () => {
               <div className="flex justify-center py-4 items-center ">
                 <Link
                   href="/course"
-                  className="w-40 text-center  py-4 px-4  group-hover:bg-white group-hover:text-darkBlue bg-darkBlue text-white  font-Poppins  rounded-lg "
+                  className="w-40 text-center  py-4 px-4  hover:bg-white hover:text-darkBlue bg-darkBlue text-white  font-Poppins transition-all  rounded-lg "
                 >
                   Purchase Now
                 </Link>
