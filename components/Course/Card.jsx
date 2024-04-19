@@ -1,14 +1,15 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import Avatar from "@mui/material/Avatar";
-import AvatarGroup from "@mui/material/AvatarGroup";
-import jeePoster from "../../public/Course/jeePoster.jpg";
+// import Avatar from "@mui/material/Avatar";
+// import AvatarGroup from "@mui/material/AvatarGroup";
+// import jeePoster from "../../public/Course/jeePoster.jpg";
+import avatar from "../../public/Dashboard/avatar.jpg";
 
 const Card = (props) => {
   return (
     <>
-      <div className="flex flex-col rounded-xl bg-slate-100 w-[296px] h-[428px] mx-6 font-Poppins">
+      <div className="flex flex-col rounded-xl bg-slate-100 w-[296px] border h-[428px] mx-6 font-Poppins relative">
         <div>
           <Image
             className="w-full rounded-xl "
@@ -16,23 +17,39 @@ const Card = (props) => {
             src={props.image}
           />
         </div>
-        <div className="flex justify-center">
-          <div className="rounded-full w-4/6 py-1 relative bottom-6 flex justify-center bg-slate-200">
-            <AvatarGroup
-              renderSurplus={(surplus) => (
-                <span>+{surplus.toString()[0]}k</span>
-              )}
-              total={4251}
+        <div className="my-5 flex justify-center absolute top-[30%] mx-auto w-full ">
+          <div className="flex -space-x-4 rtl:space-x-reverse">
+            <Image
+              className="w-12 h-12 border-2 border-white rounded-full bg-green-300"
+              src={avatar}
+              alt="avatar-picture"
+              width="40"
+              height="40"
+            />
+            <Image
+              className="w-12 h-12 border-2 border-white rounded-full bg-green-300"
+              src={avatar}
+              alt="avatar-picture"
+              width="40"
+              height="40"
+            />
+            <Image
+              className="w-12 h-12 border-2 border-white rounded-full bg-green-300"
+              src={avatar}
+              alt="avatar-picture"
+              width="40"
+              height="40"
+            />
+            <span
+              className="flex items-center justify-center  px-2 text-xs font-medium text-darkBlue bg-gray-100   rounded-full  "
+              href="#"
             >
-              <Avatar alt="Remy Sharp" src={jeePoster} />
-              <Avatar alt="Travis Howard" src={jeePoster} />
-              <Avatar alt="Agnes Walker" src={jeePoster} />
-              <Avatar alt="Trevor Henderson" src={jeePoster} />
-            </AvatarGroup>
+              +40 students
+            </span>
           </div>
         </div>
 
-        <div className="flex flex-col m-4">
+        <div className="flex flex-col m-4 my-10">
           <div className="mb-4">
             <p className="font-base text-xs  ">1-28 july 2022</p>
             <h3 className="font-semibold text-lg text-darkBlue ">
