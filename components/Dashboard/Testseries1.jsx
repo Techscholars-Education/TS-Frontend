@@ -1,5 +1,6 @@
 import React from "react";
 import Testseries1card from "./Testseries1card";
+
 const Testseries1 = () => {
   const classData = [
     { id: 1, class: "9th" },

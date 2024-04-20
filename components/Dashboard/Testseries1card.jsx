@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import avatar from "../../public/Dashboard/avatar.jpg";
 import testseriesicon from "../../public/Dashboard/testseriesicon.svg";
@@ -79,9 +80,12 @@ const Testseries1card = (props) => {
           </a>
         </div>
 
-        <button className="rounded-2xl text-sm bg-yellowish text-darkBlue  px-4 py-2">
+        <Link
+          href="/test-series/subjects"
+          className="rounded-2xl text-sm bg-yellowish text-darkBlue  px-4 py-2"
+        >
           Get started
-        </button>
+        </Link>
       </div>
     </div>
   );
