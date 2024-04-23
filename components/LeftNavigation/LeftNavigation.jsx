@@ -13,7 +13,7 @@ import {
 import Logo from "../../public/Logo.svg";
 const LeftNavigation = () => {
   return (
-    <nav className="min-h-screen bg-slate-50  w-64 py-8 px-4 flex flex-col justify-between">
+    <nav className=" bg-slate-50    w-[16%] py-8 px-4 flex flex-col justify-between">
       <div className="mx-auto">
         <div className="flex items-center space-x-2 ">
           <Image

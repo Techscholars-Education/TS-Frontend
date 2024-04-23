@@ -1,9 +1,20 @@
-import React from "react";
-
+"use client";
+import React, { useState } from "react";
+import Popupedit from "./Popupedit";
+import Popupdelete from "./Popupdelete";
 const Testseries3card = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openDialog = () => {
+    setIsOpen(true);
+  };
+
+  const closeDialog = () => {
+    setIsOpen(false);
+  };
   return (
     <>
-      <table className="w-full bg-white rounded-xl my-10 ">
+      <table className="w-full bg-white rounded-3xl my-10 ">
         <thead>
           <tr className="font-Poppins ">
             <th className="font-normal py-4 text-lg">Check Box</th>
@@ -15,9 +26,9 @@ const Testseries3card = () => {
             <th className="font-normal py-4 text-lg">Actions</th>
           </tr>
         </thead>
-        <tbody className="">
+        <tbody>
           <tr className="text-center font-Poppins ">
-            <td className="py-4">
+            <td className="py-6">
               <input type="checkbox" className="checkbox" />
             </td>
             <td>
@@ -36,10 +47,22 @@ const Testseries3card = () => {
               <span className="bg-red-400 px-2 py-2 rounded-xl text-white">
                 Pending
               </span>
+            </td>
+            <td className="flex justify-evenly  py-6">
+              <Popupedit
+                isOpen={isOpen}
+                openDialog={openDialog}
+                closeDialog={closeDialog}
+              />
+              <Popupdelete
+                isOpen={isOpen}
+                openDialog={openDialog}
+                closeDialog={closeDialog}
+              />
             </td>
           </tr>
           <tr className="text-center font-Poppins ">
-            <td className="py-4">
+            <td className="py-6">
               <input type="checkbox" className="checkbox" />
             </td>
             <td>
@@ -58,10 +81,23 @@ const Testseries3card = () => {
               <span className="bg-red-400 px-2 py-2 rounded-xl text-white">
                 Pending
               </span>
+            </td>
+
+            <td className="flex justify-evenly  py-6">
+              <Popupedit
+                isOpen={isOpen}
+                openDialog={openDialog}
+                closeDialog={closeDialog}
+              />
+              <Popupdelete
+                isOpen={isOpen}
+                openDialog={openDialog}
+                closeDialog={closeDialog}
+              />
             </td>
           </tr>
-          <tr className="text-center font-Poppins ">
-            <td className="py-4">
+          <tr className="text-center font-Poppins my-auto   ">
+            <td className="py-6">
               <input type="checkbox" className="checkbox" />
             </td>
             <td>
@@ -80,6 +116,18 @@ const Testseries3card = () => {
               <span className="bg-red-400 px-2 py-2 rounded-xl text-white">
                 Pending
               </span>
+            </td>
+            <td className="flex justify-evenly  py-6">
+              <Popupedit
+                isOpen={isOpen}
+                openDialog={openDialog}
+                closeDialog={closeDialog}
+              />
+              <Popupdelete
+                isOpen={isOpen}
+                openDialog={openDialog}
+                closeDialog={closeDialog}
+              />
             </td>
           </tr>
         </tbody>
