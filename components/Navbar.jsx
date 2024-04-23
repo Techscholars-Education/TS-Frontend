@@ -1,9 +1,13 @@
+"use client";
 import React from "react";
 import Logo from "@/public/Logo.svg";
 import Link from "next/link";
 import Image from "next/image";
-
+import { usePathname } from "next/navigation";
 const Navbar = () => {
+  const pathname = usePathname();
+  console.log(pathname);
+
   return (
     <header className=" bg-gray-100  sticky left-0 right-0 top-0 z-[50] ">
       <nav className=" w-9/12 mx-auto flex justify-between items-center py-4">
@@ -15,21 +19,44 @@ const Navbar = () => {
           ></Image>
           <Link
             href="/"
-            className="font-Inter text-lg font-medium cursor-pointer pl-4 transition-all duration-300"
+            className="font-Inter text-lg font-medium cursor-pointer pl-4 transition-all duration-300 "
           >
             TECHSCHOLARS
           </Link>
         </div>
-        <ul className="font-Poppins flex gap-10  text-lg ">
+        <ul className="font-Poppins flex gap-10  text-lg text-darkBlue ">
           <li>
-            <Link href="/course">Courses</Link>
+            <Link
+              className={`${
+                pathname === "/course"
+                  ? "font-bold"
+                  : "hover:underline duration-200 transition-all "
+              }`}
+              href="/course"
+            >
+              Courses
+            </Link>
           </li>
           <li>
-            <Link href="/exams">Scholarship</Link>
+            <Link
+              className={`${
+                pathname === "/exams"
+                  ? "font-bold"
+                  : "hover:underline duration-200 transition-all "
+              }`}
+              href="/exams"
+            >
+              Scholarship
+            </Link>
           </li>
 
           <li>
             <Link
+              className={`${
+                pathname === "/councillor"
+                  ? "font-bold"
+                  : "hover:underline duration-200 transition-all "
+              }`}
               href="/councillor
             "
             >
