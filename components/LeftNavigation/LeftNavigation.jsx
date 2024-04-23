@@ -13,9 +13,10 @@ import {
 import Logo from "../../public/Logo.svg";
 const LeftNavigation = () => {
   return (
-    <nav className=" bg-slate-50    w-[16%] py-8 px-4 flex flex-col justify-between">
-      <div className="mx-auto">
-        <div className="flex items-center space-x-2 ">
+    <nav className=" bg-slate-50   w-[16%] py-8 px-4 flex flex-col justify-between items-center">
+      <div className="mx-auto fixed  ">
+        {/* Ist */}
+        <div className="flex items-center  justify-center space-x-2 ">
           <Image
             className="w-10 h-10"
             src={Logo}
@@ -23,6 +24,8 @@ const LeftNavigation = () => {
           ></Image>
           <h1 className="text-gray-800 font-semibold ">TECHSCHOLARS</h1>
         </div>
+
+        {/* IInd */}
         <ul className="mt-20 mx-auto font-Poppins">
           <li className="flex items-center mb-10">
             <FiHome className="mr-2 text-xl" />
@@ -88,9 +91,11 @@ const LeftNavigation = () => {
             </a>
           </li>
         </ul>
+
+        {/* 3rd */}
       </div>
       <div>
-        <button className="text-white ml-8 hover:text-gray-400 flex items-center ">
+        <button className="text-white absolute bottom-6 left-12  hover:text-gray-400 flex items-center ">
           <FiLogOut className="mr-2 text-[#E55858] text-xl" />
           <span className="text-[#E55858] font-bold ">Sign Out</span>
         </button>
