@@ -1,16 +1,14 @@
 import React from "react";
 import LeftNavigation from "@/components/LeftNavigation/LeftNavigation";
-import Home from "@/components/Dashboard/Home";
+import HomePageWeb from "@/components/Dashboard/HomePageWeb";
+
 
 const page = () => {
   return (
-    <>
-    <div className="flex w-full ">
+    <section className="flex w-full">
       <LeftNavigation />
-      <Home />
-
-    </div>
-    </>
+      <HomePageWeb/>
+    </section>
   );
 };
 
