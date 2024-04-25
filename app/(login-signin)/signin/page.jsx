@@ -4,16 +4,21 @@ import Sidenavigation from "@/components/Sidenavigation";
 import { FcGoogle } from "react-icons/fc";
 import Box from "@mui/material/Box";
 import LinearProgress from "@mui/material/LinearProgress";
+import { RiEyeFill, RiEyeOffFill } from "react-icons/ri";
+
 
 const Page = () => {
   const [userData, setUserData] = useState({
     email: "",
-    fName: "", 
-    lName: "", 
+    fName: "",
+    lName: "",
     mobNumber: "",
     password: "",
   });
   const [progress, setProgress] = useState(0); 
+  const [showPassword, setShowPassword] = useState(false);
+
+
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -21,21 +26,25 @@ const Page = () => {
       ...prevUserData,
       [id]: value,
     }));
-   
+
     const complexity = calculatePasswordComplexity(value);
     setProgress(complexity);
   };
 
   const calculatePasswordComplexity = (password) => {
-   
+
     const length = password.length;
     if (length <= 4) return 20;
     if (length <= 8) return 50;
-    return 100; 
+    return 100;
   };
-
+  
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+  
   const handleSubmit = () => {
-
+    
     console.log("Email:", userData.email);
     console.log("Password:", userData.password);
   };
@@ -93,16 +102,23 @@ const Page = () => {
                     onChange={handleChange}
                   />
                 </div>
-                <div className="mb-4">
+                <div className="mb-4 relative">
                   <input
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="password"
-                    type="password"
+                    type={showPassword ? "text" : "password"}
                     placeholder="Password"
                     value={userData.password}
                     onChange={handleChange}
                   />
+                  <span
+                    className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer"
+                    onClick={togglePasswordVisibility}
+                  >
+                    {showPassword ? <RiEyeOffFill /> : <RiEyeFill />}
+                  </span>
                 </div>
+
 
                 <div className="flex flex-col  items-center justify-between">
                   <Box sx={{ width: "100%" }}>
