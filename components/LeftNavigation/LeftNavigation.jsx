@@ -13,7 +13,7 @@ import {
 import Logo from "../../public/Logo.svg";
 const LeftNavigation = () => {
   return (
-    <nav className=" bg-slate-50   w-[16%] py-8 px-4 flex flex-col justify-between items-center">
+    <nav className=" bg-white   w-[270px]  py-8 px-4 flex flex-col justify-between items-center">
       <div className="mx-auto fixed  ">
         {/* Ist */}
         <div className="flex items-center  justify-center space-x-2 ">
@@ -30,7 +30,7 @@ const LeftNavigation = () => {
           <li className="flex items-center mb-10">
             <FiHome className="mr-2 text-xl" />
             <a
-              href="#"
+              href="/home"
               className="text-gray-500 font-semibold hover:text-gray-400"
             >
               Home
@@ -75,7 +75,7 @@ const LeftNavigation = () => {
           <li className="flex items-center mt-10">
             <FiMessageCircle className="mr-2 text-xl" />
             <a
-              href="#"
+              href="/community"
               className="text-gray-500 font-semibold hover:text-gray-400"
             >
               Community
