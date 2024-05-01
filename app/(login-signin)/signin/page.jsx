@@ -5,20 +5,17 @@ import { FcGoogle } from "react-icons/fc";
 import Box from "@mui/material/Box";
 import LinearProgress from "@mui/material/LinearProgress";
 import { RiEyeFill, RiEyeOffFill } from "react-icons/ri";
-
+import { signIn } from 'next-auth/react';
 
 const Page = () => {
   const [userData, setUserData] = useState({
     email: "",
     fName: "",
     lName: "",
-    mobNumber: "",
     password: "",
   });
   const [progress, setProgress] = useState(0); 
   const [showPassword, setShowPassword] = useState(false);
-
-
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -32,7 +29,6 @@ const Page = () => {
   };
 
   const calculatePasswordComplexity = (password) => {
-
     const length = password.length;
     if (length <= 4) return 20;
     if (length <= 8) return 50;
@@ -43,10 +39,25 @@ const Page = () => {
     setShowPassword(!showPassword);
   };
   
-  const handleSubmit = () => {
-    
-    console.log("Email:", userData.email);
-    console.log("Password:", userData.password);
+  const handleSubmit = async () => {
+    let url=progress.env.NEXT_PUBLIC_BE_API;
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        username: userData.fName,
+        password: userData.password,
+        email: userData.email,
+      }),
+    });
+
+    if (response.ok) {
+      console.log('Signup successful');
+    } else {
+      console.error('Signup failed');
+    }
   };
 
   return (
@@ -92,16 +103,6 @@ const Page = () => {
                     onChange={handleChange}
                   />
                 </div>
-                <div className="mb-4">
-                  <input
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="mobNumber"
-                    type="number"
-                    placeholder="Add your phone number"
-                    value={userData.mobNumber}
-                    onChange={handleChange}
-                  />
-                </div>
                 <div className="mb-4 relative">
                   <input
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -118,7 +119,6 @@ const Page = () => {
                     {showPassword ? <RiEyeOffFill /> : <RiEyeFill />}
                   </span>
                 </div>
-
 
                 <div className="flex flex-col  items-center justify-between">
                   <Box sx={{ width: "100%" }}>
@@ -156,7 +156,7 @@ const Page = () => {
                   </div>
                   <button
                     className="flex items-center ml-4 font-medium py-2 mt-4 border-2 px-12 border-[#DCDCDC] rounded-md"
-                    type="button"
+                    type="button" onClick={() => signIn('google')}
                   >
                     <FcGoogle className="mr-2" />
                     Google
