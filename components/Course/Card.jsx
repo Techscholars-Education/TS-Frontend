@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-
 import avatar from "../../public/Dashboard/avatar.jpg";
+import Link from "next/link";
 
 const Card = (props) => {
   return (
@@ -58,9 +58,12 @@ const Card = (props) => {
             </span>
           </div>
           <div className="flex justify-between mt-2">
-            <button className="bg-darkBlue  p-2 px-4 rounded-md text-sm text-white">
-              <a href={props.route}>Explore</a>
-            </button>
+            <Link
+              href={props.route ? props.route : "/"}
+              className="bg-darkBlue  p-2 px-4 rounded-md text-sm text-white"
+            >
+              Explore
+            </Link>
           </div>
         </div>
       </div>
