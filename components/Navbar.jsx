@@ -6,7 +6,6 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 const Navbar = () => {
   const pathname = usePathname();
-  console.log(pathname);
 
   return (
     <header className=" bg-gray-100  sticky left-0 right-0 top-0 z-[50] ">
