@@ -4,7 +4,7 @@ import Link from "next/link";
 import Costing from "../Costing";
 
 const Classes = () => {
-  const costing11th = [
+  const costing9th = [
     {
       id: 1,
       title: "Starter",
@@ -39,7 +39,7 @@ const Classes = () => {
       ],
     },
   ];
-  const costing12th = [
+  const costing10th = [
     {
       id: 1,
       title: "Starter",
@@ -74,43 +74,8 @@ const Classes = () => {
       ],
     },
   ];
-  const costing13th = [
-    {
-      id: 1,
-      title: "Starter",
-      price: "3999",
-      features: [
-        { feature: "1 user" },
-        { feature: "1 connected calendar" },
-        { feature: "Up to 12 responses" },
-        { feature: "Up to 3 survey results archived" },
-      ],
-    },
-    {
-      id: 2,
-      title: "Advanced",
-      price: "9999",
-      features: [
-        { feature: "1 user" },
-        { feature: "Up to 2 connected calendars" },
-        { feature: "Up to 50 responses" },
-        { feature: "Up to 10 survey results archived" },
-      ],
-    },
-    {
-      id: 3,
-      title: "Ultimate",
-      price: "19999",
-      features: [
-        { feature: "Per user in company domain" },
-        { feature: "Single calendar integrations" },
-        { feature: "Unlimited responses" },
-        { feature: "Unlimited survey results archived" },
-      ],
-    },
-  ];
 
-  const [activeBatch, setActiveBatch] = useState("11th");
+  const [activeBatch, setActiveBatch] = useState("9th");
 
   const handleClick = (batch) => {
     setActiveBatch(batch);
@@ -121,44 +86,28 @@ const Classes = () => {
         <div className="flex justify-center mt-8 font-Poppins font-normal">
           <button
             className={`rounded-md p-2 px-8 border ml-3  ${
-              activeBatch === "11th" ? "bg-darkBlue p-2  text-white" : ""
+              activeBatch === "9th" ? "bg-darkBlue p-2  text-white" : ""
             }`}
-            onClick={() => handleClick("11th")}
+            onClick={() => handleClick("9th")}
           >
-            11th
+            9th
           </button>
           <button
             className={`rounded-md p-2 px-8 border ml-3 ${
-              activeBatch === "12th" ? "bg-darkBlue p-2  text-white" : ""
+              activeBatch === "10th" ? "bg-darkBlue p-2  text-white" : ""
             }`}
-            onClick={() => handleClick("12th")}
+            onClick={() => handleClick("10th")}
           >
-            12th
-          </button>
-          <button
-            className={`rounded-md p-2 px-4 border ml-3 ${
-              activeBatch === "13th" ? "bg-darkBlue p-2 px-4 text-white" : ""
-            }`}
-            onClick={() => handleClick("13th")}
-          >
-            Target 13th
+            10th
           </button>
         </div>
       </div>
 
       <h1 className=" my-10 text-center font-Poppins text-3xl text-darkBlue font-semibold">
-        JEE Packages
+        FOUNDATION Packages
       </h1>
 
-      <Costing
-        CostingData={
-          activeBatch === "11th"
-            ? costing11th
-            : activeBatch === "12th"
-            ? costing12th
-            : costing13th
-        }
-      />
+      <Costing CostingData={activeBatch === "9th" ? costing9th : costing10th} />
 
       <div className="flex justify-center mt-24 items-center ">
         <Link

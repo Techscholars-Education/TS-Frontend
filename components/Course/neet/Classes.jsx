@@ -147,7 +147,7 @@ const Classes = () => {
       </div>
 
       <h1 className=" my-10 text-center font-Poppins text-3xl text-darkBlue font-semibold">
-        JEE Packages
+        NEET Packages
       </h1>
 
       <Costing

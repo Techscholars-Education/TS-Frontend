@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import Navbar from "@/components/Navbar";
+import Classes from "@/components/Course/neet/Classes";
 
 const page = () => {
   return (
-    <div>NEET PAGE</div>
-  )
-}
+    <>
+      <Navbar />
+      <Classes />
+    </>
+  );
+};
 
-export default page
+export default page;
