@@ -20,15 +20,25 @@ const LeftNavigation = () => {
   const pathname = usePathname()
 
   return (
+<<<<<<< HEAD
     <nav className="bg-white w-[270px] py-8 px-4 flex flex-col justify-between items-center">
       <div className="mx-auto fixed">
         {/* Ist */}
         <div className="flex items-center justify-center space-x-2">
           <Image className="w-10 h-10" src={Logo} alt="Techscholars-Logo" />
           <h1 className="text-gray-800 font-semibold">TECHSCHOLARS</h1>
+=======
+    <nav className="min-h-screen bg-slate-50  w-1/5 py-8 px-4 flex flex-col justify-between">
+      <div className="mx-auto">
+        <div className="flex items-center ">
+          <Image
+            className="w-12 h-12"
+            src={Logo}
+            alt="Techscholars-Logo"
+          ></Image>
+          <h1 className="text-gray-800 font-semibold ">TECHSCHOLARS</h1>
+>>>>>>> parent of 1a344dd (Merge branch 'Develop' of https://github.com/Techscholars-Education/TS-Frontend into ankit)
         </div>
-
-        {/* IInd */}
         <ul className="mt-20 mx-auto font-Poppins">
           <li className={`flex items-center mb-10 ${pathname === "/home" ? 'text-[#002656]  py-2 bg-slate-100  ':'text-[#8A8A8A]'}`} >
             <FiHome className="mr-2 text-xl" />
@@ -59,12 +69,14 @@ const LeftNavigation = () => {
             <a href="/settings" className="font-semibold hover:text-gray-400">Settings</a>
           </li>
         </ul>
-
-        {/* 3rd */}
       </div>
       <div>
+<<<<<<< HEAD
         <button className="text-white absolute bottom-6 left-12 hover:text-gray-400 flex items-center ">
           <Link href="/" className="flex">
+=======
+        <button className="text-white ml-8 hover:text-gray-400 flex items-center ">
+>>>>>>> parent of 1a344dd (Merge branch 'Develop' of https://github.com/Techscholars-Education/TS-Frontend into ankit)
           <FiLogOut className="mr-2 text-[#E55858] text-xl" />
           
           <span className="text-[#E55858] font-bold ">Sign Out</span>
