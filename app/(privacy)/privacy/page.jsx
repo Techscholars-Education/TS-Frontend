@@ -209,20 +209,20 @@ const page = () => {
               we do not receive information required, we may choose not to
               provide you with such Service. Service shall have the meaning
               attributed to the phrase in the Terms of Use. <br /> <br /> On our
-              Websites, we use data collection devices such as "cookies" on
-              certain pages to help analyse our web page flow, measure
-              promotional effectiveness, and promote trust and safety. "Cookies"
-              are small fi les placed on your hard drive that assist Us in
-              providing our services. In order to improve our offerings, such as
-              providing more content in areas of greater interest to a majority
-              of users, we send cookies (small files containing a string of
-              characters) to your computer, thereby uniquely identifying your
-              browser. Cookies are used to track your preferences, help you
-              login faster, and aggregated to determine user trends. Most
-              browsers are initially set up to accept cookies, but you can reset
-              your browser to refuse all cookies or to indicate when a cookie is
-              being sent. Some of our features and services may not function
-              properly if your cookies are disabled.
+              Websites, we use data collection devices such as
+              &quot;cookies&quot; on certain pages to help analyse our web page
+              flow, measure promotional effectiveness, and promote trust and
+              safety. &quot;Cookies&quot; are small files placed on your hard
+              drive that assist Us in providing our services. In order to
+              improve our offerings, such as providing more content in areas of
+              greater interest to a majority of users, we send cookies (small
+              files containing a string of characters) to your computer, thereby
+              uniquely identifying your browser. Cookies are used to track your
+              preferences, help you login faster, and aggregated to determine
+              user trends. Most browsers are initially set up to accept cookies,
+              but you can reset your browser to refuse all cookies or to
+              indicate when a cookie is being sent. Some of our features and
+              services may not function properly if your cookies are disabled.
             </p>
           </div>
           <div className="text-darkBlue">
@@ -313,7 +313,7 @@ const page = () => {
               may provide them with aggregate and/or anonymity information about
               You to help advertisers reach the kind of audience they want to
               target. We may make use of the information We have collected from
-              You to enable Us to comply with our advertisers' wishes by
+              You to enable Us to comply with our advertisers wishes by
               displaying their advertisement to that target audience.
             </p>
           </div>
@@ -433,7 +433,7 @@ const page = () => {
               (iii) the may have something similar to the feedback already under
               consideration or in development; and (iv) You are not entitled to
               any compensation or reimbursement of any kind from the Company for
-              the feedback under any circumstances, unless specified. <br />{" "}
+              the feedback under any circumstances, unless specified. <br />
               <br /> Under no circumstances shall the Company be held
               responsible in any manner for any content provided by other users
               even such content is offensive, hurtful or offensive. Please
@@ -446,20 +446,20 @@ const page = () => {
             </h3>
 
             <p>
-              This website and the services are provided on an “as is” basis
-              with all faults and without any warranty of any kind. the company
-              hereby disclaims all warranties and conditions with regard to the
-              website /products and the services, including without limitation,
-              all implied warranties and conditions of merchantability, fitness
-              for a particular purpose, title, accuracy, timeliness,
-              performance, completeness, suitability and non-infringement.
-              Additionally, the company shall not be liable for any damages
-              arising out of or in connection with the use or performance of
-              this site, or the or the services. Your use of any information or
-              materials on this website/services/product is entirely at your own
-              risk, for which we shall not be liable. It shall be your own
-              responsibility to ensure that services provided by us meet your
-              specific requirements.
+              This website and the services are provided on an &quot;as is&quot;
+              basis with all faults and without any warranty of any kind. the
+              company hereby disclaims all warranties and conditions with regard
+              to the website /products and the services, including without
+              limitation, all implied warranties and conditions of
+              merchantability, fitness for a particular purpose, title,
+              accuracy, timeliness, performance, completeness, suitability and
+              non-infringement. Additionally, the company shall not be liable
+              for any damages arising out of or in connection with the use or
+              performance of this site, or the or the services. Your use of any
+              information or materials on this website/services/product is
+              entirely at your own risk, for which we shall not be liable. It
+              shall be your own responsibility to ensure that services provided
+              by us meet your specific requirements.
             </p>
           </div>
         </div>

@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Costing from "../Costing";
-import Footer from "@/components/Footer";
 
 const Classes = () => {
   const costing11th = [
