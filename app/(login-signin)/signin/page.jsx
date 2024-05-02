@@ -41,23 +41,23 @@ const Page = () => {
   
   const handleSubmit = async () => {
     let url=progress.env.NEXT_PUBLIC_BE_API;
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        username: userData.fName,
-        password: userData.password,
-        email: userData.email,
-      }),
-    });
+    // const response = await fetch(url, {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({
+    //     username: userData.fName,
+    //     password: userData.password,
+    //     email: userData.email,
+    //   }),
+    // });
 
-    if (response.ok) {
-      console.log('Signup successful');
-    } else {
-      console.error('Signup failed');
-    }
+    // if (response.ok) {
+    //   console.log('Signup successful');
+    // } else {
+    //   console.error('Signup failed');
+    // }
   };
 
   return (
