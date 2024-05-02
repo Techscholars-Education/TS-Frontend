@@ -1,9 +1,7 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-// import Avatar from "@mui/material/Avatar";
-// import AvatarGroup from "@mui/material/AvatarGroup";
-// import jeePoster from "../../public/Course/jeePoster.jpg";
+
 import avatar from "../../public/Dashboard/avatar.jpg";
 
 const Card = (props) => {
@@ -61,7 +59,7 @@ const Card = (props) => {
           </div>
           <div className="flex justify-between mt-2">
             <button className="bg-darkBlue  p-2 px-4 rounded-md text-sm text-white">
-              <a href="/payment">Explore</a>
+              <a href={props.route}>Explore</a>
             </button>
           </div>
         </div>
