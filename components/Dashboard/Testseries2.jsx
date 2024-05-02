@@ -32,7 +32,7 @@ const Testseries2 = () => {
 
       <div className="grid grid-cols-3 py-12 ">
         {subjectData.map((item) => {
-          return <Testseries2card key={item.id} class={item.class} />;
+          return <Testseries2card key={item.id} className={item.class} />;
         })}
       </div>
     </div>
