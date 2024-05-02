@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
-import CourseList from "@/components/Course/CourseList";
 
 const Page = () => {
   const [hoveredPackage, setHoveredPackage] = useState(null);
@@ -70,7 +69,6 @@ const Page = () => {
     <>
       <div>
         <Navbar />
-        <CourseList />
         <div className="flex justify-center items-center my-8 flex-col">
           <h1 className="font-[600] text-[44px] text-[#002657] ">
             Welcome Harsh
