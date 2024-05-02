@@ -21,6 +21,7 @@ const LeftNavigation = () => {
 
   return (
 <<<<<<< HEAD
+<<<<<<< HEAD
     <nav className="bg-white w-[270px] py-8 px-4 flex flex-col justify-between items-center">
       <div className="mx-auto fixed">
         {/* Ist */}
@@ -28,6 +29,8 @@ const LeftNavigation = () => {
           <Image className="w-10 h-10" src={Logo} alt="Techscholars-Logo" />
           <h1 className="text-gray-800 font-semibold">TECHSCHOLARS</h1>
 =======
+=======
+>>>>>>> parent of 1a344dd (Merge branch 'Develop' of https://github.com/Techscholars-Education/TS-Frontend into ankit)
     <nav className="min-h-screen bg-slate-50  w-1/5 py-8 px-4 flex flex-col justify-between">
       <div className="mx-auto">
         <div className="flex items-center ">
@@ -72,8 +75,12 @@ const LeftNavigation = () => {
       </div>
       <div>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <button className="text-white absolute bottom-6 left-12 hover:text-gray-400 flex items-center ">
           <Link href="/" className="flex">
+=======
+        <button className="text-white ml-8 hover:text-gray-400 flex items-center ">
+>>>>>>> parent of 1a344dd (Merge branch 'Develop' of https://github.com/Techscholars-Education/TS-Frontend into ankit)
 =======
         <button className="text-white ml-8 hover:text-gray-400 flex items-center ">
 >>>>>>> parent of 1a344dd (Merge branch 'Develop' of https://github.com/Techscholars-Education/TS-Frontend into ankit)

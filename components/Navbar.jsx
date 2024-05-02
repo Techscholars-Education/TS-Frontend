@@ -2,12 +2,6 @@ import React from "react";
 import Logo from "@/public/Logo.svg";
 import Link from "next/link";
 import Image from "next/image";
-<<<<<<< HEAD
-import { usePathname } from "next/navigation";
-const Navbar = () => {
-  const pathname = usePathname();
-=======
->>>>>>> parent of 1a344dd (Merge branch 'Develop' of https://github.com/Techscholars-Education/TS-Frontend into ankit)
 
 const Navbar = () => {
   return (
