@@ -9,8 +9,9 @@ function TermConditions() {
         <div className='flex flex-col'>
             <Navbar />
             <div className=" mx-12">
+            <h2 className='font-[600] text-[44px] text-center text-[#002657]'>Terms and conditions</h2>
                 <div className=" my-8">
-                    <h1 className="text-3xl font-bold mb-4 text-center my-8">Company Policy </h1>
+                <h2 className="text-[20px] font-[600] text-[#002657]">Company Policy </h2>
                     <p className='text-[#002657] font-[400] text-[14px] my-5'>We, Codementor Hub Education Pvt. Ltd. A Private Limited Company, registered under the Companies Act, 2013, CIN: U85500WB2024PTC268467, having Registered Office and place of business at 3rd Floor, Dipta Apartment, Basunagar, Madhyamgram, Barasat – II, North 24 Parganas – 700129, under the brand name “TECHSCHOLARS”, honour your trust and adhere to the ethical standards in gathering, using, and safeguarding any information you provide. Please read this privacy policy (‘Policy’) carefully before using the Website, our services and products, along with the Terms of Use provided on the Website. Your use of the Website, or services in connection with the Website or products (‘Services’), or registrations with us through any modes or usage of any products including through SD cards, tablets or other storage / transmitting device shall signify your acceptance of this Policy and your agreement to be legally bound by the same. If you do not agree with the terms of this Policy, do not use the Website, our products or avail any of our Services.</p>
                     <h2 className="text-[20px] font-[600] text-[#002657]">Disclosure of Personal Information</h2>
                     <p className='text-[#002657] font-[400] text-[14px] my-5'>The Website/Services/products obtains the information you provide when you download and register for the Services or products. When you register with us, you generally provide</p>

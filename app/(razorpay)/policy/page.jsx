@@ -11,6 +11,7 @@ function Policy() {
                 <Navbar />
                 <div className='flex flex-col mx-12'>
                     <div>
+                    <h2 className='font-[600] text-[44px] text-center text-[#002657]'>Privacy policy</h2>
                         <div className='text-[#002657] font-[400] text-[14px]'>
                           <p>   Because your privacy is important to us</p>
                             <p>Codementor Hub Education Pvt. Ltd.</p>
