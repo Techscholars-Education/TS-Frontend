@@ -10,6 +10,7 @@ const Course = () => {
     {
       id: 1,
       title: "JEE",
+      route: "/course/jee",
       description:
         "Product Management Masterclass, you will learn with Sarah Johnson. Head of Product Customer Platform Gojek Indonesia",
       Poster: jeePoster,
@@ -17,6 +18,7 @@ const Course = () => {
     {
       id: 2,
       title: "NEET",
+      route: "/course/neet",
       description:
         "Product Management Masterclass, you will learn with Sarah Johnson. Head of Product Customer Platform Gojek Indonesia",
       Poster: neetPoster,
@@ -24,6 +26,7 @@ const Course = () => {
     {
       id: 3,
       title: "Foundation",
+      route: "/course/foundation",
       description:
         "Product Management Masterclass, you will learn with Sarah Johnson. Head of Product Customer Platform Gojek Indonesia",
       Poster: foundationPoster,
@@ -40,6 +43,7 @@ const Course = () => {
                 key={item.id}
                 title={item.title}
                 description={item.description}
+                route={item.route}
                 image={item.Poster}
               />
             );
