@@ -20,7 +20,7 @@ const Testseries1 = () => {
 
       <div className="grid grid-cols-3 py-12 ">
         {classData.map((item) => {
-          return <Testseries1card key={item.id} class={item.class} />;
+          return <Testseries1card key={item.id} className={item.class} />;
         })}
       </div>
     </div>
