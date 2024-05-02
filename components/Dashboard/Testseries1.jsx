@@ -1,4 +1,3 @@
-
 import React from "react";
 import Testseries1card from "./Testseries1card";
 
@@ -21,7 +20,7 @@ const Testseries1 = () => {
 
       <div className="grid grid-cols-3 py-12 ">
         {classData.map((item) => {
-          return <Testseries1card key={item.id} className={item.class} />;
+          return <Testseries1card key={item.id} class={item.class} />;
         })}
       </div>
     </div>

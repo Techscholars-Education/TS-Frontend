@@ -2,6 +2,7 @@ import React from "react";
 import Logo from "@/public/Logo.svg";
 import Link from "next/link";
 import Image from "next/image";
+
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -25,15 +26,19 @@ const Navbar = () => {
           <Link
             href="/"
             className="font-Inter text-lg font-medium cursor-pointer pl-4 transition-all duration-300"
+            className="font-Inter text-lg font-medium cursor-pointer pl-4 transition-all duration-300"
           >
             TECHSCHOLARS
           </Link>
         </div>
         <ul className="font-Poppins flex gap-10  text-lg ">
+        <ul className="font-Poppins flex gap-10  text-lg ">
           <li>
+            <Link href="/course">Courses</Link>
             <Link href="/course">Courses</Link>
           </li>
           <li>
+            <Link href="/exams">Scholarship</Link>
             <Link href="/exams">Scholarship</Link>
           </li>
 
