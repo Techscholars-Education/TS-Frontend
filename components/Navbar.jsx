@@ -2,10 +2,14 @@ import React from "react";
 import Logo from "@/public/Logo.svg";
 import Link from "next/link";
 import Image from "next/image";
+<<<<<<< HEAD
 
 const Navbar = () => {
   const pathname = usePathname();
+=======
+>>>>>>> parent of 1a344dd (Merge branch 'Develop' of https://github.com/Techscholars-Education/TS-Frontend into ankit)
 
+const Navbar = () => {
   return (
     <header className=" bg-gray-100  sticky left-0 right-0 top-0 z-[50] ">
       <nav className=" w-9/12 mx-auto flex justify-between items-center py-4">
