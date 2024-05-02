@@ -3,9 +3,12 @@ import Logo from "@/public/Logo.svg";
 import Link from "next/link";
 import Image from "next/image";
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 const Navbar = () => {
   const pathname = usePathname();
+=======
+>>>>>>> parent of 1a344dd (Merge branch 'Develop' of https://github.com/Techscholars-Education/TS-Frontend into ankit)
 =======
 >>>>>>> parent of 1a344dd (Merge branch 'Develop' of https://github.com/Techscholars-Education/TS-Frontend into ankit)
 
