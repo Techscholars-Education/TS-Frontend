@@ -60,7 +60,6 @@ const Footer = () => {
                   className="hover:underline hover:underline-offset-2 transition-all"
                   href="/contact"
                 >
-                  {" "}
                   Contact
                 </Link>
               </th>
