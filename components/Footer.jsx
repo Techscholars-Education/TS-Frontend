@@ -9,7 +9,7 @@ const Footer = () => {
         <table className=" w-full mx-10 text-darkBlue">
           <tbody className="text-2xl ">
             <tr>
-              <th className=" text-start -4">
+              <th className=" text-start py-4">
                 <Link
                   className="hover:underline hover:underline-offset-2 transition-all"
                   href="/aboutus"
@@ -28,7 +28,14 @@ const Footer = () => {
               <th className=" text-start py-4">Testimonials</th>
             </tr>
             <tr>
-              <th className=" text-start py-4">Careers</th>
+              <th className=" text-start py-4">
+                <Link
+                  className="hover:underline hover:underline-offset-2 transition-all"
+                  href="/shipping"
+                >
+                  Shipping
+                </Link>
+              </th>
               <th className=" text-start py-4">
                 <Link
                   className="hover:underline hover:underline-offset-2 transition-all"
