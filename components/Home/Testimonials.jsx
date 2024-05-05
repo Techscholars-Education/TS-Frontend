@@ -1,8 +1,5 @@
 "use client";
 import React from "react";
-import Image from "next/image";
-import arrowRight from "../../public/Home/arrow-right.svg";
-import Nature from "../../public/Home/Nature.jpg";
 
 const Testimonials = () => {
   return (
@@ -11,23 +8,20 @@ const Testimonials = () => {
         <h5 className="text-lg text-center font-bold text-darkBlue font-Poppins">
           Testimonials
         </h5>
-
         <h2 className="text-darkBlue font-semibold text-5xl text-center mt-10 mb-6 font-Poppins ">
           What our parents have to say about us.
         </h2>
       </div>
-
-      <div className="flex justify-between items-center my-16 w-11/12 mx-auto">
-        <div className="bg-white flex justify-center items-center w-16 h-16">
-          <Image src={arrowRight} alt="arrow"></Image>
-        </div>
-
-        <div className="flex w-5/6 ">
-          <Image className=" mx-auto" alt="nature" src={Nature}></Image>
-        </div>
-
-        <div className="bg-yellowish flex justify-center items-center w-16 h-16">
-          <Image className="rotate-180" alt="arrow" src={arrowRight}></Image>
+      <div className="flex justify-center items-center my-16 w-11/12 mx-auto ">
+        <div className="relative w-full overflow-hidden pt-[56.25%]">
+          <iframe
+            className="absolute top-0 left-0 w-full h-full"
+            src="https://www.youtube.com/embed/K2vbrZJHLsY?si=dsqj_4Ks-sVMIYjq"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
         </div>
       </div>
     </section>
