@@ -42,6 +42,7 @@ const Aboutslider = () => {
     speed: 700,
     slidesToShow: 3,
     slidesToScroll: 1,
+    autoplay: true,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };
