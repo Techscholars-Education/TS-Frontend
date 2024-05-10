@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -8,19 +9,75 @@ const Footer = () => {
         <table className=" w-full mx-10 text-darkBlue">
           <tbody className="text-2xl ">
             <tr>
-              <th className=" text-start -4">About Us</th>
-              <th className=" text-start py-4">Privacy Policy</th>
+              <th className=" text-start py-4">
+                <Link
+                  className="hover:underline hover:underline-offset-2 transition-all"
+                  href="/aboutus"
+                >
+                  About Us
+                </Link>
+              </th>
+              <th className=" text-start py-4">
+                <Link
+                  className="hover:underline hover:underline-offset-2 transition-all"
+                  href="/privacy"
+                >
+                  Privacy Policy
+                </Link>
+              </th>
               <th className=" text-start py-4">Testimonials</th>
             </tr>
             <tr>
-              <th className=" text-start py-4">Careers</th>
-              <th className=" text-start py-4">Terms and Services</th>
-              <th className=" text-start py-4">Schedule a Call</th>
+              <th className=" text-start py-4">
+                <Link
+                  className="hover:underline hover:underline-offset-2 transition-all"
+                  href="/shipping"
+                >
+                  Shipping
+                </Link>
+              </th>
+              <th className=" text-start py-4">
+                <Link
+                  className="hover:underline hover:underline-offset-2 transition-all"
+                  href="/terms-conditions"
+                >
+                  Terms and Services
+                </Link>
+              </th>
+              <th className=" text-start py-4">
+                <Link
+                  className="hover:underline hover:underline-offset-2 transition-all"
+                  href="/councillor"
+                >
+                  Schedule a Call
+                </Link>
+              </th>
             </tr>
             <tr>
-              <th className="text-start py-4">Help/FAQs</th>
-              <th className="text-start py-4">Contact</th>
-              <th className="text-start py-4">Courses</th>
+              <th className="text-start py-4">
+                <Link
+                  className="hover:underline hover:underline-offset-2 transition-all"
+                  href="/faqs"
+                >
+                  Help/FAQs
+                </Link>
+              </th>
+              <th className="text-start py-4">
+                <Link
+                  className="hover:underline hover:underline-offset-2 transition-all"
+                  href="/contact"
+                >
+                  Contact
+                </Link>
+              </th>
+              <th className="text-start py-4">
+                <Link
+                  className="hover:underline hover:underline-offset-2 transition-all"
+                  href="/course"
+                >
+                  Courses
+                </Link>
+              </th>
             </tr>
           </tbody>
         </table>

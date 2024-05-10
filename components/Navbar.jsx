@@ -6,7 +6,6 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 const Navbar = () => {
   const pathname = usePathname();
-  console.log(pathname);
 
   return (
     <header className=" bg-gray-100  sticky left-0 right-0 top-0 z-[50] ">
@@ -19,7 +18,7 @@ const Navbar = () => {
           ></Image>
           <Link
             href="/"
-            className="font-Inter text-lg font-medium cursor-pointer pl-4 transition-all duration-300 "
+            className="font-Inter text-lg font-medium cursor-pointer pl-4 transition-all duration-300 hover:underline hover:underline-offset-2 "
           >
             TECHSCHOLARS
           </Link>

@@ -1,45 +1,54 @@
-"use client";
+'use client'
 import React, { useState } from "react";
 import Sidenavigation from "@/components/Sidenavigation";
 import { FcGoogle } from "react-icons/fc";
 import Box from "@mui/material/Box";
 import LinearProgress from "@mui/material/LinearProgress";
+import { RiEyeFill, RiEyeOffFill } from "react-icons/ri";
+
 
 const Page = () => {
   const [userData, setUserData] = useState({
     email: "",
-    fNmae: "",
+    fName: "",
     lName: "",
     mobNumber: "",
     password: "",
   });
-  const [progress, setProgress] = React.useState(2);
+  const [progress, setProgress] = useState(0); 
+  const [showPassword, setShowPassword] = useState(false);
 
-  React.useEffect(() => {
-    const timer = setInterval(() => {
-      setProgress((oldProgress) => {
-        if (oldProgress === 100) {
-          return 0;
-        }
-        const diff = Math.random() * 10;
-        return Math.min(oldProgress + diff, 100);
-      });
-    }, 500);
 
-    return () => {
-      clearInterval(timer);
-    };
-  }, []);
 
-  const handChange = (e) => {
-    setUserData(e.target.value);
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setUserData((prevUserData) => ({
+      ...prevUserData,
+      [id]: value,
+    }));
+
+    const complexity = calculatePasswordComplexity(value);
+    setProgress(complexity);
   };
 
+  const calculatePasswordComplexity = (password) => {
+
+    const length = password.length;
+    if (length <= 4) return 20;
+    if (length <= 8) return 50;
+    return 100;
+  };
+  
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+  
   const handleSubmit = () => {
-    // Add your login logic here
-    console.log("Email:", email);
-    console.log("Password:", password);
+    
+    console.log("Email:", userData.email);
+    console.log("Password:", userData.password);
   };
+
   return (
     <div>
       <div className="flex w-full h-screen font-Poppins">
@@ -62,67 +71,73 @@ const Page = () => {
                     type="email"
                     placeholder="Enter your email"
                     value={userData.email}
-                    onChange={handChange}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="mb-4 flex">
                   <input
                     className="shadow appearance-none border rounded w-full mr-4 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="email"
+                    id="fName"
                     type="text"
                     placeholder="First name"
-                    value={userData.fNmae}
-                    onChange={handChange}
+                    value={userData.fName}
+                    onChange={handleChange}
                   />
                   <input
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="email"
+                    id="lName"
                     type="text"
                     placeholder="Last name"
                     value={userData.lName}
-                    onChange={handChange}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="mb-4">
                   <input
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="password"
+                    id="mobNumber"
                     type="number"
                     placeholder="Add your phone number"
                     value={userData.mobNumber}
-                    onChange={handChange}
+                    onChange={handleChange}
                   />
                 </div>
-                <div className="mb-4">
+                <div className="mb-4 relative">
                   <input
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="password"
-                    type="password"
-                    placeholder="password"
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Password"
                     value={userData.password}
-                    onChange={handChange}
+                    onChange={handleChange}
                   />
+                  <span
+                    className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer"
+                    onClick={togglePasswordVisibility}
+                  >
+                    {showPassword ? <RiEyeOffFill /> : <RiEyeFill />}
+                  </span>
                 </div>
+
 
                 <div className="flex flex-col  items-center justify-between">
                   <Box sx={{ width: "100%" }}>
                     <LinearProgress
-                      height="20"
                       variant="determinate"
                       value={progress}
                       style={{
                         height: "4px",
                         borderRadius: "10px",
-                        color: "#041C3B",
+                        color: progress < 50 ? "#FF0000" : progress < 100 ? "#FFA500" : "#008000",
                         backgroundColor: "#DCDCDC",
                       }}
                     />
                     <div className="flex justify-between mt-2">
                       <span className="text-[#898989] text-[12px] font-[400]">
-                        Your password is great. Nice work!
+                        {progress < 50 ? "Your password is Weak" : progress < 100 ? "Medium" : "Your password is great. Nice work!"}
                       </span>
                       <span className="text-[#898989] text-[12px] font-[400]">
-                        Strong
+                        {progress === 0 ? "" : progress + "%"}
                       </span>
                     </div>
                   </Box>
