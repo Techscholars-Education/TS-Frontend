@@ -15,7 +15,7 @@ const Navbar = () => {
           ></Image>
           <Link
             href="/"
-            className="font-Inter text-lg font-medium cursor-pointer pl-4 transition-all duration-300"
+            className="font-Inter text-lg font-medium cursor-pointer pl-4 transition-all duration-300 "
           >
             TECHSCHOLARS
           </Link>

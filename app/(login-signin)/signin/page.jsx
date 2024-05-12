@@ -6,6 +6,7 @@ import Box from "@mui/material/Box";
 import LinearProgress from "@mui/material/LinearProgress";
 import { RiEyeFill, RiEyeOffFill } from "react-icons/ri";
 import { signIn } from 'next-auth/react';
+import axios from "axios";
 
 const Page = () => {
   const [userData, setUserData] = useState({
@@ -13,9 +14,10 @@ const Page = () => {
     fName: "",
     lName: "",
     password: "",
+    phoneno: ""
   });
-  const [progress, setProgress] = useState(0); 
   const [showPassword, setShowPassword] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -24,8 +26,10 @@ const Page = () => {
       [id]: value,
     }));
 
-    const complexity = calculatePasswordComplexity(value);
-    setProgress(complexity);
+    if (id === "password") {
+      const complexity = calculatePasswordComplexity(value);
+      setProgress(complexity);
+    }
   };
 
   const calculatePasswordComplexity = (password) => {
@@ -34,30 +38,25 @@ const Page = () => {
     if (length <= 8) return 50;
     return 100;
   };
-  
+
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
-  
-  const handleSubmit = async () => {
-    let url=progress.env.NEXT_PUBLIC_BE_API;
-    // const response = await fetch(url, {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({
-    //     username: userData.fName,
-    //     password: userData.password,
-    //     email: userData.email,
-    //   }),
-    // });
 
-    // if (response.ok) {
-    //   console.log('Signup successful');
-    // } else {
-    //   console.error('Signup failed');
-    // }
+  const handleSubmit = async () => {
+    try {
+      const response = await axios.post("https://api.techscholars.co.in/auth/v1/signup", {
+        first_name: userData.fName,
+        email: userData.email,
+        password: userData.password,
+        last_name: userData.lName,
+        phoneno: userData.phoneno
+      });
+      console.log(response.data);
+      console.log('Signup successful');
+    } catch (error) {
+      console.error('Signup failed', error);
+    }
   };
 
   return (
@@ -119,29 +118,41 @@ const Page = () => {
                     {showPassword ? <RiEyeOffFill /> : <RiEyeFill />}
                   </span>
                 </div>
-
+                {userData.password && (
+                  <div className="mb-4">
+                    <Box sx={{ width: "100%" }}>
+                      <LinearProgress
+                        variant="determinate"
+                        value={progress}
+                        style={{
+                          height: "4px",
+                          borderRadius: "10px",
+                          color: progress < 50 ? "#FF0000" : progress < 100 ? "#FFA500" : "#008000",
+                          backgroundColor: "#DCDCDC",
+                        }}
+                      />
+                      <div className="flex justify-between mt-2">
+                        <span className="text-[#898989] text-[12px] font-[400]">
+                          {progress < 50 ? "Your password is Weak" : progress < 100 ? "Medium" : "Your password is great. Nice work!"}
+                        </span>
+                        <span className="text-[#898989] text-[12px] font-[400]">
+                          {progress === 0 ? "" : progress + "%"}
+                        </span>
+                      </div>
+                    </Box>
+                  </div>
+                )}
+                <div className="mb-4">
+                  <input
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="phoneno"
+                    type="tel"
+                    placeholder="Phone Number"
+                    value={userData.phoneno}
+                    onChange={handleChange}
+                  />
+                </div>
                 <div className="flex flex-col  items-center justify-between">
-                  <Box sx={{ width: "100%" }}>
-                    <LinearProgress
-                      variant="determinate"
-                      value={progress}
-                      style={{
-                        height: "4px",
-                        borderRadius: "10px",
-                        color: progress < 50 ? "#FF0000" : progress < 100 ? "#FFA500" : "#008000",
-                        backgroundColor: "#DCDCDC",
-                      }}
-                    />
-                    <div className="flex justify-between mt-2">
-                      <span className="text-[#898989] text-[12px] font-[400]">
-                        {progress < 50 ? "Your password is Weak" : progress < 100 ? "Medium" : "Your password is great. Nice work!"}
-                      </span>
-                      <span className="text-[#898989] text-[12px] font-[400]">
-                        {progress === 0 ? "" : progress + "%"}
-                      </span>
-                    </div>
-                  </Box>
-
                   <button
                     className="bg-[#FFE01B]  mt-5 w-full font-medium py-2 px-4 rounded"
                     type="button"
