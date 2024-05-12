@@ -1,12 +1,12 @@
 import React from "react";
 import LeftNavigation from "@/components/LeftNavigation/LeftNavigation";
-import Referrals from "@/components/Dashboard/Referrals";
+import Testseries3 from "@/components/Dashboard/Testseries3";
 const page = () => {
   return (
     <div className="h-screen overflow-auto">
       <section className="flex">
         <LeftNavigation />
-        <Referrals />
+        <Testseries3 />
       </section>
     </div>
   );

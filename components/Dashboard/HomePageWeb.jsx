@@ -6,11 +6,8 @@ import { RiSunLine, RiMoonClearLine } from "react-icons/ri";
 import { DateRangePicker } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css";
-import Calendar from "color-calendar";
-import "color-calendar/dist/css/theme-glass.css";
-
+import Calendar from "react-calendar";
 import { LineChart } from "@mui/x-charts/LineChart";
-
 
 import CircularProgress, {
   CircularProgressProps,
@@ -88,40 +85,6 @@ const HomePageWeb = () => {
       clearInterval(timer);
     };
   }, []);
-  
-  useEffect(() => {
-    const calendar = new Calendar({
-      id: "#myCal",
-      theme: "glass",
-      weekdayType: "long-upper",
-      monthDisplayType: "long",
-      calendarSize: "small",
-      layoutModifiers: ["month-left-align"],
-      eventsData: [
-        {
-          id: 1,
-          name: "French class",
-          start: "2020-08-17T06:00:00",
-          end: "2020-08-18T20:30:00"
-        },
-        {
-          id: 2,
-          name: "Blockchain 101",
-          start: "2020-08-20T10:00:00",
-          end: "2020-08-20T11:30:00"
-        }
-      ],
-      dateChanged: (currentDate, events) => {
-        console.log("date change", currentDate, events);
-      },
-      monthChanged: (currentDate, events) => {
-        console.log("month change", currentDate, events);
-      }
-    });
-
-  
-  
-  }, []);
 
   return (
     <>
@@ -142,13 +105,15 @@ const HomePageWeb = () => {
               <div className="flex">
                 <RiSunLine color="#002657" className="mt-0.5" />
                 <div
-                  className={`relative inline-block w-14 h-5 mx-3 align-middle select-none transition duration-200 ease-in bg-[#002657] rounded-full cursor-pointer ${isChecked ? "bg-[#002657]" : "bg-[#002657]"
-                    }`}
+                  className={`relative inline-block w-14 h-5 mx-3 align-middle select-none transition duration-200 ease-in bg-[#002657] rounded-full cursor-pointer ${
+                    isChecked ? "bg-[#002657]" : "bg-[#002657]"
+                  }`}
                   onClick={handleToggle}
                 >
                   <div
-                    className={`toggle-dot absolute w-4 h-4 top-0.5 mx-1 rounded-full bg-[#FED102] transition-transform ${isChecked ? "transform translate-x-[2vw]" : ""
-                      }`}
+                    className={`toggle-dot absolute w-4 h-4 top-0.5 mx-1 rounded-full bg-[#FED102] transition-transform ${
+                      isChecked ? "transform translate-x-[2vw]" : ""
+                    }`}
                   ></div>
                 </div>
                 <RiMoonClearLine color="#002657" className="mt-0.5" />
@@ -397,10 +362,7 @@ const HomePageWeb = () => {
           </div>
           <div className=" w-[382px] ml-24 flex flex-col">
             <div className="m-6">
-            <div>
-        <h1>My Calendar App</h1>
-         <div id="myCal"></div>
-      </div>
+              <Calendar />
             </div>
             <div className="flex flex-col rounded-3xl ml-6 mt-8 bg-white p-4">
               <div className="flex justify-between">
