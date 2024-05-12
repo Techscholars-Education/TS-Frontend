@@ -1,13 +1,7 @@
-
-'use client'
+"use client";
 import React, { useState } from "react";
 import Sidenavigation from "@/components/Sidenavigation";
 import { FcGoogle } from "react-icons/fc";
-import axios from "axios";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { redirect } from "next/navigation";
-
 
 const Page = () => {
   const [email, setEmail] = useState("");
@@ -21,23 +15,11 @@ const Page = () => {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = async () => {
-    try {
-      const response = await axios.post("https://api.techscholars.co.in/auth/v1/login", {
-        email: email,
-        password: password,
-      });
-      console.log(response.data);
-      toast.success("Login successful");
-      console.log('Login successful');
-      redirect('/home');
-
-    } catch (error) {
-      console.error('Login failed', error);
-      toast.error("Login failed");
-    }
+  const handleSubmit = () => {
+    // Add your login logic here
+    console.log("Email:", email);
+    console.log("Password:", password);
   };
-
   return (
     <div>
       <div className="flex w-full h-screen font-Poppins">
@@ -105,7 +87,6 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <ToastContainer />
     </div>
   );
 };
