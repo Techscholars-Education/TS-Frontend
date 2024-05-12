@@ -7,6 +7,8 @@ import LinearProgress from "@mui/material/LinearProgress";
 import { RiEyeFill, RiEyeOffFill } from "react-icons/ri";
 import { signIn } from 'next-auth/react';
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Page = () => {
   const [userData, setUserData] = useState({
@@ -53,9 +55,18 @@ const Page = () => {
         phoneno: userData.phoneno
       });
       console.log(response.data);
+      toast.success(response.data.detail);
       console.log('Signup successful');
+      setUserData({
+        email: "",
+        fName: "",
+        lName: "",
+        password: "",
+        phoneno: ""
+      });
     } catch (error) {
       console.error('Signup failed', error);
+      toast.error('Signup failed');
     }
   };
 
@@ -70,6 +81,7 @@ const Page = () => {
               Login
             </a>
           </nav>
+          <ToastContainer />
           <div className="flex flex-col justify-center items-center h-screen w-full">
             <div className=" w-[568] h-[418] p-8">
               <form className=" px-8 pt-6 mb-4 h-[463px]  w-[418px] ">
