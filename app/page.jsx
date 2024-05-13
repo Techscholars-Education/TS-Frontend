@@ -42,6 +42,8 @@ const Home = () => {
       <Studenttest />
       <Aboutapp />
       <Footer />
+
+      
     </section>
   );
 };
