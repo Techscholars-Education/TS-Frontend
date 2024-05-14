@@ -1,88 +1,17 @@
 "use client";
-import React from "react";
-import Logo from "@/public/Logo.svg";
+import { useState } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { RxCross1 } from "react-icons/rx";
 import Link from "next/link";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
 const Navbar = () => {
-  const pathname = usePathname();
+  const [isBurgerClicked, setIsBurgerClicked] = useState(false);
 
   return (
-    <header className=" bg-gray-100  sticky left-0 right-0 top-0 z-[50] ">
-      <nav className=" w-9/12 mx-auto flex justify-between items-center py-4">
-        <div className="flex items-center">
-          <Image
-            className="w-12 h-12"
-            src={Logo}
-            alt="Techscholars-Logo"
-          ></Image>
-          <Link
-            href="/"
-            className="font-Inter text-lg font-medium cursor-pointer pl-4 transition-all duration-300 hover:underline hover:underline-offset-2 "
-          >
-            TECHSCHOLARS
-          </Link>
-        </div>
-        <ul className="font-Poppins flex gap-10  text-lg text-darkBlue ">
-          <li>
-            <Link
-              className={`${
-                pathname === "/course"
-                  ? "font-bold"
-                  : "hover:underline duration-200 transition-all "
-              }`}
-              href="/course"
-            >
-              Courses
-            </Link>
-          </li>
-          <li>
-            <Link
-              className={`${
-                pathname === "/exams"
-                  ? "font-bold"
-                  : "hover:underline duration-200 transition-all "
-              }`}
-              href="/exams"
-            >
-              Scholarship
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              className={`${
-                pathname === "/councillor"
-                  ? "font-bold"
-                  : "hover:underline duration-200 transition-all "
-              }`}
-              href="/councillor
-            "
-            >
-              Councillor
-            </Link>
-          </li>
-        </ul>
-
-        <div className="flex justify-center items-center gap-6 font-Inter">
-          <Link href="/login">
-            <button className="border border-black/40 rounded-xl px-4 py-2 text-lg text-neutral-800 hover:-translate-y-2 duration-300 auth-btn">
-              Login
-            </button>
-          </Link>
-          <Link href="/signin">
-            <button className=" border border-black/40 rounded-xl px-4 py-2 bg-yellowish text-lg text-neutral-800 hover:-translate-y-2  duration-300  auth-btn">
-              Signup
-            </button>
-          </Link>
-        </div>
-      </nav>
-      <div className="bg-yellowish drop-shadow-2xl">
-        <p className="font-Inter text-darkBlue font-semibold text-center py-2 text-md tracking-widest uppercase font-base">
-          Your unfair advantage - Accelerate your journey towards success!
-        </p>
-      </div>
-    </header>
+    <>
+      <nav
+        className={`bg-white shadow-md text-stone-800 py-6 md:py-8 w-full  sticky top-0 z-10 `}
+      ></nav>
+    </>
   );
 };
 

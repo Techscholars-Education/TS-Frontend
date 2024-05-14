@@ -15,7 +15,7 @@ import React from "react";
 
 const Home = () => {
   return (
-    <section className="bg-gray-100">
+    <section className="bg-white">
       <Navbar />
       <Hero />
       <Benefits />
