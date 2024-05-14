@@ -6,96 +6,92 @@ import foundation from "../../public/Home/foundation.svg";
 
 const Curriculum = () => {
   return (
-    <section className="bg-yellowish py-16">
+    <section className="bg-[#F8F8F8] my-16 py-16">
       <div className=" w-11/12 mx-auto  rounded-xl">
-        <h5 className="text-lg text-center font-bold text-darkBlue font-Poppins">
-          Curriculum
-        </h5>
-
-        <h2 className="text-darkBlue font-bold text-5xl text-center my-10 font-Poppins ">
+        <div className=" text-center">
+          <h5 className="text-xs font-medium bg-gray-300 text-darkBlue font-Poppins border py-1 rounded-full px-4 inline-block">
+            Curriculum
+          </h5>
+        </div>
+        <h2 className="text-darkBlue font-semibold text-4xl text-center my-4 font-Poppins ">
           Explore our exam categories
         </h2>
+        <div className="my-4 text-center  ">
+          <p className="font-Poppins px-6 leading-normal  md:px-20 lg:px-44 text-xs md:text-sm text-gray-600 tracking-wide ">
+            Welcome to TECHSCHOLARS. Transforming average students into toppers
+            with our innovative teaching with our services.
+          </p>
+        </div>
 
-        {/* Exam categories */}
-        <div className="space-x-10 flex justify-center items-center">
-          <div className=" w-1/3  font-Poppins border-2 border-darkBlue p-6  hover:rotate-0 hover:skew-x-0 hover:skew-y-0 duration-500 exam-card rounded-2xl">
-            <div className=" bg-darkBlue rounded-full h-20 w-20 flex justify-center items-center p-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-500 drop-shadow-md">
-              <Image className="h-8 w-8 " src={jee} alt="student-icon"></Image>
+        {/* Exam category */}
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 my-10 ">
+          <div className=" flex justify-center items-start  ">
+            <div className=" p-2 w-[75px]  bg-darkBlue rounded-full  ">
+              <Image className=" mx-auto my-1 " src={jee}></Image>
             </div>
 
-            <div className="p-4">
-              <h1 className="text-2xl text-darkBlue  shadow-effect font-semibold group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-500 drop-shadow-md">
-                JEE
-              </h1>
+            <div className=" px-2 w-full  ">
+              <h3 className=" font-Poppins text-xl font-semibold ">Jee</h3>
+              <p className="text-xs font-Poppins text-gray-600">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
+                sed!
+              </p>
+              <div className="flex mt-4 space-x-2 flex-wrap">
+                <div className="border border-darkBlue rounded-full text-xs px-2 py-1 my-1">
+                  11<sup>th</sup> Class
+                </div>
+                <div className="border border-darkBlue rounded-full text-xs px-2 py-1 my-1">
+                  12<sup>th</sup> Class
+                </div>
+                <div className="border border-darkBlue rounded-full text-xs px-1 py-1 my-1">
+                  Target 13<sup>th</sup>
+                </div>
+              </div>
             </div>
-            <p className="text-darkBlue group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-500 text-lg drop-shadow-md px-4">
-              Join our classes
-            </p>
-
-            <ul className="text-darkBlue group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-500 drop-shadow-md my-4">
-              <li className="border border-darkBlue rounded-xl p-2 inline-block mx-2 my-2">
-                11<sup>th</sup> Class
-              </li>
-              <li className="border border-darkBlue rounded-xl p-2 inline-block mx-2 my-2">
-                12<sup>th</sup> Class
-              </li>
-              <li className="border border-darkBlue rounded-xl p-2 inline-block mx-2 my-2">
-                Target 13<sup>th</sup>
-              </li>
-            </ul>
           </div>
-          <div className=" w-1/3  font-Poppins border-2 border-darkBlue p-6  hover:rotate-0 hover:skew-x-0 hover:skew-y-0 duration-500 exam-card rounded-2xl">
-            <div className=" bg-darkBlue rounded-full h-20 w-20 flex justify-center items-center p-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-500 drop-shadow-md">
-              <Image className="h-8 w-8  " src={neet} alt="book-icon"></Image>
+          <div className=" flex  justify-center items-start ">
+            <div className=" p-2 w-[70px]  bg-darkBlue rounded-full">
+              <Image className=" mx-auto my-1 " src={neet}></Image>
             </div>
-
-            <div className="p-4">
-              <h1 className="text-2xl text-darkBlue  shadow-effect font-semibold group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-500 drop-shadow-md">
-                NEET
-              </h1>
+            <div className=" px-2 w-full ">
+              <h3 className=" font-Poppins text-xl font-semibold ">Jee</h3>
+              <p className="text-xs font-Poppins text-gray-600">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
+                sed!
+              </p>
+              <div className="flex mt-4 space-x-2 flex-wrap">
+                <div className="border border-darkBlue rounded-full text-xs px-2 py-1 my-1">
+                  11<sup>th</sup> Class
+                </div>
+                <div className="border border-darkBlue rounded-full text-xs px-2 py-1 my-1">
+                  12<sup>th</sup> Class
+                </div>
+                <div className="border border-darkBlue rounded-full text-xs px-1 py-1 my-1">
+                  Target 13<sup>th</sup>
+                </div>
+              </div>
             </div>
-            <p className="text-darkBlue group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-500 text-lg drop-shadow-md px-4">
-              Join our classes
-            </p>
-
-            <ul className="text-darkBlue group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-500 drop-shadow-md my-4">
-              <li className="border border-darkBlue rounded-xl p-2 inline-block mx-2 my-2">
-                11<sup>th</sup> Class
-              </li>
-              <li className="border border-darkBlue rounded-xl p-2 inline-block mx-2 my-2">
-                12<sup>th</sup> Class
-              </li>
-              <li className="border border-darkBlue rounded-xl p-2 inline-block mx-2 my-2">
-                Target 13<sup>th</sup>
-              </li>
-            </ul>
           </div>
-          <div className=" w-1/3  font-Poppins border-2 border-darkBlue p-6  hover:rotate-0 hover:skew-x-0 hover:skew-y-0 duration-500 exam-card rounded-2xl">
-            <div className=" bg-darkBlue rounded-full h-20 w-20 flex justify-center items-center p-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-500 drop-shadow-md">
-              <Image
-                className="h-8 w-8  "
-                src={foundation}
-                alt="digital-education"
-              ></Image>
+          <div className=" flex  justify-center items-start ">
+            <div className=" p-2 w-[70px]  bg-darkBlue rounded-full">
+              <Image className=" mx-auto my-2 " src={foundation}></Image>
             </div>
-
-            <div className="p-4">
-              <h1 className="text-2xl text-darkBlue  shadow-effect font-semibold group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-500 drop-shadow-md">
-                FOUNDATION
-              </h1>
+            <div className=" px-2  w-full">
+              <h3 className=" font-Poppins text-xl font-semibold ">Jee</h3>
+              <p className="text-xs font-Poppins text-gray-600">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
+                sed!
+              </p>
+              <div className="flex mt-4 space-x-2 flex-wrap">
+                <div className="border border-darkBlue rounded-full text-xs px-2 py-1 my-1">
+                  9<sup>th</sup> Class
+                </div>
+                <div className="border border-darkBlue rounded-full text-xs px-2 py-1 my-1">
+                  10<sup>th</sup> Class
+                </div>
+              </div>
             </div>
-            <p className="text-darkBlue group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-500 text-lg drop-shadow-md px-4">
-              Join our classes
-            </p>
-
-            <ul className="text-darkBlue group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-500 drop-shadow-md my-4">
-              <li className="border border-darkBlue rounded-xl p-2 inline-block mx-2 my-2">
-                9<sup>th</sup> Class
-              </li>
-              <li className="border border-darkBlue rounded-xl p-2 inline-block mx-2 my-2">
-                10<sup>th</sup> Class
-              </li>
-            </ul>
           </div>
         </div>
       </div>

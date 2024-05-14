@@ -19,21 +19,6 @@ const Home = () => {
       <Navbar />
       <Hero />
       <Benefits />
-      <div className="text-center my-20  ">
-        <h2 className="text-darkBlue font-semibold text-4xl text-center font-Poppins ">
-          Bharat&apos;s Most Trusted Educational platform
-        </h2>
-
-        <div className="my-10">
-          <Link
-            title="Contact with Councillor"
-            href="/councillor"
-            className=" font-Poppins text-darkBlue border border-black/40 rounded-xl px-10 py-3 bg-yellowish text-2xl font-medium  hover:-translate-y-2  duration-300  auth-btn"
-          >
-            Get started
-          </Link>
-        </div>
-      </div>
       <Curriculum />
       <About />
       <Packages />
