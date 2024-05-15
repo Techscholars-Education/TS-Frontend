@@ -2,13 +2,10 @@
 import React, { useState } from "react";
 import Sidenavigation from "@/components/Sidenavigation";
 import { FcGoogle } from "react-icons/fc";
-import { useSession, signIn, signOut } from "next-auth/react"
 
 const Page = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { data: session } = useSession()
-
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -23,17 +20,6 @@ const Page = () => {
     console.log("Email:", email);
     console.log("Password:", password);
   };
-
-  if (session) {
-    return (
-      <>
-        Signed in as {session.user.email} <br />
-        <button onClick={() => signOut()}>Sign out</button>
-      </>
-    )
-  }
-
-
 
   return (
     <div>
@@ -90,7 +76,6 @@ const Page = () => {
                     <hr className="w-40 h-px my-3 bg-[#DCDCDC] border-0" />
                   </div>
                   <button
-                  onClick={() => signIn("github")}
                     className="flex items-center ml-4 font-medium py-2 mt-4 border-2 px-12 border-[#DCDCDC] rounded-md"
                     type="button"
                   >

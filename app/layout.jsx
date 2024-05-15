@@ -1,7 +1,5 @@
-import SessionWrapper from "./(login-signin)/login/SessionWrapper";
 import "./globals.css";
 import NextTopLoader from "nextjs-toploader";
-
 export const metadata = {
   title: "TechScholars | Best online Educational Platform for Students",
   description: "India's Best Education Platform",
@@ -15,9 +13,7 @@ export default function RootLayout({ children }) {
       </head>
       <body  suppressHydrationWarning={true}>
         <NextTopLoader color="#FFE01B" height={6} />
-        <SessionWrapper>
         {children}
-        </SessionWrapper>
       </body>
     </html>
   );

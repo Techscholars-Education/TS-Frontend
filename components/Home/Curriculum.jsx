@@ -6,7 +6,7 @@ import foundation from "../../public/Home/foundation.svg";
 
 const Curriculum = () => {
   return (
-    <section className="bg-yellowish py-16 " data-scroll data-scroll-speed="0.2">
+    <section className="bg-yellowish py-16 ">
       <div className=" w-11/12 mx-auto  rounded-xl">
         <h5 className="text-lg text-center font-bold text-darkBlue font-Poppins">
           Curriculum

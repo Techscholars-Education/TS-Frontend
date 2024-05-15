@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import React from 'react'
 import { AiFillFileText } from 'react-icons/ai';
-import { RiDashboardFill, RiShoppingBag3Fill } from 'react-icons/ri';
 import { BiLogOutCircle } from "react-icons/bi";
 import { TbSettings } from "react-icons/tb";
 import { FaRegUser } from "react-icons/fa";
