@@ -26,7 +26,7 @@ const Home = () => {
       <Testimonialsslider />
       <Studenttest />
       <Aboutapp />
-      {/* <Footer /> */}
+      <Footer />
     </section>
   );
 };

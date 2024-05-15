@@ -85,75 +85,70 @@ const Studenttest = () => {
       </div>
       <div className=" my-24 w-11/12 mx-auto grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-10">
         <div className=" w-[80%] mx-auto  sm:w-full ">
-          <div className="relative">
-            <Image src={border}></Image>
-            <div className="absolute top-0 p-6">
+          <div className=" rounded-xl border relative">
+            <div className=" top-0 p-6 xl:top-[10%] ">
               <p className="text-base sm:text-xs md:text-sm lg:text-base ">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Recusandae, totam.
+                Recusandae, totam. Lorem ipsum dolor sit amet.
               </p>
             </div>
-            <div className="absolute top-[100px] left-4 my-2 ">
+            <div className=" my-2 px-4  xl:bottom-0 ">
               <div className="flex items-center space-x-2">
                 <div className="w-[28px] h-[28px] md:w-[30px] md:h-[30px] lg:h-[40px] lg:w-[40px] bg-TechBlue rounded-full"></div>
-                <p className="text-base md:text-sm lg:text-base ">
+                <p className="text-base md:text-sm lg:text-base xl:text-base ">
                   Naina Sharma
                 </p>
               </div>
             </div>
 
             <Image
-              className="absolute -bottom-6 -right-1 md:w-12 lg:w-20"
+              className="absolute -bottom-6 -right-2 md:w-12 lg:w-20 xl:w-12 xl:-bottom-4"
               src={quotation}
             ></Image>
           </div>
         </div>
         <div className=" w-[80%] mx-auto  sm:w-full ">
-          <div className="relative">
-            <Image src={border}></Image>
-            <div className="absolute top-0 p-6">
+          <div className=" rounded-xl border relative">
+            <div className=" top-0 p-6 xl:top-[10%] ">
               <p className="text-base sm:text-xs md:text-sm lg:text-base ">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Recusandae, totam.
+                Recusandae, totam. Lorem ipsum dolor sit amet.
               </p>
             </div>
-            <div className="absolute top-[100px] left-4 my-2 ">
+            <div className=" my-2 px-4  xl:bottom-0 ">
               <div className="flex items-center space-x-2">
                 <div className="w-[28px] h-[28px] md:w-[30px] md:h-[30px] lg:h-[40px] lg:w-[40px] bg-TechBlue rounded-full"></div>
-                <p className="text-base md:text-sm lg:text-base ">
-                  {" "}
-                  Naina Sharma{" "}
+                <p className="text-base md:text-sm lg:text-base xl:text-base ">
+                  Naina Sharma
                 </p>
               </div>
             </div>
 
             <Image
-              className="absolute -bottom-6 -right-1 md:w-12 lg:w-20"
+              className="absolute -bottom-6 -right-2 md:w-12 lg:w-20 xl:w-12 xl:-bottom-4"
               src={quotation}
             ></Image>
           </div>
         </div>
         <div className=" w-[80%] mx-auto  sm:w-full ">
-          <div className="relative">
-            <Image src={border}></Image>
-            <div className="absolute top-0 p-6">
+          <div className=" rounded-xl border relative">
+            <div className=" top-0 p-6 xl:top-[10%] ">
               <p className="text-base sm:text-xs md:text-sm lg:text-base ">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Recusandae, totam.
+                Recusandae, totam. Lorem ipsum dolor sit amet.
               </p>
             </div>
-            <div className="absolute top-[100px] left-4 my-2 ">
+            <div className=" my-2 px-4  xl:bottom-0 ">
               <div className="flex items-center space-x-2">
                 <div className="w-[28px] h-[28px] md:w-[30px] md:h-[30px] lg:h-[40px] lg:w-[40px] bg-TechBlue rounded-full"></div>
-                <p className="text-base md:text-sm lg:text-base ">
-                  {" "}
-                  Naina Sharma{" "}
+                <p className="text-base md:text-sm lg:text-base xl:text-base ">
+                  Naina Sharma
                 </p>
               </div>
             </div>
 
             <Image
-              className="absolute -bottom-6 -right-1 md:w-12 lg:w-20"
+              className="absolute -bottom-6 -right-2 md:w-12 lg:w-20 xl:w-12 xl:-bottom-4"
               src={quotation}
             ></Image>
           </div>

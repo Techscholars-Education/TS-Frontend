@@ -28,7 +28,7 @@ const Hero = () => {
 
         {/* Sub heading */}
         <div className="my-4 text-center  ">
-          <p className="font-Poppins px-6 leading-normal  md:px-20 lg:px-44 text-xs md:text-base text-gray-600 tracking-wide ">
+          <p className="font-Poppins px-6 leading-normal  md:px-20 lg:px-44 xl:px-80 xl:text-base text-xs md:text-base text-gray-600 tracking-wide ">
             Welcome to TECHSCHOLARS. Transforming average students into toppers
             with our innovative teaching with our services.
           </p>
@@ -67,7 +67,7 @@ const Hero = () => {
 
         {/* Tangled arrow */}
         <Image
-          className="absolute hidden lg:block  left-28 top-52 xl:left-48 xl:top-[50%]  2xl:top-[50%] 2xl:left-[16%] w-16 mx-10 lg:mx-0 "
+          className="absolute hidden lg:block  left-28 top-52 xl:left-64 xl:top-[55%]  2xl:top-[50%] 2xl:left-[16%] w-16 mx-10 lg:mx-0 "
           src={TangledArrow}
           alt="tangled-arrow"
         ></Image>

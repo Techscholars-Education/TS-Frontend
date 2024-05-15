@@ -7,7 +7,7 @@ import foundation from "../../public/Home/foundation.svg";
 const Curriculum = () => {
   return (
     <section className="bg-[#F8F8F8] my-16 py-16">
-      <div className=" w-11/12 mx-auto  rounded-xl">
+      <div className=" w-11/12 xl:w-10/12 mx-auto  rounded-xl">
         <div className=" text-center">
           <h5 className="text-xs font-medium bg-gray-300 text-TechBlue font-Poppins border py-1 rounded-full px-4 inline-block">
             Curriculum
@@ -31,7 +31,7 @@ const Curriculum = () => {
               <Image className=" mx-auto my-1 " src={jee}></Image>
             </div>
 
-            <div className=" px-2 w-full  ">
+            <div className=" px-2 xl:px-6 w-full  ">
               <h3 className=" font-Poppins text-xl font-semibold ">Jee</h3>
               <p className="text-xs font-Poppins text-gray-600">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
@@ -54,7 +54,7 @@ const Curriculum = () => {
             <div className=" p-2 w-[70px]  bg-darkBlue rounded-full">
               <Image className=" mx-auto my-1 " src={neet}></Image>
             </div>
-            <div className=" px-2 w-full ">
+            <div className=" px-2 xl:px-6 w-full ">
               <h3 className=" font-Poppins text-xl font-semibold ">Jee</h3>
               <p className="text-xs font-Poppins text-gray-600">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
@@ -77,7 +77,7 @@ const Curriculum = () => {
             <div className=" p-2 w-[70px]  bg-darkBlue rounded-full">
               <Image className=" mx-auto my-2 " src={foundation}></Image>
             </div>
-            <div className=" px-2  w-full">
+            <div className=" px-2 xl:px-6  w-full">
               <h3 className=" font-Poppins text-xl font-semibold ">Jee</h3>
               <p className="text-xs font-Poppins text-gray-600">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
