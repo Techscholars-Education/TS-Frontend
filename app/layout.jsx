@@ -1,4 +1,3 @@
-import SessionWrapper from "./(login-signin)/login/SessionWrapper";
 import "./globals.css";
 import NextTopLoader from "nextjs-toploader";
 
@@ -13,11 +12,9 @@ export default function RootLayout({ children }) {
       <head>
       <script async src="https://canvasjs.com/assets/script/canvasjs.min.js" ></script>
       </head>
-      <body  suppressHydrationWarning={true}>
+      <body>
         <NextTopLoader color="#FFE01B" height={6} />
-        <SessionWrapper>
         {children}
-        </SessionWrapper>
       </body>
     </html>
   );
