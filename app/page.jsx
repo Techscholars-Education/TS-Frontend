@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link";
 import Hero from "@/components/Home/Hero";
 import Benefits from "@/components/Home/Benefits";
@@ -11,9 +12,21 @@ import Packages from "@/components/Home/Packages";
 import Navbar from "@/components/Navbar";
 import Testimonialsslider from "@/components/Home/Testimonialsslider";
 
-import React from "react";
+import React, { useEffect } from "react";
+
 
 const Home = () => {
+
+  useEffect(()=>{
+   (
+    async () => {
+      const LocomotiveScroll = (await import('locomotive-scroll')).default
+      const scroll = new LocomotiveScroll({
+        smooth:true
+      })
+    }
+   )()
+  },[])
   return (
     <section className="bg-gray-100">
       <Navbar />
