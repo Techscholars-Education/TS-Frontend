@@ -43,7 +43,7 @@ const Page = () => {
   ];
 
   const container = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 1 },
     show: {
       opacity: 1,
       transition: {
@@ -70,7 +70,7 @@ const Page = () => {
       <div>
         <Navbar />
         <div className="flex justify-center items-center my-8 flex-col">
-          <h1 className="font-[600] text-[44px] text-[#002657] mt-[-2vw] ">
+          <h1 className="font-[600] text-[44px] text-[#002657] ">
             Welcome Harsh
           </h1>
           <span className="font-[500] text-[20px] text-[#002657] ">
