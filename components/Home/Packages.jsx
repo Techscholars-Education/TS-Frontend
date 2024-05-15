@@ -1,7 +1,5 @@
 "use client";
-import Link from "next/link";
 import React from "react";
-import { MdDone } from "react-icons/md";
 import Costing from "../Course/Costing";
 const Packages = () => {
   const packages = [

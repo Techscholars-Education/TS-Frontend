@@ -10,7 +10,7 @@ const Costing = (props) => {
             Starter
           </h4>
           <h2 className="text-3xl font-semibold text-TechBlue py-2">
-            &#8377;20000
+            &#8377;{props.CostingData[0].price}
             <span className="text-xs font-normal text-gray-500">/year</span>
           </h2>
           <hr />
@@ -40,9 +40,12 @@ const Costing = (props) => {
         </ul>
         <p className="text-center text-darkBlue text-xl">...</p>
         <div className="w-full flex justify-center items-center my-4">
-          <button className="border w-5/6 rounded-full px-6 py-2 ">
+          <Link
+            href="/course"
+            className="border w-5/6 rounded-full px-6 py-2 text-center  "
+          >
             Purchase Now
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -53,7 +56,7 @@ const Costing = (props) => {
             Advanced
           </h4>
           <h2 className="text-3xl font-semibold text-white py-2">
-            &#8377;20000
+            &#8377;{props.CostingData[1].price}
             <span className="text-xs font-normal text-gray-100">/year</span>
           </h2>
           <hr />
@@ -81,13 +84,16 @@ const Costing = (props) => {
         </ul>
         <p className="text-center text-white text-xl">...</p>
         <div className="w-full flex justify-center items-center my-4">
-          <button className="border w-5/6 rounded-full px-6 py-2 bg-white text-TechBlue">
+          <Link
+            href="/course"
+            className="border w-5/6 rounded-full text-center  px-6 py-2 bg-white text-TechBlue"
+          >
             Purchase Now
-          </button>
+          </Link>
         </div>
 
         <span
-          dataContent="MOST POPULAR"
+          datacontent="MOST POPULAR"
           className="w-[100px] h-[100px] absolute flex justify-center items-center -top-2 -right-2 overflow-hidden before:w-[180px] before:h-8 before:bg-white before:absolute before:rotate-45 before:-translate-y-4 before:content-[attr(dataContent)] before:flex before:justify-center before:items-center before:text-xs before:pl-6 before:text-TechBlue before:shadow-md "
         ></span>
       </div>
@@ -99,7 +105,7 @@ const Costing = (props) => {
             Ultimate
           </h4>
           <h2 className="text-3xl font-semibold text-TechBlue py-2">
-            &#8377;20000
+            &#8377;{props.CostingData[2].price}
             <span className="text-xs font-normal text-gray-500">/year</span>
           </h2>
           <hr />
@@ -129,9 +135,12 @@ const Costing = (props) => {
         </ul>
         <p className="text-center text-darkBlue text-xl">...</p>
         <div className="w-full flex justify-center items-center my-4 ">
-          <button className="border w-5/6 rounded-full px-6 py-2 ">
+          <Link
+            href="/course"
+            className="border w-5/6 rounded-full px-6 py-2 text-center  "
+          >
             Purchase Now
-          </button>
+          </Link>
         </div>
       </div>
     </div>
