@@ -37,7 +37,7 @@ const Testimonialsslider = () => {
     },
   ];
   return (
-    <div className="w-[97%] mx-auto">
+    <div className="w-[97%] mx-auto overflow-hidden">
       <Slider {...settings}>
         {testimonialsData.map((item) => {
           return (
