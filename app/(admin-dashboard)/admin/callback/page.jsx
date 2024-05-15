@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import Nav from '../../_components/Nav'
 import AdminSidebar from '../../_components/AdminSidebar'
-import { TransactionsTable } from '../../_components/Table'
+
 
 const page = () => {
 
