@@ -11,10 +11,8 @@ import Packages from "@/components/Home/Packages";
 import Navbar from "@/components/Navbar";
 import Testimonialsslider from "@/components/Home/Testimonialsslider";
 
-import React from "react";
-
 const Home = () => {
-  return (
+return (
     <section className="bg-gray-100">
       <Navbar />
       <Hero />
