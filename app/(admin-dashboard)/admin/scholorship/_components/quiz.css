@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@100;200;300;400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Anek Malayalam', sans-serif;
+ 
+}
+
+
+
+.quiz-container ul li {
+  text-decoration: none;
+  list-style: none;
+  color: #2d264b;
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 3px;
+  margin-top: 3px;
+
+}
+
+.quiz-container ul .selected-answer {
+  background: #ffd6ff;
+  border: 1px solid #800080;
+}
+
+
+
+.quiz-container button:disabled {
+  background: #e7e8e9;
+  color: #9fa3a9;
+  cursor: not-allowed;
+}
+
+/* .flex-right {
+  display: flex;
+  justify-content: flex-end;
+} */
+
+.result h3 {
+  font-size: 24px;
+  letter-spacing: 1.4px;
+  text-align: center;
+}
+
+.result p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.result p span {
+  color: #800080;
+  font-size: 22px;
+}
