@@ -47,7 +47,7 @@ const Hero = () => {
             />
           </div>
           <div>
-            <button className="rounded-full px-10 text-lg py-2 bg-yellowish  text-white hover:-translate-y-2  duration-300  auth-btn">
+            <button className="rounded-full px-10 text-lg py-2 bg-TechBlue  text-white hover:-translate-y-2  duration-300  auth-btn">
               Search
             </button>
           </div>
@@ -56,7 +56,7 @@ const Hero = () => {
         {/* free trial box */}
 
         <div className=" md:hidden flex flex-col space-y-3 mt-4  ">
-          <button className="  px-8 bg-yellowish text-white py-2 rounded-full">
+          <button className="  px-8 bg-TechBlue text-white py-2 rounded-full">
             Start my free 14-day trial
           </button>
           <button className="flex justify-center items-center text-darkBlue border px-12 border-darkBlue py-2 rounded-full ">

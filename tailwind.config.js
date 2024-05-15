@@ -14,6 +14,7 @@ module.exports = {
       colors: {
         yellowish: "#FFE01B",
         darkBlue: " #001B3F",
+        TechBlue: " #0079FC",
       },
     },
   },

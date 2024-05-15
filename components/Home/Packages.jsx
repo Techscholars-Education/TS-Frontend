@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React from "react";
 import { MdDone } from "react-icons/md";
+import Costing from "../Course/Costing";
 const Packages = () => {
   const packages = [
     {
@@ -40,79 +41,24 @@ const Packages = () => {
   ];
 
   return (
-    <section className="mb-20 py-24 bg-yellowish">
-      <div className="flex justify-center mb-20 font-Poppins">
-        <h1 className="text-5xl text-darkBlue font-semibold">
-          Our Annual courses prices
-        </h1>
-      </div>
-
-      <div className="p-4  w-full max-w-screen-lg flex flex-col justify-center items-center mx-auto ">
-        <div
-          className="flex flex-col w-[80vw] justify-center sm:flex-row "
-          initial="hidden"
-          animate="show"
-        >
-          {packages.map((packageItem) => (
-            <div
-              key={packageItem.id}
-              className={`${
-                packageItem.id === 2 ? "scale-125 bg-yellowish " : "exam-card"
-              }  bg-white  group flex flex-col  justify-center transition-all duration-300 hover:bg-yellowish shadow-xl mx-2 w-1/4 px-10 sm:mb-0 py-6 rounded-lg border-2 border-darkBlue `}
-            >
-              <div className="text-2xl text-darkBlue font-semibold text-center font-Poppins pb-2">
-                {packageItem.title}
-              </div>
-              {packageItem.id === 2 ? (
-                <p className="text-darkBlue font-Poppins text-center text-base ">
-                  (Popular)
-                </p>
-              ) : (
-                <></>
-              )}
-              <div className="flex items-center text-darkBlue  mx-auto mb-2 font-Poppins">
-                <div className="text-5xl font-semibold mr-2 text-center relative  ">
-                  <span className="text-lg text-gray-500 absolute top-0 -left-4 ">
-                    &#8377;
-                  </span>
-                  {packageItem.price}
-                </div>
-                <div className="text-gray-500">{packageItem.currency}</div>
-              </div>
-              <ul className="list-none text-darkBlue space-y-2 font-Poppins ">
-                {packageItem.features.map((feature, index) => (
-                  <li
-                    className={`flex items-center ${
-                      packageItem.features.length - index <= 2 ? "blur-sm" : ""
-                    }`}
-                    key={feature.feature}
-                  >
-                    <MdDone className="mr-3" />
-                    {feature.feature}
-                  </li>
-                ))}
-              </ul>
-              <div className="flex justify-center py-4 items-center ">
-                <Link
-                  href="/course"
-                  className="w-40 text-center  py-4 px-4  hover:bg-white hover:text-darkBlue bg-darkBlue text-white  font-Poppins transition-all  rounded-lg "
-                >
-                  Purchase Now
-                </Link>
-              </div>
-            </div>
-          ))}
+    <section className="bg-[#F8F8F8] my-16 py-16 font-Poppins w-full mx-auto  ">
+      <div className=" w-full mx-auto  rounded-xl">
+        <div className=" text-center">
+          <h5 className="text-xs font-medium bg-gray-300 text-TechBlue font-Poppins border py-1 rounded-full px-4 inline-block">
+            Pricing
+          </h5>
+        </div>
+        <h2 className="text-darkBlue font-semibold text-4xl text-center my-4 font-Poppins ">
+          Our annual courses prices starts from
+        </h2>
+        <div className="my-4 text-center  ">
+          <p className="font-Poppins px-6 leading-normal  md:px-20 lg:px-44 text-xs md:text-sm text-gray-600 tracking-wide ">
+            An innovative Ed-tech organisation dedicated to democratising access
+            to high-quality STEM education across India
+          </p>
         </div>
       </div>
-
-      <div className="w-full flex justify-center items-center mt-24">
-        <Link
-          href="/course"
-          className=" font-Poppins text-white border  border-black/40 rounded-xl px-10 py-3 bg-darkBlue text-2xl font-medium  hover:-translate-y-2  duration-300  auth-btn"
-        >
-          Get started
-        </Link>
-      </div>
+      <Costing CostingData={packages} />
     </section>
   );
 };

@@ -3,61 +3,136 @@ import { MdDone } from "react-icons/md";
 import Link from "next/link";
 const Costing = (props) => {
   return (
-    <div className="p-4 w-full max-w-screen-lg flex flex-col justify-center items-center mx-auto b my-24">
-      <div
-        className="flex flex-col w-[80vw] justify-center sm:flex-row "
-        initial="hidden"
-        animate="show"
-      >
-        {props.CostingData.map((packageItem) => (
-          <div
-            key={packageItem.id}
-            className={`${
-              packageItem.id === 2 ? "scale-125 bg-yellowish " : "exam-card"
-            }  bg-white  group flex flex-col  justify-center transition-all duration-300 hover:bg-yellowish shadow-xl mx-2 w-1/4 px-10 sm:mb-0 py-6 rounded-lg border-2 border-darkBlue `}
-          >
-            <div className="text-2xl text-darkBlue font-semibold text-center font-Poppins pb-2">
-              {packageItem.title}
-            </div>
-            {packageItem.id === 2 ? (
-              <p className="text-darkBlue font-Poppins text-center text-base ">
-                (Popular)
-              </p>
-            ) : (
-              <></>
-            )}
-            <div className="flex items-center text-darkBlue  mx-auto mb-2 font-Poppins">
-              <div className="text-5xl font-semibold mr-2 text-center relative  ">
-                <span className="text-lg text-gray-500 absolute top-0 -left-4 ">
-                  &#8377;
-                </span>
-                {packageItem.price}
-              </div>
-              <div className="text-gray-500">{packageItem.currency}</div>
-            </div>
-            <ul className="list-none text-darkBlue space-y-2 font-Poppins ">
-              {packageItem.features.map((feature, index) => (
-                <li
-                  className={`flex items-center ${
-                    packageItem.features.length - index <= 2 ? "blur-sm" : ""
-                  }`}
-                  key={feature.feature}
-                >
-                  <MdDone className="mr-3" />
-                  {feature.feature}
-                </li>
-              ))}
-            </ul>
-            <div className="flex justify-center py-4 items-center ">
-              <Link
-                href="/course"
-                className="w-40 text-center  py-4 px-4  hover:bg-white hover:text-darkBlue bg-darkBlue text-white  font-Poppins transition-all  rounded-lg "
-              >
-                Purchase Now
-              </Link>
-            </div>
-          </div>
-        ))}
+    <div className="grid md:grid-cols-3 grid-cols-1 mx-20 gap-5 my-10 ">
+      <div className="border rounded-xl ">
+        <div className="px-6 pt-6">
+          <h4 className="text-lg font-Poppins font-semibold text-darkBlue/90">
+            Starter
+          </h4>
+          <h2 className="text-3xl font-semibold text-TechBlue py-2">
+            &#8377;20000
+            <span className="text-xs font-normal text-gray-500">/year</span>
+          </h2>
+          <hr />
+        </div>
+
+        <ul className="pt-6 px-6 space-y-4">
+          <li className="flex justify-start space-x-2 items-center">
+            <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
+            <span className="text-gray-600 text-sm">Lectures</span>
+          </li>
+          <li className="flex justify-start space-x-2 items-center">
+            <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
+            <span className="text-gray-600 text-sm">Weekly test series</span>
+          </li>
+          <li className="flex justify-start space-x-2 items-center  ">
+            <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
+            <span className="text-gray-600 text-sm">
+              Doubt clearing sessions
+            </span>
+          </li>
+          <li className="flex justify-start space-x-2 items-center blur-[1.8px]">
+            <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
+            <span className="text-gray-600 text-sm">
+              Access the smartest student community
+            </span>
+          </li>
+        </ul>
+        <p className="text-center text-darkBlue text-xl">...</p>
+        <div className="w-full flex justify-center items-center my-4">
+          <button className="border w-5/6 rounded-full px-6 py-2 ">
+            Purchase Now
+          </button>
+        </div>
+      </div>
+
+      {/* 2nd */}
+      <div className="border relative rounded-xl bg-TechBlue ">
+        <div className="px-6 pt-6">
+          <h4 className="text-lg font-Poppins font-semibold text-white">
+            Advanced
+          </h4>
+          <h2 className="text-3xl font-semibold text-white py-2">
+            &#8377;20000
+            <span className="text-xs font-normal text-gray-100">/year</span>
+          </h2>
+          <hr />
+        </div>
+
+        <ul className="pt-6 px-6 space-y-4">
+          <li className="flex justify-start space-x-2 items-center">
+            <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
+            <span className=" text-sm text-white">Lectures</span>
+          </li>
+          <li className="flex justify-start space-x-2 items-center">
+            <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
+            <span className=" text-sm text-white">Weekly test series</span>
+          </li>
+          <li className="flex justify-start space-x-2 items-center  ">
+            <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
+            <span className=" text-sm text-white">Doubt clearing sessions</span>
+          </li>
+          <li className="flex justify-start space-x-2 items-center blur-[1.8px]">
+            <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
+            <span className=" text-sm text-white">
+              Access the smartest student community
+            </span>
+          </li>
+        </ul>
+        <p className="text-center text-white text-xl">...</p>
+        <div className="w-full flex justify-center items-center my-4">
+          <button className="border w-5/6 rounded-full px-6 py-2 bg-white text-TechBlue">
+            Purchase Now
+          </button>
+        </div>
+
+        <span
+          dataContent="MOST POPULAR"
+          className="w-[100px] h-[100px] absolute flex justify-center items-center -top-2 -right-2 overflow-hidden before:w-[180px] before:h-8 before:bg-white before:absolute before:rotate-45 before:-translate-y-4 before:content-[attr(dataContent)] before:flex before:justify-center before:items-center before:text-xs before:pl-6 before:text-TechBlue before:shadow-md "
+        ></span>
+      </div>
+
+      {/* 3rd */}
+      <div className="border rounded-xl ">
+        <div className="px-6 pt-6">
+          <h4 className="text-lg font-Poppins font-semibold text-darkBlue/90">
+            Ultimate
+          </h4>
+          <h2 className="text-3xl font-semibold text-TechBlue py-2">
+            &#8377;20000
+            <span className="text-xs font-normal text-gray-500">/year</span>
+          </h2>
+          <hr />
+        </div>
+
+        <ul className="pt-6 px-6 space-y-4">
+          <li className="flex justify-start space-x-2 items-center">
+            <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
+            <span className="text-gray-600 text-sm">Lectures</span>
+          </li>
+          <li className="flex justify-start space-x-2 items-center">
+            <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
+            <span className="text-gray-600 text-sm">Weekly test series</span>
+          </li>
+          <li className="flex justify-start space-x-2 items-center   ">
+            <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
+            <span className="text-gray-500 text-sm font-medium">
+              Doubt clearing sessions
+            </span>
+          </li>
+          <li className="flex justify-start space-x-2 items-center blur-[1.8px]">
+            <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
+            <span className="text-gray-600 text-sm">
+              Access the smartest student community
+            </span>
+          </li>
+        </ul>
+        <p className="text-center text-darkBlue text-xl">...</p>
+        <div className="w-full flex justify-center items-center my-4 ">
+          <button className="border w-5/6 rounded-full px-6 py-2 ">
+            Purchase Now
+          </button>
+        </div>
       </div>
     </div>
   );

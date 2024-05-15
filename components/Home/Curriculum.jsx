@@ -9,7 +9,7 @@ const Curriculum = () => {
     <section className="bg-[#F8F8F8] my-16 py-16">
       <div className=" w-11/12 mx-auto  rounded-xl">
         <div className=" text-center">
-          <h5 className="text-xs font-medium bg-gray-300 text-darkBlue font-Poppins border py-1 rounded-full px-4 inline-block">
+          <h5 className="text-xs font-medium bg-gray-300 text-TechBlue font-Poppins border py-1 rounded-full px-4 inline-block">
             Curriculum
           </h5>
         </div>

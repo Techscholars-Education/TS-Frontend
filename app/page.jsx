@@ -22,11 +22,11 @@ const Home = () => {
       <Curriculum />
       <About />
       <Packages />
-      <Testimonials />
+      {/* <Testimonials />
       <Testimonialsslider />
       <Studenttest />
-      <Aboutapp />
-      <Footer />
+      <Aboutapp /> */}
+      {/* <Footer /> */}
     </section>
   );
 };
