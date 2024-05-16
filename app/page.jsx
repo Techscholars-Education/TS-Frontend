@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Hero from "@/components/Home/Hero";
 import Benefits from "@/components/Home/Benefits";
 import Curriculum from "@/components/Home/Curriculum";

@@ -1,74 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import border from "../../public/Home/border.svg";
 import quotation from "../../public/Home/quotation.svg";
-import Link from "next/link";
-
-{
-  /* <div className="relative flex justify-center items-center border-2 border-black ">
-<Image src={border} alt="yellow-border"></Image>
-<div className=" w-full h-full flex justify-start items-start flex-col p-4 absolute  space-y-4 top-0 ">
-  <p className=" leading-relaxed font-Poppins text-sm pt-4">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-    quod fuga autem ab rerum quos.
-  </p>
-  <div className="flex space-x-4">
-    <div className="h-10 w-10 bg-TechBlue rounded-full"></div>
-    <div>
-      <h3 className="text-darkBlue font-semibold text-sm">
-        Naina Sharma
-      </h3>
-      <p className="text-darkBlue/70 text-sm">Dav School</p>
-    </div>
-  </div>
-</div>
-<div className="absolute bottom-0 right-0">
-  <Image src={quotation} alt="quotation"></Image>
-</div>
-</div>
-<div className="relative flex justify-center items-center border-2 border-black ">
-<Image src={border} alt="yellow-border"></Image>
-<div className=" w-full h-full flex justify-start items-start flex-col p-4 absolute  space-y-4 top-0 ">
-  <p className=" leading-relaxed font-Poppins text-sm pt-4">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-    quod fuga autem ab rerum quos.
-  </p>
-  <div className="flex space-x-4">
-    <div className="h-10 w-10 bg-TechBlue rounded-full"></div>
-    <div>
-      <h3 className="text-darkBlue font-semibold text-sm">
-        Naina Sharma
-      </h3>
-      <p className="text-darkBlue/70 text-sm">Dav School</p>
-    </div>
-  </div>
-</div>
-<div className="absolute bottom-0 right-0">
-  <Image src={quotation} alt="quotation"></Image>
-</div>
-</div>
-<div className="relative flex justify-center items-center border-2 border-black ">
-<Image src={border} alt="yellow-border"></Image>
-<div className=" w-full h-full flex justify-start items-start flex-col p-4 absolute  space-y-4 top-0 ">
-  <p className=" leading-relaxed font-Poppins text-sm pt-4">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-    quod fuga autem ab rerum quos.
-  </p>
-  <div className="flex space-x-4">
-    <div className="h-10 w-10 bg-TechBlue rounded-full"></div>
-    <div>
-      <h3 className="text-darkBlue font-semibold text-sm">
-        Naina Sharma
-      </h3>
-      <p className="text-darkBlue/70 text-sm">Dav School</p>
-    </div>
-  </div>
-</div>
-<div className="absolute bottom-0 right-0">
-  <Image src={quotation} alt="quotation"></Image>
-</div>
-</div> */
-}
 
 const Studenttest = () => {
   return (
@@ -79,7 +11,7 @@ const Studenttest = () => {
             Testimonials
           </h5>
         </div>
-        <h2 className="text-darkBlue font-semibold text-4xl text-center my-4 font-Poppins ">
+        <h2 className="text-darkBlue font-semibold text-xl  md:text-4xl text-center my-4 font-Poppins ">
           What our students have to say
         </h2>
       </div>
@@ -104,6 +36,7 @@ const Studenttest = () => {
             <Image
               className="absolute -bottom-6 -right-2 md:w-12 lg:w-20 xl:w-12 xl:-bottom-4"
               src={quotation}
+              alt="quotation-icon"
             ></Image>
           </div>
         </div>
@@ -127,6 +60,7 @@ const Studenttest = () => {
             <Image
               className="absolute -bottom-6 -right-2 md:w-12 lg:w-20 xl:w-12 xl:-bottom-4"
               src={quotation}
+              alt="quotation-icon"
             ></Image>
           </div>
         </div>
@@ -150,6 +84,7 @@ const Studenttest = () => {
             <Image
               className="absolute -bottom-6 -right-2 md:w-12 lg:w-20 xl:w-12 xl:-bottom-4"
               src={quotation}
+              alt="quotation-icon"
             ></Image>
           </div>
         </div>

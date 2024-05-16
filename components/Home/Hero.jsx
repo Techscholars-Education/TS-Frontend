@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { ReactTyped } from "react-typed";
+// import { ReactTyped } from "react-typed";
 import Image from "next/image";
 import search from "../../public/Home/search.svg";
 import TangledArrow from "../../public/Home/TangledArrow.svg";
@@ -56,7 +56,7 @@ const Hero = () => {
         {/* free trial box */}
 
         <div className=" md:hidden flex flex-col space-y-3 mt-4  ">
-          <button className="  px-8 bg-TechBlue text-white py-2 rounded-full">
+          <button className="  px-8 bg-TechBlue text-white py-2 rounded-full border-2 border-TechBlue">
             Start my free 14-day trial
           </button>
           <button className="flex justify-center items-center text-darkBlue border px-12 border-darkBlue py-2 rounded-full ">

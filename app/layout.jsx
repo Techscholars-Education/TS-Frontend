@@ -10,10 +10,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-      <script async src="https://canvasjs.com/assets/script/canvasjs.min.js" ></script>
+        <script
+          async
+          src="https://canvasjs.com/assets/script/canvasjs.min.js"
+        ></script>
       </head>
       <body>
-        <NextTopLoader color="#FFE01B" height={6} />
+        <NextTopLoader color="#0079FC" height={6} />
         {children}
       </body>
     </html>

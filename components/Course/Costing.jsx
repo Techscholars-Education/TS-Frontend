@@ -3,7 +3,7 @@ import { MdDone } from "react-icons/md";
 import Link from "next/link";
 const Costing = (props) => {
   return (
-    <div className="grid md:grid-cols-3 grid-cols-1 mx-20 gap-5 my-10 ">
+    <div className="grid md:grid-cols-3 grid-cols-1 mx-10 md:mx-20 gap-5 my-10 ">
       <div className="border rounded-xl ">
         <div className="px-6 pt-6">
           <h4 className="text-lg font-Poppins font-semibold text-darkBlue/90">

@@ -9,10 +9,14 @@ import TsLogo from "../public/Home/TsLogo.svg";
 const Footer = () => {
   return (
     <footer className="bg-darkBlue md:py-10 text-white body-font grid grid-cols-1 md:grid-cols-3 font-Poppins ">
-      <div className="  px-5 py-4 md:py-0 md:pr-20 space-y-3 md:space-y-6  md:my-auto  ">
+      <div className="  px-5 pt-6 md:py-0 md:px-10 space-y-5 md:space-y-6  md:my-auto  ">
         <div>
           <h1 className="text-sm md:text-xl font-semibold flex items-center  ">
-            <Image className="mr-4 md:text-base md:w-12" src={TsLogo}></Image>
+            <Image
+              className="mr-4 md:text-base md:w-12"
+              src={TsLogo}
+              alt="Techscholar-logo"
+            ></Image>
             Techscholars
           </h1>
         </div>
@@ -27,7 +31,7 @@ const Footer = () => {
           <FaLinkedin className="text-2xl md:text-3xl" />
         </div>
       </div>
-      <div className=" px-5 md:px-0   grid grid-cols-2 md:grid-cols-3 gap-3">
+      <div className=" px-5 md:px-0  py-6 md:py-2  grid grid-cols-2 md:grid-cols-3 gap-3">
         <Link className="text-sm lg:text-base" href="/aboutus">
           About us
         </Link>
@@ -56,17 +60,19 @@ const Footer = () => {
           Courses
         </Link>
       </div>
-      <div className=" px-5 py-2   ">
+      <div className=" px-5 py-6 md:py-2   ">
         <form>
-          <h3 className="text-sm md:text-lg lg:text-xl">Get in Touch</h3>
+          <h3 className="text-base md:text-lg lg:text-xl font-semibold">
+            Get in Touch
+          </h3>
 
           <input
-            className="my-2 py-1 rounded-md px-2 w-4/5 text-sm text-darkBlue"
+            className="my-2 py-2 rounded-md px-2 w-4/5 text-sm text-darkBlue"
             placeholder="your email"
             type="email"
           />
           <textarea
-            className="my-2 py-1 rounded-md px-2 w-4/5 text-sm text-darkBlue"
+            className="my-2 py-2 rounded-md px-2 w-4/5 text-sm text-darkBlue"
             placeholder="your message"
             name="message"
             id="message"

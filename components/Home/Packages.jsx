@@ -46,7 +46,7 @@ const Packages = () => {
             Pricing
           </h5>
         </div>
-        <h2 className="text-darkBlue font-semibold text-4xl text-center my-4 font-Poppins ">
+        <h2 className="text-darkBlue font-semibold text-2xl  md:text-4xl text-center my-4 font-Poppins ">
           Our annual courses prices starts from
         </h2>
         <div className="my-4 text-center  ">

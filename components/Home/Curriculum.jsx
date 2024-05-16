@@ -13,7 +13,7 @@ const Curriculum = () => {
             Curriculum
           </h5>
         </div>
-        <h2 className="text-darkBlue font-semibold text-4xl text-center my-4 font-Poppins ">
+        <h2 className="text-darkBlue font-semibold text-2xl  md:text-4xl  text-center my-4 font-Poppins ">
           Explore our exam categories
         </h2>
         <div className="my-4 text-center  ">
@@ -28,12 +28,16 @@ const Curriculum = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 my-10 ">
           <div className=" flex justify-center items-start  ">
             <div className=" p-2 w-[75px]  bg-darkBlue rounded-full  ">
-              <Image className=" mx-auto my-1 " src={jee}></Image>
+              <Image
+                className=" mx-auto my-1 "
+                src={jee}
+                alt="jee-icon"
+              ></Image>
             </div>
 
             <div className=" px-2 xl:px-6 w-full  ">
               <h3 className=" font-Poppins text-xl font-semibold ">Jee</h3>
-              <p className="text-xs font-Poppins text-gray-600">
+              <p className="text-xs font-Poppins text-gray-600 py-2 leading-normal">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
                 sed!
               </p>
@@ -52,11 +56,15 @@ const Curriculum = () => {
           </div>
           <div className=" flex  justify-center items-start ">
             <div className=" p-2 w-[70px]  bg-darkBlue rounded-full">
-              <Image className=" mx-auto my-1 " src={neet}></Image>
+              <Image
+                className=" mx-auto my-1 "
+                src={neet}
+                alt="neet-icon"
+              ></Image>
             </div>
             <div className=" px-2 xl:px-6 w-full ">
-              <h3 className=" font-Poppins text-xl font-semibold ">Jee</h3>
-              <p className="text-xs font-Poppins text-gray-600">
+              <h3 className=" font-Poppins text-xl font-semibold ">Neet</h3>
+              <p className="text-xs font-Poppins text-gray-600 py-2 leading-normal">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
                 sed!
               </p>
@@ -75,11 +83,17 @@ const Curriculum = () => {
           </div>
           <div className=" flex  justify-center items-start ">
             <div className=" p-2 w-[70px]  bg-darkBlue rounded-full">
-              <Image className=" mx-auto my-2 " src={foundation}></Image>
+              <Image
+                className=" mx-auto my-2 "
+                src={foundation}
+                alt="foundation-icon"
+              ></Image>
             </div>
             <div className=" px-2 xl:px-6  w-full">
-              <h3 className=" font-Poppins text-xl font-semibold ">Jee</h3>
-              <p className="text-xs font-Poppins text-gray-600">
+              <h3 className=" font-Poppins text-xl font-semibold ">
+                Foundation
+              </h3>
+              <p className="text-xs font-Poppins text-gray-600 py-2 leading-normal">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
                 sed!
               </p>

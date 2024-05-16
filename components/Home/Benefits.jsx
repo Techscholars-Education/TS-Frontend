@@ -12,7 +12,7 @@ const Benefits = () => {
       {/* container -1 */}
       <div className=" bg-[#DCD9F866] rounded-xl  flex px-6 py-8 font-Poppins ">
         <div className="my-auto">
-          <Image className=" w-full " src={ratings}></Image>
+          <Image className=" w-full " src={ratings} alt="rating-icon"></Image>
         </div>
         <div className="w-full px-4 lg:px-10   ">
           <h3 className="text-darkBlue font-semibold mb-1 ">
@@ -29,7 +29,11 @@ const Benefits = () => {
       </div>
       <div className=" bg-[#FFE6DF66] rounded-xl flex px-6 py-8 font-Poppins ">
         <div className="my-auto">
-          <Image className=" w-full " src={schdule_time}></Image>
+          <Image
+            className=" w-full "
+            src={schdule_time}
+            alt="schedule-time"
+          ></Image>
         </div>
         <div className="w-full px-4 lg:px-10   ">
           <h3 className="text-darkBlue font-semibold mb-1 ">
@@ -46,7 +50,7 @@ const Benefits = () => {
       </div>
       <div className=" bg-[#FCE2EB4D] rounded-xl flex px-6 py-8 font-Poppins ">
         <div className="my-auto">
-          <Image className=" w-full " src={live_class}></Image>
+          <Image className=" w-full " src={live_class} alt="live-class"></Image>
         </div>
         <div className="w-full px-4 lg:px-10   ">
           <h3 className="text-darkBlue font-semibold mb-1 ">Weekly tests</h3>
@@ -61,7 +65,7 @@ const Benefits = () => {
       </div>
       <div className=" bg-[#DCF4F566] rounded-xl flex px-6 py-8 font-Poppins ">
         <div className="my-auto">
-          <Image className=" w-full " src={login}></Image>
+          <Image className=" w-full " src={login} alt="login-icon"></Image>
         </div>
         <div className="w-full px-4 lg:px-10   ">
           <h3 className="text-darkBlue font-semibold mb-1 ">DPPs</h3>
