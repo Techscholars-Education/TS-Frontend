@@ -5,7 +5,7 @@ import avatar from "../../public/Dashboard/avatar.jpg";
 import testseriesicon from "../../public/Dashboard/testseriesicon.svg";
 import timer from "../../public/Dashboard/timer.svg";
 import videoicon from "../../public/Dashboard/videoicon.svg";
-import foundationPoster from "../../public/Course/foundationPoster.svg";
+import coursePoster from "../../public/Course/coursePoster.svg";
 const Testseries1card = (props) => {
   return (
     <div className="bg-white max-w-xs  font-Poppins rounded-xl p-6">
@@ -20,7 +20,7 @@ const Testseries1card = (props) => {
         </div>
       </div>
       <div className="rounded-xl my-4">
-        <Image src={foundationPoster} alt="foundation-course-thumbnail" />
+        <Image src={coursePoster} alt="foundation-course-thumbnail" />
       </div>
 
       <div className="font-Poppins space-y-4">
