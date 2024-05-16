@@ -2,20 +2,22 @@ import React from "react";
 import Aboutslider from "./Aboutslider";
 const About = () => {
   return (
-    <section className="bg-gray-100 py-12 font-Poppins w-11/12 mx-auto  ">
-      <div className=" w-9/12 mx-auto rounded-xl">
-        <h5 className="text-lg text-center font-medium text-darkBlue font-Poppins">
-          Techscholars
-        </h5>
-
-        <h2 className="text-darkBlue font-semibold text-5xl text-center mt-6 mb-6 font-Poppins ">
-          Get ahead of your Competition
+    <section className="bg-white py-6 font-Poppins w-11/12 mx-auto  ">
+      <div className=" w-full mx-auto  rounded-xl">
+        <div className=" text-center">
+          <h5 className="text-xs font-medium bg-gray-300 text-TechBlue font-Poppins border py-1 rounded-full px-4 inline-block">
+            Techscholars
+          </h5>
+        </div>
+        <h2 className="text-darkBlue font-semibold text-2xl  md:text-4xl text-center my-4 font-Poppins ">
+          Get ahead of your competition
         </h2>
-
-        <p className="text-lg text-darkBlue text-center font-base">
-          An innovative Ed-tech organization dedicated to democratizing <br />
-          access to high-quality STEM education across India
-        </p>
+        <div className="my-4 text-center  ">
+          <p className="font-Poppins px-6 leading-normal  md:px-20 lg:px-44 text-xs md:text-sm text-gray-600 tracking-wide ">
+            An innovative Ed-tech organisation dedicated to democratising access
+            to high-quality STEM education across India
+          </p>
+        </div>
       </div>
 
       <Aboutslider />
