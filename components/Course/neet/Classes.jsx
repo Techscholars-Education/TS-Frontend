@@ -119,10 +119,10 @@ const Classes = () => {
   return (
     <>
       <div className="mt-10 space-y-4 font-Poppins">
-        <h1 className=" text-center font-Poppins text-3xl text-darkBlue font-semibold">
+        <h1 className=" text-center font-Poppins text-2xl md:text-3xl text-darkBlue font-semibold">
           NEET Packages
         </h1>
-        <p className="text-gray-500 text-sm md:text-base md:px-80 text-center">
+        <p className="text-gray-500 text-sm md:text-base md:px-40 lg:px-60 xl:px-80 text-center">
           An innovative Ed-tech organisation dedicated to democratising access
           to high-quality STEM education across India
         </p>
@@ -168,7 +168,7 @@ const Classes = () => {
       <div className="flex justify-center mt-24 items-center mb-20 ">
         <Link
           href="/course"
-          className="bg-TechBlue text-sm text-white md:w-44 md:h-12 rounded-full  flex justify-center items-center  duration-300 px-4 py-2 "
+          className="bg-TechBlue text-lg text-white md:w-44 md:h-12 rounded-full  flex justify-center items-center  duration-300 px-4 py-2 "
         >
           Back
         </Link>
