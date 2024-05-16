@@ -1,42 +1,49 @@
 import React from "react";
 import Card from "./Card";
 import Link from "next/link";
-import jeePoster from "../../public/Course/jeePoster.jpg";
-import neetPoster from "../../public/Course/neetPoster.svg";
-import foundationPoster from "../../public/Course/foundationPoster.svg";
+import coursePoster from "../../public/Course/coursePoster.svg";
 
 const Course = () => {
   const data = [
     {
       id: 1,
-      title: "JEE",
-      route: "/course/jee",
+      title: "FOUNDATION",
+      route: "/course/foundation",
       description:
-        "Product Management Masterclass, you will learn with Sarah Johnson. Head of Product Customer Platform Gojek Indonesia",
-      Poster: jeePoster,
+        "Build a strong academic base with our foundational courses, designed to prepare you for competitive exams.",
+      Poster: coursePoster,
     },
     {
       id: 2,
-      title: "NEET",
-      route: "/course/neet",
+      title: "JEE",
+      route: "/course/jee",
       description:
-        "Product Management Masterclass, you will learn with Sarah Johnson. Head of Product Customer Platform Gojek Indonesia",
-      Poster: neetPoster,
+        "Master the concepts and strategies needed to excel in JEE with our comprehensive courses and expert guidance.",
+      Poster: coursePoster,
     },
     {
       id: 3,
-      title: "Foundation",
-      route: "/course/foundation",
+      title: "NEET",
+      route: "/course/neet",
       description:
-        "Product Management Masterclass, you will learn with Sarah Johnson. Head of Product Customer Platform Gojek Indonesia",
-      Poster: foundationPoster,
+        "Achieve top scores in NEET with our specialized courses, focusing on in-depth understanding of medical concepts.",
+      Poster: coursePoster,
     },
   ];
 
   return (
     <>
-      <div className="bg-slate-100 font-Poppins min-h-screen pt-24 w-full ">
-        <div className="flex justify-center  mt-4 ">
+      <div className="bg-white font-Poppins min-h-screen py-10 w-full ">
+        <div className="text-center space-y-4 mb-10">
+          <h2 className="text-xl md:text-4xl font-semibold text-darkBlue">
+            Explore our courses
+          </h2>
+          <p className="text-sm text-gray-600 px-10 md:px-40 xl:px-96">
+            Discover a wide range of expertly designed courses tailored to equip
+            you with the knowledge and skills for success.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 xl:w-10/12 mx-auto ">
           {data.map((item) => {
             return (
               <Card
@@ -49,16 +56,16 @@ const Course = () => {
             );
           })}
         </div>
-        <div className="flex justify-center mt-24 items-center ">
+        <div className="flex justify-center mt-24 items-center space-x-4 md:space-x-10 ">
           <Link
             href="/"
-            className="bg-darkBlue text-white w-44 h-12 rounded-xl  flex justify-center items-center mx-8 auth-btn duration-300"
+            className="bg-TechBlue text-sm text-white md:w-44 md:h-12 rounded-full  flex justify-center items-center  duration-300 px-4 py-2 "
           >
-            Back
+            Explore more
           </Link>
           <Link
             href="/"
-            className="w-44 h-12 border-2  border-gray-300 flex justify-center items-center rounded-xl auth-btn duration-300"
+            className=" text-sm md:w-44 md:h-12 border-2  border-gray-300 flex justify-center items-center rounded-full duration-300 px-4 py-2 "
           >
             Back to home
           </Link>

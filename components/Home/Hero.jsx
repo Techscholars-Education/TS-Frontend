@@ -17,10 +17,10 @@ const Hero = () => {
             Be in the Top 1%
             <br />
             with our{" "}
-            <span className="bg-yellow-100 text-2xl md:text-4xl lg:text-5xl font-medium rounded-l-lg md:border-r-4 md:border-yellowish relative px-2 font-Poppins ">
+            <span className="bg-blue-100 text-2xl md:text-4xl lg:text-5xl font-medium rounded-l-lg md:border-r-4 md:border-TechBlue relative px-2 font-Poppins ">
               expert faculties
-              <span className="text-base hidden md:block absolute bg-yellowish px-4 py-1 font-semibold top-0 left-[100%] ">
-                TechScholars
+              <span className="text-base hidden md:block absolute bg-TechBlue text-white px-4 py-1 font-semibold top-0 left-[100%] ">
+                Techscholars
               </span>
             </span>
           </h1>
