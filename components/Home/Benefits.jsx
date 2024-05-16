@@ -8,73 +8,74 @@ import login from "../../public/Home/login.svg";
 
 const Benefits = () => {
   return (
-    <div className=" w-11/12 mx-auto flex justify-between items-center  ">
-      <div className="font-Poppins inline-block space-y-2 text-center">
-        <div>
-          <Image className="mx-auto mb-4" src={ratings} alt="star-icon"></Image>
+    <div className=" w-11/12 xl:w-10/12 grid grid-cols-1 md:grid-cols-2  mx-auto gap-4 ">
+      {/* container -1 */}
+      <div className=" bg-[#DCD9F866] rounded-xl  flex px-6 py-8 font-Poppins ">
+        <div className="my-auto">
+          <Image className=" w-full " src={ratings} alt="rating-icon"></Image>
         </div>
-        <div>
-          <h4 className="text-xl font-semibold text-darkBlue">
-            High Quality Classes
-          </h4>
-        </div>
-        <div className="w-4/5 mx-auto">
-          <p className="text-darkBlue font-base">
+        <div className="w-full px-4 lg:px-10   ">
+          <h3 className="text-darkBlue font-semibold mb-1 ">
+            High quality Content
+          </h3>
+          <p className="text-sm text-gray-600">
             Experience unmatched quality in our courses: from basics to advanced
             mastery.
           </p>
+          <button className="text-sm text-darkBlue rounded-full border border-gray-500 px-4 py-1 mt-5 ">
+            Find out more
+          </button>
         </div>
       </div>
-      <div className="font-Poppins inline-block space-y-2 text-center">
-        <div>
+      <div className=" bg-[#FFE6DF66] rounded-xl flex px-6 py-8 font-Poppins ">
+        <div className="my-auto">
           <Image
-            className="mx-auto mb-4"
+            className=" w-full "
             src={schdule_time}
-            alt="managing-time"
+            alt="schedule-time"
           ></Image>
         </div>
-        <div>
-          <h4 className="text-xl font-semibold text-darkBlue">
+        <div className="w-full px-4 lg:px-10   ">
+          <h3 className="text-darkBlue font-semibold mb-1 ">
             Doubt Solving Classes
-          </h4>
-        </div>
-        <div className="w-4/5 mx-auto">
-          <p className="text-darkBlue font-base">
+          </h3>
+          <p className="text-sm text-gray-600">
             Unlock clarity in our Doubt Solving Classes: dedicated sessions with
             expert guidance.
           </p>
+          <button className="text-sm text-darkBlue rounded-full border border-gray-500 px-4 py-1 mt-5 ">
+            Find out more
+          </button>
         </div>
       </div>
-      <div className="font-Poppins inline-block space-y-2 text-center">
-        <div>
-          <Image
-            className="mx-auto mb-4"
-            src={live_class}
-            alt="live-class"
-          ></Image>
+      <div className=" bg-[#FCE2EB4D] rounded-xl flex px-6 py-8 font-Poppins ">
+        <div className="my-auto">
+          <Image className=" w-full " src={live_class} alt="live-class"></Image>
         </div>
-        <div>
-          <h4 className="text-xl font-semibold text-darkBlue">Weekly tests</h4>
-        </div>
-        <div className="w-4/5 mx-auto">
-          <p className="text-darkBlue font-base">
+        <div className="w-full px-4 lg:px-10   ">
+          <h3 className="text-darkBlue font-semibold mb-1 ">Weekly tests</h3>
+          <p className="text-sm text-gray-600">
             Embark on a journey of assessment excellence with our All India test
             series
           </p>
+          <button className="text-sm text-darkBlue rounded-full border border-gray-500 px-4 py-1 mt-5 ">
+            Find out more
+          </button>
         </div>
       </div>
-      <div className="font-Poppins inline-block space-y-2 text-center">
-        <div>
-          <Image className="mx-auto mb-4" src={login} alt="login-icon"></Image>
+      <div className=" bg-[#DCF4F566] rounded-xl flex px-6 py-8 font-Poppins ">
+        <div className="my-auto">
+          <Image className=" w-full " src={login} alt="login-icon"></Image>
         </div>
-        <div>
-          <h4 className="text-xl font-semibold text-darkBlue">DPPs</h4>
-        </div>
-        <div className="w-4/5 mx-auto">
-          <p className="text-darkBlue font-base">
+        <div className="w-full px-4 lg:px-10   ">
+          <h3 className="text-darkBlue font-semibold mb-1 ">DPPs</h3>
+          <p className="text-sm text-gray-600">
             Dive into enriched learning with our meticulously curated DPP and
             Study Material
           </p>
+          <button className="text-sm text-darkBlue rounded-full border border-gray-500 px-4 py-1 mt-5 ">
+            Find out more
+          </button>
         </div>
       </div>
     </div>

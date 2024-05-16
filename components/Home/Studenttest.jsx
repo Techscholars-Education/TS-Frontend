@@ -1,91 +1,91 @@
 import React from "react";
 import Image from "next/image";
-import border from "../../public/Home/border.svg";
 import quotation from "../../public/Home/quotation.svg";
-import Link from "next/link";
+
 const Studenttest = () => {
   return (
-    <section className="bg-gray-100 pb-12 font-Poppins mx-auto">
-      <div className="  mx-auto rounded-xl">
-        <p className="text-darkBlue font-base text-xl text-center mt-10 mb-6 font-Poppins w-9/12 mx-auto ">
-          Maximize your potential with Techscholars personalised mentorship,
-          performance analytics, and collaborative community
-        </p>
-        <div className="text-center my-10">
-          <Link
-            href="/course"
-            className=" font-Poppins text-darkBlue border border-black/40 rounded-xl px-10 py-3 bg-yellowish text-2xl font-medium  hover:-translate-y-2  duration-300  auth-btn"
-          >
-            Get started
-          </Link>
-          <p className="text-darkBlue font-base text-xl text-center mt-10 mb-6 font-Poppins ">
+    <section className="bg-[#F8F8F8] my-16 py-16 font-Poppins w-full mx-auto  ">
+      <div className=" w-full mx-auto  rounded-xl">
+        <div className=" text-center">
+          <h5 className="text-xs font-medium bg-gray-300 text-TechBlue font-Poppins border py-1 rounded-full px-4 inline-block">
             Testimonials
-          </p>
-
-          <h2 className="text-5xl font-semibold text-center text-darkBlue">
-            What our students have to say for us
-          </h2>
+          </h5>
         </div>
-        <div className="flex space-x-10 my-24  justify-center ">
-          <div className="relative ">
-            <Image src={border} alt="yellow-border "></Image>
-            <div className=" max-w-sm absolute top-10 left-4 px-3 space-y-4">
-              <p className=" leading-relaxed">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-                quod fuga autem ab rerum quos. Repellendus delectus Lorem ipsum
-                dolor sit amet, consectetur adipisicing elit. Corrupti, ducimus!
+        <h2 className="text-darkBlue font-semibold text-xl  md:text-4xl text-center my-4 font-Poppins ">
+          What our students have to say
+        </h2>
+      </div>
+      <div className=" my-24 w-11/12 mx-auto grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-10">
+        <div className=" w-[80%] mx-auto  sm:w-full ">
+          <div className=" rounded-xl border relative">
+            <div className=" top-0 p-6 xl:top-[10%] ">
+              <p className="text-base sm:text-xs md:text-sm lg:text-base ">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Recusandae, totam. Lorem ipsum dolor sit amet.
               </p>
-              <div className="flex items-center space-x-4">
-                <div className="h-10 w-10 bg-yellowish rounded-full"></div>
-                <div>
-                  <h3 className="text-darkBlue font-semibold">Naina Sharma</h3>
-                  <p className="text-darkBlue/70">Dav School</p>
-                </div>
+            </div>
+            <div className=" my-2 px-4  xl:bottom-0 ">
+              <div className="flex items-center space-x-2">
+                <div className="w-[28px] h-[28px] md:w-[30px] md:h-[30px] lg:h-[40px] lg:w-[40px] bg-TechBlue rounded-full"></div>
+                <p className="text-base md:text-sm lg:text-base xl:text-base ">
+                  Naina Sharma
+                </p>
               </div>
             </div>
-            <div className="absolute bottom-0 right-0">
-              <Image src={quotation} alt="quotation"></Image>
-            </div>
+
+            <Image
+              className="absolute -bottom-6 -right-2 md:w-12 lg:w-20 xl:w-12 xl:-bottom-4"
+              src={quotation}
+              alt="quotation-icon"
+            ></Image>
           </div>
-          <div className="relative ">
-            <Image src={border} alt="yellow-border"></Image>
-            <div className=" max-w-sm absolute top-10 left-4 px-3 space-y-4">
-              <p className=" leading-relaxed">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-                quod fuga autem ab rerum quos. Repellendus delectus Lorem ipsum
-                dolor sit amet, consectetur adipisicing elit. Corrupti, ducimus!
+        </div>
+        <div className=" w-[80%] mx-auto  sm:w-full ">
+          <div className=" rounded-xl border relative">
+            <div className=" top-0 p-6 xl:top-[10%] ">
+              <p className="text-base sm:text-xs md:text-sm lg:text-base ">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Recusandae, totam. Lorem ipsum dolor sit amet.
               </p>
-              <div className="flex items-center space-x-4">
-                <div className="h-10 w-10 bg-yellowish rounded-full"></div>
-                <div>
-                  <h3 className="text-darkBlue font-semibold">Naina Sharma</h3>
-                  <p className="text-darkBlue/70">Dav School</p>
-                </div>
+            </div>
+            <div className=" my-2 px-4  xl:bottom-0 ">
+              <div className="flex items-center space-x-2">
+                <div className="w-[28px] h-[28px] md:w-[30px] md:h-[30px] lg:h-[40px] lg:w-[40px] bg-TechBlue rounded-full"></div>
+                <p className="text-base md:text-sm lg:text-base xl:text-base ">
+                  Naina Sharma
+                </p>
               </div>
             </div>
-            <div className="absolute bottom-0 right-0">
-              <Image src={quotation} alt="quotation"></Image>
-            </div>
+
+            <Image
+              className="absolute -bottom-6 -right-2 md:w-12 lg:w-20 xl:w-12 xl:-bottom-4"
+              src={quotation}
+              alt="quotation-icon"
+            ></Image>
           </div>
-          <div className="relative  ">
-            <Image src={border} alt="yellow-border"></Image>
-            <div className=" max-w-sm absolute top-10 left-4 px-3 space-y-4">
-              <p className=" leading-relaxed">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-                quod fuga autem ab rerum quos. Repellendus delectus Lorem ipsum
-                dolor sit amet, consectetur adipisicing elit. Corrupti, ducimus!
+        </div>
+        <div className=" w-[80%] mx-auto  sm:w-full ">
+          <div className=" rounded-xl border relative">
+            <div className=" top-0 p-6 xl:top-[10%] ">
+              <p className="text-base sm:text-xs md:text-sm lg:text-base ">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Recusandae, totam. Lorem ipsum dolor sit amet.
               </p>
-              <div className="flex items-center space-x-4">
-                <div className="h-10 w-10 bg-yellowish rounded-full"></div>
-                <div>
-                  <h3 className="text-darkBlue font-semibold">Naina Sharma</h3>
-                  <p className="text-darkBlue/70">Dav School</p>
-                </div>
+            </div>
+            <div className=" my-2 px-4  xl:bottom-0 ">
+              <div className="flex items-center space-x-2">
+                <div className="w-[28px] h-[28px] md:w-[30px] md:h-[30px] lg:h-[40px] lg:w-[40px] bg-TechBlue rounded-full"></div>
+                <p className="text-base md:text-sm lg:text-base xl:text-base ">
+                  Naina Sharma
+                </p>
               </div>
             </div>
-            <div className="absolute bottom-0 right-0">
-              <Image src={quotation} alt="quotation"></Image>
-            </div>
+
+            <Image
+              className="absolute -bottom-6 -right-2 md:w-12 lg:w-20 xl:w-12 xl:-bottom-4"
+              src={quotation}
+              alt="quotation-icon"
+            ></Image>
           </div>
         </div>
       </div>

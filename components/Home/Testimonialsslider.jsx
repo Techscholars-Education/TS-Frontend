@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import quoteup from "../../public/Home/quoteup.svg";
@@ -9,12 +10,29 @@ import star from "../../public/Home/star.svg";
 const Testimonialsslider = () => {
   const settings = {
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 2000,
-    autoplaySpeed: 1000,
+    speed: 3000,
+    autoplaySpeed: 2000,
     cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   const testimonialsData = [
     {
@@ -37,29 +55,26 @@ const Testimonialsslider = () => {
     },
   ];
   return (
-    <div className="w-[97%] mx-auto overflow-hidden">
+    <div className="w-[90%] mx-auto">
       <Slider {...settings}>
         {testimonialsData.map((item) => {
           return (
             <div key={item.id}>
-              <div className="border-2 border-yellowish bg-white p-4 rounded-xl mx-4 max-w-xl  ">
+              <div className="border bg-white p-4 rounded-xl mx-4   ">
                 <div>
-                  <Image src={quoteup} alt="quoteup" />
+                  <Image className="invert " src={quoteup} alt="quoteup" />
                 </div>
 
-                <div className="my-6">
-                  <p className="text-base text-darkBlue/70">
+                <div className="py-4">
+                  <p className="text-base text-darkBlue/70 font-Poppins">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Ratione, laboriosam. Lorem ipsum, dolor sit amet consectetur
-                    adipisicing elit. Nam, voluptate. Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit.
+                    Ratione, laboriosam. Lorem ipsum.
                   </p>
                 </div>
 
                 <div className="flex items-center justify-between font-Poppins ">
                   <div className="w-1/2 flex items-center space-x-4">
-                    <div className="w-16 h-16 rounded-full bg-yellowish"></div>
-
+                    <div className="w-[30px] h-[30px] rounded-full bg-TechBlue"></div>
                     <h4 className="font-semibold text-darkBlue">John Doe</h4>
                   </div>
                   <div className="flex justify-center items-center space-x-4">
@@ -72,6 +87,14 @@ const Testimonialsslider = () => {
           );
         })}
       </Slider>
+      <div className="flex justify-center items-center my-14">
+        <Link
+          className="text-center bg-TechBlue text-white font-Poppins font-medium rounded-full px-6 py-3 text-sm "
+          href="/course"
+        >
+          Get started
+        </Link>
+      </div>
     </div>
   );
 };
