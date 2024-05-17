@@ -44,7 +44,7 @@ const page = () => {
                                         <div className='flex items-center gap-[8vw]'>
                                             <h1 className='font-semibold text-[.8vw]'>Class</h1>
                                             <div className="w-30">
-                                                <select id="countries" defaultValue={"9th"} className="bg-[#002956] text-[.9vw] cursor-pointer text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[6vw] p-2.5 ">
+                                                <select id="class" defaultValue={"9th"} className="bg-[#002956] text-[.9vw] cursor-pointer text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[6vw] p-2.5 ">
                                                     <option  value="9th">9th</option>
                                                     <option value="10th">10th</option>
                                                     <option value="11th">11th</option>
@@ -56,7 +56,7 @@ const page = () => {
                                         <div className='flex items-center gap-[8vw]'>
                                             <h1 className='font-semibold text-[.8vw]'>Types</h1>
                                             <div className="w-30">
-                                            <select defaultValue={"foundation"} id="countries" className="bg-[#002956] cursor-pointer text-[.9vw] text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[6vw] p-2.5 ">
+                                            <select defaultValue={"foundation"} id="types" className="bg-[#002956] cursor-pointer text-[.9vw] text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[6vw] p-2.5 ">
                                                     <option value="foundation">Foundation</option>
                                                     <option value="ceo">CEO</option>
                                                     <option value="cto">CTO</option>
@@ -67,7 +67,7 @@ const page = () => {
                                         <div className='flex items-center gap-[8vw]'>
                                             <h1 className='font-semibold text-[.8vw]'>Plan</h1>
                                             <div className="w-30 ml-2">
-                                            <select defaultValue={"starter"} id="countries" className="bg-[#002956] cursor-pointer text-[.9vw]  text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[6vw] p-2.5 ">
+                                            <select defaultValue={"starter"} id="plan" className="bg-[#002956] cursor-pointer text-[.9vw]  text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[6vw] p-2.5 ">
                                                     <option value="starter">Starter</option>
                                                     <option value="basic">Basic</option>
                                                     <option value="highest">Highest</option>

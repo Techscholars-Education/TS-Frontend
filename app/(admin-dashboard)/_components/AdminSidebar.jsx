@@ -122,7 +122,7 @@ const DivTwo = () => (
        
       />
         <Li
-        url="/admin"
+        url="/"
         text="Logout"
         Icon={BiLogOutCircle}
         location={location}

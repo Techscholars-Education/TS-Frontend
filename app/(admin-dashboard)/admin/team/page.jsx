@@ -13,7 +13,6 @@ const page = () => {
 
   const [domLoaded, setDomLoaded] = useState(false);
   const [team,setTeam] = useState(true);
-  console.log(team);
   useEffect(() => {
     setDomLoaded(true);
 }, []);
@@ -38,7 +37,7 @@ const page = () => {
                      {admin.map((i)=>(
 
                         <div className='bg-white h-[15vw] w-[14vw] p-2 rounded-md flex items-center flex-col' key={i.id}>
-                            <Image src={i.img} alt='team' className='h-[7vw] w-[7vw] rounded-full'/>
+                            <Image src={i.img} alt='team' height={134.4} width={134.4} priority={true} className='h-[7vw] w-[7vw] rounded-full'/>
                             <div className='flex flex-col items-center gap-2 mt-2 text-[.7vw] font-normal text-gray-300'>
                                 <h1 className='font-semibold text-[.9vw] text-black'>{i.name}</h1>
                                 <p className=''>{i.admin}</p>
@@ -101,7 +100,7 @@ const page = () => {
                             </div>
                             <div className='flex flex-col'>
                                 <label htmlFor="designation" className=" mb-2 text-sm font-medium text-gray-600 ">Role</label>
-                                <select defaultValue={"member"} id="countries" className="bg-gray-200 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5">
+                                <select defaultValue={"member"} id="designation" className="bg-gray-200 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5">
                                     <option value={"member"}>Member</option>
                                     <option value="CEO">CEO</option>
                                     <option value="CTO">CTO</option>
