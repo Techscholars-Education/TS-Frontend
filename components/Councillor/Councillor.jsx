@@ -17,7 +17,11 @@ const Councillor = () => {
         </div>
         <div className=" w-11/12  mx-auto lg:flex lg:flex-row flex flex-col  space-y-12 md:space-y-0  justify-center items-center md:space-x-4 py-10 ">
           <div className=" w-full lg:w-1/2 ">
-            <Image className="mx-auto" src={CouncillorPoster}></Image>
+            <Image
+              className="mx-auto"
+              src={CouncillorPoster}
+              alt="councillor-svg"
+            ></Image>
           </div>
           <form
             className=" w-full lg:w-1/2 font-Poppins  space-y-4 "
