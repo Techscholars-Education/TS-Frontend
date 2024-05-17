@@ -38,8 +38,8 @@ const Curriculum = () => {
             <div className=" px-2 xl:px-6 w-full  ">
               <h3 className=" font-Poppins text-xl font-semibold ">Jee</h3>
               <p className="text-xs font-Poppins text-gray-600 py-2 leading-normal">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
-                sed!
+                Master the concepts and strategies needed to excel in JEE with
+                our comprehensive courses and expert guidance.
               </p>
               <div className="flex mt-4 space-x-2 flex-wrap">
                 <div className="border border-darkBlue rounded-full text-xs px-2 py-1 my-1">
@@ -65,8 +65,8 @@ const Curriculum = () => {
             <div className=" px-2 xl:px-6 w-full ">
               <h3 className=" font-Poppins text-xl font-semibold ">Neet</h3>
               <p className="text-xs font-Poppins text-gray-600 py-2 leading-normal">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
-                sed!
+                Achieve top scores in NEET with our specialized courses,
+                focusing on in-depth understanding of medical concepts.
               </p>
               <div className="flex mt-4 space-x-2 flex-wrap">
                 <div className="border border-darkBlue rounded-full text-xs px-2 py-1 my-1">
@@ -94,8 +94,8 @@ const Curriculum = () => {
                 Foundation
               </h3>
               <p className="text-xs font-Poppins text-gray-600 py-2 leading-normal">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo,
-                sed!
+                Build a strong academic base with our foundational courses,
+                designed to prepare you for competitive exams.
               </p>
               <div className="flex mt-4 space-x-2 flex-wrap">
                 <div className="border border-darkBlue rounded-full text-xs px-2 py-1 my-1">
