@@ -1,5 +1,6 @@
 import React from "react";
 import { MdDone } from "react-icons/md";
+import { RxCross2 } from "react-icons/rx";
 import Link from "next/link";
 const Costing = (props) => {
   return (
@@ -23,19 +24,17 @@ const Costing = (props) => {
           </li>
           <li className="flex justify-start space-x-2 items-center">
             <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
-            <span className="text-gray-600 text-sm">Weekly test series</span>
+            <span className="text-gray-600 text-sm">DPPs</span>
           </li>
           <li className="flex justify-start space-x-2 items-center  ">
             <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
-            <span className="text-gray-600 text-sm">
-              Doubt clearing sessions
-            </span>
+            <span className="text-gray-600 text-sm">Weekly test series</span>
           </li>
-          <li className="flex justify-start space-x-2 items-center blur-[1.8px]">
-            <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
-            <span className="text-gray-600 text-sm">
+          <li className="flex justify-start space-x-2 items-center ">
+            <RxCross2 className="bg-TechBlue text-xl text-white rounded-full p-1" />
+            <del className="text-gray-600 text-sm">
               Access the smartest student community
-            </span>
+            </del>
           </li>
         </ul>
         <p className="text-center text-darkBlue text-xl">...</p>
