@@ -1,17 +1,18 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 const page = () => {
   return (
     <>
       <Navbar />
       <section className="my-10">
-        <h1 className="text-darkBlue  font-Poppins font-semibold text-4xl text-center">
+        <h1 className="text-darkBlue  font-Poppins font-semibold text-xl md:text-4xl text-center">
           Terms and conditions
         </h1>
 
-        <div className="font-Poppins w-4/5 mx-auto py-10">
+        <div className="font-Poppins w-4/5 mx-auto py-10 text-sm md:text-base">
           <div className="text-darkBlue">
-            <h3 className="text-2xl font-semibold py-4 text-darkBlue">
+            <h3 className="text-lg md:text-2xl font-semibold py-4 text-darkBlue">
               Company Policy
             </h3>
             <h6>
@@ -36,7 +37,7 @@ const page = () => {
             </h6>
           </div>
           <div className="text-darkBlue">
-            <h3 className="text-2xl font-semibold py-4 text-darkBlue">
+            <h3 className="text-lg md:text-2xl font-semibold py-4 text-darkBlue">
               Disclosure of Personal Information
             </h3>
 
@@ -117,7 +118,7 @@ const page = () => {
             </p>
           </div>
           <div className="text-darkBlue">
-            <h3 className="text-2xl font-semibold py-4 text-darkBlue">
+            <h3 className="text-lg md:text-2xl font-semibold py-4 text-darkBlue">
               Use of your Personal Information
             </h3>
 
@@ -135,7 +136,7 @@ const page = () => {
             </p>
           </div>
           <div className="text-darkBlue">
-            <h3 className="text-2xl font-semibold py-4 text-darkBlue">
+            <h3 className="text-lg md:text-2xl font-semibold py-4 text-darkBlue">
               Information Security
             </h3>
 
@@ -152,7 +153,7 @@ const page = () => {
             </p>
           </div>
           <div className="text-darkBlue">
-            <h3 className="text-2xl font-semibold py-4 text-darkBlue">
+            <h3 className="text-lg md:text-2xl font-semibold py-4 text-darkBlue">
               Cookies
             </h3>
 
@@ -170,7 +171,9 @@ const page = () => {
             </p>
           </div>
           <div className="text-darkBlue">
-            <h3 className="text-2xl font-semibold py-4 text-darkBlue">Links</h3>
+            <h3 className="text-lg md:text-2xl font-semibold py-4 text-darkBlue">
+              Links
+            </h3>
 
             <p>
               We may present links in a format that enables us to keep track of
@@ -185,7 +188,7 @@ const page = () => {
             </p>
           </div>
           <div className="text-darkBlue">
-            <h3 className="text-2xl font-semibold py-4 text-darkBlue">
+            <h3 className="text-lg md:text-2xl font-semibold py-4 text-darkBlue">
               Alerts
             </h3>
 
@@ -198,7 +201,7 @@ const page = () => {
             </p>
           </div>
           <div className="text-darkBlue">
-            <h3 className="text-2xl font-semibold py-4 text-darkBlue">
+            <h3 className="text-lg md:text-2xl font-semibold py-4 text-darkBlue">
               Sharing Information in Public Forums
             </h3>
 
@@ -213,7 +216,7 @@ const page = () => {
             </p>
           </div>
           <div className="text-darkBlue">
-            <h3 className="text-2xl font-semibold py-4 text-darkBlue">
+            <h3 className="text-lg md:text-2xl font-semibold py-4 text-darkBlue">
               Retention of User Data
             </h3>
 
@@ -228,7 +231,7 @@ const page = () => {
             </p>
           </div>
           <div className="text-darkBlue">
-            <h3 className="text-2xl font-semibold py-4 text-darkBlue">
+            <h3 className="text-lg md:text-2xl font-semibold py-4 text-darkBlue">
               Automatic access to Information
             </h3>
 
@@ -242,7 +245,7 @@ const page = () => {
             </p>
           </div>
           <div className="text-darkBlue">
-            <h3 className="text-2xl font-semibold py-4 text-darkBlue">
+            <h3 className="text-lg md:text-2xl font-semibold py-4 text-darkBlue">
               User communications
             </h3>
 
@@ -253,7 +256,7 @@ const page = () => {
             </p>
           </div>
           <div className="text-darkBlue">
-            <h3 className="text-2xl font-semibold py-4 text-darkBlue">
+            <h3 className="text-lg md:text-2xl font-semibold py-4 text-darkBlue">
               Changes to this Statement
             </h3>
 
@@ -265,7 +268,7 @@ const page = () => {
             </p>
           </div>
           <div className="text-darkBlue">
-            <h3 className="text-2xl font-semibold py-4 text-darkBlue">
+            <h3 className="text-lg md:text-2xl font-semibold py-4 text-darkBlue">
               Your Consent
             </h3>
 
@@ -290,7 +293,7 @@ const page = () => {
             </p>
           </div>
           <div className="text-darkBlue">
-            <h3 className="text-2xl font-semibold py-4 text-darkBlue">
+            <h3 className="text-lg md:text-2xl font-semibold py-4 text-darkBlue">
               Grievance Redressal
             </h3>
 
@@ -301,7 +304,7 @@ const page = () => {
             </p>
           </div>
           <div className="text-darkBlue">
-            <h3 className="text-2xl font-semibold py-4 text-darkBlue">
+            <h3 className="text-lg md:text-2xl font-semibold py-4 text-darkBlue">
               Your Access Constitutes A Binding Contract
             </h3>
 
@@ -327,7 +330,7 @@ const page = () => {
             </p>
           </div>
           <div className="text-darkBlue">
-            <h3 className="text-2xl font-semibold py-4 text-darkBlue">
+            <h3 className="text-lg md:text-2xl font-semibold py-4 text-darkBlue">
               Copyright
             </h3>
 
@@ -365,7 +368,7 @@ const page = () => {
           </div>
 
           <div className="text-darkBlue">
-            <h3 className="text-2xl font-semibold py-4 text-darkBlue">
+            <h3 className="text-lg md:text-2xl font-semibold py-4 text-darkBlue">
               Non-disclosure Clause
             </h3>
 
@@ -385,7 +388,7 @@ const page = () => {
             </p>
           </div>
           <div className="text-darkBlue">
-            <h3 className="text-2xl font-semibold py-4 text-darkBlue">
+            <h3 className="text-lg md:text-2xl font-semibold py-4 text-darkBlue">
               General Terms
             </h3>
 
@@ -438,7 +441,7 @@ const page = () => {
             </p>
           </div>
           <div className="text-darkBlue">
-            <h3 className="text-2xl font-semibold py-4 text-darkBlue">
+            <h3 className="text-lg md:text-2xl font-semibold py-4 text-darkBlue">
               DISCLAIMER CLAUSE
             </h3>
 
@@ -461,6 +464,7 @@ const page = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };
