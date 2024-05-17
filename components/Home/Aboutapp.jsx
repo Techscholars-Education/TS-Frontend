@@ -13,7 +13,7 @@ const Aboutapp = () => {
       <div className="w-full md:w-1/2 flex flex-col justify-center items-center space-y-4 md:pl-10 ">
         <div>
           <h2 className=" text-center md:text-start text-3xl lg:text-3xl xl:text-5xl font-semibold text-darkBlue xl:leading-normal">
-            Start achieving your acadamic excellence with TechScholars.
+            Start achieving your acadamic excellence with Techscholars.
           </h2>
         </div>
         <div className="w-full space-x-4 flex justify-center items-center  md:block ">

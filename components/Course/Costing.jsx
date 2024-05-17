@@ -1,5 +1,6 @@
 import React from "react";
 import { MdDone } from "react-icons/md";
+import { RxCross2 } from "react-icons/rx";
 import Link from "next/link";
 const Costing = (props) => {
   return (
@@ -23,26 +24,56 @@ const Costing = (props) => {
           </li>
           <li className="flex justify-start space-x-2 items-center">
             <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
-            <span className="text-gray-600 text-sm">Weekly test series</span>
+            <span className="text-gray-600 text-sm">DPPs</span>
           </li>
           <li className="flex justify-start space-x-2 items-center  ">
             <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
-            <span className="text-gray-600 text-sm">
-              Doubt clearing sessions
-            </span>
+            <span className="text-gray-600 text-sm">Weekly test series</span>
           </li>
-          <li className="flex justify-start space-x-2 items-center blur-[1.8px]">
-            <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
-            <span className="text-gray-600 text-sm">
+          <li className="flex justify-start space-x-2 items-center ">
+            <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
+            <del className="text-gray-600 text-sm">
               Access the smartest student community
-            </span>
+            </del>
+          </li>
+          <li className="flex justify-start space-x-2 items-center ">
+            <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
+            <del className="text-gray-600 text-sm ">
+              <span className="font-bold text-gray-600">LIVE</span> doubt
+              clearing sessions
+            </del>
+          </li>
+          <li className="flex justify-start space-x-2 items-center ">
+            <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
+            <del className="text-gray-600 text-sm ">
+              Special Access to{" "}
+              <span className="font-bold text-gray-600"> BRAHMASTRA</span>
+              (Coming Soon)
+            </del>
+          </li>
+          <li className="flex justify-start space-x-2 items-center ">
+            <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
+            <del className="text-gray-600 text-sm ">
+              Personalised Mentorship and Guidance
+            </del>
+          </li>
+          <li className="flex justify-start space-x-2 items-center ">
+            <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
+            <del className="text-gray-600 text-sm ">
+              Special Access to{" "}
+              <span className="font-bold text-gray-600">
+                {" "}
+                Personal AI Mentor
+              </span>
+              (Coming Soon)
+            </del>
           </li>
         </ul>
         <p className="text-center text-darkBlue text-xl">...</p>
         <div className="w-full flex justify-center items-center my-4">
           <Link
             href="/course"
-            className="border w-5/6 rounded-full px-6 py-2 text-center  "
+            className="border w-5/6 rounded-full px-6 py-3 text-center  "
           >
             Purchase Now
           </Link>
@@ -69,24 +100,52 @@ const Costing = (props) => {
           </li>
           <li className="flex justify-start space-x-2 items-center">
             <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
-            <span className=" text-sm text-white">Weekly test series</span>
+            <span className=" text-sm text-white">DPPs</span>
           </li>
           <li className="flex justify-start space-x-2 items-center  ">
             <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
-            <span className=" text-sm text-white">Doubt clearing sessions</span>
+            <span className=" text-sm text-white">Weekly test series</span>
           </li>
-          <li className="flex justify-start space-x-2 items-center blur-[1.8px]">
+          <li className="flex justify-start space-x-2 items-center ">
             <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
             <span className=" text-sm text-white">
               Access the smartest student community
             </span>
+          </li>
+          <li className="flex justify-start space-x-2 items-center ">
+            <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
+            <span className=" text-sm text-white">
+              <span className="font-bold text-white-600">LIVE</span> doubt
+              clearing sessions
+            </span>
+          </li>
+          <li className="flex justify-start space-x-2 items-center ">
+            <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
+            <span className=" text-sm text-white">
+              Special Access to <span className="font-bold "> BRAHMASTRA</span>
+              (Coming Soon)
+            </span>
+          </li>
+          <li className="flex justify-start space-x-2 items-center ">
+            <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
+            <del className="text-white text-sm ">
+              Personalised Mentorship and Guidance
+            </del>
+          </li>
+          <li className="flex justify-start space-x-2 items-center ">
+            <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
+            <del className="text-white text-sm ">
+              Special Access to{" "}
+              <span className="font-bold "> Personal AI Mentor</span>
+              (Coming Soon)
+            </del>
           </li>
         </ul>
         <p className="text-center text-white text-xl">...</p>
         <div className="w-full flex justify-center items-center my-4">
           <Link
             href="/course"
-            className="border w-5/6 rounded-full text-center  px-6 py-2 bg-white text-TechBlue"
+            className="border w-5/6 rounded-full text-center  px-6 py-3 bg-white text-TechBlue"
           >
             Purchase Now
           </Link>
@@ -126,10 +185,39 @@ const Costing = (props) => {
               Doubt clearing sessions
             </span>
           </li>
-          <li className="flex justify-start space-x-2 items-center blur-[1.8px]">
+          <li className="flex justify-start space-x-2 items-center ">
             <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
             <span className="text-gray-600 text-sm">
               Access the smartest student community
+            </span>
+          </li>
+
+          <li className="flex justify-start space-x-2 items-center ">
+            <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
+            <span className=" text-sm text-gray-600">
+              <span className="font-bold text-white-600">LIVE</span> doubt
+              clearing sessions
+            </span>
+          </li>
+          <li className="flex justify-start space-x-2 items-center ">
+            <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
+            <span className=" text-sm text-gray-600">
+              Special Access to <span className="font-bold "> BRAHMASTRA</span>
+              (Coming Soon)
+            </span>
+          </li>
+          <li className="flex justify-start space-x-2 items-center ">
+            <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
+            <span className="text-gray-600 text-sm ">
+              Personalised Mentorship and Guidance
+            </span>
+          </li>
+          <li className="flex justify-start space-x-2 items-center ">
+            <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
+            <span className="text-gray-600 text-sm ">
+              Special Access to{" "}
+              <span className="font-bold "> Personal AI Mentor</span>
+              (Coming Soon)
             </span>
           </li>
         </ul>
@@ -137,7 +225,7 @@ const Costing = (props) => {
         <div className="w-full flex justify-center items-center my-4 ">
           <Link
             href="/course"
-            className="border w-5/6 rounded-full px-6 py-2 text-center  "
+            className="border w-5/6 rounded-full px-6 py-3 text-center  "
           >
             Purchase Now
           </Link>
