@@ -47,7 +47,7 @@ const Hero = () => {
             />
           </div>
           <div>
-            <button className="rounded-full px-10 text-lg py-2 bg-TechBlue  text-white hover:-translate-y-2  duration-300  auth-btn">
+            <button className="rounded-full px-10 text-lg py-2 bg-TechBlue  text-white hover:scale-105 duration-300  ">
               Search
             </button>
           </div>

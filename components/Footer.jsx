@@ -22,7 +22,7 @@ const Footer = () => {
         </div>
         <div>
           <p className="text-sm md:text-base lg:text-base">
-            Welcome to Techscholars. transforming average students
+            Welcome to Techscholars, transforming average students
           </p>
         </div>
         <div className="flex space-x-4 my-2">
@@ -54,7 +54,7 @@ const Footer = () => {
           Shipping
         </Link>
         <Link className="text-sm lg:text-base" href="/councillor">
-          Schdedule a call
+          Schedule a call
         </Link>
         <Link className="text-sm lg:text-base" href="/course">
           Courses
