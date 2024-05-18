@@ -88,7 +88,7 @@ const Card = (props) => {
           <div className="flex justify-between mt-4">
             <Link
               href={props.route ? props.route : "/"}
-              className=" w-full  p-2 px-4 rounded-full text-center bg-TechBlue text-sm text-white"
+              className=" w-full  p-3 px-4 rounded-full text-center bg-TechBlue text-sm text-white"
             >
               Explore
             </Link>

@@ -1,16 +1,17 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 const page = () => {
   return (
     <>
       <Navbar />
       <section className="my-10">
-        <h1 className="text-darkBlue  font-Poppins font-semibold text-4xl text-center">
+        <h1 className="text-darkBlue  font-Poppins font-semibold text-xl md:text-4xl text-center">
           Privacy policy
         </h1>
 
-        <div className="font-Poppins w-4/5 mx-auto py-10">
-          <p className="text-base text-darkBlue">
+        <div className="font-Poppins w-4/5 mx-auto py-10 text-sm md:text-base">
+          <p className=" text-darkBlue ">
             Because your privacy is important to us <br />
             Codementor Hub Education Pvt. Ltd. <br />A Private Limited Company,
             registered under the Companies Act, 2013, CIN:
@@ -42,7 +43,7 @@ const page = () => {
           </p>
 
           <div className="text-darkBlue">
-            <h3 className="text-2xl font-semibold py-4 text-darkBlue">
+            <h3 className="text-lg md:text-2xl font-semibold py-4 text-darkBlue">
               Collection of Personal Information
             </h3>
             <h6>
@@ -151,7 +152,7 @@ const page = () => {
           </div>
 
           <div className="text-darkBlue">
-            <h3 className="text-2xl font-semibold py-4 text-darkBlue">
+            <h3 className="text-lg md:text-2xl font-semibold py-4 text-darkBlue">
               Confidentiality
             </h3>
             <h6>
@@ -226,7 +227,7 @@ const page = () => {
             </p>
           </div>
           <div className="text-darkBlue">
-            <h3 className="text-2xl font-semibold py-4 text-darkBlue">
+            <h3 className="text-lg md:text-2xl font-semibold py-4 text-darkBlue">
               Use of Personal Information
             </h3>
             <h6>
@@ -265,7 +266,7 @@ const page = () => {
             </p>
           </div>
           <div className="text-darkBlue">
-            <h3 className="text-2xl font-semibold py-4 text-darkBlue">
+            <h3 className="text-lg md:text-2xl font-semibold py-4 text-darkBlue">
               Sharing of Personal Information
             </h3>
 
@@ -318,7 +319,7 @@ const page = () => {
             </p>
           </div>
           <div className="text-darkBlue">
-            <h3 className="text-2xl font-semibold py-4 text-darkBlue">
+            <h3 className="text-lg md:text-2xl font-semibold py-4 text-darkBlue">
               Information Safety
             </h3>
 
@@ -331,7 +332,7 @@ const page = () => {
             </p>
           </div>
           <div className="text-darkBlue">
-            <h3 className="text-2xl font-semibold py-4 text-darkBlue">
+            <h3 className="text-lg md:text-2xl font-semibold py-4 text-darkBlue">
               Copyright
             </h3>
 
@@ -368,7 +369,7 @@ const page = () => {
             </p>
           </div>
           <div className="text-darkBlue">
-            <h3 className="text-2xl font-semibold py-4 text-darkBlue">
+            <h3 className="text-lg md:text-2xl font-semibold py-4 text-darkBlue">
               Non-disclosure Clause
             </h3>
 
@@ -388,7 +389,7 @@ const page = () => {
             </p>
           </div>
           <div className="text-darkBlue">
-            <h3 className="text-2xl font-semibold py-4 text-darkBlue">
+            <h3 className="text-lg md:text-2xl font-semibold py-4 text-darkBlue">
               General Terms
             </h3>
 
@@ -441,7 +442,7 @@ const page = () => {
             </p>
           </div>
           <div className="text-darkBlue">
-            <h3 className="text-2xl font-semibold py-4 text-darkBlue">
+            <h3 className="text-lg md:text-2xl font-semibold py-4 text-darkBlue">
               DISCLAIMER CLAUSE
             </h3>
 
@@ -464,6 +465,7 @@ const page = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

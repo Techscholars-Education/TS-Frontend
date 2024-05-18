@@ -62,11 +62,15 @@ const Testimonialsslider = () => {
             <div key={item.id}>
               <div className="border bg-white p-4 rounded-xl mx-4   ">
                 <div>
-                  <Image className="invert " src={quoteup} alt="quoteup" />
+                  <Image
+                    className="invert w-6 md:w-10 "
+                    src={quoteup}
+                    alt="quoteup"
+                  />
                 </div>
 
                 <div className="py-4">
-                  <p className="text-base text-darkBlue/70 font-Poppins">
+                  <p className=" text-xs md:text-base text-darkBlue/70 font-Poppins">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                     Ratione, laboriosam. Lorem ipsum.
                   </p>
@@ -75,11 +79,15 @@ const Testimonialsslider = () => {
                 <div className="flex items-center justify-between font-Poppins ">
                   <div className="w-1/2 flex items-center space-x-4">
                     <div className="w-[30px] h-[30px] rounded-full bg-TechBlue"></div>
-                    <h4 className="font-semibold text-darkBlue">John Doe</h4>
+                    <h4 className=" text-xs md:text-base mfont-semibold text-darkBlue">
+                      John Doe
+                    </h4>
                   </div>
                   <div className="flex justify-center items-center space-x-4">
                     <Image src={star} alt="rating-star"></Image>
-                    <p className="text-darkBlue font-semibold">4.3</p>
+                    <p className=" text-xs md:text-base text-darkBlue font-semibold">
+                      4.3
+                    </p>
                   </div>
                 </div>
               </div>

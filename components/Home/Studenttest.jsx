@@ -18,23 +18,23 @@ const Studenttest = () => {
       <div className=" my-24 w-11/12 mx-auto grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-10">
         <div className=" w-[80%] mx-auto  sm:w-full ">
           <div className=" rounded-xl border relative">
-            <div className=" top-0 p-6 xl:top-[10%] ">
-              <p className="text-base sm:text-xs md:text-sm lg:text-base ">
+            <div className=" top-0 px-6 py-4 md:p-6 xl:top-[10%] ">
+              <p className=" text-xs sm:text-sm md:text-base text-gray-600 leading-normal ">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Recusandae, totam. Lorem ipsum dolor sit amet.
               </p>
             </div>
-            <div className=" my-2 px-4  xl:bottom-0 ">
+            <div className="mb-2 px-4  xl:bottom-0 ">
               <div className="flex items-center space-x-2">
                 <div className="w-[28px] h-[28px] md:w-[30px] md:h-[30px] lg:h-[40px] lg:w-[40px] bg-TechBlue rounded-full"></div>
-                <p className="text-base md:text-sm lg:text-base xl:text-base ">
+                <p className="text-xs sm:text-sm md:text-base  ">
                   Naina Sharma
                 </p>
               </div>
             </div>
 
             <Image
-              className="absolute -bottom-6 -right-2 md:w-12 lg:w-20 xl:w-12 xl:-bottom-4"
+              className="absolute -bottom-2 md:-bottom-6 -right-2 w-8  lg:w-12 xl:w-12 xl:-bottom-4"
               src={quotation}
               alt="quotation-icon"
             ></Image>
@@ -42,23 +42,23 @@ const Studenttest = () => {
         </div>
         <div className=" w-[80%] mx-auto  sm:w-full ">
           <div className=" rounded-xl border relative">
-            <div className=" top-0 p-6 xl:top-[10%] ">
-              <p className="text-base sm:text-xs md:text-sm lg:text-base ">
+            <div className=" top-0 px-6 py-4 md:p-6 xl:top-[10%] ">
+              <p className=" text-xs sm:text-sm md:text-base text-gray-600 leading-normal ">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Recusandae, totam. Lorem ipsum dolor sit amet.
               </p>
             </div>
-            <div className=" my-2 px-4  xl:bottom-0 ">
+            <div className="mb-2 px-4  xl:bottom-0 ">
               <div className="flex items-center space-x-2">
                 <div className="w-[28px] h-[28px] md:w-[30px] md:h-[30px] lg:h-[40px] lg:w-[40px] bg-TechBlue rounded-full"></div>
-                <p className="text-base md:text-sm lg:text-base xl:text-base ">
+                <p className="text-xs sm:text-sm md:text-base  ">
                   Naina Sharma
                 </p>
               </div>
             </div>
 
             <Image
-              className="absolute -bottom-6 -right-2 md:w-12 lg:w-20 xl:w-12 xl:-bottom-4"
+              className="absolute -bottom-2 md:-bottom-6 -right-2 w-8  lg:w-12 xl:w-12 xl:-bottom-4"
               src={quotation}
               alt="quotation-icon"
             ></Image>
@@ -66,23 +66,23 @@ const Studenttest = () => {
         </div>
         <div className=" w-[80%] mx-auto  sm:w-full ">
           <div className=" rounded-xl border relative">
-            <div className=" top-0 p-6 xl:top-[10%] ">
-              <p className="text-base sm:text-xs md:text-sm lg:text-base ">
+            <div className=" top-0 px-6 py-4 md:p-6 xl:top-[10%] ">
+              <p className=" text-xs sm:text-sm md:text-base text-gray-600 leading-normal ">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Recusandae, totam. Lorem ipsum dolor sit amet.
               </p>
             </div>
-            <div className=" my-2 px-4  xl:bottom-0 ">
+            <div className="mb-2 px-4  xl:bottom-0 ">
               <div className="flex items-center space-x-2">
                 <div className="w-[28px] h-[28px] md:w-[30px] md:h-[30px] lg:h-[40px] lg:w-[40px] bg-TechBlue rounded-full"></div>
-                <p className="text-base md:text-sm lg:text-base xl:text-base ">
+                <p className="text-xs sm:text-sm md:text-base  ">
                   Naina Sharma
                 </p>
               </div>
             </div>
 
             <Image
-              className="absolute -bottom-6 -right-2 md:w-12 lg:w-20 xl:w-12 xl:-bottom-4"
+              className="absolute -bottom-2 md:-bottom-6 -right-2 w-8  lg:w-12 xl:w-12 xl:-bottom-4"
               src={quotation}
               alt="quotation-icon"
             ></Image>
