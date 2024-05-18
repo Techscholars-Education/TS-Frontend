@@ -54,7 +54,14 @@ const Costing = (props) => {
           <li className="flex justify-start space-x-2 items-center ">
             <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
             <del className="text-gray-600 text-sm ">
-              Personalised Mentorship and Guidance
+              {" "}
+              <span className="font-bold">24/7</span> Mentorship guide
+            </del>
+          </li>
+          <li className="flex justify-start space-x-2 items-center ">
+            <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
+            <del className="text-gray-600 text-sm ">
+              Weekly <span className="font-bold">LIVE</span> Mentorship Sessions
             </del>
           </li>
           <li className="flex justify-start space-x-2 items-center ">
@@ -129,7 +136,14 @@ const Costing = (props) => {
           <li className="flex justify-start space-x-2 items-center ">
             <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
             <del className="text-white text-sm ">
-              Personalised Mentorship and Guidance
+              {" "}
+              <span className="font-bold">24/7</span> Mentorship guide
+            </del>
+          </li>
+          <li className="flex justify-start space-x-2 items-center ">
+            <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
+            <del className="text-white text-sm ">
+              Weekly <span className="font-bold">LIVE</span> Mentorship Sessions
             </del>
           </li>
           <li className="flex justify-start space-x-2 items-center ">
@@ -209,13 +223,19 @@ const Costing = (props) => {
           <li className="flex justify-start space-x-2 items-center ">
             <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
             <span className="text-gray-600 text-sm ">
-              Personalised Mentorship and Guidance
+              <span className="font-bold">24/7</span> Mentorship guide
             </span>
           </li>
           <li className="flex justify-start space-x-2 items-center ">
             <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
             <span className="text-gray-600 text-sm ">
-              Special Access to{" "}
+              Weekly <span className="font-bold">LIVE</span> Mentorship Sessions
+            </span>
+          </li>
+          <li className="flex justify-start space-x-2 items-center ">
+            <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
+            <span className="text-gray-600 text-sm ">
+              Special Access to
               <span className="font-bold "> Personal AI Mentor</span>
               (Coming Soon)
             </span>
