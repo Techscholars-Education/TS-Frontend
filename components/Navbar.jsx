@@ -18,7 +18,7 @@ const Navbar = () => {
         </p>
       </div>
       <nav
-        className={`bg-white font-Poppins border-b  text-stone-800 py-6 md:py-6 w-full sticky top-0 z-10 `}
+        className={`bg-white font-Poppins border-b  text-stone-800 py-6 md:py-6 w-full sticky top-0 z-10 shadow-md `}
       >
         <ul className="flex w-5/6 mx-auto justify-between items-center font-Jost ">
           <h1 className="text-lg md:text-xl text-darkBlue font-medium justify-center font-Jost flex items-center ">

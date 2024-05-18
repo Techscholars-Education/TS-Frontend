@@ -5,7 +5,7 @@ import Link from "next/link";
 const Costing = (props) => {
   return (
     <div className="grid md:grid-cols-3 grid-cols-1 mx-10 md:mx-20 gap-5 my-10 ">
-      <div className="border rounded-xl ">
+      <div className="border rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-200 ">
         <div className="px-6 pt-6">
           <h4 className="text-lg font-Poppins font-semibold text-darkBlue/90">
             Starter
@@ -76,7 +76,7 @@ const Costing = (props) => {
             </del>
           </li>
         </ul>
-        <p className="text-center text-darkBlue text-xl">...</p>
+
         <div className="w-full flex justify-center items-center my-4">
           <Link
             href="/course"
@@ -88,7 +88,7 @@ const Costing = (props) => {
       </div>
 
       {/* 2nd */}
-      <div className="border relative rounded-xl bg-TechBlue ">
+      <div className="border relative rounded-xl bg-TechBlue hover:shadow-xl hover:scale-105 transition-all duration-200 ">
         <div className="px-6 pt-6">
           <h4 className="text-lg font-Poppins font-semibold text-white">
             Advanced
@@ -155,7 +155,7 @@ const Costing = (props) => {
             </del>
           </li>
         </ul>
-        <p className="text-center text-white text-xl">...</p>
+
         <div className="w-full flex justify-center items-center my-4">
           <Link
             href="/course"
@@ -172,7 +172,7 @@ const Costing = (props) => {
       </div>
 
       {/* 3rd */}
-      <div className="border rounded-xl ">
+      <div className="border rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-200 ">
         <div className="px-6 pt-6">
           <h4 className="text-lg font-Poppins font-semibold text-darkBlue/90">
             Ultimate
@@ -241,7 +241,7 @@ const Costing = (props) => {
             </span>
           </li>
         </ul>
-        <p className="text-center text-darkBlue text-xl">...</p>
+
         <div className="w-full flex justify-center items-center my-4 ">
           <Link
             href="/course"
