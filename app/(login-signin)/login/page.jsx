@@ -1,94 +1,157 @@
 "use client";
 import React, { useState } from "react";
-import Sidenavigation from "@/components/Sidenavigation";
-import { FcGoogle } from "react-icons/fc";
+import Image from "next/image";
+import Link from "next/link";
+import { IoIosArrowRoundBack } from "react-icons/io";
+import Google from "@/public/Auth/Google.png";
+import login from "@/public/Auth/login.svg";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Page = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
   };
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-  const handleSubmit = () => {
-    // Add your login logic here
-    console.log("Email:", email);
-    console.log("Password:", password);
+    if (!email) {
+      toast.error("Email is required");
+      return;
+    }
+    if (!validateEmail(email)) {
+      toast.error("Invalid email format");
+      return;
+    }
+    if (!password) {
+      toast.error("Password is required");
+      return;
+    }
+    if (password.length < 6) {
+      toast.error("Password must be at least 6 characters");
+      return;
+    }
+
+    toast.success("Login successful");
+
+    // Here you can add further logic for successful login, like API call
   };
 
   return (
-    <div>
-      <div className="flex w-full h-screen font-Poppins">
-        <Sidenavigation />
-        <div className="flex flex-col justify-center items-center h-screen w-full ">
-          <nav className="flex w-full justify-end pt-12 ">
-            <span>Don’t have an account?</span>
-            <a href="/signin" className="font-lg font-semibold mr-10 ml-2">
-              Sign Up
-            </a>
-          </nav>
-          <div className="flex flex-col justify-center items-center h-screen w-full">
-            <div className=" w-[568] h-[418] p-8">
-              <form className=" px-8 pt-6 mb-4 h-[463px]  w-[418px] ">
-                <h1 className="mb-6 text-[24px] font-[600]">Login</h1>
-                <div className="mb-4">
-                  <input
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="email"
-                    type="email"
-                    placeholder="Enter your email"
-                    value={email}
-                    onChange={handleEmailChange}
-                  />
-                </div>
-                <div className="mb-6">
-                  <input
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="password"
-                    type="password"
-                    placeholder="Enter your password"
-                    value={password}
-                    onChange={handlePasswordChange}
-                  />
-                </div>
-                <div className="flex flex-col mt-5 items-center justify-between">
-                  <div className="flex w-full justify-start">
-                    <a href="#" className="text-[14px] fornt-[400]">
-                      Forgot Password?
-                    </a>
-                  </div>
+    <>
+      <ToastContainer />
+      <section className="  flex justify-between items-center ">
+        <div className=" w-full lg:w-1/2 h-screen p-12   mx-auto ">
+          <div>
+            <Link
+              href="/"
+              className="rounded-full fixed top-10 left-10 border border-black/50 h-12 w-12 flex justify-center items-center"
+            >
+              <IoIosArrowRoundBack className="text-3xl text-gray-700" />
+            </Link>
+          </div>
 
-                  <button
-                    className="bg-[#FFE01B]  mt-5 w-full font-medium py-2 px-4 rounded"
-                    type="button"
-                    onClick={handleSubmit}
-                  >
-                    Sign In
-                  </button>
-                  <div className="flex w-full  mt-5">
-                    <hr className="w-40 h-px my-3 bg-[#DCDCDC] border-0" />
-                    <span className=" mx-4 text-[#DCDCDC]">or</span>
-                    <hr className="w-40 h-px my-3 bg-[#DCDCDC] border-0" />
-                  </div>
-                  <button
-                    className="flex items-center ml-4 font-medium py-2 mt-4 border-2 px-12 border-[#DCDCDC] rounded-md"
-                    type="button"
-                  >
-                    <FcGoogle className="mr-2" />
-                    Google
-                  </button>
-                </div>
-              </form>
+          <div className=" h-screen  flex flex-col justify-center items-center font-Poppins">
+            <form className=" max-w-xl lg:max-w-md px-10 mx-auto bg-gray-50 shadow-md  w-full rounded-xl">
+              <div className="py-10">
+                <h3 className=" text-lg md:text-2xl font-Poppins font-semibold">
+                  Welcome to Techscholars
+                </h3>
+                <p className="text-gray-500 text-xs md:text-sm pt-2">
+                  Login to your account
+                </p>
+              </div>
+              <div className="mb-5">
+                <label
+                  htmlFor="email"
+                  className="block mb-2 text-sm font-medium text-gray-500  "
+                >
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  className="bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                  placeholder="johndoe@example.com"
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                  required
+                />
+              </div>
+              <div className="mb-5">
+                <label
+                  htmlFor="password"
+                  className="block mb-2 text-sm font-medium text-gray-500 "
+                >
+                  Password
+                </label>
+                <input
+                  type="password"
+                  id="password"
+                  className="bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                  placeholder="@Example$1234"
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
+                  required
+                />
+              </div>
+              <div className="text-xs md:text-sm flex justify-end my-2">
+                <Link href="/signin" className="text-red-500 mx-2">
+                  Forgot password ?
+                </Link>
+              </div>
+
+              <button
+                type="submit"
+                onClick={handleSubmit}
+                className="bg-TechBlue text-white rounded-full py-3 text-sm md:text-md w-full font-base mt-2"
+              >
+                Login
+              </button>
+              <button
+                type="submit"
+                className="bg-gray-100 text-darkBlue rounded-full py-2 text-sm md:text-md w-full font-normal mt-4 flex items-center justify-center "
+              >
+                <Image src={Google} className="w-8" alt="google-logo" /> Google
+              </button>
+              <div className="mb-10 mt-6 text-xs md:text-sm flex">
+                <p className="text-gray-600">Do not have an account ?</p>{" "}
+                <Link href="/signin" className="text-TechBlue mx-2">
+                  Register
+                </Link>
+              </div>
+            </form>
+          </div>
+
+          <div className="font-Poppins flex justify-between pb-10 items-center">
+            <div>
+              <Link
+                href="/privacy"
+                className="text-gray-600 text-xs md:text-sm underline underline-offset-2"
+              >
+                Privacy Policy
+              </Link>
+            </div>
+            <div>
+              <p className="text-gray-600 text-xs md:text-sm underline underline-offset-2">
+                All rights reserved &copy; 2024
+              </p>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+
+        <div className=" hidden lg:block h-screen">
+          <Image src={login} alt="login-svg" />
+        </div>
+      </section>
+    </>
   );
 };
 
