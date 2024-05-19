@@ -27,6 +27,7 @@ const Benefits = () => {
           </button>
         </div>
       </div>
+
       <div className=" bg-[#FFE6DF66] rounded-xl flex px-6 py-6 md:py-8 font-Poppins hover:scale-100 hover:shadow-xl transition-all duration-200 ">
         <div className="my-auto">
           <Image

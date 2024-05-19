@@ -6,16 +6,31 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross1 } from "react-icons/rx";
 import Logo from "../public/Logo.svg";
 import { usePathname } from "next/navigation";
+import giphy from "@/public/Home/giphy.gif";
 
 const Navbar = () => {
   const [isBurgerClicked, setIsBurgerClicked] = useState(false);
+  const [popupVisibility, setpopupVisibility] = useState(true);
   const pathname = usePathname();
   return (
     <>
-      <div className="bg-black text-white">
-        <p className="py-3 font-Poppins text-center px-2 text-xs md:text-base ">
-          YOUR UNFAIR ADVANTAGE - ACCELERATE YOUR JOURNEY TOWARDS SUCCESS!
+      <div
+        className={`bg-black text-white relative ${
+          !popupVisibility && "hidden"
+        } `}
+      >
+        <p className="py-3 font-Poppins text-center px-2 text-xs md:text-sm lg:text-base uppercase ">
+          Enroll today and start your IITJEE and NEET preparation | batches are
+          filling fast!
         </p>
+        <button
+          onClick={() => {
+            setpopupVisibility(false);
+          }}
+          className="absolute bottom-2 md:top-[33%] right-4 md:right-10"
+        >
+          <RxCross1 className="text-white" />
+        </button>
       </div>
       <nav
         className={`bg-white font-Poppins border-b  text-stone-800 py-6 md:py-6 w-full sticky top-0 z-10 shadow-md `}
@@ -32,7 +47,7 @@ const Navbar = () => {
 
           {/* FOR BIG SCREENS */}
 
-          <div className="hidden lg:flex justify-center lg:space-x-4 xl:space-x-10 font-Poppins  items-center  text-darkBlue   pl-10">
+          <div className="hidden lg:flex justify-center lg:space-x-4 xl:space-x-10 font-Poppins  items-center  text-darkBlue pl-10">
             <li
               className={`cursor-pointer text-base ${
                 pathname === "/" ? "text-TechBlue" : "text-darkBlue"
@@ -76,11 +91,11 @@ const Navbar = () => {
               )}
             </button>
           </div>
-          <div className="hidden font-Poppins lg:flex justify-center space-x-4 items-center  ">
+          <div className="hidden font-Poppins lg:flex justify-center space-x-4 items-center   ">
             <li
               className={`cursor-pointer text-base  hover:underline hover:underline-offset-2 transition-all`}
             >
-              <Link className=" border px-5 py-2 rounded-full" href="/login">
+              <Link className=" px-5 border py-3 rounded-full " href="/login">
                 Login
               </Link>
             </li>
@@ -89,10 +104,15 @@ const Navbar = () => {
               className={`cursor-pointer text-base hover:underline hover:underline-offset-2 transition-all`}
             >
               <Link
-                className="bg-TechBlue text-white px-3 py-2 rounded-full"
+                className="bg-TechBlue pl-4 py-1 text-white px-2 rounded-full flex items-center justify-center "
                 href="/signin"
               >
                 Get Started
+                <Image
+                  src={giphy}
+                  className="  md:w-[30px] lg:w-[40px] ml-2  rounded-full "
+                  alt="eyes"
+                ></Image>
               </Link>
             </li>
           </div>

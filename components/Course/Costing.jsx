@@ -4,7 +4,7 @@ import { RxCross2 } from "react-icons/rx";
 import Link from "next/link";
 const Costing = (props) => {
   return (
-    <div className="grid md:grid-cols-3 grid-cols-1 mx-10 md:mx-20 gap-5 my-10 ">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-2 lg:gap-5 my-10 w-full lg:w-11/12 xl:w-10/12 px-10 lg:px-2 mx-auto ">
       <div className="border rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-200 ">
         <div className="px-6 pt-6">
           <h4 className="text-lg font-Poppins font-semibold text-darkBlue/90">
