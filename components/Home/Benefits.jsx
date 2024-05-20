@@ -10,7 +10,7 @@ const Benefits = () => {
   return (
     <div className=" w-11/12 xl:w-10/12 grid grid-cols-1 md:grid-cols-2  mx-auto gap-4 ">
       {/* container -1 */}
-      <div className=" bg-[#DCD9F866] rounded-xl  flex px-6 py-8 font-Poppins ">
+      <div className=" bg-[#DCD9F866] rounded-xl  flex px-6 py-6 md:py-8 font-Poppins ">
         <div className="my-auto">
           <Image className=" w-full " src={ratings} alt="rating-icon"></Image>
         </div>
@@ -27,7 +27,7 @@ const Benefits = () => {
           </button>
         </div>
       </div>
-      <div className=" bg-[#FFE6DF66] rounded-xl flex px-6 py-8 font-Poppins ">
+      <div className=" bg-[#FFE6DF66] rounded-xl flex px-6 py-6 md:py-8 font-Poppins ">
         <div className="my-auto">
           <Image
             className=" w-full "
@@ -48,7 +48,7 @@ const Benefits = () => {
           </button>
         </div>
       </div>
-      <div className=" bg-[#FCE2EB4D] rounded-xl flex px-6 py-8 font-Poppins ">
+      <div className=" bg-[#FCE2EB4D] rounded-xl flex px-6 py-6 md:py-8 font-Poppins ">
         <div className="my-auto">
           <Image className=" w-full " src={live_class} alt="live-class"></Image>
         </div>
@@ -63,7 +63,7 @@ const Benefits = () => {
           </button>
         </div>
       </div>
-      <div className=" bg-[#DCF4F566] rounded-xl flex px-6 py-8 font-Poppins ">
+      <div className=" bg-[#DCF4F566] rounded-xl flex px-6 py-6 md:py-8 font-Poppins ">
         <div className="my-auto">
           <Image className=" w-full " src={login} alt="login-icon"></Image>
         </div>
