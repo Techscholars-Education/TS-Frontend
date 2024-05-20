@@ -5,7 +5,7 @@ import Link from "next/link";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import Google from "@/public/Auth/Google.png";
 import Login from "@/public/Auth/login.svg";
-import { ToastContainer} from "react-toastify";
+import { ToastContainer, toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useLogin from "@/hooks/useLogin";
 
@@ -36,22 +36,22 @@ const Page = () => {
   const handleSubmit = async(event) => {
     event.preventDefault();
 
-    // if (!email) {
-    //   toast.error("Email is required");
-    //   return;
-    // }
+    if (!username) {
+      toast.error("Email is required");
+      return;
+    }
     // if (!validateEmail(email)) {
     //   toast.error("Invalid email format");
     //   return;
     // }
-    // if (!password) {
-    //   toast.error("Password is required");
-    //   return;
-    // }
-    // if (password.length < 6) {
-    //   toast.error("Password must be at least 6 characters");
-    //   return;
-    // }
+    if (!password) {
+      toast.error("Password is required");
+      return;
+    }
+    if (password.length < 6) {
+      toast.error("Password must be at least 6 characters");
+      return;
+    }
 
     // toast.success("Login successful");
 
@@ -60,7 +60,7 @@ const Page = () => {
     await login(username,password)
 
     
-   router.push("/dashboard/home")
+    router.replace("/dashboard/home")
 
 
   
