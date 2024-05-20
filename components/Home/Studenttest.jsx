@@ -1,60 +1,8 @@
-"use client";
 import React from "react";
 import Image from "next/image";
 import quotation from "../../public/Home/quotation.svg";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-const Studenttest = () => {
-  const settings = {
-    infinite: true,
-    speed: 500,
-    autoplaySpeed: 2000,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    autoplay: true,
-    pauseOnHOver: true,
-    rtl: true,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
-  const studentsTestimonials = [
-    {
-      id: 1,
-    },
-    {
-      id: 2,
-    },
-    {
-      id: 3,
-    },
-    {
-      id: 4,
-    },
-    {
-      id: 5,
-    },
-    {
-      id: 6,
-    },
-  ];
 
+const Studenttest = () => {
   return (
     <section className="bg-[#F8F8F8] my-16 py-16 font-Poppins w-full mx-auto  ">
       <div className=" w-full mx-auto  rounded-xl">
@@ -67,37 +15,79 @@ const Studenttest = () => {
           What our students have to say
         </h2>
       </div>
-      <div className=" my-10 w-11/12 mx-auto ">
-        <Slider {...settings}>
-          {studentsTestimonials.map((item) => {
-            return (
-              <div key={item.id} className=" w-[80%] sm:w-full py-10 ">
-                <div className=" rounded-xl mx-4 border relative hover:scale-105 duration-200 hover:shadow-xl">
-                  <div className=" top-0 px-6 py-4 md:p-6 xl:top-[10%] ">
-                    <p className=" text-xs sm:text-sm md:text-base text-gray-600 leading-normal ">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Recusandae, totam. Lorem ipsum dolor sit amet.
-                    </p>
-                  </div>
-                  <div className="mb-2 px-4  xl:bottom-0 ">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-[28px] h-[28px] md:w-[30px] md:h-[30px] lg:h-[40px] lg:w-[40px] bg-TechBlue rounded-full"></div>
-                      <p className="text-xs sm:text-sm md:text-base  ">
-                        Naina Sharma
-                      </p>
-                    </div>
-                  </div>
-
-                  <Image
-                    className="absolute -bottom-2 md:-bottom-6 -right-2 w-8  lg:w-12 xl:w-12 xl:-bottom-4"
-                    src={quotation}
-                    alt="quotation-icon"
-                  ></Image>
-                </div>
+      <div className=" my-24 w-11/12 mx-auto grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-10">
+        <div className=" w-[80%] mx-auto  sm:w-full ">
+          <div className=" rounded-xl border relative">
+            <div className=" top-0 px-6 py-4 md:p-6 xl:top-[10%] ">
+              <p className=" text-xs sm:text-sm md:text-base text-gray-600 leading-normal ">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Recusandae, totam. Lorem ipsum dolor sit amet.
+              </p>
+            </div>
+            <div className="mb-2 px-4  xl:bottom-0 ">
+              <div className="flex items-center space-x-2">
+                <div className="w-[28px] h-[28px] md:w-[30px] md:h-[30px] lg:h-[40px] lg:w-[40px] bg-TechBlue rounded-full"></div>
+                <p className="text-xs sm:text-sm md:text-base  ">
+                  Naina Sharma
+                </p>
               </div>
-            );
-          })}
-        </Slider>
+            </div>
+
+            <Image
+              className="absolute -bottom-2 md:-bottom-6 -right-2 w-8  lg:w-12 xl:w-12 xl:-bottom-4"
+              src={quotation}
+              alt="quotation-icon"
+            ></Image>
+          </div>
+        </div>
+        <div className=" w-[80%] mx-auto  sm:w-full ">
+          <div className=" rounded-xl border relative">
+            <div className=" top-0 px-6 py-4 md:p-6 xl:top-[10%] ">
+              <p className=" text-xs sm:text-sm md:text-base text-gray-600 leading-normal ">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Recusandae, totam. Lorem ipsum dolor sit amet.
+              </p>
+            </div>
+            <div className="mb-2 px-4  xl:bottom-0 ">
+              <div className="flex items-center space-x-2">
+                <div className="w-[28px] h-[28px] md:w-[30px] md:h-[30px] lg:h-[40px] lg:w-[40px] bg-TechBlue rounded-full"></div>
+                <p className="text-xs sm:text-sm md:text-base  ">
+                  Naina Sharma
+                </p>
+              </div>
+            </div>
+
+            <Image
+              className="absolute -bottom-2 md:-bottom-6 -right-2 w-8  lg:w-12 xl:w-12 xl:-bottom-4"
+              src={quotation}
+              alt="quotation-icon"
+            ></Image>
+          </div>
+        </div>
+        <div className=" w-[80%] mx-auto  sm:w-full ">
+          <div className=" rounded-xl border relative">
+            <div className=" top-0 px-6 py-4 md:p-6 xl:top-[10%] ">
+              <p className=" text-xs sm:text-sm md:text-base text-gray-600 leading-normal ">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Recusandae, totam. Lorem ipsum dolor sit amet.
+              </p>
+            </div>
+            <div className="mb-2 px-4  xl:bottom-0 ">
+              <div className="flex items-center space-x-2">
+                <div className="w-[28px] h-[28px] md:w-[30px] md:h-[30px] lg:h-[40px] lg:w-[40px] bg-TechBlue rounded-full"></div>
+                <p className="text-xs sm:text-sm md:text-base  ">
+                  Naina Sharma
+                </p>
+              </div>
+            </div>
+
+            <Image
+              className="absolute -bottom-2 md:-bottom-6 -right-2 w-8  lg:w-12 xl:w-12 xl:-bottom-4"
+              src={quotation}
+              alt="quotation-icon"
+            ></Image>
+          </div>
+        </div>
       </div>
     </section>
   );

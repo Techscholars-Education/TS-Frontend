@@ -20,7 +20,7 @@ const Testimonials = () => {
           </p>
         </div>
       </div>
-      <div className="flex justify-center items-center my-16 w-8/12 mx-auto ">
+      <div className="flex justify-center items-center my-16 w-11/12 mx-auto ">
         <div className="relative w-full overflow-hidden pt-[56.25%]">
           <iframe
             className="absolute top-0 left-0 w-full h-full rounded-xl"
