@@ -5,35 +5,32 @@ import Link from "next/link";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import Google from "@/public/Auth/Google.png";
 import Login from "@/public/Auth/login.svg";
-import { ToastContainer, toast} from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useLogin from "@/hooks/useLogin";
 
-
-
-import Cookies from 'js-cookie';
+import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 
-import { useGoogleLogin } from '@react-oauth/google';
+import { useGoogleLogin } from "@react-oauth/google";
 
 const Page = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("")
+  const [username, setUsername] = useState("");
 
-  const [authg, setAuthg] = useState("")
+  const [authg, setAuthg] = useState("");
 
-  const router = useRouter()
-
+  const router = useRouter();
 
   // const validateEmail = (email) => {
   //   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   //   return re.test(String(email).toLowerCase());
   // };
 
-  const {login} = useLogin()
+  const { login } = useLogin();
 
-  const handleSubmit = async(event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (!username) {
@@ -57,34 +54,24 @@ const Page = () => {
 
     // Here you can add further logic for successful login, like API call
 
-    await login(username,password)
+    await login(username, password);
 
-    
-    router.replace("/dashboard/home")
-
-
-  
+    router.replace("/dashboard/home");
   };
 
-
   const glogin = useGoogleLogin({
-    onSuccess: tokenResponse => setAuthg(tokenResponse.access_token)
-
+    onSuccess: (tokenResponse) => setAuthg(tokenResponse.access_token),
   });
 
+  useEffect(() => {
+    if (authg === "") return;
+    if (authg) {
+      const sessionExpirationTime = 5 * 60 * 60;
+      Cookies.set("authCookie", authg, { expires: sessionExpirationTime });
 
-  useEffect(()=> {
-    if(authg==='') return
-    if(authg){
-      const sessionExpirationTime = 5 * 60 * 60
-      Cookies.set('authCookie',authg,{ expires: sessionExpirationTime } )
-
-      router.push("/dashboard/home")
-
+      router.push("/dashboard/home");
     }
-  },[authg])
-
-
+  }, [authg]);
 
   return (
     <>
@@ -160,7 +147,7 @@ const Page = () => {
                 Login
               </button>
               <button
-               onClick={glogin}
+                onClick={glogin}
                 className="bg-gray-100 text-darkBlue rounded-full py-2 text-sm md:text-md w-full font-normal mt-4 flex items-center justify-center "
               >
                 <Image src={Google} className="w-8" alt="google-logo" /> Google
