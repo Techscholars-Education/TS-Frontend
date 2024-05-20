@@ -10,7 +10,7 @@ const Nav = () => {
   return (
     <div className='h-[4vw] pt-1 pb-1 flex justify-between'>
         <Link href="/" className='flex  items-center'>
-         <Image src={Logo} alt='logo' width={60} height={60} className='ml-3'/> 
+         <Image src={Logo} alt='logo' width={60} height={60} className='ml-3 h-[60px] w-[60px]'/> 
          <h1 className='font-bold text-[1.5vw] text-[#032756] '>TECHSCHOLARS</h1>
         </Link>
         <div className='flex items-center gap-3 mr-5'>

@@ -6,15 +6,13 @@ import {
     Title,
     Tooltip,
     Legend,
-    ChartData,
-    ChartOptions,
     ArcElement,
     PointElement,
     LineElement,
     Filler,
   } from "chart.js";
 
-  import { Bar, Doughnut, Line, Pie } from "react-chartjs-2";
+  import {Line} from "react-chartjs-2";
   
   ChartJS.register(
     CategoryScale,
