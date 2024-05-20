@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
           src="https://canvasjs.com/assets/script/canvasjs.min.js"
         ></script>
       </head>
-      <body>
+      <body suppressHydrationWarning={true}>
         <NextTopLoader color="#0079FC" height={6} />
         {children}
       </body>
