@@ -3,8 +3,7 @@ import React from "react";
 import { ReactTyped } from "react-typed";
 import Image from "next/image";
 import search from "../../public/Home/search.svg";
-// import TangledArrow from "../../public/Home/TangledArrow.svg";
-import plane from "../../public/Home/plane.gif";
+import TangledArrow from "../../public/Home/TangledArrow.svg";
 import { IoMdCheckmark } from "react-icons/io";
 import { MdSlowMotionVideo } from "react-icons/md";
 
@@ -83,9 +82,9 @@ active:border-b-[2px] active:brightness-90 active:translate-y-[2px]"
 
         {/* plane arrow */}
         <Image
-          className="absolute hidden lg:block lg:left-16 lg:top-48 xl:left-48 xl:top-[60%]  2xl:top-[50%] 2xl:left-[16%] w-32 mx-10 lg:mx-0 "
-          src={plane}
-          alt="plane"
+          className="absolute hidden lg:block lg:left-16 lg:top-48 xl:left-48 xl:top-[60%]  2xl:top-[50%] 2xl:left-[16%] w-20 mx-10 lg:mx-0 "
+          src={TangledArrow}
+          alt="TangledArrow"
         ></Image>
       </div>
 
