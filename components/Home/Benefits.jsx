@@ -5,7 +5,7 @@ import ratings from "../../public/Home/ratings.svg";
 import schdule_time from "../../public/Home/schdule_time.svg";
 import live_class from "../../public/Home/live_class.svg";
 import login from "../../public/Home/login.svg";
-import { Slide, Fade } from "react-awesome-reveal";
+import { Slide } from "react-awesome-reveal";
 
 const Benefits = () => {
   return (
@@ -16,7 +16,7 @@ const Benefits = () => {
         cascade
         damping={0.2}
         direction="up"
-        duration={400}
+        duration={200}
       >
         <div className=" bg-[#DCD9F866] rounded-xl  flex px-6 py-6 md:py-8 font-Poppins  hover:scale-100 hover:shadow-xl transition-all duration-200">
           <div className="my-auto">
