@@ -16,7 +16,7 @@ const Benefits = () => {
         cascade
         damping={0.2}
         direction="up"
-        duration={200}
+        duration={100}
       >
         <div className=" bg-[#DCD9F866] rounded-xl  flex px-6 py-6 md:py-8 font-Poppins  hover:scale-100 hover:shadow-xl transition-all duration-200">
           <div className="my-auto">

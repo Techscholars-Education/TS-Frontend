@@ -104,7 +104,7 @@ const Aboutslider = () => {
               >
                 <div className="w-full">
                   <Image
-                    className="h-32 mx-auto "
+                    className="h-32 w-32 mx-auto "
                     src={item.image}
                     alt="slider-svgs"
                   ></Image>
