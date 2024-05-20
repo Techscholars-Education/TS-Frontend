@@ -1,46 +1,33 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import Google from "@/public/Auth/Google.png";
-import Login from "@/public/Auth/login.svg";
+import login from "@/public/Auth/login.svg";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import useLogin from "@/hooks/useLogin";
-
-import Cookies from "js-cookie";
-import { useRouter } from "next/navigation";
-
-import { useGoogleLogin } from "@react-oauth/google";
 
 const Page = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
 
-  const [authg, setAuthg] = useState("");
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+  };
 
-  const router = useRouter();
-
-  // const validateEmail = (email) => {
-  //   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  //   return re.test(String(email).toLowerCase());
-  // };
-
-  const { login } = useLogin();
-
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (!username) {
+    if (!email) {
       toast.error("Email is required");
       return;
     }
-    // if (!validateEmail(email)) {
-    //   toast.error("Invalid email format");
-    //   return;
-    // }
+    if (!validateEmail(email)) {
+      toast.error("Invalid email format");
+      return;
+    }
     if (!password) {
       toast.error("Password is required");
       return;
@@ -50,28 +37,10 @@ const Page = () => {
       return;
     }
 
-    // toast.success("Login successful");
+    toast.success("Login successful");
 
     // Here you can add further logic for successful login, like API call
-
-    await login(username, password);
-
-    router.replace("/dashboard/home");
   };
-
-  const glogin = useGoogleLogin({
-    onSuccess: (tokenResponse) => setAuthg(tokenResponse.access_token),
-  });
-
-  useEffect(() => {
-    if (authg === "") return;
-    if (authg) {
-      const sessionExpirationTime = 5 * 60 * 60;
-      Cookies.set("authCookie", authg, { expires: sessionExpirationTime });
-
-      router.push("/dashboard/home");
-    }
-  }, [authg]);
 
   return (
     <>
@@ -105,12 +74,12 @@ const Page = () => {
                   Email
                 </label>
                 <input
-                  type="text"
+                  type="email"
                   id="email"
                   className="bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                   placeholder="johndoe@example.com"
                   onChange={(e) => {
-                    setUsername(e.target.value);
+                    setEmail(e.target.value);
                   }}
                   required
                 />
@@ -147,7 +116,7 @@ const Page = () => {
                 Login
               </button>
               <button
-                onClick={glogin}
+                type="submit"
                 className="bg-gray-100 text-darkBlue rounded-full py-2 text-sm md:text-md w-full font-normal mt-4 flex items-center justify-center "
               >
                 <Image src={Google} className="w-8" alt="google-logo" /> Google
@@ -179,7 +148,7 @@ const Page = () => {
         </div>
 
         <div className=" hidden lg:block h-screen">
-          <Image src={Login} alt="login-svg" />
+          <Image src={login} alt="login-svg" />
         </div>
       </section>
     </>

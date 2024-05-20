@@ -10,13 +10,12 @@ import star from "../../public/Home/star.svg";
 const Testimonialsslider = () => {
   const settings = {
     infinite: true,
-    speed: 500,
-    autoplaySpeed: 2000,
-    slidesToShow: 3,
+    slidesToShow: 2,
     slidesToScroll: 1,
-    initialSlide: 0,
     autoplay: true,
-    pauseOnHOver: true,
+    speed: 3000,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
     responsive: [
       {
         breakpoint: 768,
@@ -60,8 +59,8 @@ const Testimonialsslider = () => {
       <Slider {...settings}>
         {testimonialsData.map((item) => {
           return (
-            <div className="py-10" key={item.id}>
-              <div className="border bg-white p-4 rounded-xl mx-4 hover:shadow-xl hover:scale-105 duration-200  ">
+            <div key={item.id}>
+              <div className="border bg-white p-4 rounded-xl mx-4   ">
                 <div>
                   <Image
                     className="invert w-6 md:w-10 "
@@ -98,7 +97,7 @@ const Testimonialsslider = () => {
       </Slider>
       <div className="flex justify-center items-center my-14">
         <Link
-          className="text-center bg-TechBlue text-white font-Poppins font-medium rounded-full px-6 py-3 text-sm"
+          className="text-center bg-TechBlue text-white font-Poppins font-medium rounded-full px-6 py-3 text-sm "
           href="/course"
         >
           Get started

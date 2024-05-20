@@ -41,8 +41,8 @@ const Footer = () => {
         <Link className="text-sm lg:text-base" href="/terms-conditions">
           Terms and services
         </Link>
-        <Link className="text-sm lg:text-base" href="/refunds">
-          Refund
+        <Link className="text-sm lg:text-base" href="/">
+          Careers
         </Link>
         <Link className="text-sm lg:text-base" href="/faqs">
           Help/FAQ
@@ -58,9 +58,6 @@ const Footer = () => {
         </Link>
         <Link className="text-sm lg:text-base" href="/course">
           Courses
-        </Link>
-        <Link className="text-sm lg:text-base" href="/course">
-          Blogs
         </Link>
       </div>
       <div className=" px-5 py-6 md:py-2   ">

@@ -13,10 +13,10 @@ import Mansion from "../../public/Home/Mansion.svg";
 
 const Aboutslider = () => {
   const settings = {
+    dots: true,
     infinite: true,
     speed: 700,
     slidesToShow: 3,
-    autoplaySpeed: 2000,
     slidesToScroll: 1,
     initialSlide: 0,
     autoplay: true,
@@ -94,23 +94,23 @@ const Aboutslider = () => {
   ];
 
   return (
-    <section className="  w-11/12 mx-auto py-6 md:my-8  ">
+    <section className="  w-11/12 mx-auto my-10  ">
       <div className="slider-container">
-        <Slider className="" {...settings}>
+        <Slider className="w-full" {...settings}>
           {data.map((item) => {
             return (
               <div
                 key={item.id}
-                className=" flex flex-col justify-center items-center py-10  "
+                className=" flex justify-center items-center py-10 "
               >
                 <div className="w-full">
                   <Image
-                    className="h-32 w-32 mx-auto "
+                    className="h-32 mx-auto "
                     src={item.image}
                     alt="slider-svgs"
                   ></Image>
                 </div>
-                <div className="px-12 text-center mt-4">
+                <div className="px-6 mt-4">
                   <div className="mt-10">
                     <h3 className="rounded-full text-xs py-1 border inline-block px-4 text-TechBlue bg-blue-100">
                       {item.top}
