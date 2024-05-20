@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -10,8 +10,18 @@ import giphy from "@/public/Home/giphy.gif";
 
 const Navbar = () => {
   const [isBurgerClicked, setIsBurgerClicked] = useState(false);
+  const [top, setTop] = useState(true);
   const [popupVisibility, setpopupVisibility] = useState(true);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const scrollHandler = () => {
+      window.scrollY > 10 ? setTop(false) : setTop(true);
+    };
+    window.addEventListener("scroll", scrollHandler);
+    return () => window.removeEventListener("scroll", scrollHandler);
+  }, [top]);
+
   return (
     <>
       <div
@@ -33,7 +43,9 @@ const Navbar = () => {
         </button>
       </div>
       <nav
-        className={`bg-white font-Poppins border-b  text-stone-800 py-6 md:py-6 w-full sticky top-0 z-10 shadow-md `}
+        className={`bg-white font-Poppins border-b  text-stone-800 transition-all duration-700 py-6 md:py-6 w-full sticky top-0 z-10 ${
+          !top && "shadow-lg"
+        } `}
       >
         <ul className="flex w-5/6 mx-auto justify-between items-center font-Jost ">
           <h1 className="text-lg md:text-xl text-darkBlue font-medium justify-center font-Jost flex items-center ">
