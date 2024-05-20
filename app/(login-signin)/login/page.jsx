@@ -1,46 +1,90 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import Google from "@/public/Auth/Google.png";
-import login from "@/public/Auth/login.svg";
-import { ToastContainer, toast } from "react-toastify";
+import Login from "@/public/Auth/login.svg";
+import { ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useLogin from "@/hooks/useLogin";
+
+
+
+import Cookies from 'js-cookie';
+import { useRouter } from "next/navigation";
+
+import { useGoogleLogin } from '@react-oauth/google';
 
 const Page = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("")
 
-  const validateEmail = (email) => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(String(email).toLowerCase());
-  };
+  const [authg, setAuthg] = useState("")
 
-  const handleSubmit = (event) => {
+  const router = useRouter()
+
+
+  // const validateEmail = (email) => {
+  //   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  //   return re.test(String(email).toLowerCase());
+  // };
+
+  const {login} = useLogin()
+
+  const handleSubmit = async(event) => {
     event.preventDefault();
 
-    if (!email) {
-      toast.error("Email is required");
-      return;
-    }
-    if (!validateEmail(email)) {
-      toast.error("Invalid email format");
-      return;
-    }
-    if (!password) {
-      toast.error("Password is required");
-      return;
-    }
-    if (password.length < 6) {
-      toast.error("Password must be at least 6 characters");
-      return;
-    }
+    // if (!email) {
+    //   toast.error("Email is required");
+    //   return;
+    // }
+    // if (!validateEmail(email)) {
+    //   toast.error("Invalid email format");
+    //   return;
+    // }
+    // if (!password) {
+    //   toast.error("Password is required");
+    //   return;
+    // }
+    // if (password.length < 6) {
+    //   toast.error("Password must be at least 6 characters");
+    //   return;
+    // }
 
-    toast.success("Login successful");
+    // toast.success("Login successful");
 
     // Here you can add further logic for successful login, like API call
+
+    await login(username,password)
+
+    
+   router.push("/dashboard/home")
+
+
+  
   };
+
+
+  const glogin = useGoogleLogin({
+    onSuccess: tokenResponse => setAuthg(tokenResponse.access_token)
+
+  });
+
+
+  useEffect(()=> {
+    if(authg==='') return
+    if(authg){
+      const sessionExpirationTime = 5 * 60 * 60
+      Cookies.set('authCookie',authg,{ expires: sessionExpirationTime } )
+
+      router.push("/dashboard/home")
+
+    }
+  },[authg])
+
+
 
   return (
     <>
@@ -74,12 +118,12 @@ const Page = () => {
                   Email
                 </label>
                 <input
-                  type="email"
+                  type="text"
                   id="email"
                   className="bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                   placeholder="johndoe@example.com"
                   onChange={(e) => {
-                    setEmail(e.target.value);
+                    setUsername(e.target.value);
                   }}
                   required
                 />
@@ -116,7 +160,7 @@ const Page = () => {
                 Login
               </button>
               <button
-                type="submit"
+               onClick={glogin}
                 className="bg-gray-100 text-darkBlue rounded-full py-2 text-sm md:text-md w-full font-normal mt-4 flex items-center justify-center "
               >
                 <Image src={Google} className="w-8" alt="google-logo" /> Google
@@ -148,7 +192,7 @@ const Page = () => {
         </div>
 
         <div className=" hidden lg:block h-screen">
-          <Image src={login} alt="login-svg" />
+          <Image src={Login} alt="login-svg" />
         </div>
       </section>
     </>

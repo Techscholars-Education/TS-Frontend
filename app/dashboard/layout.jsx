@@ -1,21 +1,33 @@
 // app/dashboard/layout.js
 "use client";
-import React from "react";
+
+
 import { redirect } from "next/navigation";
+import { useState } from "react";
 import { CookiesProvider } from "react-cookie";
 
+import Cookies from "js-cookie";
+
+
+
+
 export default function DashboardLayout({ children }) {
-  const cookie = "";
+  // const [res, setRes] = useState(false)
+  // const cooki = Cookies.get("authCookie") 
+
+  // if(cooki.length > 0){
+  //   setRes(true);
+  // }
+
+ 
+  
 
   return (
     <>
-      {cookie.length > 0 ? (
-        <CookiesProvider>
+     
           <div>{children}</div>
-        </CookiesProvider>
-      ) : (
-        <>{redirect("/login")}</>
-      )}
+  
+      
     </>
   );
 }
