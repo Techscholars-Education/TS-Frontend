@@ -98,19 +98,27 @@ const Hero = () => {
             <div className=" py-2 px-1 md:p-2 bg-blue-100 rounded-full ">
               <IoMdCheckmark className="text-blue-600 w-5 text-xs md:text-xl  " />
             </div>
-            <p className="text-gray-600 text-sm"> Affordable pricing</p>
+            <p className="text-gray-600 text-xs md:text-sm">
+              {" "}
+              Affordable pricing
+            </p>
           </div>
           <div className="flex space-x-2 justify-center items-center ">
             <div className=" py-2 px-1 md:p-2  bg-blue-100 rounded-full ">
               <IoMdCheckmark className="text-blue-600 w-5 text-xs md:text-xl  " />
             </div>
-            <p className="text-gray-600 text-sm"> Merit based scholarships</p>
+            <p className="text-gray-600  text-xs md:text-sm">
+              {" "}
+              Merit based scholarships
+            </p>
           </div>
           <div className="flex space-x-2 justify-center items-center ">
             <div className=" py-2 px-1 md:p-2 bg-blue-100 rounded-full ">
               <IoMdCheckmark className="text-blue-600 w-5 text-xs md:text-xl  " />
             </div>
-            <p className="text-gray-600 text-sm">24/7 mentor support </p>
+            <p className="text-gray-600 text-xs md:text-sm">
+              24/7 mentor support{" "}
+            </p>
           </div>
         </div>
       </Slide>

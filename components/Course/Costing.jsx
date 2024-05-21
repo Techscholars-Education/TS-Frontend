@@ -30,32 +30,34 @@ const Costing = (props) => {
           <ul className="pt-6 px-6 space-y-4">
             <li className="flex justify-start space-x-2 items-center">
               <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
-              <span className="text-gray-600 text-sm">Lectures</span>
+              <span className="text-gray-600 text-xs md:text-sm">Lectures</span>
             </li>
             <li className="flex justify-start space-x-2 items-center">
               <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
-              <span className="text-gray-600 text-sm">DPPs</span>
+              <span className="text-gray-600 text-xs md:text-sm">DPPs</span>
             </li>
             <li className="flex justify-start space-x-2 items-center  ">
               <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
-              <span className="text-gray-600 text-sm">Weekly test series</span>
+              <span className="text-gray-600 text-xs md:text-sm">
+                Weekly test series
+              </span>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
-              <del className="text-gray-600 text-sm">
+              <del className="text-gray-600 text-xs md:text-sm">
                 Access the smartest student community
               </del>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
-              <del className="text-gray-600 text-sm ">
+              <del className="text-gray-600 text-xs md:text-sm ">
                 <span className="font-bold text-gray-600">LIVE</span> doubt
                 clearing sessions
               </del>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
-              <del className="text-gray-600 text-sm ">
+              <del className="text-gray-600 text-xs md:text-sm ">
                 Special Access to{" "}
                 <span className="font-bold text-gray-600"> BRAHMASTRA</span>
                 (Coming Soon)
@@ -63,21 +65,21 @@ const Costing = (props) => {
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
-              <del className="text-gray-600 text-sm ">
+              <del className="text-gray-600 text-xs md:text-sm ">
                 {" "}
                 <span className="font-bold">24/7</span> Mentorship guide
               </del>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
-              <del className="text-gray-600 text-sm ">
+              <del className="text-gray-600 text-xs md:text-sm ">
                 Weekly <span className="font-bold">LIVE</span> Mentorship
                 Sessions
               </del>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
-              <del className="text-gray-600 text-sm ">
+              <del className="text-gray-600 text-xs md:text-sm ">
                 Special Access to{" "}
                 <span className="font-bold text-gray-600">
                   {" "}
@@ -114,32 +116,34 @@ const Costing = (props) => {
           <ul className="pt-6 px-6 space-y-4">
             <li className="flex justify-start space-x-2 items-center">
               <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
-              <span className=" text-sm text-white">Lectures</span>
+              <span className=" text-xs md:text-sm text-white">Lectures</span>
             </li>
             <li className="flex justify-start space-x-2 items-center">
               <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
-              <span className=" text-sm text-white">DPPs</span>
+              <span className=" text-xs md:text-sm text-white">DPPs</span>
             </li>
             <li className="flex justify-start space-x-2 items-center  ">
               <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
-              <span className=" text-sm text-white">Weekly test series</span>
+              <span className=" text-xs md:text-sm text-white">
+                Weekly test series
+              </span>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
-              <span className=" text-sm text-white">
+              <span className=" text-xs md:text-sm text-white">
                 Access the smartest student community
               </span>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
-              <span className=" text-sm text-white">
+              <span className=" text-xs md:text-sm text-white">
                 <span className="font-bold text-white-600">LIVE</span> doubt
                 clearing sessions
               </span>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
-              <span className=" text-sm text-white">
+              <span className=" text-xs md:text-sm text-white">
                 Special Access to{" "}
                 <span className="font-bold "> BRAHMASTRA</span>
                 (Coming Soon)
@@ -147,7 +151,7 @@ const Costing = (props) => {
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
-              <del className="text-white text-sm ">
+              <del className="text-white text-xs md:text-sm ">
                 {" "}
                 <span className="font-bold">24/7</span> Mentorship guide
               </del>
@@ -161,7 +165,7 @@ const Costing = (props) => {
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
-              <del className="text-white text-sm ">
+              <del className="text-white text-xs md:text-sm ">
                 Special Access to{" "}
                 <span className="font-bold "> Personal AI Mentor</span>
                 (Coming Soon)
@@ -200,35 +204,37 @@ const Costing = (props) => {
           <ul className="pt-6 px-6 space-y-4">
             <li className="flex justify-start space-x-2 items-center">
               <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
-              <span className="text-gray-600 text-sm">Lectures</span>
+              <span className="text-gray-600 text-xs md:text-sm">Lectures</span>
             </li>
             <li className="flex justify-start space-x-2 items-center">
               <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
-              <span className="text-gray-600 text-sm">Weekly test series</span>
+              <span className="text-gray-600 text-xs md:text-sm">
+                Weekly test series
+              </span>
             </li>
             <li className="flex justify-start space-x-2 items-center   ">
               <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
-              <span className="text-gray-500 text-sm font-medium">
+              <span className="text-gray-500 text-xs md:text-sm font-medium">
                 Doubt clearing sessions
               </span>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
-              <span className="text-gray-600 text-sm">
+              <span className="text-gray-600 text-xs md:text-sm">
                 Access the smartest student community
               </span>
             </li>
 
             <li className="flex justify-start space-x-2 items-center ">
               <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
-              <span className=" text-sm text-gray-600">
+              <span className=" text-xs md:text-sm text-gray-600">
                 <span className="font-bold text-white-600">LIVE</span> doubt
                 clearing sessions
               </span>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
-              <span className=" text-sm text-gray-600">
+              <span className=" text-xs md:text-sm text-gray-600">
                 Special Access to{" "}
                 <span className="font-bold "> BRAHMASTRA</span>
                 (Coming Soon)
@@ -236,20 +242,20 @@ const Costing = (props) => {
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
-              <span className="text-gray-600 text-sm ">
+              <span className="text-gray-600 text-xs md:text-sm ">
                 <span className="font-bold">24/7</span> Mentorship guide
               </span>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
-              <span className="text-gray-600 text-sm ">
+              <span className="text-gray-600 text-xs md:text-sm ">
                 Weekly <span className="font-bold">LIVE</span> Mentorship
                 Sessions
               </span>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
-              <span className="text-gray-600 text-sm ">
+              <span className="text-gray-600 text-xs md:text-sm ">
                 Special Access to
                 <span className="font-bold "> Personal AI Mentor</span>
                 (Coming Soon)
