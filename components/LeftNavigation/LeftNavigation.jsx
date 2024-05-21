@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 import {
@@ -11,7 +12,22 @@ import {
   FiLogOut,
 } from "react-icons/fi";
 import Logo from "../../public/Logo.svg";
+
+// import Cookies from 'js-cookie';
+
+
 const LeftNavigation = () => {
+
+   
+  // const clearLanguageCookie = () => {
+  //   Cookies.remove('authCookie');
+   
+  // Refresh the page
+  // window.location.reload();
+  
+
+  // }
+
   return (
     <nav className=" bg-white   w-[270px]  py-8 px-4 flex flex-col justify-between items-center">
       <div className="mx-auto fixed  ">

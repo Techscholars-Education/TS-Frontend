@@ -1,5 +1,7 @@
+import { AuthContextProvider } from "@/components/auth-provider";
 import "./globals.css";
 import NextTopLoader from "nextjs-toploader";
+import GoogleProvider from "@/components/google-provider";
 export const metadata = {
   title: "TechScholars | Best online Educational Platform for Students",
   description: "India's Best Education Platform",
@@ -14,9 +16,14 @@ export default function RootLayout({ children }) {
           src="https://canvasjs.com/assets/script/canvasjs.min.js"
         ></script>
       </head>
-      <body>
+      <body suppressHydrationWarning={true}>
         <NextTopLoader color="#0079FC" height={6} />
+        <GoogleProvider>
+        <AuthContextProvider>
         {children}
+        </AuthContextProvider>
+        </GoogleProvider>
+
       </body>
     </html>
   );
