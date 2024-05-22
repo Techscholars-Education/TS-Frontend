@@ -1,30 +1,52 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import Google from "@/public/Auth/Google.png";
 import signin from "@/public/Auth/signin.svg";
+
+import { useRouter } from "next/navigation";
+import useSignup from "@/hooks/useSignup";
+import { ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+
+
 const Page = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const router =  useRouter();
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
+  const [inputs, setInputs] = useState({
+    first_name: "",
+    last_name: "",
+    phoneno: "",
+    email: "",
+    password: ""
+	});
+
+  const {checking,loading,signup} = useSignup()
+
+
+
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+   
+    await signup(inputs);
+    
   };
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
+useEffect(()=>{
 
-  const handleSubmit = () => {
-    console.log("Email:", email);
-    console.log("Password:", password);
-  };
+  if(checking){
+  //  router.replace("/login");
+   
+}
+})
 
   return (
     <>
-      <section className="  flex justify-between items-center ">
+    <ToastContainer/>
+      <section className="  flex justify-between items-center lg:overflow-hidden ">
         <div className=" w-full lg:w-1/2 h-screen p-12   mx-auto ">
           <div>
             <Link
@@ -35,9 +57,9 @@ const Page = () => {
             </Link>
           </div>
 
-          <div className=" h-screen  flex flex-col justify-center items-center font-Poppins">
-            <form className=" max-w-xl lg:max-w-md px-10 mx-auto bg-gray-50 shadow-md  w-full rounded-xl">
-              <div className="py-10">
+          <div className=" lg:h-[70vh] h-screen lg:mt-8 flex flex-col justify-center items-center font-Poppins">
+            <form className=" max-w-xl lg:max-w-md px-10 mx-auto bg-gray-50 shadow-md  w-full rounded-xl lg:h-screen">
+            <div className="py-4">
                 <h3 className=" text-lg md:text-2xl font-Poppins font-semibold">
                   Register your Account
                 </h3>
@@ -45,7 +67,7 @@ const Page = () => {
                   Hey there, You are at the right place
                 </p>
               </div>
-              <div className="mb-5">
+              <div className="mb-3">
                 <label
                   htmlFor="email"
                   className="block mb-2 text-sm font-medium text-gray-500  "
@@ -58,24 +80,44 @@ const Page = () => {
                   className="bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                   placeholder="johndoe@example.com"
                   required
+                  value={inputs.email} onChange={(e)=> setInputs({...inputs, email:e.target.value})}
                 />
               </div>
-              <div className="mb-5">
+              <div className="mb-3 flex gap-2">
+                <div>
                 <label
-                  htmlFor="text"
+                  htmlFor="first_name"
                   className="block mb-2 text-sm font-medium text-gray-500  "
                 >
-                  Full Name
+                  First Name
                 </label>
                 <input
                   type="text"
-                  id="fullname"
+                  id="first_name"
                   className="bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                  placeholder="John Doe"
+                  placeholder="John"
                   required
+                  value={inputs.first_name} onChange={(e)=> setInputs({...inputs, first_name:e.target.value})}
                 />
+                </div>
+                <div>
+                <label
+                  htmlFor="last_name"
+                  className="block mb-2 text-sm font-medium text-gray-500  "
+                >
+                  Last Name
+                </label>
+                <input
+                  type="text"
+                  id="last_name"
+                  className="bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                  placeholder="Doe"
+                  required
+                  value={inputs.last_name} onChange={(e)=> setInputs({...inputs, last_name:e.target.value})}
+                />
+                </div>
               </div>
-              <div className="mb-5">
+              <div className="mb-3">
                 <label
                   htmlFor="phone"
                   className="block mb-2 text-sm font-medium text-gray-500  "
@@ -88,9 +130,10 @@ const Page = () => {
                   className="bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                   placeholder="XXXXXXXXXX"
                   required
+                  value={inputs.phoneno} onChange={(e)=> setInputs({...inputs, phoneno:e.target.value})}
                 />
               </div>
-              <div className="mb-5">
+              <div className="mb-3">
                 <label
                   htmlFor="password"
                   className="block mb-2 text-sm font-medium text-gray-500 "
@@ -103,21 +146,24 @@ const Page = () => {
                   className="bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                   placeholder="@Example$1234"
                   required
+                  value={inputs.password} onChange={(e)=> setInputs({...inputs, password:e.target.value})}
                 />
               </div>
 
               <button
+              onClick={handleSubmit}
                 type="submit"
-                className="bg-TechBlue text-white rounded-full py-3 text-sm md:text-md w-full font-base mt-2"
+                className="bg-TechBlue text-white rounded-full py-3  mb-4 text-sm md:text-md w-full font-base mt-1 hover:bg-black transition-all ease-in-out duration-200 flex items-center justify-center"
               >
-                Create
+              {loading ? <svg aria-hidden="true" className="w-5 h-5 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/><path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/></svg>
+                        : "Created"
+              }
               </button>
-              <button
-                type="submit"
-                className="bg-gray-100 text-darkBlue rounded-full py-2 text-sm md:text-md w-full font-normal mt-4 flex items-center justify-center "
+              {/* <button
+                className="bg-gray-100 text-darkBlue rounded-full py-2 text-sm md:text-md w-full  font-normal mt-2 lg:mt-[.1vw] flex items-center justify-center "
               >
-                <Image src={Google} className="w-8" alt="google-logo" /> Google
-              </button>
+                <Image src={Google} className="w-8 lg:h-8" alt="google-logo" /> Google
+              </button> */}
               <div className="mb-10 mt-6 text-xs md:text-sm flex">
                 <p className="text-gray-600">Already have an account ?</p>{" "}
                 <Link href="/login" className="text-TechBlue mx-2">
@@ -127,7 +173,7 @@ const Page = () => {
             </form>
           </div>
 
-          <div className="font-Poppins flex justify-between pb-10 items-center">
+          <div className="font-Poppins flex justify-between items-center h-[20vh] lg:mt-6">
             <div>
               <Link
                 href="/privacy"
@@ -144,8 +190,8 @@ const Page = () => {
           </div>
         </div>
 
-        <div className=" hidden lg:block h-screen">
-          <Image src={signin} alt="signin-svg" />
+        <div className=" hidden lg:block ">
+          <Image src={signin} alt="signin-svg" className="h-screen w-full" />
         </div>
       </section>
     </>
