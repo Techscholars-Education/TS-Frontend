@@ -29,7 +29,7 @@ const useSignup = () => {
            if(!data.code){
             toast.error("You have already account");
            }else{
-            toast.success("Account created successfully");
+            toast.success("Account created successfully please login");
             setChecking(true)    
            }
              
