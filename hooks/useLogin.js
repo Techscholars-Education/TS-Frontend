@@ -17,6 +17,7 @@ const useLogin = () => {
       }
 
       if (data.access_token) {
+        toast.success("Login successful");
         const sessionExpirationTime = 5 * 60 * 60;
         Cookies.set("authCookie", data.access_token, {
           expires: sessionExpirationTime,
