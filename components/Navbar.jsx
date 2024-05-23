@@ -31,17 +31,20 @@ const Navbar = () => {
           !popupVisibility && "hidden"
         } `}
       >
-        <p className="font-Poppins py-2 md:py-0 text-center px-2 font-semibold text-xs md:text-sm lg:text-base uppercase flex items-center ">
-          <Image className=" w-10 md:mr-10 " src={siren}></Image>
+        <p className="font-Poppins py-4 md:py-0 text-center px-2 font-semibold text-xs md:text-sm lg:text-base uppercase flex items-center ">
+          <Image className="hidden md:block w-10 md:mr-10 " src={siren}></Image>
           Enroll today and start your IITJEE and NEET preparation | batches are
           filling fast!
-          <Image className=" w-10 md:w-16 mb-3 md:ml-10 " src={speaker}></Image>
+          <Image
+            className="hidden md:block w-10 md:w-16 mb-3 md:ml-10 "
+            src={speaker}
+          ></Image>
         </p>
         <button
           onClick={() => {
             setpopupVisibility(false);
           }}
-          className="absolute bottom-2 md:top-[33%] right-4 md:right-10"
+          className="absolute bottom-2 md:top-[33%] right-2  md:right-10"
         >
           <RxCross1 className="text-white" />
         </button>
