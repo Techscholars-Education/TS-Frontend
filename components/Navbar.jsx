@@ -7,6 +7,8 @@ import { RxCross1 } from "react-icons/rx";
 import Logo from "../public/Logo.svg";
 import { usePathname } from "next/navigation";
 import giphy from "@/public/Home/giphy.gif";
+import siren from "@/public/Home/siren.gif";
+import speaker from "@/public/Home/speaker.gif";
 
 const Navbar = () => {
   const [isBurgerClicked, setIsBurgerClicked] = useState(false);
@@ -25,13 +27,15 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`bg-black text-white relative ${
+        className={`bg-black text-white relative flex justify-center ${
           !popupVisibility && "hidden"
         } `}
       >
-        <p className="py-3 font-Poppins text-center px-2 text-xs md:text-sm lg:text-base uppercase ">
+        <p className="font-Poppins py-2 md:py-0 text-center px-2 font-semibold text-xs md:text-sm lg:text-base uppercase flex items-center ">
+          <Image className=" w-10 md:mr-10 " src={siren}></Image>
           Enroll today and start your IITJEE and NEET preparation | batches are
           filling fast!
+          <Image className=" w-10 md:w-16 mb-3 md:ml-10 " src={speaker}></Image>
         </p>
         <button
           onClick={() => {
