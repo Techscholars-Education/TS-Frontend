@@ -32,12 +32,17 @@ const Navbar = () => {
         } `}
       >
         <p className="font-Poppins py-4 md:py-0 text-center px-2 font-semibold text-xs md:text-sm lg:text-base uppercase flex items-center ">
-          <Image className="hidden md:block w-10 md:mr-10 " src={siren}></Image>
+          <Image
+            className="hidden md:block w-10 md:mr-10 "
+            src={siren}
+            alt="siren-gif"
+          ></Image>
           Enroll today and start your IITJEE and NEET preparation | batches are
           filling fast!
           <Image
             className="hidden md:block w-10 md:w-16 mb-3 md:ml-10 "
             src={speaker}
+            alt="speaker-gif"
           ></Image>
         </p>
         <button
