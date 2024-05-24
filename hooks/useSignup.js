@@ -45,7 +45,6 @@ const useSignup = () => {
         setChecking(true);
       }
 
-      console.log(data);
       if (data.error) {
         throw new Error(data.error);
       }
