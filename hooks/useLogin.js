@@ -1,8 +1,10 @@
 "use client";
 import Cookies from "js-cookie";
+import { useState } from "react";
 import { toast } from "react-toastify";
 
 const useLogin = () => {
+  const [checking, setChecking] = useState(false);
   const login = async (username, password) => {
     try {
       const res = await fetch("https://api.techscholars.co.in/auth/v1/login", {
@@ -11,7 +13,6 @@ const useLogin = () => {
         body: JSON.stringify({ username, password }),
       });
       const data = await res.json();
-
       if (data.error) {
         throw new Error(data.error);
       }
@@ -23,6 +24,7 @@ const useLogin = () => {
           expires: sessionExpirationTime,
         });
         window.location.reload();
+        setChecking(true);
       } else {
         toast.error("Email or password is not correct");
       }
@@ -30,7 +32,7 @@ const useLogin = () => {
       toast.error(error.message);
     }
   };
-  return { login };
+  return { checking, login };
 };
 
 export default useLogin;
