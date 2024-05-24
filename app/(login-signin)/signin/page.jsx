@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { IoIosArrowRoundBack } from "react-icons/io";
-import Google from "@/public/Auth/Google.png";
 import signin from "@/public/Auth/signin.svg";
 
 import { useRouter } from "next/navigation";

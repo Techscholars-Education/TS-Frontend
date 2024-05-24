@@ -32,8 +32,7 @@ const useSignup = () => {
             toast.success("Account created successfully please login");
             setChecking(true)    
            }
-             
-            console.log(data);
+ 
            if(data.error){
             throw new Error(data.error)
            }

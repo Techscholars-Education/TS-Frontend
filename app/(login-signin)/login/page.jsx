@@ -54,6 +54,7 @@ const Page = () => {
     await login(email, password);
 
     router.replace("/dashboard/home");
+    window.location.reload();
   };
 
   const glogin = useGoogleLogin({
@@ -69,6 +70,7 @@ const Page = () => {
       router.replace("/dashboard/home");
       window.location.reload();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [authg]);
 
   return (
