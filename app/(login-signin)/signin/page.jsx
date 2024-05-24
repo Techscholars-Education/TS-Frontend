@@ -174,6 +174,7 @@ const Page = () => {
                       setInputs({ ...inputs, password: e.target.value })
                     }
                   />
+
                   <div
                     className="cursor-pointer"
                     onClick={() => {
@@ -210,7 +211,9 @@ const Page = () => {
               <button
                 onClick={handleSubmit}
                 type="submit"
-                className="bg-TechBlue text-white rounded-full py-3  mb-4 text-sm md:text-md w-full font-base mt-1 hover:bg-black transition-all ease-in-out duration-200 flex items-center justify-center"
+                className={`bg-TechBlue text-white rounded-full py-3  mb-4 text-sm md:text-md w-full font-base mt-1 hover:bg-black transition-all ease-in-out duration-200 flex items-center justify-center ${
+                  !isPasswordMatch ? "cursor-not-allowed hover:bg-TechBlue" : ""
+                } `}
               >
                 {loading ? (
                   <svg
