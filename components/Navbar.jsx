@@ -7,6 +7,8 @@ import { RxCross1 } from "react-icons/rx";
 import Logo from "../public/Logo.svg";
 import { usePathname } from "next/navigation";
 import giphy from "@/public/Home/giphy.gif";
+import siren from "@/public/Home/siren.gif";
+import speaker from "@/public/Home/speaker.gif";
 
 const Navbar = () => {
   const [isBurgerClicked, setIsBurgerClicked] = useState(false);
@@ -25,19 +27,29 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`bg-black text-white relative ${
+        className={`bg-black text-white relative flex justify-center ${
           !popupVisibility && "hidden"
         } `}
       >
-        <p className="py-3 font-Poppins text-center px-2 text-xs md:text-sm lg:text-base uppercase ">
+        <p className="font-Poppins py-4 md:py-0 text-center px-2 font-semibold text-xs md:text-sm lg:text-base uppercase flex items-center ">
+          <Image
+            className="hidden md:block w-10 md:mr-10 "
+            src={siren}
+            alt="siren-gif"
+          ></Image>
           Enroll today and start your IITJEE and NEET preparation | batches are
           filling fast!
+          <Image
+            className="hidden md:block w-10 md:w-16 mb-3 md:ml-10 "
+            src={speaker}
+            alt="speaker-gif"
+          ></Image>
         </p>
         <button
           onClick={() => {
             setpopupVisibility(false);
           }}
-          className="absolute bottom-2 md:top-[33%] right-4 md:right-10"
+          className="absolute bottom-2 md:top-[33%] right-2  md:right-10"
         >
           <RxCross1 className="text-white" />
         </button>

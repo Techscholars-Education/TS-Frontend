@@ -142,7 +142,7 @@ const Page = () => {
               <button
                 type="submit"
                 onClick={handleSubmit}
-                className="bg-TechBlue text-white rounded-full py-3 text-sm md:text-md w-full font-base mt-2"
+                className="bg-TechBlue text-white rounded-full py-3 text-sm md:text-md w-full font-base mt-2 hover:bg-black duration-200"
               >
                 Login
               </button>
