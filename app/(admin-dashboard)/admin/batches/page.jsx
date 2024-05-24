@@ -2,20 +2,14 @@
 import React, { useEffect, useState } from "react";
 import Nav from "../../_components/Nav";
 import AdminSidebar from "../../_components/AdminSidebar";
-import Image from "next/image";
-import blogs1 from "../../../../public/AdminDashboard/blogs-1.avif";
-import blogs2 from "../../../../public/AdminDashboard/blog-2.avif";
-import blogs3 from "../../../../public/AdminDashboard/blogs-3.avif";
-import { FaRegHeart } from "react-icons/fa";
 import Jee from "./_components/Jee";
 import Foundation from "./_components/Foundation";
 import Neet from "./_components/Neet";
 
 const Page = () => {
-  const [heart, setHeart] = useState(false);
+
   const [domLoaded, setDomLoaded] = useState(false);
-  const [blogs, setBlogs] = useState(true);
-  const [input, setInput] = useState("");
+
   useEffect(() => {
     setDomLoaded(true);
   }, []);
@@ -39,8 +33,8 @@ const Page = () => {
               </div>
               <div className="ml-10 mt-4 flex gap-7">
                <Jee/>
-               <Foundation/>
                <Neet/>
+               <Foundation/>
                 
               </div>
             </div>
