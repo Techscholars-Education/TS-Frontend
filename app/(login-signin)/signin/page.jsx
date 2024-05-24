@@ -2,14 +2,14 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { IoIosArrowRoundBack } from "react-icons/io";
-
+import { IoIosEyeOff } from "react-icons/io";
 import signin from "@/public/Auth/signin.svg";
-
 import { useRouter } from "next/navigation";
 import useSignup from "@/hooks/useSignup";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { IoIosArrowRoundBack } from "react-icons/io";
+import { IoIosEye } from "react-icons/io";
 
 const Page = () => {
   const router = useRouter();
@@ -22,10 +22,24 @@ const Page = () => {
     password: "",
   });
 
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [isPasswordMatch, setIsPasswordMatch] = useState(true);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleConfirmPasswordChange = (e) => {
+    const confirmPasswordValue = e.target.value;
+    setConfirmPassword(confirmPasswordValue);
+    setIsPasswordMatch(confirmPasswordValue === inputs.password);
+  };
+
   const { checking, loading, signup } = useSignup();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (confirmPassword !== inputs.password) {
+      setIsPasswordMatch(false);
+      return;
+    }
 
     await signup(inputs);
   };
@@ -41,8 +55,9 @@ const Page = () => {
   return (
     <>
       <ToastContainer />
+
       <section className="  flex justify-between items-center lg:overflow-hidden ">
-        <div className=" w-full lg:w-1/2 h-screen p-12   mx-auto ">
+        <div className=" w-full px-4 py-12 lg:w-1/2 h-screen lg:p-12 mx-auto ">
           <div>
             <Link
               href="/"
@@ -53,7 +68,7 @@ const Page = () => {
           </div>
 
           <div className=" lg:h-[70vh] h-screen lg:mt-8 flex flex-col justify-center items-center font-Poppins">
-            <form className=" max-w-xl lg:max-w-md px-10 mx-auto bg-gray-50 shadow-md  w-full rounded-xl lg:h-screen">
+            <form className=" max-w-xl lg:max-w-md px-4 md:px-10 mx-auto bg-gray-50 shadow-md  w-full rounded-xl lg:h-screen">
               <div className="py-4">
                 <h3 className=" text-lg md:text-2xl font-Poppins font-semibold">
                   Register your Account
@@ -147,17 +162,49 @@ const Page = () => {
                 >
                   Password
                 </label>
+                <div className="flex justify-end items-center">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    id="password"
+                    className="bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mr-2 "
+                    placeholder="@Example$1234"
+                    required
+                    value={inputs.password}
+                    onChange={(e) =>
+                      setInputs({ ...inputs, password: e.target.value })
+                    }
+                  />
+                  <div
+                    className="cursor-pointer"
+                    onClick={() => {
+                      setShowPassword(!showPassword);
+                    }}
+                  >
+                    {showPassword ? (
+                      <IoIosEye className="w-10  rounded-xl h-full py-1 text-gray-500" />
+                    ) : (
+                      <IoIosEyeOff className="w-10  rounded-xl h-full py-1 text-gray-500" />
+                    )}
+                  </div>
+                </div>
+              </div>
+              <div className="mb-3">
+                <label className="block mb-2 text-sm font-medium text-gray-500 ">
+                  Confirm Password
+                </label>
                 <input
                   type="password"
-                  id="password"
                   className="bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                   placeholder="@Example$1234"
                   required
-                  value={inputs.password}
-                  onChange={(e) =>
-                    setInputs({ ...inputs, password: e.target.value })
-                  }
+                  onChange={handleConfirmPasswordChange}
                 />
+              </div>
+
+              <div className="py-2 font-Poppins">
+                <p className="text-xs md:text-sm text-red-600 font-normal">
+                  {!isPasswordMatch && "Passwords does not match"}
+                </p>
               </div>
 
               <button
