@@ -8,6 +8,7 @@ import Login from "@/public/Auth/login.svg";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useLogin from "@/hooks/useLogin";
+import gif1 from "../../../public/Ts-Loader.gif"
 
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
@@ -19,6 +20,11 @@ const Page = () => {
   const [password, setPassword] = useState("");
 
   const [authg, setAuthg] = useState("");
+  const [domLoaded, setDomLoaded] = useState(false);
+
+
+
+
 
   const router = useRouter();
 
@@ -73,9 +79,18 @@ const Page = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [authg]);
 
+
+  useEffect(() => {
+    setTimeout(() => {
+      setDomLoaded(true);
+    }, 2000);
+  }, []);
+
   return (
     <>
-      <ToastContainer />
+{ domLoaded ? (
+  <>
+  <ToastContainer />
       <section className="  flex justify-between items-center ">
         <div className=" w-full lg:w-1/2 h-screen p-12   mx-auto ">
           <div>
@@ -182,7 +197,19 @@ const Page = () => {
           <Image src={Login} alt="login-svg" className="h-screen w-full" />
         </div>
       </section>
+
+  </>
+):(
+  <div className="h-screen w-full flex items-center justify-center"> 
+
+   <Image src={gif1} alt="gif-loader" className="h-[20vh] w-[10vw]   " />
+
+  </div>
+)}
+
     </>
+
+      
   );
 };
 

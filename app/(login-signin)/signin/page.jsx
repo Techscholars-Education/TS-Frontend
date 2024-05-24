@@ -10,9 +10,11 @@ import { useRouter } from "next/navigation";
 import useSignup from "@/hooks/useSignup";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import gif1 from "../../../public/Ts-Loader.gif"
 
 const Page = () => {
   const router = useRouter();
+  const [domLoaded, setDomLoaded] = useState(false);
 
   const [inputs, setInputs] = useState({
     first_name: "",
@@ -38,8 +40,17 @@ const Page = () => {
     }
   });
 
+
+  useEffect(() => {
+    setTimeout(() => {
+      setDomLoaded(true);
+    }, 2000);
+  }, []);
+
   return (
     <>
+    {domLoaded ? (
+      <>
       <ToastContainer />
       <section className="  flex justify-between items-center lg:overflow-hidden ">
         <div className=" w-full lg:w-1/2 h-screen p-12   mx-auto ">
@@ -217,7 +228,16 @@ const Page = () => {
           <Image src={signin} alt="signin-svg" className="h-screen w-full" />
         </div>
       </section>
-    </>
+
+      </>
+    ):(
+      <div className="h-screen w-full flex items-center justify-center"> 
+
+<Image src={gif1} alt="gif-loader" className="h-[20vh] w-[10vw]   " />
+
+</div>
+    )}
+     </>
   );
 };
 
