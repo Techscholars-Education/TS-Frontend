@@ -1,23 +1,35 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import Google from "@/public/Auth/Google.png";
-import login from "@/public/Auth/login.svg";
+import Login from "@/public/Auth/login.svg";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useLogin from "@/hooks/useLogin";
+
+import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
+
+import { useGoogleLogin } from "@react-oauth/google";
 
 const Page = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const [authg, setAuthg] = useState("");
+
+  const router = useRouter();
 
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(email).toLowerCase());
   };
 
-  const handleSubmit = (event) => {
+  const { login } = useLogin();
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (!email) {
@@ -37,10 +49,27 @@ const Page = () => {
       return;
     }
 
-    toast.success("Login successful");
-
     // Here you can add further logic for successful login, like API call
+
+    await login(email, password);
+
+    router.replace("/dashboard/home");
   };
+
+  const glogin = useGoogleLogin({
+    onSuccess: (tokenResponse) => setAuthg(tokenResponse.access_token),
+  });
+
+  useEffect(() => {
+    if (authg === "") return;
+    if (authg) {
+      const sessionExpirationTime = 5 * 60 * 60;
+      Cookies.set("authCookie", authg, { expires: sessionExpirationTime });
+
+      router.replace("/dashboard/home");
+      window.location.reload();
+    }
+  }, [authg]);
 
   return (
     <>
@@ -56,7 +85,7 @@ const Page = () => {
             </Link>
           </div>
 
-          <div className=" h-screen  flex flex-col justify-center items-center font-Poppins">
+          <div className=" h-[80vh]  flex flex-col justify-center items-center font-Poppins">
             <form className=" max-w-xl lg:max-w-md px-10 mx-auto bg-gray-50 shadow-md  w-full rounded-xl">
               <div className="py-10">
                 <h3 className=" text-lg md:text-2xl font-Poppins font-semibold">
@@ -74,7 +103,7 @@ const Page = () => {
                   Email
                 </label>
                 <input
-                  type="email"
+                  type="text"
                   id="email"
                   className="bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                   placeholder="johndoe@example.com"
@@ -111,12 +140,12 @@ const Page = () => {
               <button
                 type="submit"
                 onClick={handleSubmit}
-                className="bg-TechBlue text-white rounded-full py-3 text-sm md:text-md w-full font-base mt-2"
+                className="bg-TechBlue text-white rounded-full py-3 text-sm md:text-md w-full font-base mt-2 hover:bg-black duration-200"
               >
                 Login
               </button>
               <button
-                type="submit"
+                onClick={glogin}
                 className="bg-gray-100 text-darkBlue rounded-full py-2 text-sm md:text-md w-full font-normal mt-4 flex items-center justify-center "
               >
                 <Image src={Google} className="w-8" alt="google-logo" /> Google
@@ -130,7 +159,7 @@ const Page = () => {
             </form>
           </div>
 
-          <div className="font-Poppins flex justify-between pb-10 items-center">
+          <div className="font-Poppins mt-[3vw] flex justify-between items-center">
             <div>
               <Link
                 href="/privacy"
@@ -147,8 +176,8 @@ const Page = () => {
           </div>
         </div>
 
-        <div className=" hidden lg:block h-screen">
-          <Image src={login} alt="login-svg" />
+        <div className=" hidden lg:block">
+          <Image src={Login} alt="login-svg" className="h-screen w-full" />
         </div>
       </section>
     </>
