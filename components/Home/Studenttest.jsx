@@ -73,9 +73,10 @@ const Studenttest = () => {
                           <h4 className=" text-sm lg:text-base text-gray-600">
                             {item.studentName}
                           </h4>
-                          <p className="text-xs text-gray-500">
+                          <p className="text-xs lg:text-sm text-gray-500">
                             {item.aspirant}
-                            <span className="ml-1 md:pl-2 border-l-2 border-gray-300">
+                            {" - "}
+                            <span>
                               {item.class}
                               <sup>th</sup>
                             </span>
