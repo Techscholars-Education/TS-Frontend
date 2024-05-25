@@ -5,6 +5,7 @@ import quotation from "../../public/Home/quotation.svg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { studentTestimonials } from "./S_testimonials.js";
 const Studenttest = () => {
   const settings = {
     infinite: true,
@@ -34,26 +35,6 @@ const Studenttest = () => {
       },
     ],
   };
-  const studentsTestimonials = [
-    {
-      id: 1,
-    },
-    {
-      id: 2,
-    },
-    {
-      id: 3,
-    },
-    {
-      id: 4,
-    },
-    {
-      id: 5,
-    },
-    {
-      id: 6,
-    },
-  ];
 
   return (
     <section className="bg-[#F8F8F8] my-16 py-16 font-Poppins w-full mx-auto  ">
@@ -69,22 +50,38 @@ const Studenttest = () => {
       </div>
       <div className=" my-10 w-11/12 mx-auto ">
         <Slider {...settings}>
-          {studentsTestimonials.map((item) => {
+          {studentTestimonials.map((item) => {
             return (
               <div key={item.id} className=" w-[80%] sm:w-full py-10 ">
                 <div className=" rounded-xl mx-4 border relative hover:scale-105 duration-200 hover:shadow-xl">
                   <div className=" top-0 px-6 py-4 md:p-6 xl:top-[10%] ">
                     <p className=" text-xs sm:text-sm md:text-base text-gray-600 leading-normal ">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Recusandae, totam. Lorem ipsum dolor sit amet.
+                      {item.content}
                     </p>
                   </div>
                   <div className="mb-2 px-4  xl:bottom-0 ">
                     <div className="flex items-center space-x-2">
-                      <div className="w-[28px] h-[28px] md:w-[30px] md:h-[30px] lg:h-[40px] lg:w-[40px] bg-TechBlue rounded-full"></div>
-                      <p className="text-xs sm:text-sm md:text-base  ">
-                        Naina Sharma
-                      </p>
+                      <div className=" flex items-center space-x-3">
+                        <div className="w-[40px] h-[40px] lg:w-[60px] lg:h-[60px] rounded-full opacity-90">
+                          <Image
+                            className="rounded-full"
+                            src={item.profile}
+                            alt="family-icon"
+                          />
+                        </div>
+                        <div className="font-Poppins">
+                          <h4 className=" text-sm lg:text-base text-gray-600">
+                            {item.studentName}
+                          </h4>
+                          <p className="text-xs text-gray-500">
+                            {item.aspirant}
+                            <span className="ml-1 md:pl-2 border-l-2 border-gray-300">
+                              {item.class}
+                              <sup>th</sup>
+                            </span>
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
 

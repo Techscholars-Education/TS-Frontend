@@ -7,6 +7,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import star from "../../public/Home/star.svg";
+import Parents from "../../public/Home/Parents.jpg";
+import { testimonialsData } from "./P_testimonials.js";
+
 const Testimonialsslider = () => {
   const settings = {
     infinite: true,
@@ -35,59 +38,55 @@ const Testimonialsslider = () => {
       },
     ],
   };
-  const testimonialsData = [
-    {
-      id: 1,
-    },
-    {
-      id: 2,
-    },
-    {
-      id: 3,
-    },
-    {
-      id: 4,
-    },
-    {
-      id: 5,
-    },
-    {
-      id: 6,
-    },
-  ];
+
   return (
     <div className="w-[90%] mx-auto">
       <Slider {...settings}>
         {testimonialsData.map((item) => {
           return (
-            <div className="py-10" key={item.id}>
+            <div className="py-4 md:py-10 " key={item.id}>
               <div className="border bg-white p-4 rounded-xl mx-4 hover:shadow-xl hover:scale-105 duration-200  ">
                 <div>
                   <Image
-                    className="invert w-6 md:w-10 "
+                    className="invert w-6 md:w-8 "
                     src={quoteup}
                     alt="quoteup"
                   />
                 </div>
 
                 <div className="py-4">
-                  <p className=" text-xs md:text-base text-darkBlue/70 font-Poppins">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Ratione, laboriosam. Lorem ipsum.
+                  <p className=" text-xs lg:text-base text-gray-600 font-Poppins leading-relaxed lg:leading-relaxed">
+                    {item.content}
                   </p>
                 </div>
 
                 <div className="flex items-center justify-between font-Poppins ">
-                  <div className="w-1/2 flex items-center space-x-4">
-                    <div className="w-[30px] h-[30px] rounded-full bg-TechBlue"></div>
-                    <h4 className=" text-xs md:text-base mfont-semibold text-darkBlue">
-                      John Doe
-                    </h4>
+                  <div className=" flex items-center space-x-3">
+                    <div className="w-[40px] h-[40px] lg:w-[60px] lg:h-[60px] rounded-full opacity-90">
+                      <Image
+                        className="rounded-full"
+                        src={Parents}
+                        alt="family-icon"
+                      />
+                    </div>
+                    <div className="font-Poppins">
+                      <h4 className=" text-sm lg:text-base text-gray-600">
+                        {item.parentName}
+                      </h4>
+                      <p className="text-xs text-gray-500">
+                        {item.studentName}
+                        <span className="ml-1 md:pl-2 border-l-2 border-gray-300">
+                          {item.class}
+                          <sup>th</sup>
+                        </span>
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex justify-center items-center space-x-4">
+
+                  <div className="flex justify-center items-center space-x-2 ">
                     <Image src={star} alt="rating-star"></Image>
-                    <p className=" text-xs md:text-base text-darkBlue font-semibold">
-                      4.3
+                    <p className=" text-sm md:text-xs lg:text-base text-darkBlue font-semibold">
+                      {item.starRating}
                     </p>
                   </div>
                 </div>
