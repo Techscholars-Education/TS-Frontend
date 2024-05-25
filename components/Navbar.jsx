@@ -35,6 +35,7 @@ const Navbar = () => {
           <Image
             className="hidden md:block w-10 md:mr-10 "
             src={siren}
+            unoptimized={true}
             alt="siren-gif"
           ></Image>
           Enroll today and start your IITJEE and NEET preparation | batches are
@@ -42,6 +43,7 @@ const Navbar = () => {
           <Image
             className="hidden md:block w-10 md:w-16 mb-3 md:ml-10 "
             src={speaker}
+            unoptimized={true}
             alt="speaker-gif"
           ></Image>
         </p>
