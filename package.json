@@ -22,6 +22,7 @@
     "canvasjs-react-charts": "^1.0.5",
     "chart.js": "^4.4.2",
     "date-fns": "^3.6.0",
+    "flowbite-react": "^0.9.0",
     "framer-motion": "^11.0.24",
     "js-cookie": "^3.0.5",
     "next": "^14.2.1",

@@ -13,6 +13,8 @@ const Page = () => {
   const [domLoaded, setDomLoaded] = useState(false);
   const [blogs, setBlogs] = useState(true);
   const [input, setInput] = useState("");
+
+  
   useEffect(() => {
     setDomLoaded(true);
   }, []);
