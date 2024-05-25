@@ -32,7 +32,6 @@ const Testimonials = () => {
           ></iframe>
         </div>
       </div>
-      ;
     </section>
   );
 };
