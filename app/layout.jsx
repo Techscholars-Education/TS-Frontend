@@ -10,20 +10,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <script
-          async
-          src="https://canvasjs.com/assets/script/canvasjs.min.js"
-        ></script>
-      </head>
-      <body suppressHydrationWarning={true}>
+      <head></head>
+      <body>
         <NextTopLoader color="#0079FC" height={6} />
         <GoogleProvider>
-        <AuthContextProvider>
-        {children}
-        </AuthContextProvider>
+          <AuthContextProvider>{children}</AuthContextProvider>
         </GoogleProvider>
-
       </body>
     </html>
   );
