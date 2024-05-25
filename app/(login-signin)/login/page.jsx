@@ -234,13 +234,11 @@ const Page = () => {
         </>
       ) : (
         <>
-          <div className="h-screen w-full flex items-center justify-center">
-            <Image
-              src={gif1}
-              alt="gif-loader"
-              className="h-[20vh] w-[10vw]   "
-            />
-          </div>
+        <div className="h-screen w-full flex items-center justify-center"> 
+
+<Image src={gif1} alt="gif-loader" className="lg:h-[20vh] lg:w-[10vw] h-[20vh] w-[35vw]  " />
+
+</div>
         </>
       )}
     </>
