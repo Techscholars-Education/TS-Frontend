@@ -29,7 +29,7 @@ const LeftNavigation = () => {
   const isActive = (path) => pathname === path;
 
   return (
-    <nav className="bg-white w-[270px] py-6 px-4 flex flex-col justify-between items-center">
+    <nav className="bg-white w-[290px] py-6 px-4 flex flex-col justify-between items-center">
       <div className="mx-auto fixed">
         {/* Logo */}
         <div className="flex items-center justify-center space-x-2">

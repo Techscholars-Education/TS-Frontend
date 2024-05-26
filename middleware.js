@@ -14,9 +14,9 @@ export function middleware(request) {
         return NextResponse.redirect(new URL('/dashboard/home',request.nextUrl))
     }
 
-    // if(!isPublicPath && !token){
-    //     return NextResponse.redirect(new URL('/login',request.nextUrl))
-    // }
+    if(!isPublicPath && !token){
+        return NextResponse.redirect(new URL('/login',request.nextUrl))
+    }
 
 }
  

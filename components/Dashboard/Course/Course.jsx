@@ -10,24 +10,24 @@ const Course = () => {
   const data = [
     {
       id: 1,
-      title: "FOUNDATION",
-      route: "/course/foundation",
+      
+      route: "/dashboard/my-course/coursedetail",
       description:
         "What do you need to know to create better products?",
       Poster: coursePoster,
     },
     {
       id: 2,
-      title: "JEE",
-      route: "/course/jee",
+    
+      route: "/dashboard/my-course/coursedetail",
       description:
         "What do you need to know to create better products?.",
       Poster: coursePoster,
     },
     {
       id: 3,
-      title: "NEET",
-      route: "/course/neet",
+      
+      route: "/dashboard/my-course/coursedetail",
       description:
         "What do you need to know to create better products?",
       Poster: coursePoster,

@@ -8,6 +8,7 @@ function page() {
     <section className="flex w-full">
     <LeftNavigation/>
     <Course/>
+    
   </section>
    
   )
