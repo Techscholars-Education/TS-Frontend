@@ -62,7 +62,7 @@ function CourseDetail() {
                 Discription
               </h2>
               <p className='text-[14px] my-4 text-[#666666]'>
-                The community's need for applications that can facilitate daily activities is increasing as technology advances. Currently, many companies are looking for developers so that they can sell products (goods or services) that can reach wider buyers online. To become a developer, we are not required to understand all the science of design, but at least we can know the basics so that we can realize the design into code into a complete application more effectively.
+                The community s need for applications that can facilitate daily activities is increasing as technology advances. Currently, many companies are looking for developers so that they can sell products (goods or services) that can reach wider buyers online. To become a developer, we are not required to understand all the science of design, but at least we can know the basics so that we can realize the design into code into a complete application more effectively.
               </p>
             </div>
             <div>
@@ -167,7 +167,7 @@ function CourseDetail() {
              Explore Other Courses
           </h2>
           <p className="text-sm text-gray-600 ">
-          You’ve learned 70% of your goal this week! Keep it up
+          You ve learned 70% of your goal this week! Keep it up
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 xl:w-11/12 mx-auto ">
