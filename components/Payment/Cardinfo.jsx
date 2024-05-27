@@ -72,6 +72,7 @@ const Cardinfo = (props) => {
                 <input
                   type="text"
                   name="cvv"
+                  maxLength="3"
                   id="cvv"
                   placeholder="000"
                   className="w-full py-3 px-4 border border-gray-400 rounded-lg focus:outline-none focus:border-blue-500"
@@ -89,7 +90,7 @@ const Cardinfo = (props) => {
                   name="card-holder"
                   id="card-holder"
                   placeholder="Full Name"
-                  className="w-full py-3 px-4 border border-gray-400 rounded-lg focus:outline-none focus:border-blue-500"
+                  className="w-full py-3 px-4 border border-gray-400 rounded-lg focus:outline-none focus:border-blue-500 uppercase"
                 />
               </div>
             </div>
