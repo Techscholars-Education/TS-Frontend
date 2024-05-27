@@ -27,7 +27,7 @@ const Curriculum = () => {
             cascade
             damping={0.3}
             direction="up"
-            duration={1000}
+            duration={500}
           >
             <div className=" h-full flex justify-center items-start p-4 xl:p-8 border border-white rounded-2xl  ">
               <div className=" p-2 w-[75px]  bg-white rounded-full  ">
