@@ -4,12 +4,12 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
-import Laptop from "../../public/Home/Laptop.svg";
-import Agreement from "../../public/Home/Agreement.svg";
-import Businessman from "../../public/Home/Businessman.svg";
-import Bubble from "../../public/Home/Bubble.svg";
-import Searchslider from "../../public/Home/Searchslider.svg";
-import Mansion from "../../public/Home/Mansion.svg";
+import scholarship from "../../public/Home/scholarship.svg";
+import call from "../../public/Home/call.svg";
+import mentorship from "../../public/Home/mentorship.svg";
+import students from "../../public/Home/students.svg";
+import analysis from "../../public/Home/analysis.svg";
+import HofTech from "../../public/Home/HofTech.svg";
 
 const Aboutslider = () => {
   const settings = {
@@ -51,42 +51,42 @@ const Aboutslider = () => {
   const data = [
     {
       id: 1,
-      image: Laptop,
+      image: scholarship,
       top: "Every Sunday",
       mid: "Scholarship Admission Exam",
       bottom: "Techsholars scholarship test",
     },
     {
       id: 2,
-      image: Agreement,
+      image: call,
       top: "Contact Us",
       mid: "Schedule a call with our councillor",
       bottom: "Know what we can offer",
     },
     {
       id: 3,
-      image: Businessman,
+      image: mentorship,
       top: "Faculty",
       mid: "Personalised expert mentorship",
       bottom: "Attention on what you want",
     },
     {
       id: 4,
-      image: Bubble,
+      image: students,
       top: "Every Sunday",
       mid: "Student Community",
       bottom: "Techsholars scholarship test",
     },
     {
       id: 5,
-      image: Searchslider,
+      image: analysis,
       top: "Every Sunday",
       mid: "Performance analysis",
       bottom: "Techsholars scholarship test",
     },
     {
       id: 6,
-      image: Mansion,
+      image: HofTech,
       top: "Every Sunday",
       mid: "House of Techscholars",
       bottom: "Techsholars scholarship test",
@@ -94,18 +94,18 @@ const Aboutslider = () => {
   ];
 
   return (
-    <section className="  w-11/12 mx-auto py-6 md:my-8  ">
+    <section className="  w-11/12 mx-auto pt-2 md:py-6 md:my-8  ">
       <div className="slider-container">
         <Slider className="" {...settings}>
           {data.map((item) => {
             return (
               <div
                 key={item.id}
-                className=" flex flex-col justify-center items-center py-10  "
+                className=" flex flex-col justify-center items-center py-10 "
               >
                 <div className="w-full">
                   <Image
-                    className="h-32 w-32 mx-auto "
+                    className="lg:h-48 lg:w-48 md:w-40 md:h-40 h-32 w-32 mx-auto "
                     src={item.image}
                     alt="slider-svgs"
                   ></Image>

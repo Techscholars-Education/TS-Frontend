@@ -6,7 +6,7 @@ const About = () => {
       <div className=" w-full mx-auto  rounded-xl">
         <div className=" text-center">
           <h5 className="text-xs font-medium bg-gray-300 text-TechBlue font-Poppins border py-1 rounded-full px-4 inline-block">
-            Techscholars
+            Our Features
           </h5>
         </div>
         <h2 className="text-darkBlue font-semibold text-2xl  md:text-4xl text-center my-4 font-Poppins ">
