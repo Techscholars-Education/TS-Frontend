@@ -1,138 +1,263 @@
 "use client";
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import addtocart from "@/public/payment/addtocart.png";
+import phonepe from "@/public/payment/phonepe.svg";
+import gpay from "@/public/payment/gpay.png";
+import paytm from "@/public/payment/paytm.png";
+import amazonpay from "@/public/payment/amazonpay.png";
+import paymentcards from "@/public/payment/paymentcards.png";
+import Cardinfo from "@/components/Payment/Cardinfo";
+import Qrcode from "@/components/Payment/Qrcode";
 
 const Page = () => {
-  const [hoveredPackage, setHoveredPackage] = useState(null);
+  const [paymentMethod, setPaymentMethod] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
-  const packages = [
-    {
-      id: 1,
-      title: "Package1",
-      price: "1999",
-      features: [
-        { feature: "1 user" },
-        { feature: "1 connected calendar" },
-        { feature: "Up to 12 responses" },
-        { feature: "Up to 3 survey results archived" },
-      ],
-    },
-    {
-      id: 2,
-      title: "Package2",
-      price: "7999",
-      features: [
-        { feature: "1 user" },
-        { feature: "Up to 2 connected calendars" },
-        { feature: "Up to 50 responses" },
-        { feature: "Up to 10 survey results archived" },
-      ],
-    },
-    {
-      id: 3,
-      title: "Package3",
-      price: "17999",
-      features: [
-        { feature: "Per user in company domain" },
-        { feature: "Single calendar integrations" },
-        { feature: "Unlimited responses" },
-        { feature: "Unlimited survey results archived" },
-      ],
-    },
-  ];
-
-  const container = {
-    hidden: { opacity: 1 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
   };
 
-  const item = {
-    hidden: { opacity: 0, scale: 0.8 },
-    show: { opacity: 1, scale: 1 },
+  const handleOptionClick = () => {
+    setIsOpen(false);
   };
 
-  const hoveredItem = {
-    scale: 1.1,
-    backgroundColor: "#111",
-    transition: {
-      duration: 0.2,
-    },
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
 
   return (
     <>
-      <div>
-        <Navbar />
-        <div className="flex justify-center items-center my-8 flex-col">
-          <h1 className="font-[600] text-[44px] text-[#002657] ">
-            Welcome Harsh
-          </h1>
-          <span className="font-[500] text-[20px] text-[#002657] ">
-            Select your package
-          </span>
-        </div>
-        <div className="flex justify-center items-center font-Poppins ">
-          <div className="p-4  w-full max-w-screen-lg flex flex-col justify-center items-center ">
-            <motion.div
-              className="flex flex-col w-[80vw] justify-center sm:flex-row "
-              variants={container}
-              initial="hidden"
-              animate="show"
-            >
-              {packages.map((packageItem) => (
-                <motion.div
-                  key={packageItem.id}
-                  className={` py-10  group flex flex-col justify-center hover:bg-[#FFE01B] mx-2 p-4 sm:mb-0 rounded-lg border border-darkBlue ${
-                    hoveredPackage === packageItem.id ? "scale-110" : ""
-                  }`}
-                  onHoverStart={() => setHoveredPackage(packageItem.id)}
-                  onHoverEnd={() => setHoveredPackage(null)}
-                  variants={item}
-                  whileHover={{ scale: 1.1 }}
-                >
-                  <div className="text-4xl font-semibold text-center mb-3">
-                    {packageItem.title}
-                  </div>
-                  <div className="flex items-center  mx-auto mb-2 font-Poppins">
-                    <div className="text-4xl font-semibold mr-2 text-center relative ">
-                      <span className="text-lg text-gray-500 absolute top-0 -left-4 ">
-                        &#8377;
-                      </span>
-                      {packageItem.price}
-                      <span className="text-lg text-gray-500 ">/m</span>
-                    </div>
-                    <div className="text-gray-500">{packageItem.currency}</div>
-                  </div>
-                  <ul className="list-disc  list-inside text-gray-700 space-y-2">
-                    {packageItem.features.map((feature) => (
-                      <li key={feature.feature}>{feature.feature}</li>
-                    ))}
-                  </ul>
-                  <div className="flex justify-center align-middle mt-8">
-                    <motion.button
-                      className="w-40 h-12 mt-4 py-2 px-4 bg-blue-900 text-white rounded-lg focus:outline-none focus:shadow-outline"
-                      whileHover={{
-                        scale: 1.05,
-                        backgroundColor: "white",
-                        color: "blue",
-                      }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      Purchase Now
-                    </motion.button>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
+      <Navbar />
+
+      <section className=" grid grid-cols-1 lg:grid-cols-2 gap-12 w-full mx-4 md:w-11/12 lg:md:w-10/12 md:mx-auto min-h-[80vh] py-24 ">
+        <div className=" px-10 font-Poppins ">
+          <div className="pb-6">
+            <h3 className="font-Poppins font-semibold text-xl md:text-3xl text-darkBlue">
+              Order Summary
+            </h3>
           </div>
+          <hr />
+          <div className="py-6 flex items-center ">
+            <div className=" rounded-xl ">
+              <Image
+                src={addtocart}
+                className="rounded-xl border w-32 "
+                alt="add-to-cart"
+              ></Image>
+            </div>
+            <div className=" grid grid-cols-2 w-full p-4 font-Poppins ">
+              <div className="text-start col-span-1 flex flex-col justify-center space-y-4">
+                <h4 className="text-xl font-semibold font-Poppins">
+                  Course Name
+                </h4>
+                <p className="text-gray-600 text-sm">
+                  The course validity will end within 365 days
+                </p>
+              </div>
+              <div className="text-center">
+                <h2 className="text-4xl font-semibold">&#8377;9,999</h2>
+                <p className="text-gray-600 text-sm">Qty: 1</p>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div className="py-6">
+            <div className=" flex justify-between space-x-8">
+              <input
+                className="border-2 border-gray-300 outline-none py-4 px-2 text-base rounded w-full"
+                placeholder="Gift or discount code"
+                type="text"
+              />
+              <button className="text-white bg-TechBlue py-4 px-8 rounded text-base">
+                Apply
+              </button>
+            </div>
+          </div>
+          <hr />
+          <div className="py-6">
+            <div className=" flex justify-between">
+              <p className="text-gray-600">Subtotal</p>
+              <p className="text-TechBlue font-semibold">&#8377;9,999</p>
+            </div>
+            <div className=" flex justify-between">
+              <p className="text-gray-600">GST 18%</p>
+              <p className="text-TechBlue font-semibold">&#8377;1,799</p>
+            </div>
+          </div>
+          <hr />
+          <div className="py-6">
+            <div className=" flex justify-between">
+              <p className="text-gray-600 text-xl">Grand Total</p>
+              <p className="text-TechBlue font-semibold text-4xl">
+                &#8377;11,798
+              </p>
+            </div>
+          </div>
+          <hr />
         </div>
-      </div>
+
+        <div className=" px-10 font-Poppins ">
+          <div className="pb-6">
+            <h3 className="font-Poppins font-semibold text-xl md:text-3xl text-darkBlue">
+              Select Payment method
+            </h3>
+          </div>
+          <hr />
+
+          {/* Available payment methods */}
+          <div
+            className="relative inline-block text-left font-Poppins py-4  "
+            ref={dropdownRef}
+          >
+            <div>
+              <button
+                type="button"
+                className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-4 bg-TechBlue/90 text-sm font-medium text-white hover:bg-TechBlue transition-all "
+                id="options-menu"
+                aria-expanded={isOpen}
+                aria-haspopup="true"
+                onClick={toggleDropdown}
+              >
+                Available payment Methods
+                <svg
+                  className={`ml-2 -mr-1 h-5 w-5 ${
+                    isOpen ? "rotate-180" : ""
+                  } transition-all`}
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </button>
+            </div>
+            {isOpen && (
+              <div
+                className="origin-top-right absolute right-0 mt-2 w-[300px] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none transition ease-out duration-200"
+                role="menu"
+                aria-orientation="vertical"
+                aria-labelledby="options-menu"
+              >
+                <div className="py-1" role="none">
+                  <button
+                    className=" relative px-4 py-3 font-medium hover:text-TechBlue text-sm text-gray-700 hover:bg-gray-100 flex items-center justify-between w-full"
+                    role="menuitem"
+                    onClick={() => {
+                      setPaymentMethod("upi");
+                      handleOptionClick();
+                    }}
+                  >
+                    UPI{" "}
+                    <span className="flex items-center  space-x-2">
+                      <Image
+                        className="w-16"
+                        src={phonepe}
+                        alt="phonepe-icon"
+                      ></Image>
+                      <Image
+                        className="w-8 mt-1"
+                        src={gpay}
+                        alt="gpay-icon"
+                      ></Image>
+                      <Image
+                        className="w-16 mt-2"
+                        src={amazonpay}
+                        alt="amazonpay-icon"
+                      ></Image>
+                      <Image
+                        className="w-10"
+                        src={paytm}
+                        alt="paytm-icon"
+                      ></Image>
+                    </span>
+                  </button>
+                  <button
+                    className="px-4 py-3 font-medium hover:text-TechBlue text-sm text-gray-700 hover:bg-gray-100 flex items-center justify-between w-full"
+                    role="menuitem"
+                    onClick={() => {
+                      setPaymentMethod("credit");
+                      handleOptionClick();
+                    }}
+                  >
+                    Credit card{" "}
+                    <span className="flex items-center  space-x-2">
+                      <Image
+                        className="w-16"
+                        src={paymentcards}
+                        alt="visa-cards-icons"
+                      ></Image>
+                    </span>
+                  </button>
+                  <button
+                    className="px-4 py-3 font-medium hover:text-TechBlue text-sm text-gray-700 hover:bg-gray-100 flex items-center justify-between w-full"
+                    role="menuitem"
+                    onClick={() => {
+                      setPaymentMethod("debit");
+                      handleOptionClick();
+                    }}
+                  >
+                    Debit card{" "}
+                    <span className="flex items-center  space-x-2">
+                      <Image
+                        className="w-16"
+                        src={paymentcards}
+                        alt="visa-cards-icons"
+                      ></Image>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* QR CODE || CARD DETAILS */}
+
+          {paymentMethod === "" ? (
+            <div className="text-xl font-Poppins text-gray-600">
+              Please select the payment method from the above list to proceed
+              furthur.
+            </div>
+          ) : (
+            <>
+              {paymentMethod === "upi" ? (
+                <Qrcode />
+              ) : (
+                <>
+                  {paymentMethod === "debit" ? (
+                    <Cardinfo cardType="Debit" />
+                  ) : (
+                    <Cardinfo cardType="Credit" />
+                  )}
+                </>
+              )}
+            </>
+          )}
+        </div>
+      </section>
+      <Footer />
     </>
   );
 };
