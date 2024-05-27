@@ -51,9 +51,9 @@ const Navbar = () => {
           onClick={() => {
             setpopupVisibility(false);
           }}
-          className="absolute bottom-2 md:top-[33%] right-2  md:right-10"
+          className="absolute bottom-2 md:top-[33%] right-2  md:right-4 xl:right-8"
         >
-          <RxCross1 className="text-white" />
+          <RxCross1 className="text-white text-2xl" />
         </button>
       </div>
       <nav
