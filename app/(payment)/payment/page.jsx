@@ -47,46 +47,47 @@ const Page = () => {
     <>
       <Navbar />
 
-      <section className=" grid grid-cols-1 lg:grid-cols-2 gap-12 w-full mx-4 md:w-11/12 lg:md:w-10/12 md:mx-auto min-h-[80vh] py-24 ">
+      <section className=" grid grid-cols-1 lg:grid-cols-2 gap-12 w-full md:w-11/12 lg:md:w-10/12 md:mx-auto min-h-[80vh] py-24  mx-auto  ">
         <div className=" px-10 font-Poppins ">
           <div className="pb-6">
-            <h3 className="font-Poppins font-semibold text-xl md:text-3xl text-darkBlue">
+            <h3 className="font-Poppins font-semibold text-xl lg:text-2xl xl:text-3xl text-darkBlue">
               Order Summary
             </h3>
           </div>
           <hr />
-          <div className="py-6 flex items-center ">
+          <div className="py-6 flex items-center   ">
             <div className=" rounded-xl ">
               <Image
                 src={addtocart}
-                className="rounded-xl border w-32 "
+                className="rounded-xl border w-16 md:24 lg:w-24 "
                 alt="add-to-cart"
               ></Image>
             </div>
-            <div className=" grid grid-cols-2 w-full p-4 font-Poppins ">
-              <div className="text-start col-span-1 flex flex-col justify-center space-y-4">
-                <h4 className="text-xl font-semibold font-Poppins">
+            <div className=" flex  w-full p-4 font-Poppins  ">
+              <div className=" w-3/4 text-start col-span-1 flex flex-col justify-center md:space-y-2 pr-2">
+                <h4 className=" text-base xl:text-xl font-semibold font-Poppins">
                   Course Name
                 </h4>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-600 text-xs xl:text-sm">
                   The course validity will end within 365 days
                 </p>
               </div>
-              <div className="text-center">
-                <h2 className="text-4xl font-semibold">&#8377;9,999</h2>
-                <p className="text-gray-600 text-sm">Qty: 1</p>
+              <div className=" w-1/4  text-end md:text-center">
+                <h2 className="text-base md:text-2xl xl:text-4xl font-semibold">
+                  &#8377;9,999
+                </h2>
               </div>
             </div>
           </div>
           <hr />
           <div className="py-6">
-            <div className=" flex justify-between space-x-8">
+            <div className=" flex justify-between space-x-2 md:space-x-8">
               <input
-                className="border-2 border-gray-300 outline-none py-4 px-2 text-base rounded w-full"
+                className="border-2 border-gray-300 outline-none py-2 xl:py-4 px-2 text-sm xl:text-base rounded w-full"
                 placeholder="Gift or discount code"
                 type="text"
               />
-              <button className="text-white bg-TechBlue py-4 px-8 rounded text-base">
+              <button className="text-white bg-TechBlue py-2 xl:py-4 px-8 rounded text-base">
                 Apply
               </button>
             </div>
@@ -94,19 +95,23 @@ const Page = () => {
           <hr />
           <div className="py-6">
             <div className=" flex justify-between">
-              <p className="text-gray-600">Subtotal</p>
-              <p className="text-TechBlue font-semibold">&#8377;9,999</p>
+              <p className="text-gray-600 text-sm md:text-base ">Subtotal</p>
+              <p className="text-TechBlue text-sm md:text-base font-semibold">
+                &#8377;9,999
+              </p>
             </div>
             <div className=" flex justify-between">
-              <p className="text-gray-600">GST 18%</p>
-              <p className="text-TechBlue font-semibold">&#8377;1,799</p>
+              <p className="text-gray-600 text-sm md:text-base">GST 18%</p>
+              <p className="text-TechBlue  text-sm md:text-base font-semibold">
+                &#8377;1,799
+              </p>
             </div>
           </div>
           <hr />
           <div className="py-6">
             <div className=" flex justify-between">
-              <p className="text-gray-600 text-xl">Grand Total</p>
-              <p className="text-TechBlue font-semibold text-4xl">
+              <p className="text-gray-600 text-base md:text-xl">Grand Total</p>
+              <p className="text-TechBlue text-lg md:text-4xl font-semibold">
                 &#8377;11,798
               </p>
             </div>
@@ -116,7 +121,7 @@ const Page = () => {
 
         <div className=" px-10 font-Poppins ">
           <div className="pb-6">
-            <h3 className="font-Poppins font-semibold text-xl md:text-3xl text-darkBlue">
+            <h3 className="font-Poppins font-semibold text-xl lg:text-2xl xl:text-3xl text-darkBlue">
               Select Payment method
             </h3>
           </div>
@@ -156,14 +161,14 @@ const Page = () => {
             </div>
             {isOpen && (
               <div
-                className="origin-top-right absolute right-0 mt-2 w-[300px] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none transition ease-out duration-200"
+                className="origin-top-right z-50 absolute right-0 mt-2 w-[290px] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none transition ease-out duration-200"
                 role="menu"
                 aria-orientation="vertical"
                 aria-labelledby="options-menu"
               >
                 <div className="py-1" role="none">
                   <button
-                    className=" relative px-4 py-3 font-medium hover:text-TechBlue text-sm text-gray-700 hover:bg-gray-100 flex items-center justify-between w-full"
+                    className=" relative px-4 py-3 font-medium hover:text-TechBlue text-xs lg:text-sm text-gray-700 hover:bg-gray-100 flex items-center justify-between w-full"
                     role="menuitem"
                     onClick={() => {
                       setPaymentMethod("upi");
@@ -195,7 +200,7 @@ const Page = () => {
                     </span>
                   </button>
                   <button
-                    className="px-4 py-3 font-medium hover:text-TechBlue text-sm text-gray-700 hover:bg-gray-100 flex items-center justify-between w-full"
+                    className="px-4 py-3 font-medium hover:text-TechBlue text-xs lg:text-sm text-gray-700 hover:bg-gray-100 flex items-center justify-between w-full"
                     role="menuitem"
                     onClick={() => {
                       setPaymentMethod("credit");
@@ -212,7 +217,7 @@ const Page = () => {
                     </span>
                   </button>
                   <button
-                    className="px-4 py-3 font-medium hover:text-TechBlue text-sm text-gray-700 hover:bg-gray-100 flex items-center justify-between w-full"
+                    className="px-4 py-3 font-medium hover:text-TechBlue text-xs lg:text-sm text-gray-700 hover:bg-gray-100 flex items-center justify-between w-full"
                     role="menuitem"
                     onClick={() => {
                       setPaymentMethod("debit");
@@ -236,7 +241,7 @@ const Page = () => {
           {/* QR CODE || CARD DETAILS */}
 
           {paymentMethod === "" ? (
-            <div className="text-xl font-Poppins text-gray-600">
+            <div className=" text-sm xl:text-xl font-Poppins text-gray-600">
               Please select the payment method from the above list to proceed
               furthur.
             </div>

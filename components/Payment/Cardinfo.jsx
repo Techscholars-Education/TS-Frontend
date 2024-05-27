@@ -1,5 +1,5 @@
+"use client";
 import React, { useState } from "react";
-
 const Cardinfo = (props) => {
   const [cardNumber, setCardNumber] = useState("");
 
