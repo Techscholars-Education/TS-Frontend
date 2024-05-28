@@ -44,19 +44,19 @@ function CourseDetail() {
     },
   ];
   const points = [
-    "Key Point One",
-    "Key Point Two",
-    "Key Point Three",
-    "Key Point Four",
-    "Key Point Five",
+    "Understand the basics of Prototype & Animation",
+    "Understand the basics of MicroInteraction",
+    "Creating Animation (20 case studies) for mobile apps",
+    "Presenting designs using Animation",
+    
   ];
 
   return (
     <div>
-      <div className="bg-white font-Poppins min-h-screen py-10 w-[82vw] flex flex-col ">
+      <div className="bg-[#F0F7FF] font-Poppins min-h-screen py-10 w-[82vw] flex flex-col ">
         <CourseDetailNavbar />
-        <div className='grid grid-cols-3 ml-10'>
-          <div className='flex col-span-2 flex-col'>
+        <div className='grid grid-cols-3 ml-10 '>
+          <div className='flex col-span-2 flex-col bg-white rounded-xl mt-4 p-4'>
             <div>
               <h2 className='text-[20px] font-[550]'>
                 Discription
@@ -111,7 +111,7 @@ function CourseDetail() {
           <div className='grid-cols-1'>
             <div
               className={`flex flex-col rounded-xl border 
-           font-Poppins relative w-[20vw] ml-8`}
+           font-Poppins relative w-[20vw] ml-8 bg-white mt-4`}
             >
               <div>
                 <Image

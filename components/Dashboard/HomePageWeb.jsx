@@ -7,8 +7,9 @@ import { DateRangePicker } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css";
 import Calendar from "react-calendar";
+import 'react-calendar/dist/Calendar.css';
 import { LineChart } from "@mui/x-charts/LineChart";
-
+import { IoMdArrowBack } from "react-icons/io";
 import CircularProgress, {
   CircularProgressProps,
 } from "@mui/material/CircularProgress";
@@ -19,6 +20,32 @@ import { FaHandsClapping } from "react-icons/fa6";
 import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
 import { LiaGreaterThanSolid } from "react-icons/lia";
+import DashboardNavbar from "./DashboardNavbar";
+import { FaStar, FaCheck } from "react-icons/fa";
+// import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
+// import { LocalizationProvider } from '@mui/x-date-pickers-pro/LocalizationProvider';
+// import { AdapterDayjs } from '@mui/x-date-pickers-pro/AdapterDayjs';
+// import { DateRangeCalendar } from '@mui/x-date-pickers-pro/DateRangeCalendar';
+// import Calender from "@/app/(admin-dashboard)/admin/scholorship/_components/Calender";
+import { FaChevronLeft } from "react-icons/fa";
+import { FaChevronRight } from "react-icons/fa";
+import {
+  add,
+  eachDayOfInterval,
+  endOfMonth,
+  format,
+  getDay,
+  isEqual,
+  isSameMonth,
+  isToday,
+  parse,
+  startOfToday,
+} from 'date-fns'
+import Link from "next/link";
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
 
 const HomePageWeb = () => {
   const options = {
@@ -73,8 +100,42 @@ const HomePageWeb = () => {
     { x: 8, y: 1.5 },
     { x: 10, y: 5 },
   ];
+  const uData = [4000, 3000, 2000, 2780, 1890, 2390, 3490];
+  const pData = [2400, 1398, 9800, 3908, 4800, 3800, 4300];
+  const xLabels = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'June',
+    'July',
+  ];
   const [progress, setProgress] = useState(10);
+  const [value, setValue] = useState(new Date());
+  let today = startOfToday()
+  let [selectedDay, setSelectedDay] = useState(today)
+  let [currentMonth, setCurrentMonth] = useState(format(today, 'MMM-yyyy'))
+  let firstDayCurrentMonth = parse(currentMonth, 'MMM-yyyy', new Date())
 
+  let days = eachDayOfInterval({
+    start: firstDayCurrentMonth,
+    end: endOfMonth(firstDayCurrentMonth),
+  })
+
+  function previousMonth() {
+    let firstDayNextMonth = add(firstDayCurrentMonth, { months: -1 })
+    setCurrentMonth(format(firstDayNextMonth, 'MMM-yyyy'))
+  }
+
+  function nextMonth() {
+    let firstDayNextMonth = add(firstDayCurrentMonth, { months: 1 })
+    setCurrentMonth(format(firstDayNextMonth, 'MMM-yyyy'))
+  }
+
+  const onChange = (newValue) => {
+    setValue(newValue);
+  };
   useEffect(() => {
     const timer = setInterval(() => {
       setProgress((prevProgress) =>
@@ -88,283 +149,187 @@ const HomePageWeb = () => {
 
   return (
     <>
-      <div className="flex flex-col bg-[#F0F7FF] w-full">
-        <div className="flex w-full">
-          <div className="w-[736px] mx-6 ">
-            <div className="flex justify-between m-3">
-              <div className="relative rounded-full bg-white shadow-md w-[400px] h-[35px]">
-                <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-                  <AiOutlineSearch className="text-gray-500" />
-                </span>
-                {/* <input
-                                    type="text"
-                                    placeholder="Search..."
-                                    className="pl-10 pr-4 py-2 rounded-full  "
-                                /> */}
-              </div>
-              <div className="flex">
-                <RiSunLine color="#002657" className="mt-0.5" />
-                <div
-                  className={`relative inline-block w-14 h-5 mx-3 align-middle select-none transition duration-200 ease-in bg-[#002657] rounded-full cursor-pointer ${
-                    isChecked ? "bg-[#002657]" : "bg-[#002657]"
-                  }`}
-                  onClick={handleToggle}
-                >
-                  <div
-                    className={`toggle-dot absolute w-4 h-4 top-0.5 mx-1 rounded-full bg-[#FED102] transition-transform ${
-                      isChecked ? "transform translate-x-[2vw]" : ""
-                    }`}
-                  ></div>
-                </div>
-                <RiMoonClearLine color="#002657" className="mt-0.5" />
-              </div>
-            </div>
-            <div className="flex  bg-white rounded-3xl mt-3 h-[155px] w-[55vw]">
-              <div className="flex flex-col m-4 w-3/5">
-                <div className="flex">
-                  <p className="font-[700] text-[35px] text-[#002657]">
-                    Welcome back ,Ankit
-                  </p>{" "}
-                  <FaHandsClapping className="text-[34px] mt-2.5 mx-3 text-yellow-400" />
-                </div>
-                <p className="text-[#002657] font-[400] text-[14px]">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. A
-                  alias voluptatum porro quia maxime rerum distinctio enim!
-                  Natus cumque et explicabo molestiae vitae quisquam corrupti?
-                  Nam ex doloribus itaque voluptate!
-                </p>
-              </div>
-              <div className=" w-2/5 flex justify-end my-4">
-                <Image
-                  src={require("../../public/Home/profileimg.jpg")}
-                  alt="profile-image"
-                  className="mr-8"
-                />
-              </div>
-            </div>
-            <div className="flex justify-between mt-3 h-[240px] w-[55vw]">
-              <div className="bg-white rounded-2xl">
-                <LineChart
-                  xAxis={[{ data: [1, 2, 3, 5, 8, 10] }]}
-                  series={[
-                    {
-                      data: [2, 5.5, 2, 8.5, 1.5, 5],
-                    },
-                  ]}
-                  width={500}
-                  height={260}
-                />
-              </div>
-              <div className=" p-6 bg-white rounded-3xl ml-3 w-[400px] ">
-                <div className="flex justify-between mb-2  ">
-                  <span className="font-[700] text-[15px]">Topic progress</span>
+      <div className=" font-Poppins min-h-screen  w-full bg-[#F0F7FF] ">
+        <DashboardNavbar title="Welcome back, Ayo! 👋 " subtitle="You’ve learned 70% of your goal this week! Keep it up and improve." />
+        <div className='flex bg-slate-200 p-2 px-3 rounded-full w-24 m-3 mb-0 ml-6'>
+           <IoMdArrowBack className='mt-1 mr-1'/>
 
-                  <select>
+        <Link href="/" className='text-[14px]'>
+            Back
+        </Link>
+        </div>
+        <div className="my-6 mt-3 mx-6 flex ">
+          <div className="w-[35vw] flex flex-col">
+            <div className="bg-white rounded-xl flex flex-col">
+              <p className="font-semibold p-6 pb-0">Performance analysis</p>
+              <LineChart
+                xAxis={[{ data: [1, 2, 3, 5, 8, 10] }]}
+                series={[
+                  {
+                    data: [2, 5.5, 2, 8.5, 1.5, 5],
+                  },
+                ]}
+                width={500}
+                height={260}
+              />
+            </div>
+            <div className="bg-white rounded-xl mt-5 p-6">
+              <p className="font-semibold ">Watch Time</p>
+              <LineChart
+                width={500}
+                height={300}
+                series={[
+                  { data: pData, label: 'Classes' },
+                  { data: uData, label: 'Tutorials' },
+                ]}
+                xAxis={[{ scaleType: 'point', data: xLabels }]}
+              />
+            </div>
+          </div>
+          <div className=" w-[35vw] flex flex-col">
+
+            <div className="bg-white  m-6 mt-0  rounded-xl">
+              <div className="flex justify-center align-middle mt-12 items-center ">
+                {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
+                  <DemoContainer components={['DateRangeCalendar', 'DateRangeCalendar']}>
+                    <DemoItem label="">
+                      <div className="">
+
+                      <DateRangeCalendar calendars={1} />
+                      </div>
+                    </DemoItem>
+
+                  </DemoContainer>
+                </LocalizationProvider> */}
+                <div className="h-[20vw]">
+                  <div className="max-w-md px-4 mx-auto sm:px-7 md:max-w-4xl md:px-6">
+                    <div className="md:grid md:grid-cols-1 md:divide-x md:divide-gray-200">
+                      <div className="md:pr-14">
+                        <div className="flex items-center">
+                          <h2 className="flex-auto font-semibold text-gray-900">
+                            {format(firstDayCurrentMonth, 'MMMM yyyy')}
+                          </h2>
+                          <button
+                            type="button"
+                            onClick={previousMonth}
+                            className="-my-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500"
+                          >
+                            <span className="sr-only">Previous month</span>
+                            <FaChevronLeft className="w-3 h-3" aria-hidden="true" />
+                          </button>
+                          <button
+                            onClick={nextMonth}
+                            type="button"
+                            className="-my-1.5 -mr-1.5 ml-2 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500"
+                          >
+                            <span className="sr-only">Next month</span>
+                            <FaChevronRight className="w-3 h-3" aria-hidden="true" />
+                          </button>
+                        </div>
+                        <div className="grid grid-cols-7 mt-2 gap-6 text-xs leading-10 text-center text-gray-500">
+                          <div>Sun</div>
+                          <div>Mon</div>
+                          <div>Tue</div>
+                          <div>Wed</div>
+                          <div>Thr</div>
+                          <div>Fri</div>
+                          <div>Sat</div>
+                        </div>
+                        <div className="grid grid-cols-7 text-sm">
+                          {days.map((day, dayIdx) => (
+                            <div
+                              key={day.toString()}
+                              className={classNames(
+                                dayIdx === 0 && colStartClasses[getDay(day)],
+                                'py-1.5'
+                              )}
+                            >
+                              <button
+                                type="button"
+                                onClick={() => setSelectedDay(day)}
+                                className={classNames(
+                                  isEqual(day, selectedDay) && 'text-white',
+                                  !isEqual(day, selectedDay) &&
+                                  isToday(day) &&
+                                  'text-red-500',
+                                  !isEqual(day, selectedDay) &&
+                                  !isToday(day) &&
+                                  isSameMonth(day, firstDayCurrentMonth) &&
+                                  'text-gray-900',
+                                  !isEqual(day, selectedDay) &&
+                                  !isToday(day) &&
+                                  !isSameMonth(day, firstDayCurrentMonth) &&
+                                  'text-gray-400',
+                                  isEqual(day, selectedDay) && isToday(day) && 'bg-red-500',
+                                  isEqual(day, selectedDay) &&
+                                  !isToday(day) &&
+                                  'bg-gray-900',
+                                  !isEqual(day, selectedDay) && 'hover:bg-gray-200',
+                                  (isEqual(day, selectedDay) || isToday(day)) &&
+                                  'font-semibold',
+                                  'mx-auto flex h-6 w-6 items-center justify-center rounded-full'
+                                )}
+                              >
+                                <time dateTime={format(day, 'yyyy-MM-dd')}>
+                                  {format(day, 'd')}
+                                </time>
+                              </button>
+
+
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-col bg-white  rounded-lg  m-6 mt-0">
+              <div className="flex justify-between m-4 ">
+                <span className="font-[700] text-[15px]">Topic progress</span>
+
+                {/* <select>
                     <option value="jee">JEE</option>
                     <option value="neet">NEET</option>
-                  </select>
-                </div>
-
+                  </select> */}
+              </div>
+              <div className="grid grid-cols-2 p-6 pt-0 gap-4 ">
                 <div className="flex justify-between h-[48.2px]">
-                  <p>Physics</p>
+                  <div className="flex flex-col">
+                    <p className="font-semibold text-blue-600">Physics</p>
+                    <p className="text-[12px] text-gray-400">Chapter 3</p>
+                  </div>
                   <CircularProgressWithLabel
                     value={progress}
                     className="text-gradient-to-r from-orange-400 via-red-500 to-pink-500"
                   />
                 </div>
                 <div className="flex justify-between h-[48.2px]">
-                  <p>Physics</p>
-                  <CircularProgressWithLabel value={progress} />
+                  <div className="flex flex-col">
+                    <p className="font-semibold text-green-700">Physics</p>
+                    <p className="text-[12px] text-gray-400">Chapter 3</p>
+                  </div>
+                  <CircularProgressWithLabel value={progress} className="text-green-700" />
                 </div>
                 <div className="flex justify-between h-[48.2px]">
-                  <p>Physics</p>
-                  <CircularProgressWithLabel value={progress} />
+                  <div className="flex flex-col">
+                    <p className="font-semibold text-orange-400">Physics</p>
+                    <p className="text-[12px] text-gray-400">Chapter 3</p>
+                  </div>
+                  <CircularProgressWithLabel value={progress} className="text-orange-400" />
                 </div>
                 <div className="flex justify-between h-[48.2px]">
-                  <p>Physics</p>
-                  <CircularProgressWithLabel value={progress} />
+                  <div className="flex flex-col">
+                    <p className="font-semibold text-purple-600">Physics</p>
+                    <p className="text-[12px] text-gray-400">Chapter 3</p>
+                  </div>
+                  <CircularProgressWithLabel value={progress} className="text-purple-600" />
                 </div>
               </div>
             </div>
-
-            <div className="flex mt-3 w-[55vw] ">
-              <div className=" bg-white px-6 pt-4 rounded-3xl w-[620px]">
-                <div className="flex justify-between">
-                  <p className="text-[#333333] font-[700] text-[15px]">
-                    Community
-                  </p>
-                  <p className="text-[#333333] font-[700] text-[15px]">
-                    View All
-                  </p>
-                </div>
-                <div className="flex justify-between mt-3">
-                  <div className="flex">
-                    <Stack direction="row" spacing={2}>
-                      <Avatar {...stringAvatar("Mayowa Ade")} />
-                    </Stack>
-                    <div className="flex flex-col ml-3">
-                      <h2 className="text-[#333333] font-[700] text-[15px]">
-                        Mayowa Ade
-                      </h2>
-                      <p className="font-[600] text-[10px] text-[#8A8A8A]">
-                        Lorem ipsum dolor sit amet.
-                      </p>
-                      <button className="bg-white  border-slate-400 border px-2 rounded-full font-[700] py-1 text-[10px]">
-                        First Chapter of Project .doc
-                      </button>
-                    </div>
-                  </div>
-                  <div>
-                    <p className="text-[#8A8A8A] font-[800] text-[10px]">
-                      09:31 am
-                    </p>
-                  </div>
-                </div>
-                <div className="flex justify-between mt-4">
-                  <div className="flex">
-                    <Stack direction="row" spacing={2}>
-                      <Avatar {...stringAvatar("Mayowa Ade")} />
-                    </Stack>
-                    <div className="flex flex-col ml-3">
-                      <h2 className="text-[#333333] font-[700] text-[15px]">
-                        Mayowa Ade
-                      </h2>
-                      <p className="font-[600] text-[10px] text-[#8A8A8A]">
-                        Lorem ipsum dolor sit amet.
-                      </p>
-                      <button className="bg-white  border-slate-400 border px-2 rounded-full font-[700] py-1 text-[10px]">
-                        First Chapter of Project .doc
-                      </button>
-                    </div>
-                  </div>
-                  <div>
-                    <p className="text-[#8A8A8A] font-[800] text-[10px]">
-                      09:31 am
-                    </p>
-                  </div>
-                </div>
-                <div className="flex justify-between mt-4 ">
-                  <div className="flex">
-                    <Stack direction="row" spacing={2}>
-                      <Avatar {...stringAvatar("Mayowa Ade")} />
-                    </Stack>
-                    <div className="flex flex-col ml-3">
-                      <h2 className="text-[#333333] font-[700] text-[15px]">
-                        Mayowa Ade
-                      </h2>
-                      <p className="font-[600] text-[10px] text-[#8A8A8A]">
-                        Lorem ipsum dolor sit amet.
-                      </p>
-                      <button className="bg-white  border-slate-400 border px-2 rounded-full font-[700] py-1 text-[10px]">
-                        First Chapter of Project .doc
-                      </button>
-                    </div>
-                  </div>
-                  <div>
-                    <p className="text-[#8A8A8A] font-[800] text-[10px]">
-                      09:31 am
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-col rounded-3xl ml-3 bg-white p-3 w-[400px]  ">
-                <h3 className="font-[700] text-[15px]">Upcoming features</h3>
-
-                <div className="flex justify-between mt-2 bg-[#FFD700] p-2 rounded-3xl ">
-                  <div className="flex">
-                    <Stack direction="row" spacing={2}>
-                      <Avatar {...stringAvatar("Mayowa Ade")} />
-                    </Stack>
-                    <div className="flex flex-col ml-3">
-                      <h2 className="text-[#333333] font-[700] text-[15px]">
-                        Mayowa Ade
-                      </h2>
-                      <p className="font-[600] text-[10px] text-[#8A8A8A]">
-                        Lorem ipsum dolor sit amet.
-                      </p>
-                    </div>
-                  </div>
-                  <div style={{ position: "relative", bottom: "7px" }}>
-                    <Image
-                      src={require("../../public/Home/maddle.png")}
-                      alt="maddle-image"
-                    />
-                  </div>
-                </div>
-
-                <div className="flex justify-between mt-2 bg-[#C0C0C0] p-2 rounded-3xl ">
-                  <div className="flex">
-                    <Stack direction="row" spacing={2}>
-                      <Avatar {...stringAvatar("Mayowa Ade")} />
-                    </Stack>
-                    <div className="flex flex-col ml-3">
-                      <h2 className="text-[#333333] font-[700] text-[15px]">
-                        Mayowa Ade
-                      </h2>
-                      <p className="font-[600] text-[10px] text-[#8A8A8A]">
-                        Lorem ipsum dolor sit amet.
-                      </p>
-                    </div>
-                  </div>
-                  <div style={{ position: "relative", bottom: "7px" }}>
-                    <Image
-                      src={require("../../public/Home/maddle.png")}
-                      alt="maddle-image"
-                    />
-                  </div>
-                </div>
-
-                <div className="flex justify-between mt-2 bg-[#D9AB7D] p-2 rounded-3xl ">
-                  <div className="flex">
-                    <Stack direction="row" spacing={2}>
-                      <Avatar {...stringAvatar("Mayowa Ade")} />
-                    </Stack>
-                    <div className="flex flex-col ml-3">
-                      <h2 className="text-[#333333] font-[700] text-[15px]">
-                        Mayowa Ade
-                      </h2>
-                      <p className="font-[600] text-[10px] text-[#8A8A8A]">
-                        Lorem ipsum dolor sit amet.
-                      </p>
-                    </div>
-                  </div>
-                  <div style={{ position: "relative", bottom: "7px" }}>
-                    <Image
-                      src={require("../../public/Home/maddle.png")}
-                      alt="maddle-image"
-                    />
-                  </div>
-                </div>
-
-                <div className="flex justify-between  bg-[#F0F7FF] p-2 rounded-3xl mt-2 ">
-                  <div className="flex">
-                    <Stack direction="row" spacing={2}>
-                      <Avatar {...stringAvatar("Mayowa Ade")} />
-                    </Stack>
-                    <div className="flex flex-col ml-3">
-                      <h2 className="text-[#333333] font-[700] text-[15px]">
-                        Mayowa Ade
-                      </h2>
-                      <p className="font-[600] text-[10px] text-[#8A8A8A]">
-                        Lorem ipsum dolor sit amet.
-                      </p>
-                    </div>
-                  </div>
-                  <div style={{ position: "relative", bottom: "7px" }}>
-                    <Image
-                      src={require("../../public/Home/maddle.png")}
-                      alt="maddle-image"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className=" w-[382px] ml-24 flex flex-col">
-            <div className="m-6">
-              <Calendar />
-            </div>
-            <div className="flex flex-col rounded-3xl ml-6 mt-8 bg-white p-4">
+            <div className="flex flex-col rounded-xl ml-6 mr-6 mt-0  bg-white p-4">
               <div className="flex justify-between">
                 <h3 className="font-[700] text-[20px]">To Do List</h3>
                 <h4 className="font-[700] text-[13px]">See all</h4>
@@ -372,72 +337,10 @@ const HomePageWeb = () => {
               <div>
                 <div className="flex justify-between mt-4 bg-[#F0F7FF] p-3 rounded-3xl ">
                   <div className="flex">
-                    <Stack direction="row" spacing={2}>
-                      <Avatar {...stringAvatar("Mayowa Ade")} />
-                    </Stack>
+                  <FaCheck className="text-white  bg-blue-500 h-5 p-1 w-5  rounded-full" />
                     <div className="flex flex-col ml-3">
                       <h2 className="text-[#333333] font-[700] text-[15px]">
-                        Mayowa Ade
-                      </h2>
-                      <p className="font-[600] text-[10px] text-[#8A8A8A]">
-                        Lorem ipsum dolor sit amet.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="mt-3">
-                    <LiaGreaterThanSolid />
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div className="flex justify-between mt-4 bg-[#FFF0F7] p-3 rounded-3xl ">
-                  <div className="flex">
-                    <Stack direction="row" spacing={2}>
-                      <Avatar {...stringAvatar("Mayowa Ade")} />
-                    </Stack>
-                    <div className="flex flex-col ml-3">
-                      <h2 className="text-[#333333] font-[700] text-[15px]">
-                        Mayowa Ade
-                      </h2>
-                      <p className="font-[600] text-[10px] text-[#8A8A8A]">
-                        Lorem ipsum dolor sit amet.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="mt-3">
-                    <LiaGreaterThanSolid />
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div className="flex justify-between mt-4 bg-[#F0FFF3] p-3 rounded-3xl ">
-                  <div className="flex">
-                    <Stack direction="row" spacing={2}>
-                      <Avatar {...stringAvatar("Mayowa Ade")} />
-                    </Stack>
-                    <div className="flex flex-col ml-3">
-                      <h2 className="text-[#333333] font-[700] text-[15px]">
-                        Mayowa Ade
-                      </h2>
-                      <p className="font-[600] text-[10px] text-[#8A8A8A]">
-                        Lorem ipsum dolor sit amet.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="mt-3">
-                    <LiaGreaterThanSolid />
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div className="flex justify-between mt-4 bg-[#F0F7FF] p-3 rounded-3xl ">
-                  <div className="flex">
-                    <Stack direction="row" spacing={2}>
-                      <Avatar {...stringAvatar("Mayowa Ade")} />
-                    </Stack>
-                    <div className="flex flex-col ml-3">
-                      <h2 className="text-[#333333] font-[700] text-[15px]">
-                        Mayowa Ade
+                      Life Contingency Tutorials Edulog Tutorial College, Blk 56, Lagos State.
                       </h2>
                       <p className="font-[600] text-[10px] text-[#8A8A8A]">
                         Lorem ipsum dolor sit amet.
@@ -450,9 +353,12 @@ const HomePageWeb = () => {
                 </div>
               </div>
             </div>
+
           </div>
+
         </div>
       </div>
+
     </>
   );
 };
@@ -511,3 +417,13 @@ function stringAvatar(name) {
     children: `${name.split(" ")[0][0]}${name.split(" ")[1][0]}`,
   };
 }
+
+let colStartClasses = [
+  '',
+  'col-start-2',
+  'col-start-3',
+  'col-start-4',
+  'col-start-5',
+  'col-start-6',
+  'col-start-7',
+]
