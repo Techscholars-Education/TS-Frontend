@@ -2,7 +2,7 @@
 import DashboardNavbar from './DashboardNavbar'
 import img1 from "../../public/Dashboard/refer-logo.svg"
 import Image from 'next/image';
-import CopyText from '@/app/dashboard/referral/_components/CopyText';
+import CopyText from '@/app/dashboard/refer-and-earn/_components/CopyText';
 
 const ReferAndEarn = () => {
 
