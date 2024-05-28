@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
+import { useSearchParams } from "next/navigation";
 import "react-toastify/dist/ReactToastify.css";
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
 const Update = () => {
+  const searchParams = useSearchParams();
+
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [, setConfirmPassword] = useState("");
@@ -60,6 +63,10 @@ const Update = () => {
       console.log("Some error occured in sending forgot password email");
     }
   };
+
+  //! EXTRACT THE TOKEN FROM URL
+  console.log(searchParams.get("token"));
+
   return (
     <div className=" h-[80vh]  flex flex-col justify-center items-center font-Poppins">
       <form className=" max-w-xl lg:max-w-md px-4 md:px-10 mx-auto bg-gray-50 shadow-md  w-full rounded-xl">
