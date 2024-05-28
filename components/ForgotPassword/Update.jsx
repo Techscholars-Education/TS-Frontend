@@ -1,12 +1,14 @@
+"use client";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
-import { useSearchParams } from "next/navigation";
 import "react-toastify/dist/ReactToastify.css";
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
-const Update = () => {
-  const searchParams = useSearchParams();
+import usePupdate from "@/hooks/usePupdate";
 
+const Update = () => {
+  const { updatePassword } = usePupdate();
+  const [loading, setLoading] = useState(false);
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [, setConfirmPassword] = useState("");
@@ -17,7 +19,6 @@ const Update = () => {
     setConfirmPassword(confirmPassword);
     setIsPasswordMatch(confirmPassword === password);
   };
-  const [loading, setLoading] = useState(false);
 
   const validatePassword = (password) => {
     const minLength = 8;
@@ -53,19 +54,21 @@ const Update = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (validatePassword(password)) {
-      toast.success(`Password is Strong`);
-    }
-
-    try {
-      //! Here you can add further logic for successful login, like API call
-      //   setLoading(true);
-    } catch (error) {
-      console.log("Some error occured in sending forgot password email");
+      setLoading(true);
+      try {
+        const response = await updatePassword(password);
+        if (response.type === "success") {
+          toast.success(response.message);
+        } else {
+          toast.error(response.message);
+        }
+      } catch (error) {
+        toast.error("Something went wrong while updating the password");
+      } finally {
+        setLoading(false);
+      }
     }
   };
-
-  //! EXTRACT THE TOKEN FROM URL
-  console.log(searchParams.get("token"));
 
   return (
     <div className=" h-[80vh]  flex flex-col justify-center items-center font-Poppins">

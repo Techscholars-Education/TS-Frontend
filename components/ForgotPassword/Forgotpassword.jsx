@@ -10,14 +10,18 @@ import Forgot from "@/components/ForgotPassword/Forgot";
 import Update from "@/components/ForgotPassword/Update";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import gif1 from "@/public/Ts-Loader.gif";
+import Cookies from "js-cookie";
 
 const Forgotpassword = () => {
   const searchParams = useSearchParams();
 
   const [domLoaded, setDomLoaded] = useState(false);
 
-  // get token
-  // console.log(searchParams.get("token"));
+  // ! Take the token from the url if there is any token
+  if (searchParams.get("token")) {
+    const token = searchParams.get("token");
+    Cookies.set("access_token", token);
+  }
 
   useEffect(() => {
     setTimeout(() => {
@@ -29,7 +33,6 @@ const Forgotpassword = () => {
     <>
       {domLoaded ? (
         <>
-          {" "}
           <ToastContainer />
           <section className="  flex justify-between items-center ">
             <div className=" w-full px-4 py-12 lg:w-1/2 h-screen lg:p-12 mx-auto ">
