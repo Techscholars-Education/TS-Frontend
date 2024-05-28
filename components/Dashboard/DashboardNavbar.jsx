@@ -4,7 +4,6 @@ import Image from "next/image";
 import men from "../../public/Dashboard/men_nav.jpg"
 
 function DashboardNavbar(props) {
-function DashboardNavbar(props) {
   return (
     <div className="flex flex-wrap w-[80vw] place-items-center py-6 bg-white">
       <section className="relative mx-auto">
