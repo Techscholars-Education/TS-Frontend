@@ -6,7 +6,7 @@ import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
 import usePupdate from "@/hooks/usePupdate";
 
-const Update = () => {
+const Update = (props) => {
   const { updatePassword } = usePupdate();
   const [loading, setLoading] = useState(false);
   const [password, setPassword] = useState("");
@@ -56,7 +56,7 @@ const Update = () => {
     if (validatePassword(password)) {
       setLoading(true);
       try {
-        const response = await updatePassword(password);
+        const response = await updatePassword(password, props.accessToken);
         if (response.type === "success") {
           toast.success(response.message);
         } else {
