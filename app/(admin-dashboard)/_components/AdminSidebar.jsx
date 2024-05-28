@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { AiFillFileText } from "react-icons/ai";
 import { BiLogOutCircle } from "react-icons/bi";
 import { TbSettings } from "react-icons/tb";
@@ -11,14 +11,27 @@ import { FaRegHeart } from "react-icons/fa";
 import { LiaFileInvoiceSolid } from "react-icons/lia";
 import { IoMdTimer } from "react-icons/io";
 import { LuMenuSquare } from "react-icons/lu";
+import { IoMdClose } from "react-icons/io";
 
-const AdminSidebar = () => {
+const AdminSidebar = ({mobile,setMobile}) => {
+
   return (
     <>
-      <aside className="w-[16vw] h-auto flex flex-col gap-[3.5vw] left-0 top-13 fixed  ">
+      <aside 
+ 
+      className={`lg:w-[16vw] lg:h-auto lg:flex flex-col gap-[3.5vw] lg:left-0  top-13 lg:fixed transition-all ease-in-out duration-200 ${mobile ? "h-screen w-full fixed z-40 bg-white block transition-all ease-in-out duration-200" : "hidden" }  `}
+     
+      
+      >
         <DivOne loaction={location} />
 
         <DivTwo location={location} />
+
+        {mobile && (
+          <button className="bg-black text-white p-4 rounded-full ml-14 mt-7 hover:bg-[#012657] hover:text-white transition-all ease-in-out duration-200" onClick={() => setMobile(!mobile)}>
+            <IoMdClose className="text-[7vw]"/>
+          </button>
+        )}
       </aside>
     </>
   );
@@ -115,7 +128,7 @@ const Li = ({ url, text, location, Icon }) => (
   <li
     className={`${
       location.pathname === url ? "bg-[#012657] text-white rounded-md" : ""
-    } font-normal text-[1.1vw] hover:bg-[#012657] pl-3 pr-3 pt-2 pb-2 w-[14vw] hover:rounded-md hover:text-gray-100 transition-all ease-in-out duration-150`}
+    } font-normal lg:text-[1.1vw] text-[6vw] hover:bg-[#012657] pl-3 pr-3 pt-2 pb-2 lg:w-[14vw] w-[75vw] hover:rounded-md hover:text-gray-100 transition-all ease-in-out duration-150`}
   >
     <Link href={url} className="flex items-center gap-5 ">
       <Icon />
