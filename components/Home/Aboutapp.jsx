@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Phone from "../../public/Home/Phone.svg";
+import Phone from "../../public/Home/Phone.png";
 import playstore from "../../public/Home/playstore.svg";
 import applestore from "../../public/Home/applestore.svg";
 

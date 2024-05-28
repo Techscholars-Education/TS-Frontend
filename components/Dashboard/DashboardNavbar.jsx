@@ -1,6 +1,9 @@
-import React from 'react';
-import { FiBell, FiSearch, FiUser } from 'react-icons/fi';
+import React from "react";
+import { FiBell, FiSearch, FiUser } from "react-icons/fi";
+import Image from "next/image";
+import men from "../../public/Dashboard/men_nav.jpg"
 
+function DashboardNavbar(props) {
 function DashboardNavbar(props) {
   return (
     <div className="flex flex-wrap w-[80vw] place-items-center py-6 bg-white">
@@ -28,9 +31,15 @@ function DashboardNavbar(props) {
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-pink-500"></span>
                 </span>
               </a>
-             
+
               <a className="flex items-center hover:text-gray-200" href="#">
-                <img className="h-8 w-8 rounded-full" src="https://via.placeholder.com/150" alt="Profile" />
+                <Image
+                  className="h-8 w-8 rounded-md"
+                  src={men}
+                  alt="Profile"
+                  width={32}
+                  height={32}
+                />
               </a>
             </div>
           </div>

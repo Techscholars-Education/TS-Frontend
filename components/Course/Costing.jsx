@@ -15,7 +15,7 @@ const Costing = (props) => {
         direction="up"
         duration={1000}
       >
-        <div className="border rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-200 ">
+        <div className="border rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-200 bg-white">
           <div className="px-6 pt-6">
             <h4 className="text-lg font-Poppins font-semibold text-darkBlue/90">
               Starter
@@ -189,7 +189,7 @@ const Costing = (props) => {
         </div>
 
         {/* 3rd */}
-        <div className="border rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-200 ">
+        <div className="border rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-200 bg-white">
           <div className="px-6 pt-6">
             <h4 className="text-lg font-Poppins font-semibold text-darkBlue/90">
               Ultimate
