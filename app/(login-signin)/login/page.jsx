@@ -52,8 +52,6 @@ const Page = () => {
       return;
     }
 
-    // Here you can add further logic for successful login, like API call
-
     try {
       setLoading(true);
       const res = await login(email, password);

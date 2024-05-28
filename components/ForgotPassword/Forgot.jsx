@@ -1,7 +1,11 @@
+"use client";
+import useFpassword from "@/hooks/useFpassword";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 const Forgot = () => {
+  const { forgotPassword } = useFpassword();
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -22,13 +26,18 @@ const Forgot = () => {
       return;
     }
 
-    console.log(email);
-
+    setLoading(true);
     try {
-      //! Here you can add further logic for successful login, like API call
-      // setLoading(true);
+      const response = await forgotPassword(email);
+      if (response.type === "success") {
+        toast.success(response.message);
+      } else {
+        toast.error(response.message);
+      }
     } catch (error) {
-      console.log("Some error occured in sending forgot password email");
+      toast.error("Entered email is not registered");
+    } finally {
+      setLoading(false);
     }
   };
   return (
