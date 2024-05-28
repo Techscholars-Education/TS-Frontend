@@ -52,8 +52,6 @@ const Page = () => {
       return;
     }
 
-    // Here you can add further logic for successful login, like API call
-
     try {
       setLoading(true);
       const res = await login(email, password);
@@ -163,7 +161,7 @@ const Page = () => {
                   </div>
 
                   <div className="text-xs md:text-sm flex justify-end my-2">
-                    <Link href="/signin" className="text-red-500 mx-2">
+                    <Link href="/forgot-password" className="text-red-500 mx-2">
                       Forgot password ?
                     </Link>
                   </div>
@@ -234,11 +232,13 @@ const Page = () => {
         </>
       ) : (
         <>
-        <div className="h-screen w-full flex items-center justify-center"> 
-
-<Image src={gif1} alt="gif-loader" className="lg:h-[20vh] lg:w-[10vw] h-[20vh] w-[35vw]  " />
-
-</div>
+          <div className="h-screen w-full flex items-center justify-center">
+            <Image
+              src={gif1}
+              alt="gif-loader"
+              className="lg:h-[20vh] lg:w-[10vw] h-[20vh] w-[35vw]  "
+            />
+          </div>
         </>
       )}
     </>

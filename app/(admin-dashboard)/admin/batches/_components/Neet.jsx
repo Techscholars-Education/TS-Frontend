@@ -12,8 +12,8 @@ const Neet = () => {
     const [heart, setHeart] = useState(false);
     return (
         <div>
-            <div className="flex flex-col  gap-2 bg-white  h-[23vw] w-[22vw] p-2 pl-5 pr-5 pt-5 rounded-md ">
-                <div className="w-full bg-green-300 h-[12vw] rounded-md relative">
+            <div className="flex flex-col  gap-2 bg-white lg:h-[23vw] lg:w-[22vw]  p-2 pl-5 pr-5 pt-5 rounded-md lg:mr-0 mr-[8vw]  h-[32vh] w-[75vw]">
+                <div className="w-full bg-green-300 lg:h-[12vw] h-[13vh] rounded-md relative">
                 <div className='rounded-full p-2 cursor-pointer h-10 w-10 flex items-center justify-center bg-white  absolute top-2 right-3'>
                    <FaRegHeart className={`text-xl   ${heart ? "text-pink-600" : "text-black"
                             } transition-all ease-linear duration-200  `} onClick={() => setHeart(!heart)}/>
@@ -23,7 +23,7 @@ const Neet = () => {
                 <div id="sec" className="flex flex-col gap-5">
                    <div className='n-first flex flex-col '>
                    <div id="n-sec " className="flex justify-between">
-                        <h1 className="text-[1.1vw] font-semibold">
+                   <h1 className="lg:text-[1.1vw] text-[7vw] font-semibold">
                           NEET
                         </h1>
 
@@ -54,11 +54,11 @@ const Neet = () => {
                         </div>
                     </div>
                     <div>
-                        <p className='font-normal text-[.8vw] text-gray-300'>Ramesh,Suresh and many more...</p>
+                        <p className='font-normal lg:text-[.8vw] text-[3vw] text-gray-300'>Ramesh,Suresh and many more...</p>
                     </div>
                    </div>
                    <Link href={"/admin/batches/neet"} className='btn flex justify-end'>
-                    <button className='bg-[#012657]  pl-4 pr-4 pt-2 pb-2 rounded-xl text-white text-[.9vw] flex hover:bg-black transition-all ease-in-out duration-200'>Place Bids</button>
+                    <button className='bg-[#012657]  pl-4 pr-4 pt-2 pb-2 rounded-xl text-white lg:text-[.9vw] text-[3vw] flex hover:bg-black transition-all ease-in-out duration-200'>Place Bids</button>
                    </Link>
                 </div>
             </div>

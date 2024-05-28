@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 const Nav = () => {
   return (
-    <div className='h-[4vw] pt-1 pb-1 flex justify-between'>
+    <div className='lg:h-[4vw] pt-1 pb-1 lg:flex justify-between hidden'>
         <Link href="/" className='flex  items-center'>
          <Image src={Logo} alt='logo' width={60} height={60} className='ml-3 h-[60px] w-[60px]'/> 
          <h1 className='font-bold text-[1.5vw] text-[#032756] '>TECHSCHOLARS</h1>

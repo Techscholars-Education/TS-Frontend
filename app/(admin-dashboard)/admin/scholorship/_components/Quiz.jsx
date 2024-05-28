@@ -57,23 +57,23 @@ const Quiz = () => {
       {!showResult ? (
         <div>
           <span className="border-2 border-gray-300 rounded-lg p-2 ">
-            <span className="text-[.8vw] font-semibold font-Poppins ">
+            <span className="text-[.8vw] max-lg:text-[2.5vw] font-semibold font-Poppins ">
               {addLeadingZero(activeQuestion + 1)}
             </span>
-            <span className="text-[.8vw] font-semibold font-Poppins">
+            <span className="text-[.8vw] max-lg:text-[2.5vw] font-semibold font-Poppins">
               /{addLeadingZero(questions.length)}
             </span>
           </span>
-          <div className="bg-[#B7AFE7] rounded-lg w-[33vw] mt-5 h-[7vw] p-3">
+          <div className="bg-[#B7AFE7] rounded-lg w-[33vw] mt-5 h-[7vw] p-3 max-lg:w-[78vw] max-lg:h-[12vh]">
             <h1 className="font-semibold text-gray-300">{question}</h1>
           </div>
            
-          <div className="flex gap-5 text-[.8vw] mt-2 mb-2">
+          <div className="flex gap-5 text-[.8vw] max-lg:text-[2.7vw] mt-2 mb-2">
             <button className="font-semibold">MCQ</button>
             <button className="font-light">Numerical</button>
             <button className="font-light">MSQ</button>
           </div>
-          <ul className=" w-[14vw]">
+          <ul className=" w-[14vw] max-lg:w-[50vw]">
             {choices.map((answer, index) => (
               <li
                 onClick={() => onAnswerSelected(answer, index)}
@@ -87,7 +87,7 @@ const Quiz = () => {
               </li>
             ))}
           </ul>
-          <div className="flex gap-4 mt-5">
+          <div className="flex gap-4 mt-5 max-lg:gap-10 max-lg:mb-5">
             <button
             className="border-gray-300 rounded-lg border-2 p-2 hover:border-pink-300 hover:text-pink-300 transition-all ease-in-out duration-200"
               onClick={onDelete}
