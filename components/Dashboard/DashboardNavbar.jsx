@@ -1,15 +1,16 @@
 import React from "react";
 import { FiBell, FiSearch, FiUser } from "react-icons/fi";
 import Image from "next/image";
+import men from "../../public/Dashboard/men_nav.jpg"
 
-function DashboardNavbar() {
+function DashboardNavbar(props) {
   return (
     <div className="flex flex-wrap place-items-center h-4">
       <section className="relative mx-auto">
         <nav className="flex justify-between text-black w-[85vw]">
           <div className="px-5 xl:px-12 flex w-full items-center justify-between">
             <a className="text-2xl font-bold font-heading" href="#">
-              Course
+             {props.name}
             </a>
 
             <div className="hidden xl:flex items-center space-x-5">
@@ -26,9 +27,11 @@ function DashboardNavbar() {
 
               <a className="flex items-center hover:text-gray-200" href="#">
                 <Image
-                  className="h-8 w-8 rounded-full"
-                  src="https://via.placeholder.com/150"
+                  className="h-8 w-8 rounded-md"
+                  src={men}
                   alt="Profile"
+                  width={32}
+                  height={32}
                 />
               </a>
             </div>
