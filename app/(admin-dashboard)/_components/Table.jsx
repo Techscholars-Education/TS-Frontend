@@ -44,7 +44,7 @@ export function TransactionsTable() {
                                     <Typography
                                         variant="small"
                                         color="blue-gray"
-                                        className="font-normal leading-none opacity-70"
+                                        className="font-normal max-lg:text-xl leading-none opacity-70"
                                     >
                                         {head}
                                     </Typography>
@@ -60,7 +60,7 @@ export function TransactionsTable() {
                                         <Typography
                                             variant="small"
                                             color="blue-gray"
-                                            className="ml-4"
+                                            className="ml-4 max-lg:text-xl "
                                         >
                                             {i.className}
                                         </Typography>
@@ -71,7 +71,7 @@ export function TransactionsTable() {
                                         <Typography
                                             variant="small"
                                             color="blue-gray"
-                                            className="ml-4"
+                                            className="ml-4 max-lg:text-xl"
                                         >
                                             {i.class}
                                         </Typography>
@@ -82,7 +82,7 @@ export function TransactionsTable() {
                                         <Typography
                                             variant="small"
                                             color="blue-gray"
-                                            className="ml-4"
+                                            className="ml-4 max-lg:text-xl"
                                         >
                                             {i.category}
                                         </Typography>
@@ -93,7 +93,7 @@ export function TransactionsTable() {
                                         <Typography
                                             variant="small"
                                             color="blue-gray"
-                                            className="ml-4"
+                                            className="ml-4 max-lg:text-xl"
                                         >
                                             {i.id}
                                         </Typography>
@@ -104,7 +104,7 @@ export function TransactionsTable() {
                                         <Typography
                                             variant="small"
                                             color="blue-gray"
-                                            className="ml-4"
+                                            className="ml-4 max-lg:text-xl"
                                         >
                                             {i.name}
                                         </Typography>
@@ -115,7 +115,7 @@ export function TransactionsTable() {
                                         <Typography
                                             variant="small"
                                             color="blue-gray"
-                                            className="ml-4"
+                                            className="ml-4 max-lg:text-xl"
                                         >
                                             {i.type}
                                         </Typography>
@@ -126,7 +126,7 @@ export function TransactionsTable() {
                                         <Typography
                                             variant="small"
                                             color="blue-gray"
-                                            className="ml-4"
+                                            className="ml-4 max-lg:text-xl"
                                         >
                                             {i.coupon}
                                         </Typography>
@@ -134,8 +134,8 @@ export function TransactionsTable() {
                                 </td>
                                 <td>
                                     <div className="flex items-center gap-3">
-                                        <button className="text-gray-400 text-[.9vw] border border-gray-300 rounded-md p-2 hover:border-blue-300 hover:text-blue-300 transition-all ease-in-out duration-200">{i.edit}</button>
-                                        <button className="text-[.9vw] text-red-400 border border-gray-300 rounded-md p-2 hover:border-red-300 hover:text-red-300 transition-all ease-in-out duration-200">{i.delete}</button>
+                                        <button className="text-gray-400 text-[.9vw] max-lg:text-[4vw] border border-gray-300 rounded-md p-2 hover:border-blue-300 hover:text-blue-300 transition-all ease-in-out duration-200">{i.edit}</button>
+                                        <button className="text-[.9vw] max-lg:text-[4vw] text-red-400 border border-gray-300 rounded-md p-2 hover:border-red-300 hover:text-red-300 transition-all ease-in-out duration-200">{i.delete}</button>
                                     </div>
                                 </td>
                             </tr>
