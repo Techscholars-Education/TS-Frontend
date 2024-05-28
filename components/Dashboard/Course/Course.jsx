@@ -38,7 +38,7 @@ const Course = () => {
     <>
     
       <div className="bg-white font-Poppins min-h-screen py-10 w-full ">
-        <DashboardNavbar/>
+        <DashboardNavbar name={"Course"}/>
         <div className="my-14 flex flex-col mx-8">
           <h2 className="text-xl md:text-xl font-semibold text-darkBlue mx-4">
             My courses
