@@ -2,35 +2,22 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Google from "@/public/Auth/Google.png";
-import Login from "@/public/Auth/login.svg";
 import { ToastContainer, toast } from "react-toastify";
+import forgot from "@/public/Auth/forgot.png";
 import "react-toastify/dist/ReactToastify.css";
-import useLogin from "@/hooks/useLogin";
-import Cookies from "js-cookie";
-import { useRouter } from "next/navigation";
-import { useGoogleLogin } from "@react-oauth/google";
 import { IoIosArrowRoundBack } from "react-icons/io";
-import { IoIosEye } from "react-icons/io";
-import { IoIosEyeOff } from "react-icons/io";
+
 import gif1 from "@/public/Ts-Loader.gif";
 
 const Page = () => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [domLoaded, setDomLoaded] = useState(false);
-  const [authg, setAuthg] = useState("");
-
-  const router = useRouter();
 
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(email).toLowerCase());
   };
-
-  const { login } = useLogin();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -43,42 +30,14 @@ const Page = () => {
       toast.error("Invalid email format");
       return;
     }
-    if (!password) {
-      toast.error("Password is required");
-      return;
-    }
-    if (password.length < 6) {
-      toast.error("Password must be at least 6 characters");
-      return;
-    }
-
-    // Here you can add further logic for successful login, like API call
 
     try {
+      //! Here you can add further logic for successful login, like API call
       setLoading(true);
-      const res = await login(email, password);
-      setLoading(false);
-      router.replace("/dashboard/home");
     } catch (error) {
-      console.log("Some error occured in login");
+      console.log("Some error occured in sending forgot password email");
     }
   };
-
-  const glogin = useGoogleLogin({
-    onSuccess: (tokenResponse) => setAuthg(tokenResponse.access_token),
-  });
-
-  useEffect(() => {
-    if (authg === "") return;
-    if (authg) {
-      const sessionExpirationTime = 5 * 60 * 60;
-      Cookies.set("authCookie", authg, { expires: sessionExpirationTime });
-
-      router.replace("/dashboard/home");
-      window.location.reload();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [authg]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -107,10 +66,11 @@ const Page = () => {
                 <form className=" max-w-xl lg:max-w-md px-4 md:px-10 mx-auto bg-gray-50 shadow-md  w-full rounded-xl">
                   <div className="py-10">
                     <h3 className=" text-lg md:text-2xl font-Poppins font-semibold">
-                      Welcome to Techscholars
+                      Forgot Password?
                     </h3>
                     <p className="text-gray-500 text-xs md:text-sm pt-2">
-                      Login to your account
+                      No worriest! Just enter your registered email and we will
+                      send you a reset password link in no time.
                     </p>
                   </div>
                   <div className="mb-5">
@@ -124,54 +84,18 @@ const Page = () => {
                       type="text"
                       id="email"
                       className="bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                      placeholder="johndoe@example.com"
+                      placeholder="Your registered email address"
                       onChange={(e) => {
                         setEmail(e.target.value);
                       }}
                       required
                     />
                   </div>
-                  <div className="mb-5">
-                    <label
-                      htmlFor="password"
-                      className="block mb-2 text-sm font-medium text-gray-500 "
-                    >
-                      Password
-                    </label>
-                    <div className="flex justify-end items-center">
-                      <input
-                        type={showPassword ? "text" : "password"}
-                        id="password"
-                        className="bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mr-2 "
-                        placeholder="@Example$1234"
-                        required
-                        onChange={(e) => setPassword(e.target.value)}
-                      />
-                      <div
-                        className="cursor-pointer"
-                        onClick={() => {
-                          setShowPassword(!showPassword);
-                        }}
-                      >
-                        {showPassword ? (
-                          <IoIosEye className="w-10  rounded-xl h-full py-1 text-gray-500" />
-                        ) : (
-                          <IoIosEyeOff className="w-10  rounded-xl h-full py-1 text-gray-500" />
-                        )}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="text-xs md:text-sm flex justify-end my-2">
-                    <Link href="/forgot-password" className="text-red-500 mx-2">
-                      Forgot password ?
-                    </Link>
-                  </div>
 
                   <button
                     onClick={handleSubmit}
                     type="submit"
-                    className="bg-TechBlue text-white rounded-full py-3  mb-4 text-sm md:text-md w-full font-base mt-1 hover:bg-black transition-all ease-in-out duration-200 flex items-center justify-center"
+                    className="bg-TechBlue text-white rounded-full py-3  mb-10 text-sm md:text-md w-full font-base mt-1 hover:bg-black transition-all ease-in-out duration-200 flex items-center justify-center"
                   >
                     {loading ? (
                       <svg
@@ -191,22 +115,9 @@ const Page = () => {
                         />
                       </svg>
                     ) : (
-                      "Login"
+                      "Send Email"
                     )}
                   </button>
-                  <button
-                    onClick={glogin}
-                    className="bg-gray-100 text-darkBlue rounded-full py-2 text-sm md:text-md w-full font-normal mt-4 flex items-center justify-center "
-                  >
-                    <Image src={Google} className="w-8" alt="google-logo" />{" "}
-                    Google
-                  </button>
-                  <div className="mb-10 mt-6 text-xs md:text-sm flex">
-                    <p className="text-gray-600">Do not have an account ?</p>{" "}
-                    <Link href="/signin" className="text-TechBlue mx-2">
-                      Register
-                    </Link>
-                  </div>
                 </form>
               </div>
 
@@ -228,7 +139,11 @@ const Page = () => {
             </div>
 
             <div className=" hidden lg:block">
-              <Image src={Login} alt="login-svg" className="h-screen w-full" />
+              <Image
+                src={forgot}
+                alt="forgot-password-png"
+                className="h-screen w-full"
+              />
             </div>
           </section>
         </>
