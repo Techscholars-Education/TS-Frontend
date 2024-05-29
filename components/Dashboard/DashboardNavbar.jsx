@@ -2,6 +2,7 @@ import React from "react";
 import { FiBell, FiSearch, FiUser } from "react-icons/fi";
 import Image from "next/image";
 import men from "../../public/Dashboard/men_nav.jpg"
+import Link from "next/link";
 
 function DashboardNavbar(props) {
   return (
@@ -31,7 +32,7 @@ function DashboardNavbar(props) {
                 </span>
               </a>
 
-              <a className="flex items-center hover:text-gray-200" href="#">
+              <Link href={"/dashboard/profile"} className="flex items-center hover:text-gray-200" >
                 <Image
                   className="h-8 w-8 rounded-md"
                   src={men}
@@ -39,7 +40,7 @@ function DashboardNavbar(props) {
                   width={32}
                   height={32}
                 />
-              </a>
+              </Link>
             </div>
           </div>
           <a className="xl:hidden flex mr-6 items-center" href="#">

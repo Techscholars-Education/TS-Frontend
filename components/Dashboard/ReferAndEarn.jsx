@@ -5,14 +5,11 @@ import Image from 'next/image';
 import CopyText from '@/app/dashboard/refer-and-earn/_components/CopyText';
 
 const ReferAndEarn = () => {
-
-
-
     return (
         <>
-            <div className="bg-white font-Poppins h-screen py-10 w-full ">
-                <DashboardNavbar name={"Refer and earn"} />
-                <div className="my-14 flex flex-col mx-8 bg-gray-50 h-[82vh] max-w-full pl-5 pr-5 pt-5">
+            <div className="bg-white font-Poppins h-screen w-full ">
+                <DashboardNavbar title={"Refer and earn"} />
+                <div className="my-6 flex flex-col mx-8 bg-blue-50 h-[82vh] max-w-full pl-5 pr-5 pt-5">
                     <div className='w-[78vw] h-[65vh] bg-white rounded-md p-5 pt-[7vw] pl-9 flex relative overflow-hidden'>
                         <div className='flex flex-col gap-12 w-[23vw]'>
                             <div className='flex flex-col gap-3'>

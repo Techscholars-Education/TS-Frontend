@@ -149,7 +149,7 @@ const HomePageWeb = () => {
 
   return (
     <>
-      <div className=" font-Poppins min-h-screen  w-full bg-[#F0F7FF] ">
+      <div className=" font-Poppins min-h-screen  w-full bg-[#F0F7FF] overflow-x-hidden ">
         <DashboardNavbar title="Welcome back, Ayo! 👋 " subtitle="You’ve learned 70% of your goal this week! Keep it up and improve." />
         <div className='flex bg-slate-200 p-2 px-3 rounded-full w-24 m-3 mb-0 ml-6'>
            <IoMdArrowBack className='mt-1 mr-1'/>
