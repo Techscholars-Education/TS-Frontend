@@ -2,10 +2,6 @@
 import axios from "axios";
 const usePupdate = () => {
   const updatePassword = async (newPassword, token) => {
-    console.log({
-      password: newPassword,
-      access_token: token,
-    });
     try {
       const response = await axios.put(
         "https://api.techscholars.co.in/auth/reset/password/verify",
