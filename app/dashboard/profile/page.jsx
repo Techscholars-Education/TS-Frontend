@@ -3,7 +3,7 @@ import LeftNavigation from "@/components/LeftNavigation/LeftNavigation";
 import Profile from "./_components/Profile";
 const page = () => {
   return (
-    <section className="flex">
+    <section className="flex w-full">
       <LeftNavigation />
       <Profile />
     </section>

@@ -6,7 +6,7 @@ import Link from "next/link";
 
 function DashboardNavbar(props) {
   return (
-    <div className="flex flex-wrap w-[80vw] place-items-center py-6 bg-white">
+    <div className="flex flex-wrap max-w-full place-items-center py-6 bg-white">
       <section className="relative mx-auto">
         <nav className="flex justify-between text-black w-[82vw] ">
           <div className="px-5 xl:px-12 flex w-full items-center justify-between">
@@ -21,14 +21,14 @@ function DashboardNavbar(props) {
             </div>
            
             <div className="hidden xl:flex items-center space-x-5">
-              <a className="hover:text-gray-200" href="#">
+              <a className="hover:bg-[#0079FC] hover:text-white bg-blue-100 h-8 w-8 p-2 flex items-center justify-center rounded-md transition-all ease-linear duration-300" href="#">
                 <FiSearch className="h-6 w-6" />
               </a>
-              <a className="hover:text-gray-200" href="#">
-                <FiBell className="h-6 w-6" />
-                <span className="flex absolute -mt-5 ml-4">
-                  <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-pink-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-pink-500"></span>
+              <a className="hover:bg-[#0079FC] hover:text-white bg-blue-100 h-8 w-8 p-2 flex items-center justify-center rounded-md transition-all ease-linear duration-300" href="#">
+                <FiBell className="h-6 w-6 " />
+                <span className="flex absolute -mt-3 ml-3">
+                  <span className="animate-ping absolute inline-flex h-2.5 w-2.5 rounded-full bg-pink-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-pink-500"></span>
                 </span>
               </a>
 

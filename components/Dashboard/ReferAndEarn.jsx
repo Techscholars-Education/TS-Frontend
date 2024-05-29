@@ -9,8 +9,8 @@ const ReferAndEarn = () => {
         <>
             <div className="bg-white font-Poppins h-screen w-full ">
                 <DashboardNavbar title={"Refer and earn"} />
-                <div className="my-6 flex flex-col mx-8 bg-blue-50 h-[82vh] max-w-full pl-5 pr-5 pt-5">
-                    <div className='w-[78vw] h-[65vh] bg-white rounded-md p-5 pt-[7vw] pl-9 flex relative overflow-hidden'>
+                <div className="my-6 flex flex-col mr-2 bg-blue-50 h-[82vh] max-w-full pl-5 pr-5 pt-5">
+                    <div className='max-w-[82vw] h-[65vh] bg-white rounded-md p-5 pt-[7vw] pl-9 flex relative overflow-hidden'>
                         <div className='flex flex-col gap-12 w-[23vw]'>
                             <div className='flex flex-col gap-3'>
                                 <h1 className='text-4xl font-bold'>Refer friends &
@@ -22,7 +22,7 @@ const ReferAndEarn = () => {
                                 <button className='h-[3vw] w-[18vw] flex items-center justify-center bg-[#0079FC] text-white rounded-full hover:bg-black transition-all ease-in-out duration-300'>Invite Friends</button>
                             </div>
                         </div>
-                        <Image src={img1} alt='logo' className='h-[60vh] w-[60vw] absolute bottom-0 right-[-11vw]  ' />
+                        <Image src={img1} alt='logo' className='h-[60vh] w-[60vw] absolute bottom-0 right-[-11vw]' />
 
                     </div>
                 </div>

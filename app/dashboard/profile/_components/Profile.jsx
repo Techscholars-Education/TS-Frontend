@@ -9,7 +9,7 @@ const Profile = () => {
     return (
         <div className="bg-white font-Poppins w-full overflow-hidden">
             <DashboardNavbar title={"Profile"} />
-            <div className="flex flex-col mx-8 bg-blue-50 h-[86vh] max-w-full pl-5 pr-5 pt-5 gap-1">
+            <div className="flex flex-col mr-2 bg-blue-50 h-[86vh] max-w-full pl-5 pr-5 pt-5 gap-1">
                 <div className='flex flex-col gap-1'>
                     <h1 className='font-semibold text-xl'>Edit Profile</h1>
                     <p className=' font-normal text-gray-400 text-[.9vw]'>Personal Info</p>
@@ -46,7 +46,7 @@ const Profile = () => {
                             type="text"
                             placeholder='Please enter your name'
                             id="full_name"
-                            className="bg-gray-100 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[30vw] p-2.5"
+                            className="bg-blue-50 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[30vw] p-2.5"
                           />
                         </div>
                         <div className="flex flex-col">
@@ -60,7 +60,7 @@ const Profile = () => {
                             type="email"
                             id="email"
                             placeholder='Please enter your email'
-                            className="bg-gray-100  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[30vw] p-2.5"
+                            className="bg-blue-50  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[30vw] p-2.5"
                           />
                         </div>
                       </div>
@@ -76,7 +76,7 @@ const Profile = () => {
                             type="text"
                             placeholder='Please enter your name'
                             id=" Username"
-                            className="bg-gray-100 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[30vw] p-2.5"
+                            className="bg-blue-50  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[30vw] p-2.5"
                           />
                         </div>
                         <div className="flex flex-col">
@@ -90,7 +90,7 @@ const Profile = () => {
                             type="number"
                             id="Phone_Number"
                             placeholder='+880 123 456 789'
-                            className="bg-gray-100  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[30vw] p-2.5"
+                            className="bg-blue-50   text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[30vw] p-2.5"
                           />
                         </div>
                       </div>
@@ -106,7 +106,7 @@ const Profile = () => {
                             type="text"
                             placeholder='Write your Bio here e.g your hobbies, interests ETC'
                             id="Bio"
-                            className="bg-gray-100 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[16vh] p-2.5"
+                            className="bg-blue-50  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[16vh] p-2.5"
                           />
                         </div>
                       </div>
