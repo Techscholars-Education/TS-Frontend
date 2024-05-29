@@ -69,7 +69,7 @@ const Page = () => {
   useEffect(() => {
     if (authg === "") return;
     if (authg) {
-      const sessionExpirationTime = 5 * 60 * 60;
+      const sessionExpirationTime = new Date(new Date().getTime() + 5 * 60 * 60 * 1000);
       Cookies.set("authCookie", authg, { expires: sessionExpirationTime });
 
       router.replace("/dashboard/home");
