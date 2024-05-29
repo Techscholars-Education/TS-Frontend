@@ -10,7 +10,7 @@ function page() {
     <LeftNavigation/>
     <div className='flex flex-col py-8'>
 
-    <DashboardNavbar/>
+    <DashboardNavbar title="Course"/>
    <CourseDetail/>
 
     </div>

@@ -5,14 +5,20 @@ import men from "../../public/Dashboard/men_nav.jpg"
 
 function DashboardNavbar(props) {
   return (
-    <div className="flex flex-wrap place-items-center h-4">
+    <div className="flex flex-wrap w-[80vw] place-items-center py-6 bg-white">
       <section className="relative mx-auto">
-        <nav className="flex justify-between text-black w-[85vw]">
+        <nav className="flex justify-between text-black w-[82vw] ">
           <div className="px-5 xl:px-12 flex w-full items-center justify-between">
-            <a className="text-2xl font-bold font-heading" href="#">
-             {props.name}
+            <div className='flex flex-col'>
+            <a className="text-2xl font-bold font-heading " href="#">
+              
+              {props.title}
             </a>
-
+            <p className='text-[14px] text-gray-400'>
+               {props.subtitle}
+            </p>
+            </div>
+           
             <div className="hidden xl:flex items-center space-x-5">
               <a className="hover:text-gray-200" href="#">
                 <FiSearch className="h-6 w-6" />
