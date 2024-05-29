@@ -65,7 +65,7 @@ const Testimonialsslider = () => {
                     <div className="w-[40px] h-[40px] lg:w-[60px] lg:h-[60px] rounded-full opacity-90">
                       <Image
                         className="rounded-full"
-                        src={Parents}
+                        src=""
                         alt="family-icon"
                       />
                     </div>

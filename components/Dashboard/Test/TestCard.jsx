@@ -9,9 +9,7 @@ import avatar from "../../../public/Dashboard/avatar.jpg";
 export default function TestCard(props) {
   return (
     <div
-        className={`flex flex-col rounded-xl border ${
-          props.title === "JEE" ? "shadow-xl" : "shadow-md"
-        }   font-Poppins relative w-[22vw] bg-white`}
+        className={`flex flex-col rounded-xl  relative w-[22vw] bg-white`}
       >
         <div>
           <Image
