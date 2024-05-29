@@ -4,12 +4,11 @@ import React from 'react'
 
 const Page = () => {
   return (
-    <div className="h-screen overflow-auto">
-    <section className="flex">
+    <section className="flex w-full">
       <LeftNavigation />
       <ReferAndEarn />
     </section>
-  </div>
+
   )
 }
 

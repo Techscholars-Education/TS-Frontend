@@ -7,7 +7,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import star from "../../public/Home/star.svg";
-import Parents from "../../public/Home/Parents.jpg";
+// import Parents from "../../public/Home/Parents.jpg";
 import { testimonialsData } from "./P_testimonials.js";
 
 const Testimonialsslider = () => {
@@ -65,7 +65,7 @@ const Testimonialsslider = () => {
                     <div className="w-[40px] h-[40px] lg:w-[60px] lg:h-[60px] rounded-full opacity-90">
                       <Image
                         className="rounded-full"
-                        src={Parents}
+                        src=""
                         alt="family-icon"
                       />
                     </div>

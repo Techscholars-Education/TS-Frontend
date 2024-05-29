@@ -1,21 +1,15 @@
-"use client";
-import Image from "next/image";
-import React from "react";
-import avatar from "../../../public/Dashboard/avatar.jpg";
+import React from 'react'
 import Link from "next/link";
 import star from "../../../public/Home/star.svg";
 import { FaClock } from "react-icons/fa6";
 import { PiGraduationCapFill } from "react-icons/pi";
 import { FaFire } from "react-icons/fa6";
-
-
-const CourseCard = (props) => {
+import Image from 'next/image';
+import avatar from "../../../public/Dashboard/avatar.jpg";
+export default function TestCard(props) {
   return (
-    <>
-      <div
-        className={`flex flex-col rounded-xl border ${
-          props.title === "JEE" ? "shadow-xl" : "shadow-md"
-        }   font-Poppins relative w-[22vw] bg-white`}
+    <div
+        className={`flex flex-col rounded-xl  relative w-[22vw] bg-white`}
       >
         <div>
           <Image
@@ -28,12 +22,10 @@ const CourseCard = (props) => {
         <div className="flex flex-col m-4 my-10">
           <div>
             <div className="flex  items-center">
-             <div>
-              <FaFire className="h-6 w-6 text-red-300"/>
-             </div>
-             <div className="flex flex-col ml-2">
-              <p className="text-[12px] text-[#0079FC]">Business Design</p>
-              <p className="text-sm">New lession is available</p>
+             
+             <div className="flex flex-col ">
+              
+              <p className="font-semibold">Mock test series </p>
              </div>
             </div>
           </div>
@@ -96,8 +88,5 @@ const CourseCard = (props) => {
           </div>
         </div>
       </div>
-    </>
-  );
-};
-
-export default CourseCard;
+  )
+}

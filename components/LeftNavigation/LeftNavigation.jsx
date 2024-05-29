@@ -14,6 +14,8 @@ import {
   FiMail
 } from "react-icons/fi";
 import Logo from "../../public/Logo.svg";
+import Link from "next/link";
+
 
 // import Cookies from 'js-cookie';
 
@@ -29,7 +31,7 @@ const LeftNavigation = () => {
   const isActive = (path) => pathname === path;
 
   return (
-    <nav className="bg-white w-[290px] py-6 px-4 flex flex-col justify-between items-center">
+    <nav className="bg-white w-[20vw] py-6 px-4 pl-2 flex flex-col justify-between items-center">
       <div className="mx-auto fixed">
         {/* Logo */}
         <div className="flex items-center justify-center space-x-2">
@@ -58,10 +60,10 @@ const LeftNavigation = () => {
             </a>
           </li>
           <li className="flex items-center mb-6">
-            <FiClipboard className={`mr-2 text-xl ${isActive('/dashboard/test-series') ? 'text-[#0079FC]' : 'text-gray-500'}`} />
+            <FiClipboard className={`mr-2 text-xl ${isActive('/dashboard/test') ? 'text-[#0079FC]' : 'text-gray-500'}`} />
             <a
-              href="/dashboard/test-series"
-              className={`font-semibold ${isActive('/dashboard/test-series') ? 'text-[#0079FC]' : 'text-gray-500 hover:text-gray-400'}`}
+              href="/dashboard/test"
+              className={`font-semibold ${isActive('/dashboard/test') ? 'text-[#0079FC]' : 'text-gray-500 hover:text-gray-400'}`}
             >
               Test Series
             </a>
@@ -106,14 +108,14 @@ const LeftNavigation = () => {
               Settings
             </a>
           </li>
-        <button className="text-white  bottom-6 mt-3 left-12 hover:text-gray-400 flex items-center">
+        <Link href="/" className="text-white  bottom-6 mt-3 left-12 hover:text-gray-400 flex items-center">
           <FiLogOut className="mr-2 text-[#E55858] text-xl" />
           <span className="text-[#E55858] font-bold">Sign Out</span>
-        </button>
+        </Link>
         
 
       </div>
-      <div className="relative flex flex-col mt-16 justify-center items-center align-middle bg-[#00003E] text-white rounded-xl h-32">
+      <div className="relative flex flex-col mt-16 justify-center items-center align-middle bg-[#00003E] text-white rounded-xl h-32 w-48">
       <div className="absolute -top-6 flex justify-center items-center w-12 h-12 bg-[#00003E] text-white rounded-full border-4 border-white">
         <FiMail className="h-6 w-6" />
       </div>
