@@ -17,16 +17,16 @@ import Logo from "../../public/Logo.svg";
 import Link from "next/link";
 
 
-// import Cookies from 'js-cookie';
+import Cookies from 'js-cookie';
 
 const LeftNavigation = () => {
   const pathname = usePathname();
 
-  // const clearLanguageCookie = () => {
-  //   Cookies.remove('authCookie');
-  //   // Refresh the page
-  //   window.location.reload();
-  // }
+  const handleSignOut = () => {
+    Cookies.remove('authCookie');
+    // Refresh the page
+    window.location.reload();
+  }
 
   const isActive = (path) => pathname === path;
 
@@ -108,10 +108,10 @@ const LeftNavigation = () => {
               Settings
             </a>
           </li>
-        <Link href="/" className="text-white  bottom-6 mt-3 left-12 hover:text-gray-400 flex items-center">
+        <button onClick={handleSignOut} className="text-white  bottom-6 mt-3 left-12 hover:text-gray-400 flex items-center">
           <FiLogOut className="mr-2 text-[#E55858] text-xl" />
           <span className="text-[#E55858] font-bold">Sign Out</span>
-        </Link>
+        </button>
         
 
       </div>
