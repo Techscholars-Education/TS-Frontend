@@ -36,6 +36,7 @@ const Councillor = () => {
                   className="border-2 text-sm md:text-lg border-black/40 rounded-md p-2 "
                   placeholder="Enter your first name"
                   type="text"
+                  required
                 />
               </div>
               <div className="flex flex-col space-y-2  w-[48%]">
@@ -46,6 +47,7 @@ const Councillor = () => {
                   className="border-2 text-sm md:text-lg border-black/40 rounded-md p-2 "
                   placeholder="Enter your last name"
                   type="text"
+                  required
                 />
               </div>
             </div>
@@ -59,6 +61,7 @@ const Councillor = () => {
                   className="border-2 text-sm md:text-lg border-black/40 rounded-md p-2 "
                   placeholder="Enter your email"
                   type="email"
+                  required
                 />
               </div>
               <div className="flex flex-col space-y-2  w-[48%]">
@@ -69,6 +72,7 @@ const Councillor = () => {
                   className="border-2 text-sm md:text-lg border-black/40 rounded-md p-2 "
                   placeholder="Enter your phone number"
                   type="number"
+                  required
                 />
               </div>
             </div>
@@ -84,6 +88,7 @@ const Councillor = () => {
                 <select
                   id="countries"
                   className="border-2 border-black/40 text-sm md:text-lg text-darkBlue/70 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2"
+                  required
                 >
                   <option value="" disabled selected>
                     {" "}
@@ -105,6 +110,7 @@ const Councillor = () => {
                 <select
                   id="countries"
                   className="border-2 border-black/40 text-sm md:text-lg text-darkBlue/70 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2"
+                  required
                 >
                   <option value="" disabled selected>
                     {" "}
@@ -129,6 +135,7 @@ const Councillor = () => {
                 <select
                   id="countries"
                   className="border-2 border-black/40 text-sm md:text-lg text-darkBlue/70 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2"
+                  required
                 >
                   <option value="" disabled selected>
                     {" "}
@@ -151,6 +158,7 @@ const Councillor = () => {
                 <select
                   id="countries"
                   className="border-2 border-black/40 text-sm md:text-lg text-darkBlue/70 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2"
+                  required
                 >
                   <option value="" disabled selected>
                     {" "}
@@ -174,6 +182,7 @@ const Councillor = () => {
               className="bg-white border-2 w-full rounded-xl p-2 outline-none"
               name="timing"
               id="time"
+              required
             >
               <option
                 className="text-sm md:text-base text-darkBlue/70"
