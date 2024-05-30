@@ -25,7 +25,9 @@ const useLogin = () => {
         });
         window.location.reload();
         setChecking(true);
-      } else {
+      } else if(data.detail){
+        toast.error(data.detail);
+      }else {
         toast.error("Email or password is not correct");
       }
     } catch (error) {
