@@ -28,11 +28,11 @@ const Exams = () => {
           >
             <div className="flex flex-col space-y-2 w-full ">
               <label className="text-lg font-semibold text-darkBlue/70">
-                Enter your Full Name
+                Full Name
               </label>
               <input
                 className="border-2 border-black/40  text-sm md:text-lg rounded-md p-2 w-full "
-                placeholder="John Doe"
+                placeholder="Enter your full name"
                 type="text"
               />
             </div>
@@ -44,7 +44,7 @@ const Exams = () => {
                 </label>
                 <input
                   className="border-2 text-sm md:text-lg border-black/40 rounded-md p-2 "
-                  placeholder="example@gmail.com"
+                  placeholder="Enter your email address"
                   type="email"
                 />
               </div>
@@ -54,8 +54,8 @@ const Exams = () => {
                 </label>
                 <input
                   className="border-2 text-sm md:text-lg border-black/40 rounded-md p-2 "
-                  placeholder="+91 XXXXXXXXXX"
-                  type="text"
+                  placeholder="Enter your phone number"
+                  type="number"
                 />
               </div>
             </div>
