@@ -1,12 +1,93 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { MdDone } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 import Link from "next/link";
 import { Slide } from "react-awesome-reveal";
+import { useCookie, useCourseStore} from "@/hooks/useStore";
+import { useRouter } from 'next/navigation'
+import Cookies from "js-cookie";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 const Costing = (props) => {
+
+  const router  = useRouter()
+  
+  const cookies =   Cookies.get('authCookie')
+
+  const[formdataOne,setFormDataOne] = useState({
+    prices: '',
+    name: '',
+    auth:''
+
+})
+  const[formdataTwo,setFormDataTwo] = useState({
+    prices: '',
+    name: '',
+    auth:''
+})
+  const[formdataThree,setFormDataThree] = useState({
+    prices: '',
+    name: '',
+   auth:''
+})
+
+ 
+
+  
+  const {course,courseData} = useCourseStore()
+   
+  const price1  = props.CostingData[0].price
+  const price2  = props.CostingData[1].price
+  const price3  = props.CostingData[2].price
+
+
+  
+    useEffect(()=>{
+      setFormDataOne({ ...formdataOne, name: " Starter" ,prices: price1,auth:cookies })
+      setFormDataTwo({ ...formdataTwo, name: "Advanced " ,prices: price2,auth:cookies  })
+      setFormDataThree({ ...formdataThree, name: "Ultimate " ,prices: price3,auth:cookies  })
+    },[props.CostingData])
+  
+
+
+
+
+const handleSubmitStarter = () => {
+  
+  // setFormData({ ...formdata, name: " Starter" ,prices: price1 })
+   
+  courseData(formdataOne)
+
+  router.replace("/payment")
+}
+
+const handleSubmitAdvance = () => {
+
+  // setFormData({ ...formdata, name: "Advanced " ,prices: price2 })
+
+  courseData(formdataTwo)
+
+  router.replace("/payment")
+}
+
+const handleSubmitUltimate = () => {
+
+  // setFormData({ ...formdata, name: "Ultimate " ,prices: price3 })
+
+  courseData(formdataThree)
+
+  router.replace("/payment")
+}
+
+
+
   return (
+    <>
+      <ToastContainer/>
+  
     <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-4 lg:gap-5 my-10 w-full lg:w-11/12 xl:w-10/12  px-10 lg:px-2 mx-auto ">
       <Slide
         triggerOnce="true"
@@ -20,7 +101,7 @@ const Costing = (props) => {
             <h4 className="text-lg font-Poppins font-semibold text-darkBlue/90">
               Starter
             </h4>
-            <h2 className="text-3xl font-semibold text-TechBlue py-2">
+            <h2 className="text-3xl font-semibold text-TechBlue py-2" >
               &#8377;{props.CostingData[0].price}
               <span className="text-xs font-normal text-gray-500">/year</span>
             </h2>
@@ -90,14 +171,15 @@ const Costing = (props) => {
             </li>
           </ul>
 
-          <div className="w-full flex justify-center items-center my-4">
+          <button className="w-full flex justify-center items-center my-4" onClick={handleSubmitStarter} >
             <Link
-              href="/dashboard/courses"
-              className="border w-5/6 rounded-full px-6 py-3 text-center  "
+              href="#"
+              className="border w-5/6 rounded-full px-6 py-3 text-center hover:bg-black hover:shadow-sm hover:text-white hover:border-none hover:shadow-black transition-all ease-linear duration-200 "
             >
+            
               Purchase Now
             </Link>
-          </div>
+          </button>
         </div>
 
         {/* 2nd */}
@@ -173,14 +255,14 @@ const Costing = (props) => {
             </li>
           </ul>
 
-          <div className="w-full flex justify-center items-center my-4">
+          <button className="w-full flex justify-center items-center my-4 " onClick={handleSubmitAdvance}>
             <Link
-              href="/dashboard/courses"
-              className="border w-5/6 rounded-full text-center  px-6 py-3 bg-white text-TechBlue"
+              href="#"
+              className="border w-5/6 rounded-full text-center  px-6 py-3 bg-white text-TechBlue  hover:bg-black hover:shadow-sm hover:text-white hover:border-none hover:shadow-black transition-all ease-linear duration-200"
             >
               Purchase Now
             </Link>
-          </div>
+          </button>
 
           <span
             datacontent="MOST POPULAR"
@@ -263,17 +345,19 @@ const Costing = (props) => {
             </li>
           </ul>
 
-          <div className="w-full flex justify-center items-center my-4 ">
+          <button className="w-full flex justify-center items-center my-4 " onClick={handleSubmitUltimate}>
             <Link
-              href="/dashboard/courses"
-              className="border w-5/6 rounded-full px-6 py-3 text-center  "
+              href="#"
+              className="border w-5/6 rounded-full px-6 py-3 text-center  hover:bg-black hover:shadow-sm hover:text-white hover:border-none hover:shadow-black transition-all ease-linear duration-200 "
             >
               Purchase Now
             </Link>
-          </div>
+          </button>
         </div>
       </Slide>
     </div>
+
+    </>
   );
 };
 
