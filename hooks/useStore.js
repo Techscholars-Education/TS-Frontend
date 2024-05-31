@@ -27,3 +27,11 @@ export const useProductStore = create(persist(
   }
 ));
 
+
+export const usePriceStore = create((set) => ({
+  price:0,
+  userPrice: (price) => set({price:price})
+ 
+}))
+
+
