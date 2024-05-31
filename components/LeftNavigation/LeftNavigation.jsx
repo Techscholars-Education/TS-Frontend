@@ -61,10 +61,10 @@ const LeftNavigation = () => {
             </a>
           </li>
           <li className="flex items-center mb-6">
-            <MdOutlineLibraryBooks className={`mr-2 text-xl ${isActive('/dashboard/courses') ? 'text-[#0079FC]' : 'text-gray-500'}`} />
+            <MdOutlineLibraryBooks className={`mr-2 text-xl ${isActive('/dashboard/courses') || isActive('/dashboard/courses/neet') || isActive('/dashboard/courses/jee') || isActive('/dashboard/courses/foundation')  ? 'text-[#0079FC]' : 'text-gray-500'}`} />
             <Link
               href="/dashboard/courses"
-              className={`font-semibold ${isActive('/dashboard/courses') ? 'text-[#0079FC]' : 'text-gray-500 hover:text-gray-400'}`}
+              className={`font-semibold ${isActive('/dashboard/courses') || isActive('/dashboard/courses/neet') || isActive('/dashboard/courses/jee') || isActive('/dashboard/courses/foundation')  ? 'text-[#0079FC]' : 'text-gray-500 hover:text-gray-400'}`}
             >
               Courses
             </Link>

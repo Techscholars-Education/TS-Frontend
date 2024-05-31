@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import addtocart from "@/public/payment/addtocart.png";
 import phonepe from "@/public/payment/phonepe.svg";
@@ -12,7 +11,14 @@ import paymentcards from "@/public/payment/paymentcards.png";
 import Cardinfo from "@/components/Payment/Cardinfo";
 import Qrcode from "@/components/Payment/Qrcode";
 
+import { useCourseStore } from "@/hooks/useStore";
+
 const Page = () => {
+
+  const {course} = useCourseStore()
+
+  const gst = 1799
+
   const [paymentMethod, setPaymentMethod] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -45,8 +51,7 @@ const Page = () => {
 
   return (
     <>
-      <Navbar />
-
+    
       <section className=" grid grid-cols-1 lg:grid-cols-2 gap-12 w-full md:w-11/12 lg:md:w-10/12 md:mx-auto min-h-[80vh] py-24  mx-auto  ">
         <div className=" px-10 font-Poppins ">
           <div className="pb-6">
@@ -74,7 +79,7 @@ const Page = () => {
               </div>
               <div className=" w-1/4  text-end md:text-center">
                 <h2 className="text-base md:text-2xl xl:text-4xl font-semibold">
-                  &#8377;9,999
+                  &#8377;{course.prices}
                 </h2>
               </div>
             </div>
@@ -97,13 +102,13 @@ const Page = () => {
             <div className=" flex justify-between">
               <p className="text-gray-600 text-sm md:text-base ">Subtotal</p>
               <p className="text-TechBlue text-sm md:text-base font-semibold">
-                &#8377;9,999
+                &#8377;{course.prices}
               </p>
             </div>
             <div className=" flex justify-between">
               <p className="text-gray-600 text-sm md:text-base">GST 18%</p>
               <p className="text-TechBlue  text-sm md:text-base font-semibold">
-                &#8377;1,799
+                &#8377;{gst}
               </p>
             </div>
           </div>
@@ -112,7 +117,7 @@ const Page = () => {
             <div className=" flex justify-between">
               <p className="text-gray-600 text-base md:text-xl">Grand Total</p>
               <p className="text-TechBlue text-lg md:text-4xl font-semibold">
-                &#8377;11,798
+                &#8377;{Number(course.prices) + gst}
               </p>
             </div>
           </div>
