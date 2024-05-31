@@ -13,6 +13,7 @@ import {
   FiLogOut,
   FiMail
 } from "react-icons/fi";
+import { MdOutlineLibraryBooks } from "react-icons/md";
 import Logo from "../../public/Logo.svg";
 import Link from "next/link";
 
@@ -58,6 +59,15 @@ const LeftNavigation = () => {
             >
               My Course
             </a>
+          </li>
+          <li className="flex items-center mb-6">
+            <MdOutlineLibraryBooks className={`mr-2 text-xl ${isActive('/dashboard/courses') ? 'text-[#0079FC]' : 'text-gray-500'}`} />
+            <Link
+              href="/dashboard/courses"
+              className={`font-semibold ${isActive('/dashboard/courses') ? 'text-[#0079FC]' : 'text-gray-500 hover:text-gray-400'}`}
+            >
+              Courses
+            </Link>
           </li>
           <li className="flex items-center mb-6">
             <FiClipboard className={`mr-2 text-xl ${isActive('/dashboard/test') ? 'text-[#0079FC]' : 'text-gray-500'}`} />
