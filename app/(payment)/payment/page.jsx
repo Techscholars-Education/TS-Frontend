@@ -21,6 +21,7 @@ const Page = () => {
 
   const [paymentMethod, setPaymentMethod] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [prices, setPrices] = useState(0)
   const dropdownRef = useRef(null);
 
   const toggleDropdown = () => {
@@ -48,6 +49,11 @@ const Page = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isOpen]);
+
+  useEffect(()=>{
+   setPrices(course.prices)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[course.prices])
 
   return (
     <>
@@ -79,7 +85,7 @@ const Page = () => {
               </div>
               <div className=" w-1/4  text-end md:text-center">
                 <h2 className="text-base md:text-2xl xl:text-4xl font-semibold">
-                  &#8377;{course.prices}
+                  &#8377;{prices}
                 </h2>
               </div>
             </div>
@@ -102,7 +108,7 @@ const Page = () => {
             <div className=" flex justify-between">
               <p className="text-gray-600 text-sm md:text-base ">Subtotal</p>
               <p className="text-TechBlue text-sm md:text-base font-semibold">
-                &#8377;{course.prices}
+                &#8377;{prices}
               </p>
             </div>
             <div className=" flex justify-between">
@@ -117,7 +123,7 @@ const Page = () => {
             <div className=" flex justify-between">
               <p className="text-gray-600 text-base md:text-xl">Grand Total</p>
               <p className="text-TechBlue text-lg md:text-4xl font-semibold">
-                &#8377;{Number(course.prices) + gst}
+                &#8377;{Number(prices) + gst}
               </p>
             </div>
           </div>
