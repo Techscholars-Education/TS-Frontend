@@ -7,9 +7,9 @@ import foundation from "../../public/Home/foundation.svg";
 import { Slide } from "react-awesome-reveal";
 const Curriculum = () => {
   return (
-    <section className="bg-TechBlue text-white my-16 py-16">
+    <section className="bg-TechBlue/30 text-black my-16 py-16">
       <div className=" w-11/12 xl:w-10/12 mx-auto ">
-        <h2 className="text-white font-semibold text-2xl  md:text-4xl  text-center my-4 font-Poppins ">
+        <h2 className="text-black font-semibold text-2xl  md:text-4xl  text-center my-4 font-Poppins ">
           Explore our exam categories
         </h2>
         <div className="my-4 text-center  ">
@@ -29,78 +29,78 @@ const Curriculum = () => {
             direction="up"
             duration={500}
           >
-            <div className=" h-full flex justify-center items-start p-4 xl:p-8 border border-white rounded-2xl  ">
-              <div className=" p-2 lg:w-[75px]  bg-white rounded-full  ">
+            <div className=" h-full flex justify-center items-start p-4 xl:p-8 border-2 border-black rounded-2xl  ">
+              <div className=" p-2 lg:w-[75px]  bg-black rounded-full  ">
                 <Image
-                  className=" mx-auto my-1 invert "
+                  className=" mx-auto my-1  "
                   src={jee}
                   alt="jee-icon"
                 ></Image>
               </div>
 
               <div className=" w-full  ">
-                <h3 className=" font-Poppins text-xl font-semibold px-2 ">
+                <h3 className=" font-Poppins text-xl font-semibold px-2 text-black ">
                   Jee
                 </h3>
-                <p className="text-xs lg:text-sm font-Poppins text-white py-2 leading-normal px-2">
+                <p className="text-xs lg:text-sm font-Poppins text-black py-2 leading-normal px-2">
                   Master the concepts and strategies needed to excel in JEE with
                   our comprehensive courses and expert guidance.
                 </p>
                 <div className="flex mt-4 space-x-2 flex-wrap ">
-                  <div className="border border-white rounded-full text-xs px-2 py-1 my-1">
+                  <div className="border border-black text-black rounded-full text-xs px-2 py-1 my-1">
                     11<sup>th</sup> Class
                   </div>
-                  <div className="border border-white rounded-full text-xs px-2 py-1 my-1">
+                  <div className="border border-black text-black rounded-full text-xs px-2 py-1 my-1">
                     12<sup>th</sup> Class
                   </div>
-                  <div className="border border-white rounded-full text-xs px-1 py-1 my-1">
+                  <div className="border border-black text-black rounded-full text-xs px-1 py-1 my-1">
                     Target 13<sup>th</sup>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className=" h-full flex  justify-center items-start p-4 xl:p-8 border border-white rounded-2xl ">
-              <div className=" p-2 w-[70px]  bg-white rounded-full">
+            <div className=" h-full flex  justify-center items-start p-4 xl:p-8 border-2 border-black rounded-2xl ">
+              <div className=" p-2 w-[70px]  bg-black rounded-full">
                 <Image
-                  className=" mx-auto my-1 invert "
+                  className=" mx-auto my-1  "
                   src={neet}
                   alt="neet-icon"
                 ></Image>
               </div>
 
               <div className=" w-full ">
-                <h3 className=" font-Poppins text-xl font-semibold px-2 ">
+                <h3 className=" font-Poppins text-xl font-semibold px-2 text-black ">
                   Neet
                 </h3>
-                <p className="text-xs lg:text-sm font-Poppins text-white py-2 leading-normal px-2">
+                <p className="text-xs lg:text-sm font-Poppins text-black py-2 leading-normal px-2">
                   Achieve top scores in NEET with our specialized courses, get
                   in-depth understanding of medical concepts.
                 </p>
                 <div className="flex mt-4 space-x-2 flex-wrap">
-                  <div className="border border-white rounded-full text-xs px-2 py-1 my-1">
+                  <div className="border border-black text-black rounded-full text-xs px-2 py-1 my-1">
                     11<sup>th</sup> Class
                   </div>
-                  <div className="border border-white rounded-full text-xs px-2 py-1 my-1">
+                  <div className="border border-black text-black rounded-full text-xs px-2 py-1 my-1">
                     12<sup>th</sup> Class
                   </div>
-                  <div className="border border-white rounded-full text-xs px-1 py-1 my-1">
+                  <div className="border border-black text-black rounded-full text-xs px-1 py-1 my-1">
                     Target 13<sup>th</sup>
                   </div>
                 </div>
               </div>
             </div>
-            <div className=" h-full flex justify-center items-start p-4 xl:p-8 border border-white rounded-2xl  ">
-              <div className=" p-2 w-[70px]  bg-white rounded-full">
+            <div className=" h-full flex justify-center items-start p-4 xl:p-8 border-2 border-black rounded-2xl  ">
+              <div className=" p-2 w-[70px]  bg-black rounded-full">
                 <Image
-                  className=" mx-auto my-2 invert "
+                  className=" mx-auto my-2 "
                   src={foundation}
                   alt="foundation-icon"
                 ></Image>
               </div>
 
-              <div className=" w-full">
-                <h3 className=" font-Poppins text-xl font-semibold px-2 ">
+              <div className=" w-full text-black">
+                <h3 className=" font-Poppins text-xl font-semibold px-2  ">
                   Foundation
                 </h3>
                 <p className="text-xs lg:text-sm font-Poppins py-2 leading-normal px-2">
@@ -108,10 +108,10 @@ const Curriculum = () => {
                   designed to prepare you for competitive exams.
                 </p>
                 <div className="flex mt-4 space-x-2 flex-wrap">
-                  <div className="border border-white rounded-full text-xs px-2 py-1 my-1">
+                  <div className="border border-black rounded-full text-xs px-2 py-1 my-1">
                     9<sup>th</sup> Class
                   </div>
-                  <div className="border border-white rounded-full text-xs px-2 py-1 my-1">
+                  <div className="border border-black rounded-full text-xs px-2 py-1 my-1">
                     10<sup>th</sup> Class
                   </div>
                 </div>
