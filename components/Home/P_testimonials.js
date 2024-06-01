@@ -7,6 +7,7 @@ export const testimonialsData = [
       "We enrolled Ritu in Techscholars after trying several local coaching classes. Her performance improved drastically from 75% to 90%. The affordability and quality of education here are unmatched.",
     starRating: 4.6,
     class: 12,
+    aspirant: "NEET",
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ export const testimonialsData = [
       "Techscholars has been a blessing for us. We saw no improvement with Byjus, but with Techscholars, Anil's grades went from 68% to 85%. The classes are affordable, and the teachers are fantastic",
     starRating: 4.5,
     class: 10,
+    aspirant: "JEE",
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ export const testimonialsData = [
       "After switching from a local coaching center to Techscholars, Ishita's scores improved significantly. She went from 70% to 88%. The personalized attention and affordability are what set Techscholars apart.",
     starRating: 4.7,
     class: 12,
+    aspirant: "Foundation",
   },
   {
     id: 4,
@@ -34,6 +37,7 @@ export const testimonialsData = [
       "Techscholars provided an excellent learning platform for Aarav. We were spending a lot on other coaching classes without much result. Here, his grades have improved from 65% to 82%, and it's much more affordable.",
     starRating: 4.6,
     class: 11,
+    aspirant: "JEE",
   },
   {
     id: 5,
@@ -43,6 +47,7 @@ export const testimonialsData = [
       "Techscholars has made a big difference in Mohan's studies. His Mathematics score improved from 65 to 88. The affordability and quality are much better than other coaching centers.",
     starRating: 4.4,
     class: 11,
+    aspirant: "Foundation",
   },
   {
     id: 6,
@@ -52,6 +57,7 @@ export const testimonialsData = [
       "Pooja's grades improved drastically after joining Techscholars. She went from 68 to 92 in Mathematics. The classes are affordable and the teachers are excellent.",
     starRating: 4.8,
     class: 10,
+    aspirant: "NEET",
   },
   {
     id: 7,
@@ -61,6 +67,7 @@ export const testimonialsData = [
       "We saw a significant improvement in Sandeep's JEE scores with Techscholars. He went from 140 to 210. The personalized guidance and affordability are top-notch.",
     starRating: 4.7,
     class: 12,
+    aspirant: "JEE",
   },
   {
     id: 8,
@@ -70,5 +77,6 @@ export const testimonialsData = [
       "We are very happy with Techscholars. Rohan was previously with Physics Wallah but didn't show much improvement. After joining Techscholars, his grades jumped from 60% to 80%. The free content on their YouTube channel is also very useful.",
     starRating: 4.5,
     class: 9,
+    aspirant: "Foundation",
   },
 ];

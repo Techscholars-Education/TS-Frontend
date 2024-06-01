@@ -13,7 +13,7 @@ export const studentTestimonials = [
   },
   {
     id: 2,
-    aspirant: "Boards",
+    aspirant: "Foundation",
     studentName: "Riya Sharma",
     content:
       "I used to be scared of Mathematics, but Techscholars' online classes have made learning fun and easy. I jumped from a 65 to an 88 in my midterms. The free content on their YouTube channel is incredibly helpful too!",
@@ -31,7 +31,7 @@ export const studentTestimonials = [
   },
   {
     id: 4,
-    aspirant: "Academic",
+    aspirant: "Foundation",
     studentName: "Kartik Menon",
     content:
       "I love Techscholars! The interactive classes make studying so much more interesting. I've seen a significant improvement in my Science grades, from 70 to 85. Plus, the motivational sessions by Sayandeep Sir keep me focused and inspired.",
@@ -40,7 +40,7 @@ export const studentTestimonials = [
   },
   {
     id: 5,
-    aspirant: "Boards",
+    aspirant: "JEE",
     studentName: "Sneha Gupta",
     content:
       "I was really struggling with my board exam preparation. Techscholars' comprehensive courses helped me secure a 92% overall. The detailed explanations and doubt-clearing sessions were fantastic!",
@@ -49,7 +49,7 @@ export const studentTestimonials = [
   },
   {
     id: 6,
-    aspirant: "Academic",
+    aspirant: "Foundation",
     studentName: "Nikhil Joshi",
     content:
       "Switching to Techscholars was the best decision I made. The improvement in my grades is remarkable, especially in Mathematics. I went from a 68 to a 90! The YouTube channel also offers great additional resources for free.",
@@ -67,7 +67,7 @@ export const studentTestimonials = [
   },
   {
     id: 8,
-    aspirant: "Academic",
+    aspirant: "JEE",
     studentName: "Aditya Bansal",
     content:
       "The teachers at Techscholars are very supportive and always ready to help. My overall percentage increased from 72% to 88%. The free YouTube content is also very helpful for quick revisions.",

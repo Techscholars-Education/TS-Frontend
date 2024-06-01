@@ -19,6 +19,7 @@ const Aboutslider = () => {
     autoplaySpeed: 2000,
     slidesToScroll: 1,
     initialSlide: 0,
+    rtl: true,
     autoplay: true,
     responsive: [
       {
