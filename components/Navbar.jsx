@@ -9,6 +9,7 @@ import { usePathname } from "next/navigation";
 import giphy from "@/public/Home/giphy.gif";
 import siren from "@/public/Home/siren.gif";
 import speaker from "@/public/Home/speaker.gif";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [isBurgerClicked, setIsBurgerClicked] = useState(false);
@@ -17,6 +18,7 @@ const Navbar = () => {
   const[popUp, setPopUp] = useState(false)
   const [hover,setHover] = useState(false)
   const pathname = usePathname();
+
 
   useEffect(() => {
     const scrollHandler = () => {
@@ -34,8 +36,12 @@ const Navbar = () => {
 
   return (
     <>
-      { popUp &&
-        <div
+      {popUp &&
+        <motion.div
+           initial={{ opacity: 0 }}
+      animate={{ opacity: popUp ? 1 : 0 }}
+      transition={{ duration: 1 }}
+
         className={`bg-black text-white relative flex justify-center ${
           !popupVisibility && "hidden"
         } `}
@@ -60,11 +66,11 @@ const Navbar = () => {
           onClick={() => {
             setpopupVisibility(false);
           }}
-          className="absolute  md:top-[33%] right-2  md:right-4 xl:right-8"
+          className="absolute top-[8vw]  md:top-[33%] right-2  md:right-4 xl:right-8"
         >
           <RxCross1 className="text-white text-2xl" />
         </button>
-      </div>
+      </motion.div>
       }
       <nav
         className={`bg-white font-Poppins border-b  text-stone-800 transition-all duration-700 py-6 md:py-6 w-full sticky top-0 z-10 ${

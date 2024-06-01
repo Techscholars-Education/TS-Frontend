@@ -81,7 +81,7 @@ const Footer = () => {
             id="message"
           ></textarea>
 
-          <button className="bg-TechBlue text-white rounded-full px-3 py-1 text-sm">
+          <button className="bg-TechBlue text-white rounded-full hover:bg-black hover:shadow-sm hover:shadow-black transition-all ease-linear duration-200 px-3 py-2 text-sm">
             Send message
           </button>
         </form>
