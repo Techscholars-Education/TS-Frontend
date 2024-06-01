@@ -57,8 +57,8 @@ function TestDetail() {
   return (
     <div className=" font-Poppins min-h-screen  w-full bg-[#F0F7FF] ">
        <DashboardNavbar title="Test series Foundation"/>
-    <div className="my-14 flex flex-col mx-8">
-      <h2 className="text-xl md:text-xl font-semibold text-darkBlue mx-4">
+    <div className="my-14 flex flex-col mx-8 ">
+      <h2 className="text-xl md:text-xl font-semibold text-darkBlue mx-4 my-6">
       Test series Foundation
       </h2>
       {/* <p className="text-sm text-gray-600  mx-4 my-4">
