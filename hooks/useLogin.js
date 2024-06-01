@@ -4,6 +4,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 
 const useLogin = () => {
+
   const [checking, setChecking] = useState(false);
   const login = async (username, password) => {
     try {
@@ -25,7 +26,9 @@ const useLogin = () => {
         });
         window.location.reload();
         setChecking(true);
-      } else {
+      } else if(data.detail){
+        toast.error(data.detail);
+      }else {
         toast.error("Email or password is not correct");
       }
     } catch (error) {

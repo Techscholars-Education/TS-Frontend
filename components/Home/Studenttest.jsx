@@ -44,7 +44,7 @@ const Studenttest = () => {
             Testimonials
           </h5>
         </div>
-        <h2 className="text-darkBlue font-semibold text-xl  md:text-4xl text-center my-4 font-Poppins px-2 ">
+        <h2 className="text-darkBlue font-semibold text-xl  md:text-4xl text-center my-4 font-Poppins px-8 ">
           Students share why they ❤️ love us
         </h2>
       </div>
@@ -53,7 +53,7 @@ const Studenttest = () => {
           {studentTestimonials.map((item) => {
             return (
               <div key={item.id} className=" w-[80%] sm:w-full py-10 ">
-                <div className=" rounded-xl mx-4 border relative hover:scale-105 duration-200 hover:shadow-xl">
+                <div className=" rounded-xl mx-4 border relative hover:scale-105 duration-200 hover:shadow-xl lg:h-[38vh] h-[25vh] flex flex-col justify-between">
                   <div className=" top-0 px-6 py-4 md:p-6 xl:top-[10%] ">
                     <p className=" text-xs sm:text-sm md:text-base text-gray-600 leading-normal ">
                       {item.content}
@@ -62,15 +62,8 @@ const Studenttest = () => {
                   <div className="mb-2 px-4  xl:bottom-0 ">
                     <div className="flex items-center space-x-2">
                       <div className=" flex items-center space-x-3">
-                        <div className="w-[40px] h-[40px] lg:w-[60px] lg:h-[60px] rounded-full opacity-90">
-                          <Image
-                            className="rounded-full"
-                            src={item.profile}
-                            alt="family-icon"
-                          />
-                        </div>
                         <div className="font-Poppins">
-                          <h4 className=" text-sm lg:text-base text-gray-600">
+                          <h4 className=" text-sm  lg:text-xl font-semibold text-gray-600">
                             {item.studentName}
                           </h4>
                           <p className="text-xs lg:text-sm text-gray-500">
