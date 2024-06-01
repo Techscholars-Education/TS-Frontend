@@ -27,6 +27,11 @@ function TestSeriesCard(props) {
           <div className="flex  items-center">
 
             <div className="flex flex-col ">
+              <div className='flex mb-2'>
+                 <Link href="#" className='bg-[#FF7512] rounded-full ml-0 mx-2 px-2 text-white text-sm py-1'>{props.std}th</Link>
+                 <Link href="#" className='bg-[#9F46E4] rounded-full mx-2 px-2 text-white text-sm py-1'>Foundation</Link>
+                 <Link href="#" className='bg-[#17DB7E] rounded-full mx-2 px-2 text-white text-sm py-1'>2024</Link>
+              </div>
 
               <p className="font-semibold">Name of the subject</p>
             </div>
