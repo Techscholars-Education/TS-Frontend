@@ -8,7 +8,7 @@ function page() {
     <div>
             <section className="flex w-full">
                 <LeftNavigation/>
-                <div className='flex flex-col py-8'>
+                <div className='flex flex-col'>
 
                   
                     <TestDetail/>

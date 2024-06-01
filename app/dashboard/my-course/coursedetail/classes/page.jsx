@@ -10,7 +10,7 @@ export default function page() {
         <div>
             <section className="flex w-full">
                 <LeftNavigation></LeftNavigation>
-                <div className='flex flex-col py-8'>
+                <div className='flex flex-col'>
 
                     <DashboardNavbar title="Course"/>
                     <Classes/>
