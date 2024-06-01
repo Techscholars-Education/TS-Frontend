@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Community from "../../public/Dashboard/Community.jpg";
 import avatar from "../../public/Dashboard/avatar.jpg";
+import Link from "next/link";
 const Communitycards = (props) => {
   return (
     <div className="bg-white max-w-xs  font-Poppins rounded-xl p-6">
@@ -44,12 +45,9 @@ const Communitycards = (props) => {
           </a>
         </div>
       </div>
-
-      <div className="flex justify-end">
-        <button className="rounded-full text-sm bg-darkBlue text-white px-4 py-2">
-          Explore
-        </button>
-      </div>
+     <Link href="#" className="rounded-full bg-blue-600 text-white w-48 h-8 py-2 px-20 mx-2">
+       Get Started
+     </Link>
     </div>
   );
 };

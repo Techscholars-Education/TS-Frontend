@@ -1,6 +1,7 @@
 import React from 'react'
 import DashboardNavbar from '../DashboardNavbar'
 import TestSeriesCard from './TestSeriesCard';
+import Link from 'next/link';
 
 function TestDetail() {
     const data = [
@@ -11,6 +12,7 @@ function TestDetail() {
           description:
             "The Test series covers the entire syllabus for the exam and prioritizes important subjects and topics.",
           Poster: require('../../../public/Test/test1.png'),
+          std:11
         },
         {
           id: 2,
@@ -19,6 +21,7 @@ function TestDetail() {
           description:
             "The Test series covers the entire syllabus for the exam and prioritizes important subjects and topics.",
           Poster: require('../../../public/Test/test2.png'),
+          std:12
         },
         {
           id: 3,
@@ -27,6 +30,7 @@ function TestDetail() {
           description:
             "The Test series covers the entire syllabus for the exam and prioritizes important subjects and topics.",
           Poster: require('../../../public/Test/test3.png'),
+          std:13
         },
         {
             id: 4,
@@ -35,6 +39,7 @@ function TestDetail() {
             description:
               "The Test series covers the entire syllabus for the exam and prioritizes important subjects and topics.",
             Poster: require('../../../public/Test/test4.png'),
+            std:11
           },
           {
             id: 5,
@@ -43,6 +48,7 @@ function TestDetail() {
             description:
               "The Test series covers the entire syllabus for the exam and prioritizes important subjects and topics.",
             Poster: require('../../../public/Test/test5.png'),
+            std:12
           },
           {
             id: 6,
@@ -51,6 +57,7 @@ function TestDetail() {
             description:
               "The Test series covers the entire syllabus for the exam and prioritizes important subjects and topics.",
             Poster: require('../../../public/Test/test6.png'),
+            std:13
           },
       ];
     
@@ -68,7 +75,9 @@ function TestDetail() {
         {
             data.map((item)=>{
                 return <>
-                <TestSeriesCard image={item.Poster}  key={item.id} />
+                <Link href="/dashboard/test/testdetail/alltestseries">
+                <TestSeriesCard image={item.Poster}  key={item.id} std={item.std} />
+                </Link>
                 </>
             })
         }
