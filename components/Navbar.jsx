@@ -14,6 +14,8 @@ const Navbar = () => {
   const [isBurgerClicked, setIsBurgerClicked] = useState(false);
   const [top, setTop] = useState(true);
   const [popupVisibility, setpopupVisibility] = useState(true);
+  const[popUp, setPopUp] = useState(false)
+  const [hover,setHover] = useState(false)
   const pathname = usePathname();
 
   useEffect(() => {
@@ -24,14 +26,21 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", scrollHandler);
   }, [top]);
 
+  useEffect(()=> {
+   setTimeout(() => {
+    setPopUp(true)
+   }, 5000);
+  },[])
+
   return (
     <>
-      <div
+      { popUp &&
+        <div
         className={`bg-black text-white relative flex justify-center ${
           !popupVisibility && "hidden"
         } `}
       >
-        <p className="font-Poppins py-4 md:py-0 text-center px-2 font-semibold text-xs md:text-sm lg:text-base uppercase flex items-center ">
+        <p className="font-Poppins py-4 md:py-0 text-center px-2 font-normal text-xs md:text-sm lg:text-base uppercase flex items-center ">
           <Image
             className="hidden md:block w-10 md:mr-10 "
             src={siren}
@@ -51,11 +60,12 @@ const Navbar = () => {
           onClick={() => {
             setpopupVisibility(false);
           }}
-          className="absolute bottom-2 md:top-[33%] right-2  md:right-4 xl:right-8"
+          className="absolute  md:top-[33%] right-2  md:right-4 xl:right-8"
         >
           <RxCross1 className="text-white text-2xl" />
         </button>
       </div>
+      }
       <nav
         className={`bg-white font-Poppins border-b  text-stone-800 transition-all duration-700 py-6 md:py-6 w-full sticky top-0 z-10 ${
           !top && "shadow-lg"
@@ -75,31 +85,31 @@ const Navbar = () => {
 
           <div className="hidden lg:flex justify-center lg:space-x-4 xl:space-x-10 font-Poppins  items-center  text-darkBlue pl-10">
             <li
-              className={`cursor-pointer text-base ${
+              className={`cursor-pointer text-base p-2 rounded-md ${
                 pathname === "/" ? "text-TechBlue" : "text-darkBlue"
-              } hover:underline hover:underline-offset-2 transition-all`}
+              } hover:bg-blue-200 hover:underline-offset-2 transition-all`}
             >
               <Link href="/">Home</Link>
             </li>
 
             <li
-              className={`cursor-pointer text-base  ${
+              className={`cursor-pointer text-base p-2 rounded-md  ${
                 pathname === "/course" ? "text-TechBlue" : "text-darkBlue"
-              }   hover:underline hover:underline-offset-2 transition-all`}
+              }   hover:bg-blue-200 hover:underline-offset-2 transition-all`}
             >
               <Link href="/course">Courses</Link>
             </li>
             <li
-              className={`cursor-pointer text-base  ${
+              className={`cursor-pointer text-base p-2 rounded-md  ${
                 pathname === "/exams" ? "text-TechBlue" : "text-darkBlue"
-              }  hover:underline hover:underline-offset-2 transition-all`}
+              }  hover:bg-blue-200 hover:underline-offset-2 transition-all`}
             >
               <Link href="/exams">Scholarships</Link>
             </li>
             <li
-              className={`cursor-pointer text-base  ${
+              className={`cursor-pointer text-base p-2 rounded-md ${
                 pathname === "/councillor" ? "text-TechBlue" : "text-darkBlue"
-              }  hover:underline hover:underline-offset-2 transition-all`}
+              }  hover:bg-blue-200 transition-all`}
             >
               <Link href="/councillor">Councillor</Link>
             </li>
@@ -117,28 +127,24 @@ const Navbar = () => {
               )}
             </button>
           </div>
-          <div className="hidden font-Poppins lg:flex justify-center space-x-4 items-center   ">
-            <li
-              className={`cursor-pointer text-base  hover:underline hover:underline-offset-2 transition-all`}
+          <div className="hidden font-Poppins lg:flex justify-center items-center space-x-3  h-[3vw] w-[20vw] ">
+            <li onMouseEnter={()=>{setHover(!hover)}}
+              onMouseLeave={()=>{setHover(!hover)}}
+              className={`cursor-pointer text-base transition-all`}
             >
-              <Link className=" px-5 border py-3 rounded-full " href="/login">
+              <Link className={` ${hover ? "bg-TechBlue text-white border-none shadow-sm shadow-TechBlue" :""} px-6 border py-3 rounded-md `} href="/login">
                 Login
               </Link>
             </li>
 
             <li
-              className={`cursor-pointer text-base hover:underline hover:underline-offset-2 transition-all`}
+              className={`cursor-pointer text-base`}
             >
               <Link
-                className="bg-TechBlue pl-4 py-1 text-white px-2 rounded-full flex items-center justify-center "
+                className={`${hover?"border ":"bg-TechBlue  text-white"}  py-3 px-2 rounded-md flex items-center justify-center  hover:bg-black  transition-all ease-linear duration-200 hover:shadow-sm hover:shadow-black`}
                 href="/signin"
               >
                 Get Started
-                <Image
-                  src={giphy}
-                  className="  md:w-[30px] lg:w-[40px] ml-2  rounded-full "
-                  alt="eyes"
-                ></Image>
               </Link>
             </li>
           </div>

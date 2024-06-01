@@ -49,6 +49,8 @@ const Costing = (props) => {
       setFormDataOne({ ...formdataOne, name: " Starter" ,prices: price1,auth:cookies })
       setFormDataTwo({ ...formdataTwo, name: "Advanced " ,prices: price2,auth:cookies  })
       setFormDataThree({ ...formdataThree, name: "Ultimate " ,prices: price3,auth:cookies  })
+
+       // eslint-disable-next-line react-hooks/exhaustive-deps
     },[props.CostingData])
   
 
