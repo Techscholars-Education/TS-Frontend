@@ -44,7 +44,7 @@ const Studenttest = () => {
             Testimonials
           </h5>
         </div>
-        <h2 className="text-darkBlue font-semibold text-xl  md:text-4xl text-center my-4 font-Poppins px-2 ">
+        <h2 className="text-darkBlue font-semibold text-xl  md:text-4xl text-center my-4 font-Poppins px-8 ">
           Students share why they ❤️ love us
         </h2>
       </div>
