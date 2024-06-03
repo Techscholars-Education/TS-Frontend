@@ -125,7 +125,7 @@ const LeftNavigation = () => {
         
 
       </div>
-      <div className="relative flex flex-col mt-16 justify-center items-center align-middle bg-[#00003E] text-white rounded-xl h-32 w-48">
+      <div className="relative flex flex-col mt-8 justify-center items-center align-middle bg-[#00003E] text-white rounded-xl h-32 w-48">
       <div className="absolute -top-6 flex justify-center items-center w-12 h-12 bg-[#00003E] text-white rounded-full border-4 border-white">
         <FiMail className="h-6 w-6" />
       </div>
