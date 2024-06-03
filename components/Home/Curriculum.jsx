@@ -7,7 +7,7 @@ import foundation from "../../public/Home/foundation.svg";
 import { Slide } from "react-awesome-reveal";
 const Curriculum = () => {
   return (
-    <section className="bg-TechBlue/30 text-black my-16 py-16">
+    <section className=" text-black py-16 bg-gradient-to-r from-TechBlue/5 to-white ">
       <div className=" w-11/12 xl:w-10/12 mx-auto ">
         <h2 className="text-black font-semibold text-2xl  md:text-4xl  text-center my-4 font-Poppins ">
           Explore our exam categories

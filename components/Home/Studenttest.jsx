@@ -1,7 +1,5 @@
 "use client";
 import React from "react";
-import Image from "next/image";
-import quotation from "../../public/Home/quotation.svg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -16,7 +14,7 @@ const Studenttest = () => {
     initialSlide: 0,
     autoplay: true,
     pauseOnHOver: true,
-    rtl: true,
+    rtl: false,
     responsive: [
       {
         breakpoint: 768,
@@ -37,7 +35,7 @@ const Studenttest = () => {
   };
 
   return (
-    <section className="bg-[#F8F8F8] my-16 py-16 font-Poppins w-full mx-auto  ">
+    <section className="bg-gray-100 to-white py-16 font-Poppins w-full mx-auto  ">
       <div className=" w-full mx-auto  rounded-xl">
         <div className=" text-center">
           <h5 className="text-xs font-medium bg-gray-300 text-TechBlue font-Poppins border py-1 rounded-full px-4 inline-block">
@@ -45,24 +43,27 @@ const Studenttest = () => {
           </h5>
         </div>
         <h2 className="text-darkBlue font-semibold text-xl  md:text-4xl text-center my-4 font-Poppins px-8 ">
-          Students share why they ❤️ love us
+          Why students ❤️ love Techscholars
         </h2>
       </div>
       <div className=" my-10 w-11/12 mx-auto ">
         <Slider {...settings}>
           {studentTestimonials.map((item) => {
             return (
-              <div key={item.id} className=" w-[80%] sm:w-full py-10 ">
-                <div className=" rounded-xl mx-4 border relative hover:scale-105 duration-200 hover:shadow-xl lg:h-[38vh] h-[25vh] flex flex-col justify-between">
+              <div
+                key={item.id}
+                className=" w-[80%] sm:w-full py-10 border-2 border-black "
+              >
+                <div className=" mx-4 relative hover:scale-105 duration-200 hover:shadow-xl 2xl:h-[32vh] lg:h-[40vh] h-[25vh] flex flex-col justify-between bg-white">
                   <div className=" top-0 px-6 py-4 md:p-6 xl:top-[10%] ">
-                    <p className=" text-xs sm:text-sm md:text-base text-gray-600 leading-normal ">
-                      {item.content}
+                    <p className=" text-xs sm:text-sm xl:text-base text-gray-500 leading-normal tracking-wide">
+                      " {item.content} "
                     </p>
                   </div>
                   <div className="mb-2 px-4  xl:bottom-0 ">
                     <div className="flex items-center space-x-2">
                       <div className=" flex items-center space-x-3">
-                        <div className="font-Poppins">
+                        <div className="font-Poppins my-2">
                           <h4 className=" text-sm  lg:text-xl font-semibold text-gray-600">
                             {item.studentName}
                           </h4>
@@ -78,12 +79,6 @@ const Studenttest = () => {
                       </div>
                     </div>
                   </div>
-
-                  <Image
-                    className="absolute -bottom-2 md:-bottom-6 -right-2 w-8  lg:w-12 xl:w-12 xl:-bottom-4"
-                    src={quotation}
-                    alt="quotation-icon"
-                  ></Image>
                 </div>
               </div>
             );

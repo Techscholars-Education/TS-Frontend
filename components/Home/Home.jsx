@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import Packages from "@/components/Home/Packages";
 import Navbar from "@/components/Navbar";
 import Testimonialsslider from "@/components/Home/Testimonialsslider";
+import Faculties from "./Faculties";
 const Home = () => {
   return (
     <>
@@ -19,9 +20,10 @@ const Home = () => {
       <Curriculum />
       <About />
       <Packages />
+      <Faculties />
+      <Studenttest />
       <Testimonials />
       <Testimonialsslider />
-      <Studenttest />
       <Aboutapp />
       <Footer />
     </>

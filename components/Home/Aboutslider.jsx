@@ -19,7 +19,7 @@ const Aboutslider = () => {
     autoplaySpeed: 2000,
     slidesToScroll: 1,
     initialSlide: 0,
-    rtl: true,
+    rtl: false,
     autoplay: true,
     responsive: [
       {
@@ -95,14 +95,15 @@ const Aboutslider = () => {
   ];
 
   return (
-    <section className="  w-11/12 mx-auto pt-2 md:py-6 md:my-8  ">
+    <section className="  w-11/12 mx-auto pt-2 md:py-8  ">
       <div className="slider-container">
-        <Slider className="" {...settings}>
+        <Slider {...settings}>
           {data.map((item) => {
             return (
               <div
                 key={item.id}
-                className=" flex flex-col justify-center items-center py-10 "
+                style={{ width: 100 }}
+                className=" flex flex-col justify-center items-center py-10  "
               >
                 <div className="w-full">
                   <Image

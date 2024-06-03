@@ -3,7 +3,7 @@ import React from "react";
 
 const Testimonials = () => {
   return (
-    <section className="bg-white my-16 font-Poppins w-full mx-auto  ">
+    <section className=" py-16 bg-gradient-to-r from-TechBlue/5 to-white font-Poppins w-full mx-auto  ">
       <div className=" w-full mx-auto  rounded-xl">
         <div className=" text-center">
           <h5 className="text-xs font-medium bg-gray-300 text-TechBlue font-Poppins border py-1 rounded-full px-4 inline-block">
@@ -18,18 +18,6 @@ const Testimonials = () => {
             Maximize your potential with Techscholars personalised mentorship,
             performance analytics, and collaborative community
           </p>
-        </div>
-      </div>
-      <div className="flex justify-center items-center my-16 w-8/12 mx-auto ">
-        <div className="relative w-full overflow-hidden pt-[56.25%]">
-          <iframe
-            className="absolute top-0 left-0 w-full h-full rounded-xl"
-            src="https://www.youtube.com/embed/K2vbrZJHLsY?si=dsqj_4Ks-sVMIYjq"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          ></iframe>
         </div>
       </div>
     </section>

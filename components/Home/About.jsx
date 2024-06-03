@@ -2,7 +2,7 @@ import React from "react";
 import Aboutslider from "./Aboutslider";
 const About = () => {
   return (
-    <section className="bg-white py-6 font-Poppins w-11/12 mx-auto  ">
+    <section className="bg-white py-6 font-Poppins w-full mx-auto bg-gradient-to-r from-TechBlue/5 to-white ">
       <div className=" w-full mx-auto  rounded-xl">
         <div className=" text-center">
           <h5 className="text-xs font-medium bg-gray-300 text-TechBlue font-Poppins border py-1 rounded-full px-4 inline-block">

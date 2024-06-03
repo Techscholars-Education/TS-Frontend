@@ -93,7 +93,7 @@ const Costing = (props) => {
           <div className="w-full flex justify-center items-center my-4">
             <Link
               href="/dashboard/courses"
-              className="border w-5/6 rounded-full px-6 py-3 text-center  "
+              className="border w-5/6 rounded-full px-6 py-3 text-center hover:bg-black hover:text-white duration-200 "
             >
               Purchase Now
             </Link>
@@ -176,7 +176,7 @@ const Costing = (props) => {
           <div className="w-full flex justify-center items-center my-4">
             <Link
               href="/dashboard/courses"
-              className="border w-5/6 rounded-full text-center  px-6 py-3 bg-white text-TechBlue"
+              className="border w-5/6 rounded-full text-center  px-6 py-3 bg-white text-TechBlue hover:bg-black hover:text-white duration-200"
             >
               Purchase Now
             </Link>
@@ -266,7 +266,7 @@ const Costing = (props) => {
           <div className="w-full flex justify-center items-center my-4 ">
             <Link
               href="/dashboard/courses"
-              className="border w-5/6 rounded-full px-6 py-3 text-center  "
+              className="border w-5/6 rounded-full px-6 py-3 text-center hover:bg-black hover:text-white duration-200  "
             >
               Purchase Now
             </Link>

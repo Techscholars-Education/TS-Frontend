@@ -9,7 +9,7 @@ import { Slide } from "react-awesome-reveal";
 import Searchbar from "./Searchbar";
 const Hero = () => {
   return (
-    <section className=" relative mb-16  ">
+    <section className=" relative  pb-16   bg-gradient-to-r from-TechBlue/5 to-white  ">
       <div className="py-10 flex flex-col justify-center items-center r ">
         {/* Main heading */}
         <div>
