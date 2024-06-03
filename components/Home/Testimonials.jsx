@@ -3,7 +3,7 @@ import React from "react";
 
 const Testimonials = () => {
   return (
-    <section className=" py-16 bg-gradient-to-r from-TechBlue/5 to-white font-Poppins w-full mx-auto  ">
+    <section className=" py-16 bg-gray-50 font-Poppins w-full mx-auto  ">
       <div className=" w-full mx-auto  rounded-xl">
         <div className=" text-center">
           <h5 className="text-xs font-medium bg-gray-300 text-TechBlue font-Poppins border py-1 rounded-full px-4 inline-block">

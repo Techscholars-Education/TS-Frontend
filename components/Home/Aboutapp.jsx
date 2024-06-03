@@ -6,7 +6,7 @@ import applestore from "../../public/Home/applestore.svg";
 
 const Aboutapp = () => {
   return (
-    <section className=" flex flex-col-reverse md:flex md:flex-row  w-11/12 mx-auto font-Poppins md:space-x-10 ">
+    <section className=" flex flex-col-reverse md:flex md:flex-row  w-11/12 mx-auto font-Poppins md:space-x-10 bg-gray-50 ">
       <div className=" w-full md:w-1/2 flex justify-center  ">
         <Image src={Phone} alt="Techscholar-app-image"></Image>
       </div>

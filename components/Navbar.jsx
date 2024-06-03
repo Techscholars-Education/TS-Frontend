@@ -75,19 +75,18 @@ const Navbar = () => {
           !top && "shadow-lg bg-white"
         } `}
       >
-        <ul className="flex w-5/6 mx-auto justify-between items-center font-Jost ">
-          <h1 className="text-lg md:text-xl text-darkBlue font-medium justify-center font-Jost flex items-center ">
-            <Image
-              className="w-7 md:w-10  mr-2"
-              src={Logo}
-              alt="Techscholar-logo"
-            />
-            Techscholars
-          </h1>
-
-          {/* FOR BIG SCREENS */}
-
-          <div className="hidden lg:flex justify-center lg:space-x-4 xl:space-x-10 font-Poppins  items-center  text-darkBlue pl-10">
+        <div className="flex w-11/12 mx-auto justify-between items-center font-Jost  ">
+          <div className="lg:w-1/4">
+            <h1 className="text-lg md:text-xl text-darkBlue font-medium justify-center font-Jost flex items-center ">
+              <Image
+                className="w-7 md:w-10  mr-2"
+                src={Logo}
+                alt="Techscholar-logo"
+              />
+              Techscholars
+            </h1>
+          </div>
+          <ul className="hidden lg:flex justify-center lg:space-x-4 xl:space-x-10 font-Poppins  items-center lg:w-[60%]  text-darkBlue mx-auto ">
             <li
               className={`cursor-pointer text-base p-2 rounded-md ${
                 pathname === "/" ? "text-TechBlue" : "text-darkBlue"
@@ -117,7 +116,8 @@ const Navbar = () => {
             >
               <Link href="/councillor">Councillor</Link>
             </li>
-          </div>
+          </ul>
+          {/* Hamburger */}
           <div className="lg:hidden flex justify-center items-center">
             <button
               onClick={() => {
@@ -131,7 +131,7 @@ const Navbar = () => {
               )}
             </button>
           </div>
-          <div className="hidden font-Poppins lg:flex justify-center items-center space-x-3  h-[3vw] w-[20vw] ">
+          <ul className="hidden font-Poppins lg:flex justify-center items-center space-x-3 lg:w-1/4 ">
             <li
               onMouseEnter={() => {
                 setHover(!hover);
@@ -144,9 +144,9 @@ const Navbar = () => {
               <Link
                 className={` ${
                   hover
-                    ? "bg-TechBlue text-white border-none shadow-sm shadow-TechBlue"
+                    ? "bg-TechBlue text-white border-none shadow-sm shadow-TechBlue text-sm"
                     : ""
-                } px-6 border py-3 rounded-md `}
+                } px-4 border py-3 rounded-md `}
                 href="/login"
               >
                 Login
@@ -157,14 +157,16 @@ const Navbar = () => {
               <Link
                 className={`${
                   hover ? "border " : "bg-TechBlue  text-white"
-                }  py-3 px-4 rounded-md flex items-center justify-center  hover:bg-black  transition-all ease-linear duration-200 hover:shadow-sm hover:shadow-black`}
+                }  py-3 lg:px-2 xl:px-4 rounded-md flex items-center justify-center  hover:bg-black  transition-all ease-linear duration-200 hover:shadow-sm hover:shadow-black`}
                 href="/signin"
               >
                 Get Started
               </Link>
             </li>
-          </div>
-        </ul>
+          </ul>
+        </div>
+
+        {/* FOR BIG SCREENS */}
 
         {/* FOR SMALL SCREENS */}
         <div

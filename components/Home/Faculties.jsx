@@ -28,10 +28,10 @@ const Faculties = () => {
                   <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
                     Karan Sharma
                   </h1>
-                  <h6 className=" text-sm font-normal text-gray-500 mb-3">
+                  <h6 className=" text-xs font-normal text-gray-500 mb-3">
                     M-Tech | IIT Kanpur
                   </h6>
-                  <p className="leading-relaxed mb-3 text-gray-600">
+                  <p className="leading-relaxed mb-3 text-gray-600 text-sm">
                     More than 12+ years of experience in teaching.
                   </p>
                   <div className="flex items-center flex-wrap ">
@@ -53,10 +53,10 @@ const Faculties = () => {
                   <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
                     Neha Kapoor
                   </h1>
-                  <h6 className=" text-sm font-normal text-gray-500 mb-3">
+                  <h6 className=" text-xs font-normal text-gray-500 mb-3">
                     M-Tech | IIIT Hyderabad
                   </h6>
-                  <p className="leading-relaxed mb-3 text-gray-600">
+                  <p className="leading-relaxed mb-3 text-gray-600 text-sm">
                     More than 12+ years of experience in teaching.
                   </p>
                   <div className="flex items-center flex-wrap ">
@@ -78,10 +78,10 @@ const Faculties = () => {
                   <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
                     Puneet Mishra
                   </h1>
-                  <h6 className=" text-sm font-normal text-gray-500 mb-3">
+                  <h6 className=" text-xs font-normal text-gray-500 mb-3">
                     M-Tech | IIT Bombay
                   </h6>
-                  <p className="leading-relaxed mb-3 text-gray-600">
+                  <p className="leading-relaxed mb-3 text-gray-600 text-sm">
                     More than 14+ years of experience in teaching.
                   </p>
                   <div className="flex items-center flex-wrap ">

@@ -45,18 +45,18 @@ const Studenttest = () => {
         <h2 className="text-darkBlue font-semibold text-xl  md:text-4xl text-center my-4 font-Poppins px-8 ">
           Why students ❤️ love Techscholars
         </h2>
+        <p className="text-gray-600 font-medium text-sm md:text-xl text-center my-4 font-Poppins px-8 ">
+          Hear from our students
+        </p>
       </div>
       <div className=" my-10 w-11/12 mx-auto ">
         <Slider {...settings}>
           {studentTestimonials.map((item) => {
             return (
-              <div
-                key={item.id}
-                className=" w-[80%] sm:w-full py-10 border-2 border-black "
-              >
-                <div className=" mx-4 relative hover:scale-105 duration-200 hover:shadow-xl 2xl:h-[32vh] lg:h-[40vh] h-[25vh] flex flex-col justify-between bg-white">
+              <div key={item.id} className=" w-[80%] sm:w-full py-10 ">
+                <div className=" mx-4 relative hover:scale-105 duration-200 shadow-md rounded hover:shadow-xl 2xl:h-[32vh] lg:h-[40vh] h-[34vh] flex flex-col justify-between bg-white">
                   <div className=" top-0 px-6 py-4 md:p-6 xl:top-[10%] ">
-                    <p className=" text-xs sm:text-sm xl:text-base text-gray-500 leading-normal tracking-wide">
+                    <p className="text-xs lg:text-base text-gray-500 leading-normal tracking-wide">
                       " {item.content} "
                     </p>
                   </div>
@@ -64,7 +64,7 @@ const Studenttest = () => {
                     <div className="flex items-center space-x-2">
                       <div className=" flex items-center space-x-3">
                         <div className="font-Poppins my-2">
-                          <h4 className=" text-sm  lg:text-xl font-semibold text-gray-600">
+                          <h4 className=" text-xs lg:text-xl font-medium text-black/80">
                             {item.studentName}
                           </h4>
                           <p className="text-xs lg:text-sm text-gray-500">

@@ -41,65 +41,65 @@ const Testimonialsslider = () => {
   };
 
   return (
-    <div className="w-[90%] mx-auto ">
-      <Slider {...settings}>
-        {testimonialsData.map((item) => {
-          return (
-            <div className="py-4 md:py-10" key={item.id}>
-              <div className="border lg:h-[45vh] h-[38vh] bg-white p-4 rounded-xl mx-4 hover:shadow-xl hover:scale-105 duration-200 flex flex-col justify-between  ">
-                <div>
-                  <Image
-                    className="invert w-6 md:w-8 "
-                    src={quoteup}
-                    alt="quoteup"
-                  />
-                </div>
+    <div className="w-full mx-auto bg-gray-50 ">
+      <div className="w-[90%] mx-auto">
+        <Slider {...settings}>
+          {testimonialsData.map((item) => {
+            return (
+              <div className="py-4 md:py-10 " key={item.id}>
+                <div className="border lg:h-[45vh] h-[38vh] p-4 rounded shadow-md mx-4 hover:shadow-xl hover:scale-105 duration-200 flex flex-col justify-between bg-white  ">
+                  <div>
+                    <Image
+                      className="invert w-6 md:w-8 "
+                      src={quoteup}
+                      alt="quoteup"
+                    />
+                  </div>
 
-                <div className="py-4">
-                  <p className=" text-xs lg:text-base text-gray-600 font-Poppins leading-relaxed lg:leading-relaxed">
-                    {item.content}
-                  </p>
-                </div>
+                  <div className="py-4">
+                    <p className=" text-xs lg:text-base text-gray-600 font-Poppins leading-relaxed lg:leading-relaxed">
+                      {item.content}
+                    </p>
+                  </div>
 
-                <div className="flex items-center justify-between font-Poppins ">
-                  <div className=" flex items-center space-x-3">
+                  <div className="flex items-center justify-between font-Poppins ">
+                    <div className=" flex items-center space-x-3">
+                      <div className="font-Poppins">
+                        <h4 className=" text-xl font-semibold  text-gray-600">
+                          {item.parentName}
+                        </h4>
+                        <p className="text-xs lg:text-sm text-gray-500">
+                          {item.studentName}
+                          {" - "}
+                          <span>
+                            {item.class}
+                            <sup>th</sup>
+                            -[{item.aspirant}]
+                          </span>
+                        </p>
+                      </div>
+                    </div>
 
-                    <div className="font-Poppins">
-                      <h4 className=" text-xl font-semibold  text-gray-600">
-                        {item.parentName}
-                      </h4>
-                      <p className="text-xs lg:text-sm text-gray-500">
-                        {item.studentName}
-                        {" - "}
-                        <span>
-                          {item.class}
-                          <sup>th</sup>
-                          -[{item.aspirant}]
-                        </span>
+                    <div className="flex justify-center items-center space-x-2 ">
+                      <Image src={star} alt="rating-star"></Image>
+                      <p className=" text-sm md:text-xs lg:text-base text-darkBlue font-semibold">
+                        {item.starRating}
                       </p>
                     </div>
                   </div>
-
-                  <div className="flex justify-center items-center space-x-2 ">
-                    <Image src={star} alt="rating-star"></Image>
-                    <p className=" text-sm md:text-xs lg:text-base text-darkBlue font-semibold">
-                      {item.starRating}
-                    </p>
-                  </div>
                 </div>
-
               </div>
-            </div>
-          );
-        })}
-      </Slider>
-      <div className="flex justify-center items-center my-14">
-        <Link
-          className="text-center bg-TechBlue text-white font-Poppins font-medium rounded-full px-6 py-3 text-sm hover:bg-black hover:shadow-sm hover:shadow-black transition-all ease-linear duration-200"
-          href="/course"
-        >
-          Get started
-        </Link>
+            );
+          })}
+        </Slider>
+        <div className="flex justify-center items-center mt-14 pb-10">
+          <Link
+            className="text-center bg-TechBlue text-white font-Poppins font-medium rounded-full px-6 py-3 text-sm hover:bg-black hover:shadow-sm hover:shadow-black transition-all ease-linear duration-200"
+            href="/course"
+          >
+            Get started
+          </Link>
+        </div>
       </div>
     </div>
   );
