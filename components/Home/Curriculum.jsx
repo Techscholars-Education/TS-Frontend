@@ -30,7 +30,7 @@ const Curriculum = () => {
             duration={500}
           >
             <div className=" h-full flex justify-center items-start p-4 xl:p-8 border-2 border-black rounded-2xl  ">
-              <div className=" p-2 lg:w-[75px]  bg-black rounded-full  ">
+              <div className=" p-2 lg:w-[75px]  bg-TechBlue rounded-full  ">
                 <Image
                   className=" mx-auto my-1  "
                   src={jee}
@@ -61,7 +61,7 @@ const Curriculum = () => {
             </div>
 
             <div className=" h-full flex  justify-center items-start p-4 xl:p-8 border-2 border-black rounded-2xl ">
-              <div className=" p-2 w-[70px]  bg-black rounded-full">
+              <div className=" p-2 w-[70px]  bg-TechBlue rounded-full">
                 <Image
                   className=" mx-auto my-1  "
                   src={neet}
@@ -91,7 +91,7 @@ const Curriculum = () => {
               </div>
             </div>
             <div className=" h-full flex justify-center items-start p-4 xl:p-8 border-2 border-black rounded-2xl  ">
-              <div className=" p-2 w-[70px]  bg-black rounded-full">
+              <div className=" p-2 w-[70px]  bg-TechBlue rounded-full">
                 <Image
                   className=" mx-auto my-2 "
                   src={foundation}
