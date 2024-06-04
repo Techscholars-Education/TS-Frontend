@@ -1,7 +1,48 @@
+"use client";
 import React from "react";
-import Image from "next/image";
-import coursePoster from "@/public/Course/coursePoster.svg";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { facultiesData } from "./FacultiesData.js";
+import Facultycard from "./Facultycard.jsx";
+
 const Faculties = () => {
+  const settings = {
+    infinite: true,
+    speed: 700,
+    slidesToShow: 3,
+    autoplaySpeed: 2000,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    rtl: false,
+    autoplay: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   return (
     <section className="bg-white py-6 font-Poppins w-full mx-auto bg-gradient-to-r from-TechBlue/5 to-white ">
       <div className=" w-full mx-auto  rounded-xl ">
@@ -14,87 +55,13 @@ const Faculties = () => {
           Learn from Bharat&#39;s top faculties
         </h2>
       </div>
-      <section className="text-gray-600 body-font font-Poppins">
-        <div className="container px-5 py-12 mx-auto">
-          <div className="flex flex-wrap -m-4">
-            <div className="p-4 md:w-1/3">
-              <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden p-2 bg-white shadow-md hover:shadow-xl hover:scale-105 duration-200 ">
-                <Image
-                  className="lg:h-48 md:h-36 w-full object-cover object-center"
-                  src={coursePoster}
-                  alt="blog"
-                />
-                <div className="p-6">
-                  <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-                    Karan Sharma
-                  </h1>
-                  <h6 className=" text-xs font-normal text-gray-500 mb-3">
-                    M-Tech | IIT Kanpur
-                  </h6>
-                  <p className="leading-relaxed mb-3 text-gray-600 text-sm">
-                    More than 12+ years of experience in teaching.
-                  </p>
-                  <div className="flex items-center flex-wrap ">
-                    <span className="text-red-500 inline-flex items-center md:mb-2 lg:mb-0">
-                      Mathematics
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="p-4 md:w-1/3">
-              <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden p-2 bg-white shadow-md hover:shadow-xl hover:scale-105 duration-200 ">
-                <Image
-                  className="lg:h-48 md:h-36 w-full object-cover object-center"
-                  src={coursePoster}
-                  alt="blog"
-                />
-                <div className="p-6">
-                  <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-                    Neha Kapoor
-                  </h1>
-                  <h6 className=" text-xs font-normal text-gray-500 mb-3">
-                    M-Tech | IIIT Hyderabad
-                  </h6>
-                  <p className="leading-relaxed mb-3 text-gray-600 text-sm">
-                    More than 12+ years of experience in teaching.
-                  </p>
-                  <div className="flex items-center flex-wrap ">
-                    <span className="text-red-500 inline-flex items-center md:mb-2 lg:mb-0">
-                      Chemistry
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="p-4 md:w-1/3">
-              <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden p-2 bg-white shadow-md hover:shadow-xl hover:scale-105 duration-200 ">
-                <Image
-                  className="lg:h-48 md:h-36 w-full object-cover object-center"
-                  src={coursePoster}
-                  alt="blog"
-                />
-                <div className="p-6">
-                  <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-                    Puneet Mishra
-                  </h1>
-                  <h6 className=" text-xs font-normal text-gray-500 mb-3">
-                    M-Tech | IIT Bombay
-                  </h6>
-                  <p className="leading-relaxed mb-3 text-gray-600 text-sm">
-                    More than 14+ years of experience in teaching.
-                  </p>
-                  <div className="flex items-center flex-wrap ">
-                    <span className="text-red-500 inline-flex items-center md:mb-2 lg:mb-0">
-                      Physics
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div className=" my-10 w-11/12 mx-auto ">
+        <Slider {...settings}>
+          {facultiesData.map((item) => {
+            return <Facultycard item={item} />;
+          })}
+        </Slider>
+      </div>
     </section>
   );
 };

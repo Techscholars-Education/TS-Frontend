@@ -57,7 +57,7 @@ const Studenttest = () => {
                 <div className=" mx-4 relative hover:scale-105 duration-200 shadow-md rounded hover:shadow-xl 2xl:h-[32vh] lg:h-[40vh] h-[34vh] flex flex-col justify-between bg-white">
                   <div className=" top-0 px-6 py-4 md:p-6 xl:top-[10%] ">
                     <p className="text-xs lg:text-base text-gray-500 leading-normal tracking-wide">
-                      " {item.content} "
+                      &ldquo; {item.content} &ldquo;
                     </p>
                   </div>
                   <div className="mb-2 px-4  xl:bottom-0 ">

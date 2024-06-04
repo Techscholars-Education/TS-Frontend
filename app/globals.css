@@ -77,3 +77,34 @@
 }
 
 
+
+
+
+.title {
+  
+
+  opacity: 0; 
+}
+
+#preloader {
+  width: 100vw; 
+  height: 100vh; 
+  background: #000000; 
+  position: fixed; 
+  display: grid; 
+  align-items: center; 
+  justify-content: center;
+}
+
+.loading__text {
+  letter-spacing: 30px; 
+  color: #fff; 
+  font-weight: 700; 
+  font-size: 5vw;
+  position: relative; 
+  top: -50px; 
+  pointer-events: none;
+  user-select: none;  
+  text-align: center;
+}
+

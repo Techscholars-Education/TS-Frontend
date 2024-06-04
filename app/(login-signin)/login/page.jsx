@@ -62,8 +62,8 @@ const Page = () => {
     }
   };
 
-  const glogin = useGoogleLogin({
-    onSuccess: (tokenResponse) => setAuthg(tokenResponse.access_token),
+  const glogin =  useGoogleLogin ({
+    onSuccess: (tokenResponse) =>  setAuthg(tokenResponse.access_token),
   });
 
   useEffect(() => {
