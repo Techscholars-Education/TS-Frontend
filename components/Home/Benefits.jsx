@@ -9,7 +9,7 @@ import login from "../../public/Home/login.png";
 const Benefits = () => {
   return (
     <section className="w-full bg-gradient-to-r from-TechBlue/5 to-white py-10  ">
-      <div className=" w-11/12 xl:w-10/12 grid grid-cols-1 md:grid-cols-2  mx-auto gap-4 ">
+      <div className=" w-11/12 xl:w-9/12 grid grid-cols-1 md:grid-cols-2  mx-auto gap-4 ">
         {/* container -1 */}
         <div className=" bg-[#DCD9F866] rounded-xl  flex px-6 py-6 md:py-12 font-Poppins shadow-md hover:shadow-xl duration-200 transition-all ">
           <div className="my-auto">

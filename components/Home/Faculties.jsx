@@ -58,7 +58,7 @@ const Faculties = () => {
       <div className=" my-10 w-11/12 mx-auto ">
         <Slider {...settings}>
           {facultiesData.map((item) => {
-            return <Facultycard item={item} />;
+            return <Facultycard key={item.id} item={item} />;
           })}
         </Slider>
       </div>

@@ -53,7 +53,7 @@ const Curriculum = () => {
                   <div className="border border-black text-black rounded-full text-xs px-2 py-1 my-1">
                     12<sup>th</sup> Class
                   </div>
-                  <div className="border border-black text-black rounded-full text-xs px-1 py-1 my-1">
+                  <div className="border border-black text-black rounded-full text-xs px-2 py-1 my-1">
                     Target 13<sup>th</sup>
                   </div>
                 </div>
@@ -84,7 +84,7 @@ const Curriculum = () => {
                   <div className="border border-black text-black rounded-full text-xs px-2 py-1 my-1">
                     12<sup>th</sup> Class
                   </div>
-                  <div className="border border-black text-black rounded-full text-xs px-1 py-1 my-1">
+                  <div className="border border-black text-black rounded-full text-xs px-2 py-1 my-1">
                     Target 13<sup>th</sup>
                   </div>
                 </div>
