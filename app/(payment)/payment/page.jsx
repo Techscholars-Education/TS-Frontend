@@ -12,10 +12,17 @@ import Cardinfo from "@/components/Payment/Cardinfo";
 import Qrcode from "@/components/Payment/Qrcode";
 
 import { useCourseStore } from "@/hooks/useStore";
+import useGetway from "@/hooks/useGetway";
 
 const Page = () => {
 
   const {course} = useCourseStore()
+
+  const {getway} = useGetway()
+
+//  const handleGetway = async() => {
+//   await getway()
+//  }
 
   const gst = 1799
 
@@ -275,6 +282,10 @@ const Page = () => {
       </section>
       <Footer />
     </>
+
+    // <div>
+    //   <button onClick={handleGetway}>click</button>
+    // </div>
   );
 };
 
