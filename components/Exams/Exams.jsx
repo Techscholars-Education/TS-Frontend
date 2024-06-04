@@ -28,12 +28,13 @@ const Exams = () => {
           >
             <div className="flex flex-col space-y-2 w-full ">
               <label className="text-lg font-semibold text-darkBlue/70">
-                Enter your Full Name
+                Full Name
               </label>
               <input
                 className="border-2 border-black/40  text-sm md:text-lg rounded-md p-2 w-full "
-                placeholder="John Doe"
+                placeholder="Enter your full name"
                 type="text"
+                required
               />
             </div>
 
@@ -44,8 +45,9 @@ const Exams = () => {
                 </label>
                 <input
                   className="border-2 text-sm md:text-lg border-black/40 rounded-md p-2 "
-                  placeholder="example@gmail.com"
+                  placeholder="Enter your email address"
                   type="email"
+                  required
                 />
               </div>
               <div className="flex flex-col space-y-2  w-[48%]">
@@ -54,33 +56,57 @@ const Exams = () => {
                 </label>
                 <input
                   className="border-2 text-sm md:text-lg border-black/40 rounded-md p-2 "
-                  placeholder="+91 XXXXXXXXXX"
-                  type="text"
+                  placeholder="Enter your phone number"
+                  type="number"
+                  required
                 />
               </div>
             </div>
-            <div className="flex justify-between ">
-              <div className="flex flex-col space-y-2 w-[48%] ">
-                <label className=" text-lg font-semibold text-darkBlue/70">
-                  Gender
+            <div className="flex justify-between">
+              <div className="flex flex-col space-y-2  w-[48%]">
+                <label
+                  htmlFor="designation"
+                  className="text-lg font-semibold text-darkBlue/70 "
+                >
+                Gender
                 </label>
-                <input
-                  className="border-2 text-sm md:text-lg border-black/40 rounded-md p-2 "
-                  placeholder="Male/Female"
-                  type="text"
-                />
+                <select
+                  id="countries"
+                  className="border-2 border-black/40 text-sm md:text-lg text-darkBlue/70 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2"
+                  required
+                >
+                  <option value="" disabled selected>
+                    {" "}
+                    Select gender
+                  </option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
               </div>
               <div className="flex flex-col space-y-2  w-[48%]">
-                <label className=" text-lg font-semibold text-darkBlue/70">
+                <label
+                  htmlFor="designation"
+                  className="text-lg font-semibold text-darkBlue/70 "
+                >
                   Target Exam
                 </label>
-                <input
-                  className="border-2 text-sm md:text-lg border-black/40 rounded-md p-2 "
-                  placeholder="Jee/Neet/Foundation"
-                  type="text"
-                />
+                <select
+                  id="countries"
+                  className="border-2 border-black/40 text-sm md:text-lg text-darkBlue/70 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2"
+                  required
+                >
+                  <option value="" disabled selected>
+                    {" "}
+                    Select your target
+                  </option>
+                  <option value="Jee">JEE</option>
+                  <option value="Neet">NEET</option>
+                  <option value="foundation">Foundation</option>
+
+                </select>
               </div>
             </div>
+
 
             <hr />
 
@@ -91,7 +117,7 @@ const Exams = () => {
               </p>
             </div>
 
-            <button className="bg-TechBlue rounded-full text-white px-4 py-3 text-sm md:w-44 md:h-12  ">
+            <button className="bg-TechBlue rounded-full text-white px-4 py-3 text-sm md:w-44 md:h-12 hover:bg-black hover:shadow-md hover:shadow-black transition-all ease-linear duration-200 ">
               Apply Now
             </button>
           </form>

@@ -1,12 +1,13 @@
 "use client";
 import axios from "axios";
 const usePupdate = () => {
-  const updatePassword = async (password) => {
+  const updatePassword = async (newPassword, token) => {
     try {
       const response = await axios.put(
         "https://api.techscholars.co.in/auth/reset/password/verify",
         {
-          password,
+          password: newPassword,
+          access_token: token,
         }
       );
       if (response.status === 200) {

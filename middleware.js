@@ -7,6 +7,7 @@ export function middleware(request) {
     const path = request.nextUrl.pathname
     
     const isPublicPath = path ==="/login" || path === "/signin"
+    const isPayment = path === "/payment"
 
     const token = request.cookies.get('authCookie')?.value || ''
 
@@ -18,6 +19,14 @@ export function middleware(request) {
         return NextResponse.redirect(new URL('/login',request.nextUrl))
     }
 
+    if(!token && isPayment){
+        return NextResponse.redirect(new URL("login",request.nextUrl))
+    }
+
+  
+
+
+
 }
  
 // See "Matching Paths" below to learn more
@@ -25,6 +34,7 @@ export const config = {
   matcher: [
     '/dashboard/:path*',
     '/login',
-    '/signin'
+    '/signin',
+    '/payment',
   ]
 }

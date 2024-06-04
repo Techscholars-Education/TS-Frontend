@@ -37,8 +37,8 @@ const Course = () => {
   return (
     <>
     
-      <div className="bg-white font-Poppins min-h-screen py-10 w-full ">
-        <DashboardNavbar name={"Course"}/>
+      <div className=" font-Poppins min-h-screen  w-full bg-[#F0F7FF] ">
+        <DashboardNavbar title="Course"/>
         <div className="my-14 flex flex-col mx-8">
           <h2 className="text-xl md:text-xl font-semibold text-darkBlue mx-4">
             My courses
@@ -49,7 +49,7 @@ const Course = () => {
           <div className="flex">
             <Link href="" className="  pt-2.5 py-1.5 px-8 mx-4 rounded-full text-center bg-TechBlue text-sm text-white">Paid
             </Link>
-            <Link href="" className="  pt-2.5 py-1.5 px-8 rounded-full text-centertext-sm  bg-slate-100">Free
+            <Link href="" className="  pt-2 py-1.5 px-8 rounded-full text-centertext-sm  bg-slate-200">Free
             </Link>
           </div>
         </div>

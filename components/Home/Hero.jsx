@@ -2,15 +2,15 @@
 import React from "react";
 import { ReactTyped } from "react-typed";
 import Image from "next/image";
-import search from "../../public/Home/search.svg";
 import TangledArrow from "../../public/Home/TangledArrow.svg";
 import { IoMdCheckmark } from "react-icons/io";
-import { MdSlowMotionVideo } from "react-icons/md";
+
 import { Slide } from "react-awesome-reveal";
+import Searchbar from "./Searchbar";
 const Hero = () => {
   return (
-    <section className=" relative mb-16  ">
-      <div className="py-10 flex flex-col justify-center items-center  ">
+    <section className=" relative  pb-16   bg-gradient-to-r from-TechBlue/5 to-white  ">
+      <div className="py-10 flex flex-col justify-center items-center r ">
         {/* Main heading */}
         <div>
           <h1 className=" text-xl  md:text-4xl lg:text-4xl xl:text-5xl text-darkBlue font-medium font-Poppins text-center md:leading-normal lg:leading-normal xl:leading-normal relative inline-block ">
@@ -47,40 +47,7 @@ const Hero = () => {
 
         {/* Search bar for tablet and desktop screen */}
 
-        <div className=" mt-4 hidden md:flex md:w-1/2 lg:w-6/12 mx-auto pl-4 py-1 pr-1 rounded-full bg-white items-center border ">
-          <div>
-            <Image className="w-12" src={search} alt="search-icon"></Image>
-          </div>
-          <div className="font-Poppins w-full mx-2">
-            <input
-              className="outline-none p-1 text-base text-darkBlue w-full"
-              type="text"
-              placeholder="Search"
-            />
-          </div>
-          <div>
-            <button
-              className="cursor-pointer transition-all bg-TechBlue text-white px-6 py-2 rounded-full
-              border-blue-600
-              border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px]
-              active:border-b-[2px] active:brightness-90 active:translate-y-[2px]"
-            >
-              Search
-            </button>
-          </div>
-        </div>
-
-        {/* free trial box */}
-
-        <div className=" md:hidden flex flex-col space-y-3 mt-4  ">
-          <button className="  px-8 bg-TechBlue text-white py-2 rounded-full border-2 border-TechBlue">
-            Start my free 14-day trial
-          </button>
-          <button className="flex justify-center items-center text-darkBlue border px-12 border-darkBlue py-2 rounded-full ">
-            <MdSlowMotionVideo className="mr-2 text-xl mb-1" />
-            Watch demo
-          </button>
-        </div>
+        <Searchbar />
 
         {/* plane arrow */}
 

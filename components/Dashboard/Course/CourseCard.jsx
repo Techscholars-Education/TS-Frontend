@@ -15,7 +15,7 @@ const CourseCard = (props) => {
       <div
         className={`flex flex-col rounded-xl border ${
           props.title === "JEE" ? "shadow-xl" : "shadow-md"
-        }   font-Poppins relative w-[22vw]`}
+        }   font-Poppins relative w-[22vw] bg-white`}
       >
         <div>
           <Image

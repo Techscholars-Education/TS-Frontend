@@ -14,14 +14,7 @@ import Cookies from "js-cookie";
 
 const Forgotpassword = () => {
   const searchParams = useSearchParams();
-
   const [domLoaded, setDomLoaded] = useState(false);
-
-  // ! Take the token from the url if there is any token
-  if (searchParams.get("token")) {
-    const token = searchParams.get("token");
-    Cookies.set("access_token", token);
-  }
 
   useEffect(() => {
     setTimeout(() => {
@@ -45,7 +38,11 @@ const Forgotpassword = () => {
                 </Link>
               </div>
 
-              {searchParams.get("token") ? <Update /> : <Forgot />}
+              {searchParams.get("token") ? (
+                <Update accessToken={searchParams.get("token")} />
+              ) : (
+                <Forgot />
+              )}
 
               <div className="font-Poppins mt-[3vw] flex justify-between items-center">
                 <div>
