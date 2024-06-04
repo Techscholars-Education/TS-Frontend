@@ -16,11 +16,62 @@ const Aboutapp = () => {
           </p>
         </div>
       </div>
-      <section className=" flex flex-col-reverse md:flex md:flex-row  w-11/12 mx-auto font-Poppins md:space-x-10 ">
+      <section className=" flex flex-col md:flex md:flex-row justify-between  w-11/12 mx-auto font-Poppins md:space-x-10 py-10 ">
         <div className=" w-full md:w-1/3 flex justify-center  ">
           <Image src={mobile} alt="Techscholar-app-image"></Image>
         </div>
-        <div className=" grid grid-cols-2 w-full gap-6 "></div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4  md:w-2/3 ">
+          <div className="aspect-video w-full  ">
+            <iframe
+              src="https://www.youtube.com/embed/tg6ME1kCp4w"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope;
+              picture-in-picture"
+              allowFullScreen
+              className="w-full h-full
+              rounded-xl"
+            ></iframe>
+          </div>
+          <div className="aspect-video w-full  ">
+            <iframe
+              src="https://www.youtube.com/embed/CPM-0u2Kur4"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full rounded-xl"
+            ></iframe>
+          </div>
+          <div className="aspect-video w-full  ">
+            <iframe
+              src="https://www.youtube.com/embed/rUkguB8jF4E"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full rounded-xl"
+            ></iframe>
+          </div>
+          <div className="aspect-video w-full  ">
+            <iframe
+              src="https://www.youtube.com/embed/ruIdI5hhsts"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full rounded-xl"
+            ></iframe>
+          </div>
+          <div className="aspect-video w-full ">
+            <iframe
+              src="https://www.youtube.com/embed/h8lc5yGuX34"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full  rounded-xl"
+            ></iframe>
+          </div>
+          <div className="aspect-video w-full  ">
+            <iframe
+              src="https://www.youtube.com/embed/-huQQkX66sU"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full rounded-xl"
+            ></iframe>
+          </div>
+        </div>
       </section>
     </>
   );
