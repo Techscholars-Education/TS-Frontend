@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Hero from "@/components/Home/Hero";
 import Benefits from "@/components/Home/Benefits";
@@ -10,20 +11,58 @@ import Footer from "@/components/Footer";
 import Packages from "@/components/Home/Packages";
 import Navbar from "@/components/Navbar";
 import Testimonialsslider from "@/components/Home/Testimonialsslider";
+
+import gsap from 'gsap';
+import { useGSAP } from "@gsap/react";
+import Script from 'next/script'
+
+
 const Home = () => {
+
+  useGSAP(() => {
+    gsap.timeline()
+      .to('.loading__text', {
+        delay: .2,
+        duration: 3,
+        opacity: 0,
+        yPercent: -400,
+        ease: "BezierEasing(0.19,1,0.22,1)"
+      }, 'p')
+      .to('.title', {
+        duration: 2,
+        delay: .3,
+        y: -10,
+        opacity: 1,
+        background: "white",
+        ease: "inOut"
+      }, '-=2.5')
+  })
+
   return (
     <>
-      <Navbar />
-      <Hero />
-      <Benefits />
-      <Curriculum />
-      <About />
-      <Packages />
-      <Testimonials />
-      <Testimonialsslider />
-      <Studenttest />
-      <Aboutapp />
-      <Footer />
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <div id="preloader">
+        <div className="loading__text">
+        WELCOME TO <br /> TECHSCHOLOR
+        </div>
+      </div>
+
+
+      <div className="title">
+        <Navbar />
+        <Hero />
+        <Benefits />
+        <Curriculum />
+        <About />
+        <Packages />
+        <Testimonials />
+        <Testimonialsslider />
+        <Studenttest />
+        <Aboutapp />
+        <Footer />
+
+      </div>
+
     </>
   );
 };

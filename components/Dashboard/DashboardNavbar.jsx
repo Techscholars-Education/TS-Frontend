@@ -1,10 +1,14 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import { FiBell, FiSearch, FiUser } from "react-icons/fi";
 import Image from "next/image";
 import men from "../../public/Dashboard/men_nav.jpg"
 import Link from "next/link";
 
 function DashboardNavbar(props) {
+  
+  const [search, setSearch] = useState(false)
+
   return (
     <div className="flex flex-wrap max-w-full place-items-center py-6 bg-white">
       <section className="relative mx-auto">
@@ -21,9 +25,15 @@ function DashboardNavbar(props) {
             </div>
            
             <div className="hidden xl:flex items-center space-x-5">
-              <a className="hover:bg-[#0079FC] hover:text-white bg-blue-100 h-8 w-8 p-2 flex items-center justify-center rounded-md transition-all ease-linear duration-300" href="#">
-                <FiSearch className="h-6 w-6" />
-              </a>
+                        
+            <form className={`max-w-md mx-auto ${search ? "block":"hidden"}`}>   
+        <input type="search" id="default-search" className="block bg-blue-100 w-full p-4 ps-7 text-sm text-black rounded-full focus:ring-blue-500 focus:border-blue-500" placeholder="Search"/>
+          
+</form>
+
+              <button className="hover:bg-[#0079FC] hover:text-white bg-blue-100 h-8 w-8 p-2 flex items-center justify-center rounded-md transition-all ease-linear duration-300" >
+                <FiSearch className="h-6 w-6" onClick={()=> {setSearch(!search)}} />
+              </button>
               <a className="hover:bg-[#0079FC] hover:text-white bg-blue-100 h-8 w-8 p-2 flex items-center justify-center rounded-md transition-all ease-linear duration-300" href="#">
                 <FiBell className="h-6 w-6 " />
                 <span className="flex absolute -mt-3 ml-3">
