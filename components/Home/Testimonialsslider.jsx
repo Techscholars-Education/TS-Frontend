@@ -1,12 +1,10 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import Image from "next/image";
-import quoteup from "../../public/Home/quoteup.svg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import star from "../../public/Home/star.svg";
+
 import { testimonialsData } from "./P_testimonials.js";
 
 const Testimonialsslider = () => {
