@@ -25,7 +25,7 @@ const Testimonialsslider = () => {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           initialSlide: 2,
         },
       },
@@ -41,56 +41,35 @@ const Testimonialsslider = () => {
 
   return (
     <div className="w-full mx-auto bg-gray-50 ">
-      <div className="w-[90%] mx-auto">
-        <Slider {...settings}>
-          {testimonialsData.map((item) => {
-            return (
-              <div className="py-4 md:py-10 " key={item.id}>
-                <div className="border lg:h-80 h-[38vh] p-4 rounded shadow-md mx-4 hover:shadow-xl hover:scale-105 duration-200 flex flex-col justify-between bg-white  ">
-                  <div>
-                    <Image
-                      className="invert w-6 md:w-8 "
-                      src={quoteup}
-                      alt="quoteup"
-                    />
-                  </div>
-
-                  <div className="py-4">
-                    <p className=" text-xs lg:text-base text-gray-600 font-Poppins leading-relaxed lg:leading-relaxed">
-                      {item.content}
-                    </p>
-                  </div>
-
-                  <div className="flex items-center justify-between font-Poppins ">
-                    <div className=" flex items-center space-x-3">
-                      <div className="font-Poppins">
-                        <h4 className=" text-xl font-semibold  text-gray-600">
-                          {item.parentName}
-                        </h4>
-                        <p className="text-xs lg:text-sm text-gray-500">
-                          {item.studentName}
-                          {" - "}
-                          <span>
-                            {item.class}
-                            <sup>th</sup>
-                            -[{item.aspirant}]
-                          </span>
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex justify-center items-center space-x-2 ">
-                      <Image src={star} alt="rating-star"></Image>
-                      <p className=" text-sm md:text-xs lg:text-base text-darkBlue font-semibold">
-                        {item.starRating}
+      <div className=" mx-auto">
+        <div className="w-11/12 mx-auto ">
+          <Slider {...settings}>
+            {testimonialsData.map((item) => {
+              return (
+                <div key={item.id} className=" w-[80%] sm:w-full py-10 ">
+                  <div className=" mx-4 relative hover:scale-105 duration-200 shadow-md rounded hover:shadow-xl 2xl:h-[32vh] xl:h-72 lg:h-96 h-56 flex flex-col justify-between bg-white">
+                    <div className=" top-0 px-6 py-4 md:p-6 xl:top-[10%] ">
+                      <p className="text-xs lg:text-lg text-gray-500 leading-normal tracking-wide">
+                        &ldquo; {item.content} &ldquo;
                       </p>
+                    </div>
+                    <div className="mb-2 px-4  xl:bottom-0 ">
+                      <div className="flex items-center space-x-2">
+                        <div className=" flex items-center space-x-3">
+                          <div className="font-Poppins my-2">
+                            <h4 className=" text-xs lg:text-xl font-medium text-black/80">
+                              {item.parentName}
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
-        </Slider>
+              );
+            })}
+          </Slider>
+        </div>
         <div className="flex justify-center items-center mt-14 pb-10">
           <Link
             className="text-center bg-TechBlue text-white font-Poppins font-medium rounded-full px-6 py-3 text-sm hover:bg-black hover:shadow-sm hover:shadow-black transition-all ease-linear duration-200"
