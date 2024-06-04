@@ -2,14 +2,14 @@ import React from "react";
 import Aboutslider from "./Aboutslider";
 const About = () => {
   return (
-    <section className="bg-white py-6 font-Poppins w-full mx-auto bg-gradient-to-r from-TechBlue/5 to-white ">
+    <section className="bg-white pt-6 font-Poppins w-full mx-auto bg-gradient-to-r from-TechBlue/5 to-white ">
       <div className=" w-full mx-auto  rounded-xl">
         <div className=" text-center">
           <h5 className="text-xs font-medium bg-gray-300 text-TechBlue font-Poppins border py-1 rounded-full px-4 inline-block">
             Our Features
           </h5>
         </div>
-        <h2 className="text-darkBlue font-semibold text-2xl  md:text-4xl text-center my-4 font-Poppins ">
+        <h2 className="text-darkBlue font-semibold text-2xl  md:text-4xl text-center my-4 font-Poppins px-2 ">
           Get ahead of your competition
         </h2>
         <div className="my-4 text-center  ">

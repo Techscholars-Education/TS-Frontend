@@ -7,7 +7,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import star from "../../public/Home/star.svg";
-// import Parents from "../../public/Home/Parents.jpg";
 import { testimonialsData } from "./P_testimonials.js";
 
 const Testimonialsslider = () => {
@@ -18,7 +17,7 @@ const Testimonialsslider = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
-    rtl: true,
+    rtl: false,
     autoplay: true,
     pauseOnHOver: true,
     responsive: [
@@ -47,7 +46,7 @@ const Testimonialsslider = () => {
           {testimonialsData.map((item) => {
             return (
               <div className="py-4 md:py-10 " key={item.id}>
-                <div className="border lg:h-[45vh] h-[38vh] p-4 rounded shadow-md mx-4 hover:shadow-xl hover:scale-105 duration-200 flex flex-col justify-between bg-white  ">
+                <div className="border lg:h-80 h-[38vh] p-4 rounded shadow-md mx-4 hover:shadow-xl hover:scale-105 duration-200 flex flex-col justify-between bg-white  ">
                   <div>
                     <Image
                       className="invert w-6 md:w-8 "

@@ -28,7 +28,6 @@ const Aboutslider = () => {
           slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
-          dots: true,
         },
       },
       {
@@ -95,7 +94,7 @@ const Aboutslider = () => {
   ];
 
   return (
-    <section className="  w-11/12 mx-auto pt-2 md:py-8  ">
+    <section className="  w-11/12 mx-auto pt-2 md:pt-8  ">
       <div className="slider-container">
         <Slider {...settings}>
           {data.map((item) => {
@@ -112,19 +111,19 @@ const Aboutslider = () => {
                     alt="slider-svgs"
                   ></Image>
                 </div>
-                <div className="px-12 text-center mt-4">
+                <div className="px-4 text-center mt-4">
                   <div className="mt-10">
                     <h3 className="rounded-full text-xs py-1 border inline-block px-4 text-TechBlue bg-blue-100">
                       {item.top}
                     </h3>
                   </div>
-                  <div className=" my-4">
+                  <div className=" mt-4">
                     <h3 className="text-base md:text-xl font-semibold text-darkBlue py-2">
                       {item.mid}
                     </h3>
                   </div>
                   <div>
-                    <h3 className="text-sm md:text-lg text-gray-600">
+                    <h3 className="text-sm md:text-base text-gray-600">
                       {item.bottom}
                     </h3>
                   </div>
