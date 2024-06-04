@@ -22,9 +22,9 @@ const Curriculum = () => {
           <div className="container px-2 md:px-5 py-12 md:py-24 mx-auto flex flex-wrap">
             <div className="flex flex-wrap -m-4">
               <div className="p-4 xl:w-1/3 lg:w-full">
-                <div className="flex hover:scale-105 duration-200 hover:-translate-x-4 hover:-translate-y-4 hover:shadow-xl  border-2 rounded-3xl border-black bg-white border-opacity-50 px-4 py-8 sm:flex-row flex-col shadow-md hover:shadow:xl h-full">
+                <div className="flex hover:scale-105 duration-200 hover:-translate-x-4 hover:-translate-y-4 hover:shadow-xl  border-2 rounded-3xl border-black  border-opacity-50 px-4 py-8 sm:flex-row flex-col shadow-md hover:shadow:xl h-full">
                   <div className="w-16 h-16 sm:mr-2 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-TechBlue flex-shrink-0">
-                    <Image src={jee}></Image>
+                    <Image src={jee} alt="jee-icon"></Image>
                   </div>
                   <div className="flex-grow">
                     <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
@@ -49,9 +49,9 @@ const Curriculum = () => {
                 </div>
               </div>
               <div className="p-4 xl:w-1/3 lg:w-full">
-                <div className="flex hover:scale-105 duration-200 hover:-translate-y-4 hover:shadow-xl border-2 rounded-3xl border-black bg-white border-opacity-50 px-4 py-8 sm:flex-row flex-col shadow-md hover:shadow:xl h-full">
+                <div className="flex hover:scale-105 duration-200 hover:-translate-y-4 hover:shadow-xl border-2 rounded-3xl border-black border-opacity-50 px-4 py-8 sm:flex-row flex-col shadow-md hover:shadow:xl h-full">
                   <div className="w-16 h-16 sm:mr-2 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-TechBlue flex-shrink-0">
-                    <Image src={neet}></Image>
+                    <Image src={neet} alt="neet-icon"></Image>
                   </div>
                   <div className="flex-grow">
                     <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
@@ -76,9 +76,9 @@ const Curriculum = () => {
                 </div>
               </div>
               <div className="p-4 xl:w-1/3 lg:w-full">
-                <div className="flex hover:scale-105 duration-200 hover:translate-x-4 hover:-translate-y-4 hover:shadow-xl  border-2 rounded-3xl border-black bg-white border-opacity-50 px-4 py-8 sm:flex-row flex-col shadow-md h-full">
+                <div className="flex hover:scale-105 duration-200 hover:translate-x-4 hover:-translate-y-4 hover:shadow-xl  border-2 rounded-3xl border-black border-opacity-50 px-4 py-8 sm:flex-row flex-col shadow-md h-full">
                   <div className="w-16 h-16 sm:mr-2 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-TechBlue flex-shrink-0">
-                    <Image src={foundation}></Image>
+                    <Image src={foundation} alt="foundation-icon"></Image>
                   </div>
                   <div className="flex-grow">
                     <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
