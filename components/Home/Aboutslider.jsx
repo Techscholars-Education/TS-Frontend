@@ -55,42 +55,42 @@ const Aboutslider = () => {
       image: scholarship,
       top: "Every Sunday",
       mid: "Scholarship Admission Exam",
-      bottom: "Techsholars scholarship test",
+      bottom: "Get upto 50% Scholarship! ",
     },
     {
       id: 2,
       image: call,
       top: "Contact Us",
       mid: "Schedule a call with our councillor",
-      bottom: "Know what we can offer",
+      bottom: "Request a callback",
     },
     {
       id: 3,
       image: mentorship,
-      top: "Faculty",
+      top: "Mentors",
       mid: "Personalised expert mentorship",
-      bottom: "Attention on what you want",
+      bottom: "Get mentored by IITians and Doctors",
     },
     {
       id: 4,
       image: students,
-      top: "Every Sunday",
+      top: "Community",
       mid: "Student Community",
-      bottom: "Techsholars scholarship test",
+      bottom: "Join and explore smartest student community",
     },
     {
       id: 5,
       image: analysis,
-      top: "Every Sunday",
+      top: "Faculty",
       mid: "Performance analysis",
-      bottom: "Techsholars scholarship test",
+      bottom: "Get your detailed performance evaluation",
     },
     {
       id: 6,
       image: HofTech,
-      top: "Every Sunday",
+      top: "Faculty",
       mid: "House of Techscholars",
-      bottom: "Techsholars scholarship test",
+      bottom: "Discover techscholars communities and activities",
     },
   ];
 
@@ -119,12 +119,14 @@ const Aboutslider = () => {
                     </h3>
                   </div>
                   <div className=" my-4">
-                    <h3 className="text-xl font-semibold text-darkBlue py-2">
+                    <h3 className="text-base md:text-xl font-semibold text-darkBlue py-2">
                       {item.mid}
                     </h3>
                   </div>
                   <div>
-                    <h3>{item.bottom}</h3>
+                    <h3 className="text-sm md:text-lg text-gray-600">
+                      {item.bottom}
+                    </h3>
                   </div>
                 </div>
               </div>
