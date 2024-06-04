@@ -20,8 +20,8 @@ const Studenttest = () => {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
+          slidesToScroll: 1,
+          initialSlide: 1,
         },
       },
       {
@@ -54,7 +54,7 @@ const Studenttest = () => {
           {studentTestimonials.map((item) => {
             return (
               <div key={item.id} className=" w-[80%] sm:w-full py-10 ">
-                <div className=" mx-4 relative hover:scale-105 duration-200 shadow-md rounded hover:shadow-xl 2xl:h-[32vh] lg:h-[40vh] h-[34vh] flex flex-col justify-between bg-white">
+                <div className=" mx-4 relative hover:scale-105 duration-200 shadow-md rounded hover:shadow-xl 2xl:h-[32vh] xl:h-72 lg:h-96 h-56 flex flex-col justify-between bg-white">
                   <div className=" top-0 px-6 py-4 md:p-6 xl:top-[10%] ">
                     <p className="text-xs lg:text-base text-gray-500 leading-normal tracking-wide">
                       &ldquo; {item.content} &ldquo;

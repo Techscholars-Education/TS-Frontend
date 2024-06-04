@@ -15,8 +15,8 @@ const Testimonials = () => {
         </h2>
         <div className="my-4 text-center  ">
           <p className="font-Poppins px-6 leading-normal  md:px-20 lg:px-44 text-xs md:text-sm text-gray-600 tracking-wide ">
-            Maximize your potential with Techscholars personalised mentorship,
-            performance analytics, and collaborative community
+            Sharing Heartfelt Stories of Trust in Our Comprehensive Educational
+            Approach
           </p>
         </div>
       </div>

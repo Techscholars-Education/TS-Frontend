@@ -10,12 +10,12 @@ const About = () => {
           </h5>
         </div>
         <h2 className="text-darkBlue font-semibold text-2xl  md:text-4xl text-center my-4 font-Poppins px-2 ">
-          Get ahead of your competition
+          Exclusive features to get ahead of your competition
         </h2>
         <div className="my-4 text-center  ">
           <p className="font-Poppins px-6 leading-normal  md:px-20 lg:px-44 text-xs md:text-sm text-gray-600 tracking-wide ">
-            An innovative Ed-tech organisation dedicated to democratising access
-            to high-quality STEM education across India
+            Secure your place among the toppers and set yourself apart from the
+            competition
           </p>
         </div>
       </div>
