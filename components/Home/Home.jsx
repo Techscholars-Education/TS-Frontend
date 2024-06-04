@@ -54,8 +54,8 @@ const Home = () => {
         referrerpolicy="no-referrer"
       />
       <div id="preloader">
-        <div className="loading__text">
-          WELCOME TO <br /> TECHSCHOLOR
+        <div className="loading__text font-Poppins">
+          WELCOME TO <br /> TECHSCHOLARS
         </div>
       </div>
 
