@@ -29,14 +29,14 @@ function App() {
   };
 
   return (
-    <div className=" flex items-center justify-between  my-4 font-Poppins rounded-full border md:w-1/2 lg:w-6/12 pl-4 mx-4 md:mx-0 ">
-      <div className="flex justify-start  ">
-        <CiSearch className=" text-2xl md:text-5xl text-gray-400" />
+    <div className=" flex items-center justify-between  my-4 font-Poppins rounded-full border md:w-1/2 lg:w-4/12 pl-4 mx-4 md:mx-0 bg-white ">
+      <div className="flex justify-start rounded-full ">
+        <CiSearch className=" text-xl md:text-5xl text-gray-400" />
       </div>
       <div className="w-full relative ">
         <input
           type="text"
-          className="w-full p-2 border-gray-300 rounded-md focus:outline-none "
+          className="w-full p-3 border-gray-300 rounded-md focus:outline-none "
           placeholder="Search..."
           value={query}
           onChange={handleInputChange}

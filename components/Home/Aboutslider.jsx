@@ -19,7 +19,7 @@ const Aboutslider = () => {
     autoplaySpeed: 2000,
     slidesToScroll: 1,
     initialSlide: 0,
-    rtl: true,
+    rtl: false,
     autoplay: true,
     responsive: [
       {
@@ -28,7 +28,6 @@ const Aboutslider = () => {
           slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
-          dots: true,
         },
       },
       {
@@ -55,54 +54,55 @@ const Aboutslider = () => {
       image: scholarship,
       top: "Every Sunday",
       mid: "Scholarship Admission Exam",
-      bottom: "Techsholars scholarship test",
+      bottom: "Get upto 50% Scholarship! ",
     },
     {
       id: 2,
       image: call,
       top: "Contact Us",
       mid: "Schedule a call with our councillor",
-      bottom: "Know what we can offer",
+      bottom: "Request a callback",
     },
     {
       id: 3,
       image: mentorship,
-      top: "Faculty",
+      top: "Mentors",
       mid: "Personalised expert mentorship",
-      bottom: "Attention on what you want",
+      bottom: "Get mentored by IITians and Doctors",
     },
     {
       id: 4,
       image: students,
-      top: "Every Sunday",
+      top: "Community",
       mid: "Student Community",
-      bottom: "Techsholars scholarship test",
+      bottom: "Join and explore smartest student community",
     },
     {
       id: 5,
       image: analysis,
-      top: "Every Sunday",
+      top: "Faculty",
       mid: "Performance analysis",
-      bottom: "Techsholars scholarship test",
+      bottom: "Get your detailed performance evaluation",
     },
     {
       id: 6,
       image: HofTech,
-      top: "Every Sunday",
+      top: "Faculty",
       mid: "House of Techscholars",
-      bottom: "Techsholars scholarship test",
+      bottom: "Discover techscholars communities and activities",
     },
   ];
 
   return (
-    <section className="  w-11/12 mx-auto pt-2 md:py-6 md:my-8  ">
+    <section className="  w-11/12 mx-auto pt-2 md:pt-8  ">
       <div className="slider-container">
-        <Slider className="" {...settings}>
+        <Slider {...settings}>
           {data.map((item) => {
             return (
               <div
                 key={item.id}
-                className=" flex flex-col justify-center items-center py-10 "
+                style={{ width: 100 }}
+                className=" flex flex-col justify-center items-center py-10  "
               >
                 <div className="w-full">
                   <Image
@@ -111,19 +111,21 @@ const Aboutslider = () => {
                     alt="slider-svgs"
                   ></Image>
                 </div>
-                <div className="px-12 text-center mt-4">
+                <div className="px-4 text-center mt-4">
                   <div className="mt-10">
                     <h3 className="rounded-full text-xs py-1 border inline-block px-4 text-TechBlue bg-blue-100">
                       {item.top}
                     </h3>
                   </div>
-                  <div className=" my-4">
-                    <h3 className="text-xl font-semibold text-darkBlue py-2">
+                  <div className=" mt-4">
+                    <h3 className="text-base md:text-xl font-semibold text-darkBlue py-2">
                       {item.mid}
                     </h3>
                   </div>
                   <div>
-                    <h3>{item.bottom}</h3>
+                    <h3 className="text-sm md:text-base text-gray-600">
+                      {item.bottom}
+                    </h3>
                   </div>
                 </div>
               </div>

@@ -4,7 +4,6 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 
 const useLogin = () => {
-
   const [checking, setChecking] = useState(false);
   const login = async (username, password) => {
     try {
@@ -14,22 +13,24 @@ const useLogin = () => {
         body: JSON.stringify({ username, password }),
       });
       const data = await res.json();
-      
+
       if (data.error) {
         throw new Error(data.error);
       }
 
       if (data.access_token) {
         toast.success("Login successful");
-        const sessionExpirationTime = new Date(new Date().getTime() + 5 * 60 * 60 * 1000);
+        const sessionExpirationTime = new Date(
+          new Date().getTime() + 5 * 60 * 60 * 1000
+        );
         Cookies.set("authCookie", data.access_token, {
           expires: sessionExpirationTime,
         });
         window.location.reload();
         setChecking(true);
-      } else if(data.detail){
+      } else if (data.detail) {
         toast.error(data.detail);
-      }else {
+      } else {
         toast.error("Email or password is not correct");
       }
     } catch (error) {

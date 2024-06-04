@@ -15,10 +15,9 @@ const Navbar = () => {
   const [isBurgerClicked, setIsBurgerClicked] = useState(false);
   const [top, setTop] = useState(true);
   const [popupVisibility, setpopupVisibility] = useState(true);
-  const[popUp, setPopUp] = useState(false)
-  const [hover,setHover] = useState(false)
+  const [popUp, setPopUp] = useState(false);
+  const [hover, setHover] = useState(false);
   const pathname = usePathname();
-
 
   useEffect(() => {
     const scrollHandler = () => {
@@ -28,68 +27,66 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", scrollHandler);
   }, [top]);
 
-  useEffect(()=> {
-   setTimeout(() => {
-    setPopUp(true)
-   }, 5000);
-  },[])
+  useEffect(() => {
+    setTimeout(() => {
+      setPopUp(true);
+    }, 5000);
+  }, []);
 
   return (
     <>
-      {popUp &&
+      {popUp && (
         <motion.div
-           initial={{ opacity: 0 }}
-      animate={{ opacity: popUp ? 1 : 0 }}
-      transition={{ duration: 1 }}
-
-        className={`bg-black text-white relative flex justify-center ${
-          !popupVisibility && "hidden"
-        } `}
-      >
-        <p className="font-Poppins py-4 md:py-0 text-center px-2 font-normal text-xs md:text-sm lg:text-base uppercase flex items-center ">
-          <Image
-            className="hidden md:block w-10 md:mr-10 "
-            src={siren}
-            unoptimized={true}
-            alt="siren-gif"
-          ></Image>
-          Enroll today and start your IITJEE and NEET preparation | batches are
-          filling fast!
-          <Image
-            className="hidden md:block w-10 md:w-16 mb-3 md:ml-10 "
-            src={speaker}
-            unoptimized={true}
-            alt="speaker-gif"
-          ></Image>
-        </p>
-        <button
-          onClick={() => {
-            setpopupVisibility(false);
-          }}
-          className="absolute top-[8vw]  md:top-[33%] right-2  md:right-4 xl:right-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: popUp ? 1 : 0 }}
+          transition={{ duration: 1 }}
+          className={`bg-black text-white relative flex justify-center ${
+            !popupVisibility && "hidden"
+          } `}
         >
-          <RxCross1 className="text-white text-2xl" />
-        </button>
-      </motion.div>
-      }
+          <p className="font-Poppins py-4 md:py-0 text-center px-2 font-normal text-xs md:text-sm lg:text-base uppercase flex items-center ">
+            <Image
+              className="hidden md:block w-10 md:mr-10 "
+              src={siren}
+              unoptimized={true}
+              alt="siren-gif"
+            ></Image>
+            Enroll today and start your IITJEE and NEET preparation | batches
+            are filling fast!
+            <Image
+              className="hidden md:block w-10 md:w-16 mb-3 md:ml-10 "
+              src={speaker}
+              unoptimized={true}
+              alt="speaker-gif"
+            ></Image>
+          </p>
+          <button
+            onClick={() => {
+              setpopupVisibility(false);
+            }}
+            className="absolute top-[8vw]  md:top-[33%] right-2  md:right-4 xl:right-8"
+          >
+            <RxCross1 className="text-white text-2xl" />
+          </button>
+        </motion.div>
+      )}
       <nav
-        className={`bg-white font-Poppins border-b  text-stone-800 transition-all duration-700 py-6 md:py-6 w-full sticky top-0 z-10 ${
-          !top && "shadow-lg"
+        className={`bg-gradient-to-r from-TechBlue/5 to-white font-Poppins border-b  text-stone-800 transition-all duration-200 py-6 md:py-6 w-full sticky top-0 z-10 ${
+          !top && "shadow-lg bg-white"
         } `}
       >
-        <ul className="flex w-5/6 mx-auto justify-between items-center font-Jost ">
-          <h1 className="text-lg md:text-xl text-darkBlue font-medium justify-center font-Jost flex items-center ">
-            <Image
-              className="w-7 md:w-10  mr-2"
-              src={Logo}
-              alt="Techscholar-logo"
-            />
-            Techscholars
-          </h1>
-
-          {/* FOR BIG SCREENS */}
-
-          <div className="hidden lg:flex justify-center lg:space-x-4 xl:space-x-10 font-Poppins  items-center  text-darkBlue pl-10">
+        <div className="flex w-11/12 mx-auto justify-between items-center font-Jost  ">
+          <div className="lg:w-1/4">
+            <h1 className="text-lg md:text-xl text-darkBlue font-medium justify-center font-Jost flex items-center ">
+              <Image
+                className="w-7 md:w-10  mr-2"
+                src={Logo}
+                alt="Techscholar-logo"
+              />
+              Techscholars
+            </h1>
+          </div>
+          <ul className="hidden lg:flex justify-center lg:space-x-4 xl:space-x-10 font-Poppins  items-center lg:w-[60%]  text-darkBlue mx-auto ">
             <li
               className={`cursor-pointer text-base p-2 rounded-md ${
                 pathname === "/" ? "text-TechBlue" : "text-darkBlue"
@@ -119,7 +116,8 @@ const Navbar = () => {
             >
               <Link href="/councillor">Councillor</Link>
             </li>
-          </div>
+          </ul>
+          {/* Hamburger */}
           <div className="lg:hidden flex justify-center items-center">
             <button
               onClick={() => {
@@ -133,28 +131,42 @@ const Navbar = () => {
               )}
             </button>
           </div>
-          <div className="hidden font-Poppins lg:flex justify-center items-center space-x-3  h-[3vw] w-[20vw] ">
-            <li onMouseEnter={()=>{setHover(!hover)}}
-              onMouseLeave={()=>{setHover(!hover)}}
+          <ul className="hidden font-Poppins lg:flex justify-center items-center space-x-3 lg:w-1/4 ">
+            <li
+              onMouseEnter={() => {
+                setHover(!hover);
+              }}
+              onMouseLeave={() => {
+                setHover(!hover);
+              }}
               className={`cursor-pointer text-base transition-all`}
             >
-              <Link className={` ${hover ? "bg-TechBlue text-white border-none shadow-sm shadow-TechBlue" :""} px-6 border py-3 rounded-md `} href="/login">
+              <Link
+                className={` ${
+                  hover
+                    ? "bg-TechBlue text-white border-none shadow-sm shadow-TechBlue text-sm"
+                    : ""
+                } px-4 border py-3 rounded-md `}
+                href="/login"
+              >
                 Login
               </Link>
             </li>
 
-            <li
-              className={`cursor-pointer text-base`}
-            >
+            <li className={`cursor-pointer text-base`}>
               <Link
-                className={`${hover?"border ":"bg-TechBlue  text-white"}  py-3 px-2 rounded-md flex items-center justify-center  hover:bg-black  transition-all ease-linear duration-200 hover:shadow-sm hover:shadow-black`}
+                className={`${
+                  hover ? "border " : "bg-TechBlue  text-white"
+                }  py-3 lg:px-2 xl:px-4 rounded-md flex items-center justify-center  hover:bg-black  transition-all ease-linear duration-200 hover:shadow-sm hover:shadow-black`}
                 href="/signin"
               >
                 Get Started
               </Link>
             </li>
-          </div>
-        </ul>
+          </ul>
+        </div>
+
+        {/* FOR BIG SCREENS */}
 
         {/* FOR SMALL SCREENS */}
         <div

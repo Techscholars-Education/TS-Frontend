@@ -7,118 +7,101 @@ import foundation from "../../public/Home/foundation.svg";
 import { Slide } from "react-awesome-reveal";
 const Curriculum = () => {
   return (
-    <section className="bg-TechBlue/30 text-black my-16 py-16">
-      <div className=" w-11/12 xl:w-10/12 mx-auto ">
+    <section className=" text-black py-16 bg-gradient-to-r from-TechBlue/5 to-white ">
+      <div className=" w-11/12 mx-auto ">
         <h2 className="text-black font-semibold text-2xl  md:text-4xl  text-center my-4 font-Poppins ">
           Explore our exam categories
         </h2>
         <div className="my-4 text-center  ">
-          <p className="font-Poppins px-6 leading-normal  md:px-20 lg:px-44 text-xs md:text-sm tracking-wide ">
-            Welcome to TECHSCHOLARS. Transforming average students into toppers
-            with our innovative teaching with our services.
+          <p className="font-Poppins px-6 leading-normal  md:px-20 lg:px-44 text-xs md:text-sm tracking-wide text-gray-600 ">
+            Unleash your potential and embark on your journey to join the top 1%
           </p>
         </div>
-
         {/* Exam category */}
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3  my-10 ">
-          <Slide
-            triggerOnce="true"
-            cascade
-            damping={0.3}
-            direction="up"
-            duration={500}
-          >
-            <div className=" h-full flex justify-center items-start p-4 xl:p-8 border-2 border-black rounded-2xl  ">
-              <div className=" p-2 lg:w-[75px]  bg-black rounded-full  ">
-                <Image
-                  className=" mx-auto my-1  "
-                  src={jee}
-                  alt="jee-icon"
-                ></Image>
+        <section className="text-gray-600 body-font font-Poppins">
+          <div className="container px-2 md:px-5 py-12 md:py-24 mx-auto flex flex-wrap">
+            <div className="flex flex-wrap -m-4">
+              <div className="p-4 xl:w-1/3 lg:w-full">
+                <div className="flex hover:scale-105 duration-200 hover:-translate-x-4 hover:-translate-y-4 hover:shadow-xl  border-2 rounded-3xl border-black  border-opacity-50 px-4 py-8 sm:flex-row flex-col shadow-md hover:shadow:xl h-full">
+                  <div className="w-16 h-16 sm:mr-2 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-TechBlue flex-shrink-0">
+                    <Image src={jee} alt="jee-icon"></Image>
+                  </div>
+                  <div className="flex-grow">
+                    <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
+                      JEE
+                    </h2>
+                    <p className="leading-relaxed text-base">
+                      Start your IITJEE Preparation today with our specalised
+                      courses curated by best faculties of India
+                    </p>
+                    <ul className="mt-3 text-black inline-flex items-center  justify-start space-x-2 w-full text-xs">
+                      <li className="border border-black rounded-full px-4 py-1">
+                        11<sup>th</sup>class
+                      </li>
+                      <li className="border border-black rounded-full px-4 py-1">
+                        12<sup>th</sup>class
+                      </li>
+                      <li className="border border-black rounded-full px-4 py-1">
+                        Target 13<sup>th</sup>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-
-              <div className=" w-full  ">
-                <h3 className=" font-Poppins text-xl font-semibold px-2 text-black ">
-                  Jee
-                </h3>
-                <p className="text-xs lg:text-sm font-Poppins text-black py-2 leading-normal px-2">
-                  Master the concepts and strategies needed to excel in JEE with
-                  our comprehensive courses and expert guidance.
-                </p>
-                <div className="flex mt-4 space-x-2 flex-wrap ">
-                  <div className="border border-black text-black rounded-full text-xs px-2 py-1 my-1">
-                    11<sup>th</sup> Class
+              <div className="p-4 xl:w-1/3 lg:w-full">
+                <div className="flex hover:scale-105 duration-200 hover:-translate-y-4 hover:shadow-xl border-2 rounded-3xl border-black border-opacity-50 px-4 py-8 sm:flex-row flex-col shadow-md hover:shadow:xl h-full">
+                  <div className="w-16 h-16 sm:mr-2 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-TechBlue flex-shrink-0">
+                    <Image src={neet} alt="neet-icon"></Image>
                   </div>
-                  <div className="border border-black text-black rounded-full text-xs px-2 py-1 my-1">
-                    12<sup>th</sup> Class
+                  <div className="flex-grow">
+                    <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
+                      NEET
+                    </h2>
+                    <p className="leading-relaxed text-base">
+                      Achieve top scores in NEET with our specialised courses,
+                      get in-depth understanding of PCB.
+                    </p>
+                    <ul className="mt-3 text-black inline-flex items-center  justify-start space-x-2 w-full text-xs">
+                      <li className="border border-black rounded-full px-4 py-1">
+                        11<sup>th</sup>class
+                      </li>
+                      <li className="border border-black rounded-full px-4 py-1">
+                        12<sup>th</sup>class
+                      </li>
+                      <li className="border border-black rounded-full px-4 py-1">
+                        Target 13<sup>th</sup>
+                      </li>
+                    </ul>
                   </div>
-                  <div className="border border-black text-black rounded-full text-xs px-1 py-1 my-1">
-                    Target 13<sup>th</sup>
+                </div>
+              </div>
+              <div className="p-4 xl:w-1/3 lg:w-full">
+                <div className="flex hover:scale-105 duration-200 hover:translate-x-4 hover:-translate-y-4 hover:shadow-xl  border-2 rounded-3xl border-black border-opacity-50 px-4 py-8 sm:flex-row flex-col shadow-md h-full">
+                  <div className="w-16 h-16 sm:mr-2 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-TechBlue flex-shrink-0">
+                    <Image src={foundation} alt="foundation-icon"></Image>
+                  </div>
+                  <div className="flex-grow">
+                    <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
+                      Foundation
+                    </h2>
+                    <p className="leading-relaxed text-base">
+                      Establish a solid foundation and take a step ahead of your
+                      peers in your academic journey
+                    </p>
+                    <ul className="mt-3 text-black inline-flex items-center  justify-start space-x-2 w-full text-xs">
+                      <li className="border border-black rounded-full px-4 py-1">
+                        9<sup>th</sup>class
+                      </li>
+                      <li className="border border-black rounded-full px-4 py-1">
+                        10<sup>th</sup>class
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div className=" h-full flex  justify-center items-start p-4 xl:p-8 border-2 border-black rounded-2xl ">
-              <div className=" p-2 w-[70px]  bg-black rounded-full">
-                <Image
-                  className=" mx-auto my-1  "
-                  src={neet}
-                  alt="neet-icon"
-                ></Image>
-              </div>
-
-              <div className=" w-full ">
-                <h3 className=" font-Poppins text-xl font-semibold px-2 text-black ">
-                  Neet
-                </h3>
-                <p className="text-xs lg:text-sm font-Poppins text-black py-2 leading-normal px-2">
-                  Achieve top scores in NEET with our specialized courses, get
-                  in-depth understanding of medical concepts.
-                </p>
-                <div className="flex mt-4 space-x-2 flex-wrap">
-                  <div className="border border-black text-black rounded-full text-xs px-2 py-1 my-1">
-                    11<sup>th</sup> Class
-                  </div>
-                  <div className="border border-black text-black rounded-full text-xs px-2 py-1 my-1">
-                    12<sup>th</sup> Class
-                  </div>
-                  <div className="border border-black text-black rounded-full text-xs px-1 py-1 my-1">
-                    Target 13<sup>th</sup>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className=" h-full flex justify-center items-start p-4 xl:p-8 border-2 border-black rounded-2xl  ">
-              <div className=" p-2 w-[70px]  bg-black rounded-full">
-                <Image
-                  className=" mx-auto my-2 "
-                  src={foundation}
-                  alt="foundation-icon"
-                ></Image>
-              </div>
-
-              <div className=" w-full text-black">
-                <h3 className=" font-Poppins text-xl font-semibold px-2  ">
-                  Foundation
-                </h3>
-                <p className="text-xs lg:text-sm font-Poppins py-2 leading-normal px-2">
-                  Build a strong academic base with our foundational courses,
-                  designed to prepare you for competitive exams.
-                </p>
-                <div className="flex mt-4 space-x-2 flex-wrap">
-                  <div className="border border-black rounded-full text-xs px-2 py-1 my-1">
-                    9<sup>th</sup> Class
-                  </div>
-                  <div className="border border-black rounded-full text-xs px-2 py-1 my-1">
-                    10<sup>th</sup> Class
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Slide>
-        </div>
+          </div>
+        </section>
       </div>
     </section>
   );

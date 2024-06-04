@@ -29,15 +29,15 @@ const Costing = (props) => {
 
           <ul className="pt-6 px-6 space-y-4">
             <li className="flex justify-start space-x-2 items-center">
-              <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
+              <MdDone className="bg-green-600 text-xl text-white rounded-full p-1" />
               <span className="text-gray-600 text-xs md:text-sm">Lectures</span>
             </li>
             <li className="flex justify-start space-x-2 items-center">
-              <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
+              <MdDone className="bg-green-600 text-xl text-white rounded-full p-1" />
               <span className="text-gray-600 text-xs md:text-sm">DPPs</span>
             </li>
             <li className="flex justify-start space-x-2 items-center  ">
-              <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
+              <MdDone className="bg-green-600 text-xl text-white rounded-full p-1" />
               <span className="text-gray-600 text-xs md:text-sm">
                 Weekly test series
               </span>
@@ -93,7 +93,7 @@ const Costing = (props) => {
           <div className="w-full flex justify-center items-center my-4">
             <Link
               href="/dashboard/courses"
-              className="border w-5/6 rounded-full px-6 py-3 text-center  "
+              className="border w-5/6 rounded-full px-4 md:px-6 py-2 md:py-3 text-center hover:bg-black hover:text-white duration-200 "
             >
               Purchase Now
             </Link>
@@ -115,34 +115,34 @@ const Costing = (props) => {
 
           <ul className="pt-6 px-6 space-y-4">
             <li className="flex justify-start space-x-2 items-center">
-              <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
+              <MdDone className="bg-green-400 text-xl text-TechBlue rounded-full p-1" />
               <span className=" text-xs md:text-sm text-white">Lectures</span>
             </li>
             <li className="flex justify-start space-x-2 items-center">
-              <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
+              <MdDone className="bg-green-400  text-xl text-TechBlue rounded-full p-1" />
               <span className=" text-xs md:text-sm text-white">DPPs</span>
             </li>
             <li className="flex justify-start space-x-2 items-center  ">
-              <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
+              <MdDone className="bg-green-400 text-xl text-TechBlue rounded-full p-1" />
               <span className=" text-xs md:text-sm text-white">
                 Weekly test series
               </span>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
-              <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
+              <MdDone className="bg-green-400  text-xl text-TechBlue rounded-full p-1" />
               <span className=" text-xs md:text-sm text-white">
                 Access the smartest student community
               </span>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
-              <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
+              <MdDone className="bg-green-400  text-xl text-TechBlue rounded-full p-1" />
               <span className=" text-xs md:text-sm text-white">
                 <span className="font-bold text-white-600">LIVE</span> doubt
                 clearing sessions
               </span>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
-              <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
+              <MdDone className="bg-green-400 text-xl text-TechBlue rounded-full p-1" />
               <span className=" text-xs md:text-sm text-white">
                 Special Access to{" "}
                 <span className="font-bold "> BRAHMASTRA</span>
@@ -176,7 +176,7 @@ const Costing = (props) => {
           <div className="w-full flex justify-center items-center my-4">
             <Link
               href="/dashboard/courses"
-              className="border w-5/6 rounded-full text-center  px-6 py-3 bg-white text-TechBlue"
+              className="border w-5/6 rounded-full text-center  px-4 md:px-6 py-2 md:py-3 bg-white text-TechBlue hover:bg-black hover:text-white duration-200"
             >
               Purchase Now
             </Link>
@@ -203,37 +203,37 @@ const Costing = (props) => {
 
           <ul className="pt-6 px-6 space-y-4">
             <li className="flex justify-start space-x-2 items-center">
-              <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
+              <MdDone className="bg-green-600 text-xl text-white rounded-full p-1" />
               <span className="text-gray-600 text-xs md:text-sm">Lectures</span>
             </li>
             <li className="flex justify-start space-x-2 items-center">
-              <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
+              <MdDone className="bg-green-600 text-xl text-white rounded-full p-1" />
               <span className="text-gray-600 text-xs md:text-sm">
                 Weekly test series
               </span>
             </li>
             <li className="flex justify-start space-x-2 items-center   ">
-              <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
+              <MdDone className="bg-green-600 text-xl text-white rounded-full p-1" />
               <span className="text-gray-500 text-xs md:text-sm font-medium">
                 Doubt clearing sessions
               </span>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
-              <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
+              <MdDone className="bg-green-600 text-xl text-white rounded-full p-1" />
               <span className="text-gray-600 text-xs md:text-sm">
                 Access the smartest student community
               </span>
             </li>
 
             <li className="flex justify-start space-x-2 items-center ">
-              <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
+              <MdDone className="bg-green-600 text-xl text-white rounded-full p-1" />
               <span className=" text-xs md:text-sm text-gray-600">
                 <span className="font-bold text-white-600">LIVE</span> doubt
                 clearing sessions
               </span>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
-              <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
+              <MdDone className="bg-green-600 text-xl text-white rounded-full p-1" />
               <span className=" text-xs md:text-sm text-gray-600">
                 Special Access to{" "}
                 <span className="font-bold "> BRAHMASTRA</span>
@@ -241,20 +241,20 @@ const Costing = (props) => {
               </span>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
-              <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
+              <MdDone className="bg-green-600 text-xl text-white rounded-full p-1" />
               <span className="text-gray-600 text-xs md:text-sm ">
                 <span className="font-bold">24/7</span> Mentorship guide
               </span>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
-              <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
+              <MdDone className="bg-green-600 text-xl text-white rounded-full p-1" />
               <span className="text-gray-600 text-xs md:text-sm ">
                 Weekly <span className="font-bold">LIVE</span> Mentorship
                 Sessions
               </span>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
-              <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
+              <MdDone className="bg-green-600 text-xl text-white rounded-full p-1" />
               <span className="text-gray-600 text-xs md:text-sm ">
                 Special Access to
                 <span className="font-bold "> Personal AI Mentor</span>
@@ -266,7 +266,7 @@ const Costing = (props) => {
           <div className="w-full flex justify-center items-center my-4 ">
             <Link
               href="/dashboard/courses"
-              className="border w-5/6 rounded-full px-6 py-3 text-center  "
+              className="border w-5/6 rounded-full px-4 md:px-6 py-2 md:py-3 text-center hover:bg-black hover:text-white duration-200  "
             >
               Purchase Now
             </Link>
