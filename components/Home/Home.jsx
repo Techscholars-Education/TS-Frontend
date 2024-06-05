@@ -73,6 +73,13 @@ const Home = () => {
         background: "white",
         ease: "inOut"
       }, '-=2.5')
+      gsap.to('.overlay', {
+        duration:1.1,
+        delay: 3.7,
+        width:0,
+        display:"none",
+        background:"black"
+      })
   })
 
   useEffect(()=>{

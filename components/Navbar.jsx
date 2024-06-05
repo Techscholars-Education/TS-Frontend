@@ -131,7 +131,7 @@ const Navbar = () => {
               )}
             </button>
           </div>
-          <ul className="hidden font-Poppins lg:flex justify-center items-center space-x-3 lg:w-1/4 ">
+          <ul className="hidden font-Poppins lg:flex justify-center items-center space-x-3 lg:w-1/4 h-[3vw]">
             <li
               onMouseEnter={() => {
                 setHover(!hover);
