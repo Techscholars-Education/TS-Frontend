@@ -4,7 +4,6 @@ import Image from "next/image";
 import jee from "../../public/Home/jee.svg";
 import neet from "../../public/Home/neet.svg";
 import foundation from "../../public/Home/foundation.svg";
-import { Slide } from "react-awesome-reveal";
 const Curriculum = () => {
   return (
     <section className=" text-black py-16 bg-white ">
