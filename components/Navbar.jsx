@@ -70,7 +70,7 @@ const Navbar = () => {
         </motion.div>
       )}
       <nav
-        className={`bg-gradient-to-r from-TechBlue/5 to-white font-Poppins border-b  text-stone-800 transition-all duration-200 py-6 md:py-6 w-full sticky top-0 z-10 ${
+        className={`bg-white font-Poppins border-b  text-stone-800 transition-all duration-200 py-6 md:py-6 w-full sticky top-0 z-10 ${
           !top && "shadow-lg bg-white"
         } `}
       >

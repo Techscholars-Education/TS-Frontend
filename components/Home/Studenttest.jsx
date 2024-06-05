@@ -14,7 +14,7 @@ const Studenttest = () => {
     initialSlide: 0,
     autoplay: true,
     pauseOnHOver: true,
-    rtl: false,
+    rtl: true,
     responsive: [
       {
         breakpoint: 768,
@@ -38,7 +38,7 @@ const Studenttest = () => {
     <section className="bg-gray-100 to-white py-16 font-Poppins w-full mx-auto  ">
       <div className=" w-full mx-auto  rounded-xl">
         <div className=" text-center">
-          <h5 className="text-xs font-medium bg-gray-300 text-TechBlue font-Poppins border py-1 rounded-full px-4 inline-block">
+          <h5 className="text-xs font-medium bg-blue-100 text-TechBlue bg-TechBlue/10 font-Poppins py-2 rounded-full px-4 inline-block">
             Testimonials
           </h5>
         </div>

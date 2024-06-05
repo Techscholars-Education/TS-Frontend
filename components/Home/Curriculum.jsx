@@ -7,7 +7,7 @@ import foundation from "../../public/Home/foundation.svg";
 import { Slide } from "react-awesome-reveal";
 const Curriculum = () => {
   return (
-    <section className=" text-black py-16 bg-gradient-to-r from-TechBlue/5 to-white ">
+    <section className=" text-black py-16 bg-white ">
       <div className=" w-11/12 mx-auto ">
         <div className=" text-center">
           <h5 className="text-xs font-medium bg-gray-100 text-TechBlue bg-TechBlue/10 font-Poppins py-2 rounded-full px-4 inline-block">
@@ -24,7 +24,7 @@ const Curriculum = () => {
         </div>
         {/* Exam category */}
         <section className="text-gray-600 body-font font-Poppins">
-          <div className="container px-2 md:px-5 py-12 md:py-24 mx-auto flex flex-wrap">
+          <div className="container px-2 md:px-5 py-12 md:py-16 mx-auto flex flex-wrap">
             <div className="flex flex-wrap -m-4">
               <div className="p-4 xl:w-1/3 lg:w-full">
                 <div className="flex hover:scale-105 duration-200 hover:-translate-x-4 hover:-translate-y-4 hover:shadow-xl  border-2 rounded-3xl border-black  border-opacity-50 px-4 py-8 sm:flex-row flex-col shadow-md hover:shadow:xl h-full">

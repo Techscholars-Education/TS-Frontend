@@ -102,7 +102,7 @@ const Aboutslider = () => {
               <div
                 key={item.id}
                 style={{ width: 100 }}
-                className=" flex flex-col justify-center items-center py-10 border  rounded-xl max-w-72 xl:max-w-[400px] h-[46vh] md:h-[50vh] lg:h-[55vh] xl:h-[50vh] mx-auto ml-7 md:ml-6 "
+                className=" flex flex-col justify-center items-center py-10 border  rounded-xl max-w-72 xl:max-w-[400px] h-[46vh] md:h-[50vh] lg:h-[55vh] xl:h-[50vh] mx-auto ml-7 md:ml-7 lg:ml-3 xl:ml-5 "
               >
                 <div className=" w-full mx-auto ">
                   <Image

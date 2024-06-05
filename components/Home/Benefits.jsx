@@ -10,7 +10,7 @@ import { TiArrowRight } from "react-icons/ti";
 
 const Benefits = () => {
   return (
-    <section className="w-full bg-gradient-to-r from-TechBlue/5 to-white py-10  ">
+    <section className="w-full bg-white py-10  ">
       <div className=" w-11/12 xl:w-10/12 grid grid-cols-1 md:grid-cols-2  mx-auto gap-4 ">
         {/* container -1 */}
         <div className=" bg-[#DCD9F866]/30 rounded-xl flex px-6 py-6 lg:py-8 xl:py-12 font-Poppins hover:shadow-xl duration-200 transition-all ">
