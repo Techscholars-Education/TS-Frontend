@@ -9,6 +9,11 @@ const Curriculum = () => {
   return (
     <section className=" text-black py-16 bg-gradient-to-r from-TechBlue/5 to-white ">
       <div className=" w-11/12 mx-auto ">
+        <div className=" text-center">
+          <h5 className="text-xs font-medium bg-gray-100 text-TechBlue bg-TechBlue/10 font-Poppins py-2 rounded-full px-4 inline-block">
+            Exam Categories
+          </h5>
+        </div>
         <h2 className="text-black font-semibold text-2xl  md:text-4xl  text-center my-4 font-Poppins ">
           Explore our exam categories
         </h2>

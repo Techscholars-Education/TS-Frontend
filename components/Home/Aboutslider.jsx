@@ -19,7 +19,7 @@ const Aboutslider = () => {
     autoplaySpeed: 2000,
     slidesToScroll: 1,
     initialSlide: 0,
-    rtl: false,
+    rtl: true,
     autoplay: true,
     responsive: [
       {
@@ -94,26 +94,26 @@ const Aboutslider = () => {
   ];
 
   return (
-    <section className="  w-11/12 mx-auto pt-2 md:pt-8  ">
-      <div className="slider-container">
+    <section className=" w-11/12 xl:w-11/12 mx-auto pt-2 md:pt-8  ">
+      <div className=" h-full mx-auto pb-10 ">
         <Slider {...settings}>
           {data.map((item) => {
             return (
               <div
                 key={item.id}
                 style={{ width: 100 }}
-                className=" flex flex-col justify-center items-center py-10  "
+                className=" flex flex-col justify-center items-center py-10 border  rounded-xl max-w-72 xl:max-w-[400px] h-[46vh] md:h-[50vh] lg:h-[55vh] xl:h-[50vh] mx-auto ml-7 md:ml-6 "
               >
-                <div className="w-full">
+                <div className=" w-full mx-auto ">
                   <Image
                     className="lg:h-48 lg:w-48 md:w-40 md:h-40 h-32 w-32 mx-auto "
                     src={item.image}
                     alt="slider-svgs"
                   ></Image>
                 </div>
-                <div className="px-4 text-center mt-4">
+                <div className="px-4 text-start mt-4">
                   <div className="mt-10">
-                    <h3 className="rounded-full text-xs py-1 border inline-block px-4 text-TechBlue bg-blue-100">
+                    <h3 className="rounded-full text-xs py-2 border-TechBlue bg-TechBlue/5 inline-block px-4 text-TechBlue bg-blue-100">
                       {item.top}
                     </h3>
                   </div>

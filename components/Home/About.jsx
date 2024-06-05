@@ -5,7 +5,7 @@ const About = () => {
     <section className="bg-white pt-6 font-Poppins w-full mx-auto bg-gradient-to-r from-TechBlue/5 to-white ">
       <div className=" w-full mx-auto  rounded-xl">
         <div className=" text-center">
-          <h5 className="text-xs font-medium bg-gray-300 text-TechBlue font-Poppins border py-1 rounded-full px-4 inline-block">
+          <h5 className="text-xs font-medium bg-gray-100 text-TechBlue bg-TechBlue/10 font-Poppins py-2 rounded-full px-4 inline-block">
             Our Features
           </h5>
         </div>
