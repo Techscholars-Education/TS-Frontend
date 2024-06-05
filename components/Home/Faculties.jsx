@@ -14,7 +14,7 @@ const Faculties = () => {
     autoplaySpeed: 2000,
     slidesToScroll: 1,
     initialSlide: 0,
-    rtl: false,
+    rtl: true,
     autoplay: true,
     responsive: [
       {
@@ -44,11 +44,11 @@ const Faculties = () => {
     ],
   };
   return (
-    <section className="bg-white py-6 font-Poppins w-full mx-auto bg-gradient-to-r from-TechBlue/5 to-white ">
+    <section className="bg-white py-10 font-Poppins w-full mx-auto  ">
       <div className=" w-full mx-auto  rounded-xl ">
         <div className=" text-center">
-          <h5 className="text-xs font-medium bg-gray-300 text-TechBlue font-Poppins border py-1 rounded-full px-4 inline-block">
-            Faculities
+          <h5 className="text-xs font-medium bg-gray-100 text-TechBlue bg-TechBlue/10 font-Poppins py-2 rounded-full px-4 inline-block">
+            Faculties
           </h5>
         </div>
         <h2 className="text-darkBlue font-semibold text-2xl  md:text-4xl text-center my-4 font-Poppins ">
