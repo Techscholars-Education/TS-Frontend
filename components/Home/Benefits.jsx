@@ -1,17 +1,19 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import ratings from "../../public/Home/ratings.png";
 import schdule_time from "../../public/Home/schdule_time.png";
 import live_class from "../../public/Home/live_class.png";
 import login from "../../public/Home/login.png";
+import { TiArrowRight } from "react-icons/ti";
 
 const Benefits = () => {
   return (
     <section className="w-full bg-gradient-to-r from-TechBlue/5 to-white py-10  ">
       <div className=" w-11/12 xl:w-10/12 grid grid-cols-1 md:grid-cols-2  mx-auto gap-4 ">
         {/* container -1 */}
-        <div className=" bg-[#DCD9F866]/30 rounded-xl flex px-6 py-6 lg:py-8 xl:py-12 font-Poppins shadow-md hover:shadow-xl duration-200 transition-all ">
+        <div className=" bg-[#DCD9F866]/30 rounded-xl flex px-6 py-6 lg:py-8 xl:py-12 font-Poppins hover:shadow-xl duration-200 transition-all ">
           <div className="my-auto w-1/2">
             <Image className=" w-full " src={ratings} alt="rating-icon"></Image>
           </div>
@@ -23,12 +25,17 @@ const Benefits = () => {
               Experience unmatched quality in our courses: from basics to
               advanced mastery.
             </p>
-            <button className="text-xs md:text-sm text-darkBlue rounded-full border border-gray-500 px-4 py-1 mt-5 ">
-              Find out more
-            </button>
+            <div>
+              <Link
+                href="/course"
+                className="text-xs md:text-sm text-darkBlue rounded-full border border-gray-500 px-4 py-2 mt-5 flex items-center lg:w-[80%] xl:w-40 hover:bg-black hover:text-white duration-200 "
+              >
+                Find out more <TiArrowRight className="ml-1 text-lg mr-0" />
+              </Link>
+            </div>
           </div>
         </div>
-        <div className=" bg-[#FFE6DF]/30 rounded-xl flex px-6 py-6 lg:py-8 xl:py-12 font-Poppins shadow-md hover:shadow-xl duration-200 transition-all ">
+        <div className=" bg-[#FFE6DF]/30 rounded-xl flex px-6 py-6 lg:py-8 xl:py-12 font-Poppins hover:shadow-xl duration-200 transition-all ">
           <div className="my-auto w-1/2">
             <Image
               className=" w-full "
@@ -44,12 +51,17 @@ const Benefits = () => {
               Unlock clarity in our Doubt Solving Classes: dedicated sessions
               with expert guidance.
             </p>
-            <button className="text-xs md:text-sm text-darkBlue rounded-full border border-gray-500 px-4 py-1 mt-5 ">
-              Find out more
-            </button>
+            <div>
+              <Link
+                href="/course"
+                className="text-xs md:text-sm text-darkBlue rounded-full border border-gray-500 px-4 py-2 mt-5 flex items-center lg:w-[80%] xl:w-40 hover:bg-black hover:text-white duration-200 "
+              >
+                Find out more <TiArrowRight className="ml-1 text-lg mr-0" />
+              </Link>
+            </div>
           </div>
         </div>
-        <div className=" bg-[#FCE2EB]/30 rounded-xl flex px-6 py-6 lg:py-8 xl:py-12 font-Poppins shadow-md hover:shadow-xl duration-200 transition-all ">
+        <div className=" bg-[#FCE2EB]/30 rounded-xl flex px-6 py-6 lg:py-8 xl:py-12 font-Poppins hover:shadow-xl duration-200 transition-all ">
           <div className="my-auto w-1/2">
             <Image
               className=" w-full "
@@ -65,12 +77,17 @@ const Benefits = () => {
               Embark on a journey of assessment excellence with our All India
               test series
             </p>
-            <button className="text-xs md:text-sm text-darkBlue rounded-full border border-gray-500 px-4 py-1 mt-5 ">
-              Find out more
-            </button>
+            <div>
+              <Link
+                href="/course"
+                className="text-xs md:text-sm text-darkBlue rounded-full border border-gray-500 px-4 py-2 mt-5 flex items-center lg:w-[80%] xl:w-40 hover:bg-black hover:text-white duration-200 "
+              >
+                Find out more <TiArrowRight className="ml-1 text-lg mr-0" />
+              </Link>
+            </div>
           </div>
         </div>
-        <div className=" bg-green-50 rounded-xl flex px-6 py-6 lg:py-8 xl:py-12 font-Poppins shadow-md hover:shadow-xl duration-200 transition-all ">
+        <div className=" bg-green-50 rounded-xl flex px-6 py-6 lg:py-8 xl:py-12 font-Poppins hover:shadow-xl duration-200 transition-all ">
           <div className="my-auto w-1/2">
             <Image className=" w-full " src={login} alt="rating-icon"></Image>
           </div>
@@ -82,9 +99,14 @@ const Benefits = () => {
               Dive into enriched learning with our meticulously curated DPP and
               Study Material
             </p>
-            <button className="text-xs md:text-sm text-darkBlue rounded-full border border-gray-500 px-4 py-1 mt-5 ">
-              Find out more
-            </button>
+            <div>
+              <Link
+                href="/course"
+                className="text-xs md:text-sm text-darkBlue rounded-full border border-gray-500 px-4 py-2 mt-5 flex items-center lg:w-[80%] xl:w-40 hover:bg-black hover:text-white duration-200 "
+              >
+                Find out more <TiArrowRight className="ml-1 text-lg mr-0" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
