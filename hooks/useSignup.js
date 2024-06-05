@@ -24,7 +24,7 @@ const useSignup = () => {
     setLoading(true);
 
     try {
-      const res = await fetch("https://api.techscholars.co.in/auth/v1/signup", {
+      const res = await fetch("https://api.techscholars.in/auth/v1/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -39,9 +39,9 @@ const useSignup = () => {
       const data = await res.json();
       if (!data.code) {
         toast.error("You have already account");
-       setTimeout(() => {
-        toast.error("Enter different phone number or email");
-       }, 2000);
+        setTimeout(() => {
+          toast.error("Enter different phone number or email");
+        }, 2000);
       } else {
         toast.success("Account created successfully");
         setChecking(true);

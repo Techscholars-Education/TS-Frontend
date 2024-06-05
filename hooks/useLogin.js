@@ -7,7 +7,7 @@ const useLogin = () => {
   const [checking, setChecking] = useState(false);
   const login = async (username, password) => {
     try {
-      const res = await fetch("https://api.techscholars.co.in/auth/v1/login", {
+      const res = await fetch("https://api.techscholars.in/auth/v1/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
@@ -26,7 +26,7 @@ const useLogin = () => {
         Cookies.set("authCookie", data.access_token, {
           expires: sessionExpirationTime,
         });
-        window.location.reload();
+        // window.location.reload();
         setChecking(true);
       } else if (data.detail) {
         toast.error(data.detail);

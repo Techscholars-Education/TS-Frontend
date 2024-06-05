@@ -73,7 +73,7 @@ const Page = () => {
       Cookies.set("authCookie", authg, { expires: sessionExpirationTime });
 
       router.replace("/dashboard/home");
-      window.location.reload();
+      // window.location.reload();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [authg]);

@@ -6,7 +6,6 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross1 } from "react-icons/rx";
 import Logo from "../public/Logo.svg";
 import { usePathname } from "next/navigation";
-import giphy from "@/public/Home/giphy.gif";
 import siren from "@/public/Home/siren.gif";
 import speaker from "@/public/Home/speaker.gif";
 import { motion } from "framer-motion";

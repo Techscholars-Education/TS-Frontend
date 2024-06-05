@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import classroom from "@/public/Course/classroom.png";
@@ -10,13 +11,28 @@ import lesson from "@/public/Course/lesson.png";
 import coursePoster from "@/public/Course/coursePoster.svg";
 import { MdOutlineSlowMotionVideo } from "react-icons/md";
 import { MdDone } from "react-icons/md";
-const Batch = () => {
+
+const Batch = (props) => {
+  const [activeBatch, setActiveBatch] = useState(props.activeBatch);
+
+  // Use this effect to update the activeBatch state when props.activeBatch changes
+  useEffect(() => {
+    setActiveBatch(props.activeBatch);
+  }, [props.activeBatch]);
+  console.log(activeBatch);
   return (
     <section className=" w-11/12 xl:w-10/12 mx-auto flex flex-col md:flex md:flex-row justify-between font-Poppins my-8 md:space-x-4 space-y-4 ">
-      <div className="border  w-full  md:w-1/2 lg:w-2/3 p-6 rounded-md ">
+      <div className="border  w-full  md:w-1/2 lg:w-2/3 p-6 rounded-md mt-4 ">
         <div>
           <h2 className="font-semibold text-xl">
-            <span className="text-TechBlue">ELITE</span> Batch for JEE 2026
+            <span className="text-TechBlue">
+              {activeBatch === "11th"
+                ? "ELITE"
+                : activeBatch === "12th"
+                ? "PRIME"
+                : "EXCEL"}
+            </span>{" "}
+            Batch for JEE 2026
           </h2>
         </div>
         <div className="my-4">
@@ -95,8 +111,8 @@ const Batch = () => {
           </li>
         </ul>
       </div>
-      <div className=" w-full md:w-1/2 lg:w-1/3">
-        <div className="">
+      <div className=" w-full md:w-1/2 lg:w-1/3 ">
+        <div>
           <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
             <Image
               className="lg:h-48 md:h-36 w-full object-cover object-center"

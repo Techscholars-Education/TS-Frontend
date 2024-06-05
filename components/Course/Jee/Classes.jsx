@@ -9,106 +9,55 @@ const Classes = () => {
   const costing11th = [
     {
       id: 1,
+      type: "ELITE",
       title: "Starter",
       price: "2899",
-      features: [
-        { feature: "1 user" },
-        { feature: "1 connected calendar" },
-        { feature: "Up to 12 responses" },
-        { feature: "Up to 3 survey results archived" },
-      ],
     },
     {
       id: 2,
       title: "Advanced",
       price: "9899",
-      features: [
-        { feature: "1 user" },
-        { feature: "Up to 2 connected calendars" },
-        { feature: "Up to 50 responses" },
-        { feature: "Up to 10 survey results archived" },
-      ],
     },
     {
       id: 3,
       title: "Ultimate",
       price: "19899",
-      features: [
-        { feature: "Per user in company domain" },
-        { feature: "Single calendar integrations" },
-        { feature: "Unlimited responses" },
-        { feature: "Unlimited survey results archived" },
-      ],
     },
   ];
   const costing12th = [
     {
       id: 1,
+      type: "PRIME",
       title: "Starter",
       price: "2999",
-      features: [
-        { feature: "1 user" },
-        { feature: "1 connected calendar" },
-        { feature: "Up to 12 responses" },
-        { feature: "Up to 3 survey results archived" },
-      ],
     },
     {
       id: 2,
       title: "Advanced",
       price: "9999",
-      features: [
-        { feature: "1 user" },
-        { feature: "Up to 2 connected calendars" },
-        { feature: "Up to 50 responses" },
-        { feature: "Up to 10 survey results archived" },
-      ],
     },
     {
       id: 3,
       title: "Ultimate",
       price: "18999",
-      features: [
-        { feature: "Per user in company domain" },
-        { feature: "Single calendar integrations" },
-        { feature: "Unlimited responses" },
-        { feature: "Unlimited survey results archived" },
-      ],
     },
   ];
   const costing13th = [
     {
       id: 1,
+      type: "PRIME",
       title: "Starter",
       price: "3999",
-      features: [
-        { feature: "1 user" },
-        { feature: "1 connected calendar" },
-        { feature: "Up to 12 responses" },
-        { feature: "Up to 3 survey results archived" },
-      ],
     },
     {
       id: 2,
       title: "Advanced",
       price: "9999",
-      features: [
-        { feature: "1 user" },
-        { feature: "Up to 2 connected calendars" },
-        { feature: "Up to 50 responses" },
-        { feature: "Up to 10 survey results archived" },
-      ],
     },
     {
       id: 3,
       title: "Ultimate",
       price: "19999",
-      features: [
-        { feature: "Per user in company domain" },
-        { feature: "Single calendar integrations" },
-        { feature: "Unlimited responses" },
-        { feature: "Unlimited survey results archived" },
-      ],
     },
   ];
 
@@ -157,7 +106,7 @@ const Classes = () => {
         </div>
       </div>
 
-      <Batch />
+      <Batch activeBatch={activeBatch} />
 
       <Costing
         CostingData={
