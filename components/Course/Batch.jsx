@@ -42,7 +42,7 @@ const Batch = (props) => {
         <ul className="space-y-6 my-6">
           <li className="flex items-center justify-start space-x-4">
             <div className=" border border-gray-400  p-3 rounded-full">
-              <Image className="w-8" src={classroom}></Image>
+              <Image className="w-8" src={classroom} alt="class-icon"></Image>
             </div>
             <div className="text-sm">
               <span>For:</span>
@@ -51,7 +51,7 @@ const Batch = (props) => {
           </li>
           <li className="flex items-center justify-start space-x-4">
             <div className=" border border-gray-400 p-3 rounded-full">
-              <Image className="w-8" src={calendar}></Image>
+              <Image className="w-8" src={calendar} alt="calender-icon"></Image>
             </div>
             <div className="text-sm">
               <span>Course Duration:</span>
@@ -60,7 +60,7 @@ const Batch = (props) => {
           </li>
           <li className="flex items-center justify-start space-x-4">
             <div className=" border border-gray-400  p-3 rounded-full">
-              <Image className="w-8" src={books}></Image>
+              <Image className="w-8" src={books} alt="book-icon"></Image>
             </div>
             <div className="text-sm">
               <span>Subjects:</span>
@@ -69,7 +69,11 @@ const Batch = (props) => {
           </li>
           <li className="flex items-center justify-start space-x-4">
             <div className=" border border-gray-400  p-3 rounded-full">
-              <Image className="w-8" src={languages}></Image>
+              <Image
+                className="w-8"
+                src={languages}
+                alt="languages-icon"
+              ></Image>
             </div>
             <div className="text-sm">
               <span>Languages:</span>
@@ -121,7 +125,7 @@ const Batch = (props) => {
             />
             <div className="p-6">
               <div className="flex items-center justify-start space-x-4  mb-2 ">
-                <Image className="w-12" src={lesson}></Image>
+                <Image className="w-12" src={lesson} alt="lesson-icon"></Image>
                 <div>
                   <h2 className="text-sm font-medium text-TechBlue">
                     Get started
