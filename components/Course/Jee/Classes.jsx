@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Costing from "../Costing";
 import Footer from "@/components/Footer";
+import Batch from "../Batch";
 
 const Classes = () => {
   const costing11th = [
@@ -117,10 +118,10 @@ const Classes = () => {
     setActiveBatch(batch);
   };
   return (
-    <>
-      <div className="mt-10 space-y-4 font-Poppins">
+    <section className="bg-gray-100">
+      <div className="pt-10 space-y-4 font-Poppins ">
         <h1 className=" text-center font-Poppins text-2xl md:text-3xl text-darkBlue font-semibold">
-          JEE Packages
+          JEE Mains and Advanced Batches
         </h1>
         <p className="text-gray-500 text-sm md:text-base md:px-40 lg:px-60 xl:px-80 text-center">
           An innovative Ed-tech organisation dedicated to democratising access
@@ -155,6 +156,9 @@ const Classes = () => {
           </button>
         </div>
       </div>
+
+      <Batch />
+
       <Costing
         CostingData={
           activeBatch === "11th"
@@ -175,7 +179,7 @@ const Classes = () => {
       </div>
 
       <Footer />
-    </>
+    </section>
   );
 };
 
