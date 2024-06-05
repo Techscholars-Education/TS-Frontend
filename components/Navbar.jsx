@@ -141,7 +141,7 @@ const Navbar = () => {
 
             <li className={`cursor-pointer text-base`}>
               <Link
-                className=" bg-TechBlue text-white px-4 border py-3 rounded-md hover:bg-black duration-200 "
+                className=" bg-TechBlue text-white px-4 py-3 rounded-md hover:bg-black duration-200 "
                 href="/signin"
               >
                 Get Started
