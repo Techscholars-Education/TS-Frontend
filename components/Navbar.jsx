@@ -16,7 +16,6 @@ const Navbar = () => {
   const [top, setTop] = useState(true);
   const [popupVisibility, setpopupVisibility] = useState(true);
   const [popUp, setPopUp] = useState(false);
-  const [hover, setHover] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -132,21 +131,9 @@ const Navbar = () => {
             </button>
           </div>
           <ul className="hidden font-Poppins lg:flex justify-center items-center space-x-3 lg:w-1/4 ">
-            <li
-              onMouseEnter={() => {
-                setHover(!hover);
-              }}
-              onMouseLeave={() => {
-                setHover(!hover);
-              }}
-              className={`cursor-pointer text-base transition-all`}
-            >
+            <li className={`cursor-pointer text-base transition-all`}>
               <Link
-                className={` ${
-                  hover
-                    ? "bg-TechBlue text-white border-none shadow-sm shadow-TechBlue text-sm"
-                    : ""
-                } px-4 border py-3 rounded-md `}
+                className=" px-4 border py-3 rounded-md hover:bg-black hover:text-white duration-200 "
                 href="/login"
               >
                 Login
@@ -155,9 +142,7 @@ const Navbar = () => {
 
             <li className={`cursor-pointer text-base`}>
               <Link
-                className={`${
-                  hover ? "border " : "bg-TechBlue  text-white"
-                }  py-3 lg:px-2 xl:px-4 rounded-md flex items-center justify-center  hover:bg-black  transition-all ease-linear duration-200 hover:shadow-sm hover:shadow-black`}
+                className=" bg-TechBlue text-white px-4 border py-3 rounded-md hover:bg-black duration-200 "
                 href="/signin"
               >
                 Get Started
