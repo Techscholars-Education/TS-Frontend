@@ -9,7 +9,7 @@ import { Slide } from "react-awesome-reveal";
 import Searchbar from "./Searchbar";
 const Hero = () => {
   return (
-    <section className=" relative  pb-16   bg-gradient-to-r from-TechBlue/5 to-white  ">
+    <section className=" relative  pb-16   bg-white ">
       <div className="py-10 flex flex-col justify-center items-center r ">
         {/* Main heading */}
         <div>
@@ -52,7 +52,7 @@ const Hero = () => {
         {/* plane arrow */}
 
         <Image
-          className="absolute hidden lg:block lg:left-16 lg:top-48 xl:left-48 xl:top-[60%]  2xl:top-[50%] 2xl:left-[16%] w-20 mx-10 lg:mx-0 "
+          className="absolute hidden lg:block lg:left-24 lg:top-36 xl:left-64 xl:top-[40%]  2xl:top-[50%] 2xl:left-[16%] w-20 mx-10 lg:mx-0 "
           src={TangledArrow}
           alt="TangledArrow"
         ></Image>

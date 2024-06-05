@@ -15,7 +15,7 @@ const Testimonialsslider = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
-    rtl: false,
+    rtl: true,
     autoplay: true,
     pauseOnHOver: true,
     responsive: [
