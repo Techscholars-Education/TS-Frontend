@@ -1,11 +1,39 @@
+'use client'
+
 import DashboardNavbar from '@/components/Dashboard/DashboardNavbar'
 import Image from 'next/image'
-import React from 'react'
 import men from "../../../../public/Dashboard/men_nav.jpg"
 import { TbEdit } from "react-icons/tb";
-
+import { useState } from 'react';
 
 const Profile = () => {
+
+  const [name,setName] = useState("")
+  const [email,setEmail] = useState("")
+  const [userName,setUserName] = useState("")
+  const [phone,setPhone] = useState("")
+  const [bio,setBio] = useState("")
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    console.log("Selected file:", file);
+  };
+
+  const handleSubmit = (event) => {
+        event.preventDefault();
+               
+        console.log(name,email);
+  }
+
+  const handleReset = (event) => {
+    event.preventDefault()
+    setName("")
+    setEmail("")
+    setUserName("")
+    setPhone("")
+    setBio("")
+  }
+
     return (
         <div className="bg-white font-Poppins w-full overflow-hidden">
             <DashboardNavbar title={"Profile"} />
@@ -14,23 +42,24 @@ const Profile = () => {
                     <h1 className='font-semibold text-xl'>Edit Profile</h1>
                     <p className=' font-normal text-gray-400 text-[.9vw]'>Personal Info</p>
                 </div>
-                <div className='bg-white h-[73vh] w-full rounded-lg flex flex-col gap-1 pt-2 pl-8 pr-4'>
+                <form className='bg-white h-[73vh] w-full rounded-lg flex flex-col gap-1 pt-2 pl-8 pr-4'>
                     <div className='w-full h-[16vh]'>
                         <div className="flex items-center gap-2 relative">
                             <div className="camera">
-                                <label htmlFor="image">
-                                    <Image src={men} alt='imageuser' className='rounded-full h-[7vw] w-[7vw] cursor-pointer'/>
+                                <label htmlFor="image" >
+                                    <Image src={men} alt='imageuser' className='rounded-full h-[7vw] w-[7vw] cursor-pointer'  />
                                 </label>
                                 <input
                                     type="file"
                                     id="image"
                                     className="outline-none hidden "
+                                    onChange={handleFileChange}
                                 />
                             </div>
                             <h1 className=" text-[.9vw] font-semibold">
                                 Upload Photo
                             </h1>
-                        <div className='bg-white text-black h-8 w-8 rounded-full p-2 shadow-lg absolute left-20 top-16'> <TbEdit className='cursor-pointer'/></div>
+                        <div className='bg-white text-black h-8 w-8 rounded-full p-2 shadow-lg absolute left-20 top-16'> <TbEdit className='cursor-pointer' /></div>
                         </div>
                     </div>
                     <div className=' w-full h-[44vh] flex flex-col gap-2'>
@@ -46,6 +75,8 @@ const Profile = () => {
                             type="text"
                             placeholder='Please enter your name'
                             id="full_name"
+                            value={name}
+                            onChange={(e)=>{setName(e.target.value)}}
                             className="bg-blue-50 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[30vw] p-2.5"
                           />
                         </div>
@@ -60,6 +91,8 @@ const Profile = () => {
                             type="email"
                             id="email"
                             placeholder='Please enter your email'
+                            value={email}
+                            onChange={(e)=>{setEmail(e.target.value)}}
                             className="bg-blue-50  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[30vw] p-2.5"
                           />
                         </div>
@@ -76,6 +109,8 @@ const Profile = () => {
                             type="text"
                             placeholder='Please enter your name'
                             id=" Username"
+                            value={userName}
+                            onChange={(e)=>{setUserName(e.target.value)}}
                             className="bg-blue-50  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[30vw] p-2.5"
                           />
                         </div>
@@ -90,6 +125,8 @@ const Profile = () => {
                             type="number"
                             id="Phone_Number"
                             placeholder='+880 123 456 789'
+                            value={phone}
+                            onChange={(e)=>{setPhone(e.target.value)}}
                             className="bg-blue-50   text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[30vw] p-2.5"
                           />
                         </div>
@@ -106,16 +143,18 @@ const Profile = () => {
                             type="text"
                             placeholder='Write your Bio here e.g your hobbies, interests ETC'
                             id="Bio"
+                            value={bio}
+                            onChange={(e)=>{setBio(e.target.value)}}
                             className="bg-blue-50  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[16vh] p-2.5"
                           />
                         </div>
                       </div>
                     </div>
                     <div className='w-full flex gap-9'>
-                                <button className='outline-none bg-[#0079FC] flex items-center justify-center h-14 text-white text-[.9vw] w-40 rounded-full hover:bg-black transition-all ease-linear duration-300'>Save Change</button>
-                                <button className='outline-none flex items-center justify-center h-14 text-black border-2 border-black text-[.9vw] w-40 rounded-full'>Reset All</button>
+                                <button type='submit' className='outline-none bg-[#0079FC] flex items-center justify-center h-14 text-white text-[.9vw] w-40 rounded-full hover:bg-black transition-all ease-linear duration-300' onClick={handleSubmit} >Save Change</button>
+                                <button className='outline-none flex items-center justify-center h-14 text-black border-2 border-black text-[.9vw] w-40 rounded-full' onClick={handleReset}>Reset All</button>
                     </div>
-                </div>
+                </form>
             </div>
 
         </div>
