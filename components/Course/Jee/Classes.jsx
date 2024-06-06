@@ -4,7 +4,8 @@ import Link from "next/link";
 import Costing from "../Costing";
 import Footer from "@/components/Footer";
 import Batch from "../Batch";
-
+import Faculties from "@/components/Home/Faculties";
+import Demo from "../Demo";
 const Classes = () => {
   const costing11th = [
     {
@@ -106,7 +107,7 @@ const Classes = () => {
         </div>
       </div>
 
-      <Batch activeBatch={activeBatch} />
+      <Batch examType={"JEE"} activeBatch={activeBatch} />
 
       <Costing
         CostingData={
@@ -117,6 +118,10 @@ const Classes = () => {
             : costing13th
         }
       />
+
+      <Faculties examType={"JEE"} calling={"course"} />
+
+      <Demo examType={"JEE"} />
 
       <div className="flex justify-center mt-24 items-center mb-20 ">
         <Link

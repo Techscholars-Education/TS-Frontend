@@ -14,15 +14,16 @@ import { MdDone } from "react-icons/md";
 
 const Batch = (props) => {
   const [activeBatch, setActiveBatch] = useState(props.activeBatch);
+  const [examType, setExamType] = useState(props.examType);
 
-  // Use this effect to update the activeBatch state when props.activeBatch changes
   useEffect(() => {
     setActiveBatch(props.activeBatch);
-  }, [props.activeBatch]);
+    setExamType(props.examType);
+  }, [props.activeBatch, props.examType]);
   console.log(activeBatch);
   return (
-    <section className=" w-11/12 xl:w-10/12 mx-auto flex flex-col md:flex md:flex-row justify-between font-Poppins my-8 md:space-x-4 space-y-4 ">
-      <div className="border  w-full  md:w-1/2 lg:w-2/3 p-6 rounded-md mt-4 ">
+    <section className="  w-11/12 xl:w-10/12 mx-auto flex flex-col md:flex md:flex-row justify-between font-Poppins my-8 md:space-x-4 space-y-4 ">
+      <div className="border  w-full  md:w-1/2 lg:w-2/3 p-6 rounded-md mt-4 bg-white">
         <div>
           <h2 className="font-semibold text-xl">
             <span className="text-TechBlue">
@@ -32,21 +33,34 @@ const Batch = (props) => {
                 ? "PRIME"
                 : "EXCEL"}
             </span>{" "}
-            Batch for JEE 2026
+            Batch for {examType} 2026{" "}
+            <span className="text-TechBlue">
+              {activeBatch === "13th" ? "(Droppers)" : ""}
+            </span>
           </h2>
         </div>
         <div className="my-4">
           <h4 className="font-semibold text-xl">Batch Details</h4>
         </div>
 
-        <ul className="space-y-6 my-6">
+        <ul className="space-y-6 my-6 ">
           <li className="flex items-center justify-start space-x-4">
             <div className=" border border-gray-400  p-3 rounded-full">
               <Image className="w-8" src={classroom} alt="class-icon"></Image>
             </div>
             <div className="text-sm">
               <span>For:</span>
-              <p className="font-medium">Class 11 ( 2026 JEE aspirant )</p>
+              <p className="font-medium">
+                {activeBatch === "13th" ? "" : "Class"}{" "}
+                <span className="text-TechBlue">
+                  {activeBatch === "11th"
+                    ? "11"
+                    : activeBatch === "12th"
+                    ? "12"
+                    : "Droppers"}
+                </span>{" "}
+                ( 2026 {examType} aspirant )
+              </p>
             </div>
           </li>
           <li className="flex items-center justify-start space-x-4">
@@ -64,7 +78,13 @@ const Batch = (props) => {
             </div>
             <div className="text-sm">
               <span>Subjects:</span>
-              <p className="font-medium">Physics, Chemistry, Mathematics</p>
+              <p className="font-medium">
+                {examType === "NEET"
+                  ? "Physics, Chemistry, Biology"
+                  : examType === "JEE"
+                  ? "Physics, Chemistry, Biology"
+                  : "Physics, Chemistry, Biology, Mathematics"}
+              </p>
             </div>
           </li>
           <li className="flex items-center justify-start space-x-4">
@@ -88,35 +108,33 @@ const Batch = (props) => {
           <li className="flex justify-start space-x-2 items-center">
             <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
             <span className="text-gray-black text-xs md:text-sm">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
-              eius?
+              PDF Notes of each Class will be uploaded 3 Hours after the class.
             </span>
           </li>
           <li className="flex justify-start space-x-2 items-center">
             <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
             <span className="text-gray-black text-xs md:text-sm">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
-              eius?
+              Daily Practice Problems with their Solution will be available in
+              PDF Format after class.
             </span>
           </li>
           <li className="flex justify-start space-x-2 items-center">
             <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
             <span className="text-gray-black text-xs md:text-sm">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
-              eius?
+              Scheduled tests will be held according to the planner.
             </span>
           </li>
           <li className="flex justify-start space-x-2 items-center">
             <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
             <span className="text-gray-black text-xs md:text-sm">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic,
-              eius?
+              All India Test Series (AITS) will be provided according to the
+              Test Planner.
             </span>
           </li>
         </ul>
       </div>
-      <div className=" w-full md:w-1/2 lg:w-1/3 ">
-        <div>
+      <div className=" w-full md:w-1/2 lg:w-1/3  ">
+        <div className="bg-white rounded-lg">
           <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
             <Image
               className="lg:h-48 md:h-36 w-full object-cover object-center"
