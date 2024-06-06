@@ -118,7 +118,7 @@ const Aboutslider = () => {
                     </h3>
                   </div>
                   <div className=" mt-4  xl:h-[90px]">
-                    <h3 className="md:px-2 text-xl md:text-2xl xl:text-3xl xl:px-0 font-semibold text-darkBlue py-2">
+                    <h3 className="md:px-2 text-xl md:text-2xl xl:text-3xl xl:px-0 font-semibold text-darkBlue/90 py-2">
                       {item.mid}
                     </h3>
                   </div>
