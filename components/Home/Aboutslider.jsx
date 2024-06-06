@@ -102,7 +102,7 @@ const Aboutslider = () => {
               <div
                 key={item.id}
                 style={{ width: 100 }}
-                className=" flex flex-col justify-center items-center py-10 border  rounded-xl max-w-72 xl:max-w-[400px] h-[46vh] md:h-[50vh] lg:h-[55vh] xl:h-[50vh] mx-auto ml-7 md:ml-7 lg:ml-3 xl:ml-5 "
+                className=" flex flex-col justify-center items-center py-10 border  rounded-xl max-w-72 xl:max-w-[340px] h-[400px] md:h-[450px] lg:h-[480px] xl:h-[490px] mx-auto ml-7 md:ml-7 lg:ml-3 xl:ml-12 "
               >
                 <div className=" w-full mx-auto ">
                   <Image
@@ -111,19 +111,19 @@ const Aboutslider = () => {
                     alt="slider-svgs"
                   ></Image>
                 </div>
-                <div className="px-4 text-start mt-4">
-                  <div className="mt-10">
-                    <h3 className="rounded-full text-xs py-2 border-TechBlue bg-TechBlue/5 inline-block px-4 text-TechBlue bg-blue-100">
+                <div className="px-4 text-start mt-4  h-full">
+                  <div className="mt-10 md:px-2 xl:px-0">
+                    <h3 className="rounded-full  text-xs py-2 border-TechBlue bg-TechBlue/5 inline-block px-4 text-TechBlue bg-blue-100">
                       {item.top}
                     </h3>
                   </div>
-                  <div className=" mt-4">
-                    <h3 className="text-base md:text-xl font-semibold text-darkBlue py-2">
+                  <div className=" mt-4  xl:h-[90px]">
+                    <h3 className="md:px-2 text-xl md:text-2xl xl:text-3xl xl:px-0 font-semibold text-darkBlue py-2">
                       {item.mid}
                     </h3>
                   </div>
-                  <div>
-                    <h3 className="text-sm md:text-base text-gray-600">
+                  <div className="">
+                    <h3 className="text-sm md:px-2 xl:px-0 md:text-base text-gray-600 lg:px-2 ">
                       {item.bottom}
                     </h3>
                   </div>
