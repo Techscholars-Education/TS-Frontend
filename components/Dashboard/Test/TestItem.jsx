@@ -14,7 +14,7 @@ function TestItem() {
          <div className='flex m-1.5'> <FaBook className='mt-1 mr-2'/> <p className='text-blue-400 underline text-[16px]'>View Syllabus</p></div>
          
         </div>
-        <Link href="#" className='mt-12'>
+        <Link href="/dashboard/test/testdetail/alltestseries/test01detail" className='mt-12'>
         <FaArrowRight className='rounded-full bg-blue-600 text-white h-8 w-8 p-2'/>
           Start
         </Link>
