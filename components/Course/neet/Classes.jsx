@@ -3,111 +3,62 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Costing from "../Costing";
 import Footer from "@/components/Footer";
-
+import Batch from "../Batch";
+import Faculties from "@/components/Home/Faculties";
+import Demo from "../Demo";
 const Classes = () => {
   const costing11th = [
     {
       id: 1,
+      type: "ELITE",
       title: "Starter",
       price: "2899",
-      features: [
-        { feature: "1 user" },
-        { feature: "1 connected calendar" },
-        { feature: "Up to 12 responses" },
-        { feature: "Up to 3 survey results archived" },
-      ],
     },
     {
       id: 2,
       title: "Advanced",
       price: "9899",
-      features: [
-        { feature: "1 user" },
-        { feature: "Up to 2 connected calendars" },
-        { feature: "Up to 50 responses" },
-        { feature: "Up to 10 survey results archived" },
-      ],
     },
     {
       id: 3,
       title: "Ultimate",
       price: "19899",
-      features: [
-        { feature: "Per user in company domain" },
-        { feature: "Single calendar integrations" },
-        { feature: "Unlimited responses" },
-        { feature: "Unlimited survey results archived" },
-      ],
     },
   ];
   const costing12th = [
     {
       id: 1,
+      type: "PRIME",
       title: "Starter",
       price: "2999",
-      features: [
-        { feature: "1 user" },
-        { feature: "1 connected calendar" },
-        { feature: "Up to 12 responses" },
-        { feature: "Up to 3 survey results archived" },
-      ],
     },
     {
       id: 2,
       title: "Advanced",
       price: "9999",
-      features: [
-        { feature: "1 user" },
-        { feature: "Up to 2 connected calendars" },
-        { feature: "Up to 50 responses" },
-        { feature: "Up to 10 survey results archived" },
-      ],
     },
     {
       id: 3,
       title: "Ultimate",
       price: "18999",
-      features: [
-        { feature: "Per user in company domain" },
-        { feature: "Single calendar integrations" },
-        { feature: "Unlimited responses" },
-        { feature: "Unlimited survey results archived" },
-      ],
     },
   ];
   const costing13th = [
     {
       id: 1,
+      type: "EXCEL",
       title: "Starter",
       price: "3999",
-      features: [
-        { feature: "1 user" },
-        { feature: "1 connected calendar" },
-        { feature: "Up to 12 responses" },
-        { feature: "Up to 3 survey results archived" },
-      ],
     },
     {
       id: 2,
       title: "Advanced",
       price: "9999",
-      features: [
-        { feature: "1 user" },
-        { feature: "Up to 2 connected calendars" },
-        { feature: "Up to 50 responses" },
-        { feature: "Up to 10 survey results archived" },
-      ],
     },
     {
       id: 3,
       title: "Ultimate",
       price: "19999",
-      features: [
-        { feature: "Per user in company domain" },
-        { feature: "Single calendar integrations" },
-        { feature: "Unlimited responses" },
-        { feature: "Unlimited survey results archived" },
-      ],
     },
   ];
 
@@ -120,7 +71,7 @@ const Classes = () => {
     <>
       <div className="mt-10 space-y-4 font-Poppins">
         <h1 className=" text-center font-Poppins text-2xl md:text-3xl text-darkBlue font-semibold">
-          NEET Packages
+          NEET Batches
         </h1>
         <p className="text-gray-500 text-sm md:text-base md:px-40 lg:px-60 xl:px-80 text-center">
           An innovative Ed-tech organisation dedicated to democratising access
@@ -155,6 +106,9 @@ const Classes = () => {
           </button>
         </div>
       </div>
+
+      <Batch examType={"NEET"} activeBatch={activeBatch} />
+
       <Costing
         CostingData={
           activeBatch === "11th"
@@ -164,6 +118,10 @@ const Classes = () => {
             : costing13th
         }
       />
+
+      <Faculties examType={"NEET"} calling={"course"} />
+
+      <Demo examType={"NEET"} />
 
       <div className="flex justify-center mt-24 items-center mb-20 ">
         <Link

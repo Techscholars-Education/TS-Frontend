@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import Packages from "@/components/Home/Packages";
 import Navbar from "@/components/Navbar";
 import Testimonialsslider from "@/components/Home/Testimonialsslider";
+import Faculties from "./Faculties";
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -170,6 +171,7 @@ const Home = () => {
         <Curriculum />
         <About />
         <Packages />
+        <Faculties calling={"home"} />
         <Testimonials />
         <Testimonialsslider />
         <Studenttest />
