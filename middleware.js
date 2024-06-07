@@ -11,17 +11,17 @@ export function middleware(request) {
 
     const token = request.cookies.get('authCookie')?.value || ''
 
-    // if(isPublicPath && token){
-    //     return NextResponse.redirect(new URL('/dashboard/home',request.nextUrl))
-    // }
+    if(isPublicPath && token){
+        return NextResponse.redirect(new URL('/dashboard/home',request.nextUrl))
+    }
 
-    // if(!isPublicPath && !token){
-    //     return NextResponse.redirect(new URL('/login',request.nextUrl))
-    // }
+    if(!isPublicPath && !token){
+        return NextResponse.redirect(new URL('/login',request.nextUrl))
+    }
 
-    // if(!token && isPayment){
-    //     return NextResponse.redirect(new URL("login",request.nextUrl))
-    // }
+    if(!token && isPayment){
+        return NextResponse.redirect(new URL("login",request.nextUrl))
+    }
 
   
 
