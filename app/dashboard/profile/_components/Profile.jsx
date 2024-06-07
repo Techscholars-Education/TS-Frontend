@@ -5,6 +5,8 @@ import Image from 'next/image'
 import men from "../../../../public/Dashboard/men_nav.jpg"
 import { TbEdit } from "react-icons/tb";
 import { useState } from 'react';
+import ConfirmationModal from './Modal';
+
 
 const Profile = () => {
 
@@ -14,16 +16,32 @@ const Profile = () => {
   const [phone,setPhone] = useState("")
   const [bio,setBio] = useState("")
 
+  const [isModalOpen, setModalOpen] = useState(false);
+  
+  const handleSaveClick = (event) => {
+    event.preventDefault();
+    setModalOpen(true);
+  };
+
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     console.log("Selected file:", file);
   };
 
-  const handleSubmit = (event) => {
-        event.preventDefault();
-               
+  const handleSubmit = () => {         
         console.log(name,email);
+
+        setModalOpen(false);
+        resetSubmit()
   }
+  const resetSubmit = () => {
+    setName("")
+    setEmail("")
+    setUserName("")
+    setPhone("")
+    setBio("")
+  }
+
 
   const handleReset = (event) => {
     event.preventDefault()
@@ -151,10 +169,16 @@ const Profile = () => {
                       </div>
                     </div>
                     <div className='w-full flex gap-9'>
-                                <button type='submit' className='outline-none bg-[#0079FC] flex items-center justify-center h-14 text-white text-[.9vw] w-40 rounded-full hover:bg-black transition-all ease-linear duration-300' onClick={handleSubmit} >Save Change</button>
-                                <button className='outline-none flex items-center justify-center h-14 text-black border-2 border-black text-[.9vw] w-40 rounded-full' onClick={handleReset}>Reset All</button>
+                                <button  className='outline-none bg-[#0079FC] flex items-center justify-center h-14 text-white text-[.9vw] w-40 rounded-full hover:bg-black transition-all ease-linear duration-300 hover:shadow-md hover:shadow-black' onClick={handleSaveClick} >Save Change</button>
+                                <button className='outline-none flex items-center justify-center h-14 text-black border-2 border-black text-[.9vw] w-40 rounded-full hover:border-red-400 hover:text-red-600 transition-all ease-linear duration-300' onClick={handleReset}>Reset All</button>
                     </div>
                 </form>
+                {/* Modal */}
+                <ConfirmationModal
+        isOpen={isModalOpen}
+        onClose={() => setModalOpen(false)}
+        onSave={handleSubmit}
+      />
             </div>
 
         </div>
