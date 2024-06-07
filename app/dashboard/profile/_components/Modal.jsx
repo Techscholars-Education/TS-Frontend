@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './Modal.css'; // Import the CSS for styling
 
 const ConfirmationModal = ({ isOpen, onClose, onSave }) => {
   const [confirming, setConfirming] = useState(false);
