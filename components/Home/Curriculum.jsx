@@ -43,7 +43,11 @@ const Curriculum = () => {
               </div>
             </div>
             <div className="bg-pink-50 group-hover:bg-pink-100 rounded-t-full absolute bottom-0 overflow-hidden flex justify-center items-center w-full py-3 transition-all group-hover:py-6">
-              <Image className="w-16 mx-auto " src={medical}></Image>
+              <Image
+                className="w-16 mx-auto "
+                src={medical}
+                alt="medical-icon"
+              ></Image>
             </div>
           </div>
           <div className=" relative h-[230px] lg:h-[230px] xl:h-[230px]  border rounded-xl group">
@@ -66,7 +70,11 @@ const Curriculum = () => {
               </div>
             </div>
             <div className="bg-yellow-50 group-hover:bg-yellow-100 rounded-t-full absolute bottom-0 overflow-hidden flex justify-center items-center w-full py-3 transition-all group-hover:py-6">
-              <Image className="w-16 mx-auto " src={physics}></Image>
+              <Image
+                className="w-16 mx-auto "
+                src={physics}
+                alt="physics-icon"
+              ></Image>
             </div>
           </div>
           <div className="relative h-[230px] lg:h-[230px] xl:h-[230px] border rounded-xl  group">
@@ -86,7 +94,11 @@ const Curriculum = () => {
               </div>
             </div>
             <div className="bg-green-50 group-hover:bg-green-100 rounded-t-full absolute bottom-0 overflow-hidden flex justify-center items-center w-full py-3 transition-all group-hover:py-6">
-              <Image className="w-16 mx-auto" src={openbook} />
+              <Image
+                className="w-16 mx-auto"
+                src={openbook}
+                alt="openbook-icon"
+              />
             </div>
           </div>
         </section>
