@@ -20,14 +20,14 @@ function DashboardNavbar(props) {
               <p className="text-[14px] text-gray-400">{props.subtitle}</p>
             </div>
 
-            <div className="hidden xl:flex items-center space-x-5">
+            <div className="hidden xl:flex items-center space-x-5 h-8">
               <form
                 className={`max-w-md mx-auto ${search ? "block" : "hidden"}`}
               >
                 <input
                   type="search"
                   id="default-search"
-                  className="block bg-blue-100 w-full p-4 ps-7 text-sm text-black rounded-full focus:ring-blue-500 focus:border-blue-500"
+                  className="block bg-blue-100 w-full px-3 py-2 ps-7 text-sm text-black rounded-full focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Search"
                 />
               </form>

@@ -22,7 +22,7 @@ const Batch = (props) => {
   }, [props.activeBatch, props.examType]);
   console.log(activeBatch);
   return (
-    <section className="  w-11/12 xl:w-10/12 mx-auto flex flex-col md:flex md:flex-row justify-between font-Poppins my-8 md:space-x-4 space-y-4 ">
+    <section className=" w-11/12 xl:w-9/12 mx-auto flex flex-col md:flex md:flex-row justify-between font-Poppins my-8 md:space-x-4 space-y-4 ">
       <div className="border  w-full  md:w-1/2 lg:w-2/3 p-6 rounded-md mt-4 bg-white">
         <div>
           <h2 className="font-semibold text-xl">
