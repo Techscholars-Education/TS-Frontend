@@ -55,6 +55,7 @@ const Aboutslider = () => {
       top: "Every Sunday",
       mid: "Scholarship Admission Exam",
       bottom: "Get upto 50% Scholarship! ",
+      color: "yellow-50",
     },
     {
       id: 2,
@@ -62,6 +63,7 @@ const Aboutslider = () => {
       top: "Contact Us",
       mid: "Schedule a call with our councillor",
       bottom: "Request a callback",
+      color: "green-50",
     },
     {
       id: 3,
@@ -69,6 +71,7 @@ const Aboutslider = () => {
       top: "Mentors",
       mid: "Personalised expert mentorship",
       bottom: "Get mentored by IITians and Doctors",
+      color: "pink-50",
     },
     {
       id: 4,
@@ -76,6 +79,7 @@ const Aboutslider = () => {
       top: "Community",
       mid: "Student Community",
       bottom: "Join and explore smartest student community",
+      color: "yellow-50",
     },
     {
       id: 5,
@@ -83,6 +87,7 @@ const Aboutslider = () => {
       top: "Faculty",
       mid: "Performance analysis",
       bottom: "Get your detailed performance evaluation",
+      color: "green-50",
     },
     {
       id: 6,
@@ -90,6 +95,7 @@ const Aboutslider = () => {
       top: "Faculty",
       mid: "House of Techscholars",
       bottom: "Discover techscholars communities and activities",
+      color: "pink-50",
     },
   ];
 
@@ -101,8 +107,7 @@ const Aboutslider = () => {
             return (
               <div
                 key={item.id}
-                style={{ width: 100 }}
-                className=" flex flex-col justify-center items-center py-10 border  rounded-xl max-w-72 xl:max-w-[300px] h-[400px] md:h-[450px] lg:h-[480px] xl:h-[490px] mx-auto ml-7 md:ml-7 lg:ml-3 xl:ml-8 "
+                className={` flex flex-col justify-center items-center py-10 border border-${item.color} rounded-xl max-w-72 xl:max-w-[300px] h-[400px] md:h-[450px] lg:h-[480px] xl:h-[490px] mx-auto ml-7 md:ml-7 lg:ml-3 xl:ml-5 `}
               >
                 <div className=" w-full mx-auto ">
                   <Image
@@ -111,18 +116,20 @@ const Aboutslider = () => {
                     alt="slider-svgs"
                   ></Image>
                 </div>
-                <div className="px-4 text-start mt-4  h-full">
+                <div className={`px-4 text-start mt-4  h-full `}>
                   <div className="mt-10 md:px-2 xl:px-3">
-                    <h3 className="rounded-full  text-xs py-2 border-TechBlue bg-TechBlue/5 inline-block px-4 text-TechBlue bg-blue-100">
+                    <h3
+                      className={`rounded-full text-xs py-2  bg-TechBlue/5 inline-block px-4 text-black bg-${item.color}`}
+                    >
                       {item.top}
                     </h3>
                   </div>
-                  <div className=" mt-4 xl:h-[90px]">
+                  <div className={` mt-4 xl:h-[90px]`}>
                     <h3 className="md:px-2 text-xl md:text-2xl xl:text-2xl xl:px-3 font-semibold text-darkBlue/90 py-2">
                       {item.mid}
                     </h3>
                   </div>
-                  <div className="">
+                  <div>
                     <h3 className="text-sm md:px-2 xl:px-3 md:text-base text-gray-600 lg:px-2 ">
                       {item.bottom}
                     </h3>
