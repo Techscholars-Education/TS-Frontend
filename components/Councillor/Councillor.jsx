@@ -18,7 +18,7 @@ const Councillor = () => {
 
         <section className=" space-y-10 lg:space-y-0 lg:space-x-10 w-11/12 xl:w-full flex flex-col lg:flex lg:flex-row xl:space-x-20 mx-auto">
           <div className="mx-auto ">
-            <Image src={CouncillorPoster}></Image>
+            <Image src={CouncillorPoster} alt="councillor-icon"></Image>
           </div>
           <div className=" w-full lg:w-1/2  ">
             <div className="grid grid-cols-2 gap-4  ">
