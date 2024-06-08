@@ -42,9 +42,9 @@ const Navbar = () => {
             !popupVisibility && "hidden"
           } `}
         >
-          <p className="font-Poppins py-4 md:py-0 text-center px-2 font-normal text-xs md:text-sm lg:text-base uppercase flex items-center ">
+          <p className="font-Poppins md:pt-2  px-2 font-normal text-xs md:text-sm lg:text-base flex items-center ">
             <Image
-              className="hidden md:block w-10 md:mr-10 "
+              className="hidden md:block w-8 md:mr-10 "
               src={siren}
               unoptimized={true}
               alt="siren-gif"
@@ -52,7 +52,7 @@ const Navbar = () => {
             Enroll today and start your IITJEE and NEET preparation | batches
             are filling fast!
             <Image
-              className="hidden md:block w-10 md:w-16 mb-3 md:ml-10 "
+              className="hidden md:block w-10 md:w-12 mb-3 md:ml-10 "
               src={speaker}
               unoptimized={true}
               alt="speaker-gif"
@@ -75,15 +75,20 @@ const Navbar = () => {
       >
         <div className="flex w-11/12 mx-auto justify-between items-center font-Jost  ">
           <div className="lg:w-1/4">
-            <h1 className="text-lg md:text-xl text-darkBlue font-medium justify-center font-Jost flex items-center ">
+            <Link
+              href="/"
+              className="text-lg md:text-xl text-darkBlue font-medium justify-center font-Jost flex items-center hover:text-TechBlue "
+            >
               <Image
                 className="w-7 md:w-10  mr-2"
                 src={Logo}
                 alt="Techscholar-logo"
               />
               Techscholars
-            </h1>
+            </Link>
           </div>
+
+          {/* FOR BIG SCREENS */}
           <ul className="hidden lg:flex justify-center lg:space-x-4 xl:space-x-10 font-Poppins  items-center lg:w-[60%]  text-darkBlue mx-auto ">
             <li
               className={`cursor-pointer text-base p-2 rounded-md ${
@@ -115,6 +120,7 @@ const Navbar = () => {
               <Link href="/councillor">Councillor</Link>
             </li>
           </ul>
+
           {/* Hamburger */}
           <div className="lg:hidden flex justify-center items-center">
             <button
@@ -129,6 +135,7 @@ const Navbar = () => {
               )}
             </button>
           </div>
+
           <ul className="hidden font-Poppins lg:flex justify-center items-center space-x-3 lg:w-1/4 ">
             <li className={`cursor-pointer text-base transition-all`}>
               <Link
@@ -149,8 +156,6 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-
-        {/* FOR BIG SCREENS */}
 
         {/* FOR SMALL SCREENS */}
         <div
