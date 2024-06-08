@@ -70,7 +70,7 @@ const Page = () => {
     if (authg === "") return;
     if (authg) {
       const sessionExpirationTime = new Date(new Date().getTime() + 5 * 60 * 60 * 1000);
-      Cookies.set("authCookie", authg, { expires: sessionExpirationTime });
+      Cookies.set("access_token", authg, { expires: sessionExpirationTime });
 
       router.replace("/dashboard/home");
       // window.location.reload();

@@ -12,6 +12,20 @@ export const useCourseStore = create(persist(
     getStorage: () => localStorage, // specify local storage as the storage
   }
 ));
+export const useCookieStore = create(persist(
+  (set) => ({
+    cookie:{},
+  cookieData: (cookie) => set({cookie:cookie})
+  
+  }),
+  {
+    name: 'cookie-storage', // unique name for the storage item
+    getStorage: () => localStorage, // specify local storage as the storage
+    
+  }
+));
+
+
 
 
 

@@ -9,7 +9,7 @@ export function middleware(request) {
     const isPublicPath = path ==="/login" || path === "/signin"
     const isPayment = path === "/payment"
 
-    const token = request.cookies.get('authCookie')?.value || ''
+    const token = request.cookies.get('access_token')?.value || ''
 
     if(isPublicPath && token){
         return NextResponse.redirect(new URL('/dashboard/home',request.nextUrl))
