@@ -42,7 +42,7 @@ const Navbar = () => {
             !popupVisibility && "hidden"
           } `}
         >
-          <p className="font-Poppins md:pt-2  px-2 font-normal text-xs md:text-sm lg:text-base flex items-center ">
+          <p className="font-Poppins md:pt-2  px-2 font-normal text-xs md:text-sm lg:text-base flex items-center py-3 md:py-0 ">
             <Image
               className="hidden md:block w-8 md:mr-10 "
               src={siren}
@@ -62,7 +62,7 @@ const Navbar = () => {
             onClick={() => {
               setpopupVisibility(false);
             }}
-            className="absolute top-[8vw]  md:top-[33%] right-2  md:right-4 xl:right-8"
+            className="absolute top-[4vw]   md:top-[33%] right-2 md:right-4 xl:right-8"
           >
             <RxCross1 className="text-white text-2xl" />
           </button>
