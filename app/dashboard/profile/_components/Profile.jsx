@@ -4,11 +4,15 @@ import DashboardNavbar from '@/components/Dashboard/DashboardNavbar'
 import Image from 'next/image'
 import men from "../../../../public/Dashboard/men_nav.jpg"
 import { TbEdit } from "react-icons/tb";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ConfirmationModal from './Modal';
+import useProfile from '@/hooks/useProfile';
 
 
 const Profile = () => {
+   
+  const { useprofile} = useProfile()
+
 
   const [name,setName] = useState("")
   const [email,setEmail] = useState("")
@@ -40,6 +44,7 @@ const Profile = () => {
     setUserName("")
     setPhone("")
     setBio("")
+    
   }
 
 
@@ -50,6 +55,7 @@ const Profile = () => {
     setUserName("")
     setPhone("")
     setBio("")
+    useprofile()
   }
 
     return (

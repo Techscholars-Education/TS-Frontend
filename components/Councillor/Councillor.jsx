@@ -6,7 +6,7 @@ import Footer from "../Footer";
 const Councillor = () => {
   return (
     <>
-      <div className="bg-white font-Poppins py-10 w-full  ">
+      <div className="bg-white font-Poppins py-10 w-full xl:w-9/12 mx-auto  ">
         <div className="text-center space-y-4 mb-10">
           <h2 className="text-xl md:text-4xl font-semibold text-darkBlue px-4 md:px-0">
             Get in touch with our councillor
@@ -15,208 +15,272 @@ const Councillor = () => {
             Set your future milestones with us.
           </p>
         </div>
-        <div className=" w-11/12  mx-auto lg:flex lg:flex-row flex flex-col  space-y-12 md:space-y-0  justify-center items-center md:space-x-4 py-10 ">
-          <div className=" w-full lg:w-1/2 ">
-            <Image
-              className="mt-[-12vw] ml-[2vw]"
-              src={CouncillorPoster}
-              alt="councillor-svg"
-            ></Image>
-          </div>
-          <form
-            className=" w-full lg:w-1/2 font-Poppins  space-y-4 "
-            action="submit"
-          >
-            <div className="flex justify-between ">
-              <div className="flex flex-col space-y-2 w-[48%] ">
-                <label className=" text-lg font-semibold text-darkBlue/70">
-                  First Name
-                </label>
-                <input
-                  className="border-2 text-sm md:text-lg border-black/40 rounded-md p-2 "
-                  placeholder="Enter your first name"
-                  type="text"
-                  required
-                />
-              </div>
-              <div className="flex flex-col space-y-2  w-[48%]">
-                <label className=" text-lg font-semibold text-darkBlue/70">
-                  Last Name
-                </label>
-                <input
-                  className="border-2 text-sm md:text-lg border-black/40 rounded-md p-2 "
-                  placeholder="Enter your last name"
-                  type="text"
-                  required
-                />
-              </div>
-            </div>
 
-            <div className="flex justify-between ">
-              <div className="flex flex-col space-y-2 w-[48%] ">
-                <label className=" text-lg font-semibold text-darkBlue/70">
-                  Email
-                </label>
+        <section className=" space-y-10 lg:space-y-0 lg:space-x-10 w-11/12 xl:w-full flex flex-col lg:flex lg:flex-row xl:space-x-20 mx-auto">
+          <div className="mx-auto ">
+            <Image src={CouncillorPoster} alt="councillor-icon"></Image>
+          </div>
+          <div className=" w-full lg:w-1/2  ">
+            <div className="grid grid-cols-2 gap-4  ">
+              <div className=" space-y-2 text-sm lg:text-base xl:text-lg ">
+                <label htmlFor="fname">First Name</label>
                 <input
-                  className="border-2 text-sm md:text-lg border-black/40 rounded-md p-2 "
-                  placeholder="Enter your email"
+                  className=" p-2 border border-gray-400 w-full outline-none"
+                  placeholder="Enter you first name"
+                  type="text"
+                  required
+                />
+              </div>
+              <div className=" space-y-2  text-sm lg:text-base xl:text-lg">
+                <label htmlFor="lname">Last Name</label>
+                <input
+                  className=" p-2 border border-gray-400 w-full outline-none"
+                  placeholder="Enter you last name"
+                  type="text"
+                  required
+                />
+              </div>
+              <div className=" space-y-2 text-sm lg:text-base xl:text-lg ">
+                <label htmlFor="email">Email</label>
+                <input
+                  className=" p-2 border border-gray-400 w-full outline-none"
+                  placeholder="Enter you Email"
                   type="email"
                   required
                 />
               </div>
-              <div className="flex flex-col space-y-2  w-[48%]">
-                <label className=" text-lg font-semibold text-darkBlue/70">
-                  Phone Number
-                </label>
+              <div className=" space-y-2  text-sm lg:text-base xl:text-lg">
+                <label htmlFor="fname">Phone Number</label>
                 <input
-                  className="border-2 text-sm md:text-lg border-black/40 rounded-md p-2 "
-                  placeholder="Enter your phone number"
+                  className=" p-2 border border-gray-400 w-full outline-none"
+                  placeholder="+91 XXXXXXXXXX"
                   type="number"
                   required
                 />
               </div>
-            </div>
-
-            <div className="flex justify-between">
-              <div className="flex flex-col space-y-2  w-[48%]">
-                <label
-                  htmlFor="designation"
-                  className="text-lg font-semibold text-darkBlue/70 "
-                >
-                  Class
-                </label>
+              <div className=" space-y-2 text-sm lg:text-base xl:text-lg ">
+                <label htmlFor="fname">Class</label>
+                <br />
                 <select
-                  id="countries"
-                  className="border-2 border-black/40 text-sm md:text-lg text-darkBlue/70 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2"
-                  required
+                  className="w-full bg-white border border-gray-400 p-2 text-sm lg:text-base xl:text-lg "
+                  name="class"
+                  id="class"
                 >
-                  <option value="" disabled selected>
-                    {" "}
-                    Select class
+                  <option className="bg-white hover:bg-gray-200 p-2" value="9">
+                    Class 9
                   </option>
-                  <option value="9th">9th</option>
-                  <option value="10th">10th</option>
-                  <option value="11th">11th</option>
-                  <option value="12th">12th</option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="10">
+                    Class 10
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="11">
+                    Class 11
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="12">
+                    Class 12
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="13">
+                    Class Target 13 (Droppers)
+                  </option>
                 </select>
               </div>
-              <div className="flex flex-col space-y-2  w-[48%]">
-                <label
-                  htmlFor="designation"
-                  className="text-lg font-semibold text-darkBlue/70 "
-                >
-                  Goal
-                </label>
+              <div className=" space-y-2 text-sm lg:text-base xl:text-lg ">
+                <label htmlFor="fname">Goal</label>
+                <br />
                 <select
-                  id="countries"
-                  className="border-2 border-black/40 text-sm md:text-lg text-darkBlue/70 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2"
-                  required
+                  className="w-full bg-white border border-gray-400 p-2 text-sm lg:text-base xl:text-lg "
+                  name="goal"
+                  id="goal"
                 >
-                  <option value="" disabled selected>
-                    {" "}
-                    Select your goal
+                  <option className="bg-white hover:bg-gray-200 p-2" value="9">
+                    Doctor
                   </option>
-                  <option value="CEO">CEO</option>
-                  <option value="CTO">CTO</option>
-                  <option value="Digital Marketer">Digital Marketer</option>
-                  <option value="Strategist">Strategist</option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="10">
+                    Engineer
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="11">
+                    Entrepreneur
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="12">
+                    Teacher
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="13">
+                    Defence
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="13">
+                    Others
+                  </option>
+                </select>
+              </div>
+              <div className=" space-y-2  text-sm lg:text-base xl:text-lg">
+                <label htmlFor="fname">Preferred Programs</label>
+                <br />
+                <select
+                  className="w-full bg-white border border-gray-400 p-2  text-sm lg:text-base xl:text-lg"
+                  name="program"
+                  id="program"
+                >
+                  <option className="bg-white hover:bg-gray-200 p-2" value="9">
+                    NEET
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="10">
+                    JEE
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="11">
+                    JEE Adv.
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="12">
+                    Foundation
+                  </option>
+                </select>
+              </div>
+              <div className=" space-y-2 text-sm lg:text-base xl:text-lg ">
+                <label htmlFor="fname">State</label>
+                <br />
+                <select
+                  className="w-full bg-white border border-gray-400 p-2 text-sm lg:text-base xl:text-lg"
+                  name="state"
+                  id="state"
+                >
+                  <option className="bg-white hover:bg-gray-200 p-2" value="AP">
+                    Andhra Pradesh
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="AR">
+                    Arunachal Pradesh
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="AS">
+                    Assam
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="BR">
+                    Bihar
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="CT">
+                    Chhattisgarh
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="GA">
+                    Gujarat
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="HR">
+                    Haryana
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="HP">
+                    Himachal Pradesh
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="JK">
+                    Jammu and Kashmir
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="GA">
+                    Goa
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="JH">
+                    Jharkhand
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="KA">
+                    Karnataka
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="KL">
+                    Kerala
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="MP">
+                    Madhya Pradesh
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="MH">
+                    Maharashtra
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="MN">
+                    Manipur
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="ML">
+                    Meghalaya
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="MZ">
+                    Mizoram
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="NL">
+                    Nagaland
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="OR">
+                    Odisha
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="PB">
+                    Punjab
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="RJ">
+                    Rajasthan
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="SK">
+                    Sikkim
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="TN">
+                    Tamil Nadu
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="TG">
+                    Telangana
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="TR">
+                    Tripura
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="UT">
+                    Uttarakhand
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="UP">
+                    Uttar Pradesh
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="WB">
+                    West Bengal
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="AN">
+                    Andaman and Nicobar Islands
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="CH">
+                    Chandigarh
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="DN">
+                    Dadra and Nagar Haveli
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="DD">
+                    Daman and Diu
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="DL">
+                    Delhi
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="LD">
+                    Lakshadweep
+                  </option>
+                  <option className="bg-white hover:bg-gray-200 p-2" value="PY">
+                    Puducherry
+                  </option>
                 </select>
               </div>
             </div>
-
-            <div className="flex justify-between">
-              <div className="flex flex-col space-y-2  w-[48%]">
-                <label
-                  htmlFor="designation"
-                  className="text-lg font-semibold text-darkBlue/70 "
-                >
-                <span className="max-lg:hidden inline">Preferred </span>Programs
-                </label>
-                <select
-                  id="countries"
-                  className="border-2 border-black/40 text-sm md:text-lg text-darkBlue/70 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2"
-                  required
-                >
-                  <option value="" disabled selected>
-                    {" "}
-                   Select Mode
-                  </option>
-                  <option value="NEEt">NEET</option>
-                  <option value="JEE">JEE</option>
-                  <option value="JEE Add">JEE Add.</option>
-                  <option value="Foundation">Foundation</option>
-                </select>
-              </div>
-
-              <div className="flex flex-col space-y-2  w-[48%]">
-                <label
-                  htmlFor="designation"
-                  className="text-lg font-semibold text-darkBlue/70 "
-                >
-                State
-                </label>
-                <select
-                  id="countries"
-                  className="border-2 border-black/40 text-sm md:text-lg text-darkBlue/70 rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2"
-                  required
-                >
-                  <option value="" disabled selected>
-                    {" "}
-                    Select State
-                  </option>
-                  <option value="UP">UP</option>
-                  <option value="MP">MP</option>
-                  <option value="Delhi">Delhi</option>
-                  <option value="Karnataka">Karnataka</option>
-                </select>
-              </div>
+            <div className=" my-10 space-y-2 text-sm lg:text-base xl:text-lg">
+              <label htmlFor="fname">
+                Pick a slot for our councillor to call you
+              </label>
+              <select
+                className="w-full bg-white border border-gray-400 p-2 text-sm lg:text-base xl:text-lg "
+                name="callTiming"
+                id="callTiming"
+              >
+                <option className="bg-white hover:bg-gray-200 p-2" value="9">
+                  10 AM
+                </option>
+                <option className="bg-white hover:bg-gray-200 p-2" value="10">
+                  12 NOON
+                </option>
+                <option className="bg-white hover:bg-gray-200 p-2" value="11">
+                  2 PM
+                </option>
+                <option className="bg-white hover:bg-gray-200 p-2" value="12">
+                  4 PM
+                </option>
+              </select>
             </div>
 
-            <div className="flex justify-between text-darkBlue/70 ">
-              <h3>Pick out a slot for our councilor to call you</h3>
-            </div>
-            <label className="text-darkBlue/70" htmlFor="timing">
-              Choose a Time:
-            </label>
-            <select
-              className="bg-white border-2 w-full rounded-xl p-2 outline-none"
-              name="timing"
-              id="time"
-              required
-            >
-              <option
-                className="text-sm md:text-base text-darkBlue/70"
-                value="10"
-              >
-                10 AM
-              </option>
-              <option
-                className="text-sm md:text-base text-darkBlue/70"
-                value="12"
-              >
-                12 PM
-              </option>
-              <option
-                className="text-sm md:text-base text-darkBlue/70"
-                value="2"
-              >
-                2 PM
-              </option>
-              <option
-                className="text-sm md:text-base text-darkBlue/70"
-                value="4"
-              >
-                4 PM
-              </option>
-            </select>
-
-            <hr />
-
-            <button className="bg-TechBlue rounded-full text-white px-4 py-3 text-sm md:w-44 md:h-12 hover:bg-black transition-all ease-linear duration-200 hover:shadow-md hover:shadow-black  ">
-              Schedule a Call
+            <button className=" px-2 py-2 text-sm md:text-lg md:px-4 md:py-3 bg-TechBlue rounded text-white hover:bg-black duration-200">
+              Schedule the call
             </button>
-          </form>
-        </div>
+          </div>
+        </section>
       </div>
 
       <Footer />

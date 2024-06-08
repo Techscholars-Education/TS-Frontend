@@ -4,7 +4,7 @@ import { MdDone } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 import Link from "next/link";
 import { Slide } from "react-awesome-reveal";
-import { useCookie, useCourseStore} from "@/hooks/useStore";
+import { useCourseStore} from "@/hooks/useStore";
 import { useRouter } from 'next/navigation'
 import Cookies from "js-cookie";
 import { ToastContainer, toast } from "react-toastify";
