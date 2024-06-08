@@ -23,7 +23,9 @@ const LeftNavigation = () => {
   const pathname = usePathname();
 
   const handleSignOut = () => {
-    Cookies.remove("authCookie");
+    Cookies.remove("access_token");
+    localStorage.removeItem("course-storage")
+    localStorage.removeItem("cookie-storage")
     // Refresh the page
     window.location.reload();
   };
