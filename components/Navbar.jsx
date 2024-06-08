@@ -75,14 +75,17 @@ const Navbar = () => {
       >
         <div className="flex w-11/12 mx-auto justify-between items-center font-Jost  ">
           <div className="lg:w-1/4">
-            <h1 className="text-lg md:text-xl text-darkBlue font-medium justify-center font-Jost flex items-center ">
+            <Link
+              href="/"
+              className="text-lg md:text-xl text-darkBlue font-medium justify-center font-Jost flex items-center hover:text-TechBlue "
+            >
               <Image
                 className="w-7 md:w-10  mr-2"
                 src={Logo}
                 alt="Techscholar-logo"
               />
               Techscholars
-            </h1>
+            </Link>
           </div>
 
           {/* FOR BIG SCREENS */}
