@@ -7,6 +7,7 @@ import Batch from "../Batch";
 import Faculties from "@/components/Home/Faculties";
 import Demo from "../Demo";
 import Faqs from "@/components/Faqs/Faqs";
+
 const Classes = () => {
   const costing11th = [
     {

@@ -11,6 +11,9 @@ import lesson from "@/public/Course/lesson.png";
 import coursePoster from "@/public/Course/coursePoster.svg";
 import { MdOutlineSlowMotionVideo } from "react-icons/md";
 import { MdDone } from "react-icons/md";
+import n11 from "@/public/Course/n11.png";
+import n12 from "@/public/Course/n12.png";
+import n13 from "@/public/Course/n13.png";
 
 const Batch = (props) => {
   const [activeBatch, setActiveBatch] = useState(props.activeBatch);
@@ -20,7 +23,7 @@ const Batch = (props) => {
     setActiveBatch(props.activeBatch);
     setExamType(props.examType);
   }, [props.activeBatch, props.examType]);
-  console.log(activeBatch);
+
   return (
     <section className=" w-11/12 xl:w-9/12 mx-auto flex flex-col md:flex md:flex-row justify-between font-Poppins my-8 md:space-x-4 space-y-4 ">
       <div className="border  w-full  md:w-1/2 lg:w-2/3 p-6 rounded-md mt-4 bg-white">
@@ -157,7 +160,25 @@ const Batch = (props) => {
           <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
             <Image
               className="lg:h-48 md:h-36 w-full object-cover object-center"
-              src={coursePoster}
+              src={
+                examType === "NEET" && activeBatch == "11th"
+                  ? n11
+                  : examType === "NEET" && activeBatch == "12th"
+                  ? n12
+                  : examType === "NEET" && activeBatch == "13th"
+                  ? n13
+                  : examType === "JEE" && activeBatch == "11th"
+                  ? n11
+                  : examType === "JEE" && activeBatch == "12th"
+                  ? n12
+                  : examType === "JEE" && activeBatch == "13th"
+                  ? n13
+                  : examType === "FOUNDATION" && activeBatch == "9th"
+                  ? n11
+                  : examType === "FOUNDATION" && activeBatch == "10th"
+                  ? n12
+                  : coursePoster
+              }
               alt="blog"
             />
             <div className="p-6">
