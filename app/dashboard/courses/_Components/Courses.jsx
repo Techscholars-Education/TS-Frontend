@@ -18,7 +18,7 @@ const Courses = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://api.techscholars.co.in/pdt/v1/category`
+          `${process.env.NEXT_PUBLIC_BE_API}/v1/category`
         );
 
         const formattedData = response?.data?.slice(1).map((item) => ({
