@@ -16,6 +16,7 @@ const Aboutslider = () => {
     infinite: true,
     speed: 700,
     slidesToShow: 3,
+    arrows: false,
     autoplaySpeed: 2000,
     slidesToScroll: 1,
     initialSlide: 0,

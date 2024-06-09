@@ -6,7 +6,9 @@ import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import TsLogo from "../public/Home/TsLogo.svg";
+import { usePathname } from "next/navigation";
 const Footer = () => {
+  const pathname = usePathname();
   return (
     <>
       <footer className="bg-gray-900 md:pt-10 text-white body-font grid grid-cols-1 md:grid-cols-3 font-Poppins w-full ">
@@ -41,7 +43,10 @@ const Footer = () => {
           <Link className="text-sm lg:text-base" href="/terms-conditions">
             Terms and services
           </Link>
-          <Link className="text-sm lg:text-base" href="/course">
+          <Link
+            className="text-sm lg:text-base"
+            href={pathname === "/" ? "#testimonials" : "/#testimonials"}
+          >
             Testimonials
           </Link>
           <Link className="text-sm lg:text-base" href="/faqs">
@@ -56,7 +61,7 @@ const Footer = () => {
           <Link className="text-sm lg:text-base" href="/course">
             Courses
           </Link>
-          <Link className="text-sm lg:text-base" href="/course">
+          <Link className="text-sm lg:text-base" href="/blogs">
             Blogs
           </Link>
         </div>
