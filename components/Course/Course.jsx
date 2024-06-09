@@ -1,7 +1,9 @@
 import React from "react";
 import Card from "./Card";
 import Link from "next/link";
-import coursePoster from "../../public/Course/coursePoster.svg";
+import jee from "@/public/Course/jee.png";
+import neet from "@/public/Course/neet.png";
+import foundation from "@/public/Course/foundation.png";
 
 const Course = () => {
   const data = [
@@ -11,7 +13,7 @@ const Course = () => {
       route: "/course/foundation",
       description:
         "Build a strong academic base with our foundational courses, designed to prepare you for competitive exams.",
-      Poster: coursePoster,
+      Poster: foundation,
     },
     {
       id: 2,
@@ -19,7 +21,7 @@ const Course = () => {
       route: "/course/jee",
       description:
         "Master the concepts and strategies needed to excel in JEE with our comprehensive courses and expert guidance.",
-      Poster: coursePoster,
+      Poster: jee,
     },
     {
       id: 3,
@@ -27,7 +29,7 @@ const Course = () => {
       route: "/course/neet",
       description:
         "Achieve top scores in NEET with our specialized courses, focusing on in-depth understanding of medical concepts.",
-      Poster: coursePoster,
+      Poster: neet,
     },
   ];
 
@@ -58,7 +60,7 @@ const Course = () => {
         </div>
         <div className="flex justify-center mt-24 items-center space-x-4 md:space-x-10 ">
           <Link
-            href="/"
+            href="/course"
             className="bg-TechBlue text-sm text-white md:w-44 md:h-12 rounded-full  flex justify-center items-center  duration-300 px-4 py-2 "
           >
             Explore more
