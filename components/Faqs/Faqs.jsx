@@ -1,6 +1,5 @@
 "use client";
-import React, { useState } from "react";
-import { FaChevronDown } from "react-icons/fa";
+import React, { useState, useRef } from "react";
 const Faqs = () => {
   const [Faqs, _] = useState([
     {
@@ -50,22 +49,11 @@ const Faqs = () => {
       <div className="m-2 space-y-6 w-11/12 lg:w-9/12 mx-auto">
         {Faqs.map((item) => {
           return (
-            <div
+            <AccordionItem
               key={item.id}
-              className="group flex flex-col gap-2 rounded-lg p-4 border bg-white "
-              tabIndex="1"
-            >
-              <div className="flex cursor-pointer items-center justify-between">
-                <span className=" text-sm md:text-lg text-gray-600 ">
-                  {" "}
-                  {item.question}{" "}
-                </span>
-                <FaChevronDown className="h-2 w-3 transition-all duration-500 group-focus:-rotate-180 " />
-              </div>
-              <div className="invisible h-auto max-h-0 text-xs md:text-sm text-gray-500 items-center opacity-0 transition-all group-focus:visible group-focus:max-h-screen group-focus:opacity-100 group-focus:duration-1000">
-                {item.ans}
-              </div>
-            </div>
+              title={item.question}
+              content={item.ans}
+            />
           );
         })}
       </div>
@@ -74,3 +62,48 @@ const Faqs = () => {
 };
 
 export default Faqs;
+
+const AccordionItem = ({ title, content }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const contentRef = useRef(null);
+
+  const toggleAccordion = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <div className="border-b border-gray-200 bg-white">
+      <button
+        className="w-full flex justify-between items-center p-4 text-left text-gray-800 focus:outline-none"
+        onClick={toggleAccordion}
+      >
+        <span className="text-lg">{title}</span>
+        <svg
+          className={`w-5 h-5 transition-transform duration-300 ${
+            isOpen ? "transform rotate-180" : ""
+          }`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M19 9l-7 7-7-7"
+          ></path>
+        </svg>
+      </button>
+      <div
+        ref={contentRef}
+        style={{
+          maxHeight: isOpen ? `${contentRef.current.scrollHeight}px` : "0px",
+        }}
+        className={`overflow-hidden transition-all duration-500 ease-in-out`}
+      >
+        <div className="p-4">{content}</div>
+      </div>
+    </div>
+  );
+};
