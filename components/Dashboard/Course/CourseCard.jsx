@@ -32,7 +32,7 @@ const CourseCard = (props) => {
               <FaFire className="h-6 w-6 text-red-300"/>
              </div>
              <div className="flex flex-col ml-2">
-              <p className="text-[12px] text-[#0079FC]">Business Design</p>
+              <p className="text-[12px] text-[#0079FC]">{props.title}</p>
               <p className="text-sm">New lession is available</p>
              </div>
             </div>

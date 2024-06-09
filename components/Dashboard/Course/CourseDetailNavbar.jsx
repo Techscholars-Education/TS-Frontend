@@ -24,41 +24,41 @@ function CourseDetailNavbar() {
         <ul className="mt-4 mx-auto font-Poppins flex bg-white rounded-xl items-center align-middle p-4 ">
           <li className="flex items-center ">
             
-            <a
+            <Link
               href="/dashboard/my-course/coursedetail"
               className={`font-semibold ${isActive('/dashboard/my-course/coursedetail') ? 'text-[#0079FC] underline' : 'text-gray-500 hover:text-gray-400 mr-12 '}`}
             >
               Description
 
-            </a>
+            </Link>
           </li>
           <li className="flex items-center ">
            
-            <a
+            <Link
               href="/dashboard/my-course/coursedetail/classes"
               className={`font-semibold ${isActive('/dashboard/my-course/coursedetail/classes') ? 'text-[#0079FC] underline' : 'text-gray-500 hover:text-gray-400 ml-12'}`}
             >
               All Classes
 
-            </a>
+            </Link>
           </li>
           <li className="flex items-center ">
             
-            <a
-              href="/dashboard/my-course/coursedetail/tests"
-              className={`font-semibold ${isActive('/dashboard/my-course/coursedetail/tests') ? 'text-[#0079FC] underline' : 'text-gray-500 hover:text-gray-400 ml-12'}`}
+            <Link
+              href="/dashboard/test"
+              className={`font-semibold ${isActive('/dashboard/test') ? 'text-[#0079FC] underline' : 'text-gray-500 hover:text-gray-400 ml-12'}`}
             >
               Tests
-            </a>
+            </Link>
           </li>
           <li className="flex items-center ">
             
-            <a
+            <Link
               href="/dashboard/my-course/coursedetail/announcements"
               className={`font-semibold ${isActive('/dashboard/my-course/coursedetail/announcements') ? 'text-[#0079FC] underline' : 'text-gray-500 hover:text-gray-400 ml-12'}`}
             >
              Announcements
-            </a>
+            </Link>
           </li>
          
           
