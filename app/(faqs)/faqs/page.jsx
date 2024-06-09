@@ -6,7 +6,7 @@ const page = () => {
   return (
     <>
       <Navbar />
-      <section className="mb-10 bg-gray-100">
+      <section className="pb-10 bg-gray-100">
         <Faqs />
       </section>
       <Footer />
