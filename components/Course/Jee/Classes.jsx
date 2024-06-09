@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Batch from "../Batch";
 import Faculties from "@/components/Home/Faculties";
 import Demo from "../Demo";
+import Faqs from "@/components/Faqs/Faqs";
 const Classes = () => {
   const costing11th = [
     {
@@ -122,6 +123,8 @@ const Classes = () => {
       <Faculties examType={"JEE"} calling={"course"} />
 
       <Demo examType={"JEE"} />
+
+      <Faqs />
 
       <div className="flex justify-center mt-24 items-center mb-20 ">
         <Link

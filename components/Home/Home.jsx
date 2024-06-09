@@ -11,26 +11,21 @@ import Navbar from "@/components/Navbar";
 import Testimonialsslider from "@/components/Home/Testimonialsslider";
 import Faculties from "./Faculties";
 
-
 const Home = () => {
-
-
   return (
     <>
-
-        <Navbar />
-        <Hero />
-        <Benefits />
-        <Curriculum />
-        <About />
-        <Packages />
-        <Faculties calling={"home"} />
-        <Testimonials />
-        <Testimonialsslider />
-        <Studenttest />
-        <Aboutapp />
-        <Footer />
-
+      <Navbar />
+      <Hero />
+      <Benefits />
+      <Curriculum />
+      <About />
+      <Packages />
+      <Faculties calling={"home"} />
+      <Testimonials />
+      <Testimonialsslider />
+      <Studenttest />
+      <Aboutapp />
+      <Footer />
     </>
   );
 };

@@ -1,11 +1,11 @@
-import Ayush from "@/public/Home/Ayush.svg";
-import Vivek from "@/public/Home/Vivek.svg";
-import Shivam from "@/public/Home/Shivam.svg";
-import Shristi from "@/public/Home/Shristi.svg";
-import Aman from "@/public/Home/Aman.svg";
-import Aajila from "@/public/Home/Aajila.svg";
-import Kalgi from "@/public/Home/Kalgi.svg";
-import Anurag from "@/public/Home/Anurag.svg";
+import Ayush from "@/public/Home/Ayush.jpg";
+import Vivek from "@/public/Home/Vivek.jpg";
+import Shivam from "@/public/Home/Shivam.jpg";
+import Shristi from "@/public/Home/Shristi.jpg";
+import Aman from "@/public/Home/Aman.jpg";
+import Aajila from "@/public/Home/Aajila.jpg";
+import Kalgi from "@/public/Home/Kalgi.jpg";
+import Anurag from "@/public/Home/Anurag.jpg";
 
 export const facultiesData = [
   {
