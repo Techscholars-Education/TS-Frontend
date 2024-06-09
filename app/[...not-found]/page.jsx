@@ -9,7 +9,7 @@ const page = () => {
     <>
       <Navbar />
       <section className=" flex flex-col lg:flex lg:flex-row justify-center items-center min-h-screen space-y-10 lg:space-y-0">
-        <Image src={page404}></Image>
+        <Image src={page404} alt="404-icon"></Image>
         <div>
           <h4>Hey Techscholar, Looks like you have lost.</h4>
 

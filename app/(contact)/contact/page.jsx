@@ -17,7 +17,11 @@ const page = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-10">
           <div className=" border shadow-md space-y-4 p-4">
             <div>
-              <Image src={whatsapp} className="w-12"></Image>
+              <Image
+                src={whatsapp}
+                alt="whatsapp-icon"
+                className="w-12"
+              ></Image>
             </div>
             <div>
               <h3 className="text-base md:text-lg font-bold">Whatsapp</h3>
@@ -31,7 +35,7 @@ const page = () => {
           </div>
           <div className=" border shadow-md space-y-4 p-4">
             <div>
-              <Image src={gmail} className="w-12"></Image>
+              <Image src={gmail} alt="gmail-icon" className="w-12"></Image>
             </div>
             <div>
               <h3 className="text-base md:text-lg font-bold">Email</h3>
