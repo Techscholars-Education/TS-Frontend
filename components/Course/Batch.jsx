@@ -6,14 +6,15 @@ import classroom from "@/public/Course/classroom.png";
 import calendar from "@/public/Course/calendar.png";
 import languages from "@/public/Course/languages.png";
 import books from "@/public/Course/books.png";
-import { BsFillClockFill } from "react-icons/bs";
 import lesson from "@/public/Course/lesson.png";
-import coursePoster from "@/public/Course/coursePoster.svg";
-import { MdOutlineSlowMotionVideo } from "react-icons/md";
+import thumbnail from "@/public/Course/thumbnail.svg";
 import { MdDone } from "react-icons/md";
 import n11 from "@/public/Course/n11.png";
 import n12 from "@/public/Course/n12.png";
 import n13 from "@/public/Course/n13.png";
+import jee11 from "@/public/Course/jee11.png";
+import jee12 from "@/public/Course/jee12.png";
+import jee13 from "@/public/Course/jee13.png";
 
 const Batch = (props) => {
   const [activeBatch, setActiveBatch] = useState(props.activeBatch);
@@ -24,6 +25,16 @@ const Batch = (props) => {
     setExamType(props.examType);
   }, [props.activeBatch, props.examType]);
 
+  const imageMap = {
+    "NEET-11th": n11,
+    "NEET-12th": n12,
+    "NEET-13th": n13,
+    "JEE-11th": jee11,
+    "JEE-12th": jee12,
+    "JEE-13th": jee13,
+    "FOUNDATION-9th": thumbnail,
+    "FOUNDATION-10th": thumbnail,
+  };
   return (
     <section className=" w-11/12 xl:w-9/12 mx-auto flex flex-col md:flex md:flex-row justify-between font-Poppins my-8 md:space-x-4 space-y-4 ">
       <div className="border  w-full  md:w-1/2 lg:w-2/3 p-6 rounded-md mt-4 bg-white">
@@ -160,49 +171,22 @@ const Batch = (props) => {
           <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
             <Image
               className="lg:h-48 md:h-36 w-full object-cover object-center"
-              src={
-                examType === "NEET" && activeBatch == "11th"
-                  ? n11
-                  : examType === "NEET" && activeBatch == "12th"
-                  ? n12
-                  : examType === "NEET" && activeBatch == "13th"
-                  ? n13
-                  : examType === "JEE" && activeBatch == "11th"
-                  ? n11
-                  : examType === "JEE" && activeBatch == "12th"
-                  ? n12
-                  : examType === "JEE" && activeBatch == "13th"
-                  ? n13
-                  : examType === "FOUNDATION" && activeBatch == "9th"
-                  ? n11
-                  : examType === "FOUNDATION" && activeBatch == "10th"
-                  ? n12
-                  : coursePoster
-              }
+              src={imageMap[`${examType}-${activeBatch}`] || thumbnail}
               alt="blog"
             />
             <div className="p-6">
               <div className="flex items-center justify-start space-x-4  mb-2 ">
                 <Image className="w-12" src={lesson} alt="lesson-icon"></Image>
                 <div>
-                  <h2 className="text-sm font-medium text-TechBlue">
-                    Get started
+                  <h2 className="text-sm font-medium text-gray-600">
+                    For 2026{" "}
+                    {examType == "JEE" || examType === "NEET"
+                      ? `${examType} aspirant`
+                      : ""}
                   </h2>
-                  <p className=" xl:text-base font-medium">
-                    New lessons are available now
-                  </p>
                 </div>
               </div>
-              <div className="flex items-center justify-between my-4 ">
-                <div className="flex items-center">
-                  <BsFillClockFill className="mr-2 text-TechBlue" />
-                  85 mins
-                </div>
-                <div className="flex items-center">
-                  <MdOutlineSlowMotionVideo className="mr-2 text-orange-400" />
-                  Video format
-                </div>
-              </div>
+
               <hr />
               <div className="flex items-center flex-wrap my-4">
                 <Link
