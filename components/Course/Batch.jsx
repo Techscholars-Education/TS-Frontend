@@ -31,11 +31,22 @@ const Batch = (props) => {
                 ? "ELITE"
                 : activeBatch === "12th"
                 ? "PRIME"
+                : activeBatch === "9th"
+                ? "RISE"
+                : activeBatch === "10th"
+                ? "IGNITE"
                 : "EXCEL"}
             </span>{" "}
-            Batch for {examType} 2026{" "}
+            Batch for {examType == "JEE" || examType === "NEET" ? examType : ""}{" "}
+            2026{" "}
             <span className="text-TechBlue">
-              {activeBatch === "13th" ? "(Droppers)" : ""}
+              {activeBatch === "13th"
+                ? "(Droppers)"
+                : activeBatch === "9th"
+                ? "Class 9"
+                : activeBatch === "10th"
+                ? "Class 10 Board exams"
+                : ""}
             </span>
           </h2>
         </div>
@@ -57,9 +68,17 @@ const Batch = (props) => {
                     ? "11"
                     : activeBatch === "12th"
                     ? "12"
+                    : activeBatch === "9th"
+                    ? "9"
+                    : activeBatch === "10th"
+                    ? "10"
                     : "Droppers"}
                 </span>{" "}
-                ( 2026 {examType} aspirant )
+                ( 2026{" "}
+                {examType == "JEE" || examType === "NEET"
+                  ? `${examType} aspirant`
+                  : ""}{" "}
+                )
               </p>
             </div>
           </li>
@@ -82,7 +101,7 @@ const Batch = (props) => {
                 {examType === "NEET"
                   ? "Physics, Chemistry, Biology"
                   : examType === "JEE"
-                  ? "Physics, Chemistry, Biology"
+                  ? "Physics, Chemistry, Mathematics"
                   : "Physics, Chemistry, Biology, Mathematics"}
               </p>
             </div>
