@@ -172,7 +172,7 @@ const Batch = (props) => {
         <div className="bg-white rounded-lg">
           <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
             <Image
-              className="lg:h-48 md:h-36 w-full object-cover object-center"
+              className="md:h-52 lg:h-48 xl:h-60 2xl:w-[600px] w-full object-cover object-center"
               src={imageMap[`${examType}-${activeBatch}`] || thumbnail}
               alt="blog"
             />
