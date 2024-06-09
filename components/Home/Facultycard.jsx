@@ -21,7 +21,7 @@ const Facultycard = (props) => {
           {props.item.qualification}
         </p>
         <div className="flex items-center flex-wrap absolute bottom-0 ">
-          <span className="text-orange-500 inline-flex items-center md:mb-2 lg:mb-0 text-xs lg:text-sm">
+          <span className="text-TechBlue inline-flex items-center md:mb-2 lg:mb-0 text-xs lg:text-sm">
             {props.item.experience}+ Years of teaching experience.
           </span>
         </div>
