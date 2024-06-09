@@ -15,6 +15,8 @@ import n13 from "@/public/Course/n13.png";
 import jee11 from "@/public/Course/jee11.png";
 import jee12 from "@/public/Course/jee12.png";
 import jee13 from "@/public/Course/jee13.png";
+import F9 from "@/public/Course/F9.png";
+import F10 from "@/public/Course/F10.png";
 
 const Batch = (props) => {
   const [activeBatch, setActiveBatch] = useState(props.activeBatch);
@@ -32,8 +34,8 @@ const Batch = (props) => {
     "JEE-11th": jee11,
     "JEE-12th": jee12,
     "JEE-13th": jee13,
-    "FOUNDATION-9th": thumbnail,
-    "FOUNDATION-10th": thumbnail,
+    "FOUNDATION-9th": F9,
+    "FOUNDATION-10th": F10,
   };
   return (
     <section className=" w-11/12 xl:w-9/12 mx-auto flex flex-col md:flex md:flex-row justify-between font-Poppins my-8 md:space-x-4 space-y-4 ">
@@ -46,9 +48,9 @@ const Batch = (props) => {
                 : activeBatch === "12th"
                 ? "PRIME"
                 : activeBatch === "9th"
-                ? "RISE"
-                : activeBatch === "10th"
                 ? "IGNITE"
+                : activeBatch === "10th"
+                ? "RISE"
                 : "EXCEL"}
             </span>{" "}
             Batch for {examType == "JEE" || examType === "NEET" ? examType : ""}{" "}
@@ -90,7 +92,7 @@ const Batch = (props) => {
                 </span>{" "}
                 ( 2026{" "}
                 {examType == "JEE" || examType === "NEET"
-                  ? `${examType} aspirant`
+                  ? `${examType} aspirants`
                   : ""}{" "}
                 )
               </p>
@@ -181,7 +183,7 @@ const Batch = (props) => {
                   <h2 className="text-sm font-medium text-gray-600">
                     For 2026{" "}
                     {examType == "JEE" || examType === "NEET"
-                      ? `${examType} aspirant`
+                      ? `${examType} aspirants`
                       : ""}
                   </h2>
                 </div>

@@ -12,7 +12,7 @@ const Classes = () => {
       id: 1,
       title: "Starter",
       price: "2899",
-      type: "RISE",
+      type: "IGNITE",
     },
     {
       id: 2,
@@ -30,7 +30,7 @@ const Classes = () => {
       id: 1,
       title: "Starter",
       price: "2999",
-      type: "IGNITE",
+      type: "RISE",
     },
     {
       id: 2,
