@@ -9,7 +9,7 @@ const page = () => {
   return (
     <>
       <Navbar />
-      <section className="my-10 w-4/5 mx-auto  flex flex-col justify-center items-center">
+      <section className="my-10 w-4/52 2xl:w-[1100px] mx-auto  flex flex-col justify-start items-center min-h-[800px]">
         <h1 className="text-darkBlue  font-Poppins font-semibold text-xl md:text-4xl text-center">
           Contact us
         </h1>

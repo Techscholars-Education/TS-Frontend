@@ -10,7 +10,7 @@ const page = () => {
           Privacy policy
         </h1>
 
-        <div className="font-Poppins w-4/5 mx-auto py-10 text-sm md:text-base">
+        <div className="font-Poppins w-4/5 mx-auto 2xl:w-[1100px] py-10 text-sm md:text-base">
           <p className=" text-darkBlue ">
             Because your privacy is important to us <br />
             Codementor Hub Education Pvt. Ltd. <br />A Private Limited Company,
