@@ -5,7 +5,7 @@ import avatar from "../../../../public/Dashboard/avatar.jpg";
 const Card = (props) => {
   return (
     <>
-     <div className=" h-[70vh] w-[25vw] flex flex-col gap-3 shadow-md rounded-t-md hover:shadow-2xl hover:shadow-black transition-all ease-linear duration-200">
+     <div className=" h-[64vh] w-[25vw] flex flex-col gap-3 shadow-md rounded-t-md hover:shadow-md hover:shadow-black transition-all ease-linear duration-200">
                  <div id="image">
                       <Image src={props.image} className="h-[25vh] w-full" alt="logo"/>
                  </div>

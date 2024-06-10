@@ -117,6 +117,12 @@ const HomePageWeb = () => {
   let [selectedDay, setSelectedDay] = useState(today)
   let [currentMonth, setCurrentMonth] = useState(format(today, 'MMM-yyyy'))
   let firstDayCurrentMonth = parse(currentMonth, 'MMM-yyyy', new Date())
+  const jeeTopics = [
+    { subject: "Physics", chapter: "Kinematics", progress: 60, color: "text-gradient-to-r from-orange-400 via-red-500 to-pink-500" },
+    { subject: "Chemistry", chapter: "Atomic Structure", progress: 70, color: "text-green-700" },
+    { subject: "Mathematics", chapter: "Calculus", progress: 50, color: "text-orange-400" },
+    { subject: "Physics", chapter: "Electrodynamics", progress: 40, color: "text-purple-600" }
+  ];
 
   let days = eachDayOfInterval({
     start: firstDayCurrentMonth,
@@ -286,49 +292,22 @@ const HomePageWeb = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col bg-white  rounded-lg  m-6 mt-0">
-              <div className="flex justify-between m-4 ">
-                <span className="font-[700] text-[15px]">Topic progress</span>
-
-                {/* <select>
-                    <option value="jee">JEE</option>
-                    <option value="neet">NEET</option>
-                  </select> */}
-              </div>
-              <div className="grid grid-cols-2 p-6 pt-0 gap-4 ">
-                <div className="flex justify-between h-[48.2px]">
-                  <div className="flex flex-col">
-                    <p className="font-semibold text-blue-600">Physics</p>
-                    <p className="text-[12px] text-gray-400">Chapter 3</p>
-                  </div>
-                  <CircularProgressWithLabel
-                    value={progress}
-                    className="text-gradient-to-r from-orange-400 via-red-500 to-pink-500"
-                  />
-                </div>
-                <div className="flex justify-between h-[48.2px]">
-                  <div className="flex flex-col">
-                    <p className="font-semibold text-green-700">Physics</p>
-                    <p className="text-[12px] text-gray-400">Chapter 3</p>
-                  </div>
-                  <CircularProgressWithLabel value={progress} className="text-green-700" />
-                </div>
-                <div className="flex justify-between h-[48.2px]">
-                  <div className="flex flex-col">
-                    <p className="font-semibold text-orange-400">Physics</p>
-                    <p className="text-[12px] text-gray-400">Chapter 3</p>
-                  </div>
-                  <CircularProgressWithLabel value={progress} className="text-orange-400" />
-                </div>
-                <div className="flex justify-between h-[48.2px]">
-                  <div className="flex flex-col">
-                    <p className="font-semibold text-purple-600">Physics</p>
-                    <p className="text-[12px] text-gray-400">Chapter 3</p>
-                  </div>
-                  <CircularProgressWithLabel value={progress} className="text-purple-600" />
-                </div>
-              </div>
+            <div className="flex flex-col bg-white rounded-lg m-6 mt-0">
+      <div className="flex justify-between m-4">
+        <span className="font-[700] text-[15px]">Topic Progress</span>
+      </div>
+      <div className="grid grid-cols-2 p-6 pt-0 gap-4">
+        {jeeTopics.map((topic, index) => (
+          <div key={index} className="flex justify-between h-[48.2px]">
+            <div className="flex flex-col">
+              <p className={`font-semibold ${topic.color}`}>{topic.subject}</p>
+              <p className="text-[12px] text-gray-400">{topic.chapter}</p>
             </div>
+            <CircularProgressWithLabel value={topic.progress} />
+          </div>
+        ))}
+      </div>
+    </div>
             <div className="flex flex-col rounded-xl ml-6 mr-6 mt-0  bg-white p-4">
               <div className="flex justify-between">
                 <h3 className="font-[700] text-[20px]">To Do List</h3>
