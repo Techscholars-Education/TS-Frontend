@@ -15,10 +15,8 @@ const Course = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await axios.get(
-          `https://api.techscholars.co.in/pdt/v1/product`
-        );
-        setCourses(response.data);
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_BE_API}/v1/product`);
+        setCourses(response?.data);
       } catch (error) {
         console.error("Error fetching courses:", error);
       } finally {

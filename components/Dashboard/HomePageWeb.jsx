@@ -158,11 +158,11 @@ const HomePageWeb = () => {
       <div className=" font-Poppins min-h-screen  w-full bg-[#F0F7FF] overflow-x-hidden ">
         <DashboardNavbar title="Welcome back, Ayo! 👋 " subtitle="You’ve learned 70% of your goal this week! Keep it up and improve." />
         <div className='flex bg-slate-200 p-2 px-3 rounded-full w-24 m-3 mb-0 ml-6'>
-           <IoMdArrowBack className='mt-1 mr-1'/>
+          <IoMdArrowBack className='mt-1 mr-1' />
 
-        <Link href="/" className='text-[14px]'>
+          <Link href="/" className='text-[14px]'>
             Back
-        </Link>
+          </Link>
         </div>
         <div className="my-6 mt-3 mx-6 flex ">
           <div className="w-[35vw] flex flex-col">
@@ -293,21 +293,21 @@ const HomePageWeb = () => {
               </div>
             </div>
             <div className="flex flex-col bg-white rounded-lg m-6 mt-0">
-      <div className="flex justify-between m-4">
-        <span className="font-[700] text-[15px]">Topic Progress</span>
-      </div>
-      <div className="grid grid-cols-2 p-6 pt-0 gap-4">
-        {jeeTopics.map((topic, index) => (
-          <div key={index} className="flex justify-between h-[48.2px]">
-            <div className="flex flex-col">
-              <p className={`font-semibold ${topic.color}`}>{topic.subject}</p>
-              <p className="text-[12px] text-gray-400">{topic.chapter}</p>
+              <div className="flex justify-between m-4">
+                <span className="font-[700] text-[15px]">Topic Progress</span>
+              </div>
+              <div className="grid grid-cols-2 p-6 pt-0 gap-4">
+                {jeeTopics.map((topic, index) => (
+                  <div key={index} className="flex justify-between h-[48.2px]">
+                    <div className="flex flex-col">
+                      <p className={`font-semibold ${topic.color}`}>{topic.subject}</p>
+                      <p className="text-[12px] text-gray-400">{topic.chapter}</p>
+                    </div>
+                    <CircularProgressWithLabel value={topic.progress} />
+                  </div>
+                ))}
+              </div>
             </div>
-            <CircularProgressWithLabel value={topic.progress} />
-          </div>
-        ))}
-      </div>
-    </div>
             <div className="flex flex-col rounded-xl ml-6 mr-6 mt-0  bg-white p-4">
               <div className="flex justify-between">
                 <h3 className="font-[700] text-[20px]">To Do List</h3>
@@ -316,10 +316,10 @@ const HomePageWeb = () => {
               <div>
                 <div className="flex justify-between mt-4 bg-[#F0F7FF] p-3 rounded-3xl ">
                   <div className="flex">
-                  <FaCheck className="text-white  bg-blue-500 h-5 p-1 w-5  rounded-full" />
+                    <FaCheck className="text-white  bg-blue-500 h-5 p-1 w-5  rounded-full" />
                     <div className="flex flex-col ml-3">
                       <h2 className="text-[#333333] font-[700] text-[15px]">
-                      Life Contingency Tutorials Edulog Tutorial College, Blk 56, Lagos State.
+                        Life Contingency Tutorials Edulog Tutorial College, Blk 56, Lagos State.
                       </h2>
                       <p className="font-[600] text-[10px] text-[#8A8A8A]">
                         Lorem ipsum dolor sit amet.
