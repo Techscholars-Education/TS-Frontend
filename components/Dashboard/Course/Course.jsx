@@ -16,9 +16,11 @@ const Course = () => {
     const fetchCourses = async () => {
       try {
         const response = await axios.get(`${process.env.NEXT_PUBLIC_BE_API}/v1/product`);
-        setCourses(response?.data);
+        
+        setCourses(Array.isArray(response?.data) ? response.data : []);
       } catch (error) {
         console.error("Error fetching courses:", error);
+        setCourses([]);
       } finally {
         setLoading(false);
       }
@@ -61,37 +63,20 @@ const Course = () => {
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 xl:w-11/12 mx-auto">
-            {courses.map((course) => (
-              <CourseCard
-                key={course.id}
-                title={course.name}
-                description={course.description}
-                route={`/dashboard/my-course/coursedetail`}
-                image={coursePoster}
-              />
-            ))}
-          </div>
-          {/* <div className="space-y-4 mt-10 flex flex-col mx-12">
-            <h2 className="text-xl md:text-xl font-semibold text-darkBlue">
-              Explore Other Courses
-            </h2>
-            <p className="text-sm text-gray-600">
-              You’ve learned 70% of your goal this week! Keep it up
-            </p>
-          </div>
-          <div className="flex justify-center mt-24 items-center space-x-4 md:space-x-10">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 xl:w-11/12 mx-auto">
-              {courses.map((course) => (
+            {courses.length > 0 ? (
+              courses.map((course) => (
                 <CourseCard
                   key={course.id}
                   title={course.name}
                   description={course.description}
-                  route={`/dashboard/my-course/coursedetail/${course.id}`}
+                  route={`/dashboard/my-course/coursedetail`}
                   image={coursePoster}
                 />
-              ))}
-            </div>
-          </div> */}
+              ))
+            ) : (
+              <p>No courses available</p>
+            )}
+          </div>
         </>
       )}
     </div>
