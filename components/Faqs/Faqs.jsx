@@ -46,7 +46,7 @@ const Faqs = () => {
         </p>
       </div>
 
-      <div className="m-2 space-y-6 w-11/12 lg:w-9/12 mx-auto">
+      <div className="m-2 space-y-6 w-11/12 lg:w-9/12 2xl:w-[1100px] mx-auto">
         {Faqs.map((item) => {
           return (
             <AccordionItem

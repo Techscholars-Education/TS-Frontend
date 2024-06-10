@@ -35,7 +35,7 @@ const Course = () => {
 
   return (
     <>
-      <div className="bg-white font-Poppins min-h-screen py-10 w-full ">
+      <div className="bg-white font-Poppins min-h-screen py-10  w-full ">
         <div className="text-center space-y-4 mb-10">
           <h2 className="text-xl md:text-4xl font-semibold text-darkBlue">
             Explore our courses
@@ -45,7 +45,7 @@ const Course = () => {
             you with the knowledge and skills for success.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 xl:w-10/12 mx-auto ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 xl:w-10/12 2xl:w-[1100px] mx-auto ">
           {data.map((item) => {
             return (
               <Card
