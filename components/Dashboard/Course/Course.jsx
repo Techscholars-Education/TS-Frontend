@@ -65,7 +65,7 @@ const Course = () => {
               />
             ))}
           </div>
-          <div className="space-y-4 mt-10 flex flex-col mx-12">
+          {/* <div className="space-y-4 mt-10 flex flex-col mx-12">
             <h2 className="text-xl md:text-xl font-semibold text-darkBlue">
               Explore Other Courses
             </h2>
@@ -85,7 +85,7 @@ const Course = () => {
                 />
               ))}
             </div>
-          </div>
+          </div> */}
         </>
       )}
     </div>
