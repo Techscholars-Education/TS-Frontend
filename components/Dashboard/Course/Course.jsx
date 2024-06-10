@@ -16,7 +16,7 @@ const Course = () => {
     const fetchCourses = async () => {
       try {
         const response = await axios.get(`${process.env.NEXT_PUBLIC_BE_API}/v1/product`);
-        setCourses(response.data);
+        setCourses(response?.data);
       } catch (error) {
         console.error("Error fetching courses:", error);
       } finally {
