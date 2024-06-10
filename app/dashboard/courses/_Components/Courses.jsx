@@ -9,10 +9,10 @@ import axios from "axios";
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 
-
 const Courses = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,22 +20,26 @@ const Courses = () => {
         const response = await axios.get(
           `${process.env.NEXT_PUBLIC_BE_API}/v1/category`
         );
-      
-        const formattedData = response?.data?.map((item) => ({
-          id: item.id,
-          title: item.name.toUpperCase(),
-          route: `/dashboard/courses/${item.name.toLowerCase().replace(/\s+/g, '')}`,
-          description: item.description,
-          Poster: coursePoster,
-        }));
-      
-        setData(formattedData);
-        setLoading(false);
+
+        if (Array.isArray(response.data)) {
+          const formattedData = response.data.map((item) => ({
+            id: item.id,
+            title: item.name.toUpperCase(),
+            route: `/dashboard/courses/${item.name.toLowerCase().replace(/\s+/g, '')}`,
+            description: item.description,
+            Poster: coursePoster,
+          }));
+
+          setData(formattedData);
+        } else {
+          throw new Error("Data format is not an array");
+        }
       } catch (error) {
         console.error("Error fetching data:", error);
+        setError(error.message || "An error occurred");
+      } finally {
         setLoading(false);
       }
-      
     };
 
     fetchData();
@@ -49,6 +53,10 @@ const Courses = () => {
           <Box sx={{ display: 'flex' }}>
             <CircularProgress />
           </Box>
+        </div>
+      ) : error ? (
+        <div className="flex justify-center items-center h-screen">
+          <p>Error: {error}</p>
         </div>
       ) : (
         <div className="my-6 flex flex-col mr-2 bg-blue-50 h-[82vh] max-w-full pl-5 pr-5 pt-5">
