@@ -50,7 +50,7 @@ const Studenttest = () => {
           Hear from our students
         </p>
       </div>
-      <div className=" my-10 w-11/12 mx-auto ">
+      <div className=" my-10 w-11/12 2xl:w-[1200px] mx-auto ">
         <Slider {...settings}>
           {studentTestimonials.map((item) => {
             return (

@@ -77,7 +77,7 @@ const AccordionItem = ({ title, content }) => {
         className="w-full flex justify-between items-center p-4 text-left text-gray-800 focus:outline-none"
         onClick={toggleAccordion}
       >
-        <span className="text-lg">{title}</span>
+        <span className=" text-sm md:text-lg">{title}</span>
         <svg
           className={`w-5 h-5 transition-transform duration-300 ${
             isOpen ? "transform rotate-180" : ""
@@ -102,7 +102,9 @@ const AccordionItem = ({ title, content }) => {
         }}
         className={`overflow-hidden transition-all duration-500 ease-in-out`}
       >
-        <div className="p-4">{content}</div>
+        <div className="px-4 py-3 text-sm md:text-base text-gray-700">
+          {content}
+        </div>
       </div>
     </div>
   );
