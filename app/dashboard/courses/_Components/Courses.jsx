@@ -18,7 +18,7 @@ const Courses = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${process.env.NEXT_PUBLIC_BE_API}/v1/category`
+          'https://api.techscholars.co.in/pdt/v1/category'
         );
 
         if (Array.isArray(response.data)) {
@@ -44,7 +44,7 @@ const Courses = () => {
 
     fetchData();
   }, []);
-
+ console.log(data)
   return (
     <div className="bg-white font-Poppins h-screen w-full">
       <DashboardNavbar title={"Courses"} />
