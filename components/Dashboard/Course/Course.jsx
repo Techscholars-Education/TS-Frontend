@@ -1,9 +1,9 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
-import CircularProgress from '@mui/material/CircularProgress';
-import Box from '@mui/material/Box';
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 import coursePoster from "../../../public/Course/coursePoster.svg";
 import CourseCard from "./CourseCard";
 import DashboardNavbar from "../DashboardNavbar";
@@ -32,7 +32,7 @@ const Course = () => {
       <DashboardNavbar title="Course" />
       {loading ? (
         <div className="flex justify-center items-center h-screen">
-          <Box sx={{ display: 'flex' }}>
+          <Box sx={{ display: "flex" }}>
             <CircularProgress />
           </Box>
         </div>
@@ -46,10 +46,16 @@ const Course = () => {
               You’ve learned 70% of your goal this week! Keep it up
             </p>
             <div className="flex">
-              <Link href="" className="pt-2.5 py-1.5 px-8 mx-4 rounded-full text-center bg-TechBlue text-sm text-white">
+              <Link
+                href=""
+                className="pt-2.5 py-1.5 px-8 mx-4 rounded-full text-center bg-TechBlue text-sm text-white"
+              >
                 Paid
               </Link>
-              <Link href="" className="pt-2 py-1.5 px-8 rounded-full text-center text-sm bg-slate-200">
+              <Link
+                href=""
+                className="pt-2 py-1.5 px-8 rounded-full text-center text-sm bg-slate-200"
+              >
                 Free
               </Link>
             </div>

@@ -23,10 +23,10 @@ const Curriculum = () => {
           </p>
         </div>
         {/* Exam category */}
-        <section className="md:w-11/12 xl:w-9/12 mx-auto grid grid-cols-1  lg:grid-cols-3 font-Inter gap-4 mt-10 ">
+        <section className="w-10/12 lg:w-11/12 xl:w-9/12 mx-auto grid grid-cols-1  lg:grid-cols-3 font-Inter gap-4 mt-10 ">
           <Link
-            href="/course"
-            className=" relative h-[230px] lg:h-[230px] xl:h-[230px] border rounded-xl group hover:border-black transition-all "
+            href="/course/neet"
+            className=" relative h-[230px] lg:h-[230px] xl:h-[230px] border rounded-t-xl  group hover:border-black transition-all "
           >
             <div className=" p-4 ">
               <div>
@@ -38,7 +38,7 @@ const Curriculum = () => {
                     class 11<sup>th</sup>
                   </li>
                   <li className="border rounded-full px-3 lg:px-2 xl:px-3 border-gray-300 py-2">
-                    class 11<sup>th</sup>
+                    class 12<sup>th</sup>
                   </li>
                   <li className="border rounded-full px-3 lg:px-2 xl:px-3 border-gray-300 py-2">
                     Target 13<sup>th</sup>
@@ -55,8 +55,8 @@ const Curriculum = () => {
             </div>
           </Link>
           <Link
-            href="/course"
-            className=" relative h-[230px] lg:h-[230px] xl:h-[230px]  border rounded-xl group hover:border-black transition-all "
+            href="/course/jee"
+            className=" relative h-[230px] lg:h-[230px] xl:h-[230px]  border rounded-t-xl group hover:border-black transition-all "
           >
             <div className=" p-4 ">
               <div>
@@ -68,7 +68,7 @@ const Curriculum = () => {
                     class 11<sup>th</sup>
                   </li>
                   <li className="border rounded-full px-3 lg:px-2 xl:px-3 border-gray-300 py-2">
-                    class 11<sup>th</sup>
+                    class 12<sup>th</sup>
                   </li>
                   <li className="border rounded-full px-3 lg:px-2 xl:px-3 border-gray-300 py-2">
                     Target 13<sup>th</sup>
@@ -85,8 +85,8 @@ const Curriculum = () => {
             </div>
           </Link>
           <Link
-            href="/course"
-            className="relative h-[230px] lg:h-[230px] xl:h-[230px] border rounded-xl  group hover:border-black transition-all "
+            href="/course/foundation"
+            className="relative h-[230px] lg:h-[230px] xl:h-[230px] border rounded-t-xl  group hover:border-black transition-all "
           >
             <div className="p-4">
               <div>
@@ -103,7 +103,7 @@ const Curriculum = () => {
                 </ul>
               </div>
             </div>
-            <div className="bg-green-50 group-hover:bg-green-100 rounded-t-full absolute bottom-0 overflow-hidden flex justify-center items-center w-full py-3 transition-all group-hover:py-6">
+            <div className="bg-green-50 group-hover:bg-green-100 rounded-t-full absolute bottom-0 overflow-hidden  flex justify-center items-center w-full py-3 transition-all group-hover:py-6">
               <Image
                 className="w-16 mx-auto"
                 src={openbook}

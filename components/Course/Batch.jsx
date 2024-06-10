@@ -6,11 +6,17 @@ import classroom from "@/public/Course/classroom.png";
 import calendar from "@/public/Course/calendar.png";
 import languages from "@/public/Course/languages.png";
 import books from "@/public/Course/books.png";
-import { BsFillClockFill } from "react-icons/bs";
 import lesson from "@/public/Course/lesson.png";
-import coursePoster from "@/public/Course/coursePoster.svg";
-import { MdOutlineSlowMotionVideo } from "react-icons/md";
+import thumbnail from "@/public/Course/thumbnail.svg";
 import { MdDone } from "react-icons/md";
+import n11 from "@/public/Course/n11.png";
+import n12 from "@/public/Course/n12.png";
+import n13 from "@/public/Course/n13.png";
+import jee11 from "@/public/Course/jee11.png";
+import jee12 from "@/public/Course/jee12.png";
+import jee13 from "@/public/Course/jee13.png";
+import F9 from "@/public/Course/F9.png";
+import F10 from "@/public/Course/F10.png";
 
 const Batch = (props) => {
   const [activeBatch, setActiveBatch] = useState(props.activeBatch);
@@ -20,7 +26,17 @@ const Batch = (props) => {
     setActiveBatch(props.activeBatch);
     setExamType(props.examType);
   }, [props.activeBatch, props.examType]);
-  console.log(activeBatch);
+
+  const imageMap = {
+    "NEET-11th": n11,
+    "NEET-12th": n12,
+    "NEET-13th": n13,
+    "JEE-11th": jee11,
+    "JEE-12th": jee12,
+    "JEE-13th": jee13,
+    "FOUNDATION-9th": F9,
+    "FOUNDATION-10th": F10,
+  };
   return (
     <section className=" w-11/12 xl:w-9/12 mx-auto flex flex-col md:flex md:flex-row justify-between font-Poppins my-8 md:space-x-4 space-y-4 ">
       <div className="border  w-full  md:w-1/2 lg:w-2/3 p-6 rounded-md mt-4 bg-white">
@@ -31,11 +47,22 @@ const Batch = (props) => {
                 ? "ELITE"
                 : activeBatch === "12th"
                 ? "PRIME"
+                : activeBatch === "9th"
+                ? "IGNITE"
+                : activeBatch === "10th"
+                ? "RISE"
                 : "EXCEL"}
             </span>{" "}
-            Batch for {examType} 2026{" "}
+            Batch for {examType == "JEE" || examType === "NEET" ? examType : ""}{" "}
+            2026{" "}
             <span className="text-TechBlue">
-              {activeBatch === "13th" ? "(Droppers)" : ""}
+              {activeBatch === "13th"
+                ? "(Droppers)"
+                : activeBatch === "9th"
+                ? "Class 9"
+                : activeBatch === "10th"
+                ? "Class 10 Board exams"
+                : ""}
             </span>
           </h2>
         </div>
@@ -57,9 +84,17 @@ const Batch = (props) => {
                     ? "11"
                     : activeBatch === "12th"
                     ? "12"
+                    : activeBatch === "9th"
+                    ? "9"
+                    : activeBatch === "10th"
+                    ? "10"
                     : "Droppers"}
                 </span>{" "}
-                ( 2026 {examType} aspirant )
+                ( 2026{" "}
+                {examType == "JEE" || examType === "NEET"
+                  ? `${examType} aspirants`
+                  : ""}{" "}
+                )
               </p>
             </div>
           </li>
@@ -82,7 +117,7 @@ const Batch = (props) => {
                 {examType === "NEET"
                   ? "Physics, Chemistry, Biology"
                   : examType === "JEE"
-                  ? "Physics, Chemistry, Biology"
+                  ? "Physics, Chemistry, Mathematics"
                   : "Physics, Chemistry, Biology, Mathematics"}
               </p>
             </div>
@@ -137,32 +172,23 @@ const Batch = (props) => {
         <div className="bg-white rounded-lg">
           <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
             <Image
-              className="lg:h-48 md:h-36 w-full object-cover object-center"
-              src={coursePoster}
+              className="md:h-52 lg:h-48 xl:h-60 2xl:w-[600px] w-full object-cover object-center"
+              src={imageMap[`${examType}-${activeBatch}`] || thumbnail}
               alt="blog"
             />
             <div className="p-6">
               <div className="flex items-center justify-start space-x-4  mb-2 ">
                 <Image className="w-12" src={lesson} alt="lesson-icon"></Image>
                 <div>
-                  <h2 className="text-sm font-medium text-TechBlue">
-                    Get started
+                  <h2 className="text-sm font-medium text-gray-600">
+                    For 2026{" "}
+                    {examType == "JEE" || examType === "NEET"
+                      ? `${examType} aspirants`
+                      : ""}
                   </h2>
-                  <p className=" xl:text-base font-medium">
-                    New lessons are available now
-                  </p>
                 </div>
               </div>
-              <div className="flex items-center justify-between my-4 ">
-                <div className="flex items-center">
-                  <BsFillClockFill className="mr-2 text-TechBlue" />
-                  85 mins
-                </div>
-                <div className="flex items-center">
-                  <MdOutlineSlowMotionVideo className="mr-2 text-orange-400" />
-                  Video format
-                </div>
-              </div>
+
               <hr />
               <div className="flex items-center flex-wrap my-4">
                 <Link

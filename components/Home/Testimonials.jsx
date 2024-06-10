@@ -3,7 +3,10 @@ import React from "react";
 
 const Testimonials = () => {
   return (
-    <section className=" py-16 bg-gray-50 font-Poppins w-full mx-auto  ">
+    <section
+      id="testimonials"
+      className=" py-16 bg-gray-50 font-Poppins w-full mx-auto  "
+    >
       <div className=" w-full mx-auto  rounded-xl">
         <h2 className="text-darkBlue font-semibold text-xl  md:text-4xl px-10 md:px-0 text-center my-4 font-Poppins ">
           Hear from Parents: Why they believe is us

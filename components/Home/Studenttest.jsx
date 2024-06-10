@@ -10,6 +10,7 @@ const Studenttest = () => {
     speed: 500,
     autoplaySpeed: 2000,
     slidesToShow: 3,
+    arrows: false,
     slidesToScroll: 1,
     initialSlide: 0,
     autoplay: true,

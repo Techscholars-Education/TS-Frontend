@@ -13,6 +13,7 @@ const Faculties = (props) => {
     slidesToShow: 3,
     autoplaySpeed: 2000,
     slidesToScroll: 1,
+    arrows: false,
     initialSlide: 0,
     rtl: true,
     autoplay: true,
@@ -20,7 +21,7 @@ const Faculties = (props) => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
         },
@@ -70,9 +71,13 @@ const Faculties = (props) => {
             ? facultiesData
                 .filter((item) => [3, 5, 2, 8].includes(item.id))
                 .map((item) => <Facultycard key={item.id} item={item} />)
-            : facultiesData
+            : props.examType === "JEE"
+            ? facultiesData
                 .filter((item) => [1, 2, 3, 4, 5, 7].includes(item.id))
-                .map((item) => <Facultycard key={item.id} item={item} />)}
+                .map((item) => <Facultycard key={item.id} item={item} />)
+            : facultiesData.map((item) => (
+                <Facultycard key={item.id} item={item} />
+              ))}
         </Slider>
       </div>
     </section>
