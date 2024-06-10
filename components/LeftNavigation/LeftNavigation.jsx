@@ -28,6 +28,8 @@ const LeftNavigation = () => {
     localStorage.removeItem("cookie-storage")
     // Refresh the page
     window.location.reload();
+    window.location.assign('/');
+    
   };
 
   const isActive = (path) => pathname === path;
