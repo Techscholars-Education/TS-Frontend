@@ -13,17 +13,17 @@ const Classes = () => {
       id: 1,
       type: "ELITE",
       title: "Starter",
-      price: "2899",
+      price: "3999",
     },
     {
       id: 2,
       title: "Advanced",
-      price: "9899",
+      price: "8999",
     },
     {
       id: 3,
       title: "Ultimate",
-      price: "19899",
+      price: "18999",
     },
   ];
   const costing12th = [
@@ -31,12 +31,12 @@ const Classes = () => {
       id: 1,
       type: "PRIME",
       title: "Starter",
-      price: "2999",
+      price: "3999",
     },
     {
       id: 2,
       title: "Advanced",
-      price: "9999",
+      price: "8999",
     },
     {
       id: 3,
@@ -49,7 +49,7 @@ const Classes = () => {
       id: 1,
       type: "PRIME",
       title: "Starter",
-      price: "3999",
+      price: "4999",
     },
     {
       id: 2,
