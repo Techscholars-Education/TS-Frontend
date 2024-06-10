@@ -86,8 +86,7 @@ const Profile = () => {
     setEmail("")
     setGender("")
     setPhone("")
-    setBio("")
-    
+    setBio("")    
   }
 
 
@@ -98,7 +97,6 @@ const Profile = () => {
     setGender("")
     setPhone("")
     setBio("")
-
   }
 
 

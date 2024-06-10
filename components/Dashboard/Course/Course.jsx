@@ -15,7 +15,7 @@ const Course = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await axios.get('https://api.techscholars.co.in/pdt/v1/product');
+        const response = await axios.get('https://api.techscholars.in/pdt/v1/product');
         
         setCourses(Array.isArray(response?.data) ? response.data : []);
       } catch (error) {
