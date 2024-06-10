@@ -5,7 +5,7 @@ import avatar from "../../../../public/Dashboard/avatar.jpg";
 const Card = (props) => {
   return (
     <>
-     <div className=" h-[64vh] w-[25vw] flex flex-col gap-3 shadow-md rounded-t-md hover:shadow-md hover:shadow-black transition-all ease-linear duration-200">
+     <div className=" h-[64vh] w-[22vw] bg-white flex flex-col rounded-xl  shadow-md rounded-t-md hover:shadow-md hover:shadow-black transition-all ease-linear duration-200">
                  <div id="image">
                       <Image src={props.image} className="h-[25vh] w-full" alt="logo"/>
                  </div>
@@ -24,8 +24,8 @@ const Card = (props) => {
                              </div>
                      </div>
                  </div>
-                 <div id="btn" className="pl-8 pr-8 pt-4">
-                           <button className=" flex items-center justify-center h-[7vh] w-full rounded-full text-xl text-white font-Poppins bg-TechBlue hover:bg-black hover:shadow-sm hover:shadow-black transition-all ease-linear duration-200">Get Started</button>
+                 <div id="btn" className="pl-6 pr-6 pt-4 flex justify-center">
+                           <button className=" flex items-center justify-center h-[5vh] w-full rounded-full text-lg text-white font-Poppins bg-TechBlue hover:bg-black hover:shadow-sm hover:shadow-black transition-all ease-linear duration-200">Get Started</button>
                  </div>
      </div>
     </>

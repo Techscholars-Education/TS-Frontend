@@ -15,7 +15,7 @@ const CourseCard = (props) => {
       <div
         className={`flex flex-col rounded-xl border ${
           props.title === "JEE" ? "shadow-xl" : "shadow-md"
-        }   font-Poppins relative w-[22vw] bg-white`}
+        }   font-Poppins relative w-[23vw] mt-2 bg-white`}
       >
         <div>
           <Image
@@ -33,11 +33,11 @@ const CourseCard = (props) => {
              </div>
              <div className="flex flex-col ml-2">
               <p className="text-[12px] text-[#0079FC]">{props.title}</p>
-              <p className="text-sm">New lession is available</p>
+              <p className="text-sm">{props.description.split(' ')[0]}</p>
              </div>
             </div>
           </div>
-          <p className="font-base text-xs xl:text-sm leading-relaxed text-gray-500 py-3 font-Poppins">
+          <p className="font-base text-xs xl:text-sm leading-relaxed ml-2 text-gray-500 py-3 font-Poppins">
             {props.description}
           </p>
           <div className="flex justify-start mt-4 items-center">
