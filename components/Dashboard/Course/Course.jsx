@@ -15,7 +15,7 @@ const Course = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_BE_API}/v1/product`);
+        const response = await axios.get('https://api.techscholars.co.in/pdt/v1/product');
         
         setCourses(Array.isArray(response?.data) ? response.data : []);
       } catch (error) {
@@ -27,7 +27,9 @@ const Course = () => {
     };
 
     fetchCourses();
+    
   }, []);
+  console.log(courses)
 
   return (
     <div className="font-Poppins min-h-screen w-full bg-[#F0F7FF]">
