@@ -23,7 +23,7 @@ const Curriculum = () => {
           </p>
         </div>
         {/* Exam category */}
-        <section className="w-10/12 lg:w-11/12 xl:w-9/12 mx-auto grid grid-cols-1  lg:grid-cols-3 font-Inter gap-4 mt-10 ">
+        <section className="w-10/12 lg:w-11/12 xl:w-9/12 2xl:w-[1100px] mx-auto grid grid-cols-1  lg:grid-cols-3 font-Inter gap-4 mt-10 ">
           <Link
             href="/course/neet"
             className=" relative h-[230px] lg:h-[230px] xl:h-[230px] border rounded-t-xl  group hover:border-black transition-all "
