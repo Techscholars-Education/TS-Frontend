@@ -21,10 +21,10 @@ const Courses = () => {
           `${process.env.NEXT_PUBLIC_BE_API}/v1/category`
         );
       
-        const formattedData = response?.data?.filter((item, index) => index !== 0).map((item) => ({
+        const formattedData = response?.data?.map((item) => ({
           id: item.id,
           title: item.name.toUpperCase(),
-          route: `/dashboard/courses/${item.name.toLowerCase()}`,
+          route: `/dashboard/courses/${item.name.toLowerCase().replace(/\s+/g, '')}`,
           description: item.description,
           Poster: coursePoster,
         }));
