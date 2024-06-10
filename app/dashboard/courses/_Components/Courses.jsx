@@ -20,20 +20,22 @@ const Courses = () => {
         const response = await axios.get(
           `${process.env.NEXT_PUBLIC_BE_API}/v1/category`
         );
-
-        const formattedData = response?.data?.slice(1).map((item) => ({
+      
+        const formattedData = response?.data?.filter((item, index) => index !== 0).map((item) => ({
           id: item.id,
           title: item.name.toUpperCase(),
           route: `/dashboard/courses/${item.name.toLowerCase()}`,
           description: item.description,
           Poster: coursePoster,
         }));
+      
         setData(formattedData);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
         setLoading(false);
       }
+      
     };
 
     fetchData();

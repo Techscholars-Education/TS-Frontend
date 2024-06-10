@@ -179,7 +179,7 @@ const LeftNavigation = () => {
         </ul>
         <div className="mt-12 flex flex-col">
           <p className="text-[12px]">Other</p>
-          <li className="flex items-center mt-3 ">
+          {/* <li className="flex items-center mt-3 ">
             <FiSettings
               className={`mr-2 text-xl ${
                 isActive("/dashboard/settings")
@@ -197,7 +197,7 @@ const LeftNavigation = () => {
             >
               Settings
             </a>
-          </li>
+          </li> */}
           <button
             onClick={handleSignOut}
             className="text-white  bottom-6 mt-3 left-12 hover:text-gray-400 flex items-center"
