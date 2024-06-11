@@ -1,5 +1,4 @@
 'use client'
-
 import DashboardNavbar from '@/components/Dashboard/DashboardNavbar'
 import Image from 'next/image'
 import men from "../../../../public/Dashboard/men_nav.jpg"
@@ -16,6 +15,23 @@ const Profile = () => {
    
   const { useprofile} = useProfile()
   const {useprofileupdate} = useProfileUpdate()
+  const [userImage,setUserImage] = useState()
+  const [call,setCall] = useState(false)
+
+   
+  useEffect(()=>{
+    const image = window?.localStorage?.getItem("profile-storage");
+    const imagejs = JSON.parse(image)
+    setUserImage(imagejs.state.profiles.profile_image);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[call])
+  
+  
+  useEffect(()=>{
+    useprofile()
+    setCall(true)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[1])
 
 
   const [name,setName] = useState("")
@@ -34,10 +50,6 @@ const Profile = () => {
     
   };
 
-  const validateEmail = (email) => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(String(email).toLowerCase());
-  };
   
   const handleSaveClick = (event) => {
     event.preventDefault();
@@ -46,12 +58,15 @@ const Profile = () => {
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
-    let reader = new FileReader();
-    reader.readAsDataURL(file);
-
-    reader.onload = e => {
-      setImageUrl(e.target.result)
-    };
+    const data = new FormData()
+    data.append("file",file)
+    data.append("upload_preset","simvlvoa")
+    data.append("cloud_name","dmdgqiaix")
+    fetch("https://api.cloudinary.com/v1_1/dmdgqiaix/image/upload",{
+      method:"POST",
+      body:data
+    }).then((res)=> res.json())
+    .then((data) => {setImageUrl(data.url)})
   };
 
   const handleSubmit = () => {   
@@ -65,6 +80,7 @@ const Profile = () => {
 
         setModalOpen(false);
         resetSubmit()
+        
   }
   const resetSubmit = () => {
     setName("")
@@ -82,12 +98,9 @@ const Profile = () => {
     setGender("")
     setPhone("")
     setBio("")
-    useprofile()
+    // useprofile()
     // getway()
   }
-
-
-
 
     return (
 
@@ -105,7 +118,7 @@ const Profile = () => {
                         <div className="flex items-center gap-2 relative">
                             <div className="camera">
                                 <label htmlFor="image" >
-                                    <Image src={men} alt='imageuser' className='rounded-full h-[7vw] w-[7vw] cursor-pointer'  />
+                                    {userImage ? <Image src={userImage}  alt='imageuser' className='rounded-full cursor-pointer' width={105} height={105} priority /> : <Image priority src={men}  alt='imageuser' className='rounded-full cursor-pointer h-[7vw] w-[7vw]' />}
                                 </label>
                                 <input
                                     type="file"
