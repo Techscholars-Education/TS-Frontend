@@ -45,7 +45,7 @@ function CourseDetailNavbar() {
           <li className="flex items-center ">
             
             <Link
-              href="/dashboard/test"
+              href="/dashboard/test/testdetail"
               className={`font-semibold ${isActive('/dashboard/test') ? 'text-[#0079FC] underline' : 'text-gray-500 hover:text-gray-400 ml-12'}`}
             >
               Tests

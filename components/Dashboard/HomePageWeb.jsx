@@ -42,6 +42,9 @@ import {
   startOfToday,
 } from 'date-fns'
 import Link from "next/link";
+import axios from "axios";
+import Cookies from "js-cookie";
+import { Cookie } from "@mui/icons-material";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -83,6 +86,46 @@ const HomePageWeb = () => {
     ],
   };
   const [isChecked, setIsChecked] = useState(false);
+  const [userInfo, setUserInfo] = useState(null);
+  const [todos, setTodos] = useState([]);
+
+  // useEffect(() => {
+  //   const fetchTodos = async () => {
+  //     try {
+        
+  //       const accessToken = Cookies.get('access_token');
+  //       console.log(accessToken)
+  //       if (!accessToken) {
+  //         throw new Error('Access token not found');
+  //       }
+    
+  //       const requestOptions = {
+  //         method: 'GET',
+  //         headers: {
+  //           'Cookie': `access_token=${accessToken}`,
+  //           'Content-Type': 'application/json', 
+  //         },
+  //         credentials: 'include' 
+  //       };
+  //      const response = await fetch('https://api.techscholars.co.in/auth/todoAll', requestOptions);
+  //       console.log(response.data)
+  //     } catch (error) {
+  //       console.error('Error fetching todos:', error);
+  //     }
+  
+        
+  //   };
+
+  //   fetchTodos();
+  // }, []);
+
+  useEffect(() => {
+    const storedUserInfo = localStorage.getItem("userInfo");
+    console.log(storedUserInfo)
+    if (storedUserInfo) {
+      setUserInfo(JSON.parse(storedUserInfo));
+    }
+  }, []);
 
   const handleToggle = () => {
     setIsChecked(!isChecked);
@@ -156,7 +199,7 @@ const HomePageWeb = () => {
   return (
     <>
       <div className=" font-Poppins min-h-screen  w-full bg-[#F0F7FF] overflow-x-hidden ">
-        <DashboardNavbar title="Welcome back, Ayo! 👋 " subtitle="You’ve learned 70% of your goal this week! Keep it up and improve." />
+        <DashboardNavbar title={`Welcome back${userInfo?.given_name ? `, ${userInfo.given_name}` : ''}! 👋 `} subtitle="You’ve learned 70% of your goal this week! Keep it up and improve." />
         <div className='flex bg-slate-200 p-2 px-3 rounded-full w-24 m-3 mb-0 ml-6'>
           <IoMdArrowBack className='mt-1 mr-1' />
 
@@ -308,28 +351,34 @@ const HomePageWeb = () => {
                 ))}
               </div>
             </div>
-            <div className="flex flex-col rounded-xl ml-6 mr-6 mt-0  bg-white p-4">
+            <div className="flex flex-col rounded-xl ml-6 mr-6 mt-0 bg-white p-4">
               <div className="flex justify-between">
                 <h3 className="font-[700] text-[20px]">To Do List</h3>
                 <h4 className="font-[700] text-[13px]">See all</h4>
               </div>
               <div>
-                <div className="flex justify-between mt-4 bg-[#F0F7FF] p-3 rounded-3xl ">
-                  <div className="flex">
-                    <FaCheck className="text-white  bg-blue-500 h-5 p-1 w-5  rounded-full" />
-                    <div className="flex flex-col ml-3">
-                      <h2 className="text-[#333333] font-[700] text-[15px]">
-                        Life Contingency Tutorials Edulog Tutorial College, Blk 56, Lagos State.
-                      </h2>
-                      <p className="font-[600] text-[10px] text-[#8A8A8A]">
-                        Lorem ipsum dolor sit amet.
-                      </p>
+                {todos.length > 0 ? (
+                  todos.map(todo => (
+                    <div key={todo.id} className="flex justify-between mt-4 bg-[#F0F7FF] p-3 rounded-3xl">
+                      <div className="flex">
+                        <FaCheck className="text-white bg-blue-500 h-5 p-1 w-5 rounded-full" />
+                        <div className="flex flex-col ml-3">
+                          <h2 className="text-[#333333] font-[700] text-[15px]">
+                            {todo.task}
+                          </h2>
+                          <p className="font-[600] text-[10px] text-[#8A8A8A]">
+                            {todo.description}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="mt-3">
+                        <LiaGreaterThanSolid />
+                      </div>
                     </div>
-                  </div>
-                  <div className="mt-3">
-                    <LiaGreaterThanSolid />
-                  </div>
-                </div>
+                  ))
+                ) : (
+                  <p>Loading...</p>
+                )}
               </div>
             </div>
 

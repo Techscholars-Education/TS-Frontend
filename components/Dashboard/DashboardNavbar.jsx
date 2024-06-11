@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { FiBell, FiSearch, FiUser } from "react-icons/fi";
 import Image from "next/image";
 import men from "../../public/Dashboard/men_nav.jpg";
@@ -7,7 +7,16 @@ import Link from "next/link";
 
 function DashboardNavbar(props) {
   const [search, setSearch] = useState(false);
+  const [userInfo, setUserInfo] = useState(null);
 
+  useEffect(() => {
+    const storedUserInfo = localStorage.getItem("userInfo");
+    console.log(storedUserInfo)
+    if (storedUserInfo) {
+      setUserInfo(JSON.parse(storedUserInfo));
+    }
+  }, []);
+  
   return (
     <div className="flex flex-wrap max-w-full place-items-center py-6 bg-white">
       <section className="relative mx-auto">
@@ -55,13 +64,18 @@ function DashboardNavbar(props) {
                 href={"/dashboard/profile"}
                 className="flex items-center hover:text-gray-200"
               >
-                <Image
-                  className="h-8 w-8 rounded-md"
-                  src={men}
-                  alt="Profile"
-                  width={32}
-                  height={32}
-                />
+                {userInfo && (
+                  <>
+                    <img
+                      className="h-8 w-8 rounded-md"
+                      src={userInfo.picture || men}
+                      alt="Profile"
+                      width={32}
+                      height={32}
+                    />
+                    
+                  </>
+                )}
               </Link>
             </div>
           </div>

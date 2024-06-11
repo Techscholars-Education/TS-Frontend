@@ -10,7 +10,7 @@ import avatar from "../../../public/Dashboard/avatar.jpg";
 function TestSeriesCard(props) {
   return (
     <div
-      className={`flex flex-col rounded-xl border  font-Poppins relative w-[22vw] bg-white`}
+      className={`flex flex-col rounded-xl border w-[20vw]  font-Poppins relative bg-white`}
     >
       <div>
         <Image
@@ -22,7 +22,7 @@ function TestSeriesCard(props) {
       </div>
 
 
-      <div className="flex flex-col m-4 my-10">
+      <div className="flex flex-col m-4 my-4">
         <div>
           <div className="flex  items-center">
 
@@ -33,16 +33,16 @@ function TestSeriesCard(props) {
                  <Link href="#" className='bg-[#17DB7E] rounded-full mx-2 px-2 text-white text-sm py-1'>2024</Link>
               </div>
 
-              <p className="font-semibold">Name of the subject</p>
+              <p className="font-semibold text-sm my-1">{props.name}</p>
             </div>
           </div>
         </div>
         <p className="font-base text-xs xl:text-sm leading-relaxed text-gray-500 py-3 font-Poppins">
-          When you enter into any new area of science, you almost always find.
+         {props.description}
         </p>
-        <p className='text-[16px] font-semibold'>
+        {/* <p className='text-[16px] font-semibold'>
           -By Md. Mahmodul Hasan
-        </p>
+        </p> */}
 
 
 

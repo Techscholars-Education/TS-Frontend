@@ -15,7 +15,7 @@ const CourseCard = (props) => {
       <div
         className={`flex flex-col rounded-xl border ${
           props.title === "JEE" ? "shadow-xl" : "shadow-md"
-        }   font-Poppins relative w-[23vw] mt-2 bg-white`}
+        }   font-Poppins relative w-[20vw]  mt-2 bg-white`}
       >
         <div>
           <Image
@@ -25,7 +25,7 @@ const CourseCard = (props) => {
           />
         </div>
 
-        <div className="flex flex-col m-4 my-10">
+        <div className="flex flex-col m-4 my-4">
           <div>
             <div className="flex  items-center">
              <div>
@@ -40,7 +40,7 @@ const CourseCard = (props) => {
           <p className="font-base text-xs xl:text-sm leading-relaxed ml-2 text-gray-500 py-3 font-Poppins">
             {props.description}
           </p>
-          <div className="flex justify-start mt-4 items-center">
+          <div className="flex justify-start  items-center">
             <div className="text-darkBlue text-sm items-center flex">
               <FaClock className="mx-2" />
               150+ Hrs
