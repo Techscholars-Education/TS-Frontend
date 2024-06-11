@@ -15,23 +15,26 @@ const Costing = (props) => {
 
   const router  = useRouter()
   
-  const cookies =   Cookies.get('authCookie')
+  const cookies =   Cookies.get('access_token')
 
   const[formdataOne,setFormDataOne] = useState({
     prices: '',
     name: '',
-    auth:''
+    auth:'',
+    id:''
 
 })
   const[formdataTwo,setFormDataTwo] = useState({
     prices: '',
     name: '',
-    auth:''
+    auth:'',
+    id:''
 })
   const[formdataThree,setFormDataThree] = useState({
     prices: '',
     name: '',
-   auth:''
+   auth:'',
+   id:''
 })
 
  
@@ -43,12 +46,16 @@ const Costing = (props) => {
   const price2  = props.CostingData[1].price
   const price3  = props.CostingData[2].price
 
+  const id1  = props.CostingData[0].id
+  const id2  = props.CostingData[1].id
+  const id3  = props.CostingData[2].id
+
 
   
     useEffect(()=>{
-      setFormDataOne({ ...formdataOne, name: " Starter" ,prices: price1,auth:cookies })
-      setFormDataTwo({ ...formdataTwo, name: "Advanced " ,prices: price2,auth:cookies  })
-      setFormDataThree({ ...formdataThree, name: "Ultimate " ,prices: price3,auth:cookies  })
+      setFormDataOne({ ...formdataOne, name: " Starter" ,prices: price1,auth:cookies,id:id1 })
+      setFormDataTwo({ ...formdataTwo, name: "Advanced " ,prices: price2,auth:cookies,id:id2})
+      setFormDataThree({ ...formdataThree, name: "Ultimate " ,prices: price3,auth:cookies,id:id3})
 
        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[props.CostingData])

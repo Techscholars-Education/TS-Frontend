@@ -22,6 +22,10 @@ fetch("https://api.techscholars.in/auth/profile/view", requestOptions)
   .then((response) => response.text())
   .then((result) => console.log(result))
   .catch((error) => console.error(error));
+
+
+
+
 		};
 
 	return {profile, useprofile };

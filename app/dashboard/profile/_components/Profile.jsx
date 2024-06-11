@@ -7,20 +7,37 @@ import { TbEdit } from "react-icons/tb";
 import { useEffect, useState } from 'react';
 import ConfirmationModal from './Modal';
 import useProfile from '@/hooks/useProfile';
-
+import useProfileUpdate from '@/hooks/useProfileUpdate';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import useGetway from '@/hooks/useGetway';
 
 const Profile = () => {
    
   const { useprofile} = useProfile()
+  const {useprofileupdate} = useProfileUpdate()
 
 
   const [name,setName] = useState("")
   const [email,setEmail] = useState("")
-  const [userName,setUserName] = useState("")
+  const [gender,setGender] = useState("")
   const [phone,setPhone] = useState("")
   const [bio,setBio] = useState("")
+  const [imageUrl, setImageUrl] = useState(null)
 
   const [isModalOpen, setModalOpen] = useState(false);
+
+  
+  const handleGenderChange = (event) => {
+    const value = event.target.value;
+    setGender(value)
+    
+  };
+
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+  };
   
   const handleSaveClick = (event) => {
     event.preventDefault();
@@ -29,11 +46,22 @@ const Profile = () => {
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
-    console.log("Selected file:", file);
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    reader.onload = e => {
+      setImageUrl(e.target.result)
+    };
   };
 
-  const handleSubmit = () => {         
-        console.log(name,email);
+  const handleSubmit = () => {   
+    
+    try {
+
+      const res = useprofileupdate(name,email,gender,phone,imageUrl);
+    } catch (error) {
+      console.log("Some error occured in login");
+    }
 
         setModalOpen(false);
         resetSubmit()
@@ -41,25 +69,31 @@ const Profile = () => {
   const resetSubmit = () => {
     setName("")
     setEmail("")
-    setUserName("")
+    setGender("")
     setPhone("")
-    setBio("")
-    
+    setBio("")    
   }
 
-
+  const {getway} = useGetway()
   const handleReset = (event) => {
     event.preventDefault()
     setName("")
     setEmail("")
-    setUserName("")
+    setGender("")
     setPhone("")
     setBio("")
     useprofile()
+    // getway()
   }
 
+
+
+
     return (
-        <div className="bg-white font-Poppins w-full overflow-hidden">
+
+      <>
+      <ToastContainer />
+          <div className="bg-white font-Poppins w-full overflow-hidden">
             <DashboardNavbar title={"Profile"} />
             <div className="flex flex-col mr-2 bg-blue-50 h-[86vh] max-w-full pl-5 pr-5 pt-5 gap-1">
                 <div className='flex flex-col gap-1'>
@@ -124,19 +158,15 @@ const Profile = () => {
                     <div className="flex gap-24">
                         <div className="flex flex-col">
                           <label
-                            htmlFor=" Username"
+                            htmlFor=" gender"
                             className=" mb-2 text-sm font-medium text-gray-600 "
                           >
-                          Username
+                         Gender
                           </label>
-                          <input
-                            type="text"
-                            placeholder='Please enter your name'
-                            id=" Username"
-                            value={userName}
-                            onChange={(e)=>{setUserName(e.target.value)}}
-                            className="bg-blue-50  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[30vw] p-2.5"
-                          />
+                          <select value={gender} onChange={handleGenderChange} className='bg-blue-50  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[30vw] p-2.5'>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
                         </div>
                         <div className="flex flex-col">
                           <label
@@ -188,6 +218,7 @@ const Profile = () => {
             </div>
 
         </div>
+      </>
     )
 }
 
