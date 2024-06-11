@@ -62,8 +62,15 @@ const Page = () => {
     }
   };
 
-  const glogin =  useGoogleLogin ({
-    onSuccess: (tokenResponse) =>  setAuthg(tokenResponse.access_token),
+  const glogin = useGoogleLogin({
+    onSuccess: async (tokenResponse) => {
+      setAuthg(tokenResponse.access_token);
+      const userInfo = await fetch(
+        `https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=${tokenResponse.access_token}`
+      ).then((res) => res.json());
+      localStorage.setItem("userInfo", JSON.stringify(userInfo));
+    },
+    onError: (errorResponse) => console.log("Login Failed:", errorResponse),
   });
 
   useEffect(() => {
@@ -71,8 +78,8 @@ const Page = () => {
     if (authg) {
       const sessionExpirationTime = new Date(new Date().getTime() + 5 * 60 * 60 * 1000);
       Cookies.set("access_token", authg, { expires: sessionExpirationTime });
-
-      router.replace("/dashboard/home");
+      localStorage.setItem("access_token",authg)
+      router.replace("/dashboard/my-course");
       // window.location.reload();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -55,7 +55,7 @@ const LeftNavigation = () => {
             { path: "/dashboard/home", icon: FiHome, label: "Home" },
             { path: "/dashboard/my-course", icon: FiBookOpen, label: "My Course" },
             { path: "/dashboard/courses", icon: MdOutlineLibraryBooks, label: "Courses" },
-            { path: "/dashboard/test", icon: FiClipboard, label: "Test Series" },
+            { path: "/dashboard/test/testdetail", icon: FiClipboard, label: "Test Series" },
             { path: "/dashboard/refer-and-earn", icon: FiUsers, label: "Refer and Earn" },
             { path: "/dashboard/feed", icon: FiRss, label: "Feed" },
             { path: "/dashboard/community", icon: FiMessageCircle, label: "Community" },
