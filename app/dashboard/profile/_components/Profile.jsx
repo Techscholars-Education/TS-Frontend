@@ -10,6 +10,7 @@ import useProfile from '@/hooks/useProfile';
 import useProfileUpdate from '@/hooks/useProfileUpdate';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useGetway from '@/hooks/useGetway';
 
 const Profile = () => {
    
@@ -22,7 +23,7 @@ const Profile = () => {
   const [gender,setGender] = useState("")
   const [phone,setPhone] = useState("")
   const [bio,setBio] = useState("")
-  const [imageUrl, setImageUrl] = useState("")
+  const [imageUrl, setImageUrl] = useState(null)
 
   const [isModalOpen, setModalOpen] = useState(false);
 
@@ -45,35 +46,19 @@ const Profile = () => {
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
-    setImageUrl(file)
-    console.log(imageUrl);
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    reader.onload = e => {
+      setImageUrl(e.target.result)
+    };
   };
 
   const handleSubmit = () => {   
     
-    if(!gender){
-      toast.error("Gender is required");
-    }
-    if (!email) {
-      toast.error("Email is required");
-      return;
-    }
-    if (!phone) {
-      toast.error("Phone Number is required");
-      return;
-    }
-    if (!name) {
-      toast.error("Name is required");
-      return;
-    }
-    if (!validateEmail(email)) {
-      toast.error("Invalid email format");
-      return;
-    }
-
     try {
 
-      const res = useprofileupdate(name,email,gender,phone);
+      const res = useprofileupdate(name,email,gender,phone,imageUrl);
     } catch (error) {
       console.log("Some error occured in login");
     }
@@ -89,7 +74,7 @@ const Profile = () => {
     setBio("")    
   }
 
-
+  const {getway} = useGetway()
   const handleReset = (event) => {
     event.preventDefault()
     setName("")
@@ -97,6 +82,8 @@ const Profile = () => {
     setGender("")
     setPhone("")
     setBio("")
+    useprofile()
+    // getway()
   }
 
 

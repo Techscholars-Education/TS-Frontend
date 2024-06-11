@@ -14,6 +14,7 @@ import { IoIosArrowRoundBack } from "react-icons/io";
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
 import gif1 from "@/public/Ts-Loader.gif";
+import { useCookieStore } from "@/hooks/useStore";
 
 const Page = () => {
   const [email, setEmail] = useState("");
@@ -24,6 +25,7 @@ const Page = () => {
   const [authg, setAuthg] = useState("");
 
   const router = useRouter();
+  const {cookieData} = useCookieStore()
 
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -71,6 +73,7 @@ const Page = () => {
     if (authg) {
       const sessionExpirationTime = new Date(new Date().getTime() + 5 * 60 * 60 * 1000);
       Cookies.set("access_token", authg, { expires: sessionExpirationTime });
+      cookieData(authg)
 
       router.replace("/dashboard/home");
       // window.location.reload();
