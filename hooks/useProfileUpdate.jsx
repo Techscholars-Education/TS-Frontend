@@ -6,7 +6,15 @@ const useProfileUpdate = () => {
     const {cookie} = useCookieStore()
 
 
-		const useprofileupdate = async (name,email,gender,phone) => {
+		const useprofileupdate = async (name,email,gender,phone,imageUrl) => {
+
+
+      const success = handleInputErrors({
+        name,email,gender,phone
+      });
+      if (!success) return;
+
+
 			const myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
             myHeaders.append("authorization", cookie);
@@ -19,7 +27,7 @@ const useProfileUpdate = () => {
                         email: email,
                         phone_country_code: "+91",
                         phone_number: phone,
-                        profile_image: null,
+                        profile_image: imageUrl,
                         gender:gender,
                         dob: null,
                         is_verified: false,
@@ -28,6 +36,7 @@ const useProfileUpdate = () => {
                     credentials: 'include'
                   });
                   const data = await res.json();
+
                  if(data.username){
                     toast.success("Profile Updated")
                  }
@@ -45,4 +54,33 @@ const useProfileUpdate = () => {
 
 	return {useprofileupdate };
 };
+
+const validateEmail = (email) => {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(String(email).toLowerCase());
+};
+
+
+function handleInputErrors({
+  name,email,gender,phone
+}) {
+  
+  if (!gender) {
+    toast.error("Please select gender");
+  }
+
+  if (!name || !email || !gender || !phone) {
+    toast.error("Please fill in all fields");
+    return false;
+  }
+
+ 
+
+  if (!validateEmail(email)) {
+    toast.error("Invalid email format");
+    return;
+  }
+
+  return true;
+}
 export default useProfileUpdate;

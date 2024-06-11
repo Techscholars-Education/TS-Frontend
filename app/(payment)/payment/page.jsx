@@ -20,47 +20,54 @@ const Page = () => {
 
   const {getway} = useGetway()
 
-//  const handleGetway = async() => {
-//   await getway()
-//  }
+
 
   const gst = 1799
 
-  const [paymentMethod, setPaymentMethod] = useState("");
-  const [isOpen, setIsOpen] = useState(false);
   const [prices, setPrices] = useState(0)
-  const dropdownRef = useRef(null);
+  const [id,setId] = useState(0)
+  
+  // const dropdownRef = useRef(null);
+  // const [isOpen, setIsOpen] = useState(false);
+  // const [paymentMethod, setPaymentMethod] = useState("");
+  // const toggleDropdown = () => {
+  //   setIsOpen(!isOpen);
+  // };
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
+  // const handleOptionClick = () => {
+  //   setIsOpen(false);
+  // };
 
-  const handleOptionClick = () => {
-    setIsOpen(false);
-  };
+  // const handleClickOutside = (event) => {
+  //   if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+  //     setIsOpen(false);
+  //   }
+  // };
 
-  const handleClickOutside = (event) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-      setIsOpen(false);
-    }
-  };
+  // useEffect(() => {
+  //   if (isOpen) {
+  //     document.addEventListener("mousedown", handleClickOutside);
+  //   } else {
+  //     document.removeEventListener("mousedown", handleClickOutside);
+  //   }
 
-  useEffect(() => {
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isOpen]);
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleClickOutside);
+  //   };
+  // }, [isOpen]);
 
   useEffect(()=>{
    setPrices(course.prices)
+   setId(course.id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   },[course.prices])
+
+
+  const handleGetway = async(event) => {
+    event.preventDefault();
+    
+    await getway(id)
+   }
 
   return (
     <>
@@ -140,13 +147,25 @@ const Page = () => {
         <div className=" px-10 font-Poppins ">
           <div className="pb-6">
             <h3 className="font-Poppins font-semibold text-xl lg:text-2xl xl:text-3xl text-darkBlue">
-              Select Payment method
+             Payment method
             </h3>
           </div>
           <hr />
+             
+              {/* Go for payment */}
+
+              <div className="mt-10">
+                <button
+               onClick={handleGetway}
+                className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-4 bg-TechBlue/90 text-sm font-medium text-white hover:bg-TechBlue transition-all text-[1.7vw] hover:text-black duration-200 ease-linear "
+                >
+                     Go for Payment
+                </button>
+              </div>
+
 
           {/* Available payment methods */}
-          <div
+          {/* <div
             className="relative inline-block text-left font-Poppins py-4  "
             ref={dropdownRef}
           >
@@ -254,11 +273,11 @@ const Page = () => {
                 </div>
               </div>
             )}
-          </div>
+          </div> */}
 
           {/* QR CODE || CARD DETAILS */}
 
-          {paymentMethod === "" ? (
+          {/* {paymentMethod === "" ? (
             <div className=" text-sm xl:text-xl font-Poppins text-gray-600">
               Please select the payment method from the above list to proceed
               furthur.
@@ -277,7 +296,7 @@ const Page = () => {
                 </>
               )}
             </>
-          )}
+          )} */}
         </div>
       </section>
       <Footer />
