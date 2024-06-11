@@ -24,6 +24,8 @@ fetch("https://api.techscholars.in/auth/profile/view", requestOptions)
   .catch((error) => console.error(error));
 
 
+
+
 		};
 
 	return {profile, useprofile };
