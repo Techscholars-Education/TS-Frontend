@@ -13,7 +13,7 @@ const useGetway = () => {
     let token = Cookies.get("access_token")
     // console.log(cookie);
     const myHeaders = new Headers();
-    myHeaders.append("authorization", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5Iiwia2lkIjowLCJpYXQiOjE3MTgwOTQ5MTEsImV4cCI6MTcxODEzMDkxMX0.3-kjjTSYiHV5UeS588GEivThQUndzopPTQN3xNrjEio");
+    myHeaders.append("authorization", cookie);
     myHeaders.append("Content-Type", "application/json");
     
     const raw = JSON.stringify({
@@ -27,7 +27,7 @@ const useGetway = () => {
       method: "POST",
       headers: myHeaders,
       body: raw,
-      mode:"no-cors"
+
     };
     
     fetch("https://api.techscholars.in/order/subscriptions", requestOptions)

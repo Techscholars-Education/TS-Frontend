@@ -37,7 +37,7 @@ const useProfileUpdate = () => {
                     credentials: 'include'
                   });
                   const data = await res.json();
-                  console.log(data);
+                  // console.log(data);
                  if(data.username){
                     toast.success("Profile Updated")
                     router.push("/dashboard/home")
@@ -53,6 +53,7 @@ const useProfileUpdate = () => {
             }
 
 		};
+    
 
 	return {useprofileupdate };
 };
