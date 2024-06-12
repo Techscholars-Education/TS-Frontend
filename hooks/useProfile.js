@@ -1,33 +1,33 @@
 "use client"
 
-import { useEffect, useState } from "react";
-import { useCookieStore } from "./useStore";
-const useProfile = () => {
+import { useState } from "react";
+import { useCookieStore, useProfileStore} from "./useStore";
+import { toast } from "react-toastify";
+const useProfile = () => { 
+
+  const {profilesData} = useProfileStore()
 
     const {cookie} = useCookieStore()
 	const [loading, setLoading] = useState(false);
-	const [profile, setProfile] = useState([])
-
-
-		const useprofile =  () => {
+		const useprofile = async () => {
 			const myHeaders = new Headers();
             myHeaders.append("authorization", cookie);
-const requestOptions = {
-  method: "GET",
-  headers: myHeaders,
-  redirect: "follow"
-};
-
-fetch("https://api.techscholars.in/auth/profile/view", requestOptions)
-  .then((response) => response.text())
-  .then((result) => console.log(result))
-  .catch((error) => console.error(error));
-
-
+            try {
+              const res = await fetch("https://api.techscholars.in/auth/profile/view", {
+               method: "GET",
+               headers: myHeaders,
+              });
+              const data = await res.json();
+              // console.log(data);
+              profilesData(data)
+              
+            } catch (error) {
+              toast.error(error.message);
+            }
 
 
 		};
 
-	return {profile, useprofile };
+	return {useprofile };
 };
 export default useProfile;

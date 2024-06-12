@@ -11,7 +11,7 @@ import { TiArrowRight } from "react-icons/ti";
 const Benefits = () => {
   return (
     <section className="w-full bg-white py-10  ">
-      <div className=" w-11/12 xl:w-9/12 grid grid-cols-1 md:grid-cols-2  mx-auto gap-4 ">
+      <div className=" w-11/12 xl:w-9/12 2xl:w-[1100px] grid grid-cols-1 md:grid-cols-2  mx-auto gap-4 ">
         {/* container -1 */}
         <div className=" bg-[#DCD9F866]/30 rounded-xl flex px-6 py-6 lg:py-8 xl:py-12 font-Poppins hover:shadow-xl duration-200 transition-all ">
           <div className="my-auto w-1/2">

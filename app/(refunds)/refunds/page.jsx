@@ -11,7 +11,7 @@ const page = () => {
           Cancellation and refund
         </h1>
 
-        <p className=" text-sm md:text-base text-darkBlue font-Poppins mt-6 md:my-10">
+        <p className=" text-sm md:text-base text-darkBlue 2xl:w-[1100px] font-Poppins mt-6 md:my-10">
           You are entitled to a refund in the case of the purchased course not
           being assigned to you within the expiration date from your date of
           purchase or if you have paid twice for the same course. Under any

@@ -8,7 +8,7 @@ const page = () => {
   return (
     <>
       <Navbar />
-      <section className="min-h-[500px] flex justify-center items-center pb-24  space-x-5 px-4 ">
+      <section className=" flex justify-center items-center pb-24  space-x-5 px-4 min-h-[800px]">
         <Image
           src={blog}
           className="w-40 drop-shadow-xl"

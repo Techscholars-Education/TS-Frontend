@@ -24,6 +24,18 @@ export const useCookieStore = create(persist(
     
   }
 ));
+export const useProfileStore = create(persist(
+  (set) => ({
+    profiles:{},
+  profilesData: (profiles) => set({profiles:profiles})
+  
+  }),
+  {
+    name: 'profile-storage', // unique name for the storage item
+    getStorage: () => localStorage, // specify local storage as the storage
+    
+  }
+));
 
 
 

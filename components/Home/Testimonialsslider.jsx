@@ -41,7 +41,7 @@ const Testimonialsslider = () => {
   return (
     <div className="w-full mx-auto bg-gray-50 ">
       <div className=" mx-auto">
-        <div className="w-11/12 mx-auto ">
+        <div className="w-11/12 2xl:w-[1200px] mx-auto ">
           <Slider {...settings}>
             {testimonialsData.map((item) => {
               return (

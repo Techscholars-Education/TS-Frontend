@@ -1,11 +1,12 @@
 "use client"
+import { useRouter } from "next/navigation";
 import { useCookieStore } from "./useStore";
 import { toast } from "react-toastify"
 const useProfileUpdate = () => {
 
+   const router = useRouter()
+
     const {cookie} = useCookieStore()
-
-
 		const useprofileupdate = async (name,email,gender,phone,imageUrl) => {
 
 
@@ -36,9 +37,10 @@ const useProfileUpdate = () => {
                     credentials: 'include'
                   });
                   const data = await res.json();
-
+                  console.log(data);
                  if(data.username){
                     toast.success("Profile Updated")
+                    router.push("/dashboard/home")
                  }
             
                   if (data.error) {

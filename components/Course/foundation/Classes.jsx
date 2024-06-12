@@ -11,36 +11,36 @@ const Classes = () => {
     {
       id: 1,
       title: "Starter",
-      price: "2899",
+      price: "1999",
       type: "IGNITE",
     },
     {
       id: 2,
       title: "Advanced",
-      price: "9899",
+      price: "6999",
     },
     {
       id: 3,
       title: "Ultimate",
-      price: "19899",
+      price: "16999",
     },
   ];
   const costing10th = [
     {
       id: 1,
       title: "Starter",
-      price: "2999",
+      price: "2499",
       type: "RISE",
     },
     {
       id: 2,
       title: "Advanced",
-      price: "9999",
+      price: "7999",
     },
     {
       id: 3,
       title: "Ultimate",
-      price: "18999",
+      price: "17999",
     },
   ];
 
