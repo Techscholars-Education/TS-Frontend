@@ -26,7 +26,7 @@ const Footer = () => {
       await sendMessage(email, message);
       setIsMsgSent(true);
       setTimeout(() => setIsMsgSent(false), 3000);
-      toast.success("Email sent successfully");
+      toast.success("Message sent successfully");
       setEmail("");
       setMessage("");
     } catch (error) {
