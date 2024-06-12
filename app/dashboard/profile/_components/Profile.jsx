@@ -116,7 +116,7 @@ const Profile = () => {
                         <div className="flex items-center gap-2 relative">
                             <div className="camera">
                                 <label htmlFor="image" >
-                                    {userImage ? <Image src={userImage || iconProfile}  alt='imageuser' className='rounded-full cursor-pointer' width={105} height={105} priority /> : <Image priority src={imageUrl ? imageUrl : iconProfile}  alt='imageuser' className='rounded-full cursor-pointer' width={105} height={105} unoptimized />}
+                                    {userImage ? <Image src={imageUrl ? imageUrl : userImage || iconProfile}  alt='imageuser' className='rounded-full cursor-pointer' width={105} height={105} priority /> : <Image priority src={imageUrl ? imageUrl : iconProfile}  alt='imageuser' className='rounded-full cursor-pointer' width={105} height={105} unoptimized />}
                                 </label>
                                 <input
                                     type="file"
