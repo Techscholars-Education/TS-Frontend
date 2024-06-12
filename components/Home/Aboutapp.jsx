@@ -16,7 +16,7 @@ const Aboutapp = () => {
           </p>
         </div>
       </div>
-      <section className=" flex flex-col md:flex md:flex-row justify-between  w-11/12 mx-auto font-Poppins md:space-x-10 py-10 ">
+      <section className=" flex flex-col md:flex md:flex-row justify-between  w-11/12 2xl:w-[1100px] mx-auto font-Poppins md:space-x-10 py-10 ">
         <div className=" w-full md:w-1/3 flex justify-center  ">
           <Image src={mobile} alt="Techscholar-app-image"></Image>
         </div>

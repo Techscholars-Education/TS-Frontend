@@ -10,7 +10,7 @@ const page = () => {
           Terms and conditions
         </h1>
 
-        <div className="font-Poppins w-4/5 mx-auto py-10 text-sm md:text-base">
+        <div className="font-Poppins w-4/5 mx-auto 2xl:w-[1100px] py-10 text-sm md:text-base">
           <div className="text-darkBlue">
             <h3 className="text-lg md:text-2xl font-semibold py-4 text-darkBlue">
               Company Policy

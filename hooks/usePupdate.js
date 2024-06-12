@@ -4,7 +4,7 @@ const usePupdate = () => {
   const updatePassword = async (newPassword, token) => {
     try {
       const response = await axios.put(
-        "https://api.techscholars.co.in/auth/reset/password/verify",
+        "https://api.techscholars.in/auth/reset/password/verify",
         {
           password: newPassword,
           access_token: token,

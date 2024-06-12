@@ -40,7 +40,7 @@ const Packages = () => {
 
   return (
     <section className="bg-gray-50 py-16 font-Poppins w-full  mx-auto  ">
-      <div className=" xl:w-10/12 mx-auto  rounded-xl ">
+      <div className=" xl:w-10/12 2xl:w-[1100px] mx-auto  rounded-xl ">
         <div className=" text-center">
           <h5 className="text-xs font-medium bg-gray-100 text-TechBlue bg-TechBlue/10 font-Poppins py-2 rounded-full px-4 inline-block">
             Pricing

@@ -6,7 +6,7 @@ const page = () => {
   return (
     <>
       <Navbar />
-      <section className="my-10 w-4/5 mx-auto">
+      <section className="my-10 w-4/5 2xl:w-[1100px] mx-auto">
         <h1 className="text-darkBlue  font-Poppins font-semibold text-xl md:text-4xl text-center">
           About TechScholars
         </h1>

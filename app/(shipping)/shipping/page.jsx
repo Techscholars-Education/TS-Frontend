@@ -6,12 +6,12 @@ const page = () => {
   return (
     <>
       <Navbar />
-      <section className="my-10 w-4/5 mx-auto">
+      <section className="my-10 w-4/5 2xl:w-[1100px] mx-auto">
         <h1 className="text-darkBlue  font-Poppins font-semibold text-xl md:text-4xl text-center">
           Shipping Policy
         </h1>
 
-        <p className="text-sm md:text-base text-darkBlue font-Poppins my-10">
+        <p className="text-sm md:text-base text-darkBlue  font-Poppins my-10">
           Welcome to our EdTech platform, where knowledge knows no bounds.
           Unlike traditional e-commerce sites, we pride ourselves on delivering
           a digital experience tailored solely to your intellectual growth.
