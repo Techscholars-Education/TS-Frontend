@@ -1,7 +1,7 @@
 'use client'
 import DashboardNavbar from '@/components/Dashboard/DashboardNavbar'
 import Image from 'next/image'
-import men from "../../../../public/Dashboard/men_nav.jpg"
+import iconProfile from "../../../../public/Dashboard/profile.gif"
 import { TbEdit } from "react-icons/tb";
 import { useEffect, useState } from 'react';
 import ConfirmationModal from './Modal';
@@ -70,9 +70,7 @@ const Profile = () => {
   };
 
   const handleSubmit = () => {   
-    
-    try {
-
+      try {
       const res = useprofileupdate(name,email,gender,phone,imageUrl);
     } catch (error) {
       console.log("Some error occured in login");
@@ -118,7 +116,7 @@ const Profile = () => {
                         <div className="flex items-center gap-2 relative">
                             <div className="camera">
                                 <label htmlFor="image" >
-                                    {userImage ? <Image src={userImage}  alt='imageuser' className='rounded-full cursor-pointer' width={105} height={105} priority /> : <Image priority src={men}  alt='imageuser' className='rounded-full cursor-pointer h-[7vw] w-[7vw]' />}
+                                    {userImage ? <Image src={userImage || iconProfile}  alt='imageuser' className='rounded-full cursor-pointer' width={105} height={105} priority /> : <Image priority src={iconProfile}  alt='imageuser' className='rounded-full cursor-pointer h-[7vw] w-[7vw]' unoptimized />}
                                 </label>
                                 <input
                                     type="file"
@@ -176,8 +174,9 @@ const Profile = () => {
                           >
                          Gender
                           </label>
-                          <select value={gender} onChange={handleGenderChange} className='bg-blue-50  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[30vw] p-2.5'>
-        <option value="Male">Male</option>
+                          <select  value={gender} onChange={handleGenderChange} className='bg-blue-50  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[30vw] p-2.5'>
+            <option value="" selected disabled hidden>Choose Gender</option>
+        <option value="Male" >Male</option>
         <option value="Female">Female</option>
       </select>
                         </div>

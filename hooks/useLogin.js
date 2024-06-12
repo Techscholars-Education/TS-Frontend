@@ -34,7 +34,7 @@ myHeaders.append("Content-Type", "application/json");
         Cookies.set("access_token", data.access_token, {
           expires: sessionExpirationTime,
         });
-
+  
         cookieData(data.access_token)
         
         // window.location.reload();
