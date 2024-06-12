@@ -9,6 +9,7 @@ import { usePathname } from "next/navigation";
 import siren from "@/public/Home/siren.gif";
 import speaker from "@/public/Home/speaker.gif";
 import { motion } from "framer-motion";
+import Cookies from "js-cookie";
 
 const Navbar = () => {
   const [isBurgerClicked, setIsBurgerClicked] = useState(false);
@@ -16,6 +17,8 @@ const Navbar = () => {
   const [popupVisibility, setpopupVisibility] = useState(true);
   const [popUp, setPopUp] = useState(false);
   const pathname = usePathname();
+
+  const [accessToken, setAccessToken] = useState(null);
 
   useEffect(() => {
     const scrollHandler = () => {
@@ -29,6 +32,7 @@ const Navbar = () => {
     setTimeout(() => {
       setPopUp(true);
     }, 5000);
+    setAccessToken(Cookies.get("access_token"));
   }, []);
 
   return (
@@ -42,7 +46,7 @@ const Navbar = () => {
             !popupVisibility && "hidden"
           } `}
         >
-          <p className="font-Poppins md:pt-2  px-2 font-normal text-xs md:text-sm lg:text-base flex items-center py-3 md:py-0 ">
+          <p className="font-Poppins md:pt-2 px-6 font-normal text-xs md:text-sm lg:text-base flex items-center py-3 md:py-0 ">
             <Image
               className="hidden md:block w-8 md:mr-10 "
               src={siren}
@@ -137,23 +141,37 @@ const Navbar = () => {
           </div>
 
           <ul className="hidden font-Poppins lg:flex justify-center items-center space-x-3 lg:w-1/4 ">
-            <li className={`cursor-pointer text-base transition-all`}>
-              <Link
-                className=" px-4 border py-3 rounded-md hover:bg-black hover:text-white duration-200 "
-                href="/login"
-              >
-                Login
-              </Link>
-            </li>
-
-            <li className={`cursor-pointer text-base`}>
-              <Link
-                className=" bg-TechBlue text-white px-4 py-3 rounded-md hover:bg-black duration-200 "
-                href="/signin"
-              >
-                Get Started
-              </Link>
-            </li>
+            {!accessToken ? (
+              <>
+                <li className={`cursor-pointer text-base transition-all`}>
+                  <Link
+                    className=" px-4 border py-3 rounded-md hover:bg-black hover:text-white duration-200 "
+                    href="/login"
+                  >
+                    Login
+                  </Link>
+                </li>
+                <li className={`cursor-pointer text-base`}>
+                  <Link
+                    className=" bg-TechBlue text-white px-4 py-3 rounded-md hover:bg-black duration-200 "
+                    href="/signin"
+                  >
+                    Get Started
+                  </Link>
+                </li>
+              </>
+            ) : (
+              <>
+                <li className={`cursor-pointer text-base`}>
+                  <Link
+                    className=" bg-TechBlue text-white px-4 py-3 rounded-md hover:bg-black duration-200 "
+                    href="/dashboard/home"
+                  >
+                    Dashboard
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
 
@@ -192,21 +210,35 @@ const Navbar = () => {
             >
               <Link href="/councillor">Councillor</Link>
             </li>
-            <li
-              className={`text-base  ${
-                pathname === "/login" ? "text-TechBlue" : "text-darkBlue"
-              } `}
-            >
-              <Link href="/login">Login</Link>
-            </li>
-            <li className="text-base">
-              <Link
-                className=" py-2 rounded-full px-2 bg-TechBlue text-white"
-                href="/signin"
-              >
-                Get Started
-              </Link>
-            </li>
+            {!accessToken ? (
+              <>
+                {" "}
+                <li
+                  className={`text-base  ${
+                    pathname === "/login" ? "text-TechBlue" : "text-darkBlue"
+                  } `}
+                >
+                  <Link href="/login">Login</Link>
+                </li>
+                <li className="text-base">
+                  <Link
+                    className=" py-2 rounded-md px-2 bg-TechBlue text-white"
+                    href="/signin"
+                  >
+                    Get Started
+                  </Link>
+                </li>
+              </>
+            ) : (
+              <li className="text-base">
+                <Link
+                  className=" py-2 rounded-md px-2 bg-TechBlue text-white"
+                  href="/dashboard/home"
+                >
+                  Dashboard
+                </Link>
+              </li>
+            )}
           </ul>
         </div>
       </nav>

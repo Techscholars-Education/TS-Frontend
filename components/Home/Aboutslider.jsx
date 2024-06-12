@@ -101,7 +101,7 @@ const Aboutslider = () => {
   ];
 
   return (
-    <section className=" w-11/12 xl:w-9/12 mx-auto pt-2 md:pt-8  ">
+    <section className=" w-11/12 xl:w-9/12 2xl:w-[1100px] mx-auto pt-2 md:pt-8  ">
       <div className=" h-full mx-auto pb-10 ">
         <Slider {...settings}>
           {data.map((item) => {
