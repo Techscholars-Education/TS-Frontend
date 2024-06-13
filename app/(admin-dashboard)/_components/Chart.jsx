@@ -11,6 +11,7 @@ import {
     LineElement,
     Filler,
   } from "chart.js";
+import { useEffect, useRef } from "react";
 
   import {Line} from "react-chartjs-2";
   
@@ -27,16 +28,36 @@ import {
     Filler
   );
 
+
   const months = ["January", "February", "March", "April", "May", "June", "July"];
 
 
   const LineChart = ({
+    
     data,
     label,
     backgroundColor,
     borderColor,
     labels = months,
   }) => {
+
+   
+    const chartRef = useRef(null);
+
+    useEffect(() => {
+      const chart = chartRef.current;
+  
+      if (chart) {
+        const ctx = chart.ctx;
+        const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient.addColorStop(0, 'rgba(24, 31, 230, 0.5)');
+        gradient.addColorStop(1, 'rgba(255, 255, 255, 0.1)');
+  
+        chart.data.datasets[0].backgroundColor = gradient;
+        chart.update();
+      }
+    }, []);
+
     const options = {
       responsive: true,
       plugins: {
@@ -70,13 +91,16 @@ import {
           fill: true,
           label,
           data,
-          backgroundColor,
+          // backgroundColor,
           borderColor,
+          pointRadius: 5,
+          pointHoverRadius: 10,
+          tension: 0.09
         },
       ],
     };
   
-    return <Line options={options} data={lineChartData} />;
+    return <Line ref={chartRef} options={options} data={lineChartData} />;
   };
   
   export default LineChart;

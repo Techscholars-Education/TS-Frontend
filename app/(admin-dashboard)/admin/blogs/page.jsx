@@ -33,7 +33,7 @@ const Page = () => {
           {blogs ? (
             <div
               id="feedback"
-              className="bg-gray-100 overflow-y-auto h-[41vw] w-[85vw] relative right-[-15vw] max-lg:right-0 max-lg:h-screen max-lg:w-full  rounded-md"
+              className="bg-[#e6f0ff] overflow-y-auto h-[41vw] w-[85vw] relative right-[-15vw] max-lg:right-0 max-lg:h-screen max-lg:w-full  rounded-md"
             >
              <div className={`button_admin lg:hidden absolute top-4 left-3 p-4 rounded-full bg-red-300 flex items-center justify-center`}>
               <HiMenuAlt4 className="text-[5vw] " onClick={()=>(setMobile(!mobile))}/>

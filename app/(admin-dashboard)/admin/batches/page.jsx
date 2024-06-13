@@ -28,7 +28,7 @@ const Page = () => {
         
             <div
               id="batches"
-              className="bg-gray-100 overflow-y-auto lg:h-[41vw] lg:w-[85vw] relative lg:right-[-15vw] right-0 rounded-md h-screen w-full "
+              className="bg-[#e6f0ff] overflow-y-auto lg:h-[41vw] lg:w-[85vw] relative lg:right-[-15vw] right-0 rounded-md h-screen w-full "
             >
               <div className={`button_admin lg:hidden absolute top-4 left-3 p-4 rounded-full bg-red-300 flex items-center justify-center`}>
               <HiMenuAlt4 className="text-[5vw] " onClick={()=>(setMobile(!mobile))}/>
