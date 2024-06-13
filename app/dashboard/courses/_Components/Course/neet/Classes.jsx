@@ -10,9 +10,9 @@ const Classes = () => {
   
   const costing11th = [
     {
-      id: 1,
+      id: 10,
       title: "Starter",
-      price: "2899",
+      price: "3999",
       features: [
         { feature: "1 user" },
         { feature: "1 connected calendar" },
@@ -21,9 +21,9 @@ const Classes = () => {
       ],
     },
     {
-      id: 2,
+      id: 11,
       title: "Advanced",
-      price: "9899",
+      price: "8999",
       features: [
         { feature: "1 user" },
         { feature: "Up to 2 connected calendars" },
@@ -32,7 +32,7 @@ const Classes = () => {
       ],
     },
     {
-      id: 3,
+      id: 26,
       title: "Ultimate",
       price: "19899",
       features: [
@@ -45,9 +45,9 @@ const Classes = () => {
   ];
   const costing12th = [
     {
-      id: 1,
+      id: 9,
       title: "Starter",
-      price: "2999",
+      price: "3999",
       features: [
         { feature: "1 user" },
         { feature: "1 connected calendar" },
@@ -56,9 +56,9 @@ const Classes = () => {
       ],
     },
     {
-      id: 2,
+      id: 12,
       title: "Advanced",
-      price: "9999",
+      price: "8999",
       features: [
         { feature: "1 user" },
         { feature: "Up to 2 connected calendars" },
@@ -67,7 +67,7 @@ const Classes = () => {
       ],
     },
     {
-      id: 3,
+      id: 25,
       title: "Ultimate",
       price: "18999",
       features: [
@@ -80,9 +80,9 @@ const Classes = () => {
   ];
   const costing13th = [
     {
-      id: 1,
+      id: 8,
       title: "Starter",
-      price: "3999",
+      price: "4999",
       features: [
         { feature: "1 user" },
         { feature: "1 connected calendar" },
@@ -91,7 +91,7 @@ const Classes = () => {
       ],
     },
     {
-      id: 2,
+      id: 13,
       title: "Advanced",
       price: "9999",
       features: [
@@ -102,7 +102,7 @@ const Classes = () => {
       ],
     },
     {
-      id: 3,
+      id: 24,
       title: "Ultimate",
       price: "19999",
       features: [

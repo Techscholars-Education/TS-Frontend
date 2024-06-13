@@ -4,7 +4,7 @@ const useFpassword = () => {
   const forgotPassword = async (email) => {
     try {
       const response = await axios.post(
-        "https://api.techscholars.co.in/auth/reset/password",
+        "https://api.techscholars.in/auth/reset/password",
         {
           email,
         }

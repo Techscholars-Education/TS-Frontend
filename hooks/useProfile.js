@@ -1,31 +1,33 @@
 "use client"
 
-import { useEffect, useState } from "react";
-import { useCookieStore } from "./useStore";
-const useProfile = () => {
+import { useState } from "react";
+import { useCookieStore, useProfileStore} from "./useStore";
+import { toast } from "react-toastify";
+const useProfile = () => { 
 
-  const { cookie } = useCookieStore()
-  const [loading, setLoading] = useState(false);
-  const [profile, setProfile] = useState([])
-  
+  const {profilesData} = useProfileStore()
 
-  const useprofile = () => {
-    const myHeaders = new Headers();
-    myHeaders.append("authorization", cookie);
-    const requestOptions = {
-      method: "GET",
-      headers: myHeaders,
-      redirect: "follow"
-    };
+    const {cookie} = useCookieStore()
+	const [loading, setLoading] = useState(false);
+		const useprofile = async () => {
+			const myHeaders = new Headers();
+            myHeaders.append("authorization", cookie);
+            try {
+              const res = await fetch("https://api.techscholars.in/auth/profile/view", {
+               method: "GET",
+               headers: myHeaders,
+              });
+              const data = await res.json();
+              // console.log(data);
+              profilesData(data)
+              
+            } catch (error) {
+              toast.error(error.message);
+            }
 
-    fetch("https://api.techscholars.in/auth/profile/view", requestOptions)
-      .then((response) => response.text())
-      .then((result) => console.log(result))
-      .catch((error) => console.error(error));
 
-  }
-  
+		};
 
-  return { profile, useprofile };
+	return {useprofile };
 };
 export default useProfile;

@@ -1,22 +1,34 @@
-"use client";
-import React, { useState,useEffect } from "react";
+'use client'
+import React, { useEffect, useState } from "react";
 import { FiBell, FiSearch, FiUser } from "react-icons/fi";
 import Image from "next/image";
-import men from "../../public/Dashboard/men_nav.jpg";
+import iconprofile from "../../public/Dashboard/social-page.gif";
 import Link from "next/link";
+import useProfile from "@/hooks/useProfile";
+
 
 function DashboardNavbar(props) {
-  const [search, setSearch] = useState(false);
-  const [userInfo, setUserInfo] = useState(null);
 
-  useEffect(() => {
-    const storedUserInfo = localStorage.getItem("userInfo");
-    console.log(storedUserInfo)
-    if (storedUserInfo) {
-      setUserInfo(JSON.parse(storedUserInfo));
-    }
-  }, []);
-  
+  const {useprofile} = useProfile()
+  const [userImage,setUserImage] = useState()
+  const [call,setCall] = useState(false)
+ 
+  useEffect(()=>{
+    const image = window?.localStorage?.getItem("profile-storage");
+    const imagejs = JSON.parse(image)
+    setUserImage(imagejs.state.profiles.profile_image);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[call])
+
+  useEffect(()=>{
+    useprofile()
+    setCall(true)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[1])
+
+ 
+  const [search, setSearch] = useState(false);
+
   return (
     <div className="flex flex-wrap max-w-full place-items-center py-6 bg-white">
       <section className="relative mx-auto">
@@ -64,18 +76,20 @@ function DashboardNavbar(props) {
                 href={"/dashboard/profile"}
                 className="flex items-center hover:text-gray-200"
               >
-                {userInfo && (
-                  <>
-                    <img
-                      className="h-8 w-8 rounded-md"
-                      src={userInfo.picture || men}
-                      alt="Profile"
-                      width={32}
-                      height={32}
-                    />
-                    
-                  </>
-                )}
+               {userImage ?  <Image
+                  className="h-8 w-8 rounded-md"
+                  src={userImage || iconprofile}
+                  alt="Profile"
+                  width={32}
+                  height={32}
+                />: <Image
+                  className="h-8 w-8 rounded-md"
+                  src={iconprofile}
+                  unoptimized
+                  alt="Profile"
+                  width="auto"
+                  height="auto"
+                />}
               </Link>
             </div>
           </div>

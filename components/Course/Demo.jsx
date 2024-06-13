@@ -6,7 +6,7 @@ const Demo = () => {
       <h2 className="text-darkBlue font-semibold text-2xl  md:text-4xl text-center my-4 font-Poppins py-10 ">
         Demo Lectures
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-11/12 mx-auto ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-11/12 2xl:w-[1100px] mx-auto ">
         <div className="aspect-video w-full  ">
           <iframe
             src="https://www.youtube.com/embed/tg6ME1kCp4w"

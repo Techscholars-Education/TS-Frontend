@@ -2,38 +2,40 @@
 
 import { toast } from "react-toastify";
 import { useCookieStore } from "./useStore";
-import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
 
 const useGetway = () => {
+  const router = useRouter()
 
   const {cookie} = useCookieStore()
 
   const getway = async (id) => {
-
-    let token = Cookies.get("access_token")
-    // console.log(cookie);
+  //  console.log(id);
     const myHeaders = new Headers();
-    myHeaders.append("authorization", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5Iiwia2lkIjowLCJpYXQiOjE3MTgwOTQ5MTEsImV4cCI6MTcxODEzMDkxMX0.3-kjjTSYiHV5UeS588GEivThQUndzopPTQN3xNrjEio");
+    myHeaders.append("authorization", cookie);
     myHeaders.append("Content-Type", "application/json");
     
     const raw = JSON.stringify({
       "pdt_type": "1",
-      "pdt_id": 4,
+      "pdt_id": id,
       "ts_id": null,
       "discount_code": null
     });
-    
-    const requestOptions = {
-      method: "POST",
-      headers: myHeaders,
-      body: raw,
-      mode:"no-cors"
-    };
-    
-    fetch("https://api.techscholars.in/order/subscriptions", requestOptions)
-      .then((response) => response.text())
-      .then((result) => console.log(result))
-      .catch((error) => console.error(error));
+  
+    try {
+      const res = await fetch("https://api.techscholars.in/order/subscriptions", {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+       });
+       const data = await res.json();
+      //  console.log(data.payment_links.web);
+       router.push(data.payment_links.web)
+
+    } catch (error) {
+      toast.error(error.message);
+    }
+
   };
   return { getway };
 };

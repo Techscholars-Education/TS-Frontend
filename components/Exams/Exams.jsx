@@ -6,7 +6,7 @@ import Footer from "../Footer";
 const Councillor = () => {
   return (
     <>
-      <div className="bg-white font-Poppins py-10 w-full xl:w-9/12 mx-auto  ">
+      <div className="bg-white font-Poppins py-10 w-full xl:w-9/12 2xl:w-[1100px] mx-auto  ">
         <div className="text-center space-y-4 mb-10">
           <h2 className="text-xl md:text-4xl font-semibold text-darkBlue px-4 md:px-0">
             Apply for Scholarship Admission Test
