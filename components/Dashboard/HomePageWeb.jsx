@@ -310,7 +310,7 @@ const HomePageWeb = () => {
                   </div>
                 ))}
               </div>
-                </div>
+              </div>
             </div>
           </div>
           <div className=" w-[40vw] flex flex-col">
@@ -336,33 +336,33 @@ const HomePageWeb = () => {
 
             <Box className="flex flex-col rounded-xl ml-6 mr-6 mt-0 bg-white p-4 max-h-[80vh] overflow-y-auto">
               <Box className="flex justify-between">
-                <h3 className="font-bold text-xl">To Do List</h3>
-                <Button variant="outlined" onClick={() => setOpen(true)}>Add Todo</Button>
+                <h3 className="font-bold text-[16px]">To Do List</h3>
+                <Button variant="outlined" className="h-8 w-24 text-[10px] font-bold" onClick={() => setOpen(true)}>Add Todo</Button>
               </Box>
               <Box>
                 {todos.length > 0 ? (
                   todos.map(todo => (
-                    <Box key={todo.id} className="flex justify-between mt-4 bg-blue-50 p-3 rounded-xl">
+                    <Box key={todo.id} className="flex justify-between mt-4 bg-blue-50 p-3 ">
                       <Box className="flex">
                         {
                           todo.completed ? <FaCheck className={`h-6 w-6 p-1 rounded-full mt-4  bg-green-500 text-white' text-gray-700'}`} /> : ""
                         }
 
                         <Box className="flex flex-col ml-3">
-                          <h2 className="text-gray-900 font-bold text-[16px]">
+                          <h2 className="text-gray-900 font-bold text-[13px]">
                             {todo.task}
                           </h2>
-                          <p className="font-medium text-sm text-gray-500">
+                          <p className="font-medium text-[12px] text-gray-500">
                             {todo.description}
                           </p>
                         </Box>
                       </Box>
                       <Box className="flex items-center space-x-2">
                         <IconButton onClick={() => openDialog(todo)}>
-                          <EditIcon />
+                          <EditIcon  className="h-5 w-5"/>
                         </IconButton>
                         <IconButton onClick={() => handleDeleteTodo(todo.id)}>
-                          <DeleteIcon />
+                          <DeleteIcon className="h-5 w-5 " />
                         </IconButton>
                       </Box>
                     </Box>

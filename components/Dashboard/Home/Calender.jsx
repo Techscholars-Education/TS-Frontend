@@ -127,35 +127,35 @@ const Calendar = () => {
       end_time: new Date(),
     });
   };
-console.log(calEvents)
+
   return (
     
       <Box className="flex flex-col rounded-xl mt-0 bg-white p-4">
         <Box className="flex justify-between">
-          <h3 className="font-bold text-lg">Calendar</h3>
-          <Button variant="outlined" onClick={() => setCalOpen(true)}>Add Event</Button>
+          <h3 className="font-bold text-[16px]">Calendar</h3>
+          <Button variant="outlined" className="h-8 w-24 text-[10px] font-bold"  onClick={() => setCalOpen(true)}>Add Event</Button>
         </Box>
         <Box>
           {calEvents.length > 0 ? (
             calEvents.map(event => (
-              <Box key={event.id} className="flex justify-between mt-2 bg-blue-50 p-3 rounded-xl">
+              <Box key={event.id} className="flex justify-between mt-2 bg-blue-50 p-3 ">
                 <Box className="flex flex-col">
-                  <h2 className="text-gray-900 font-bold text-[16px]">
+                  <h2 className="text-gray-900 font-bold text-[13px]">
                     {event.title}
                   </h2>
-                  <p className="font-medium text-[14px] text-gray-500">
+                  <p className="font-medium text-[12px] text-gray-500">
                     {event.description}
                   </p>
-                  <p className="font-medium text-[14px] text-blue-400">
+                  <p className="font-medium text-[12px] text-blue-400">
                     {format(new Date(event.start_time), 'PPpp')} - {format(new Date(event.end_time), 'PPpp')}
                   </p>
                 </Box>
                 <Box className="flex items-center space-x-2">
                   <IconButton onClick={() => openCalDialog(event)}>
-                    <EditIcon />
+                    <EditIcon className="h-5 w-5" />
                   </IconButton>
                   <IconButton onClick={() => handleCalDeleteEvent(event.id)}>
-                    <DeleteIcon />
+                    <DeleteIcon className="h-5 w-5" />
                   </IconButton>
                 </Box>
               </Box>
