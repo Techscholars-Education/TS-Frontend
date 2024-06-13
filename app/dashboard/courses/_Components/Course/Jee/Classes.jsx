@@ -7,9 +7,9 @@ import DashboardNavbar from "@/components/Dashboard/DashboardNavbar";
 const Classes = () => {
   const costing11th = [
     {
-      id: 1,
+      id: 5,
       title: "Starter",
-      price: "2899",
+      price: "2499",
       features: [
         { feature: "1 user" },
         { feature: "1 connected calendar" },
@@ -18,9 +18,9 @@ const Classes = () => {
       ],
     },
     {
-      id: 2,
+      id: 16,
       title: "Advanced",
-      price: "9899",
+      price: "8999",
       features: [
         { feature: "1 user" },
         { feature: "Up to 2 connected calendars" },
@@ -29,7 +29,7 @@ const Classes = () => {
       ],
     },
     {
-      id: 3,
+      id: 21,
       title: "Ultimate",
       price: "19899",
       features: [
@@ -42,9 +42,9 @@ const Classes = () => {
   ];
   const costing12th = [
     {
-      id: 1,
+      id: 6,
       title: "Starter",
-      price: "2999",
+      price: "3999",
       features: [
         { feature: "1 user" },
         { feature: "1 connected calendar" },
@@ -53,9 +53,9 @@ const Classes = () => {
       ],
     },
     {
-      id: 2,
+      id: 15,
       title: "Advanced",
-      price: "9999",
+      price: "8999",
       features: [
         { feature: "1 user" },
         { feature: "Up to 2 connected calendars" },
@@ -64,7 +64,7 @@ const Classes = () => {
       ],
     },
     {
-      id: 3,
+      id: 22,
       title: "Ultimate",
       price: "18999",
       features: [
@@ -77,9 +77,9 @@ const Classes = () => {
   ];
   const costing13th = [
     {
-      id: 1,
+      id: 7,
       title: "Starter",
-      price: "3999",
+      price: "4999",
       features: [
         { feature: "1 user" },
         { feature: "1 connected calendar" },
@@ -88,7 +88,7 @@ const Classes = () => {
       ],
     },
     {
-      id: 2,
+      id: 14,
       title: "Advanced",
       price: "9999",
       features: [
@@ -99,7 +99,7 @@ const Classes = () => {
       ],
     },
     {
-      id: 3,
+      id: 23,
       title: "Ultimate",
       price: "19999",
       features: [

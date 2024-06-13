@@ -70,7 +70,7 @@ const handleSubmitStarter = () => {
    
   courseData(formdataOne)
 
-  router.replace("/payment")
+  router.replace(`/payment/${id1}`)
 }
 
 const handleSubmitAdvance = () => {
@@ -79,7 +79,7 @@ const handleSubmitAdvance = () => {
 
   courseData(formdataTwo)
 
-  router.replace("/payment")
+  router.replace(`/payment/${id2}`)
 }
 
 const handleSubmitUltimate = () => {
@@ -88,7 +88,7 @@ const handleSubmitUltimate = () => {
 
   courseData(formdataThree)
 
-  router.replace("/payment")
+  router.replace(`/payment/${id3}`)
 }
 
 
