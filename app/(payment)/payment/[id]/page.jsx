@@ -13,16 +13,17 @@ import Qrcode from "@/components/Payment/Qrcode";
 
 import { useCourseStore } from "@/hooks/useStore";
 import useGetway from "@/hooks/useGetway";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useParams } from 'next/navigation'
 
 const Page = () => {
-
-  const {course} = useCourseStore()
+  
+  const params = useParams()
+  const {course,courseData} = useCourseStore()
 
   const {getway} = useGetway()
 
-
-
-  const gst = 1799
 
   const [prices, setPrices] = useState(0)
   const [id,setId] = useState(0)
@@ -65,13 +66,19 @@ const Page = () => {
 
   const handleGetway = async(event) => {
     event.preventDefault();
-    
-    await getway(id)
+    if(id === Number(params.id)){
+      await getway(id)
+    }else{
+      toast.error("Please select package first")
+      courseData(0)
+    } 
    }
+
+  
 
   return (
     <>
-    
+      <ToastContainer />
       <section className=" grid grid-cols-1 lg:grid-cols-2 gap-12 w-full md:w-11/12 lg:md:w-10/12 md:mx-auto min-h-[80vh] py-24  mx-auto  ">
         <div className=" px-10 font-Poppins ">
           <div className="pb-6">
@@ -125,19 +132,19 @@ const Page = () => {
                 &#8377;{prices}
               </p>
             </div>
-            <div className=" flex justify-between">
+            {/* <div className=" flex justify-between">
               <p className="text-gray-600 text-sm md:text-base">GST 18%</p>
               <p className="text-TechBlue  text-sm md:text-base font-semibold">
                 &#8377;{gst}
               </p>
-            </div>
+            </div> */}
           </div>
           <hr />
           <div className="py-6">
             <div className=" flex justify-between">
               <p className="text-gray-600 text-base md:text-xl">Grand Total</p>
               <p className="text-TechBlue text-lg md:text-4xl font-semibold">
-                &#8377;{Number(prices) + gst}
+                &#8377;{Number(prices)}
               </p>
             </div>
           </div>

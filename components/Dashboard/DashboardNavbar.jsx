@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { FiBell, FiSearch, FiUser } from "react-icons/fi";
 import Image from "next/image";
-import men from "../../public/Dashboard/men_nav.jpg";
+import iconprofile from "../../public/Dashboard/social-page.gif";
 import Link from "next/link";
 import useProfile from "@/hooks/useProfile";
 
@@ -26,6 +26,7 @@ function DashboardNavbar(props) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
   },[1])
 
+ 
   const [search, setSearch] = useState(false);
 
   return (
@@ -77,13 +78,14 @@ function DashboardNavbar(props) {
               >
                {userImage ?  <Image
                   className="h-8 w-8 rounded-md"
-                  src={userImage}
+                  src={userImage || iconprofile}
                   alt="Profile"
                   width={32}
                   height={32}
                 />: <Image
                   className="h-8 w-8 rounded-md"
-                  src={men}
+                  src={iconprofile}
+                  unoptimized
                   alt="Profile"
                   width="auto"
                   height="auto"

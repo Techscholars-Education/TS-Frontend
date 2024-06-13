@@ -6,7 +6,9 @@ const ConfirmationModal = ({ isOpen, onClose, onSave }) => {
   const handleConfirm = () => {
     setConfirming(true);
     setTimeout(() => {
-      if (onSave) onSave();
+      if (onSave) {
+        onSave();
+      } 
       onClose();
     }, 2000); // Simulate async operation like API call
   };

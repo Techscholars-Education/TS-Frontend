@@ -6,9 +6,9 @@ import DashboardNavbar from "@/components/Dashboard/DashboardNavbar";
 const Classes = () => {
   const costing9th = [
     {
-      id: 1,
+      id: 2,
       title: "Starter",
-      price: "2899",
+      price: "1999",
       features: [
         { feature: "1 user" },
         { feature: "1 connected calendar" },
@@ -17,9 +17,9 @@ const Classes = () => {
       ],
     },
     {
-      id: 2,
+      id: 18,
       title: "Advanced",
-      price: "9899",
+      price: "6999",
       features: [
         { feature: "1 user" },
         { feature: "Up to 2 connected calendars" },
@@ -28,9 +28,9 @@ const Classes = () => {
       ],
     },
     {
-      id: 3,
+      id: 19,
       title: "Ultimate",
-      price: "19899",
+      price: "16999",
       features: [
         { feature: "Per user in company domain" },
         { feature: "Single calendar integrations" },
@@ -41,9 +41,9 @@ const Classes = () => {
   ];
   const costing10th = [
     {
-      id: 1,
+      id: 4,
       title: "Starter",
-      price: "2999",
+      price: "2499",
       features: [
         { feature: "1 user" },
         { feature: "1 connected calendar" },
@@ -52,9 +52,9 @@ const Classes = () => {
       ],
     },
     {
-      id: 2,
+      id: 17,
       title: "Advanced",
-      price: "9999",
+      price: "7999",
       features: [
         { feature: "1 user" },
         { feature: "Up to 2 connected calendars" },
@@ -63,9 +63,9 @@ const Classes = () => {
       ],
     },
     {
-      id: 3,
+      id: 20,
       title: "Ultimate",
-      price: "18999",
+      price: "17999",
       features: [
         { feature: "Per user in company domain" },
         { feature: "Single calendar integrations" },

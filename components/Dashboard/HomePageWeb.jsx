@@ -3,10 +3,10 @@ import React, { useState, useEffect } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import Toggle from "react-toggle";
 import { RiSunLine, RiMoonClearLine } from "react-icons/ri";
-import { DateRangePicker } from "react-date-range";
+
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css";
-import Calendar from "react-calendar";
+
 import 'react-calendar/dist/Calendar.css';
 import { LineChart } from "@mui/x-charts/LineChart";
 import { IoMdArrowBack } from "react-icons/io";
@@ -14,7 +14,7 @@ import CircularProgress, {
   CircularProgressProps,
 } from "@mui/material/CircularProgress";
 import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
+
 import Image from "next/image";
 import { FaHandsClapping } from "react-icons/fa6";
 import Avatar from "@mui/material/Avatar";
@@ -22,11 +22,6 @@ import Stack from "@mui/material/Stack";
 import { LiaGreaterThanSolid } from "react-icons/lia";
 import DashboardNavbar from "./DashboardNavbar";
 import { FaStar, FaCheck } from "react-icons/fa";
-// import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
-// import { LocalizationProvider } from '@mui/x-date-pickers-pro/LocalizationProvider';
-// import { AdapterDayjs } from '@mui/x-date-pickers-pro/AdapterDayjs';
-// import { DateRangeCalendar } from '@mui/x-date-pickers-pro/DateRangeCalendar';
-// import Calender from "@/app/(admin-dashboard)/admin/scholorship/_components/Calender";
 import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
 import {
@@ -41,16 +36,32 @@ import {
   parse,
   startOfToday,
 } from 'date-fns'
+import {
+  Box,
+  Button,
+  TextField,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  IconButton
+} from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 import Link from "next/link";
 import axios from "axios";
 import Cookies from "js-cookie";
-import { Cookie } from "@mui/icons-material";
-
+import { useCookieStore } from "@/hooks/useStore";
+import { DateRangePicker } from 'react-date-range';
+import Calendar from "./Home/Calender";
+import { Tooltip } from "@mui/material";
+import { FiLock, } from "react-icons/fi";
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 const HomePageWeb = () => {
+
   const options = {
     animationEnabled: true,
     title: {
@@ -88,40 +99,79 @@ const HomePageWeb = () => {
   const [isChecked, setIsChecked] = useState(false);
   const [userInfo, setUserInfo] = useState(null);
   const [todos, setTodos] = useState([]);
+  const [open, setOpen] = useState(false);
+  const [currentTodo, setCurrentTodo] = useState({ task: '', description: '', completed: false });
+  const [isEditing, setIsEditing] = useState(false);
+  const { cookie } = useCookieStore()
 
-  // useEffect(() => {
-  //   const fetchTodos = async () => {
-  //     try {
-        
-  //       const accessToken = Cookies.get('access_token');
-  //       console.log(accessToken)
-  //       if (!accessToken) {
-  //         throw new Error('Access token not found');
-  //       }
-    
-  //       const requestOptions = {
-  //         method: 'GET',
-  //         headers: {
-  //           'Cookie': `access_token=${accessToken}`,
-  //           'Content-Type': 'application/json', 
-  //         },
-  //         credentials: 'include' 
-  //       };
-  //      const response = await fetch('https://api.techscholars.co.in/auth/todoAll', requestOptions);
-  //       console.log(response.data)
-  //     } catch (error) {
-  //       console.error('Error fetching todos:', error);
-  //     }
-  
-        
-  //   };
+  useEffect(() => {
+    const fetchTodos = async () => {
+      const cookie = Cookies.get("access_token");
+      let axiosConfig = {
+        headers: {
+          'authorization': cookie,
+        }
+      };
+      const response = await axios.get("https://api.techscholars.in/auth/todoAll", axiosConfig);
+      setTodos(response.data);
+    };
 
-  //   fetchTodos();
-  // }, []);
+    fetchTodos();
+  }, []);
+
+  const handleAddTodo = async () => {
+    const cookie = Cookies.get("access_token");
+    let axiosConfig = {
+      headers: {
+        'authorization': cookie,
+      }
+    };
+    const response = await axios.post("https://api.techscholars.in/auth/todo", currentTodo, axiosConfig);
+    setTodos([...todos, response.data]);
+    setOpen(false);
+    setCurrentTodo({ task: '', description: '', completed: false });
+  };
+
+  const handleDeleteTodo = async (id) => {
+    const cookie = Cookies.get("access_token");
+    let axiosConfig = {
+      headers: {
+        'authorization': cookie,
+      }
+    };
+    await axios.delete(`https://api.techscholars.in/auth/todo/delete/${id}`, axiosConfig);
+    setTodos(todos.filter(todo => todo.id !== id));
+  };
+
+  const handleUpdateTodo = async () => {
+    const cookie = Cookies.get("access_token");
+    let axiosConfig = {
+      headers: {
+        'authorization': cookie,
+      }
+    };
+    const response = await axios.put("https://api.techscholars.in/auth/todo/update", currentTodo, axiosConfig);
+    setTodos(todos.map(todo => (todo.id === response.data.id ? response.data : todo)));
+    setOpen(false);
+    setIsEditing(false);
+    setCurrentTodo({ task: '', description: '', completed: false });
+  };
+
+  const openDialog = (todo) => {
+    setIsEditing(true);
+    setCurrentTodo(todo);
+    setOpen(true);
+  };
+
+  const closeDialog = () => {
+    setIsEditing(false);
+    setOpen(false);
+    setCurrentTodo({ task: '', description: '', completed: false });
+  };
+
 
   useEffect(() => {
     const storedUserInfo = localStorage.getItem("userInfo");
-    console.log(storedUserInfo)
     if (storedUserInfo) {
       setUserInfo(JSON.parse(storedUserInfo));
     }
@@ -134,6 +184,15 @@ const HomePageWeb = () => {
   const handleSelect = (ranges) => {
     setSelectionRange(ranges.selection);
   };
+  const [selectionRange, setSelectionRange] = useState({
+    startDate: new Date(),
+    endDate: new Date(),
+    key: 'selection',
+  });
+
+
+
+
 
   const data = [
     { x: 1, y: 2 },
@@ -167,20 +226,7 @@ const HomePageWeb = () => {
     { subject: "Physics", chapter: "Electrodynamics", progress: 40, color: "text-purple-600" }
   ];
 
-  let days = eachDayOfInterval({
-    start: firstDayCurrentMonth,
-    end: endOfMonth(firstDayCurrentMonth),
-  })
 
-  function previousMonth() {
-    let firstDayNextMonth = add(firstDayCurrentMonth, { months: -1 })
-    setCurrentMonth(format(firstDayNextMonth, 'MMM-yyyy'))
-  }
-
-  function nextMonth() {
-    let firstDayNextMonth = add(firstDayCurrentMonth, { months: 1 })
-    setCurrentMonth(format(firstDayNextMonth, 'MMM-yyyy'))
-  }
 
   const onChange = (newValue) => {
     setValue(newValue);
@@ -209,21 +255,33 @@ const HomePageWeb = () => {
         </div>
         <div className="my-6 mt-3 mx-6 flex ">
           <div className="w-[35vw] flex flex-col">
-            <div className="bg-white rounded-xl flex flex-col">
-              <p className="font-semibold p-6 pb-0">Performance analysis</p>
-              <LineChart
-                xAxis={[{ data: [1, 2, 3, 5, 8, 10] }]}
-                series={[
-                  {
-                    data: [2, 5.5, 2, 8.5, 1.5, 5],
-                  },
-                ]}
-                width={500}
-                height={260}
-              />
-            </div>
+            <Tooltip
+              title="This feature is locked as of now. Coming soon!"
+              placement="right"
+              arrow
+            >
+              <div className="bg-white rounded-xl flex flex-col hover:">
+                <p className="font-semibold p-6 pb-0">Performance analysis</p>
+                <div className="relative blur-[2px] ">
+                  <FiLock className="absolute w-8 h-8 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-500" style={{ color: 'black' }} />
+                  <LineChart
+                    xAxis={[{ data: [1, 2, 3, 5, 8, 10] }]}
+                    series={[
+                      {
+                        data: [2, 5.5, 2, 8.5, 1.5, 5],
+                      },
+                    ]}
+                    width={500}
+                    height={260}
+                  />
+                </div>
+
+              </div>
+            </Tooltip>
             <div className="bg-white rounded-xl mt-5 p-6">
               <p className="font-semibold ">Watch Time</p>
+              <div className="relative blur-[2px] ">
+              <FiLock className="absolute w-8 h-8 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-500" style={{ color: 'black' }} />
               <LineChart
                 width={500}
                 height={300}
@@ -233,112 +291,14 @@ const HomePageWeb = () => {
                 ]}
                 xAxis={[{ scaleType: 'point', data: xLabels }]}
               />
-            </div>
-          </div>
-          <div className=" w-[35vw] flex flex-col">
-
-            <div className="bg-white  m-6 mt-0  rounded-xl">
-              <div className="flex justify-center align-middle mt-12 items-center ">
-                {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
-                  <DemoContainer components={['DateRangeCalendar', 'DateRangeCalendar']}>
-                    <DemoItem label="">
-                      <div className="">
-
-                      <DateRangeCalendar calendars={1} />
-                      </div>
-                    </DemoItem>
-
-                  </DemoContainer>
-                </LocalizationProvider> */}
-                <div className="h-[20vw]">
-                  <div className="max-w-md px-4 mx-auto sm:px-7 md:max-w-4xl md:px-6">
-                    <div className="md:grid md:grid-cols-1 md:divide-x md:divide-gray-200">
-                      <div className="md:pr-14">
-                        <div className="flex items-center">
-                          <h2 className="flex-auto font-semibold text-gray-900">
-                            {format(firstDayCurrentMonth, 'MMMM yyyy')}
-                          </h2>
-                          <button
-                            type="button"
-                            onClick={previousMonth}
-                            className="-my-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500"
-                          >
-                            <span className="sr-only">Previous month</span>
-                            <FaChevronLeft className="w-3 h-3" aria-hidden="true" />
-                          </button>
-                          <button
-                            onClick={nextMonth}
-                            type="button"
-                            className="-my-1.5 -mr-1.5 ml-2 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500"
-                          >
-                            <span className="sr-only">Next month</span>
-                            <FaChevronRight className="w-3 h-3" aria-hidden="true" />
-                          </button>
-                        </div>
-                        <div className="grid grid-cols-7 mt-2 gap-6 text-xs leading-10 text-center text-gray-500">
-                          <div>Sun</div>
-                          <div>Mon</div>
-                          <div>Tue</div>
-                          <div>Wed</div>
-                          <div>Thr</div>
-                          <div>Fri</div>
-                          <div>Sat</div>
-                        </div>
-                        <div className="grid grid-cols-7 text-sm">
-                          {days.map((day, dayIdx) => (
-                            <div
-                              key={day.toString()}
-                              className={classNames(
-                                dayIdx === 0 && colStartClasses[getDay(day)],
-                                'py-1.5'
-                              )}
-                            >
-                              <button
-                                type="button"
-                                onClick={() => setSelectedDay(day)}
-                                className={classNames(
-                                  isEqual(day, selectedDay) && 'text-white',
-                                  !isEqual(day, selectedDay) &&
-                                  isToday(day) &&
-                                  'text-red-500',
-                                  !isEqual(day, selectedDay) &&
-                                  !isToday(day) &&
-                                  isSameMonth(day, firstDayCurrentMonth) &&
-                                  'text-gray-900',
-                                  !isEqual(day, selectedDay) &&
-                                  !isToday(day) &&
-                                  !isSameMonth(day, firstDayCurrentMonth) &&
-                                  'text-gray-400',
-                                  isEqual(day, selectedDay) && isToday(day) && 'bg-red-500',
-                                  isEqual(day, selectedDay) &&
-                                  !isToday(day) &&
-                                  'bg-gray-900',
-                                  !isEqual(day, selectedDay) && 'hover:bg-gray-200',
-                                  (isEqual(day, selectedDay) || isToday(day)) &&
-                                  'font-semibold',
-                                  'mx-auto flex h-6 w-6 items-center justify-center rounded-full'
-                                )}
-                              >
-                                <time dateTime={format(day, 'yyyy-MM-dd')}>
-                                  {format(day, 'd')}
-                                </time>
-                              </button>
-
-
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
-            <div className="flex flex-col bg-white rounded-lg m-6 mt-0">
+            <div className="flex flex-col bg-white rounded-lg  mt-6 ml-0 m">
               <div className="flex justify-between m-4">
                 <span className="font-[700] text-[15px]">Topic Progress</span>
               </div>
+              <div className="relative blur-[2px] ">
+              <FiLock className="absolute w-8 h-8 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-500" style={{ color: 'black' }} />
               <div className="grid grid-cols-2 p-6 pt-0 gap-4">
                 {jeeTopics.map((topic, index) => (
                   <div key={index} className="flex justify-between h-[48.2px]">
@@ -350,38 +310,96 @@ const HomePageWeb = () => {
                   </div>
                 ))}
               </div>
-            </div>
-            <div className="flex flex-col rounded-xl ml-6 mr-6 mt-0 bg-white p-4">
-              <div className="flex justify-between">
-                <h3 className="font-[700] text-[20px]">To Do List</h3>
-                <h4 className="font-[700] text-[13px]">See all</h4>
               </div>
-              <div>
+            </div>
+          </div>
+          <div className=" w-[40vw] flex flex-col">
+
+            <div className="w-[40vw] flex flex-col max-h-[85vh]  overflow-y-auto">
+              <div className="bg-white m-6 mt-0 rounded-xl">
+                <div className="flex justify-center align-middle mt-6 items-center">
+
+                  <div className="md:grid md:grid-cols-1 md:divide-x md:divide-gray-200">
+                    <DateRangePicker
+                      ranges={[selectionRange]}
+                      onChange={handleSelect}
+                    />
+                    <div className="relative">
+                      <Calendar />
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <Box className="flex flex-col rounded-xl ml-6 mr-6 mt-0 bg-white p-4 max-h-[80vh] overflow-y-auto">
+              <Box className="flex justify-between">
+                <h3 className="font-bold text-[16px]">To Do List</h3>
+                <Button variant="outlined" className="h-8 w-24 text-[10px] font-bold" onClick={() => setOpen(true)}>Add Todo</Button>
+              </Box>
+              <Box>
                 {todos.length > 0 ? (
                   todos.map(todo => (
-                    <div key={todo.id} className="flex justify-between mt-4 bg-[#F0F7FF] p-3 rounded-3xl">
-                      <div className="flex">
-                        <FaCheck className="text-white bg-blue-500 h-5 p-1 w-5 rounded-full" />
-                        <div className="flex flex-col ml-3">
-                          <h2 className="text-[#333333] font-[700] text-[15px]">
+                    <Box key={todo.id} className="flex justify-between mt-4 bg-blue-50 p-3 ">
+                      <Box className="flex">
+                        {
+                          todo.completed ? <FaCheck className={`h-6 w-6 p-1 rounded-full mt-4  bg-green-500 text-white' text-gray-700'}`} /> : ""
+                        }
+
+                        <Box className="flex flex-col ml-3">
+                          <h2 className="text-gray-900 font-bold text-[13px]">
                             {todo.task}
                           </h2>
-                          <p className="font-[600] text-[10px] text-[#8A8A8A]">
+                          <p className="font-medium text-[12px] text-gray-500">
                             {todo.description}
                           </p>
-                        </div>
-                      </div>
-                      <div className="mt-3">
-                        <LiaGreaterThanSolid />
-                      </div>
-                    </div>
+                        </Box>
+                      </Box>
+                      <Box className="flex items-center space-x-2">
+                        <IconButton onClick={() => openDialog(todo)}>
+                          <EditIcon  className="h-5 w-5"/>
+                        </IconButton>
+                        <IconButton onClick={() => handleDeleteTodo(todo.id)}>
+                          <DeleteIcon className="h-5 w-5 " />
+                        </IconButton>
+                      </Box>
+                    </Box>
                   ))
                 ) : (
                   <p>Loading...</p>
                 )}
-              </div>
-            </div>
-
+              </Box>
+              <Dialog open={open} onClose={closeDialog}>
+                <DialogTitle>{isEditing ? "Edit Todo" : "Add Todo"}</DialogTitle>
+                <DialogContent>
+                  <TextField
+                    autoFocus
+                    margin="dense"
+                    label="Task"
+                    type="text"
+                    fullWidth
+                    value={currentTodo.task}
+                    onChange={(e) => setCurrentTodo({ ...currentTodo, task: e.target.value })}
+                  />
+                  <TextField
+                    margin="dense"
+                    label="Description"
+                    type="text"
+                    fullWidth
+                    value={currentTodo.description}
+                    onChange={(e) => setCurrentTodo({ ...currentTodo, description: e.target.value })}
+                  />
+                </DialogContent>
+                <DialogActions>
+                  <Button onClick={closeDialog} color="primary">Cancel</Button>
+                  <Button onClick={isEditing ? handleUpdateTodo : handleAddTodo} color="primary">
+                    {isEditing ? "Update" : "Add"}
+                  </Button>
+                </DialogActions>
+              </Dialog>
+            </Box>
           </div>
 
         </div>

@@ -26,6 +26,7 @@ const LeftNavigation = () => {
     Cookies.remove("access_token");
     localStorage.removeItem("course-storage");
     localStorage.removeItem("cookie-storage");
+    localStorage.removeItem("profile-storage");
     // Refresh the page
     window.location.reload();
     window.location.assign("/");
@@ -34,7 +35,7 @@ const LeftNavigation = () => {
   const isActive = (path) => pathname === path;
 
   const lockedPaths = [
-    "/dashboard/home",
+   
     "/dashboard/refer-and-earn",
     "/dashboard/feed",
     "/dashboard/community",
