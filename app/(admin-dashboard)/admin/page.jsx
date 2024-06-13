@@ -94,7 +94,7 @@ const Page = () => {
                                 </div>
                                 <div className='flex items-center justify-center lg:mt-[3vw] mt-[7vw]'>
 
-                                    <button type='submit' onClick={handleSubmit} className='flex items-center justify-center text-white bg-[#012657] pl-4 pr-4 pt-2 pb-2 lg:w-[20vw] w-[50vw] rounded-lg hover:bg-black transition-all ease-in-out duration-200'>Sign In</button>
+                                    <button type='submit' onClick={handleSubmit} className='flex items-center justify-center text-white bg-TechBlue pl-4 pr-4 pt-2 pb-2 lg:w-[20vw] w-[50vw] rounded-lg hover:bg-black transition-all ease-in-out duration-200'>Sign In</button>
                                 </div>
 
                             </form>

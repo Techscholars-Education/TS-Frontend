@@ -24,7 +24,7 @@ const Page = () => {
           </div>
           <div
             id="feedback"
-            className="bg-gray-100 overflow-y-auto lg:h-[41vw] lg:w-[85vw] relative lg:right-[-15vw] right-0 h-screen w-full rounded-md"
+            className="bg-[#e6f0ff] overflow-y-auto lg:h-[41vw] lg:w-[85vw] relative lg:right-[-15vw] right-0 h-screen w-full rounded-md"
           >
           <div className={`button_admin lg:hidden absolute top-4 left-3 p-4 rounded-full bg-red-300 flex items-center justify-center`}>
               <HiMenuAlt4 className="text-[5vw] " onClick={()=>(setMobile(!mobile))}/>

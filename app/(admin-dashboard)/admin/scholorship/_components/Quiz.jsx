@@ -64,8 +64,8 @@ const Quiz = () => {
               /{addLeadingZero(questions.length)}
             </span>
           </span>
-          <div className="bg-[#B7AFE7] rounded-lg w-[33vw] mt-5 h-[7vw] p-3 max-lg:w-[78vw] max-lg:h-[12vh]">
-            <h1 className="font-semibold text-gray-300">{question}</h1>
+          <div className="bg-[#e6f0ff] rounded-lg w-[33vw] mt-5 h-[7vw] p-3 max-lg:w-[78vw] max-lg:h-[12vh]">
+            <h1 className="font-semibold text-gray-800">{question}</h1>
           </div>
            
           <div className="flex gap-5 text-[.8vw] max-lg:text-[2.7vw] mt-2 mb-2">

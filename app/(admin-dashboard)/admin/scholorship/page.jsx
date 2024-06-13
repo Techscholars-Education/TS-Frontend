@@ -27,7 +27,7 @@ const Page = () => {
           </div>
           <div
             id="scholorship"
-            className="bg-gray-100 overflow-y-auto h-[41vw] w-[85vw] relative right-[-15vw] rounded-md max-lg:w-full max-lg:h-screen max-lg:right-0"
+            className="bg-[#e6f0ff] overflow-y-auto h-[41vw] w-[85vw] relative right-[-15vw] rounded-md max-lg:w-full max-lg:h-screen max-lg:right-0"
           >
            <div className={`button_admin lg:hidden absolute top-4 left-3 p-4 rounded-full bg-red-300 flex items-center justify-center`}>
               <HiMenuAlt4 className="text-[5vw] " onClick={()=>(setMobile(!mobile))}/>
@@ -81,7 +81,7 @@ const Page = () => {
                   <Calender />
                 </div>
                 <div className="bg-white  h-[20vw] w-[23vw]  gap-5 rounded-l-md mt-2 pt-2 pl-2 pr-2 max-lg:h-[28vh] max-lg:w-[85vw] max-lg:mr-5 max-lg:mb-4">
-                  <h1 className="pl-3 pr-3 pt-1 pb-1 bg-[#B7AFE7] rounded-lg text-gray-700  text-xl font-semibold flex items-center justify-center ">
+                  <h1 className="pl-3 pr-3 pt-1 pb-1 bg-[#e6f0ff] rounded-lg text-gray-700  text-xl font-semibold flex items-center justify-center ">
                     Upcoming Scholorship Tests
                   </h1>
 

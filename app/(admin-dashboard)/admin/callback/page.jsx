@@ -24,7 +24,7 @@ const Page = () => {
           </div>
           <div
             id="callback"
-            className="bg-gray-100 overflow-y-auto h-[41vw] w-[85vw] relative right-[-15vw] rounded-md max-lg:right-0 max-lg:h-screen max-lg:w-full"
+            className="bg-[#e6f0ff] overflow-y-auto h-[41vw] w-[85vw] relative right-[-15vw] rounded-md max-lg:right-0 max-lg:h-screen max-lg:w-full"
           >
            <div className={`button_admin lg:hidden absolute top-4 left-3 p-4 rounded-full bg-red-300 flex items-center justify-center`}>
               <HiMenuAlt4 className="text-[5vw] " onClick={()=>(setMobile(!mobile))}/>
@@ -33,7 +33,7 @@ const Page = () => {
               <h1 className="font-semibold text-xl ml-10 mt-2">
                 Callback Requests
               </h1>
-              <button className="pl-3 pr-3 pt-2 pb-2 text-white bg-[#062659] rounded-md hover:bg-black transition-all ease-in-out duration-200">
+              <button className="pl-3 pr-3 pt-2 pb-2 text-white bg-TechBlue rounded-md hover:bg-black transition-all ease-in-out duration-200">
                 Add New Task
               </button>
             </div>
@@ -117,7 +117,7 @@ const Page = () => {
                       />
                     </div>
                   </div>
-                  <button className="pl-3 pr-3 pt-2 pb-2 text-white bg-[#062659] h-[3.4vw] w-[6vw] rounded-md hover:bg-black transition-all ease-in-out duration-200">
+                  <button className="pl-3 pr-3 pt-2 pb-2 text-white bg-TechBlue h-[3.4vw] w-[6vw] rounded-md hover:bg-black transition-all ease-in-out duration-200">
                     Done
                   </button>
                 </div>

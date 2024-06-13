@@ -24,7 +24,7 @@ const Page = () => {
           </div>
           <div
             id="batches"
-            className="bg-gray-100 overflow-y-auto h-[41vw] w-[85vw] relative right-[-15vw]  rounded-md"
+            className="bg-[#e6f0ff] overflow-y-auto h-[41vw] w-[85vw] relative right-[-15vw]  rounded-md"
           >
             <div>
               <h1 className="font-semibold text-xl ml-10 mt-2">Invoice</h1>
@@ -71,7 +71,7 @@ const Page = () => {
                 </div>
 
                 <div className="w-[76vw] h-[9vw] pl-[3vw] pr-[3vw]">
-                  <div className="w-[65vw] h-[4vw] bg-gray-200 pt-[1vw] pb-[1vw] pl-[3vw] pr-[3vw] rounded-lg ">
+                  <div className="w-[65vw] h-[4vw] bg-[#e6f0ff] pt-[1vw] pb-[1vw] pl-[3vw] pr-[3vw] rounded-lg ">
                     <div className="flex gap-[7vw] items-center">
                       <h1>Serial No.</h1>
                       <h1>Items & Description</h1>
@@ -110,8 +110,8 @@ const Page = () => {
                 </div>
                 <div className="w-[76vw] h-[9vw] pl-[3vw] pr-[3vw] relative ">
                   <div className="absolute right-5 flex gap-3">
-                    <AiFillPrinter className="p-2 h-10 w-10 border-2 border-gray-300 rounded-lg cursor-pointer text-[#002956] hover:text-black hover:border-black transition-all ease-in-out duration-200" />
-                    <button className="pl-3 pr-3 pt-2 pb-2 text-white bg-[#002956] rounded-md flex items-center hover:bg-black transition-all ease-in-out duration-200 gap-1">
+                    <AiFillPrinter className="p-2 h-10 w-10 border-2 border-gray-300 rounded-lg cursor-pointer text-TechBlue hover:text-black hover:border-black transition-all ease-in-out duration-200" />
+                    <button className="pl-3 pr-3 pt-2 pb-2 text-white bg-TechBlue rounded-md flex items-center hover:bg-black transition-all ease-in-out duration-200 gap-1">
                       Upload <FaRegPaperPlane />
                     </button>
                   </div>

@@ -28,12 +28,12 @@ const Page = () => {
           {team ? (
             <div
               id="feedback"
-              className="bg-gray-100 overflow-y-auto h-[41vw] w-[85vw] relative right-[-15vw]  rounded-md"
+              className="bg-[#e6f0ff] overflow-y-auto h-[41vw] w-[85vw] relative right-[-15vw]  rounded-md"
             >
               <div className=" flex justify-between mt-2 pr-2">
                 <h1 className="font-semibold text-xl ml-10 ">Team</h1>
                 <button
-                  className="pl-3 pr-3 pt-2 pb-2 text-white text-[.9vw] rounded-lg bg-[#002956] hover:bg-black transition-all ease-in-out duration-200"
+                  className="pl-3 pr-3 pt-2 pb-2 text-white text-[.9vw] rounded-lg bg-TechBlue hover:bg-black transition-all ease-in-out duration-200"
                   onClick={() => setTeam(!team)}
                 >
                   Add New Member
@@ -65,18 +65,12 @@ const Page = () => {
           ) : (
             <div
               id="feedback"
-              className="bg-gray-100 overflow-y-auto h-[41vw] w-[85vw] relative right-[-15vw]  rounded-md"
+              className="bg-[#e6f0ff]  overflow-y-auto h-[41vw] w-[85vw] relative right-[-15vw]  rounded-md"
             >
               <div className=" flex justify-between mt-2 pr-2">
                 <h1 className="font-semibold text-xl ml-10 ">
                   Add Team Member
                 </h1>
-                <button
-                  className="pl-3 pr-3 pt-2 pb-2 text-white text-[.9vw] rounded-lg bg-[#002956]"
-                  onClick={() => setTeam(!team)}
-                >
-                  Add New Member
-                </button>
               </div>
 
               <div className="ml-10 mt-4 flex flex-wrap gap-5">
@@ -85,7 +79,7 @@ const Page = () => {
                     <div className="flex flex-col items-center gap-2">
                       <div className="camera">
                         <label htmlFor="image">
-                          <IoCamera className="p-3 h-[4vw] w-[4vw] text-[.9vw] cursor-pointer bg-slate-200 rounded-full" />
+                          <IoCamera className="p-3 h-[4vw] w-[4vw] text-[.9vw] cursor-pointer bg-slate-100 rounded-full" />
                         </label>
                         <input
                           type="file"
@@ -111,7 +105,7 @@ const Page = () => {
                           <input
                             type="text"
                             id="first_name"
-                            className="bg-gray-200 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
+                            className="bg-gray-100 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
                           />
                         </div>
                         <div className="flex flex-col">
@@ -124,7 +118,7 @@ const Page = () => {
                           <input
                             type="text"
                             id="last_name"
-                            className="bg-gray-200 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
+                            className="bg-gray-100 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
                           />
                         </div>
                       </div>
@@ -139,7 +133,7 @@ const Page = () => {
                           <input
                             type="email"
                             id="email"
-                            className="bg-gray-200 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
+                            className="bg-gray-100 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
                           />
                         </div>
                         <div className="flex flex-col">
@@ -152,7 +146,7 @@ const Page = () => {
                           <input
                             type="number"
                             id="phone"
-                            className="bg-gray-200 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
+                            className="bg-gray-100 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
                           />
                         </div>
                       </div>
@@ -167,7 +161,7 @@ const Page = () => {
                           <input
                             type="text"
                             id="position"
-                            className="bg-gray-200 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
+                            className="bg-gray-100 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
                           />
                         </div>
                         <div className="flex flex-col">
@@ -180,7 +174,7 @@ const Page = () => {
                           <select
                             defaultValue={"member"}
                             id="countries"
-                            className="bg-gray-200 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
+                            className="bg-gray-100 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
                           >
                             <option value={"member"}>Member</option>
                             <option value="CEO">CEO</option>
@@ -195,7 +189,7 @@ const Page = () => {
 
                       <div className="flex items-center justify-center mt-5">
                         <button
-                          className="pl-3 pr-3 pt-2 pb-2 text-white bg-[#002956] rounded-md w-32 hover:bg-black hover:text-white transition-all ease-in-out duration-200"
+                          className="pl-3 pr-3 pt-2 pb-2 text-white bg-TechBlue rounded-md w-32 hover:bg-black hover:text-white transition-all ease-in-out duration-200"
                           onClick={() => setTeam(!team)}
                         >
                           Add Now
