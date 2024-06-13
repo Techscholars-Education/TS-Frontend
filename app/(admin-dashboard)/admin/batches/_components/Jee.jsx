@@ -58,7 +58,7 @@ const Jee = () => {
                     </div>
                    </div>
                    <Link href={"/admin/batches/jee"} className='btn flex justify-end'>
-                    <button className='bg-[#012657]  pl-4 pr-4 pt-2 pb-2 rounded-xl text-white lg:text-[.9vw] text-[3vw] flex hover:bg-black transition-all ease-in-out duration-200'>Place Bids</button>
+                    <button className='bg-TechBlue  pl-4 pr-4 pt-2 pb-2 rounded-xl text-white lg:text-[.9vw] text-[3vw] flex hover:bg-black transition-all ease-in-out duration-200'>Place Bids</button>
                    </Link>
                 </div>
             </div>

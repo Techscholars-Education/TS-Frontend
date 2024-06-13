@@ -11,8 +11,8 @@ const Nav = () => {
   return (
     <div className='lg:h-[4vw] pt-1 pb-1 lg:flex justify-between hidden'>
         <Link href="/" className='flex  items-center'>
-         <Image src={logo} alt='logo' width={60} height={60} className='ml-3 h-[60px] w-[60px]'/> 
-         <h1 className='font-bold text-[1.5vw] text-[#0079FC] '>TECHSCHOLARS</h1>
+         <Image src={logo} alt='logo' width={40} height={40} className='ml-3 h-[40px] w-[40px]'/> 
+         <h1 className='font-semibold text-[1.3vw] ml-2'>TECHSCHOLARS</h1>
         </Link>
         <div className='flex items-center gap-3 mr-5'>
           <Image src={User} alt='user' width={50} height={50} className='rounded-full' />

@@ -23,7 +23,7 @@ const Page = () => {
           </div>
           <div
             id="feedback"
-            className="bg-gray-100 overflow-y-auto h-[41vw] w-[85vw] relative right-[-15vw]  rounded-md"
+            className="bg-[#e6f0ff] overflow-y-auto h-[41vw] w-[85vw] relative right-[-15vw]  rounded-md"
           >
             <div className=" flex justify-between mt-2 pr-2">
               <h1 className="font-semibold text-xl ml-10 ">Team</h1>
@@ -35,7 +35,7 @@ const Page = () => {
                   <div className="flex flex-col items-center gap-2">
                     <div className="camera">
                       <label htmlFor="image">
-                        <IoCamera className="p-3 h-[4vw] w-[4vw] text-[.9vw] cursor-pointer bg-slate-200 rounded-full" />
+                        <IoCamera className="p-3 h-[4vw] w-[4vw] text-[.9vw] cursor-pointer bg-slate-100 rounded-full" />
                       </label>
                       <input
                         type="file"
@@ -61,7 +61,7 @@ const Page = () => {
                         <input
                           type="text"
                           id="name"
-                          className="bg-gray-200 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
+                          className="bg-gray-100 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
                         />
                       </div>
                       <div className="flex flex-col">
@@ -74,7 +74,7 @@ const Page = () => {
                         <input
                           type="text"
                           id="designation"
-                          className="bg-gray-200 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
+                          className="bg-gray-100 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
                         />
                       </div>
                     </div>
@@ -90,7 +90,7 @@ const Page = () => {
                         <input
                           type="email"
                           id="email"
-                          className="bg-gray-200 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
+                          className="bg-gray-100 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
                         />
                       </div>
                       <div className="flex flex-col">
@@ -103,7 +103,7 @@ const Page = () => {
                         <input
                           type="number"
                           id="number"
-                          className="bg-gray-200 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
+                          className="bg-gray-100 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
                         />
                       </div>
                     </div>
@@ -114,7 +114,7 @@ const Page = () => {
                     </div>
 
                     <div className="flex items-center justify-center">
-                      <button className="pl-3 pr-3 pt-2 pb-2 text-white bg-[#002956] rounded-md w-32 hover:bg-black hover:text-white transition-all ease-in-out duration-200">
+                      <button className="pl-3 pr-3 pt-2 pb-2 text-white bg-TechBlue rounded-md w-32 hover:bg-black hover:text-white transition-all ease-in-out duration-200">
                         Save
                       </button>
                     </div>

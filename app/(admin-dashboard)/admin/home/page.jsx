@@ -79,7 +79,7 @@ const Page = () => {
             </div>
             <div
               id="home"
-              className="bg-gray-100 overflow-y-auto h-screen lg:w-[83.5vw] w-full relative lg:right-[-15vw]  right-0 rounded-md"
+              className="bg-[#e6f0ff] overflow-y-auto h-screen lg:w-[83.5vw] w-full relative lg:right-[-15vw]  right-0 rounded-md"
             >
               <div className={`button_admin lg:hidden absolute top-4 left-3 p-4 rounded-full bg-red-300 flex items-center justify-center`}>
               <HiMenuAlt4 className="text-[5vw] " onClick={()=>(setMobile(!mobile))}/>
@@ -138,7 +138,7 @@ const Page = () => {
                   <LineChart
                     data={[200, 444, 444, 556, 778, 455, 990, 100]}
                     label="Students"
-                    borderColor="rgb(128, 0, 255)"
+                    borderColor="#11047a"
                     backgroundColor="rgba(66, 182, 246,0.5)"
                     labels={months}
                   />
