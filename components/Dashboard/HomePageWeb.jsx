@@ -337,7 +337,7 @@ const HomePageWeb = () => {
             <Box className="flex flex-col rounded-xl ml-6 mr-6 mt-0 bg-white p-4 max-h-[80vh] overflow-y-auto">
               <Box className="flex justify-between">
                 <h3 className="font-bold text-[16px]">To Do List</h3>
-                <Button variant="outlined" className="h-8 w-24 text-[10px] font-bold" onClick={() => setOpen(true)}>Add Todo</Button>
+                <button variant="outlined" className="h-8 w-24 text-[10px] font-[600] border-[2px] text-blue-700"  onClick={() => setOpen(true)}>Add Todo</button>
               </Box>
               <Box>
                 {todos.length > 0 ? (

@@ -133,7 +133,7 @@ const Calendar = () => {
       <Box className="flex flex-col rounded-xl mt-0 bg-white p-4">
         <Box className="flex justify-between">
           <h3 className="font-bold text-[16px]">Calendar</h3>
-          <Button variant="outlined" className="h-8 w-24 text-[10px] font-bold"  onClick={() => setCalOpen(true)}>Add Event</Button>
+          <button variant="outlined" className="h-8 w-24 text-[10px] font-[600] border-[2px] text-blue-700"  onClick={() => setCalOpen(true)}>Add Event</button>
         </Box>
         <Box>
           {calEvents.length > 0 ? (
