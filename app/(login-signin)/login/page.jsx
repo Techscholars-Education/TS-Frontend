@@ -67,6 +67,7 @@ const Page = () => {
   const glogin = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
       setAuthg(tokenResponse.access_token);
+      console.log(tokenResponse.access_token)
       const userInfo = await fetch(
         `https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=${tokenResponse.access_token}`
       ).then((res) => res.json());
@@ -79,6 +80,7 @@ const Page = () => {
     if (authg === "") return;
     if (authg) {
       const sessionExpirationTime = new Date(new Date().getTime() + 5 * 60 * 60 * 1000);
+      console.log(authg)
       Cookies.set("access_token", authg, { expires: sessionExpirationTime });
       cookieData(authg)
 

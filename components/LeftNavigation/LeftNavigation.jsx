@@ -35,7 +35,7 @@ const LeftNavigation = () => {
   const isActive = (path) => pathname === path;
 
   const lockedPaths = [
-    "/dashboard/home",
+   
     "/dashboard/refer-and-earn",
     "/dashboard/feed",
     "/dashboard/community",
