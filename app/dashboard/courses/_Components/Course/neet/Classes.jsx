@@ -34,7 +34,7 @@ const Classes = () => {
     {
       id: 26,
       title: "Ultimate",
-      price: "19899",
+      price: "18999",
       features: [
         { feature: "Per user in company domain" },
         { feature: "Single calendar integrations" },
