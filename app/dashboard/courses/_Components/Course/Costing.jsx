@@ -14,7 +14,6 @@ import "react-toastify/dist/ReactToastify.css";
 const Costing = (props) => {
 
   const router  = useRouter()
-  
   const cookies =   Cookies.get('access_token')
 
   const[formdataOne,setFormDataOne] = useState({
@@ -37,9 +36,6 @@ const Costing = (props) => {
    id:''
 })
 
- 
-
-  
   const {course,courseData} = useCourseStore()
    
   const price1  = props.CostingData[0].price
@@ -50,9 +46,7 @@ const Costing = (props) => {
   const id2  = props.CostingData[1].id
   const id3  = props.CostingData[2].id
 
-
-  
-    useEffect(()=>{
+  useEffect(()=>{
       setFormDataOne({ ...formdataOne, name: " Starter" ,prices: price1,auth:cookies,id:id1 })
       setFormDataTwo({ ...formdataTwo, name: "Advanced " ,prices: price2,auth:cookies,id:id2})
       setFormDataThree({ ...formdataThree, name: "Ultimate " ,prices: price3,auth:cookies,id:id3})
@@ -60,38 +54,20 @@ const Costing = (props) => {
        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[props.CostingData])
   
-
-
-
-
 const handleSubmitStarter = () => {
-  
-  // setFormData({ ...formdata, name: " Starter" ,prices: price1 })
-   
   courseData(formdataOne)
-
-  router.replace(`/payment/${id1}`)
+  router.replace(`/payment/${id1+9856748585}`)
 }
 
 const handleSubmitAdvance = () => {
-
-  // setFormData({ ...formdata, name: "Advanced " ,prices: price2 })
-
   courseData(formdataTwo)
-
-  router.replace(`/payment/${id2}`)
+  router.replace(`/payment/${id2+9856748585}`)
 }
 
 const handleSubmitUltimate = () => {
-
-  // setFormData({ ...formdata, name: "Ultimate " ,prices: price3 })
-
   courseData(formdataThree)
-
-  router.replace(`/payment/${id3}`)
+  router.replace(`/payment/${id3+9856748585}`)
 }
-
-
 
   return (
     <>
