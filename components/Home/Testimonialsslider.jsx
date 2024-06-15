@@ -4,8 +4,9 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import testimonials from "@/public/Home/testimonials.png";
 import { testimonialsData } from "./P_testimonials.js";
+import Image from "next/image.js";
 
 const Testimonialsslider = () => {
   const settings = {
@@ -45,11 +46,13 @@ const Testimonialsslider = () => {
           <Slider {...settings}>
             {testimonialsData.map((item) => {
               return (
-                <div key={item.id} className=" w-[80%] sm:w-full py-10 ">
-                  <div className=" mx-4 relative hover:scale-105 duration-200 shadow-md rounded hover:shadow-xl 2xl:h-[32vh] xl:h-72 lg:h-96 h-56 flex flex-col justify-between bg-white">
+                <div key={item.id} className=" w-full sm:w-full py-10  ">
+                  <div
+                    className={` mx-4 bg-white relative hover:scale-105 duration-200 shadow-md rotate-3 hover:rotate-0 rounded-xl hover:shadow-xl 2xl:h-[340px] xl:h-[310px] lg:h-96 h-56 flex flex-col justify-between `}
+                  >
                     <div className=" top-0 px-6 py-4 md:p-6 xl:top-[10%] ">
-                      <p className="text-xs lg:text-lg text-gray-500 leading-normal tracking-wide">
-                        &ldquo; {item.content} &ldquo;
+                      <p className="text-xs lg:text-lg text-black leading-normal tracking-wide">
+                        {item.content} ;
                       </p>
                     </div>
                     <div className="mb-2 px-4  xl:bottom-0 ">
@@ -63,6 +66,12 @@ const Testimonialsslider = () => {
                         </div>
                       </div>
                     </div>
+
+                    <Image
+                      className="w-44 absolute bottom-4 right-4 opacity-5"
+                      src={testimonials}
+                      alt="testimonials-icon"
+                    ></Image>
                   </div>
                 </div>
               );

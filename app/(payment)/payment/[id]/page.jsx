@@ -58,15 +58,20 @@ const Page = () => {
   // }, [isOpen]);
 
   useEffect(()=>{
-   setPrices(course.prices)
-   setId(course.id);
+    if(course){
+      setPrices(course.prices)
+      setId(course.id);
+    }else{
+      setPrices(0)
+      setId(0);
+    }
+    
     // eslint-disable-next-line react-hooks/exhaustive-deps
   },[course.prices])
 
-
   const handleGetway = async(event) => {
     event.preventDefault();
-    if(id === Number(params.id)){
+    if(id === Number(params.id-9856748585)){
       await getway(id)
     }else{
       toast.error("Please select package first")
@@ -74,7 +79,6 @@ const Page = () => {
     } 
    }
 
-  
 
   return (
     <>

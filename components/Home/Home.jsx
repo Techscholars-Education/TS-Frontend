@@ -6,11 +6,10 @@ import Testimonials from "@/components/Home/Testimonials";
 import Studenttest from "@/components/Home/Studenttest";
 import Aboutapp from "@/components/Home/Aboutapp";
 import Footer from "@/components/Footer";
-import Packages from "@/components/Home/Packages";
 import Navbar from "@/components/Navbar";
 import Testimonialsslider from "@/components/Home/Testimonialsslider";
 import Faculties from "./Faculties";
-
+import Price from "./Price";
 const Home = () => {
   return (
     <>
@@ -19,7 +18,7 @@ const Home = () => {
       <Benefits />
       <Curriculum />
       <About />
-      <Packages />
+      <Price />
       <Faculties calling={"home"} />
       <Testimonials />
       <Testimonialsslider />
