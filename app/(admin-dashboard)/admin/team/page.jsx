@@ -10,7 +10,36 @@ import { IoCamera } from "react-icons/io5";
 const Page = () => {
   const [domLoaded, setDomLoaded] = useState(false);
   const [team, setTeam] = useState(true);
-  console.log(team);
+
+  const [fname, setFName] = useState("")
+  const [lname, setLName] = useState("")
+  const [email, setEmail] = useState("")
+  const [position, setPosition] = useState("")
+  const [phone, setPhone] = useState("")
+  const [role, setRole] = useState("")
+  const [imageUrl, setImageUrl] = useState(null)
+
+  const handleGenderChange = (event) => {
+    const value = event.target.value;
+    setRole(value)
+
+  };
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    setImageUrl(file)
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(fname, lname, email, position, phone, imageUrl, role);
+
+    setTimeout(() => {
+      setTeam(!team)
+    }, 3000);
+
+  }
+
   useEffect(() => {
     setDomLoaded(true);
   }, []);
@@ -85,6 +114,7 @@ const Page = () => {
                           type="file"
                           id="image"
                           className="outline-none hidden"
+                          onChange={handleFileChange}
                         />
                       </div>
                       <h1 className="text-[#11047A] text-[.9vw] font-normal">
@@ -105,6 +135,8 @@ const Page = () => {
                           <input
                             type="text"
                             id="first_name"
+                            value={fname}
+                            onChange={(e) => { setFName(e.target.value) }}
                             className="bg-gray-100 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
                           />
                         </div>
@@ -118,6 +150,8 @@ const Page = () => {
                           <input
                             type="text"
                             id="last_name"
+                            value={lname}
+                            onChange={(e) => { setLName(e.target.value) }}
                             className="bg-gray-100 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
                           />
                         </div>
@@ -133,6 +167,8 @@ const Page = () => {
                           <input
                             type="email"
                             id="email"
+                            value={email}
+                            onChange={(e) => { setEmail(e.target.value) }}
                             className="bg-gray-100 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
                           />
                         </div>
@@ -146,6 +182,8 @@ const Page = () => {
                           <input
                             type="number"
                             id="phone"
+                            value={phone}
+                            onChange={(e) => { setPhone(e.target.value) }}
                             className="bg-gray-100 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
                           />
                         </div>
@@ -161,6 +199,8 @@ const Page = () => {
                           <input
                             type="text"
                             id="position"
+                            value={position}
+                            onChange={(e) => { setPosition(e.target.value) }}
                             className="bg-gray-100 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
                           />
                         </div>
@@ -171,26 +211,27 @@ const Page = () => {
                           >
                             Role
                           </label>
+
                           <select
-                            defaultValue={"member"}
+                            onChange={handleGenderChange}
+                            value={role}
                             id="countries"
                             className="bg-gray-100 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
                           >
-                            <option value={"member"}>Member</option>
-                            <option value="CEO">CEO</option>
+                            <option value="" selected disabled hidden>Choose Role</option>
+                            <option value="Member">Member</option>
+                            <option value="CEO" >CEO</option>
                             <option value="CTO">CTO</option>
-                            <option value="Digital Marketer">
-                              Digital Marketer
-                            </option>
+                            <option value="Digital Marketer"> Digital Marketer</option>
                             <option value="Strategist">Strategist</option>
                           </select>
                         </div>
                       </div>
 
                       <div className="flex items-center justify-center mt-5">
-                        <button
+                        <button type="submit"
                           className="pl-3 pr-3 pt-2 pb-2 text-white bg-TechBlue rounded-md w-32 hover:bg-black hover:text-white transition-all ease-in-out duration-200"
-                          onClick={() => setTeam(!team)}
+                          onClick={handleSubmit}
                         >
                           Add Now
                         </button>
