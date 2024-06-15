@@ -24,6 +24,15 @@ import DashboardNavbar from "./DashboardNavbar";
 import { FaStar, FaCheck } from "react-icons/fa";
 import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
+import List from '@mui/material/List';
+import SwipeableDrawer from '@mui/material/SwipeableDrawer';
+import Divider from '@mui/material/Divider';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import {
   add,
   eachDayOfInterval,
@@ -102,6 +111,7 @@ const HomePageWeb = () => {
   const [open, setOpen] = useState(false);
   const [currentTodo, setCurrentTodo] = useState({ task: '', description: '', completed: false });
   const [isEditing, setIsEditing] = useState(false);
+
   const { cookie } = useCookieStore()
 
   useEffect(() => {
@@ -150,7 +160,8 @@ const HomePageWeb = () => {
         'authorization': cookie,
       }
     };
-    const response = await axios.put("https://api.techscholars.in/auth/todo/update", currentTodo, axiosConfig);
+    const response = await axios.post("https://api.techscholars.in/auth/todo/update/", currentTodo, axiosConfig);
+    console.log(response)
     setTodos(todos.map(todo => (todo.id === response.data.id ? response.data : todo)));
     setOpen(false);
     setIsEditing(false);
@@ -241,6 +252,46 @@ const HomePageWeb = () => {
       clearInterval(timer);
     };
   }, []);
+  const [state, setState] = React.useState({
+    right: false,
+  });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (
+      event &&
+      event.type === 'keydown' &&
+      (event.key === 'Tab' || event.key === 'Shift')
+    ) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
+
+  
+
+  const list = (anchor) => (
+    <Box
+      sx={{ width: 400 }}
+      role="presentation"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <List>
+        {todos.map((task) => (
+          <ListItem key={task.id} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                {task.completed ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />}
+              </ListItemIcon>
+              <ListItemText primary={task.task} secondary={task.description} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+      <Divider />
+    </Box>
+  );
 
   return (
     <>
@@ -281,16 +332,16 @@ const HomePageWeb = () => {
             <div className="bg-white rounded-xl mt-5 p-6">
               <p className="font-semibold ">Watch Time</p>
               <div className="relative blur-[2px] ">
-              <FiLock className="absolute w-8 h-8 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-500" style={{ color: 'black' }} />
-              <LineChart
-                width={500}
-                height={300}
-                series={[
-                  { data: pData, label: 'Classes' },
-                  { data: uData, label: 'Tutorials' },
-                ]}
-                xAxis={[{ scaleType: 'point', data: xLabels }]}
-              />
+                <FiLock className="absolute w-8 h-8 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-500" style={{ color: 'black' }} />
+                <LineChart
+                  width={500}
+                  height={300}
+                  series={[
+                    { data: pData, label: 'Classes' },
+                    { data: uData, label: 'Tutorials' },
+                  ]}
+                  xAxis={[{ scaleType: 'point', data: xLabels }]}
+                />
               </div>
             </div>
             <div className="flex flex-col bg-white rounded-lg  mt-6 ml-0 m">
@@ -298,28 +349,28 @@ const HomePageWeb = () => {
                 <span className="font-[700] text-[15px]">Topic Progress</span>
               </div>
               <div className="relative blur-[2px] ">
-              <FiLock className="absolute w-8 h-8 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-500" style={{ color: 'black' }} />
-              <div className="grid grid-cols-2 p-6 pt-0 gap-4">
-                {jeeTopics.map((topic, index) => (
-                  <div key={index} className="flex justify-between h-[48.2px]">
-                    <div className="flex flex-col">
-                      <p className={`font-semibold ${topic.color}`}>{topic.subject}</p>
-                      <p className="text-[12px] text-gray-400">{topic.chapter}</p>
+                <FiLock className="absolute w-8 h-8 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-500" style={{ color: 'black' }} />
+                <div className="grid grid-cols-2 p-6 pt-0 gap-4">
+                  {jeeTopics.map((topic, index) => (
+                    <div key={index} className="flex justify-between h-[48.2px]">
+                      <div className="flex flex-col">
+                        <p className={`font-semibold ${topic.color}`}>{topic.subject}</p>
+                        <p className="text-[12px] text-gray-400">{topic.chapter}</p>
+                      </div>
+                      <CircularProgressWithLabel value={topic.progress} />
                     </div>
-                    <CircularProgressWithLabel value={topic.progress} />
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
           <div className=" w-[40vw] flex flex-col">
 
-            <div className="w-[40vw] flex flex-col max-h-[85vh]  overflow-y-auto">
+            <div className="w-[40vw] flex flex-col max-h-[92vh]  overflow-y-auto">
               <div className="bg-white m-6 mt-0 rounded-xl">
                 <div className="flex justify-center align-middle mt-6 items-center">
 
-                  <div className="md:grid md:grid-cols-1 md:divide-x md:divide-gray-200">
+                  <div className="md:grid md:grid-cols-1  ">
                     <DateRangePicker
                       ranges={[selectionRange]}
                       onChange={handleSelect}
@@ -334,15 +385,29 @@ const HomePageWeb = () => {
 
             </div>
 
-            <Box className="flex flex-col rounded-xl ml-6 mr-6 mt-0 bg-white p-4 max-h-[80vh] overflow-y-auto">
+            <Box className="flex flex-col rounded-lg ml-6 mr-6 mt-0 bg-white p-4 max-h-[80vh] overflow-y-auto">
               <Box className="flex justify-between">
                 <h3 className="font-bold text-[16px]">To Do List</h3>
-                <button variant="outlined" className="h-8 w-24 text-[10px] font-[600] border-[2px] text-blue-700"  onClick={() => setOpen(true)}>Add Todo</button>
+              <Box className="flex">
+              <button variant="outlined" className="h-8 w-24 text-[10px] font-[600] border-[2px] text-blue-700" onClick={() => setOpen(true)}>Add Todo</button>
+              <div>
+                <button onClick={toggleDrawer('right', true)} className="text-[10px] font-[600] ml-4 text-blue-700">See all</button>
+                <SwipeableDrawer
+                  anchor="right"
+                  open={state.right}
+                  onClose={toggleDrawer('right', false)}
+                  onOpen={toggleDrawer('right', true)}
+                  className="w-96"
+                >
+                  {list('right')}
+                </SwipeableDrawer>
+              </div>
+              </Box>
               </Box>
               <Box>
                 {todos.length > 0 ? (
                   todos.map(todo => (
-                    <Box key={todo.id} className="flex justify-between mt-4 bg-blue-50 p-3 ">
+                    <Box key={todo.id} className="flex justify-between mt-3 bg-blue-50 p-3 ">
                       <Box className="flex">
                         {
                           todo.completed ? <FaCheck className={`h-6 w-6 p-1 rounded-full mt-4  bg-green-500 text-white' text-gray-700'}`} /> : ""
@@ -359,7 +424,7 @@ const HomePageWeb = () => {
                       </Box>
                       <Box className="flex items-center space-x-2">
                         <IconButton onClick={() => openDialog(todo)}>
-                          <EditIcon  className="h-5 w-5"/>
+                          <EditIcon className="h-5 w-5" />
                         </IconButton>
                         <IconButton onClick={() => handleDeleteTodo(todo.id)}>
                           <DeleteIcon className="h-5 w-5 " />
@@ -391,6 +456,10 @@ const HomePageWeb = () => {
                     value={currentTodo.description}
                     onChange={(e) => setCurrentTodo({ ...currentTodo, description: e.target.value })}
                   />
+
+                  <FaCheck className={`h-6 w-6 p-1 rounded-full mt-4  {${currentTodo.completed} ? bg-green-500 : ""} text-white text-gray-700'}`} />
+
+
                 </DialogContent>
                 <DialogActions>
                   <Button onClick={closeDialog} color="primary">Cancel</Button>
