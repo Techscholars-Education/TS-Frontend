@@ -84,11 +84,11 @@ const Studenttest = () => {
                       </div>
                     </div>
                   </div>
-                  <span className="text-9xl absolute -top-5 font-Poppins text-gray-600">
-                    "
+                  <span className="text-9xl absolute -top-8 font-Inter text-gray-600">
+                    &ldquo;
                   </span>
-                  <span className="text-9xl absolute -top-5 right-0 font-Poppins text-gray-600">
-                    "
+                  <span className="text-9xl absolute -top-8 right-0 font-Inter text-gray-600">
+                    &ldquo;
                   </span>
                   <Image
                     className="w-44 absolute bottom-4 right-4 opacity-5"
