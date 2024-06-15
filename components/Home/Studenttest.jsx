@@ -4,6 +4,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { studentTestimonials } from "./S_testimonials.js";
+import studentTesti from "@/public/Home/studentTesti.png";
+import Image from "next/image.js";
 const Studenttest = () => {
   const settings = {
     infinite: true,
@@ -55,10 +57,12 @@ const Studenttest = () => {
           {studentTestimonials.map((item) => {
             return (
               <div key={item.id} className=" w-[80%] sm:w-full py-10 ">
-                <div className=" mx-4 relative hover:scale-105 duration-200 shadow-md rounded hover:shadow-xl 2xl:h-[32vh] xl:h-72 lg:h-96 h-56 flex flex-col justify-between bg-white">
+                <div
+                  className={` mx-4 bg-white  relative hover:scale-105 duration-200 shadow-md rounded hover:shadow-xl 2xl:h-[340px] xl:h-[310px] lg:h-96 h-56 flex flex-col justify-between `}
+                >
                   <div className=" top-0 px-6 py-4 md:p-6 xl:top-[10%] ">
-                    <p className="text-xs lg:text-base text-gray-500 leading-normal tracking-wide">
-                      &ldquo; {item.content} &ldquo;
+                    <p className="text-xs lg:text-base text-black leading-normal tracking-wide">
+                      {item.content}
                     </p>
                   </div>
                   <div className="mb-2 px-4  xl:bottom-0 ">
@@ -68,7 +72,7 @@ const Studenttest = () => {
                           <h4 className=" text-xs lg:text-xl font-medium text-black/80">
                             {item.studentName}
                           </h4>
-                          <p className="text-xs lg:text-sm text-gray-500">
+                          <p className="text-xs lg:text-sm text-black">
                             {item.aspirant}
                             {" - "}
                             <span>
@@ -80,6 +84,17 @@ const Studenttest = () => {
                       </div>
                     </div>
                   </div>
+                  <span className="text-9xl absolute -top-8 font-Inter text-gray-600">
+                    &ldquo;
+                  </span>
+                  <span className="text-9xl absolute -top-8 right-0 font-Inter text-gray-600">
+                    &ldquo;
+                  </span>
+                  <Image
+                    className="w-44 absolute bottom-4 right-4 opacity-5"
+                    src={studentTesti}
+                    alt="student-icon"
+                  ></Image>
                 </div>
               </div>
             );

@@ -46,7 +46,7 @@ const Faculties = (props) => {
   return (
     <section
       className={`${
-        props.calling === "home" ? "bg-white " : "bg-gray-100"
+        props.calling === "home" ? "bg-gray-50 " : "bg-gray-100"
       }py-10 font-Poppins w-full mx-auto `}
     >
       <div className=" w-full mx-auto  rounded-xl ">

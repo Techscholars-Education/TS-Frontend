@@ -36,7 +36,7 @@ export const facultiesData = [
     id: 4,
     name: "Kalgi Shah",
     designation: "Senior Biology faculty",
-    qualification: "M.Sc Biochemistry from St.Xavier College, Ahmedabad",
+    qualification: "M.Sc Biochemistry from St.Xavier, Ahmedabad",
     experience: "11",
     profile: Kalgi,
   },
