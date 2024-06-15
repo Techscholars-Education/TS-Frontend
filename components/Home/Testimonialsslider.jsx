@@ -4,8 +4,9 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import testimonials from "@/public/Home/testimonials.png";
 import { testimonialsData } from "./P_testimonials.js";
+import Image from "next/image.js";
 
 const Testimonialsslider = () => {
   const settings = {
@@ -45,9 +46,9 @@ const Testimonialsslider = () => {
           <Slider {...settings}>
             {testimonialsData.map((item) => {
               return (
-                <div key={item.id} className=" w-[80%] sm:w-full py-10 ">
+                <div key={item.id} className=" w-full sm:w-full py-10  ">
                   <div
-                    className={` mx-4 bg-${item.bgColor} relative hover:scale-105 duration-200 shadow-md rounded hover:shadow-xl 2xl:h-[32vh] xl:h-72 lg:h-96 h-56 flex flex-col justify-between `}
+                    className={` mx-4 bg-white relative hover:scale-105 duration-200 shadow-md rotate-3 hover:rotate-0 rounded-xl hover:shadow-xl 2xl:h-[340px] xl:h-[310px] lg:h-96 h-56 flex flex-col justify-between `}
                   >
                     <div className=" top-0 px-6 py-4 md:p-6 xl:top-[10%] ">
                       <p className="text-xs lg:text-lg text-black leading-normal tracking-wide">
@@ -65,12 +66,11 @@ const Testimonialsslider = () => {
                         </div>
                       </div>
                     </div>
-                    <span className="text-9xl absolute -top-5 font-Poppins">
-                      "
-                    </span>
-                    <span className="text-9xl absolute -top-5 right-0 font-Poppins">
-                      "
-                    </span>
+
+                    <Image
+                      className="w-44 absolute bottom-4 right-4 opacity-5"
+                      src={testimonials}
+                    ></Image>
                   </div>
                 </div>
               );
