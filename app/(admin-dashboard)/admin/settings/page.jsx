@@ -7,6 +7,23 @@ import { IoCamera } from "react-icons/io5";
 
 const Page = () => {
   const [domLoaded, setDomLoaded] = useState(false);
+  const [name,setName] = useState("")
+  const [email,setEmail] = useState("")
+  const [designation,setDesignation] = useState("")
+  const [phone,setPhone] = useState("")
+  const [imageUrl, setImageUrl] = useState(null)
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+      setImageUrl(file)
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(name,email,designation,phone,imageUrl);
+     
+  }
+
   useEffect(() => {
     setDomLoaded(true);
   }, []);
@@ -26,7 +43,7 @@ const Page = () => {
             className="bg-[#e6f0ff] overflow-y-auto h-[41vw] w-[85vw] relative right-[-15vw]  rounded-md"
           >
             <div className=" flex justify-between mt-2 pr-2">
-              <h1 className="font-semibold text-xl ml-10 ">Team</h1>
+              <h1 className="font-semibold text-xl ml-10 ">General Settings</h1>
             </div>
 
             <div className="ml-10 mt-4 flex flex-wrap gap-5">
@@ -41,6 +58,7 @@ const Page = () => {
                         type="file"
                         id="image"
                         className="outline-none hidden"
+                        onChange={handleFileChange}
                       />
                     </div>
                     <h1 className="text-[#11047A] text-[.9vw] font-normal">
@@ -61,6 +79,8 @@ const Page = () => {
                         <input
                           type="text"
                           id="name"
+                          value={name}
+                          onChange={(e)=>{setName(e.target.value)}}
                           className="bg-gray-100 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
                         />
                       </div>
@@ -74,6 +94,8 @@ const Page = () => {
                         <input
                           type="text"
                           id="designation"
+                          value={designation}
+                          onChange={(e)=>{setDesignation(e.target.value)}}
                           className="bg-gray-100 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
                         />
                       </div>
@@ -90,6 +112,8 @@ const Page = () => {
                         <input
                           type="email"
                           id="email"
+                          value={email}
+                          onChange={(e)=>{setEmail(e.target.value)}}
                           className="bg-gray-100 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
                         />
                       </div>
@@ -103,6 +127,8 @@ const Page = () => {
                         <input
                           type="number"
                           id="number"
+                          value={phone}
+                          onChange={(e)=>{setPhone(e.target.value)}}
                           className="bg-gray-100 border border-gray-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[20vw] p-2.5"
                         />
                       </div>
@@ -114,7 +140,7 @@ const Page = () => {
                     </div>
 
                     <div className="flex items-center justify-center">
-                      <button className="pl-3 pr-3 pt-2 pb-2 text-white bg-TechBlue rounded-md w-32 hover:bg-black hover:text-white transition-all ease-in-out duration-200">
+                      <button type="submit" onClick={handleSubmit} className="pl-3 pr-3 pt-2 pb-2 text-white bg-TechBlue rounded-md w-32 hover:bg-black hover:text-white transition-all ease-in-out duration-200">
                         Save
                       </button>
                     </div>
