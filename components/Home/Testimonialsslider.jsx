@@ -46,10 +46,12 @@ const Testimonialsslider = () => {
             {testimonialsData.map((item) => {
               return (
                 <div key={item.id} className=" w-[80%] sm:w-full py-10 ">
-                  <div className=" mx-4 relative hover:scale-105 duration-200 shadow-md rounded hover:shadow-xl 2xl:h-[32vh] xl:h-72 lg:h-96 h-56 flex flex-col justify-between bg-white">
+                  <div
+                    className={` mx-4 bg-${item.bgColor} relative hover:scale-105 duration-200 shadow-md rounded hover:shadow-xl 2xl:h-[32vh] xl:h-72 lg:h-96 h-56 flex flex-col justify-between `}
+                  >
                     <div className=" top-0 px-6 py-4 md:p-6 xl:top-[10%] ">
-                      <p className="text-xs lg:text-lg text-gray-500 leading-normal tracking-wide">
-                        &ldquo; {item.content} &ldquo;
+                      <p className="text-xs lg:text-lg text-black leading-normal tracking-wide">
+                        {item.content} ;
                       </p>
                     </div>
                     <div className="mb-2 px-4  xl:bottom-0 ">
@@ -63,6 +65,12 @@ const Testimonialsslider = () => {
                         </div>
                       </div>
                     </div>
+                    <span className="text-9xl absolute -top-5 font-Poppins">
+                      "
+                    </span>
+                    <span className="text-9xl absolute -top-5 right-0 font-Poppins">
+                      "
+                    </span>
                   </div>
                 </div>
               );

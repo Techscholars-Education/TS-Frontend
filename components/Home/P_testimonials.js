@@ -8,6 +8,7 @@ export const testimonialsData = [
     starRating: 4.6,
     class: 12,
     aspirant: "NEET",
+    bgColor: "green-100",
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ export const testimonialsData = [
     starRating: 4.5,
     class: 10,
     aspirant: "JEE",
+    bgColor: "red-100",
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ export const testimonialsData = [
     starRating: 4.7,
     class: 12,
     aspirant: "Foundation",
+    bgColor: "yellow-100",
   },
   {
     id: 4,
@@ -38,6 +41,7 @@ export const testimonialsData = [
     starRating: 4.6,
     class: 11,
     aspirant: "JEE",
+    bgColor: "green-100",
   },
   {
     id: 5,
@@ -48,6 +52,7 @@ export const testimonialsData = [
     starRating: 4.4,
     class: 11,
     aspirant: "Foundation",
+    bgColor: "red-100",
   },
   {
     id: 6,
@@ -58,6 +63,7 @@ export const testimonialsData = [
     starRating: 4.8,
     class: 10,
     aspirant: "NEET",
+    bgColor: "yellow-100",
   },
   {
     id: 7,
@@ -68,6 +74,7 @@ export const testimonialsData = [
     starRating: 4.7,
     class: 12,
     aspirant: "JEE",
+    bgColor: "green-100",
   },
   {
     id: 8,
@@ -78,5 +85,6 @@ export const testimonialsData = [
     starRating: 4.5,
     class: 9,
     aspirant: "Foundation",
+    bgColor: "red-100",
   },
 ];
