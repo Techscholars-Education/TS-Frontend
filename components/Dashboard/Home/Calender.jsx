@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
+import List from '@mui/material/List';
+import SwipeableDrawer from '@mui/material/SwipeableDrawer';
+import Divider from '@mui/material/Divider';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import {
   Box,
   Button,
@@ -94,7 +103,7 @@ const Calendar = () => {
         'authorization': cookie,
       }
     };
-    const response = await axios.put(`https://api.techscholars.in/auth/calendar?event_id=${calCurrentEvent.id}`, calCurrentEvent, axiosConfig);
+    const response = await axios.post(`https://api.techscholars.in/auth/calendar/update/`, calCurrentEvent, axiosConfig);
     setCalEvents(calEvents.map(event => (event.id === response.data.id ? response.data : event)));
     setCalOpen(false);
     setCalIsEditing(false);
@@ -127,92 +136,154 @@ const Calendar = () => {
       end_time: new Date(),
     });
   };
+  const [state, setState] = React.useState({
+    right: false,
+  });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (
+      event &&
+      event.type === 'keydown' &&
+      (event.key === 'Tab' || event.key === 'Shift')
+    ) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
+  const list = (anchor) => (
+    <Box
+      sx={{ width: 400 }}
+      role="presentation"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <List>
+        {calEvents.map((event) => (
+          <ListItem key={event.id} disablePadding>
+            <ListItemButton>
+            <Box className="flex flex-col">
+                <h2 className="text-gray-900 font-bold text-[16px]">
+                  {event.title}
+                </h2>
+                <p className="font-medium text-[14px] text-gray-500">
+                  {event.description}
+                </p>
+                <p className="font-medium text-[14px] text-blue-400">
+                  {format(new Date(event.start_time), 'PPpp')} - {format(new Date(event.end_time), 'PPpp')}
+                </p>
+              </Box>
+            </ListItemButton>
+          
+          </ListItem>
+        ))}
+      </List>
+      <Divider />
+    </Box>
+  );
 
   return (
-    
-      <Box className="flex flex-col rounded-xl mt-0 bg-white p-4">
-        <Box className="flex justify-between">
-          <h3 className="font-bold text-[16px]">Calendar</h3>
-          <button variant="outlined" className="h-8 w-24 text-[10px] font-[600] border-[2px] text-blue-700"  onClick={() => setCalOpen(true)}>Add Event</button>
-        </Box>
+
+    <Box className="flex flex-col rounded-xl mt-0 bg-white p-4">
+      <Box className="flex justify-between">
+        <h3 className="font-bold text-[16px]">Calendar</h3>
         <Box>
-          {calEvents.length > 0 ? (
-            calEvents.map(event => (
-              <Box key={event.id} className="flex justify-between mt-2 bg-blue-50 p-3 ">
-                <Box className="flex flex-col">
-                  <h2 className="text-gray-900 font-bold text-[13px]">
-                    {event.title}
-                  </h2>
-                  <p className="font-medium text-[12px] text-gray-500">
-                    {event.description}
-                  </p>
-                  <p className="font-medium text-[12px] text-blue-400">
-                    {format(new Date(event.start_time), 'PPpp')} - {format(new Date(event.end_time), 'PPpp')}
-                  </p>
-                </Box>
-                <Box className="flex items-center space-x-2">
-                  <IconButton onClick={() => openCalDialog(event)}>
-                    <EditIcon className="h-5 w-5" />
-                  </IconButton>
-                  <IconButton onClick={() => handleCalDeleteEvent(event.id)}>
-                    <DeleteIcon className="h-5 w-5" />
-                  </IconButton>
-                </Box>
+          <Box className="flex">
+          <button variant="outlined" className="h-8 w-24 text-[10px] font-[600] border-[2px] text-blue-700" onClick={() => setCalOpen(true)}>Add Event</button>
+              
+              <div>
+                <button onClick={toggleDrawer('right', true)} className="text-[10px] font-[600] ml-4 text-blue-700">See all</button>
+                <SwipeableDrawer
+                  anchor="right"
+                  open={state.right}
+                  onClose={toggleDrawer('right', false)}
+                  onOpen={toggleDrawer('right', true)}
+                  className="w-96"
+                >
+                  {list('right')}
+                </SwipeableDrawer>
+              </div>
               </Box>
-            ))
-          ) : (
-            <p>Loading...</p>
-          )}
         </Box>
-        <Dialog open={calOpen} onClose={closeCalDialog}>
-          <DialogTitle>{calIsEditing ? "Edit Event" : "Add Event"}</DialogTitle>
-          <DialogContent>
-            <TextField
-              autoFocus
-              margin="dense"
-              label="Title"
-              type="text"
-              fullWidth
-              value={calCurrentEvent.title}
-              onChange={(e) => setCalCurrentEvent({ ...calCurrentEvent, title: e.target.value })}
-            />
-            <TextField
-              margin="dense"
-              label="Description"
-              type="text"
-              fullWidth
-              value={calCurrentEvent.description}
-              onChange={(e) => setCalCurrentEvent({ ...calCurrentEvent, description: e.target.value })}
-            />
-            <DateRangePicker
-              startText="Start Date"
-              endText="End Date"
-              value={[calCurrentEvent.start_time, calCurrentEvent.end_time]}
-              onChange={(newValue) => {
-                setCalCurrentEvent({
-                  ...calCurrentEvent,
-                  start_time: newValue[0],
-                  end_time: newValue[1],
-                });
-              }}
-              renderInput={(startProps, endProps) => (
-                <>
-                  <TextField {...startProps} fullWidth margin="dense" />
-                  <Box sx={{ mx: 2 }}> to </Box>
-                  <TextField {...endProps} fullWidth margin="dense" />
-                </>
-              )}
-            />
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={closeCalDialog} color="primary">Cancel</Button>
-            <Button onClick={calIsEditing ? handleCalUpdateEvent : handleCalAddEvent} color="primary">
-              {calIsEditing ? "Update" : "Add"}
-            </Button>
-          </DialogActions>
-        </Dialog>
       </Box>
-   
+      <Box>
+        {calEvents.length > 0 ? (
+          calEvents.map(event => (
+            <Box key={event.id} className="flex justify-between mt-2 bg-blue-50 p-3 ">
+              <Box className="flex flex-col">
+                <h2 className="text-gray-900 font-bold text-[13px]">
+                  {event.title}
+                </h2>
+                <p className="font-medium text-[12px] text-gray-500">
+                  {event.description}
+                </p>
+                <p className="font-medium text-[12px] text-blue-400">
+                  {format(new Date(event.start_time), 'PPpp')} - {format(new Date(event.end_time), 'PPpp')}
+                </p>
+              </Box>
+              <Box className="flex items-center space-x-2">
+                <IconButton onClick={() => openCalDialog(event)}>
+                  <EditIcon className="h-5 w-5" />
+                </IconButton>
+                <IconButton onClick={() => handleCalDeleteEvent(event.id)}>
+                  <DeleteIcon className="h-5 w-5" />
+                </IconButton>
+              </Box>
+            </Box>
+          ))
+        ) : (
+          <p>Loading...</p>
+        )}
+      </Box>
+      <Dialog open={calOpen} onClose={closeCalDialog}>
+        <DialogTitle>{calIsEditing ? "Edit Event" : "Add Event"}</DialogTitle>
+        <DialogContent>
+          <TextField
+            autoFocus
+            margin="dense"
+            label="Title"
+            type="text"
+            fullWidth
+            value={calCurrentEvent.title}
+            onChange={(e) => setCalCurrentEvent({ ...calCurrentEvent, title: e.target.value })}
+          />
+          <TextField
+            margin="dense"
+            label="Description"
+            type="text"
+            fullWidth
+            value={calCurrentEvent.description}
+            onChange={(e) => setCalCurrentEvent({ ...calCurrentEvent, description: e.target.value })}
+          />
+          <DateRangePicker
+            startText="Start Date"
+            endText="End Date"
+            value={[calCurrentEvent.start_time, calCurrentEvent.end_time]}
+            onChange={(newValue) => {
+              setCalCurrentEvent({
+                ...calCurrentEvent,
+                start_time: newValue[0],
+                end_time: newValue[1],
+              });
+            }}
+            renderInput={(startProps, endProps) => (
+              <>
+                <TextField {...startProps} fullWidth margin="dense" />
+                <Box sx={{ mx: 2 }}> to </Box>
+                <TextField {...endProps} fullWidth margin="dense" />
+              </>
+            )}
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={closeCalDialog} color="primary">Cancel</Button>
+          <Button onClick={calIsEditing ? handleCalUpdateEvent : handleCalAddEvent} color="primary">
+            {calIsEditing ? "Update" : "Add"}
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </Box>
+
   );
 };
 
