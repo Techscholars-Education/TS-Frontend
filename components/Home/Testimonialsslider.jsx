@@ -70,6 +70,7 @@ const Testimonialsslider = () => {
                     <Image
                       className="w-44 absolute bottom-4 right-4 opacity-5"
                       src={testimonials}
+                      alt="testimonials-icon"
                     ></Image>
                   </div>
                 </div>

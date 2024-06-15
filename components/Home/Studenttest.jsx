@@ -93,6 +93,7 @@ const Studenttest = () => {
                   <Image
                     className="w-44 absolute bottom-4 right-4 opacity-5"
                     src={studentTesti}
+                    alt="student-icon"
                   ></Image>
                 </div>
               </div>
