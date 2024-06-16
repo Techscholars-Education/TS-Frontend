@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import React from 'react'
-import Logo from  "../../../public/AdminDashboard/Logo.png"
 import logo from "../../../public/Logo.svg"
 import User from  "../../../public/AdminDashboard/user.png"
 import { RiArrowDownSLine } from "react-icons/ri";

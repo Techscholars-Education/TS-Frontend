@@ -30,7 +30,7 @@ function DashboardNavbar(props) {
   const [search, setSearch] = useState(false);
 
   return (
-    <div className="flex flex-wrap max-w-full place-items-center py-6 bg-white">
+    <div className="flex flex-wrap max-w-full place-items-center py-4 bg-white">
       <section className="relative mx-auto">
         <nav className="flex justify-between text-black w-[82vw] ">
           <div className="px-5 xl:px-12 flex w-full items-center justify-between">
