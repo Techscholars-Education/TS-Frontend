@@ -16,6 +16,10 @@ html {
 .exam-card:hover {
   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.99);
 }
+.stdbgclr{
+  background: #066DE6;
+  color: white;
+}
 
 .loader {
   width: 48px;
