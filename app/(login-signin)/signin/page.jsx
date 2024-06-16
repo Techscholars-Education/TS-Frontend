@@ -15,6 +15,7 @@ import gif1 from "@/public/Ts-Loader.gif";
 const Page = () => {
   const router = useRouter();
   const [domLoaded, setDomLoaded] = useState(false);
+  const [banner, setBanner] = useState(false);
 
   const [inputs, setInputs] = useState({
     first_name: "",
@@ -48,11 +49,14 @@ const Page = () => {
 
   useEffect(() => {
     if (checking) {
-      setTimeout(() => {
-        router.replace("/login");
-      }, 2000);
+      // setTimeout(() => {
+      //   router.replace("/login");
+      // }, 2000);
+
+      setBanner(true);
     }
-  });
+     // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[checking]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -66,8 +70,8 @@ const Page = () => {
         <>
           <ToastContainer />
 
-          <section className="  flex justify-between items-center lg:overflow-hidden ">
-            <div className=" w-full px-4 py-12 lg:w-1/2 h-screen lg:p-12 mx-auto ">
+          <section className="  flex justify-between items-center lg:overflow-hidden  h-screen w-full">
+            <div className=" w-full px-4 py-12 lg:w-1/2 h-screen lg:p-12 mx-20  ">
               <div>
                 <Link
                   href="/"
@@ -276,20 +280,47 @@ const Page = () => {
             </div>
 
             <div className=" hidden lg:block ">
-              <Image
-                src={signin}
-                alt="signin-svg"
-                className="h-screen w-full"
-              />
+              {banner ? (
+                <div className="card h-[100vh] w-[30vw] relative flex items-center justify-center">
+                  <Image
+                    src={signin}
+                    alt="signin-svg"
+                    className="h-screen w-full blur-md absolute"
+                  />
+                  <div className="card h-[50vh] w-[26vw] relative">
+                    <div className="circle"></div>
+                    <div className="circle"></div>
+                    <div className="card-inner p-14">
+                      <h1 className="font-bold text-xl text-gray-700">
+                        Activation required
+                      </h1>
+                      <p className="mt-4 text-[1.4vw] font-semibold text-green-600">
+                        Account Activation link has been send to your registered
+                        mail id 
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="h-[100vh] w-full">
+                  <Image
+                    src={signin}
+                    alt="signin-svg"
+                    className="h-screen w-full"
+                  />
+                </div>
+              )}
             </div>
           </section>
         </>
       ) : (
-        <div className="h-screen w-full flex items-center justify-center"> 
-
-<Image src={gif1} alt="gif-loader" className="lg:h-[20vh] lg:w-[10vw] h-[20vh] w-[35vw]  " />
-
-</div>
+        <div className="h-screen w-full flex items-center justify-center">
+          <Image
+            src={gif1}
+            alt="gif-loader"
+            className="lg:h-[20vh] lg:w-[10vw] h-[20vh] w-[35vw]  "
+          />
+        </div>
       )}
     </>
   );
