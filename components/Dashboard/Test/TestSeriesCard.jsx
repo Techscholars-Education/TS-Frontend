@@ -10,7 +10,7 @@ import avatar from "../../../public/Dashboard/avatar.jpg";
 function TestSeriesCard(props) {
   return (
     <div
-      className={`flex flex-col rounded-xl border w-[20vw]  font-Poppins relative bg-white`}
+      className={`flex flex-col rounded-xl border md:w-[20vw]  font-Poppins relative bg-white`}
     >
       <div>
         <Image
