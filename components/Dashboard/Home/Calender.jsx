@@ -202,7 +202,7 @@ const Calendar = ({ selectionRange }) => {
 
   return (
 
-    <Box className="flex flex-col rounded-xl mt-0  bg-white p-4 overflow-hidden">
+    <Box className="flex flex-col rounded-xl mt-0 mb-3  bg-white p-4 overflow-hidden">
       <Box className="flex justify-between">
         <h3 className="font-bold text-[16px]">Calendar</h3>
         <Box>
@@ -228,7 +228,7 @@ const Calendar = ({ selectionRange }) => {
       <Box>
         {calEvents.length > 0 ? (
           calEvents.map(event => (
-            <Box key={event.id} className="flex justify-between my-4  p-3 ">
+            <Box key={event.id} className="flex justify-between my-1  p-3 ">
               <Box className="flex flex-col">
                 <h2 className="text-gray-900 font-bold text-[13px]">
                   {event.title}

@@ -9,6 +9,7 @@ const Classes = () => {
       id: 2,
       title: "Starter",
       price: "1999",
+      mainname:"Foundation",
       features: [
         { feature: "1 user" },
         { feature: "1 connected calendar" },
@@ -20,6 +21,7 @@ const Classes = () => {
       id: 18,
       title: "Advanced",
       price: "6999",
+      mainname:"Foundation",
       features: [
         { feature: "1 user" },
         { feature: "Up to 2 connected calendars" },
@@ -31,6 +33,7 @@ const Classes = () => {
       id: 19,
       title: "Ultimate",
       price: "16999",
+      mainname:"Foundation",
       features: [
         { feature: "Per user in company domain" },
         { feature: "Single calendar integrations" },
@@ -44,6 +47,7 @@ const Classes = () => {
       id: 4,
       title: "Starter",
       price: "2499",
+      mainname:"Foundation",
       features: [
         { feature: "1 user" },
         { feature: "1 connected calendar" },
@@ -55,6 +59,7 @@ const Classes = () => {
       id: 17,
       title: "Advanced",
       price: "7999",
+      mainname:"Foundation",
       features: [
         { feature: "1 user" },
         { feature: "Up to 2 connected calendars" },
@@ -66,6 +71,7 @@ const Classes = () => {
       id: 20,
       title: "Ultimate",
       price: "17999",
+      mainname:"Foundation",
       features: [
         { feature: "Per user in company domain" },
         { feature: "Single calendar integrations" },
