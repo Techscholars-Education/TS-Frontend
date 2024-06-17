@@ -326,8 +326,8 @@ const HomePageWeb = () => {
             Back
           </Link>
         </div>
-        <div className="my-6 mt-3 mx-6 flex ">
-          <div className="w-[35vw] flex flex-col">
+        <div className="md:my-6 my-2  md:mx-6 flex flex-col md:flex-row ">
+          <div className="md:w-[35vw] w-64  flex flex-col">
             <Tooltip
               title="This feature is locked as of now. Coming soon!"
               placement="right"
@@ -386,10 +386,10 @@ const HomePageWeb = () => {
               </div>
             </div>
           </div>
-          <div className=" w-[40vw] flex flex-col">
+          <div className=" md:w-[40vw]  flex flex-col">
 
-            <div className="w-[40vw] flex flex-col max-h-[74vh] mb-5 overflow-hidden">
-              <div className="bg-white m-6 mt-0 rounded-xl">
+            <div className="md:w-[40vw] w-80 flex flex-col md:max-h-[74vh] md:mb-5 overflow-hidden">
+              <div className="bg-white md:m-6 md:mt-0 rounded-xl">
                 <div className="flex align-middle justify-center  mt-6 items-center">
 
                   <div className="md:grid md:grid-cols-1  ">
@@ -406,7 +406,7 @@ const HomePageWeb = () => {
                     
                     /> 
 
-                    <div className="relative">
+                    <div className="md:relative">
                       <Calendar selectionRange={selectionRange}/>
 
                     </div>

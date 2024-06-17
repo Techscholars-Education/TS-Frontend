@@ -140,7 +140,7 @@ function TestDetail() {
         {/* <p className="text-sm text-gray-600  mx-4 my-4">
       You’ve learned 70% of your goal this week! Keep it up
       </p> */}
-        <div className='grid grid-cols-3 pr-12 gap-6 ml-4 w-[68vw]'>
+        <div className='grid grid-cols-1 md:grid-cols-3 md:pr-12 gap-6 ml-4 w-[68vw]'>
           {
             data.map((item) => {
               return <>
