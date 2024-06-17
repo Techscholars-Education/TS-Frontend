@@ -16,9 +16,12 @@ const Card = (props) => {
       >
         <div>
           <Image
+            priority
             className="w-full rounded-xl "
             alt="course-posters"
             src={props.image}
+            width={70}
+            height={30}
           />
         </div>
 
@@ -88,7 +91,7 @@ const Card = (props) => {
           <div className="flex justify-between mt-4">
             <Link
               href={props.route ? props.route : "/"}
-              className=" w-full  p-3 px-4 rounded-full text-center bg-TechBlue text-sm text-white"
+              className=" w-full  p-3 px-4 rounded-full text-center bg-TechBlue text-sm text-white hover:bg-black hover:shadow-sm hover:shadow-black transition-all ease-linear duration-200"
             >
               Explore
             </Link>
