@@ -20,22 +20,25 @@ const Costing = (props) => {
     prices: '',
     name: '',
     auth:'',
-    id:''
+    id:'',
+    mainName:''
 
 })
   const[formdataTwo,setFormDataTwo] = useState({
     prices: '',
     name: '',
     auth:'',
-    id:''
+    id:'',
+    mainName:''
 })
   const[formdataThree,setFormDataThree] = useState({
     prices: '',
     name: '',
    auth:'',
-   id:''
+   id:'',
+   mainName:''
 })
-
+   
   const {course,courseData} = useCourseStore()
    
   const price1  = props.CostingData[0].price
@@ -46,10 +49,15 @@ const Costing = (props) => {
   const id2  = props.CostingData[1].id
   const id3  = props.CostingData[2].id
 
+  const mainName1 = props.CostingData[0].mainname
+  const mainName2 = props.CostingData[1].mainname
+  const mainName3 = props.CostingData[2].mainname
+  
+
   useEffect(()=>{
-      setFormDataOne({ ...formdataOne, name: " Starter" ,prices: price1,auth:cookies,id:id1 })
-      setFormDataTwo({ ...formdataTwo, name: "Advanced " ,prices: price2,auth:cookies,id:id2})
-      setFormDataThree({ ...formdataThree, name: "Ultimate " ,prices: price3,auth:cookies,id:id3})
+      setFormDataOne({ ...formdataOne, name: " Starter" ,prices: price1,auth:cookies,id:id1,mainName:mainName1 })
+      setFormDataTwo({ ...formdataTwo, name: "Advanced " ,prices: price2,auth:cookies,id:id2,mainName:mainName2})
+      setFormDataThree({ ...formdataThree, name: "Ultimate " ,prices: price3,auth:cookies,id:id3,mainName:mainName3})
 
        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[props.CostingData])
