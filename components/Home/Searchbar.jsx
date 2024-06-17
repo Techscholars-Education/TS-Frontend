@@ -6,12 +6,23 @@ const recommendations = {
   j: [{ option: "JEE", route: "/course" }],
   n: [{ option: "NEET", route: "/course" }],
   f: [{ option: "Foundation", route: "/course" }],
+  e: [{ option: "Exams", route: "/exams" }],
   c: [
     { option: "Courses", route: "/course" },
     { option: "Call a councillor", route: "/councillor" },
   ],
-  p: ["Privacy policy", "Parents reviews"],
-  s: ["Students reviews", "Parents reviews"],
+  p: [
+    { option: "Privacy policy", route: "/privacy" },
+    { option: "Parents reviews", route: "/#testimonials" },
+  ],
+  s: [
+    { option: "Student reviews", route: "/#testimonials" },
+    { option: "Scholarships", route: "/exams" },
+  ],
+  r: [
+    { option: "Register ", route: "/signin" },
+    { option: "Reviews", route: "/#testimonials" },
+  ],
 };
 
 function App() {
