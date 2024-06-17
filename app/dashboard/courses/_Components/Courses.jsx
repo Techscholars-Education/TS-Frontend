@@ -27,7 +27,7 @@ const Courses = () => {
             title: item.name.toUpperCase(),
             route: `/dashboard/courses/${item.name.toLowerCase().replace(/\s+/g, '')}`,
             description: item.description,
-            Poster: coursePoster,
+            Poster: item.banner_img,
           }));
 
           setData(formattedData);
@@ -60,7 +60,7 @@ const Courses = () => {
         </div>
       ) : (
         <div className="my-6 flex flex-col mr-2 bg-blue-50 h-[82vh] max-w-full pl-5 pr-5 pt-5">
-          <div className="max-w-[82vw] bg-white rounded-md pl-9 flex flex-col overflow-y-auto">
+          <div className="max-w-[82vw] bg-white rounded-md pl-9 flex flex-col overflow-y-auto pb-3">
             <div className="grid grid-cols-1 md:grid-cols-2 md:gap-0  lg:grid-cols-3 gap-4 mt-4 xl:w-10/12 mx-auto">
               {data.map((item) => (
                 <Card
@@ -72,20 +72,7 @@ const Courses = () => {
                 />
               ))}
             </div>
-            <div className="flex justify-center mt-24 items-center space-x-4 md:space-x-10">
-              <Link
-                href="/"
-                className="bg-TechBlue text-sm text-white md:w-44 md:h-12 rounded-full flex justify-center items-center duration-300 px-4 py-2"
-              >
-                Explore more
-              </Link>
-              <Link
-                href="/"
-                className="text-sm md:w-44 md:h-12 border-2 border-gray-300 flex justify-center items-center rounded-full duration-300 px-4 py-2"
-              >
-                Back to home
-              </Link>
-            </div>
+      
           </div>
         </div>
       )}
