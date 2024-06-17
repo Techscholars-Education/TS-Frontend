@@ -10,6 +10,7 @@ const Classes = () => {
       id: 5,
       title: "Starter",
       price: "2499",
+      mainname:"JEE",
       features: [
         { feature: "1 user" },
         { feature: "1 connected calendar" },
@@ -21,6 +22,7 @@ const Classes = () => {
       id: 16,
       title: "Advanced",
       price: "8999",
+      mainname:"JEE",
       features: [
         { feature: "1 user" },
         { feature: "Up to 2 connected calendars" },
@@ -32,6 +34,7 @@ const Classes = () => {
       id: 21,
       title: "Ultimate",
       price: "18999",
+      mainname:"JEE",
       features: [
         { feature: "Per user in company domain" },
         { feature: "Single calendar integrations" },
@@ -45,6 +48,7 @@ const Classes = () => {
       id: 6,
       title: "Starter",
       price: "3999",
+      mainname:"JEE",
       features: [
         { feature: "1 user" },
         { feature: "1 connected calendar" },
@@ -56,6 +60,7 @@ const Classes = () => {
       id: 15,
       title: "Advanced",
       price: "8999",
+      mainname:"JEE",
       features: [
         { feature: "1 user" },
         { feature: "Up to 2 connected calendars" },
@@ -67,6 +72,7 @@ const Classes = () => {
       id: 22,
       title: "Ultimate",
       price: "18999",
+      mainname:"JEE",
       features: [
         { feature: "Per user in company domain" },
         { feature: "Single calendar integrations" },
@@ -80,6 +86,7 @@ const Classes = () => {
       id: 7,
       title: "Starter",
       price: "4999",
+      mainname:"JEE",
       features: [
         { feature: "1 user" },
         { feature: "1 connected calendar" },
@@ -91,6 +98,7 @@ const Classes = () => {
       id: 14,
       title: "Advanced",
       price: "9999",
+      mainname:"JEE",
       features: [
         { feature: "1 user" },
         { feature: "Up to 2 connected calendars" },
@@ -102,6 +110,7 @@ const Classes = () => {
       id: 23,
       title: "Ultimate",
       price: "19999",
+      mainname:"JEE",
       features: [
         { feature: "Per user in company domain" },
         { feature: "Single calendar integrations" },

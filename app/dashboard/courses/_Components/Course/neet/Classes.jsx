@@ -13,6 +13,7 @@ const Classes = () => {
       id: 10,
       title: "Starter",
       price: "3999",
+      mainname:"NEET",
       features: [
         { feature: "1 user" },
         { feature: "1 connected calendar" },
@@ -24,6 +25,7 @@ const Classes = () => {
       id: 11,
       title: "Advanced",
       price: "8999",
+      mainname:"NEET",
       features: [
         { feature: "1 user" },
         { feature: "Up to 2 connected calendars" },
@@ -35,6 +37,7 @@ const Classes = () => {
       id: 26,
       title: "Ultimate",
       price: "18999",
+      mainname:"NEET",
       features: [
         { feature: "Per user in company domain" },
         { feature: "Single calendar integrations" },
@@ -48,6 +51,7 @@ const Classes = () => {
       id: 9,
       title: "Starter",
       price: "3999",
+      mainname:"NEET",
       features: [
         { feature: "1 user" },
         { feature: "1 connected calendar" },
@@ -59,6 +63,7 @@ const Classes = () => {
       id: 12,
       title: "Advanced",
       price: "8999",
+      mainname:"NEET",
       features: [
         { feature: "1 user" },
         { feature: "Up to 2 connected calendars" },
@@ -70,6 +75,7 @@ const Classes = () => {
       id: 25,
       title: "Ultimate",
       price: "18999",
+      mainname:"NEET",
       features: [
         { feature: "Per user in company domain" },
         { feature: "Single calendar integrations" },
@@ -83,6 +89,7 @@ const Classes = () => {
       id: 8,
       title: "Starter",
       price: "4999",
+      mainname:"NEET",
       features: [
         { feature: "1 user" },
         { feature: "1 connected calendar" },
@@ -94,6 +101,7 @@ const Classes = () => {
       id: 13,
       title: "Advanced",
       price: "9999",
+      mainname:"NEET",
       features: [
         { feature: "1 user" },
         { feature: "Up to 2 connected calendars" },
@@ -105,6 +113,7 @@ const Classes = () => {
       id: 24,
       title: "Ultimate",
       price: "19999",
+      mainname:"NEET",
       features: [
         { feature: "Per user in company domain" },
         { feature: "Single calendar integrations" },
