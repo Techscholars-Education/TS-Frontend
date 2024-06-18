@@ -9,7 +9,6 @@ import useProfile from '@/hooks/useProfile';
 import useProfileUpdate from '@/hooks/useProfileUpdate';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import useGetway from '@/hooks/useGetway';
 
 const Profile = () => {
    
@@ -38,7 +37,7 @@ const Profile = () => {
   const [email,setEmail] = useState("")
   const [gender,setGender] = useState("")
   const [phone,setPhone] = useState("")
-  const [bio,setBio] = useState("")
+  const [dob,setDob] = useState("")
   const [imageUrl, setImageUrl] = useState(null)
 
   const [isModalOpen, setModalOpen] = useState(false);
@@ -50,7 +49,6 @@ const Profile = () => {
     
   };
 
-  
   const handleSaveClick = (event) => {
     event.preventDefault();
     setModalOpen(true);
@@ -69,9 +67,12 @@ const Profile = () => {
     .then((data) => {setImageUrl(data.url)})
   };
 
+ 
+  const imageurl = imageUrl === null ? userImage : imageUrl
+ 
   const handleSubmit = () => {   
       try {
-      const res = useprofileupdate(name,email,gender,phone,imageUrl);
+      const res = useprofileupdate(name,email,gender,phone,imageurl,dob);
     } catch (error) {
       console.log("Some error occured in login");
     }
@@ -85,19 +86,16 @@ const Profile = () => {
     setEmail("")
     setGender("")
     setPhone("")
-    setBio("")    
+    setDob("")   
   }
-
-  const {getway} = useGetway()
   const handleReset = (event) => {
     event.preventDefault()
     setName("")
     setEmail("")
     setGender("")
     setPhone("")
-    setBio("")
+    setDob("")
     // useprofile()
-    // getway()
   }
 
     return (
@@ -131,7 +129,7 @@ const Profile = () => {
                         <div className='bg-white text-black h-8 w-8 rounded-full p-2 shadow-lg absolute left-20 top-16'> <TbEdit className='cursor-pointer' /></div>
                         </div>
                     </div>
-                    <div className=' w-full h-[44vh] flex flex-col gap-2'>
+                    <div className=' w-full h-[44vh] flex flex-col gap-9'>
                     <div className="flex gap-24">
                         <div className="flex flex-col">
                           <label
@@ -197,23 +195,24 @@ const Profile = () => {
                           />
                         </div>
                       </div>
-                    <div className="">
+                      <div className="flex gap-24">
                         <div className="flex flex-col">
                           <label
-                            htmlFor="Bio"
+                            htmlFor="dob"
                             className=" mb-2 text-sm font-medium text-gray-600 "
                           >
-                          Bio
+                           DOB
                           </label>
-                          <textarea
-                            type="text"
-                            placeholder='Write your Bio here e.g your hobbies, interests ETC'
-                            id="Bio"
-                            value={bio}
-                            onChange={(e)=>{setBio(e.target.value)}}
-                            className="bg-blue-50  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full h-[16vh] p-2.5"
+                          <input
+                            type="date"
+                            placeholder='Please enter your Date of Birth'
+                            id="dob"
+                            value={dob}
+                            onChange={(e)=>{setDob(e.target.value)}}
+                            className="bg-blue-50 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[30vw] p-2.5"
                           />
                         </div>
+                  
                       </div>
                     </div>
                     <div className='w-full flex gap-9'>

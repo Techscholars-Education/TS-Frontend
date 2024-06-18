@@ -7,15 +7,13 @@ const useProfileUpdate = () => {
    const router = useRouter()
 
     const {cookie} = useCookieStore()
-		const useprofileupdate = async (name,email,gender,phone,imageUrl) => {
+		const useprofileupdate = async (name,email,gender,phone,imageurl,dob) => {
 
 
       const success = handleInputErrors({
-        name,email,gender,phone
+        name,email,gender,phone,dob
       });
       if (!success) return;
-
-
 			const myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
             myHeaders.append("authorization", cookie);
@@ -28,16 +26,16 @@ const useProfileUpdate = () => {
                         email: email,
                         phone_country_code: "+91",
                         phone_number: phone,
-                        profile_image: imageUrl,
+                        profile_image: imageurl,
                         gender:gender,
-                        dob: null,
+                        dob: dob,
                         is_verified: false,
                         role: null
                      }),
                     credentials: 'include'
                   });
                   const data = await res.json();
-                  // console.log(data);
+                  console.log(data);
                  if(data.username){
                     toast.success("Profile Updated")
                     router.push("/dashboard/home")
@@ -65,14 +63,14 @@ const validateEmail = (email) => {
 
 
 function handleInputErrors({
-  name,email,gender,phone
+  name,email,gender,phone,dob
 }) {
   
   if (!gender) {
     toast.error("Please select gender");
   }
 
-  if (!name || !email || !gender || !phone) {
+  if (!name || !email || !gender || !phone || !dob) {
     toast.error("Please fill in all fields");
     return false;
   }
