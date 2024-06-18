@@ -42,7 +42,7 @@ const Course = () => {
         </div>
       ) : (
         <>
-          <div className="my-14 flex flex-col mx-8">
+          <div className="my-4 flex flex-col mx-10">
             <h2 className="text-xl md:text-xl font-semibold text-darkBlue mx-4">
               My courses
             </h2>
@@ -64,7 +64,7 @@ const Course = () => {
               </Link>
             </div>
           </div>
-          <div className="md:pr-32 lg:gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 xl:w-11/12 mx-auto">
+          <div className="md:pr-32 lg:gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4  xl:w-11/12 mx-auto">
             {courses.length > 0 ? (
               courses.map((course) => (
                 <CourseCard
