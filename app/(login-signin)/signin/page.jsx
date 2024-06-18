@@ -10,9 +10,10 @@ import "react-toastify/dist/ReactToastify.css";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { IoIosEye } from "react-icons/io";
 import gif1 from "@/public/Ts-Loader.gif";
+import axios from "axios";
 
 const Page = () => {
-  const [domLoaded, setDomLoaded] = useState(false);
+  // ! MAIN FORM STATE
   const [inputs, setInputs] = useState({
     first_name: "",
     last_name: "",
@@ -21,18 +22,34 @@ const Page = () => {
     password: "",
   });
 
+  // ! HELPER STATES
+  const [domLoaded, setDomLoaded] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState("");
   const [isPasswordMatch, setIsPasswordMatch] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
   const [activationMsg, setActivationMsg] = useState(false);
+  const [time, setTime] = useState(120);
+  const [isRunning, setIsRunning] = useState(false);
+  const [emailResent, setEmailResent] = useState(false);
+
+  // ! USE SIGNUP HOOK
   const { loading, signup } = useSignup();
 
+  // ! DOUBLE CHECK PASSWORD
   const handleConfirmPasswordChange = (e) => {
     const confirmPasswordValue = e.target.value;
     setConfirmPassword(confirmPasswordValue);
     setIsPasswordMatch(confirmPasswordValue === inputs.password);
   };
 
+  // ! MAIN SUBMIT BUTTON
+  const submitForm = () => {
+    setActivationMsg(true);
+    startTimer();
+    // handleSubmit();
+  };
+
+  // ! SUBMIT USER DATA ( IF SUCCESS -> START TIMER FOR RESEND VERIFICATION EMAIL)
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (confirmPassword !== inputs.password) {
@@ -43,18 +60,54 @@ const Page = () => {
       const res = await signup(inputs);
       if (res) {
         setActivationMsg(true);
-        setInputs({});
       }
     } catch (error) {
+      setInputs({});
       console.log("Some error occured");
     }
   };
 
+  // ! TRACK THE STATUS OF DOM (FOR INITIAL LOADER)
   useEffect(() => {
     setTimeout(() => {
       setDomLoaded(true);
     }, 2000);
   }, []);
+
+  // ! FOR RESEND VERIFICATION TIMER
+  useEffect(() => {
+    let interval = null;
+
+    if (isRunning && time > 0) {
+      interval = setInterval(() => {
+        setTime((prevTime) => prevTime - 1);
+      }, 1000);
+    } else if (time === 0) {
+      clearInterval(interval);
+      setIsRunning(false);
+    }
+
+    return () => clearInterval(interval);
+  }, [isRunning, time]);
+
+  //! START THE TIMER
+  const startTimer = () => {
+    setIsRunning(true);
+    setTime(10);
+  };
+
+  // ! POST REQUEST TO RESEND ACCOUNT ACTIVATION LINK
+  const resendEmail = async (uEmail) => {
+    try {
+      // await axios.post(
+      //   `https://api.techscholars.co.in/auth/v1/resend/email?email=${uEmail}`
+      // );
+      setEmailResent(true);
+      console.log(uEmail);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <>
@@ -72,7 +125,7 @@ const Page = () => {
                 </Link>
               </div>
 
-              <div className=" lg:h-[70vh] h-screen lg:mt-8 flex flex-col justify-center items-center font-Poppins">
+              <div className=" lg:h-[75vh] h-screen lg:mt-8 flex flex-col justify-center items-center font-Poppins">
                 <form className=" max-w-xl lg:max-w-md px-4 md:px-10 mx-auto bg-gray-50 shadow-md  w-full rounded-xl lg:h-screen">
                   <div className="py-4">
                     <h3 className=" text-lg md:text-2xl font-Poppins font-semibold">
@@ -215,7 +268,7 @@ const Page = () => {
 
                   {activationMsg ? (
                     <>
-                      <div className=" bg-green-100 rounded-xl p-4">
+                      <div className=" bg-green-100 rounded-xl py-4 pl-4">
                         <h5 className="text-black/80 text-sm md:text-base font-medium">
                           Activation required
                         </h5>
@@ -225,8 +278,18 @@ const Page = () => {
                         </p>
                         <div className=" text-xs md:text-sm text-gray-700">
                           Didn&apos;t recieve activation mail?{" "}
-                          <button className="px-2 py-1 bg-green-700 text-white rounded-xl">
-                            Resend link
+                          <button
+                            disabled={isRunning || emailResent}
+                            onClick={() => {
+                              resendEmail(inputs.email);
+                            }}
+                            className=" py-1 px-2 bg-green-600 text-white rounded-md disabled:bg-green-400 disabled:cursor-not-allowed text-xs"
+                          >
+                            {emailResent
+                              ? "Link sent"
+                              : `Resend link ${
+                                  isRunning ? `in ${time} sec` : ""
+                                }`}
                           </button>
                         </div>
                       </div>
@@ -234,7 +297,7 @@ const Page = () => {
                   ) : (
                     <>
                       <button
-                        onClick={handleSubmit}
+                        onClick={submitForm}
                         type="submit"
                         className={`bg-TechBlue text-white rounded-full py-3  mb-4 text-sm md:text-md w-full font-base mt-1 hover:bg-black transition-all ease-in-out duration-200 flex items-center justify-center ${
                           !isPasswordMatch
