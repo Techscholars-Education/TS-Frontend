@@ -33,11 +33,13 @@ function TestSeriesCard(props) {
                  <Link href="#" className='bg-[#17DB7E] rounded-full mx-2 px-2 text-white text-sm py-1'>2024</Link>
               </div>
 
-              <p className="font-semibold text-sm my-1">{props.name}</p>
+             <div className='h-9'>
+             <p className="font-semibold text-sm ">{props.name}</p>
+             </div>
             </div>
           </div>
         </div>
-        <p className="font-base text-xs xl:text-sm leading-relaxed text-gray-500 py-3 font-Poppins">
+        <p className="font-base text-xs xl:text-sm leading-relaxed text-gray-500 pt-2 font-Poppins">
          {props.description}
         </p>
         {/* <p className='text-[16px] font-semibold'>

@@ -43,7 +43,7 @@ const LeftNavigation = () => {
         </button>
       </div>
 
-      <nav className={`bg-white ${isMenuOpen?'block':'hidden'} md:block w-[60vw] md:w-[18vw] py-6 md:px-4 pl-2 flex flex-col justify-between items-center`}>
+      <nav className={`bg-white ${isMenuOpen?'block':'hidden'} md:block w-[60vw] md:w-[15vw] py-6 md:px-4 pl-2 flex flex-col justify-between items-center`}>
         <div className="mx-auto fixed">
           {/* Logo */}
           <Link href={"/dashboard/my-course"} className="flex items-center justify-center space-x-2">
