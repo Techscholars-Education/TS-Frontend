@@ -27,6 +27,8 @@ const Page = () => {
 
   const [prices, setPrices] = useState(0)
   const [id,setId] = useState(0)
+  const [cName,setCName] = useState("")
+  const [mainName,setMainName] = useState("")
   
   // const dropdownRef = useRef(null);
   // const [isOpen, setIsOpen] = useState(false);
@@ -59,6 +61,8 @@ const Page = () => {
 
   useEffect(()=>{
     if(course){
+      setMainName(course.mainName)
+      setCName(course.name)
       setPrices(course.prices)
       setId(course.id);
     }else{
@@ -102,7 +106,7 @@ const Page = () => {
             <div className=" flex  w-full p-4 font-Poppins  ">
               <div className=" w-3/4 text-start col-span-1 flex flex-col justify-center md:space-y-2 pr-2">
                 <h4 className=" text-base xl:text-xl font-semibold font-Poppins">
-                  Course Name
+                 {mainName} {cName}
                 </h4>
                 <p className="text-gray-600 text-xs xl:text-sm">
                   The course validity will end within 365 days

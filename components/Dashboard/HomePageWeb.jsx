@@ -33,6 +33,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
+import { DateRange } from 'react-date-range';
 import {
   add,
   eachDayOfInterval,
@@ -192,14 +193,15 @@ const HomePageWeb = () => {
     setIsChecked(!isChecked);
   };
 
-  const handleSelect = (ranges) => {
-    setSelectionRange(ranges.selection);
-  };
   const [selectionRange, setSelectionRange] = useState({
     startDate: new Date(),
     endDate: new Date(),
     key: 'selection',
   });
+  const handleSelect = (ranges) => {
+    setSelectionRange(ranges.selection);
+    console.log(ranges)
+  };
 
 
 
@@ -278,16 +280,36 @@ const HomePageWeb = () => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {todos.map((task) => (
-          <ListItem key={task.id} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {task.completed ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />}
-              </ListItemIcon>
-              <ListItemText primary={task.task} secondary={task.description} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+      {todos.length > 0 ? (
+                  todos.map(todo => (
+                    <Box key={todo.id} className="flex justify-between mt-3  p-3 ">
+                      <Box className="flex">
+                        {
+                          todo.completed ? <FaCheck className={`h-6 w-6 p-1 rounded-full mt-4  bg-green-500 text-white' text-gray-700'}`} /> : ""
+                        }
+
+                        <Box className="flex flex-col ml-3">
+                          <h2 className="text-gray-900 font-bold text-[13px]">
+                            {todo.task}
+                          </h2>
+                          <p className="font-medium text-[12px] text-gray-500">
+                            {todo.description}
+                          </p>
+                        </Box>
+                      </Box>
+                      <Box className="flex items-center space-x-2">
+                        <IconButton onClick={() => openDialog(todo)}>
+                          <EditIcon className="h-5 w-5" />
+                        </IconButton>
+                        <IconButton onClick={() => handleDeleteTodo(todo.id)}>
+                          <DeleteIcon className="h-5 w-5 " />
+                        </IconButton>
+                      </Box>
+                    </Box>
+                  ))
+                ) : (
+                  <p>Loading...</p>
+                )}
       </List>
       <Divider />
     </Box>
@@ -304,8 +326,8 @@ const HomePageWeb = () => {
             Back
           </Link>
         </div>
-        <div className="my-6 mt-3 mx-6 flex ">
-          <div className="w-[35vw] flex flex-col">
+        <div className="md:my-6 my-2  md:mx-6 flex flex-col md:flex-row ">
+          <div className="md:w-[35vw] w-64  flex flex-col">
             <Tooltip
               title="This feature is locked as of now. Coming soon!"
               placement="right"
@@ -323,7 +345,7 @@ const HomePageWeb = () => {
                       },
                     ]}
                     width={500}
-                    height={260}
+                    height={225}
                   />
                 </div>
 
@@ -335,7 +357,7 @@ const HomePageWeb = () => {
                 <FiLock className="absolute w-8 h-8 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-500" style={{ color: 'black' }} />
                 <LineChart
                   width={500}
-                  height={300}
+                  height={220}
                   series={[
                     { data: pData, label: 'Classes' },
                     { data: uData, label: 'Tutorials' },
@@ -364,19 +386,28 @@ const HomePageWeb = () => {
               </div>
             </div>
           </div>
-          <div className=" w-[40vw] flex flex-col">
+          <div className=" md:w-[40vw]  flex flex-col">
 
-            <div className="w-[40vw] flex flex-col max-h-[92vh]  overflow-y-auto">
-              <div className="bg-white m-6 mt-0 rounded-xl">
-                <div className="flex justify-center align-middle mt-6 items-center">
+            <div className="md:w-[40vw] w-80 flex flex-col md:max-h-[74vh] md:mb-5 overflow-hidden">
+              <div className="bg-white md:m-6 md:mt-0 rounded-xl">
+                <div className="flex align-middle justify-center  mt-6 items-center">
 
                   <div className="md:grid md:grid-cols-1  ">
+                    {/* <DateRange
+                      ranges={[selectionRange]}
+                      onChange={handleSelect}
+                     
+                    
+                    /> */}
                     <DateRangePicker
                       ranges={[selectionRange]}
                       onChange={handleSelect}
-                    />
-                    <div className="relative">
-                      <Calendar />
+                     
+                    
+                    /> 
+
+                    <div className="md:relative">
+                      <Calendar selectionRange={selectionRange}/>
 
                     </div>
                   </div>
@@ -385,7 +416,7 @@ const HomePageWeb = () => {
 
             </div>
 
-            <Box className="flex flex-col rounded-lg ml-6 mr-6 mt-0 bg-white p-4 max-h-[80vh] overflow-y-auto">
+            <Box className="flex flex-col rounded-lg ml-6 mr-6 mt-0 bg-white p-4 h-[33vh] overflow-hidden">
               <Box className="flex justify-between">
                 <h3 className="font-bold text-[16px]">To Do List</h3>
               <Box className="flex">
@@ -407,7 +438,7 @@ const HomePageWeb = () => {
               <Box>
                 {todos.length > 0 ? (
                   todos.map(todo => (
-                    <Box key={todo.id} className="flex justify-between mt-3 bg-blue-50 p-3 ">
+                    <Box key={todo.id} className="flex justify-between mt-3  p-3 ">
                       <Box className="flex">
                         {
                           todo.completed ? <FaCheck className={`h-6 w-6 p-1 rounded-full mt-4  bg-green-500 text-white' text-gray-700'}`} /> : ""
