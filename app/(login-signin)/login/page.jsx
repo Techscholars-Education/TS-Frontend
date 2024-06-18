@@ -67,7 +67,6 @@ const Page = () => {
   const glogin = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
       setAuthg(tokenResponse.access_token);
-      console.log(tokenResponse.access_token)
       const userInfo = await fetch(
         `https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=${tokenResponse.access_token}`
       ).then((res) => res.json());
@@ -89,6 +88,7 @@ const Page = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [authg]);
+  
 
   useEffect(() => {
     setTimeout(() => {
