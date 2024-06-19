@@ -3,7 +3,7 @@ import LeftNavigation from '@/components/LeftNavigation/LeftNavigation'
 import React from 'react'
 import Link from 'next/link';
 import { IoMdArrowBack } from "react-icons/io";
-import { FaBook, FaCalendarAlt, FaArrowRight } from 'react-icons/fa';
+import { FaBook, FaCalendarAlt, FaArrowRight,FaLock } from 'react-icons/fa';
 
 function page() {
   return (
@@ -30,7 +30,7 @@ function page() {
 
               </div>
               <div className='flex flex-col bg-white rounded-xl p-8 mt-12'>
-                <div className='flex flex-col'>
+                <div className='flex flex-col blur-[1px]'>
 
                   <h2 className='text-[22px] font-[550] mb-3'>Syllabus</h2>
                   <div className='flex m-1.5'> <p className='text-[#3D3D3D] text-[16px]'>Physics - FULL SYLLABUS</p></div>
@@ -38,7 +38,7 @@ function page() {
                   <div className='flex m-1.5'>  <p className='text-[#3D3D3D]  text-[16px]'>Mathematics - FULL SYLLABUS</p></div>
 
                 </div>
-                <div className='flex flex-col mt-8'>
+                <div className='flex flex-col mt-8 blur-[1px]'>
 
                   <h2 className='text-[22px] font-[550] mb-3'>Instructions</h2>
                   <div className='flex m-1.5'> <p className='text-[#3D3D3D] text-[16px]'>-Duration of the exam: 180 Minutes</p></div>
@@ -50,6 +50,9 @@ function page() {
                   <div className='flex m-1.5'>  <p className='text-[#3D3D3D]  text-[16px]'>-Section -Ill: Mathematics (7S questions)</p></div>
 
 
+                </div>
+                <div className='absolute md:top-[500px] ml-80 mt-20 '>
+                  <FaLock className='text-gray-600 h-8 w-8 blur-[1px]' />
                 </div>
                 <Link href="/dashboard/test/testdetail/alltestseries/test01detail/starttest" className="rounded-full mt-16 bg-blue-600 text-white text-sm w-60 py-2 px-20 mx-2">
                   Start Test

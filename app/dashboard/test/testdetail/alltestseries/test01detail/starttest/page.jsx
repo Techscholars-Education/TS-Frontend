@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 import { FaBook } from 'react-icons/fa'
 import { IoMdArrowBack } from 'react-icons/io'
+import { FaLock } from 'react-icons/fa';
 import { IoAlarmOutline } from "react-icons/io5";
 
 
@@ -18,7 +19,7 @@ function page() {
 
                 <div className=" font-Poppins min-h-screen  w-full bg-[#F0F7FF] ">
                     <DashboardNavbar title="Test series Foundation" />
-                    <div className=" my-4 flex flex-col mx-8 ">
+                    <div className=" my-4 flex flex-col mx-8 blur-[1.5px]">
                         <div className='flex justify-between'>
 
                         <div className='flex flex-col mr-2 my-8'>
@@ -196,6 +197,9 @@ function page() {
                             </div>
                         </div>
                     </div>
+                    <div className='absolute bottom-72 ml-96 '>
+                  <FaLock className='text-gray-600 h-8 w-8 blur-[1px]' />
+                </div>
                 </div>
             </div>
 

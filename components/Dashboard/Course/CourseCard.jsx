@@ -25,7 +25,7 @@ const CourseCard = (props) => {
           />
         </div>
 
-        <div className="flex flex-col m-4 my-4">
+        <div className="flex flex-col m-4 my-2">
           <div>
             <div className="flex  items-center">
              <div>
@@ -37,7 +37,7 @@ const CourseCard = (props) => {
              </div>
             </div>
           </div>
-          <p className="font-base text-xs xl:text-sm leading-relaxed ml-2 text-gray-500 py-3 font-Poppins">
+          <p className="font-base text-xs xl:text-sm leading-relaxed ml-2 text-gray-500 py-1.5 font-Poppins">
             {props.description}
           </p>
           <div className="flex justify-start  items-center">
@@ -51,7 +51,7 @@ const CourseCard = (props) => {
             </div>
           </div>
           <hr />
-          <div className=" flex justify-start w-full pt-4 ">
+          <div className=" flex justify-start w-full pt-2 ">
             <div className="flex -space-x-4 rtl:space-x-reverse">
               <Image
                 className="w-[30px] h-[30px] border-2 border-white rounded-full bg-green-300"
@@ -86,7 +86,7 @@ const CourseCard = (props) => {
         
           
 
-          <div className="flex justify-between mt-4">
+          <div className="flex justify-between mt-2">
             <Link
               href={props.route ? props.route : "/"}
               className=" w-full  p-3 px-4 rounded-full text-center bg-TechBlue text-sm text-white"
