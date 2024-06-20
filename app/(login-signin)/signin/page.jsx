@@ -28,7 +28,7 @@ const Page = () => {
   const [isPasswordMatch, setIsPasswordMatch] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
   const [activationMsg, setActivationMsg] = useState(false);
-  const [time, setTime] = useState(120);
+  const [time, setTime] = useState(60);
   const [isRunning, setIsRunning] = useState(false);
   const [emailResent, setEmailResent] = useState(false);
 
@@ -46,19 +46,19 @@ const Page = () => {
   const submitForm = () => {
     setActivationMsg(true);
     startTimer();
-    // handleSubmit();
+    handleSubmit();
   };
 
   // ! SUBMIT USER DATA ( IF SUCCESS -> START TIMER FOR RESEND VERIFICATION EMAIL)
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
     if (confirmPassword !== inputs.password) {
       setIsPasswordMatch(false);
       return;
     }
     try {
       const res = await signup(inputs);
-      if (res) {
+      // const res = await axios.post("/api/register", inputs); //*FOR TESTING PURPOSE
+      if (res.data) {
         setActivationMsg(true);
       }
     } catch (error) {
@@ -93,17 +93,18 @@ const Page = () => {
   //! START THE TIMER
   const startTimer = () => {
     setIsRunning(true);
-    setTime(10);
+    setTime(60);
   };
 
   // ! POST REQUEST TO RESEND ACCOUNT ACTIVATION LINK
   const resendEmail = async (uEmail) => {
     try {
-      // await axios.post(
-      //   `https://api.techscholars.co.in/auth/v1/resend/email?email=${uEmail}`
-      // );
-      setEmailResent(true);
+      await axios.post(
+        `https://api.techscholars.co.in/auth/v1/resend/email?email=${uEmail}`
+      );
       console.log(uEmail);
+      setEmailResent(true);
+      setInputs({});
     } catch (error) {
       console.error(error);
     }
@@ -126,7 +127,7 @@ const Page = () => {
               </div>
 
               <div className=" lg:h-[75vh] h-screen lg:mt-8 flex flex-col justify-center items-center font-Poppins">
-                <form className=" max-w-xl lg:max-w-md px-4 md:px-10 mx-auto bg-gray-50 shadow-md  w-full rounded-xl lg:h-screen">
+                <div className=" max-w-xl lg:max-w-md px-4 md:px-10 mx-auto bg-gray-50 shadow-md  w-full rounded-xl lg:h-screen">
                   <div className="py-4">
                     <h3 className=" text-lg md:text-2xl font-Poppins font-semibold">
                       Register your Account
@@ -277,7 +278,7 @@ const Page = () => {
                           registered email id.
                         </p>
                         <div className=" text-xs md:text-sm text-gray-700">
-                          Didn&apos;t recieve activation mail?{" "}
+                          Didn&apos;t recieve activation link?{" "}
                           <button
                             disabled={isRunning || emailResent}
                             onClick={() => {
@@ -335,7 +336,7 @@ const Page = () => {
                       Login
                     </Link>
                   </div>
-                </form>
+                </div>
               </div>
 
               {/* Privacy policy container */}
