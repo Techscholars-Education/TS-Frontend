@@ -1,11 +1,12 @@
 "use client";
 
 import { toast } from "react-toastify";
-import { useCookieStore } from "./useStore";
+import { useCookieStore, useOrderIDStore } from "./useStore";
 import { useRouter } from "next/navigation";
 
 const useGetway = () => {
   const router = useRouter()
+  const {orderIdData} = useOrderIDStore()
 
   const {cookie} = useCookieStore()
 
@@ -29,7 +30,8 @@ const useGetway = () => {
         body: raw,
        });
        const data = await res.json();
-      //  console.log(data.payment_links.web);
+       console.log(data.order_id);
+       orderIdData(data.order_id)
        router.push(data.payment_links.web)
 
     } catch (error) {

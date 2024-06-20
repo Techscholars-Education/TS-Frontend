@@ -37,6 +37,18 @@ export const useProfileStore = create(persist(
   }
 ));
 
+export const useOrderIDStore = create(persist(
+  (set) => ({
+    orderId:{},
+  orderIdData: (orderId) => set({orderId:orderId})
+  
+  }),
+  {
+    name: 'orderId-storage', // unique name for the storage item
+    getStorage: () => localStorage, // specify local storage as the storage
+    
+  }
+));
 
 
 
