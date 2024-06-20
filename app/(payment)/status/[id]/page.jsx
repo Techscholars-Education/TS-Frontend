@@ -1,26 +1,30 @@
 "use client"
+import { useCookieStore } from '@/hooks/useStore';
 import { useParams } from 'next/navigation'
 import { useEffect, useState } from 'react';
 
 const PaymentStatusPage = () => {
   const params = useParams()
-  const id  = "a96f8dc1d29e426699a28cac3725294c"
   
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const {cookie} = useCookieStore()
+  const id = params.id
+   
+  console.log(params.id);
+ 
+  
   useEffect(() => {
     if (!id) return;
 
     const fetchData = async () => {
+
+
+      
       try {
-        const response = await fetch(`https://smartgatewayuat.hdfcbank.com/payment-page/order/ordeh_${id}`);
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const result = await response.json();
-        setData(result);
+       
       } catch (error) {
         setError(error.message);
       } finally {
@@ -31,6 +35,8 @@ const PaymentStatusPage = () => {
     fetchData();;
   }, [id]);
 
+  const paymentStatus = 'paid';
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -40,19 +46,32 @@ const PaymentStatusPage = () => {
   }
 
   return (
-    <div>
-      <h1>Payment Status for ID: {id}</h1>
-      {data ? (
-        <div>
-          <p>Status: {data.status}</p>
-          <p>Amount: {data.amount}</p>
-          <p>Date: {data.date}</p>
-         
+    <div className="flex justify-center items-center h-screen">
+      <div className="bg-white rounded-lg shadow-md p-8">
+        <h2 className="text-2xl font-bold mb-4">Payment Status</h2>
+        <div
+          className={`p-4 rounded-md ${
+            paymentStatus === 'paid'
+              ? 'bg-green-100 text-green-800'
+              : 'bg-red-100 text-red-800'
+          }`}
+        >
+          <p className="font-semibold">
+            {paymentStatus === 'paid' ? 'Payment Successful' : 'Payment Failed'}
+          </p>
+          {paymentStatus === 'paid' ? (
+            <p className="mt-2">
+              Your payment has been processed successfully.
+            </p>
+          ) : (
+            <p className="mt-2">
+              There was an issue processing your payment. Please try again later.
+            </p>
+          )}
         </div>
-      ) : (
-        <p>No data available.</p>
-      )}
-    </div>
+      </div>
+    </div> 
+  
   );
 };
 
