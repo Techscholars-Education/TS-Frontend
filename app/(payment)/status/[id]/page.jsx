@@ -2,27 +2,41 @@
 import { useCookieStore } from '@/hooks/useStore';
 import { useParams } from 'next/navigation'
 import { useEffect, useState } from 'react';
+import gif1 from "@/public/Ts-Loader.gif";
+import Image from 'next/image';
 
 const PaymentStatusPage = () => {
   const params = useParams()
   
-  const [data, setData] = useState(null);
+  const [order, setOrder] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const {cookie} = useCookieStore()
   const id = params.id
-   
-  console.log(params.id);
- 
-  
+    
   useEffect(() => {
     if (!id) return;
 
     const fetchData = async () => {
 
 
-      
+      const myHeaders = new Headers();
+      myHeaders.append("authorization", cookie);
+      myHeaders.append("Content-Type", "application/json");
+   
+      const raw = JSON.stringify({
+        "order_id": id
+      });
+            
+      const res = await fetch("https://api.techscholars.co.in/order/handleJuspayResponse", {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+       });
+       const data = await res.json();
+       setOrder(data)
+        console.log(data);
       try {
        
       } catch (error) {
@@ -35,10 +49,18 @@ const PaymentStatusPage = () => {
     fetchData();;
   }, [id]);
 
+  console.log(order.status);
+
   const paymentStatus = 'paid';
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="h-screen w-full flex items-center justify-center">
+    <Image
+      src={gif1}
+      alt="gif-loader"
+      className="lg:h-[20vh] lg:w-[10vw] h-[20vh] w-[35vw]  "
+    />
+  </div>;
   }
 
   if (error) {
@@ -76,3 +98,6 @@ const PaymentStatusPage = () => {
 };
 
 export default PaymentStatusPage;
+
+
+// I need Figma for payment status, API to update the user that you are now a premium member when the user buys that course after the user can see my course route, and Admin APIs.
