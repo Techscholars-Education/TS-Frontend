@@ -205,7 +205,7 @@ const Page = () => {
                     )}
                   </button>
                   <button
-                    onClick={glogin}
+                    // onClick={glogin}
                     className="bg-gray-100 text-darkBlue rounded-full py-2 text-sm md:text-md w-full font-normal mt-4 flex items-center justify-center "
                   >
                     <Image src={Google} className="w-8" alt="google-logo" />{" "}

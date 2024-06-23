@@ -30,12 +30,16 @@ const useProfileUpdate = () => {
                         gender:gender,
                         dob: dob,
                         is_verified: false,
-                        role: null
+                        role: null,
+                        coin: 900,
+                        class_s : 12,
+                        target_stream : "jee",
+                        referal_id : null
                      }),
                     credentials: 'include'
                   });
                   const data = await res.json();
-                  console.log(data);
+                  // console.log(data);
                  if(data.username){
                     toast.success("Profile Updated")
                     router.push("/dashboard/home")
