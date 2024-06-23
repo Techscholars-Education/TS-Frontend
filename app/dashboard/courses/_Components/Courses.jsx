@@ -1,16 +1,14 @@
 "use client";
 import { useEffect, useState } from "react";
 import DashboardNavbar from "@/components/Dashboard/DashboardNavbar";
-import Image from "next/image";
 import Card from "./Course/Card";
-import coursePoster from "../../../../public/Course/coursePoster.svg";
-import Link from "next/link";
 import axios from "axios";
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 
 const Courses = () => {
-  const [data, setData] = useState([]);
+  
+ const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 

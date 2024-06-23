@@ -40,18 +40,20 @@ const Costing = (props) => {
 })
    
   const {course,courseData} = useCourseStore()
-   
-  const price1  = props.CostingData[0].price
-  const price2  = props.CostingData[1].price
-  const price3  = props.CostingData[2].price
+     
+  const price1  = props.CostingData[0].price 
+  const price2  = props.CostingData[1].price 
+  const price3  = props.CostingData[2].price 
 
-  const id1  = props.CostingData[0].id
-  const id2  = props.CostingData[1].id
-  const id3  = props.CostingData[2].id
+
+  const id1  = props.CostingData[0].id 
+  const id2  = props.CostingData[1].id 
+  const id3  = props.CostingData[2].id 
 
   const mainName1 = props.CostingData[0].mainname
   const mainName2 = props.CostingData[1].mainname
   const mainName3 = props.CostingData[2].mainname
+
   
 
   useEffect(()=>{

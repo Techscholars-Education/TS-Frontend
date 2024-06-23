@@ -1,12 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, {useState } from "react";
 import Link from "next/link";
 import Costing from "../Costing";
 import DashboardNavbar from "@/components/Dashboard/DashboardNavbar";
 
 const Classes = () => {
-
-
   
   const costing11th = [
     {

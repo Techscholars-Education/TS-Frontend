@@ -1,7 +1,7 @@
 "use client"
 import { useCookieStore } from '@/hooks/useStore';
 import { useParams } from 'next/navigation'
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import gif1 from "@/public/Ts-Loader.gif";
 import Image from 'next/image';
 
@@ -9,47 +9,75 @@ const PaymentStatusPage = () => {
   const params = useParams()
   
   const [order, setOrder] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const[value13,setValue13] = useState()
+  const[value12,setValue12] = useState()
+  const[value11,setValue11] = useState()
 
   const {cookie} = useCookieStore()
   const id = params.id
     
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!id) return;
 
     const fetchData = async () => {
 
 
-      const myHeaders = new Headers();
-      myHeaders.append("authorization", cookie);
-      myHeaders.append("Content-Type", "application/json");
+      // const myHeaders = new Headers();
+      // myHeaders.append("authorization", cookie);
+      // myHeaders.append("Content-Type", "application/json");
    
-      const raw = JSON.stringify({
-        "order_id": id
-      });
+      // const raw = JSON.stringify({
+      //   "order_id": id
+      // });
             
-      const res = await fetch("https://api.techscholars.co.in/order/handleJuspayResponse", {
-        method: "POST",
-        headers: myHeaders,
-        body: raw,
-       });
-       const data = await res.json();
-       setOrder(data)
-        console.log(data);
-      try {
+      // const res = await fetch("https://api.techscholars.co.in/order/handleJuspayResponse", {
+      //   method: "POST",
+      //   headers: myHeaders,
+      //   body: raw,
+      //  }); 
+      //  const data = await res.json();
+      //  setOrder(data)
+      //   console.log(data);
+      // try {
        
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
+      // } catch (error) {
+      //   setError(error.message);
+      // } finally {
+      //   setLoading(false);
+      // }
+
+
+const requestOptions = {
+  method: "GET",
+  redirect: "follow"
+};
+   
+try {
+  const res = await fetch("https://api.techscholars.co.in/pdt/v1/product?category_id=2", {
+  requestOptions
+   });
+   const data = await res.json();
+   console.log(data.products);
+   const item13 = data.products.filter((product) => product.class_for === "13");
+   const item12 = data.products.filter((product) => product.class_for === "12");
+   const item11 = data.products.filter((product) => product.class_for === "11");
+      
+      setValue13(item13);
+      setValue12(item12);
+      setValue11(item11);
+} catch (error) {
+  console.log(error.message);
+}
+
     };
 
     fetchData();;
   }, [id]);
 
-  console.log(order.status);
+  // console.log(order.status);
+  console.log(value12);
 
   const paymentStatus = 'paid';
 
@@ -100,4 +128,3 @@ const PaymentStatusPage = () => {
 export default PaymentStatusPage;
 
 
-// I need Figma for payment status, API to update the user that you are now a premium member when the user buys that course after the user can see my course route, and Admin APIs.
