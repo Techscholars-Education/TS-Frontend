@@ -125,7 +125,7 @@ export const useProductJEEStore = create(persist((set) => ({
 export const useProductFoundationStore = create(persist((set) => ({
   classFor9: [],
   classFor10: [],
-  fetchData: async () => {
+  fetchDataFoundation: async () => {
     try {
       const res = await fetch(`${tsUrl}/pdt/v1/product?category_id=4`, {
        method: "GET",
@@ -139,7 +139,7 @@ export const useProductFoundationStore = create(persist((set) => ({
          const item9 = data.products.filter((product) => product.class_for === "9");
             
       // Update Zustand store with filtered data
-     
+      // console.log(item10);
       set((state) => ({
         classFor9: item9,
         classFor10: item10,

@@ -1,12 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import Link from "next/link";
 import Costing from "../Costing";
 import DashboardNavbar from "@/components/Dashboard/DashboardNavbar";
 const Classes = () => {
-
-  
-  const costing9th = [
+  const [costing9th, setCosting9th] = useState([
     {
       id: 2,
       title: "Starter",
@@ -42,9 +40,8 @@ const Classes = () => {
         { feature: "Unlimited responses" },
         { feature: "Unlimited survey results archived" },
       ],
-    },
-  ];
-  const costing10th = [
+    }])
+  const [costing10th, setCosting10th] = useState([
     {
       id: 4,
       title: "Starter",
@@ -80,8 +77,99 @@ const Classes = () => {
         { feature: "Unlimited responses" },
         { feature: "Unlimited survey results archived" },
       ],
-    },
-  ];
+    }])
+
+  useLayoutEffect(() => {
+    const data = localStorage.getItem("userProductFoundation-storage");
+
+    if (data) {
+      const s = JSON.parse(data);
+ 
+      const s9 = s.state.classFor9;
+      const s10 = s.state.classFor10;
+      setCosting9th(s9);
+      setCosting10th(s10);
+ 
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // const costing9th = [
+  //   {
+  //     id: 2,
+  //     title: "Starter",
+  //     price: "1999",
+  //     mainname:"Foundation",
+  //     features: [
+  //       { feature: "1 user" },
+  //       { feature: "1 connected calendar" },
+  //       { feature: "Up to 12 responses" },
+  //       { feature: "Up to 3 survey results archived" },
+  //     ],
+  //   },
+  //   {
+  //     id: 18,
+  //     title: "Advanced",
+  //     price: "6999",
+  //     mainname:"Foundation",
+  //     features: [
+  //       { feature: "1 user" },
+  //       { feature: "Up to 2 connected calendars" },
+  //       { feature: "Up to 50 responses" },
+  //       { feature: "Up to 10 survey results archived" },
+  //     ],
+  //   },
+  //   {
+  //     id: 19,
+  //     title: "Ultimate",
+  //     price: "16999",
+  //     mainname:"Foundation",
+  //     features: [
+  //       { feature: "Per user in company domain" },
+  //       { feature: "Single calendar integrations" },
+  //       { feature: "Unlimited responses" },
+  //       { feature: "Unlimited survey results archived" },
+  //     ],
+  //   },
+  // ];
+  // const costing10th = [
+  //   {
+  //     id: 4,
+  //     title: "Starter",
+  //     price: "2499",
+  //     mainname:"Foundation",
+  //     features: [
+  //       { feature: "1 user" },
+  //       { feature: "1 connected calendar" },
+  //       { feature: "Up to 12 responses" },
+  //       { feature: "Up to 3 survey results archived" },
+  //     ],
+  //   },
+  //   {
+  //     id: 17,
+  //     title: "Advanced",
+  //     price: "7999",
+  //     mainname:"Foundation",
+  //     features: [
+  //       { feature: "1 user" },
+  //       { feature: "Up to 2 connected calendars" },
+  //       { feature: "Up to 50 responses" },
+  //       { feature: "Up to 10 survey results archived" },
+  //     ],
+  //   },
+  //   {
+  //     id: 20,
+  //     title: "Ultimate",
+  //     price: "17999",
+  //     mainname:"Foundation",
+  //     features: [
+  //       { feature: "Per user in company domain" },
+  //       { feature: "Single calendar integrations" },
+  //       { feature: "Unlimited responses" },
+  //       { feature: "Unlimited survey results archived" },
+  //     ],
+  //   },
+  // ];
 
   const [activeBatch, setActiveBatch] = useState("9th");
 

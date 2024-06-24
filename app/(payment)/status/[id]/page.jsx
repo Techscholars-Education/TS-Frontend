@@ -1,10 +1,9 @@
 "use client"
-import { useCookieStore, useProductJEEStore, useProductStore } from '@/hooks/useStore';
+import { useCookieStore} from '@/hooks/useStore';
 import { useParams } from 'next/navigation'
 import { useEffect, useLayoutEffect, useState } from 'react';
 import gif1 from "@/public/Ts-Loader.gif";
 import Image from 'next/image';
-import {tsUrl } from '@/config';
 
 const PaymentStatusPage = () => {
   const params = useParams()
@@ -12,87 +11,47 @@ const PaymentStatusPage = () => {
   const [order, setOrder] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const[value9,setValue9] = useState()
-  const[value10,setValue10] = useState()
-
   const {cookie} = useCookieStore()
   const id = params.id
 
-  // const {fetchData,classFor11 } = useProductStore();
-
-  // useEffect(() => {
-  //   fetchData();
-  //   const cat = localStorage.getItem("userProductJee-storage");
-  //   const s =  JSON.parse(cat)
-    
-  //   console.log(classFor11);
-  // }, [fetchData]);
-  
 
 
-  useLayoutEffect(() => {
-    if (!id) return;
+//   useLayoutEffect(() => {
+//     if (!id) return;
 
-    const fetchData = async () => {
+//     const fetchData = async () => {
 
 
-      // const myHeaders = new Headers();
-      // myHeaders.append("authorization", cookie);
-      // myHeaders.append("Content-Type", "application/json");
+//       // const myHeaders = new Headers();
+//       // myHeaders.append("authorization", cookie);
+//       // myHeaders.append("Content-Type", "application/json");
    
-      // const raw = JSON.stringify({
-      //   "order_id": id
-      // });
+//       // const raw = JSON.stringify({
+//       //   "order_id": id
+//       // });
             
-      // const res = await fetch("https://api.techscholars.co.in/order/handleJuspayResponse", {
-      //   method: "POST",
-      //   headers: myHeaders,
-      //   body: raw,
-      //  }); 
-      //  const data = await res.json();
-      //  setOrder(data)
-      //   console.log(data);
-      // try {
+//       // const res = await fetch("https://api.techscholars.co.in/order/handleJuspayResponse", {
+//       //   method: "POST",
+//       //   headers: myHeaders,
+//       //   body: raw,
+//       //  }); 
+//       //  const data = await res.json();
+//       //  setOrder(data)
+//       //   console.log(data);
+//       // try {
        
-      // } catch (error) {
-      //   setError(error.message);
-      // } finally {
-      //   setLoading(false);
-      // }
+//       // } catch (error) {
+//       //   setError(error.message);
+//       // } finally {
+//       //   setLoading(false);
+//       // }
 
-   
 
-const requestOptions = {
-  method: "GET",
-  redirect: "follow",
-  headers: {
-    'Accept': 'application/json',
-  },
-};
-   
-try {
-  const res = await fetch(`${tsUrl}/pdt/v1/product?category_id=4`, {
-  requestOptions
-   });
-   const data = await res.json();
-   console.log(data);
-   console.log(data.products);
-   const item9 = data.products.filter((product) => product.class_for === "9");
-   const item10 = data.products.filter((product) => product.class_for === "10");
 
-       setValue9(item9);
-      setValue10(item10);
+//     fetchData();;
+//   }, [id]);
 
-} catch (error) {
-  console.log(error.message);
-}
 
-    };
-
-    fetchData();;
-  }, [id]);
-
-  console.log(value10);
 
 
   const paymentStatus = 'paid';
