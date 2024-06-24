@@ -55,6 +55,7 @@ const Page = () => {
     }
     try {
       const res = await signup(inputs);
+
       if (res) {
         setActivationMsg(true);
         startTimer();
