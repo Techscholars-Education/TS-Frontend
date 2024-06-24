@@ -106,7 +106,7 @@ const Page = () => {
             <div className=" flex  w-full p-4 font-Poppins  ">
               <div className=" w-3/4 text-start col-span-1 flex flex-col justify-center md:space-y-2 pr-2">
                 <h4 className=" text-base xl:text-xl font-semibold font-Poppins">
-                 {mainName} {cName}
+                 {mainName}
                 </h4>
                 <p className="text-gray-600 text-xs xl:text-sm">
                   The course validity will end within 365 days

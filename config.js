@@ -1,0 +1,1 @@
+export const tsUrl = process.env.NEXT_PUBLIC_TS_URL || 'https://api.techscholars.in';
