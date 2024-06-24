@@ -44,8 +44,6 @@ const Page = () => {
 
   // ! MAIN SUBMIT BUTTON
   const submitForm = () => {
-    setActivationMsg(true);
-    startTimer();
     handleSubmit();
   };
 
@@ -57,9 +55,9 @@ const Page = () => {
     }
     try {
       const res = await signup(inputs);
-      // const res = await axios.post("/api/register", inputs); //*FOR TESTING PURPOSE
-      if (res.data) {
+      if (res) {
         setActivationMsg(true);
+        startTimer();
       }
     } catch (error) {
       setInputs({});

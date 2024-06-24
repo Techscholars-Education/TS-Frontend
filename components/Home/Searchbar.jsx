@@ -23,6 +23,10 @@ const recommendations = {
     { option: "Register ", route: "/signin" },
     { option: "Reviews", route: "/#testimonials" },
   ],
+  t: [
+    { option: "Testimonials ", route: "/#testimonials" },
+    { option: "Test series", route: "/dashboard/test/testdetail" },
+  ],
 };
 
 function App() {
