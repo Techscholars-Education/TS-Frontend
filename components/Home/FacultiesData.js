@@ -53,7 +53,7 @@ export const facultiesData = [
     id: 6,
     name: "Ayush Gupta",
     designation: "Mathematics faculty",
-    qualification: "B.Tech from NIT Trichy",
+    qualification: "B.Tech from NIT Calicut",
     experience: "3",
     profile: Ayush,
   },
