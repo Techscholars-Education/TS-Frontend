@@ -4,8 +4,6 @@ import { ReactTyped } from "react-typed";
 import Image from "next/image";
 import TangledArrow from "../../public/Home/TangledArrow.svg";
 import { IoMdCheckmark } from "react-icons/io";
-
-import { Slide } from "react-awesome-reveal";
 import Searchbar from "./Searchbar";
 const Hero = () => {
   return (
@@ -59,36 +57,35 @@ const Hero = () => {
       </div>
 
       {/* tick marks */}
-      <Slide triggerOnce="true" direction="up" duration={200}>
-        <div className="flex justify-center space-x-2 md:space-x-8 font-Poppins  -mt-4 flex-wrap ">
-          <div className="flex space-x-2 justify-center items-center ">
-            <div className=" py-2 px-1 md:p-2 bg-blue-100 rounded-full ">
-              <IoMdCheckmark className="text-blue-600 w-5 text-xs md:text-xl  " />
-            </div>
-            <p className="text-gray-600 text-xs md:text-sm">
-              {" "}
-              Affordable pricing
-            </p>
+
+      <div className="flex justify-center space-x-2 md:space-x-8 font-Poppins  -mt-4 flex-wrap ">
+        <div className="flex space-x-2 justify-center items-center ">
+          <div className=" py-2 px-1 md:p-2 bg-blue-100 rounded-full ">
+            <IoMdCheckmark className="text-blue-600 w-5 text-xs md:text-xl  " />
           </div>
-          <div className="flex space-x-2 justify-center items-center ">
-            <div className=" py-2 px-1 md:p-2  bg-blue-100 rounded-full ">
-              <IoMdCheckmark className="text-blue-600 w-5 text-xs md:text-xl  " />
-            </div>
-            <p className="text-gray-600  text-xs md:text-sm">
-              {" "}
-              Merit based scholarships
-            </p>
-          </div>
-          <div className="flex space-x-2 justify-center items-center ">
-            <div className=" py-2 px-1 md:p-2 bg-blue-100 rounded-full ">
-              <IoMdCheckmark className="text-blue-600 w-5 text-xs md:text-xl  " />
-            </div>
-            <p className="text-gray-600 text-xs md:text-sm">
-              24/7 mentor support{" "}
-            </p>
-          </div>
+          <p className="text-gray-600 text-xs md:text-sm">
+            {" "}
+            Affordable pricing
+          </p>
         </div>
-      </Slide>
+        <div className="flex space-x-2 justify-center items-center ">
+          <div className=" py-2 px-1 md:p-2  bg-blue-100 rounded-full ">
+            <IoMdCheckmark className="text-blue-600 w-5 text-xs md:text-xl  " />
+          </div>
+          <p className="text-gray-600  text-xs md:text-sm">
+            {" "}
+            Merit based scholarships
+          </p>
+        </div>
+        <div className="flex space-x-2 justify-center items-center ">
+          <div className=" py-2 px-1 md:p-2 bg-blue-100 rounded-full ">
+            <IoMdCheckmark className="text-blue-600 w-5 text-xs md:text-xl  " />
+          </div>
+          <p className="text-gray-600 text-xs md:text-sm">
+            24/7 mentor support{" "}
+          </p>
+        </div>
+      </div>
     </section>
   );
 };
