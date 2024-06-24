@@ -12,7 +12,7 @@ const Card = (props) => {
       <div
         className={`flex flex-col rounded-xl border ${
           props.title === "JEE" ? "shadow-xl" : "shadow-md"
-        }   mx-2 font-Poppins relative mt-4`}
+        }   md:mx-2 font-Poppins relative mt-4`}
       >
         <div>
           <Image

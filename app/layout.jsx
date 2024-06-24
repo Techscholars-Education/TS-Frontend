@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head></head>
       <body>
-        <NextTopLoader color="#0079FC" height={6} />
+        <NextTopLoader color="#3572EF" height={6} />
         <GoogleProvider>
           <AuthContextProvider>{children}</AuthContextProvider>
         </GoogleProvider>

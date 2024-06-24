@@ -53,10 +53,10 @@ function CourseDetail() {
 
   return (
     <div>
-      <div className="bg-[#F0F7FF] font-Poppins min-h-screen py-10 w-[82vw] flex flex-col ">
+      <div className="bg-[#F0F7FF] font-Poppins min-h-screen py-10 md:w-[82vw] mr-4 flex flex-col ">
         <CourseDetailNavbar />
-        <div className='grid grid-cols-3 ml-10 '>
-          <div className='flex col-span-2 flex-col bg-white rounded-xl mt-4 p-4'>
+        <div className='grid md:grid-cols-3 grid-cols-1 md:ml-10 '>
+          <div className='flex col-span-2 flex-col bg-white rounded-xl mt-4 md:p-4'>
             <div>
               <h2 className='text-[20px] font-[550]'>
                 Discription
@@ -111,7 +111,7 @@ function CourseDetail() {
           <div className='grid-cols-1'>
             <div
               className={`flex flex-col rounded-xl border 
-           font-Poppins relative w-[20vw] ml-8 bg-white mt-4`}
+           font-Poppins relative md:w-[20vw] md:ml-8 bg-white mt-4`}
             >
               <div>
                 <Image

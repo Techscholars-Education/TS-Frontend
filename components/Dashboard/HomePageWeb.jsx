@@ -72,40 +72,7 @@ function classNames(...classes) {
 
 const HomePageWeb = () => {
 
-  const options = {
-    animationEnabled: true,
-    title: {
-      text: "Monthly Sales - 2017",
-    },
-    axisX: {
-      valueFormatString: "MMM",
-    },
-    axisY: {
-      title: "Sales (in USD)",
-      prefix: "$",
-    },
-    data: [
-      {
-        yValueFormatString: "$#,###",
-        xValueFormatString: "MMMM",
-        type: "spline",
-        dataPoints: [
-          { x: new Date(2017, 0), y: 25060 },
-          { x: new Date(2017, 1), y: 27980 },
-          { x: new Date(2017, 2), y: 42800 },
-          { x: new Date(2017, 3), y: 32400 },
-          { x: new Date(2017, 4), y: 35260 },
-          { x: new Date(2017, 5), y: 33900 },
-          { x: new Date(2017, 6), y: 40000 },
-          { x: new Date(2017, 7), y: 52500 },
-          { x: new Date(2017, 8), y: 32300 },
-          { x: new Date(2017, 9), y: 42000 },
-          { x: new Date(2017, 10), y: 37160 },
-          { x: new Date(2017, 11), y: 38400 },
-        ],
-      },
-    ],
-  };
+
   const [isChecked, setIsChecked] = useState(false);
   const [userInfo, setUserInfo] = useState(null);
   const [todos, setTodos] = useState([]);
@@ -270,46 +237,47 @@ const HomePageWeb = () => {
     setState({ ...state, [anchor]: open });
   };
 
-  
+
 
   const list = (anchor) => (
     <Box
       sx={{ width: 400 }}
+      className="w-[300px]"
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-      {todos.length > 0 ? (
-                  todos.map(todo => (
-                    <Box key={todo.id} className="flex justify-between mt-3  p-3 ">
-                      <Box className="flex">
-                        {
-                          todo.completed ? <FaCheck className={`h-6 w-6 p-1 rounded-full mt-4  bg-green-500 text-white' text-gray-700'}`} /> : ""
-                        }
+        {todos.length > 0 ? (
+          todos.map(todo => (
+            <Box key={todo.id} className="flex justify-between mt-3  p-3 ">
+              <Box className="flex">
+                {
+                  todo.completed ? <FaCheck className={`h-6 w-6 p-1 rounded-full mt-4  bg-green-500 text-white' text-gray-700'}`} /> : ""
+                }
 
-                        <Box className="flex flex-col ml-3">
-                          <h2 className="text-gray-900 font-bold text-[13px]">
-                            {todo.task}
-                          </h2>
-                          <p className="font-medium text-[12px] text-gray-500">
-                            {todo.description}
-                          </p>
-                        </Box>
-                      </Box>
-                      <Box className="flex items-center space-x-2">
-                        <IconButton onClick={() => openDialog(todo)}>
-                          <EditIcon className="h-5 w-5" />
-                        </IconButton>
-                        <IconButton onClick={() => handleDeleteTodo(todo.id)}>
-                          <DeleteIcon className="h-5 w-5 " />
-                        </IconButton>
-                      </Box>
-                    </Box>
-                  ))
-                ) : (
-                  <p>Loading...</p>
-                )}
+                <Box className="flex flex-col ml-3">
+                  <h2 className="text-gray-900 font-bold text-[13px]">
+                    {todo.task}
+                  </h2>
+                  <p className="font-medium text-[12px] text-gray-500">
+                    {todo.description}
+                  </p>
+                </Box>
+              </Box>
+              <Box className="flex items-center space-x-2">
+                <IconButton onClick={() => openDialog(todo)}>
+                  <EditIcon className="h-5 w-5" />
+                </IconButton>
+                <IconButton onClick={() => handleDeleteTodo(todo.id)}>
+                  <DeleteIcon className="h-5 w-5 " />
+                </IconButton>
+              </Box>
+            </Box>
+          ))
+        ) : (
+          <p>Loading...</p>
+        )}
       </List>
       <Divider />
     </Box>
@@ -318,190 +286,200 @@ const HomePageWeb = () => {
   return (
     <>
       <div className=" font-Poppins min-h-screen  w-full bg-[#F0F7FF] overflow-x-hidden ">
-        <DashboardNavbar title={`Welcome back${userInfo?.given_name ? `, ${userInfo.given_name}` : ''}! 👋 `} subtitle="You’ve learned 70% of your goal this week! Keep it up and improve." />
-        <div className='flex bg-slate-200 p-2 px-3 rounded-full w-24 m-3 mb-0 ml-6'>
-          <IoMdArrowBack className='mt-1 mr-1' />
+        <DashboardNavbar title={`Welcome back${userInfo?.given_name ? `, ${userInfo.given_name}` : ''}! 👋 `} subtitle="" />
+        <div className="md:mx-6 ">
+          <div className='flex bg-slate-200 p-2 px-3 rounded-full w-24 m-3 mb-0 md:ml-6 '>
+            <IoMdArrowBack className='mt-1 mr-1' />
 
-          <Link href="/" className='text-[14px]'>
-            Back
-          </Link>
-        </div>
-        <div className="md:my-6 my-2  md:mx-6 flex flex-col md:flex-row ">
-          <div className="md:w-[35vw] w-64  flex flex-col">
-            <Tooltip
-              title="This feature is locked as of now. Coming soon!"
-              placement="right"
-              arrow
-            >
-              <div className="bg-white rounded-xl flex flex-col hover:">
-                <p className="font-semibold p-6 pb-0">Performance analysis</p>
+            <Link href="/" className='text-[14px]'>
+              Back
+            </Link>
+          </div>
+          <div className="md:my-3 my-2  md:mx-6 flex flex-col md:flex-row ">
+            <div className="md:w-[35vw] w-64  flex flex-col">
+              <Tooltip
+                title="This feature is locked as of now. Coming soon!"
+                placement="right"
+                arrow
+              >
+                <div className="bg-white rounded-xl flex flex-col w-[350px] md:w-[540px]">
+                  <p className="font-semibold p-6 pb-0">Performance analysis</p>
+                  <div className="relative blur-[2px] ">
+                    <FiLock className="absolute w-8 h-8 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-500" style={{ color: 'black' }} />
+                    <LineChart
+                      xAxis={[{ data: [1, 2, 3, 5, 8, 10] }]}
+                      series={[
+                        {
+                          data: [2, 5.5, 2, 8.5, 1.5, 5],
+                        },
+                      ]}
+                     
+                      height={225}
+                     
+                    />
+                  </div>
+
+                </div>
+              </Tooltip>
+              <div className="bg-white rounded-xl mt-5 p-6  w-[350px] md:w-[540px]">
+                <p className="font-semibold ">Watch Time</p>
                 <div className="relative blur-[2px] ">
                   <FiLock className="absolute w-8 h-8 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-500" style={{ color: 'black' }} />
                   <LineChart
-                    xAxis={[{ data: [1, 2, 3, 5, 8, 10] }]}
+                    
+                    height={220}
                     series={[
-                      {
-                        data: [2, 5.5, 2, 8.5, 1.5, 5],
-                      },
+                      { data: pData, label: 'Classes' },
+                      { data: uData, label: 'Tutorials' },
                     ]}
-                    width={500}
-                    height={225}
+                    xAxis={[{ scaleType: 'point', data: xLabels }]}
                   />
                 </div>
-
               </div>
-            </Tooltip>
-            <div className="bg-white rounded-xl mt-5 p-6">
-              <p className="font-semibold ">Watch Time</p>
-              <div className="relative blur-[2px] ">
-                <FiLock className="absolute w-8 h-8 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-500" style={{ color: 'black' }} />
-                <LineChart
-                  width={500}
-                  height={220}
-                  series={[
-                    { data: pData, label: 'Classes' },
-                    { data: uData, label: 'Tutorials' },
-                  ]}
-                  xAxis={[{ scaleType: 'point', data: xLabels }]}
-                />
-              </div>
-            </div>
-            <div className="flex flex-col bg-white rounded-lg  mt-6 ml-0 m">
-              <div className="flex justify-between m-4">
-                <span className="font-[700] text-[15px]">Topic Progress</span>
-              </div>
-              <div className="relative blur-[2px] ">
-                <FiLock className="absolute w-8 h-8 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-500" style={{ color: 'black' }} />
-                <div className="grid grid-cols-2 p-6 pt-0 gap-4">
-                  {jeeTopics.map((topic, index) => (
-                    <div key={index} className="flex justify-between h-[48.2px]">
-                      <div className="flex flex-col">
-                        <p className={`font-semibold ${topic.color}`}>{topic.subject}</p>
-                        <p className="text-[12px] text-gray-400">{topic.chapter}</p>
-                      </div>
-                      <CircularProgressWithLabel value={topic.progress} />
-                    </div>
-                  ))}
+              <div className="flex flex-col bg-white rounded-lg  mt-6 ml-0  w-[350px] md:w-[540px]">
+                <div className="flex justify-between m-4">
+                  <span className="font-[700] text-[15px]">Topic Progress</span>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div className=" md:w-[40vw]  flex flex-col">
-
-            <div className="md:w-[40vw] w-80 flex flex-col md:max-h-[74vh] md:mb-5 overflow-hidden">
-              <div className="bg-white md:m-6 md:mt-0 rounded-xl">
-                <div className="flex align-middle justify-center  mt-6 items-center">
-
-                  <div className="md:grid md:grid-cols-1  ">
-                    {/* <DateRange
-                      ranges={[selectionRange]}
-                      onChange={handleSelect}
-                     
-                    
-                    /> */}
-                    <DateRangePicker
-                      ranges={[selectionRange]}
-                      onChange={handleSelect}
-                     
-                    
-                    /> 
-
-                    <div className="md:relative">
-                      <Calendar selectionRange={selectionRange}/>
-
-                    </div>
+                <div className="relative blur-[2px] ">
+                  <FiLock className="absolute w-8 h-8 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-500" style={{ color: 'black' }} />
+                  <div className="grid grid-cols-2 p-6 pt-0 gap-4">
+                    {jeeTopics.map((topic, index) => (
+                      <div key={index} className="flex justify-between h-[48.2px]">
+                        <div className="flex flex-col">
+                          <p className={`font-semibold ${topic.color}`}>{topic.subject}</p>
+                          <p className="text-[12px] text-gray-400">{topic.chapter}</p>
+                        </div>
+                        <CircularProgressWithLabel value={topic.progress} />
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
-
             </div>
+            <div className=" md:w-[40vw]  flex flex-col">
 
-            <Box className="flex flex-col rounded-lg ml-6 mr-6 mt-0 bg-white p-4 h-[33vh] overflow-hidden">
-              <Box className="flex justify-between">
-                <h3 className="font-bold text-[16px]">To Do List</h3>
-              <Box className="flex">
-              <button variant="outlined" className="h-8 w-24 text-[10px] font-[600] border-[2px] text-blue-700" onClick={() => setOpen(true)}>Add Todo</button>
-              <div>
-                <button onClick={toggleDrawer('right', true)} className="text-[10px] font-[600] ml-4 text-blue-700">See all</button>
-                <SwipeableDrawer
-                  anchor="right"
-                  open={state.right}
-                  onClose={toggleDrawer('right', false)}
-                  onOpen={toggleDrawer('right', true)}
-                  className="w-96"
-                >
-                  {list('right')}
-                </SwipeableDrawer>
+              <div className="md:w-[40vw]  flex flex-col md:max-h-[74vh] md:mb-5 overflow-hidden">
+                <div className="bg-white md:m-6 md:mt-0 rounded-xl">
+                  <div className="flex align-middle justify-center  mt-6 items-center">
+
+                    <div className="md:grid md:grid-cols-1  ">
+                      <div className="m-1">
+                        <div
+                          className="md:hidden mt-4 "
+
+                        >
+                          <DateRange
+                            ranges={[selectionRange]}
+                            onChange={handleSelect}
+
+
+                          />
+                        </div>
+                      </div>
+                      <div className="hidden md:block">
+                        <DateRangePicker
+                          ranges={[selectionRange]}
+                          onChange={handleSelect}
+                        />
+                      </div>
+
+                      <div className="md:relative">
+                        <Calendar selectionRange={selectionRange} />
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
-              </Box>
-              </Box>
-              <Box>
-                {todos.length > 0 ? (
-                  todos.map(todo => (
-                    <Box key={todo.id} className="flex justify-between mt-3  p-3 ">
-                      <Box className="flex">
-                        {
-                          todo.completed ? <FaCheck className={`h-6 w-6 p-1 rounded-full mt-4  bg-green-500 text-white' text-gray-700'}`} /> : ""
-                        }
 
-                        <Box className="flex flex-col ml-3">
-                          <h2 className="text-gray-900 font-bold text-[13px]">
-                            {todo.task}
-                          </h2>
-                          <p className="font-medium text-[12px] text-gray-500">
-                            {todo.description}
-                          </p>
+              <Box className="flex flex-col rounded-lg md:ml-6 md:mr-6 mt-0 bg-white md:pl-4 p-4 pl-0 h-[33vh] overflow-hidden">
+                <Box className="flex justify-between">
+                  <h3 className="font-bold text-[16px]">To Do List</h3>
+                  <Box className="flex">
+                    <button variant="outlined" className="h-8 w-24 text-[10px] font-[600] border-[2px] text-blue-700" onClick={() => setOpen(true)}>Add Todo</button>
+                    <div>
+                      <button onClick={toggleDrawer('right', true)} className="text-[10px] font-[600] ml-4 text-blue-700">See all</button>
+                      <SwipeableDrawer
+                        anchor="right"
+                        open={state.right}
+                        onClose={toggleDrawer('right', false)}
+                        onOpen={toggleDrawer('right', true)}
+                        className="w-96"
+                      >
+                        {list('right')}
+                      </SwipeableDrawer>
+                    </div>
+                  </Box>
+                </Box>
+                <Box>
+                  {todos.length > 0 ? (
+                    todos.map(todo => (
+                      <Box key={todo.id} className="flex justify-between mt-3  md:p-3 p-1 ">
+                        <Box className="flex">
+                          {
+                            todo.completed ? <FaCheck className={`h-6 w-6 p-1 rounded-full mt-4  bg-green-500 text-white' text-gray-700'}`} /> : ""
+                          }
+
+                          <Box className="flex flex-col ml-3">
+                            <h2 className="text-gray-900 font-bold text-[13px]">
+                              {todo.task}
+                            </h2>
+                            <p className="font-medium text-[12px] text-gray-500">
+                              {todo.description}
+                            </p>
+                          </Box>
+                        </Box>
+                        <Box className="flex items-center space-x-2">
+                          <IconButton onClick={() => openDialog(todo)}>
+                            <EditIcon className="h-5 w-5" />
+                          </IconButton>
+                          <IconButton onClick={() => handleDeleteTodo(todo.id)}>
+                            <DeleteIcon className="h-5 w-5 " />
+                          </IconButton>
                         </Box>
                       </Box>
-                      <Box className="flex items-center space-x-2">
-                        <IconButton onClick={() => openDialog(todo)}>
-                          <EditIcon className="h-5 w-5" />
-                        </IconButton>
-                        <IconButton onClick={() => handleDeleteTodo(todo.id)}>
-                          <DeleteIcon className="h-5 w-5 " />
-                        </IconButton>
-                      </Box>
-                    </Box>
-                  ))
-                ) : (
-                  <p>Loading...</p>
-                )}
+                    ))
+                  ) : (
+                    <p>Loading...</p>
+                  )}
+                </Box>
+                <Dialog open={open} onClose={closeDialog}>
+                  <DialogTitle>{isEditing ? "Edit Todo" : "Add Todo"}</DialogTitle>
+                  <DialogContent>
+                    <TextField
+                      autoFocus
+                      margin="dense"
+                      label="Task"
+                      type="text"
+                      fullWidth
+                      value={currentTodo.task}
+                      onChange={(e) => setCurrentTodo({ ...currentTodo, task: e.target.value })}
+                    />
+                    <TextField
+                      margin="dense"
+                      label="Description"
+                      type="text"
+                      fullWidth
+                      value={currentTodo.description}
+                      onChange={(e) => setCurrentTodo({ ...currentTodo, description: e.target.value })}
+                    />
+
+                    <FaCheck className={`h-6 w-6 p-1 rounded-full mt-4  {${currentTodo.completed} ? bg-green-500 : ""} text-white text-gray-700'}`} />
+
+
+                  </DialogContent>
+                  <DialogActions>
+                    <Button onClick={closeDialog} color="primary">Cancel</Button>
+                    <Button onClick={isEditing ? handleUpdateTodo : handleAddTodo} color="primary">
+                      {isEditing ? "Update" : "Add"}
+                    </Button>
+                  </DialogActions>
+                </Dialog>
               </Box>
-              <Dialog open={open} onClose={closeDialog}>
-                <DialogTitle>{isEditing ? "Edit Todo" : "Add Todo"}</DialogTitle>
-                <DialogContent>
-                  <TextField
-                    autoFocus
-                    margin="dense"
-                    label="Task"
-                    type="text"
-                    fullWidth
-                    value={currentTodo.task}
-                    onChange={(e) => setCurrentTodo({ ...currentTodo, task: e.target.value })}
-                  />
-                  <TextField
-                    margin="dense"
-                    label="Description"
-                    type="text"
-                    fullWidth
-                    value={currentTodo.description}
-                    onChange={(e) => setCurrentTodo({ ...currentTodo, description: e.target.value })}
-                  />
+            </div>
 
-                  <FaCheck className={`h-6 w-6 p-1 rounded-full mt-4  {${currentTodo.completed} ? bg-green-500 : ""} text-white text-gray-700'}`} />
-
-
-                </DialogContent>
-                <DialogActions>
-                  <Button onClick={closeDialog} color="primary">Cancel</Button>
-                  <Button onClick={isEditing ? handleUpdateTodo : handleAddTodo} color="primary">
-                    {isEditing ? "Update" : "Add"}
-                  </Button>
-                </DialogActions>
-              </Dialog>
-            </Box>
           </div>
-
         </div>
       </div>
 

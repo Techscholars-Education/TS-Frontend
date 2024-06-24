@@ -204,13 +204,13 @@ const Page = () => {
                       "Login"
                     )}
                   </button>
-                  <button
+                  {/* <button
                     onClick={glogin}
                     className="bg-gray-100 text-darkBlue rounded-full py-2 text-sm md:text-md w-full font-normal mt-4 flex items-center justify-center "
                   >
                     <Image src={Google} className="w-8" alt="google-logo" />{" "}
                     Google
-                  </button>
+                  </button> */}
                   <div className="mb-10 mt-6 text-xs md:text-sm flex">
                     <p className="text-gray-600">Do not have an account ?</p>{" "}
                     <Link href="/signin" className="text-TechBlue mx-2">

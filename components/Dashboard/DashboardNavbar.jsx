@@ -31,14 +31,14 @@ function DashboardNavbar(props) {
 
   return (
     <div className="flex flex-wrap max-w-full place-items-center py-4 bg-white">
-      <section className="relative mx-auto">
-        <nav className="flex justify-between text-black w-[82vw] ">
-          <div className="px-5 xl:px-12 flex w-full items-center justify-between">
-            <div className="flex flex-col">
-              <a className="text-2xl font-bold font-heading " href="#">
+      <section className="relative ">
+        <nav className="flex justify-between text-black md:w-[84vw] ">
+          <div className="md:px-5 xl:px-12 flex w-full items-center justify-between">
+            <div className="flex flex-col w-72 md:w-96">
+              <a className="md:text-2xl font-bold font-heading " href="#">
                 {props.title}
               </a>
-              <p className="text-[14px] text-gray-400">{props.subtitle}</p>
+              <p className="md:text-[14px] t text-gray-400">{props.subtitle}</p>
             </div>
 
             <div className="hidden xl:flex items-center space-x-5 h-8">

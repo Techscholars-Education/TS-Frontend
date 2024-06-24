@@ -13,14 +13,14 @@ function Classes() {
       ];
       
   return (
-    <div className=" font-Poppins min-h-screen py-10 w-[82vw] flex flex-col bg-[#F0F7FF] ">
+    <div className=" font-Poppins min-h-screen py-10 md:w-[82vw] flex flex-col bg-[#F0F7FF] ">
     <CourseDetailNavbar/>
-    <div className='flex flex-col  bg-white rounded-xl p-3 mt-4 ml-10'>
+    <div className='flex flex-col  bg-white rounded-xl p-3 mt-4 md:ml-10'>
         <div className='m-4'>
             <h2 className='text-[22px] font-[550]'>Subject</h2>
             <p className='text-[14px] text-gray-500 mt-2'>Select your subjects & start learning</p>
         </div>
-        <div className="grid grid-cols-4">
+        <div className="grid md:grid-cols-4 grid-cols-1">
             {
                 subjects.map((ele)=>(   
                       <div className='flex m-4' key={ele.id}>

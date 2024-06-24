@@ -36,17 +36,17 @@ const LeftNavigation = () => {
     <div>
       <div className="m-1">
         <button
-          className="md:hidden mt-4"
+          className="md:hidden mt-4 "
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          {isMenuOpen ? <FiX className="text-3xl" /> : <FiMenu className="text-3xl" />}
+          {isMenuOpen ? <FiX className="text-lg" /> : <FiMenu className="text-lg" />}
         </button>
       </div>
 
       <nav className={`bg-white ${isMenuOpen?'block':'hidden'} md:block w-[60vw] md:w-[15vw] py-6 md:px-4 pl-2 flex flex-col justify-between items-center`}>
         <div className="mx-auto fixed">
           {/* Logo */}
-          <Link href={"/dashboard/my-course"} className="flex items-center justify-center space-x-2">
+          <Link href={"/"} className="flex items-center justify-center space-x-2">
             <Image className="w-10 h-10" src={Logo} alt="Techscholars-Logo" />
             <h1 className="text-gray-800 font-semibold">TECHSCHOLARS</h1>
           </Link>
