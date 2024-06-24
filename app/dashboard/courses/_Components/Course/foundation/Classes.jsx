@@ -4,6 +4,8 @@ import Link from "next/link";
 import Costing from "../Costing";
 import DashboardNavbar from "@/components/Dashboard/DashboardNavbar";
 const Classes = () => {
+
+  
   const costing9th = [
     {
       id: 2,

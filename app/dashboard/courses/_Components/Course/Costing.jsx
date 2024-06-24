@@ -50,9 +50,9 @@ const Costing = (props) => {
   const id2  = props.CostingData[1].id 
   const id3  = props.CostingData[2].id 
 
-  const mainName1 = props.CostingData[0].mainname
-  const mainName2 = props.CostingData[1].mainname
-  const mainName3 = props.CostingData[2].mainname
+  const mainName1 = props.CostingData[0].description
+  const mainName2 = props.CostingData[1].description
+  const mainName3 = props.CostingData[2].description
 
   
 

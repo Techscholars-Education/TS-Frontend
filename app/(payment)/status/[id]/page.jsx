@@ -1,9 +1,10 @@
 "use client"
-import { useCookieStore } from '@/hooks/useStore';
+import { useCookieStore, useProductJEEStore, useProductStore } from '@/hooks/useStore';
 import { useParams } from 'next/navigation'
 import { useEffect, useLayoutEffect, useState } from 'react';
 import gif1 from "@/public/Ts-Loader.gif";
 import Image from 'next/image';
+import {tsUrl } from '@/config';
 
 const PaymentStatusPage = () => {
   const params = useParams()
@@ -11,13 +12,24 @@ const PaymentStatusPage = () => {
   const [order, setOrder] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const[value13,setValue13] = useState()
-  const[value12,setValue12] = useState()
-  const[value11,setValue11] = useState()
+  const[value9,setValue9] = useState()
+  const[value10,setValue10] = useState()
 
   const {cookie} = useCookieStore()
   const id = params.id
+
+  // const {fetchData,classFor11 } = useProductStore();
+
+  // useEffect(() => {
+  //   fetchData();
+  //   const cat = localStorage.getItem("userProductJee-storage");
+  //   const s =  JSON.parse(cat)
     
+  //   console.log(classFor11);
+  // }, [fetchData]);
+  
+
+
   useLayoutEffect(() => {
     if (!id) return;
 
@@ -48,25 +60,29 @@ const PaymentStatusPage = () => {
       //   setLoading(false);
       // }
 
+   
 
 const requestOptions = {
   method: "GET",
-  redirect: "follow"
+  redirect: "follow",
+  headers: {
+    'Accept': 'application/json',
+  },
 };
    
 try {
-  const res = await fetch("https://api.techscholars.co.in/pdt/v1/product?category_id=2", {
+  const res = await fetch(`${tsUrl}/pdt/v1/product?category_id=4`, {
   requestOptions
    });
    const data = await res.json();
+   console.log(data);
    console.log(data.products);
-   const item13 = data.products.filter((product) => product.class_for === "13");
-   const item12 = data.products.filter((product) => product.class_for === "12");
-   const item11 = data.products.filter((product) => product.class_for === "11");
-      
-      setValue13(item13);
-      setValue12(item12);
-      setValue11(item11);
+   const item9 = data.products.filter((product) => product.class_for === "9");
+   const item10 = data.products.filter((product) => product.class_for === "10");
+
+       setValue9(item9);
+      setValue10(item10);
+
 } catch (error) {
   console.log(error.message);
 }
@@ -76,8 +92,8 @@ try {
     fetchData();;
   }, [id]);
 
-  // console.log(order.status);
-  console.log(value12);
+  console.log(value10);
+
 
   const paymentStatus = 'paid';
 

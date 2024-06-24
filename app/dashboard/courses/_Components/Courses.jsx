@@ -5,8 +5,20 @@ import Card from "./Course/Card";
 import axios from "axios";
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
+import { useProductJEEStore, useProductStore } from "@/hooks/useStore";
 
 const Courses = () => {
+
+  const {fetchData } = useProductStore();
+  const{fetchDataJee} = useProductJEEStore()
+
+  useEffect(() => {
+    fetchData();
+    fetchDataJee()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [fetchData]);
+
+
   
  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
