@@ -11,6 +11,7 @@ const useLogin = () => {
   const [checking, setChecking] = useState(false);
   const login = async (username, password) => {
     const myHeaders = new Headers();
+    console.log(username, password);
 myHeaders.append("Content-Type", "application/json");
     try {
       const res = await fetch("https://api.techscholars.in/auth/v1/login", {
@@ -20,11 +21,19 @@ myHeaders.append("Content-Type", "application/json");
         credentials: 'include'
       });
       const data = await res.json();
- 
+  
       if (data.error) {
         throw new Error(data.error);
       }
 
+      if(data.user_type === 1){
+        const sessionExpirationTime = new Date(
+          new Date().getTime() + 5 * 60 * 60 * 1000
+        );
+        Cookies.set("admin_user", data.user_type, {
+          expires: sessionExpirationTime,
+        });
+      }
       if (data.access_token) {
         toast.success("Login successful");
         const sessionExpirationTime = new Date(
@@ -33,7 +42,8 @@ myHeaders.append("Content-Type", "application/json");
         Cookies.set("access_token", data.access_token, {
           expires: sessionExpirationTime,
         });
-  
+               
+     
         cookieData(data.access_token)
         
         // window.location.reload();

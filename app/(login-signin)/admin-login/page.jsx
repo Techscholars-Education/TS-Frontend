@@ -6,9 +6,13 @@ import Image from 'next/image'
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import gif1 from "../../../public/Ts-Loader.gif";
+import useLogin from '@/hooks/useLogin';
+import { useRouter } from 'next/navigation';
 
 
 const Page = () => {
+    const router = useRouter();
+    const { login } = useLogin();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -41,13 +45,15 @@ const Page = () => {
             return;
         }
 
-        console.log(email,password);
+        // console.log(email,password);
 
-        // try {
-
-        // } catch (error) {
-
-        // }
+        try {
+            
+            const res = await login(email, password);  
+            router.replace("/admin/home");
+          } catch (error) {
+            console.log("Some error occured in login");
+          }
     }
 
     useEffect(() => {
@@ -86,12 +92,12 @@ const Page = () => {
                                          onChange={(e)=>{setPassword(e.target.value)}}
                                     />
                                 </div>
-                                <div className="flex items-start mt-5">
+                                {/* <div className="flex items-start mt-5">
                                     <div className="flex items-center h-5">
                                         <input id="remember" type="checkbox" value="" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 " required />
                                     </div>
                                     <label htmlFor="remember" className="ms-2 text-sm font-semibold text-gray-600 ">Remember me</label>
-                                </div>
+                                </div> */}
                                 <div className='flex items-center justify-center lg:mt-[3vw] mt-[7vw]'>
 
                                     <button type='submit' onClick={handleSubmit} className='flex items-center justify-center text-white bg-TechBlue pl-4 pr-4 pt-2 pb-2 lg:w-[20vw] w-[50vw] rounded-lg hover:bg-black transition-all ease-in-out duration-200'>Sign In</button>

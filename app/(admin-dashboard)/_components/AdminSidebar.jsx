@@ -13,6 +13,7 @@ import { IoMdTimer } from "react-icons/io";
 import { LuMenuSquare } from "react-icons/lu";
 import { IoMdClose } from "react-icons/io";
 import { motion } from "framer-motion";
+import Cookies from "js-cookie";
 
 const AdminSidebar = ({mobile,setMobile}) => {
 
@@ -106,8 +107,19 @@ const DivOne = () => (
   </div>
 );
 
-const DivTwo = () => (
-  <div className="ml-3">
+const DivTwo = () => {
+  const handleLogout = () => {
+    Cookies.remove("access_token");
+    Cookies.remove("admin_user");
+    localStorage.removeItem("course-storage");
+    localStorage.removeItem("cookie-storage");
+    localStorage.removeItem("profile-storage");
+    // Refresh the page
+    window.location.reload();
+    window.location.assign("/admin");
+  }
+  return(
+<div className="ml-3">
     <ul className="">
       <Li
         url="/admin/settings"
@@ -115,15 +127,25 @@ const DivTwo = () => (
         Icon={TbSettings}
         location={location}
       />
-      <Li
+       <button
+        onClick={handleLogout}
+    //      whileHover={{ scale: 1.05 }}
+    // transition={{ease:"circInOut",duration:1}}
+    className="ml-3 font-normal lg:text-[1.1vw] flex items-center gap-5 text-[6vw] lg:w-[14vw] hover:text-red-600  transition-all ease-in-out duration-150"
+       >
+       <BiLogOutCircle/>
+       Logout
+       </button>
+      {/* <Li
         url="/admin"
         text="Logout"
         Icon={BiLogOutCircle}
         location={location}
-      />
+      /> */}
     </ul>
   </div>
-);
+  )
+}
 
 const Li = ({ url, text, location, Icon }) => (
   <motion.li 
