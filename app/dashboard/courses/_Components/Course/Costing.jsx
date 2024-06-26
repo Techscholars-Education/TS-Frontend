@@ -9,6 +9,7 @@ import { useRouter } from 'next/navigation'
 import Cookies from "js-cookie";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { encryptData } from "@/utils";
 
 
 const Costing = (props) => {
@@ -66,17 +67,32 @@ const Costing = (props) => {
   
 const handleSubmitStarter = () => {
   courseData(formdataOne)
-  router.replace(`/payment/${id1+9856748585}`)
+  // router.replace(`/payment/${id1+9856748585}`)
+
+  const params = id1 ; // Example parameter
+    const encryptedParams = encryptData(params);
+    // Navigate to the dynamic page with encrypted params
+    router.replace(`/payment/${encodeURIComponent(encryptedParams)}`);
 }
 
 const handleSubmitAdvance = () => {
   courseData(formdataTwo)
-  router.replace(`/payment/${id2+9856748585}`)
+  // router.replace(`/payment/${id2+9856748585}`)
+
+  const params = id2 ; // Example parameter
+  const encryptedParams = encryptData(params);
+  // Navigate to the dynamic page with encrypted params
+  router.replace(`/payment/${encodeURIComponent(encryptedParams)}`);
 }
 
 const handleSubmitUltimate = () => {
   courseData(formdataThree)
-  router.replace(`/payment/${id3+9856748585}`)
+  // router.replace(`/payment/${id3+9856748585}`)
+
+  const params = id3 ; // Example parameter
+  const encryptedParams = encryptData(params);
+  // Navigate to the dynamic page with encrypted params
+  router.replace(`/payment/${encodeURIComponent(encryptedParams)}`);
 }
 
   return (
