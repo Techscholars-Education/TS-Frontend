@@ -7,11 +7,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import gif1 from "../../../public/Ts-Loader.gif";
 import useLogin from '@/hooks/useLogin';
-import { useRouter } from 'next/navigation';
-
 
 const Page = () => {
-    const router = useRouter();
     const { login } = useLogin();
 
     const [email, setEmail] = useState("");
@@ -50,7 +47,6 @@ const Page = () => {
         try {
             
             const res = await login(email, password);  
-            router.replace("/admin/home");
           } catch (error) {
             console.log("Some error occured in login");
           }
