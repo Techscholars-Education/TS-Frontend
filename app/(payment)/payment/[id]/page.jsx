@@ -16,10 +16,12 @@ import useGetway from "@/hooks/useGetway";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useParams } from 'next/navigation'
+import { decryptData } from "@/utils";
 
 const Page = () => {
   
   const params = useParams()
+  const encryptedParams  = params.id;
   const {course,courseData} = useCourseStore()
 
   const {getway} = useGetway()
@@ -75,8 +77,9 @@ const Page = () => {
 
   const handleGetway = async(event) => {
     event.preventDefault();
-    if(id === Number(params.id-9856748585)){
-      await getway(id)
+    if (encryptedParams) {
+      const decryptedParams = decryptData(decodeURIComponent(encryptedParams));
+      await getway(decryptedParams)
     }else{
       toast.error("Please select package first")
       courseData(0)
