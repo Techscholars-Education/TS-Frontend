@@ -98,6 +98,8 @@ const Profile = () => {
     // useprofile()
   }
 
+  const today = new Date().toISOString().split('T')[0];
+
     return (
 
       <>
@@ -209,6 +211,7 @@ const Profile = () => {
                             id="dob"
                             value={dob}
                             onChange={(e)=>{setDob(e.target.value)}}
+                            max={today} // Restrict selection to dates
                             className="bg-blue-50 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[30vw] p-2.5"
                           />
                         </div>

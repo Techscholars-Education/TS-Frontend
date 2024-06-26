@@ -1,16 +1,28 @@
 "use client";
 import { useEffect, useState } from "react";
 import DashboardNavbar from "@/components/Dashboard/DashboardNavbar";
-import Image from "next/image";
 import Card from "./Course/Card";
-import coursePoster from "../../../../public/Course/coursePoster.svg";
-import Link from "next/link";
 import axios from "axios";
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
+import { useProductFoundationStore, useProductJEEStore, useProductStore } from "@/hooks/useStore";
 
 const Courses = () => {
-  const [data, setData] = useState([]);
+
+  const {fetchData } = useProductStore();
+  const{fetchDataJee} = useProductJEEStore()
+  const {fetchDataFoundation} = useProductFoundationStore()
+
+  useEffect(() => {
+    fetchData();
+    fetchDataJee()
+    fetchDataFoundation()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [fetchData]);
+
+
+  
+ const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 

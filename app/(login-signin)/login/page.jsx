@@ -58,7 +58,7 @@ const Page = () => {
       setLoading(true);
       const res = await login(email, password);
       setLoading(false);
-      router.replace("/dashboard/home");
+      // router.replace("/dashboard/home");
     } catch (error) {
       console.log("Some error occured in login");
     }

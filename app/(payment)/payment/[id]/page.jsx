@@ -16,10 +16,12 @@ import useGetway from "@/hooks/useGetway";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useParams } from 'next/navigation'
+import { decryptData } from "@/utils";
 
 const Page = () => {
   
   const params = useParams()
+  const encryptedParams  = params.id;
   const {course,courseData} = useCourseStore()
 
   const {getway} = useGetway()
@@ -75,8 +77,9 @@ const Page = () => {
 
   const handleGetway = async(event) => {
     event.preventDefault();
-    if(id === Number(params.id-9856748585)){
-      await getway(id)
+    if (encryptedParams) {
+      const decryptedParams = decryptData(decodeURIComponent(encryptedParams));
+      await getway(decryptedParams)
     }else{
       toast.error("Please select package first")
       courseData(0)
@@ -106,7 +109,7 @@ const Page = () => {
             <div className=" flex  w-full p-4 font-Poppins  ">
               <div className=" w-3/4 text-start col-span-1 flex flex-col justify-center md:space-y-2 pr-2">
                 <h4 className=" text-base xl:text-xl font-semibold font-Poppins">
-                 {mainName} {cName}
+                 {mainName}
                 </h4>
                 <p className="text-gray-600 text-xs xl:text-sm">
                   The course validity will end within 365 days

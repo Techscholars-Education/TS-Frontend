@@ -42,13 +42,12 @@ const useSignup = () => {
         setTimeout(() => {
           toast.error("Enter different phone number or email");
         }, 2000);
+
+        return false;
       } else {
         toast.success("Account created successfully");
         setChecking(true);
-      }
-
-      if (data.error) {
-        throw new Error(data.error);
+        return true;
       }
     } catch (error) {
       toast.error(error.message);

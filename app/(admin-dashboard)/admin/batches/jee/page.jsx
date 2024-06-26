@@ -29,17 +29,17 @@ const Page = () => {
       
             <div
               id="feedback"
-              className="bg-gray-100 overflow-y-auto h-[41vw] w-[85vw] relative right-[-15vw]  rounded-md"
+              className="bg-[#e6f0ff] overflow-y-auto h-[41vw] w-[85vw] relative right-[-15vw]  rounded-md"
             >
               <div>
                 <h1 className="font-semibold text-xl ml-10 mt-2">Batch - JEE</h1>
               </div>
-              <div className="ml-10 mt-4 flex gap-7">
+              <div className="ml-10 mt-4 flex flex-wrap gap-7">
                 <div
                  
                   className="flex flex-col items-center justify-center gap-5 bg-white h-[28vw] w-[23vw] p-4 rounded-md "
                 >
-                  <button className="font-bold text-[.9vw] pl-4 pr-4 pt-2 pb-2 bg-gray-100 rounded-xl hover:bg-black hover:text-white transition-all ease-in-out duration-200">
+                  <button className="font-bold text-[.9vw] pl-4 pr-4 pt-2 pb-2 bg-[#e6f0ff] rounded-xl hover:bg-black hover:text-white transition-all ease-in-out duration-200">
                    Add New Batch
                   </button>
                 </div>
@@ -59,12 +59,12 @@ const Page = () => {
                                 <h1 className="font-semibold text-[1.2vw]">JEE </h1>
                                 <p className="text-[.8vw] font-semibold">78 students</p>
                             </div>
-                            <div className='rounded-full p-2 cursor-pointer h-10 w-10 flex items-center justify-center bg-gray-100 ' onClick={() => setHeart(!heart)}>
+                            <div className='rounded-full p-2 cursor-pointer h-10 w-10 flex items-center justify-center bg-[#e6f0ff] ' onClick={() => setHeart(!heart)}>
                             { heart ? <FaHeart className="text-xl text-pink-600 transition-all ease-linear duration-200"/> : <FaRegHeart className="text-xl text-black transition-all ease-linear duration-200"/>}
                         </div>
                             
                         </div>
-                        <button className="bg-gray-100 pl-4 pr-4 pt-2 pb-2 w-[7vw] font-semibold rounded-xl flex items-center justify-center text-[.9vw] hover:bg-black hover:text-white transition-all ease-in-out duration-200">View now</button>
+                        <button className="bg-[#e6f0ff] pl-4 pr-4 pt-2 pb-2 w-[7vw] font-semibold rounded-xl flex items-center justify-center text-[.9vw] hover:bg-black hover:text-white transition-all ease-in-out duration-200">View now</button>
                   </div>              
                 </div>
                 <div className="flex flex-col  gap-2 bg-white h-[28vw] w-[23vw] p-3 rounded-md ">
@@ -82,11 +82,11 @@ const Page = () => {
                                 <h1 className="font-semibold text-[1.2vw]">JEE </h1>
                                 <p className="text-[.8vw] font-semibold">78 students</p>
                             </div>
-                            <div className='rounded-full p-2 cursor-pointer h-10 w-10 flex items-center justify-center bg-gray-100 ' onClick={() => setHeart(!heart)}>
+                            <div className='rounded-full p-2 cursor-pointer h-10 w-10 flex items-center justify-center bg-[#e6f0ff] ' onClick={() => setHeart(!heart)}>
                             { heart ? <FaHeart className="text-xl text-pink-600 transition-all ease-linear duration-200"/> : <FaRegHeart className="text-xl text-black transition-all ease-linear duration-200"/>}
                         </div>
                         </div>
-                        <button className="bg-gray-100 pl-4 pr-4 pt-2 pb-2 w-[7vw] font-semibold rounded-xl flex items-center justify-center text-[.9vw] hover:bg-black hover:text-white transition-all ease-in-out duration-200">View now</button>
+                        <button className="bg-[#e6f0ff] pl-4 pr-4 pt-2 pb-2 w-[7vw] font-semibold rounded-xl flex items-center justify-center text-[.9vw] hover:bg-black hover:text-white transition-all ease-in-out duration-200">View now</button>
                   </div>              
                 </div>
               
