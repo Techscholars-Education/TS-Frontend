@@ -58,7 +58,7 @@ const Courses = () => {
   }, []);
 
   return (
-    <div className="bg-white font-Poppins h-screen w-full">
+    <div className="bg-[#fcfafa]  font-Poppins h-screen w-full overflow-x-hidden">
       <DashboardNavbar title={"Courses"} />
       {loading ? (
         <div className="flex justify-center items-center h-screen">
@@ -71,9 +71,9 @@ const Courses = () => {
           <p>Error: {error}</p>
         </div>
       ) : (
-        <div className="my-6 flex flex-col mr-2 bg-blue-50 h-[82vh] max-w-full pl-5 pr-5 pt-5">
-          <div className="max-w-[82vw] bg-white rounded-md pl-9 flex flex-col overflow-y-auto pb-3">
-            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-0  lg:grid-cols-3 gap-4 mt-4 xl:w-10/12 mx-auto">
+        <div className="md:my-6 flex flex-col   h-[82vh] md:max-w-[80vw]  pt-5 ">
+          <div className="md:max-w-[82vw] w-[90vw]  rounded-md md:pl-9 flex flex-col overflow-y-auto pb-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-6  lg:grid-cols-3 gap-4 mt-4 xl:w-10/12 md:mx-auto">
               {data.map((item) => (
                 <Card
                   key={item.id}

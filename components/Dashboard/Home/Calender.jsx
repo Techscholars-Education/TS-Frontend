@@ -161,6 +161,7 @@ const Calendar = ({ selectionRange }) => {
   const list = (anchor) => (
     <Box
       sx={{ width: 400 }}
+      className="w-[300px]"
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
@@ -228,7 +229,7 @@ const Calendar = ({ selectionRange }) => {
       <Box>
         {calEvents.length > 0 ? (
           calEvents.map(event => (
-            <Box key={event.id} className="flex justify-between my-1  p-3 ">
+            <Box key={event.id} className="flex justify-between my-1 p-1  md:p-3 ">
               <Box className="flex flex-col">
                 <h2 className="text-gray-900 font-bold text-[13px]">
                   {event.title}

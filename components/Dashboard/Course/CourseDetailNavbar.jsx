@@ -12,7 +12,7 @@ function CourseDetailNavbar() {
   
     const isActive = (path) => pathname === path;
   return (
-    <div className='flex flex-col mx-10'>
+    <div className='flex flex-col md:mx-10'>
         <div className='flex bg-slate-200 p-2 px-3 rounded-full w-24'>
            <IoMdArrowBack className='mt-1 mr-1'/>
 
@@ -21,12 +21,12 @@ function CourseDetailNavbar() {
         </Link>
         </div>
         <nav className=''>
-        <ul className="mt-4 mx-auto font-Poppins flex bg-white rounded-xl items-center align-middle p-4 ">
+        <ul className="mt-4 md:mx-auto font-Poppins flex bg-white rounded-xl items-center align-middle md:p-4 ">
           <li className="flex items-center ">
             
             <Link
               href="/dashboard/my-course/coursedetail"
-              className={`font-semibold ${isActive('/dashboard/my-course/coursedetail') ? 'text-[#0079FC] underline' : 'text-gray-500 hover:text-gray-400 mr-12 '}`}
+              className={`font-semibold ${isActive('/dashboard/my-course/coursedetail') ? 'text-[#0079FC] underline' : 'text-gray-500 hover:text-gray-400 md:mr-12 mr-6'}`}
             >
               Description
 
@@ -36,7 +36,7 @@ function CourseDetailNavbar() {
            
             <Link
               href="/dashboard/my-course/coursedetail/classes"
-              className={`font-semibold ${isActive('/dashboard/my-course/coursedetail/classes') ? 'text-[#0079FC] underline' : 'text-gray-500 hover:text-gray-400 ml-12'}`}
+              className={`font-semibold ${isActive('/dashboard/my-course/coursedetail/classes') ? 'text-[#0079FC] underline' : 'text-gray-500 hover:text-gray-400 md:ml-12 w-24  ml-4'}`}
             >
               All Classes
 
@@ -46,7 +46,7 @@ function CourseDetailNavbar() {
             
             <Link
               href="/dashboard/test/testdetail"
-              className={`font-semibold ${isActive('/dashboard/test') ? 'text-[#0079FC] underline' : 'text-gray-500 hover:text-gray-400 ml-12'}`}
+              className={`font-semibold ${isActive('/dashboard/test') ? 'text-[#0079FC] underline' : 'text-gray-500 hover:text-gray-400 md:ml-12 '}`}
             >
               Tests
             </Link>
@@ -55,7 +55,7 @@ function CourseDetailNavbar() {
             
             <Link
               href="/dashboard/my-course/coursedetail/announcements"
-              className={`font-semibold ${isActive('/dashboard/my-course/coursedetail/announcements') ? 'text-[#0079FC] underline' : 'text-gray-500 hover:text-gray-400 ml-12'}`}
+              className={`font-semibold ${isActive('/dashboard/my-course/coursedetail/announcements') ? 'text-[#0079FC] underline' : 'text-gray-500 hover:text-gray-400 md:ml-12 ml-4'}`}
             >
              Announcements
             </Link>

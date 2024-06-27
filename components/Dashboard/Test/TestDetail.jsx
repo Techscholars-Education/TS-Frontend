@@ -1,160 +1,105 @@
-import React from 'react'
-import DashboardNavbar from '../DashboardNavbar'
+"use client";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import Link from "next/link";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
+import DashboardNavbar from '../DashboardNavbar';
 import TestSeriesCard from './TestSeriesCard';
-import Link from 'next/link';
+import Cookies from "js-cookie";
 
 function TestDetail() {
-  const data = [
-    {
-      id: 1,
+  const [testSeries, setTestSeries] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [selectedCategory, setSelectedCategory] = useState(2); // default category
 
-      route: "/dashboard/test/testdetail",
-      description:
-        "The Test series covers the entire syllabus for the exam and prioritizes important subjects and topics.",
-      Poster: require('../../../public/Test/1.png'),
-      std: 11,
-      name:"Full Syllabus mock test (JEE MAINS)"
-    },
-    {
-      id: 2,
+  useEffect(() => {
+    const fetchTestSeries = async () => {
+      setLoading(true);
+      try {
+        const cookie = Cookies.get("access_token");
+        if (!cookie) {
+          throw new Error("No access token found");
+        }
+        console.log("Access token:", cookie);
 
-      route: "/dashboard/test/testdetail",
-      description:
-        "The Test series covers the entire syllabus for the exam and prioritizes important subjects and topics.",
-      Poster: require('../../../public/Test/2.png'),
-      std: 11,
-      name:"Full Syllabus mock test (JEE ADVANCED)"
+        const axiosConfig = {
+          headers: {
+            'Authorization': cookie,
+          }
+        };
 
-    },
-    {
-      id: 3,
+        const response = await axios.get(`https://api.techscholars.co.in/pdt/v1/ts/list?category_id=${selectedCategory}`, axiosConfig);
+        console.log(response);
+        setTestSeries(Array.isArray(response?.data?.test_series) ? response?.data?.test_series : []);
+      } catch (error) {
+        console.error("Error fetching test series:", error);
+        setTestSeries([]);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-      route: "/dashboard/test/testdetail",
-      description:
-        "The Test series covers the entire syllabus for the exam and prioritizes important subjects and topics.",
-      Poster: require('../../../public/Test/3.png'),
-      std: 11,
-      name:"Full Syllabus mock test (JEE MAINS+ADVANCED)"
-      
-      
-    },
-    {
-      id: 4,
-
-      route: "/dashboard/test/testdetail",
-      description:
-        "The Test series covers the entire syllabus for the exam and prioritizes important subjects and topics.",
-      Poster: require('../../../public/Test/4.png'),
-      std: 12,
-      name:"Full Syllabus mock test (JEE MAINS)"
-    },
-    {
-      id: 5,
-
-      route: "/dashboard/test/testdetail",
-      description:
-        "The Test series covers the entire syllabus for the exam and prioritizes important subjects and topics.",
-      Poster: require('../../../public/Test/5.png'),
-      std: 12,
-      name:"Full Syllabus mock test (JEE ADVANCED)"
-    },
-    {
-      id: 6,
-
-      route: "/dashboard/test/testdetail",
-      description:
-        "The Test series covers the entire syllabus for the exam and prioritizes important subjects and topics.",
-      Poster: require('../../../public/Test/6.png'),
-      std: 12,
-      name:"Full Syllabus mock test (JEE MAINS+ADVANCED)"
-    },
-    {
-      id: 7,
-
-      route: "/dashboard/test/testdetail",
-      description:
-        "The Test series covers the entire syllabus for the exam and prioritizes important subjects and topics.",
-      Poster: require('../../../public/Test/7.png'),
-      std: 13,
-      name:"Full Syllabus mock test (JEE MAIN)"
-    },
-    {
-      id: 8,
-
-      route: "/dashboard/test/testdetail",
-      description:
-        "The Test series covers the entire syllabus for the exam and prioritizes important subjects and topics.",
-      Poster: require('../../../public/Test/8.png'),
-      std: 13,
-      name:"Full Syllabus mock test (JEE MAINS+ADVANCED)"
-    },
-    {
-      id: 9,
-
-      route: "/dashboard/test/testdetail",
-      description:
-        "The Test series covers the entire syllabus for the exam and prioritizes important subjects and topics.",
-      Poster: require('../../../public/Test/9.png'),
-      std: 13,
-      name:"Full Syllabus mock test (JEE ADVANCED)"
-    },
-    {
-      id: 10,
-
-      route: "/dashboard/test/testdetail",
-      description:
-        "The Test series covers the entire syllabus for the exam and prioritizes important subjects and topics.",
-      Poster: require('../../../public/Test/10.png'),
-      std: 11,
-      name:"Full Syllabus mock test (NEET)"
-    },
-    {
-      id: 11,
-
-      route: "/dashboard/test/testdetail",
-      description:
-        "The Test series covers the entire syllabus for the exam and prioritizes important subjects and topics.",
-      Poster: require('../../../public/Test/11.png'),
-      std: 11,
-      name:"Full Syllabus mock test (NEET)"
-    },
-    {
-      id: 12,
-
-      route: "/dashboard/test/testdetail",
-      description:
-        "The Test series covers the entire syllabus for the exam and prioritizes important subjects and topics.",
-      Poster: require('../../../public/Test/12.png'),
-      std: 11,
-      name:"Full Syllabus mock test (NEET)"
-    },
-  ];
+    fetchTestSeries();
+  }, [selectedCategory]);
 
   return (
-    <div className=" font-Poppins min-h-screen  w-full bg-[#F0F7FF] ">
-      <DashboardNavbar title="Test series Foundation" />
-      <div className="my-14 flex flex-col mx-8  ">
+    <div className="font-Poppins min-h-screen bg-[#fcfafa]">
+      <DashboardNavbar title="Test Series Foundation" />
+      <div className="flex flex-col md:mx-8">
         <h2 className="text-xl md:text-xl font-semibold text-darkBlue mx-4 my-6">
-          Test series Foundation
+          Test Series Foundation
         </h2>
-        {/* <p className="text-sm text-gray-600  mx-4 my-4">
-      You’ve learned 70% of your goal this week! Keep it up
-      </p> */}
-        <div className='grid grid-cols-1 md:grid-cols-3 md:pr-12 gap-6 ml-4 w-[68vw]'>
-          {
-            data.map((item) => {
-              return <>
-                <Link href="/dashboard/test/testdetail/alltestseries">
-                  <TestSeriesCard image={item.Poster} key={item.id} std={item.std} name={item.name} description={item.description} />
-                </Link>
-              </>
-            })
-          }
+        <div className="flex md:justify-center mb-8 ">
+          <div className="bg-white md:w-92 flex justify-center items-center rounded-full border">
 
+          <button
+            className={` px-4 py-2 rounded-full ${selectedCategory === 1 ? 'bg-[#0079FC] text-white' : 'bg-white text-black'}`}
+            onClick={() => setSelectedCategory(1)}
+          >
+            Category 1
+          </button>
+          <button
+            className={` px-4 py-2 rounded-full ${selectedCategory === 2 ? 'bg-[#0079FC] text-white' : 'bg-white text-black'}`}
+            onClick={() => setSelectedCategory(2)}
+          >
+            Category 2
+          </button>
+          <button
+            className={` px-4 py-2 rounded-full ${selectedCategory === 3 ? 'bg-[#0079FC] text-white' : 'bg-white text-black'}`}
+            onClick={() => setSelectedCategory(3)}
+          >
+            Category 3
+          </button>
+          </div>
         </div>
+        {loading ? (
+          <div className="flex justify-center items-center h-screen">
+            <Box sx={{ display: "flex" }}>
+              <CircularProgress />
+            </Box>
+          </div>
+        ) : (
+          <div className='grid grid-cols-1 md:grid-cols-3 md:pr-12 gap-6 ml-4 w-[68vw]'>
+            {testSeries.length > 0 ? (
+              testSeries.map((item) => (
+                <Link href="/dashboard/test/testdetail/alltestseries" key={item.id}>
+                  <TestSeriesCard 
+                    image={item.poster_image || require('../../../public/Test/1.png')} 
+                    std={item.class_name} 
+                    name={item.name} 
+                    description={item.desc} 
+                  />
+                </Link>
+              ))
+            ) : (
+              <p>No test series available</p>
+            )}
+          </div>
+        )}
       </div>
     </div>
-  )
+  );
 }
 
-export default TestDetail
+export default TestDetail;
