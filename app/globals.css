@@ -159,3 +159,16 @@ html {
     transform: translateY(10px);
   }
 }
+
+
+.rdrDayNumber span {
+  font-weight: 600; /* Adjust as needed */
+}
+.rdrDefinedRangesWrapper {
+  display: none;
+}
+
+.rdrDateDisplayWrapper {
+  display: none;
+}
+

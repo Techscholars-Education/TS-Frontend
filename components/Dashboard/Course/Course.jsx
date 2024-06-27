@@ -16,8 +16,9 @@ const Course = () => {
     const fetchCourses = async () => {
       try {
         const response = await axios.get('https://api.techscholars.in/pdt/v1/product');
+        console.log(response.data)
         
-        setCourses(Array.isArray(response?.data) ? response.data : []);
+        setCourses(Array.isArray(response?.data?.products) ? response?.data?.products : []);
       } catch (error) {
         console.error("Error fetching courses:", error);
         setCourses([]);
@@ -32,7 +33,7 @@ const Course = () => {
   console.log(courses)
 
   return (
-    <div className="font-Poppins min-h-screen w-full  bg-[#F0F7FF]">
+    <div className="font-Poppins min-h-screen w-full  bg-[#fcfafa]">
       <DashboardNavbar title="Course" />
       {loading ? (
         <div className="flex justify-center items-center h-screen">

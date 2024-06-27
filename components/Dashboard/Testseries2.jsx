@@ -10,7 +10,7 @@ const Testseries2 = () => {
   ];
 
   return (
-    <div className="w-full min-h-screen bg-[#F0F7FF] py-16 px-16 font-Poppins">
+    <div className="w-full min-h-screen bg-[#fcfafa] py-16 px-16 font-Poppins">
       <div className=" space-y-6 ">
         <h3 className="font-Poppins text-2xl font-semibold text-darkBlue">
           Test Series
