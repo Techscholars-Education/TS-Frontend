@@ -14,6 +14,7 @@ import { IoIosArrowRoundBack } from "react-icons/io";
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
 import gif1 from "@/public/Ts-Loader.gif";
+import successLoader from "@/public/Auth/successLoader.gif";
 import { useCookieStore } from "@/hooks/useStore";
 
 const Page = () => {
@@ -23,9 +24,10 @@ const Page = () => {
   const [loading, setLoading] = useState(false);
   const [domLoaded, setDomLoaded] = useState(false);
   const [authg, setAuthg] = useState("");
+  const [showLoader, setShowLoader] = useState(false);
 
   const router = useRouter();
-  const {cookieData} = useCookieStore()
+  const { cookieData } = useCookieStore();
 
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -58,7 +60,13 @@ const Page = () => {
       setLoading(true);
       const res = await login(email, password);
       setLoading(false);
-      // router.replace("/dashboard/home");
+
+      if (res) {
+        setShowLoader(true);
+        setTimeout(() => {
+          router.replace("/dashboard/home");
+        }, 3000); // Show loader for 3 seconds before redirecting to dashboard
+      }
     } catch (error) {
       console.log("Some error occured in login");
     }
@@ -78,17 +86,18 @@ const Page = () => {
   useEffect(() => {
     if (authg === "") return;
     if (authg) {
-      const sessionExpirationTime = new Date(new Date().getTime() + 5 * 60 * 60 * 1000);
-      console.log(authg)
+      const sessionExpirationTime = new Date(
+        new Date().getTime() + 5 * 60 * 60 * 1000
+      );
+      console.log(authg);
       Cookies.set("access_token", authg, { expires: sessionExpirationTime });
-      cookieData(authg)
+      cookieData(authg);
 
       router.replace("/dashboard/my-course");
       // window.location.reload();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [authg]);
-  
 
   useEffect(() => {
     setTimeout(() => {
@@ -240,6 +249,19 @@ const Page = () => {
             <div className=" hidden lg:block">
               <Image src={Login} alt="login-svg" className="h-screen w-full" />
             </div>
+            {showLoader && (
+              <div className="fixed inset-0 bg-white flex flex-col items-center justify-center ">
+                <Image
+                  src={successLoader}
+                  alt="success-loader"
+                  className="w-[180px]"
+                />
+                <br />
+                <h3 className=" animate-pulse text-base md:text-xl xl:text-3xl font-bold text-TechBlue/90 tracking-wider font-Poppins">
+                  Loading Dashboard ...
+                </h3>
+              </div>
+            )}
           </section>
         </>
       ) : (
