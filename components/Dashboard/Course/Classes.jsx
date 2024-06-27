@@ -13,7 +13,7 @@ function Classes() {
       ];
       
   return (
-    <div className=" font-Poppins min-h-screen py-10 md:w-[82vw] flex flex-col bg-[#F0F7FF] ">
+    <div className=" font-Poppins min-h-screen py-10 md:w-[82vw] flex flex-col bg-[#fcfafa] ">
     <CourseDetailNavbar/>
     <div className='flex flex-col  bg-white rounded-xl p-3 mt-4 md:ml-10'>
         <div className='m-4'>

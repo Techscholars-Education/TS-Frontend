@@ -10,9 +10,7 @@ const Card = (props) => {
   return (
     <>
       <div
-        className={`flex flex-col rounded-xl border ${
-          props.title === "JEE" ? "shadow-xl" : "shadow-md"
-        }   md:mx-2 font-Poppins relative mt-4`}
+        className={`flex flex-col rounded-xl border md:mx-2 font-Poppins relative mt-4 bg-white`}
       >
         <div>
           <Image
@@ -25,7 +23,7 @@ const Card = (props) => {
           />
         </div>
 
-        <div className="flex flex-col m-4 my-10">
+        <div className="flex flex-col m-4 ">
           <div>
             <div className="flex justify-between items-center">
               <h3 className="font-bold text-xl font-Inter text-darkBlue ">
@@ -41,10 +39,10 @@ const Card = (props) => {
               </div>
             </div>
           </div>
-          <p className="font-base text-xs xl:text-sm leading-relaxed text-gray-500 py-3 font-Poppins">
+          <p className="font-base text-xs xl:text-sm leading-relaxed text-gray-500 py-1 font-Poppins">
             {props.description}
           </p>
-          <div className=" flex justify-start w-full py-4 ">
+          <div className=" flex justify-start w-full py-2 ">
             <div className="flex -space-x-4 rtl:space-x-reverse">
               <Image
                 className="w-[30px] h-[30px] border-2 border-white rounded-full bg-green-300"

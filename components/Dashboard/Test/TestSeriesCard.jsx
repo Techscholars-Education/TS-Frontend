@@ -17,7 +17,9 @@ function TestSeriesCard(props) {
           className="w-full rounded-xl"
           alt="course-posters"
           src={props.image}
-          style={{ height: '200px', width: 'auto' }}  
+          style={{ height: '200px', width: '400px' }}
+          width={400}  
+          height={200}
         />
       </div>
 
@@ -39,7 +41,7 @@ function TestSeriesCard(props) {
             </div>
           </div>
         </div>
-        <p className="font-base text-xs xl:text-sm leading-relaxed text-gray-500 pt-2 font-Poppins">
+        <p className="font-base text-xs xl:text-sm leading-relaxed text-gray-500  font-Poppins">
          {props.description}
         </p>
         {/* <p className='text-[16px] font-semibold'>

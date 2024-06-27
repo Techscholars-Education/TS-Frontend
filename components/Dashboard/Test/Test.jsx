@@ -35,7 +35,7 @@ export default function Test() {
   return (
     <>
     
-    <div className=" font-Poppins min-h-screen  w-full bg-[#F0F7FF] ">
+    <div className=" font-Poppins min-h-screen  w-full bg-[#fcfafa] ">
       <DashboardNavbar title="Test series Foundation"/>
       <div className="my-14 flex flex-col mx-8">
         <h2 className="text-xl md:text-xl font-semibold text-darkBlue mx-4">

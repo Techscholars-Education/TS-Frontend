@@ -11,9 +11,11 @@ import Cookies from "js-cookie";
 function TestDetail() {
   const [testSeries, setTestSeries] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedCategory, setSelectedCategory] = useState(2); // default category
 
   useEffect(() => {
     const fetchTestSeries = async () => {
+      setLoading(true);
       try {
         const cookie = Cookies.get("access_token");
         if (!cookie) {
@@ -27,7 +29,7 @@ function TestDetail() {
           }
         };
 
-        const response = await axios.get('https://api.techscholars.co.in/pdt/v1/ts/list', axiosConfig);
+        const response = await axios.get(`https://api.techscholars.co.in/pdt/v1/ts/list?category_id=${selectedCategory}`, axiosConfig);
         console.log(response);
         setTestSeries(Array.isArray(response?.data?.test_series) ? response?.data?.test_series : []);
       } catch (error) {
@@ -39,15 +41,38 @@ function TestDetail() {
     };
 
     fetchTestSeries();
-  }, []);
+  }, [selectedCategory]);
 
   return (
-    <div className="font-Poppins min-h-screen w-full bg-[#F0F7FF]">
+    <div className="font-Poppins min-h-screen bg-[#fcfafa]">
       <DashboardNavbar title="Test Series Foundation" />
-      <div className="my-14 flex flex-col md:mx-8">
+      <div className="flex flex-col md:mx-8">
         <h2 className="text-xl md:text-xl font-semibold text-darkBlue mx-4 my-6">
           Test Series Foundation
         </h2>
+        <div className="flex md:justify-center mb-8 ">
+          <div className="bg-white md:w-92 flex justify-center items-center rounded-full border">
+
+          <button
+            className={` px-4 py-2 rounded-full ${selectedCategory === 1 ? 'bg-[#0079FC] text-white' : 'bg-white text-black'}`}
+            onClick={() => setSelectedCategory(1)}
+          >
+            Category 1
+          </button>
+          <button
+            className={` px-4 py-2 rounded-full ${selectedCategory === 2 ? 'bg-[#0079FC] text-white' : 'bg-white text-black'}`}
+            onClick={() => setSelectedCategory(2)}
+          >
+            Category 2
+          </button>
+          <button
+            className={` px-4 py-2 rounded-full ${selectedCategory === 3 ? 'bg-[#0079FC] text-white' : 'bg-white text-black'}`}
+            onClick={() => setSelectedCategory(3)}
+          >
+            Category 3
+          </button>
+          </div>
+        </div>
         {loading ? (
           <div className="flex justify-center items-center h-screen">
             <Box sx={{ display: "flex" }}>
@@ -60,7 +85,7 @@ function TestDetail() {
               testSeries.map((item) => (
                 <Link href="/dashboard/test/testdetail/alltestseries" key={item.id}>
                   <TestSeriesCard 
-                    image={item.poster_image ||  require('../../../public/Test/1.png')} 
+                    image={item.poster_image || require('../../../public/Test/1.png')} 
                     std={item.class_name} 
                     name={item.name} 
                     description={item.desc} 

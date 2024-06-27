@@ -5,28 +5,29 @@ import Image from "next/image";
 import iconprofile from "../../public/Dashboard/social-page.gif";
 import Link from "next/link";
 import useProfile from "@/hooks/useProfile";
+import { IoMdArrowBack } from "react-icons/io";
 
 
 function DashboardNavbar(props) {
 
-  const {useprofile} = useProfile()
-  const [userImage,setUserImage] = useState()
-  const [call,setCall] = useState(false)
- 
-  useEffect(()=>{
+  const { useprofile } = useProfile()
+  const [userImage, setUserImage] = useState()
+  const [call, setCall] = useState(false)
+
+  useEffect(() => {
     const image = window?.localStorage?.getItem("profile-storage");
     const imagejs = JSON.parse(image)
     setUserImage(imagejs.state.profiles.profile_image);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[call])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [call])
 
-  useEffect(()=>{
+  useEffect(() => {
     useprofile()
     setCall(true)
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[1])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [1])
 
- 
+
   const [search, setSearch] = useState(false);
 
   return (
@@ -35,6 +36,13 @@ function DashboardNavbar(props) {
         <nav className="flex justify-between text-black md:w-[84vw] ">
           <div className="md:px-5 xl:px-12 flex w-full items-center justify-between">
             <div className="flex flex-col w-72 md:w-96">
+              {/* <div className='flex bg-slate-200 p-2 px-3 rounded-full w-24 m-3 mt-2 mb-0 md:ml-6 '>
+                <IoMdArrowBack className='mt-1 mr-1' />
+
+                <Link href="/" className='text-[14px]'>
+                  Back
+                </Link>
+              </div> */}
               <a className="md:text-2xl font-bold font-heading " href="#">
                 {props.title}
               </a>
@@ -76,13 +84,13 @@ function DashboardNavbar(props) {
                 href={"/dashboard/profile"}
                 className="flex items-center hover:text-gray-200"
               >
-               {userImage ?  <Image
+                {userImage ? <Image
                   className="h-8 w-8 rounded-md"
                   src={userImage || iconprofile}
                   alt="Profile"
                   width={32}
                   height={32}
-                />: <Image
+                /> : <Image
                   className="h-8 w-8 rounded-md"
                   src={iconprofile}
                   unoptimized

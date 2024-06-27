@@ -20,7 +20,7 @@ const Community = () => {
   ];
 
   return (
-    <div className="w-full min-h-screen bg-[#F0F7FF] py-16 px-16">
+    <div className="w-full min-h-screen bg-[#fcfafa] py-16 px-16">
       <div className=" space-y-3 ">
         <h3 className="font-Poppins text-2xl font-semibold text-darkBlue">
           Student Community

@@ -53,7 +53,7 @@ function CourseDetail() {
 
   return (
     <div>
-      <div className="bg-[#F0F7FF] font-Poppins min-h-screen py-10 md:w-[82vw] mr-4 flex flex-col ">
+      <div className="bg-[#fcfafa] font-Poppins min-h-screen py-10 md:w-[82vw] mr-4 flex flex-col ">
         <CourseDetailNavbar />
         <div className='grid md:grid-cols-3 grid-cols-1 md:ml-10 '>
           <div className='flex col-span-2 flex-col bg-white rounded-xl mt-4 md:p-4'>
