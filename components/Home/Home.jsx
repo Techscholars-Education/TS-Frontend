@@ -26,11 +26,11 @@ const Home = () => {
   return (
     <>
       {isLoaded ? (
-        <div className="h-screen w-full flex items-center justify-center">
+        <div className="h-screen w-full flex items-center justify-center border-2 ">
           <Image
             src={sciencebook}
             alt="science-book-loader"
-            className="lg:h-[20vh] lg:w-[10vw] h-[20vh] w-[35vw]  "
+            className="w-[180px]  "
           />
         </div>
       ) : (
