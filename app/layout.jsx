@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head></head>
-      <body>
+      <body suppressHydrationWarning={true}>
         <NextTopLoader color="#0079FC" height={6} />
         <GoogleProvider>
           <AuthContextProvider>{children}</AuthContextProvider>

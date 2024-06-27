@@ -14,6 +14,7 @@ import { IoIosArrowRoundBack } from "react-icons/io";
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
 import gif1 from "@/public/Ts-Loader.gif";
+import successLoader from "@/public/Auth/successLoader.gif";
 import { useCookieStore } from "@/hooks/useStore";
 
 const Page = () => {
@@ -23,9 +24,10 @@ const Page = () => {
   const [loading, setLoading] = useState(false);
   const [domLoaded, setDomLoaded] = useState(false);
   const [authg, setAuthg] = useState("");
+  const [showLoader, setShowLoader] = useState(false);
 
   const router = useRouter();
-  const {cookieData} = useCookieStore()
+  const { cookieData } = useCookieStore();
 
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -58,7 +60,13 @@ const Page = () => {
       setLoading(true);
       const res = await login(email, password);
       setLoading(false);
-      router.replace("/dashboard/home");
+
+      if (res) {
+        setShowLoader(true);
+        setTimeout(() => {
+          router.replace("/dashboard/home");
+        }, 2000); // Show loader for 2 seconds before redirecting to dashboard
+      }
     } catch (error) {
       console.log("Some error occured in login");
     }
@@ -67,7 +75,6 @@ const Page = () => {
   const glogin = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
       setAuthg(tokenResponse.access_token);
-      console.log(tokenResponse.access_token)
       const userInfo = await fetch(
         `https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=${tokenResponse.access_token}`
       ).then((res) => res.json());
@@ -79,15 +86,15 @@ const Page = () => {
   useEffect(() => {
     if (authg === "") return;
     if (authg) {
-      const sessionExpirationTime = new Date(new Date().getTime() + 5 * 60 * 60 * 1000);
-      console.log(authg)
+      const sessionExpirationTime = new Date(
+        new Date().getTime() + 5 * 60 * 60 * 1000
+      );
+      console.log(authg);
       Cookies.set("access_token", authg, { expires: sessionExpirationTime });
-      cookieData(authg)
+      cookieData(authg);
 
       router.replace("/dashboard/my-course");
-      // window.location.reload();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [authg]);
 
   useEffect(() => {
@@ -205,7 +212,7 @@ const Page = () => {
                     )}
                   </button>
                   <button
-                    onClick={glogin}
+                    // onClick={glogin}
                     className="bg-gray-100 text-darkBlue rounded-full py-2 text-sm md:text-md w-full font-normal mt-4 flex items-center justify-center "
                   >
                     <Image src={Google} className="w-8" alt="google-logo" />{" "}
@@ -240,16 +247,25 @@ const Page = () => {
             <div className=" hidden lg:block">
               <Image src={Login} alt="login-svg" className="h-screen w-full" />
             </div>
+            {showLoader && (
+              <div className="fixed inset-0 bg-white flex flex-col items-center justify-center ">
+                <Image
+                  src={successLoader}
+                  alt="success-loader"
+                  className="w-[180px]"
+                />
+                <br />
+                <h3 className=" animate-pulse text-base md:text-xl xl:text-2xl font-semibold text-blue-500 tracking-wider font-Poppins">
+                  Loading dashboard...
+                </h3>
+              </div>
+            )}
           </section>
         </>
       ) : (
         <>
           <div className="h-screen w-full flex items-center justify-center">
-            <Image
-              src={gif1}
-              alt="gif-loader"
-              className="lg:h-[20vh] lg:w-[10vw] h-[20vh] w-[35vw]  "
-            />
+            <Image src={gif1} alt="gif-loader" className="w-[180px]" />
           </div>
         </>
       )}
