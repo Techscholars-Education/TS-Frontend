@@ -65,7 +65,7 @@ const Page = () => {
         setShowLoader(true);
         setTimeout(() => {
           router.replace("/dashboard/home");
-        }, 3000); // Show loader for 3 seconds before redirecting to dashboard
+        }, 2000); // Show loader for 2 seconds before redirecting to dashboard
       }
     } catch (error) {
       console.log("Some error occured in login");
@@ -94,9 +94,7 @@ const Page = () => {
       cookieData(authg);
 
       router.replace("/dashboard/my-course");
-      // window.location.reload();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [authg]);
 
   useEffect(() => {
@@ -257,8 +255,8 @@ const Page = () => {
                   className="w-[180px]"
                 />
                 <br />
-                <h3 className=" animate-pulse text-base md:text-xl xl:text-3xl font-bold text-TechBlue/90 tracking-wider font-Poppins">
-                  Loading Dashboard ...
+                <h3 className=" animate-pulse text-base md:text-xl xl:text-2xl font-semibold text-blue-500 tracking-wider font-Poppins">
+                  Loading dashboard...
                 </h3>
               </div>
             )}
@@ -267,11 +265,7 @@ const Page = () => {
       ) : (
         <>
           <div className="h-screen w-full flex items-center justify-center">
-            <Image
-              src={gif1}
-              alt="gif-loader"
-              className="lg:h-[20vh] lg:w-[10vw] h-[20vh] w-[35vw]  "
-            />
+            <Image src={gif1} alt="gif-loader" className="w-[180px]" />
           </div>
         </>
       )}
