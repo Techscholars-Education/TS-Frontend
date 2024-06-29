@@ -30,7 +30,7 @@ const useGetway = () => {
         body: raw,
        });
        const data = await res.json();
-       console.log(data.order_id);
+      //  console.log(data.order_id);
        orderIdData(data.order_id)
        router.push(data.payment_links.web)
 
