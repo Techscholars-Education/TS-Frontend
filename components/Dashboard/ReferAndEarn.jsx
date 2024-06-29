@@ -7,9 +7,9 @@ import CopyText from '@/app/dashboard/refer-and-earn/_components/CopyText';
 const ReferAndEarn = () => {
     return (
         <>
-            <div className="bg-white font-Poppins h-screen w-full ">
+            <div className="bg-white font-Poppins h-screen w-full overflow-hidden">
                 <DashboardNavbar title={"Refer and earn"} />
-                <div className="my-6 flex flex-col mr-2 bg-blue-50 h-[82vh] max-w-full pl-5 pr-5 pt-5">
+                <div className="my-6 flex flex-col mr-2 bg-[#fcfafa] h-[82vh] max-w-full pl-5 pr-5 pt-5 ">
                     <div className='max-w-[82vw] h-[65vh] bg-white rounded-md p-5 pt-[7vw] pl-9 flex relative overflow-hidden'>
                         <div className='flex flex-col gap-12 w-[23vw]'>
                             <div className='flex flex-col gap-3'>

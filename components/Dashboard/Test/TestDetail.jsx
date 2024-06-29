@@ -29,7 +29,7 @@ function TestDetail() {
           }
         };
 
-        const response = await axios.get(`https://api.techscholars.co.in/pdt/v1/ts/list?category_id=${selectedCategory}`, axiosConfig);
+        const response = await axios.get(`https://api.techscholars.in/pdt/v1/ts/list?category_id=${selectedCategory}`, axiosConfig);
         console.log(response);
         setTestSeries(Array.isArray(response?.data?.test_series) ? response?.data?.test_series : []);
       } catch (error) {

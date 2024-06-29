@@ -33,7 +33,7 @@ function DashboardNavbar(props) {
   return (
     <div className="flex flex-wrap max-w-full place-items-center py-4 bg-white">
       <section className="relative ">
-        <nav className="flex justify-between text-black md:w-[84vw] ">
+        <nav className="flex justify-between text-black md:min-w-[83vw] ">
           <div className="md:px-5 xl:px-12 flex w-full items-center justify-between">
             <div className="flex flex-col w-72 md:w-96">
               {/* <div className='flex bg-slate-200 p-2 px-3 rounded-full w-24 m-3 mt-2 mb-0 md:ml-6 '>
