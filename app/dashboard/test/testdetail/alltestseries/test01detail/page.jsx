@@ -8,7 +8,7 @@ import { FaBook, FaCalendarAlt, FaArrowRight,FaLock } from 'react-icons/fa';
 function page() {
   return (
     <div>
-      <section className="flex w-full">
+      <section className="flex w-full overflow-x-hidden">
         <LeftNavigation />
         <div className='flex flex-col'>
 
