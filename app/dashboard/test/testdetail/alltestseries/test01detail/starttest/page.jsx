@@ -12,7 +12,7 @@ function page() {
     const questions = Array.from({ length: 30 }, (_, index) => index + 1);
     return (
 
-        <div className="flex w-full">
+        <div className="flex w-full overflow-x-hidden ">
             <LeftNavigation />
             <div className='flex flex-col'>
 

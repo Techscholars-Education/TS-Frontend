@@ -8,7 +8,7 @@ import React from 'react'
 export default function page() {
     return (
         <div>
-            <section className="flex w-full">
+            <section className="flex w-full overflow-x-hidden">
                 <LeftNavigation></LeftNavigation>
                 <div className='flex flex-col'>
 

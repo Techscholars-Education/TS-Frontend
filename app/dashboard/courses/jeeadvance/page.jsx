@@ -4,7 +4,7 @@ import Classes from '../_Components/Course/Jee/Classes'
 
 const Page = () => {
   return (
-    <section className="flex w-full">
+    <section className="flex w-full overflow-x-hidden">
     <LeftNavigation />
      <Classes/>
     </section>
