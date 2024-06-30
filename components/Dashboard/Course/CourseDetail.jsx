@@ -155,7 +155,7 @@ function CourseDetail() {
                     href="#"
                     className=" w-full  p-3 px-4 rounded-full text-center bg-TechBlue text-sm text-white"
                   >
-                    ENROLLED
+                    Buy Now
                   </Link>
                 </div>
               </div>
