@@ -10,7 +10,7 @@ const useLogin = () => {
   const [checking, setChecking] = useState(false);
   const login = async (username, password) => {
     const myHeaders = new Headers();
-    console.log(username, password);
+    // console.log(username, password);
     myHeaders.append("Content-Type", "application/json");
     try {
       const res = await fetch("https://api.techscholars.in/auth/v1/login", {

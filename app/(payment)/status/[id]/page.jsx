@@ -1,11 +1,10 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect} from "react";
 import Image from "next/image";
 import Footer from "@/components/Footer";
 import addtocart from "@/public/payment/addtocart.png";
-import { useCookieStore, useCourseStore } from "@/hooks/useStore";
+import { useCookieStore} from "@/hooks/useStore";
 import gif1 from "@/public/Ts-Loader.gif";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useParams } from 'next/navigation';
 import img1 from "@/public/tick.gif"
@@ -22,7 +21,6 @@ const Page = () => {
   const [status, setStatus] = useState('loading');
   const {cookie} = useCookieStore()
    
-
  useEffect(()=>{
   if (!id) return;
     
@@ -77,7 +75,6 @@ const { formattedDate, formattedTime } = formatDateTime(order ? order.date_creat
 
   return (
     <>
-      <ToastContainer />
       <section className={`grid grid-cols-1 lg:grid-cols-2 gap-12 w-full md:w-11/12 lg:md:w-10/12 md:mx-auto min-h-[80vh] py-24 mx-auto ${isModalOpen ? "blur-sm" : ""}`}>
         <div className="px-10 font-Poppins">
           <div className="pb-6">
