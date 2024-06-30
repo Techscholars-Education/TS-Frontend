@@ -57,7 +57,7 @@ const HomePageWeb = () => {
 
   const [isChecked, setIsChecked] = useState(false);
   const [userInfo, setUserInfo] = useState(null);
- 
+
 
 
   const { cookie } = useCookieStore()
@@ -159,18 +159,18 @@ const HomePageWeb = () => {
 
   return (
     <>
-      <div className=" font-Poppins min-h-screen  w-full bg-[#fcfafa] overflow-x-hidden ">
+      <div className=" font-Poppins min-h-screen  w-full bg-[#fcfafa] overflow-x-hidden overflow-y-hidden ">
         <DashboardNavbar title={`Welcome back${userInfo?.given_name ? `, ${userInfo.given_name}` : ''}! 👋 `} subtitle="" />
-        <div className="md:ml-2">
+        <div className="md:mx-6">
 
-          <div className=" my-4  md:mx-6 flex flex-col md:flex-row ">
-            <div className="md:w-[35vw] w-64  flex flex-col">
+          <div className=" my-3  md:mx-4 grid md:grid-cols-2 grid-cols-1 ">
+            <div className="  flex flex-col">
               <Tooltip
                 title="This feature is locked as of now. Coming soon!"
                 placement="right"
                 arrow
               >
-                <div className="bg-white rounded-lg flex flex-col w-[350px] md:w-[528px] md:h-[320px]">
+                <div className="bg-white rounded-lg flex flex-col w-[350px] md:w-[564px] md:h-[320px]">
                   <p className="font-semibold p-4 pb-0">Performance analysis</p>
                   <div className="relative blur-[2px] ">
                     <FiLock className="absolute w-8 h-8 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-500" style={{ color: 'black' }} />
@@ -190,7 +190,7 @@ const HomePageWeb = () => {
 
                 </div>
               </Tooltip>
-              <div className="bg-white rounded-lg mt-3 p-4 py-0  w-[350px] md:w-[528px]">
+              <div className="bg-white rounded-lg mt-3 p-4 py-0  w-[350px] md:w-[564px]">
                 <p className="font-semibold ">Watch Time</p>
                 <div className="relative blur-[2px] ">
                   <FiLock className="absolute w-8 h-8 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-500" style={{ color: 'black' }} />
@@ -207,12 +207,12 @@ const HomePageWeb = () => {
               </div>
 
             </div>
-            <div className="  flex flex-col md:w-[528px] ml-3 ">
+            <div className=" mr-12">
 
-              <div className="  flex flex-col    ">
-                <div className="bg-white md:mb-2 md:mt-0 rounded-xl flex align-middle justify-center  ">
+              <div className="  flex flex-col bg-white rounded-lg  md:mb-2    ">
+                <div className="md:mt-0 rounded-xl flex align-middle md:mx-6  ">
                   <div
-                    className="px-2"
+                    className="w-full"
 
                   >
                     <DateRange
@@ -239,14 +239,14 @@ const HomePageWeb = () => {
 
               </div>
               <div className="flex flex-col  rounded-lg  bg-white ml-0  w-[350px] md:w-full ">
-                <div className="flex justify-between m-4 mb-4">
-                  <span className="font-[550] text-[16px]">Topic Progress</span>
+                <div className="flex justify-between m-4 ml-3 mb-4">
+                  <span className="font-[550] text-[16px] md:ml-5">Topic Progress</span>
                 </div>
                 <div className="relative blur-[1.5px]  ">
                   <FiLock className="absolute w-8 h-8 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-500" style={{ color: 'black' }} />
                   <div className="grid md:grid-cols-2 grid-cols-1 p-4 pt-0 gap-4">
                     {jeeTopics.map((topic, index) => (
-                      <div key={index} className="flex justify-between ">
+                      <div key={index} className="flex justify-between md:ml-5 ">
                         <div className="flex flex-col">
                           <p className={`font-semibold ${topic.color}`}>{topic.subject}</p>
                           <p className="text-[12px] text-gray-400">{topic.chapter}</p>
@@ -257,8 +257,8 @@ const HomePageWeb = () => {
                   </div>
                 </div>
               </div>
-              <Todo/>
-             
+              <Todo />
+
             </div>
 
           </div>
