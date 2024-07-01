@@ -19,9 +19,17 @@ const Faculties = (props) => {
     autoplay: true,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1440,
         settings: {
           slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
         },
@@ -46,7 +54,7 @@ const Faculties = (props) => {
   return (
     <section
       className={`${
-        props.calling === "home" ? "bg-gray-50 " : "bg-gray-100"
+        props.calling === "home" ? "bg-stone-50 " : "bg-gray-100"
       }py-10 font-Poppins w-full mx-auto `}
     >
       <div className=" w-full mx-auto  rounded-xl ">
@@ -54,7 +62,7 @@ const Faculties = (props) => {
           <h5
             className={`text-xs ${
               props.calling === "home" ? "" : "hidden"
-            } font-medium bg-gray-100 text-TechBlue bg-TechBlue/10 font-Poppins py-2 rounded-full px-4 inline-block`}
+            } font-medium bg-blue-100 text-TechBlue bg-TechBlue/10 font-Poppins py-2 rounded-full px-4 inline-block`}
           >
             Faculties
           </h5>
@@ -75,9 +83,9 @@ const Faculties = (props) => {
             ? facultiesData
                 .filter((item) => [1, 2, 3, 4, 5, 7].includes(item.id))
                 .map((item) => <Facultycard key={item.id} item={item} />)
-            : facultiesData.map((item) => (
-                <Facultycard key={item.id} item={item} />
-              ))}
+            : facultiesData
+                .filter((item) => [3, 4, 6, 7, 1].includes(item.id))
+                .map((item) => <Facultycard key={item.id} item={item} />)}
         </Slider>
       </div>
     </section>

@@ -4,10 +4,10 @@ import { RxCross2 } from "react-icons/rx";
 import Link from "next/link";
 const Price = () => {
   return (
-    <section className="bg-gray-50 py-16 font-Poppins w-full  mx-auto  ">
+    <section className="bg-[#F7FAFF] py-16 font-Poppins w-full  mx-auto  ">
       <div className=" xl:w-10/12 2xl:w-[1100px] mx-auto  rounded-xl ">
         <div className=" text-center">
-          <h5 className="text-xs font-medium bg-gray-100 text-TechBlue bg-TechBlue/10 font-Poppins py-2 rounded-full px-4 inline-block">
+          <h5 className="text-xs font-medium bg-blue-100 text-TechBlue bg-TechBlue/10 font-Poppins py-2 rounded-full px-4 inline-block">
             Pricing
           </h5>
         </div>
@@ -23,7 +23,7 @@ const Price = () => {
       </div>
 
       <div className=" grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 w-11/12 xl:w-10/12 2xl:w-[1100px] mx-auto my-10  ">
-        <div className="border-2 border-gray-200 rounded-t-xl hover:border-black duration-300 ">
+        <div className="border-2 border-gray-200 rounded-t-xl hover:border-black duration-300 bg-white ">
           <div className="p-6 space-y-4 ">
             <h2 className="font-bold text-xl  md:text-3xl text-darkBlue font-Inter flex items-center">
               Starter
@@ -106,7 +106,7 @@ const Price = () => {
           </div>
         </div>
 
-        <div className="border-2 border-gray-200 rounded-t-xl hover:border-black duration-300  relative ">
+        <div className="border-2 border-gray-200 rounded-t-xl hover:border-black duration-300  bg-white relative ">
           <div className="p-6 space-y-4 ">
             <h2 className="font-bold text-xl  md:text-3xl text-darkBlue font-Inter flex items-center">
               Advanced{" "}
@@ -192,7 +192,7 @@ const Price = () => {
           </div>
         </div>
 
-        <div className="border-2 border-gray-200 rounded-t-xl hover:border-black duration-300  ">
+        <div className="border-2 border-gray-200 rounded-t-xl hover:border-black duration-300  bg-white ">
           <div className="p-6 space-y-4 ">
             <h2 className="font-bold text-xl  md:text-3xl text-darkBlue font-Inter flex items-center">
               Ultimate
