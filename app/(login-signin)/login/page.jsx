@@ -95,6 +95,7 @@ const Page = () => {
 
       router.replace("/dashboard/my-course");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps 
   }, [authg]);
 
   useEffect(() => {

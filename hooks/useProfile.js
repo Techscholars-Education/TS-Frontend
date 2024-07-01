@@ -1,24 +1,24 @@
 "use client"
 
 import { useState } from "react";
-import { useCookieStore, useProfileStore} from "./useStore";
+import {useProfileStore} from "./useStore";
 import { toast } from "react-toastify";
+import { tsUrl } from '@/config';
+import Cookies from "js-cookie";
 const useProfile = () => { 
 
   const {profilesData} = useProfileStore()
-
-    const {cookie} = useCookieStore()
+  let cookies = Cookies.get("access_token")
 	const [loading, setLoading] = useState(false);
 		const useprofile = async () => {
 			const myHeaders = new Headers();
-            myHeaders.append("authorization", cookie);
+            myHeaders.append("authorization", cookies);
             try {
-              const res = await fetch("https://api.techscholars.in/auth/profile/view", {
+              const res = await fetch(`${tsUrl}/auth/profile/view`, {
                method: "GET",
                headers: myHeaders,
               });
               const data = await res.json();
-              // console.log(data);
               profilesData(data)
               
             } catch (error) {
