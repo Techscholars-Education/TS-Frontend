@@ -3,7 +3,6 @@ import { useState, useEffect} from "react";
 import Image from "next/image";
 import Footer from "@/components/Footer";
 import addtocart from "@/public/payment/addtocart.png";
-import { useCookieStore} from "@/hooks/useStore";
 import gif1 from "@/public/Ts-Loader.gif";
 import "react-toastify/dist/ReactToastify.css";
 import { useParams } from 'next/navigation';
@@ -12,6 +11,8 @@ import img2 from "@/public/pending.gif"
 import img3 from "@/public/cross.gif"
 import img4 from "@/public/error.gif"
 import Link from "next/link";
+import Cookies from "js-cookie";
+import { tsUrl } from "@/config";
 
 const Page = () => {
   const params = useParams();
@@ -19,21 +20,21 @@ const Page = () => {
   const [order, setOrder] = useState();
   const [isModalOpen, setIsModalOpen] = useState(true);
   const [status, setStatus] = useState('loading');
-  const {cookie} = useCookieStore()
+  let cookies = Cookies.get("access_token")
    
  useEffect(()=>{
   if (!id) return;
     
         const fetchData = async () => {
           const myHeaders = new Headers();
-          myHeaders.append("authorization", cookie);
+          myHeaders.append("authorization", cookies);
           myHeaders.append("Content-Type", "application/json");
        
           const raw = JSON.stringify({
             "order_id": id
           });
                 
-          const res = await fetch("https://api.techscholars.in/order/handleJuspayResponse", {
+          const res = await fetch(`${tsUrl}/order/handleJuspayResponse`, {
             method: "POST",
             headers: myHeaders,
             body: raw,
