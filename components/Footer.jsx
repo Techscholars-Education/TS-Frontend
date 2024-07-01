@@ -1,5 +1,5 @@
 "use client";
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { toast, ToastContainer } from "react-toastify";
@@ -10,6 +10,7 @@ import TsLogo from "../public/Home/TsLogo.svg";
 import { usePathname } from "next/navigation";
 import useSendmessage from "@/hooks/useSendmessage";
 import "react-toastify/dist/ReactToastify.css";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -60,6 +61,9 @@ const Footer = () => {
             <FaFacebook className="text-2xl md:text-3xl" />
             <Link href="https://www.linkedin.com/company/techscholarsindia/mycompany/verification/">
               <FaLinkedin className="text-2xl md:text-3xl hover:text-blue-600 duration-200" />
+            </Link>
+            <Link href="https://twitter.com/Techscholars_">
+              <FaXTwitter className="text-2xl md:text-3xl hover:text-blue-600 duration-200" />
             </Link>
           </div>
         </div>
