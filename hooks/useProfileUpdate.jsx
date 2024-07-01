@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useCookieStore } from "./useStore";
 import { toast } from "react-toastify"
+import { tsUrl } from "@/config";
 const useProfileUpdate = () => {
 
    const router = useRouter()
@@ -18,7 +19,7 @@ const useProfileUpdate = () => {
             myHeaders.append("Content-Type", "application/json");
             myHeaders.append("authorization", cookie);
             try {
-                const res = await fetch("https://api.techscholars.in/auth/profile/update", {
+                const res = await fetch(`${tsUrl}/auth/profile/update`, {
                     method: "POST",
                     headers: myHeaders,
                     body: JSON.stringify({ 

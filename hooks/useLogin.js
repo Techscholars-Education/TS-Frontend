@@ -3,6 +3,7 @@ import Cookies from "js-cookie";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { useCookieStore } from "./useStore";
+import { tsUrl } from "@/config";
 
 const useLogin = () => {
   const { cookieData } = useCookieStore();
@@ -13,7 +14,7 @@ const useLogin = () => {
     // console.log(username, password);
     myHeaders.append("Content-Type", "application/json");
     try {
-      const res = await fetch("https://api.techscholars.in/auth/v1/login", {
+      const res = await fetch(`${tsUrl}/auth/v1/login`, {
         method: "POST",
         headers: myHeaders,
         body: JSON.stringify({ username, password }),

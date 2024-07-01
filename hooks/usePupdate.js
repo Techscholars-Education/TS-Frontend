@@ -1,10 +1,11 @@
 "use client";
+import { tsUrl } from "@/config";
 import axios from "axios";
 const usePupdate = () => {
   const updatePassword = async (newPassword, token) => {
     try {
       const response = await axios.put(
-        "https://api.techscholars.in/auth/reset/password/verify",
+        `${tsUrl}/auth/reset/password/verify`,
         {
           password: newPassword,
           access_token: token,

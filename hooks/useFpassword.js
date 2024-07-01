@@ -1,10 +1,11 @@
 "use client";
+import { tsUrl } from "@/config";
 import axios from "axios";
 const useFpassword = () => {
   const forgotPassword = async (email) => {
     try {
       const response = await axios.post(
-        "https://api.techscholars.in/auth/reset/password",
+        `${tsUrl}/auth/reset/password`,
         {
           email,
         }
