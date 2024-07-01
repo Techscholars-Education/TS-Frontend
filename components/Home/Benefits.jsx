@@ -2,10 +2,10 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import ratings from "../../public/Home/ratings.png";
-import schdule_time from "../../public/Home/schdule_time.png";
-import live_class from "../../public/Home/live_class.png";
-import login from "../../public/Home/login.png";
+import Benefit1 from "../../public/Home/Benefit1.svg";
+import Benefit2 from "../../public/Home/Benefit2.svg";
+import Benefit3 from "../../public/Home/Benefit3.svg";
+import Benefit4 from "../../public/Home/Benefit4.svg";
 import { TiArrowRight } from "react-icons/ti";
 
 const Benefits = () => {
@@ -14,12 +14,16 @@ const Benefits = () => {
       <div className=" w-11/12 xl:w-9/12 2xl:w-[1100px] grid grid-cols-1 md:grid-cols-2  mx-auto gap-4 ">
         {/* container -1 */}
         <div className=" bg-[#DCD9F866]/30 rounded-xl flex px-6 py-6 lg:py-8 xl:py-12 font-Poppins hover:shadow-xl duration-200 transition-all ">
-          <div className="my-auto w-1/2">
-            <Image className=" w-full " src={ratings} alt="rating-icon"></Image>
+          <div className="my-auto w-2/3">
+            <Image
+              className=" w-full "
+              src={Benefit1}
+              alt="classes-icon"
+            ></Image>
           </div>
           <div className="w-full px-4 lg:px-10  ">
             <h3 className="text-darkBlue font-semibold mb-1 text-sm md:text-base lg:text-xl ">
-              High quality Content
+              High quality Classes
             </h3>
             <p className="text-xs md:text-sm text-gray-600">
               Experience unmatched quality in our courses: from basics to
@@ -35,17 +39,17 @@ const Benefits = () => {
             </div>
           </div>
         </div>
-        <div className=" bg-[#FFE6DF]/30 rounded-xl flex px-6 py-6 lg:py-8 xl:py-12 font-Poppins hover:shadow-xl duration-200 transition-all ">
+        <div className=" bg-[#FFE6DF]/30 rounded-xl flex px-3 py-6 lg:py-8 xl:py-12 font-Poppins hover:shadow-xl duration-200 transition-all ">
           <div className="my-auto w-1/2">
             <Image
               className=" w-full "
-              src={schdule_time}
-              alt="timing-icon"
+              src={Benefit2}
+              alt="doubt-solving-icon"
             ></Image>
           </div>
           <div className="w-full px-4 lg:px-10   ">
             <h3 className="text-darkBlue font-semibold mb-1 text-sm md:text-base lg:text-xl ">
-              Doubt solving classes
+              Live Doubt solving classes
             </h3>
             <p className="text-xs md:text-sm text-gray-600">
               Unlock clarity in our Doubt Solving Classes: dedicated sessions
@@ -61,15 +65,15 @@ const Benefits = () => {
             </div>
           </div>
         </div>
-        <div className=" bg-[#FCE2EB]/30 rounded-xl flex px-6 py-6 lg:py-8 xl:py-12 font-Poppins hover:shadow-xl duration-200 transition-all ">
-          <div className="my-auto w-1/2">
+        <div className=" bg-[#FCE2EB]/30 rounded-xl flex px-10 py-6 lg:py-8 xl:py-12 font-Poppins hover:shadow-xl duration-200 transition-all ">
+          <div className="my-auto w-2/2">
             <Image
               className=" w-full "
-              src={live_class}
-              alt="liveclass-icon"
+              src={Benefit3}
+              alt="Weekly-test-icon"
             ></Image>
           </div>
-          <div className="w-full px-4 lg:px-10   ">
+          <div className="w-full px-4 lg:pl-20   ">
             <h3 className="text-darkBlue font-semibold mb-1 text-sm md:text-base lg:text-xl ">
               Weekly tests
             </h3>
@@ -89,11 +93,15 @@ const Benefits = () => {
         </div>
         <div className=" bg-green-50 rounded-xl flex px-6 py-6 lg:py-8 xl:py-12 font-Poppins hover:shadow-xl duration-200 transition-all ">
           <div className="my-auto w-1/2">
-            <Image className=" w-full " src={login} alt="rating-icon"></Image>
+            <Image
+              className=" w-full "
+              src={Benefit4}
+              alt="practice-icon"
+            ></Image>
           </div>
           <div className="w-full px-4 lg:px-10   ">
             <h3 className="text-darkBlue font-semibold mb-1 text-sm md:text-base lg:text-xl ">
-              DPPs
+              Daily Practice Questions
             </h3>
             <p className="text-xs md:text-sm text-gray-600">
               Dive into enriched learning with our meticulously curated DPP and
