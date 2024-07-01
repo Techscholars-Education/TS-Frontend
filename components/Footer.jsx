@@ -54,6 +54,12 @@ const Footer = () => {
               Techscholars
             </h1>
           </div>
+          <div className=" text-xs md:text-sm lg:text-base xl:text-lg ">
+            <p>
+              Transforming average students into toppers with our innovative
+              teaching{" "}
+            </p>
+          </div>
           <div className="flex space-x-4 my-2">
             <Link href="https://www.instagram.com/techscholars.in/reels/">
               <FaInstagram className="text-2xl md:text-3xl hover:text-pink-600 duration-200" />
@@ -75,7 +81,7 @@ const Footer = () => {
             Privacy Policy
           </Link>
           <Link className="text-sm lg:text-base" href="/terms-conditions">
-            Terms and services
+            Terms of services
           </Link>
           <Link
             className="text-sm lg:text-base"
