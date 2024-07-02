@@ -5,7 +5,7 @@ import Image from "next/image";
 import iconprofile from "../../public/Dashboard/social-page.gif";
 import Link from "next/link";
 import useProfile from "@/hooks/useProfile";
-import { IoMdArrowBack } from "react-icons/io";
+import { IoIosArrowDown } from "react-icons/io";
 
 
 function DashboardNavbar(props) {
@@ -61,7 +61,7 @@ function DashboardNavbar(props) {
                 />
               </form>
 
-              <button className="hover:bg-[#0079FC] hover:text-white bg-blue-100 h-8 w-8 p-2 flex items-center justify-center rounded-md transition-all ease-linear duration-300">
+              <button className="hover:bg-[#0079FC] border border-gray-200 hover:text-white hover:border-none bg-[#fcfafa] h-8 w-8 p-2 flex items-center justify-center rounded-md transition-all ease-linear duration-300">
                 <FiSearch
                   className="h-6 w-6"
                   onClick={() => {
@@ -70,7 +70,7 @@ function DashboardNavbar(props) {
                 />
               </button>
               <a
-                className="hover:bg-[#0079FC] hover:text-white bg-blue-100 h-8 w-8 p-2 flex items-center justify-center rounded-md transition-all ease-linear duration-300"
+                className="hover:bg-[#0079FC] hover:text-white border border-gray-200 hover:border-none bg-[#fcfafa] h-8 w-8 p-2 flex items-center justify-center rounded-md transition-all ease-linear duration-300"
                 href="#"
               >
                 <FiBell className="h-6 w-6 " />
@@ -82,7 +82,7 @@ function DashboardNavbar(props) {
 
               <Link
                 href={"/dashboard/profile"}
-                className="flex items-center hover:text-gray-200"
+                className="flex items-center hover:text-TechBlue"
               >
                 {userImage ? <Image
                   className="h-8 w-8 rounded-md"
@@ -98,6 +98,7 @@ function DashboardNavbar(props) {
                   width="auto"
                   height="auto"
                 />}
+                <IoIosArrowDown className="ml-2"/>
               </Link>
             </div>
           </div>

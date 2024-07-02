@@ -1,31 +1,37 @@
 "use client";
-import { useState, useEffect} from "react";
+import { useState, useEffect, useLayoutEffect} from "react";
 import Image from "next/image";
 import Footer from "@/components/Footer";
 import addtocart from "@/public/payment/addtocart.png";
 import gif1 from "@/public/Ts-Loader.gif";
 import "react-toastify/dist/ReactToastify.css";
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import img1 from "@/public/tick.gif"
 import img2 from "@/public/pending.gif"
 import img3 from "@/public/cross.gif"
 import img4 from "@/public/error.gif"
 import Link from "next/link";
 import Cookies from "js-cookie";
-import { tsUrl } from "@/config";
+import { frontTsUrl, tsUrl } from "@/config";
 
 const Page = () => {
   const params = useParams();
+  const router = useRouter()
   const id  = params.id;
   const [order, setOrder] = useState();
   const [isModalOpen, setIsModalOpen] = useState(true);
   const [status, setStatus] = useState('loading');
   let cookies = Cookies.get("access_token")
    
+ useLayoutEffect(()=>{
+  if (!id) return;
+      router.push(`${frontTsUrl}/status/${id}`)
+// eslint-disable-next-line react-hooks/exhaustive-deps  
+ },[id])
+
  useEffect(()=>{
   if (!id) return;
-    
-        const fetchData = async () => {
+      const fetchData = async () => {
           const myHeaders = new Headers();
           myHeaders.append("authorization", cookies);
           myHeaders.append("Content-Type", "application/json");
