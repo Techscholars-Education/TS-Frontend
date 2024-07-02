@@ -145,7 +145,7 @@ const Page = () => {
                     <input
                       type="email"
                       id="email"
-                      className="bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                      className="bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-black focus:border-black block w-full p-3.5 outline-none "
                       placeholder="johndoe@example.com"
                       required
                       value={inputs.email}
@@ -165,7 +165,7 @@ const Page = () => {
                       <input
                         type="text"
                         id="first_name"
-                        className="bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                        className="bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-black focus:border-black block w-full p-3.5 outline-none "
                         placeholder="John"
                         required
                         value={inputs.first_name}
@@ -184,7 +184,7 @@ const Page = () => {
                       <input
                         type="text"
                         id="last_name"
-                        className="bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                        className="bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-black focus:border-black block w-full p-3.5 outline-none "
                         placeholder="Doe"
                         required
                         value={inputs.last_name}
@@ -204,7 +204,7 @@ const Page = () => {
                     <input
                       type="phone"
                       id="phone"
-                      className="bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                      className="bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-black focus:border-black block w-full p-3.5 outline-none "
                       placeholder="XXXXXXXXXX"
                       required
                       value={inputs.phoneno}
@@ -213,6 +213,7 @@ const Page = () => {
                       }
                     />
                   </div>
+
                   <div className="mb-3">
                     <label
                       htmlFor="password"
@@ -220,29 +221,27 @@ const Page = () => {
                     >
                       Password
                     </label>
-                    <div className="flex justify-end items-center">
+                    <div className="flex justify-end items-center border border-gray-300 rounded-lg focus-within:border-black focus-within:border ">
                       <input
                         type={showPassword ? "text" : "password"}
                         id="password"
-                        className="bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mr-2 "
+                        className="bg-gray-50 text-gray-700 text-sm focus:ring-0 focus:outline-none block w-full px-2 rounded-lg  py-3.5"
                         placeholder="@Example$1234"
                         required
-                        value={inputs.password}
                         onChange={(e) =>
                           setInputs({ ...inputs, password: e.target.value })
                         }
                       />
-
                       <div
-                        className="cursor-pointer"
+                        className="cursor-pointer mr-2"
                         onClick={() => {
                           setShowPassword(!showPassword);
                         }}
                       >
                         {showPassword ? (
-                          <IoIosEye className="w-10  rounded-xl h-full py-1 text-gray-500" />
+                          <IoIosEye className="w-10 rounded-xl h-full py-1 text-gray-500" />
                         ) : (
-                          <IoIosEyeOff className="w-10  rounded-xl h-full py-1 text-gray-500" />
+                          <IoIosEyeOff className="w-10 rounded-xl h-full py-1 text-gray-500" />
                         )}
                       </div>
                     </div>
@@ -253,19 +252,17 @@ const Page = () => {
                     </label>
                     <input
                       type="password"
-                      className="bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+                      className="bg-gray-50 border border-gray-300 text-gray-700 text-sm rounded-lg focus:ring-black focus:border-black block w-full p-3.5 outline-none "
                       placeholder="@Example$1234"
                       required
                       onChange={handleConfirmPasswordChange}
                     />
                   </div>
-
                   <div className="py-2 font-Poppins">
                     <p className="text-xs md:text-sm text-red-600 font-normal">
                       {!isPasswordMatch && "Passwords does not match"}
                     </p>
                   </div>
-
                   {activationMsg ? (
                     <>
                       <div className=" bg-green-100 rounded-xl py-4 pl-4">
@@ -328,7 +325,6 @@ const Page = () => {
                       </button>
                     </>
                   )}
-
                   <div className="mb-10 mt-6 text-xs md:text-sm flex">
                     <p className="text-gray-600">Already have an account ?</p>{" "}
                     <Link href="/login" className="text-TechBlue mx-2">
