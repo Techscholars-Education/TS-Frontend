@@ -84,7 +84,7 @@ const Faculties = (props) => {
             ? facultiesData
                 .filter((item) => [3, 5, 2, 8].includes(item.id))
                 .map((item) => <Facultycard key={item.id} item={item} />)
-            : props.examType === "JEE"
+            : props.examType === "NEET"
             ? facultiesData
                 .filter((item) => [1, 2, 3, 4, 5, 7].includes(item.id))
                 .map((item) => <Facultycard key={item.id} item={item} />)
