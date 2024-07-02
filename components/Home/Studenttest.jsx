@@ -38,7 +38,7 @@ const Studenttest = () => {
   };
 
   return (
-    <section className="bg-gray-100 to-white py-16 font-Poppins w-full mx-auto  ">
+    <section className="bg-gray-50 to-white py-16 font-Poppins w-full mx-auto  ">
       <div className=" w-full mx-auto  rounded-xl">
         <div className=" text-center">
           <h5 className="text-xs font-medium bg-blue-100 text-TechBlue bg-TechBlue/10 font-Poppins py-2 rounded-full px-4 inline-block">
