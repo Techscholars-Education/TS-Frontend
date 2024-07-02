@@ -1,10 +1,11 @@
+import { tsUrl } from "@/config";
 import axios from "axios";
 
 const useSendmessage = () => {
   const sendMessage = async (email, message) => {
     try {
       const response = await axios.post(
-        "https://api.techscholars.in/pdt/v1/get_in_touch/send_email",
+        `${tsUrl}/pdt/v1/get_in_touch/send_email`,
         { email, message },
         { headers: { "Content-Type": "application/json" } }
       );

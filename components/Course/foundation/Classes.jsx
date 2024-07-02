@@ -6,6 +6,8 @@ import Footer from "@/components/Footer";
 import Demo from "../Demo";
 import Faqs from "@/components/Faqs/Faqs";
 import Batch from "../Batch";
+import Faculties from "@/components/Home/Faculties";
+
 const Classes = () => {
   const costing9th = [
     {
@@ -87,6 +89,7 @@ const Classes = () => {
         <Costing
           CostingData={activeBatch === "9th" ? costing9th : costing10th}
         />
+        <Faculties examType={"FOUNDATION"} calling={"course"} />
 
         <Demo examType={"FOUNDATION"} />
 
