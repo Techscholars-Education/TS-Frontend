@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useLayoutEffect, useRef} from "react";
+import { useState, useEffect, useLayoutEffect} from "react";
 import Image from "next/image";
 import Footer from "@/components/Footer";
 import addtocart from "@/public/payment/addtocart.png";
@@ -22,19 +22,18 @@ const Page = () => {
   const [isModalOpen, setIsModalOpen] = useState(true);
   const [status, setStatus] = useState('loading');
   let cookies = Cookies.get("access_token")
-  const ref  = useRef(false)
  useLayoutEffect(()=>{
   if (!id) return;
       // router.push(`${frontTsUrl}/status/${id}`)
-      // const currentUrl = window.location.href
-      // router.replace(currentUrl)
-      
-      if(!ref.current){ 
-        ref.current = true
-        window.open(`${frontTsUrl}/status/${id}`, "_blank", "noreferrer");
-      }
+      const currentUrl = window.location.href
+      router.replace(currentUrl)
+
+      // if(!ref.current){ 
+      //   ref.current = true
+      //   window.open(`${frontTsUrl}/status/${id}`, "_blank", "noreferrer");
+      // }
 // eslint-disable-next-line react-hooks/exhaustive-deps  
- },[1])
+ },[id])
 
  useEffect(()=>{
   if (!id) return;
