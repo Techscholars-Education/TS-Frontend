@@ -25,7 +25,9 @@ const Page = () => {
    
  useLayoutEffect(()=>{
   if (!id) return;
-      router.push(`${frontTsUrl}/status/${id}`)
+      // router.push(`${frontTsUrl}/status/${id}`)
+      const currentUrl = window.location.href
+      router.replace(currentUrl)
 // eslint-disable-next-line react-hooks/exhaustive-deps  
  },[id])
 
