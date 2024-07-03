@@ -15,7 +15,6 @@ const ReferAndEarn = () => {
         const handleScroll = () => {
             const scrollThreshold = 200; // Adjust this value to set the scroll threshold
             if (scrollDivRef.current.scrollTop >= scrollThreshold) {
-                console.log("Hi");
                 setTitle(true);
             } else {
                 setTitle(false);
