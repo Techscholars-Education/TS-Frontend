@@ -27,7 +27,7 @@ const LeftNavigation = () => {
 
   const lockedPaths = [
 
-    "/dashboard/refer-and-earn",
+    // "/dashboard/refer-and-earn",
     "/dashboard/feed",
     "/dashboard/community",
   ];
