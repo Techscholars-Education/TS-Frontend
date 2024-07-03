@@ -47,7 +47,7 @@ const Hero = () => {
 
         <Searchbar />
 
-        {/* plane arrow */}
+        {/* Tangled arrow */}
 
         <Image
           className="absolute hidden lg:block lg:left-24 lg:top-36 xl:left-64 xl:top-[40%] 2xl:top-[50%] 2xl:left-[22%] w-20 2xl:w-16 mx-10 lg:mx-0 "
