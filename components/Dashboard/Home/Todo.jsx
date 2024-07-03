@@ -31,10 +31,12 @@ import { LiaGreaterThanSolid } from "react-icons/lia";
 import axios from 'axios';
 import Link from 'next/link';
 import Cookies from 'js-cookie';
+import deleteicon from '../../../public/dashboard-icon/deleteicon.png'
 import { Clear } from '@mui/icons-material';
 import { MdWatchLater } from "react-icons/md";
 import { IoIosPeople } from "react-icons/io";
 import { FaLocationDot } from "react-icons/fa6";
+
 
 import { RiDeleteBin6Line } from "react-icons/ri";
 
@@ -146,7 +148,7 @@ function Todo() {
                   <EditIcon className="h-5 w-5" />
                 </IconButton>
                 <IconButton onClick={() => handleDeleteTodo(todo.id)}>
-                  <DeleteIcon className="h-5 w-5 " />
+                  <Image src={deleteicon} className="h-5 w-5 " />
                 </IconButton>
               </Box>
             </Box>
@@ -159,7 +161,7 @@ function Todo() {
     </Box>
   );
   return (
-    <div> <Box className="flex flex-col rounded-lg md:px-4  mt-3 bg-white md:pl-4 p-8 pl-0 md:pt-2 md:pb-0  overflow-hidden ">
+    <div> <Box className="flex flex-col rounded-lg md:px-4 md:w-[34.5vw]  mt-4 bg-white md:pl-4 p-8 pl-0 md:pt-2 md:pb-0  overflow-hidden ">
       <Box className="flex justify-between md:px-5">
         <h3 className="font-[550] text-[16px]">To Do List</h3>
         <Box className="flex ">
@@ -174,7 +176,7 @@ function Todo() {
 
               >
                 <List className='p-6'>
-                  <div className='flex justify-between mx-4 my-2'>
+                  <div className='flex justify-between mx-6 my-2'>
                     <h2 className='font-[600] text-[18px]'>To do list</h2>
                     <button onClick={closeDialogTodoList} >
 
@@ -183,8 +185,8 @@ function Todo() {
                   </div>
                   {todos.length > 0 ? (
                     todos.map(todo => (
-                      <Box key={todo.id} className="flex justify-between mt-3  p-3 ">
-                        <Box className="flex">
+                      <Box key={todo.id} className="flex justify-between mt-3  p-3 pr-0">
+                        <Box className="flex w-[18vw]">
                           <div className='flex mr-2 mt-1'>
                             {
                               todos.completed ? <FaCheck className={`h-6 w-6 p-1 text-white rounded-full mt-2 mx-2  bg-green-500 text-white'}`} /> : <div className='border-[2px] border-gray-500 rounded-full h-5 w-5'></div>
@@ -207,12 +209,12 @@ function Todo() {
                             </div>
                           </div>
                         </Box>
-                        <Box className="flex items-center space-x-2">
+                        <Box className="flex items-center ">
                           <IconButton onClick={() => {openDialog(todo); closeDialogTodoList()}}>
                             <EditIcon className="h-6 w-6 stdbgclr rounded-full p-1 " />
                           </IconButton>
                           <IconButton onClick={() => handleDeleteTodo(todo.id)}>
-                            <RiDeleteBin6Line className="h-6 w-6 stdbgclr rounded-full p-1 " />
+                            <Image src={deleteicon} className="   rounded-full p-1 text-black " />
                           </IconButton>
                         </Box>
                       </Box>
@@ -223,14 +225,14 @@ function Todo() {
                 </List>
                 <Divider />
               </Box>
-              <div className='flex justify-between p-4'>
-                <button variant="outlined" className="h-8 w-24 text-[10px] font-[600] border-[2px] rounded-lg text-blue-700" onClick={() => {
+              <div className='flex justify-between p-4 mr-4'>
+                <button variant="outlined" className="h-[40px] w-[76px] text-[13px]  border-[2px] rounded-lg " onClick={() => {
                   setOpen(true);
-                  closeDialogTodoList();
+                 
                 }}>Add Todo</button>
                 <div>
-                  <button onClick={closeDialogTodoList} color="primary" className="h-8 mr-2 w-24 text-[10px] font-[600] border-[2px] rounded-lg text-blue-700" >Close</button>
-                  <button onClick={closeDialogTodoList} color="primary" className="h-9 w-24 text-[10px] stdbgclr font-[600] border-[2px] rounded-full bg-blue-700" >Save</button>
+                  <button onClick={closeDialogTodoList} color="primary" className="h-[40px] mr-2 w-[76px] text-[13px]  border-[2px] rounded-lg " >Close</button>
+                  <button onClick={closeDialogTodoList} color="primary" className="h-[40px] w-[76px] text-[14px] stdbgclr border-[2px] rounded-full" >Save</button>
                 </div>
 
               </div>
@@ -332,10 +334,10 @@ function Todo() {
           </div>
         </DialogContent>
         <DialogActions className='px-8'>
-          <Button onClick={closeDialog} color="primary" className='border-[2px]'>Back</Button>
-          <Button onClick={isEditing ? handleUpdateTodo : handleAddTodo} color="primary" className='stdbgclr rounded-full '>
+          <button onClick={closeDialog} color="primary"  className="h-[40px] mr-2 w-[76px] text-[13px]  border-[2px] rounded-lg " >Back</button>
+          <buton onClick={isEditing ? handleUpdateTodo : handleAddTodo} color="primary"  className="h-[40px] w-[76px] text-[14px] text-center pt-1.5 stdbgclr border-[2px] rounded-full">
             {isEditing ? "Update" : "Save"}
-          </Button>
+          </buton>
         </DialogActions>
       </Dialog>
     </Box>

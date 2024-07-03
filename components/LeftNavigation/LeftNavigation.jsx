@@ -43,7 +43,7 @@ const LeftNavigation = () => {
         </button>
       </div>
 
-      <nav className={`bg-white ${isMenuOpen?'block':'hidden'} md:block w-[60vw] md:w-[18vw] py-6 md:px-8 pl-2 flex flex-col justify-between items-center`}>
+      <nav className={`bg-white ${isMenuOpen?'block':'hidden'} md:block w-[60vw] md:w-[18vw] py-4 md:px-8 pl-2 flex flex-col justify-between items-center`}>
         <div className="mx-auto fixed">
           {/* Logo */}
           <Link href={"/"} className="flex items-center justify-center space-x-2">
@@ -55,7 +55,7 @@ const LeftNavigation = () => {
           </div>
 
 
-          <ul className="mt-12 mx-auto font-Poppins">
+          <ul className="mt-6 mx-auto font-Poppins">
             {[
               { path: "/dashboard/home", icon: FiHome, label: "Home" },
               { path: "/dashboard/my-course", icon: FiBookOpen, label: "My Course" },
@@ -65,7 +65,7 @@ const LeftNavigation = () => {
               { path: "/dashboard/feed", icon: FiRss, label: "Feed" },
               { path: "/dashboard/community", icon: FiMessageCircle, label: "Community" },
             ].map(({ path, icon: Icon, label }) => (
-              <li key={path} className="flex items-center mb-2">
+              <li key={path} className="flex items-center mb-[4px]">
                 <Tooltip
                   title={lockedPaths.includes(path) ? "This feature is locked as of now. Coming soon!" : ""}
                   placement="right"
@@ -92,7 +92,7 @@ const LeftNavigation = () => {
             ))}
           </ul>
 
-          <div className="mt-12 flex flex-col">
+          <div className="mt-8 flex flex-col">
 
             <Button
               onClick={handleSignOut}
