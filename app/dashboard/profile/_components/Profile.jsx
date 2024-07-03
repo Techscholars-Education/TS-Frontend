@@ -106,7 +106,7 @@ const Profile = () => {
       <ToastContainer />
           <div className="bg-white font-Poppins w-full overflow-hidden">
             <DashboardNavbar title={"Profile"} />
-            <div className="flex flex-col mr-2 bg-blue-50 h-[86vh] max-w-full pl-5 pr-5 pt-5 gap-1">
+            <div className="flex flex-col mr-2 bg-[#fcfafa] h-[86vh] max-w-full pl-5 pr-5 pt-5 gap-1">
                 <div className='flex flex-col gap-1'>
                     <h1 className='font-semibold text-xl'>Edit Profile</h1>
                     <p className=' font-normal text-gray-400 text-[.9vw]'>Personal Info</p>
@@ -146,7 +146,7 @@ const Profile = () => {
                             id="full_name"
                             value={name}
                             onChange={(e)=>{setName(e.target.value)}}
-                            className="bg-blue-50 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[30vw] p-2.5"
+                            className="bg-[#fcfafa] text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[30vw] p-2.5"
                           />
                         </div>
                         <div className="flex flex-col">
@@ -162,7 +162,7 @@ const Profile = () => {
                             placeholder='Please enter your email'
                             value={email}
                             onChange={(e)=>{setEmail(e.target.value)}}
-                            className="bg-blue-50  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[30vw] p-2.5"
+                            className="bg-[#fcfafa]  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[30vw] p-2.5"
                           />
                         </div>
                       </div>
@@ -174,7 +174,7 @@ const Profile = () => {
                           >
                          Gender
                           </label>
-                          <select  value={gender} onChange={handleGenderChange} className='bg-blue-50  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[30vw] p-2.5'>
+                          <select  value={gender} onChange={handleGenderChange} className='bg-[#fcfafa]  text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[30vw] p-2.5'>
             <option value="" selected disabled hidden>Choose Gender</option>
         <option value="Male" >Male</option>
         <option value="Female">Female</option>
@@ -193,7 +193,7 @@ const Profile = () => {
                             placeholder='+880 123 456 789'
                             value={phone}
                             onChange={(e)=>{setPhone(e.target.value)}}
-                            className="bg-blue-50   text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[30vw] p-2.5"
+                            className="bg-[#fcfafa]   text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[30vw] p-2.5"
                           />
                         </div>
                       </div>
@@ -212,7 +212,7 @@ const Profile = () => {
                             value={dob}
                             onChange={(e)=>{setDob(e.target.value)}}
                             max={today} // Restrict selection to dates
-                            className="bg-blue-50 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[30vw] p-2.5"
+                            className="bg-[#fcfafa] text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[30vw] p-2.5"
                           />
                         </div>
                   

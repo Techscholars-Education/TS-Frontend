@@ -3,6 +3,7 @@
 import { toast } from "react-toastify";
 import { useCookieStore, useOrderIDStore } from "./useStore";
 import { useRouter } from "next/navigation";
+import { tsUrl } from "@/config";
 
 const useGetway = () => {
   const router = useRouter()
@@ -24,7 +25,7 @@ const useGetway = () => {
     });
   
     try {
-      const res = await fetch("https://api.techscholars.in/order/subscriptions", {
+      const res = await fetch(`${tsUrl}/order/subscriptions`, {
         method: "POST",
         headers: myHeaders,
         body: raw,

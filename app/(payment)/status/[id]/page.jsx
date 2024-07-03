@@ -1,39 +1,52 @@
 "use client";
-import { useState, useEffect} from "react";
+import { useState, useEffect, useLayoutEffect} from "react";
 import Image from "next/image";
 import Footer from "@/components/Footer";
 import addtocart from "@/public/payment/addtocart.png";
-import { useCookieStore} from "@/hooks/useStore";
 import gif1 from "@/public/Ts-Loader.gif";
 import "react-toastify/dist/ReactToastify.css";
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import img1 from "@/public/tick.gif"
 import img2 from "@/public/pending.gif"
 import img3 from "@/public/cross.gif"
 import img4 from "@/public/error.gif"
 import Link from "next/link";
+import Cookies from "js-cookie";
+import { frontTsUrl, tsUrl } from "@/config";
 
 const Page = () => {
   const params = useParams();
+  const router = useRouter()
   const id  = params.id;
   const [order, setOrder] = useState();
   const [isModalOpen, setIsModalOpen] = useState(true);
   const [status, setStatus] = useState('loading');
-  const {cookie} = useCookieStore()
-   
+  let cookies = Cookies.get("access_token")
+ useLayoutEffect(()=>{
+  if (!id) return;
+      // router.push(`${frontTsUrl}/status/${id}`)
+      const currentUrl = window.location.href
+      router.replace(currentUrl)
+
+      // if(!ref.current){ 
+      //   ref.current = true
+      //   window.open(`${frontTsUrl}/status/${id}`, "_blank", "noreferrer");
+      // }
+// eslint-disable-next-line react-hooks/exhaustive-deps  
+ },[id])
+
  useEffect(()=>{
   if (!id) return;
-    
-        const fetchData = async () => {
+      const fetchData = async () => {
           const myHeaders = new Headers();
-          myHeaders.append("authorization", cookie);
+          myHeaders.append("authorization", cookies);
           myHeaders.append("Content-Type", "application/json");
        
           const raw = JSON.stringify({
             "order_id": id
           });
                 
-          const res = await fetch("https://api.techscholars.in/order/handleJuspayResponse", {
+          const res = await fetch(`${tsUrl}/order/handleJuspayResponse`, {
             method: "POST",
             headers: myHeaders,
             body: raw,

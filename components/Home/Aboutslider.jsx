@@ -101,14 +101,14 @@ const Aboutslider = () => {
   ];
 
   return (
-    <section className=" w-11/12 xl:w-9/12 2xl:w-[1100px] mx-auto pt-2 md:pt-8  ">
+    <section className=" w-11/12 xl:w-10/12 2xl:w-[1400px] mx-auto pt-2 md:pt-8  ">
       <div className=" h-full mx-auto pb-10 ">
         <Slider {...settings}>
           {data.map((item) => {
             return (
               <div
                 key={item.id}
-                className={` flex flex-col justify-center items-center py-10 border border-${item.color} rounded-xl max-w-72 xl:max-w-[300px] h-[400px] md:h-[450px] lg:h-[480px] xl:h-[490px] mx-auto ml-7 md:ml-7 lg:ml-3 xl:ml-5 `}
+                className={` flex flex-col justify-center items-center py-10 border border-${item.color} rounded-3xl max-w-72 xl:max-w-[360px] h-[400px] md:h-[450px] lg:h-[480px] xl:h-[490px] mx-auto ml-8 md:ml-7 lg:ml-3 xl:ml-4 2xl:ml-12 `}
               >
                 <div className=" w-full mx-auto ">
                   <Image
@@ -126,7 +126,7 @@ const Aboutslider = () => {
                     </h3>
                   </div>
                   <div className={` mt-4 xl:h-[90px]`}>
-                    <h3 className="md:px-2 text-xl md:text-2xl xl:text-2xl xl:px-3 font-semibold text-darkBlue/90 py-2">
+                    <h3 className="md:px-2 text-xl md:text-2xl xl:text-3xl xl:px-3 font-semibold text-darkBlue/90 py-2">
                       {item.mid}
                     </h3>
                   </div>
