@@ -58,7 +58,7 @@ const Courses = () => {
   }, []);
 
   return (
-    <div className="bg-[#fcfafa]  font-Poppins h-screen w-full overflow-x-hidden">
+    <div className="bg-[#f7faff]  font-Poppins h-screen w-full overflow-x-hidden">
       <DashboardNavbar title={"Courses"} />
       {loading ? (
         <div className="flex justify-center items-center h-screen">

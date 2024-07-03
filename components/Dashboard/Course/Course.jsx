@@ -33,7 +33,7 @@ const Course = () => {
   console.log(courses)
 
   return (
-    <div className="font-Poppins min-h-screen w-full  bg-[#fcfafa]">
+    <div className="font-Poppins min-h-screen w-full  bg-[#f7faff]">
       <DashboardNavbar title="Course" />
       {loading ? (
         <div className="flex justify-center items-center h-screen">
