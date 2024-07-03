@@ -159,44 +159,35 @@ const HomePageWeb = () => {
 
   return (
     <>
-      <div className=" font-Poppins min-h-screen  w-full bg-[#fcfafa] overflow-x-hidden overflow-y-hidden ">
+      <div className=" font-Poppins min-h-screen  w-full bg-[#f7faff] overflow-x-hidden overflow-y-hidden ">
         <DashboardNavbar title={`Welcome back${userInfo?.given_name ? `, ${userInfo.given_name}` : ''}! 👋 `} subtitle="" />
         <div className="md:mx-6">
 
           <div className=" my-3  md:mx-4 grid md:grid-cols-2 grid-cols-1 ">
-            <div className="  flex flex-col">
-              <Tooltip
-                title="This feature is locked as of now. Coming soon!"
-                placement="right"
-                arrow
-              >
-                <div className="bg-white rounded-lg flex flex-col w-[350px] md:w-[564px] md:h-[320px]">
+            <div className="flex flex-col">
+              <Tooltip title="This feature is locked as of now. Coming soon!" placement="right" arrow>
+                <div className="bg-white rounded-lg flex flex-col w-full md:w-[35vw] mx-auto md:h-[320px]">
                   <p className="font-semibold p-4 pb-0">Performance analysis</p>
-                  <div className="relative blur-[2px] ">
+                  <div className="relative blur-[2px]">
                     <FiLock className="absolute w-8 h-8 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-500" style={{ color: 'black' }} />
                     <LineChart
                       xAxis={[{ data: [1, 2, 3, 5, 8, 10] }]}
                       series={[
-                        {
-                          data: [2, 5.5, 2, 8.5, 1.5, 5],
-                        },
+                        { data: [2, 5.5, 2, 8.5, 1.5, 5] },
                       ]}
-                      height={280}
+                      height={255}
                       className="text-black"
-
-
                     />
                   </div>
-
                 </div>
               </Tooltip>
-              <div className="bg-white rounded-lg mt-3 p-4 py-0  w-[350px] md:w-[564px]">
-                <p className="font-semibold ">Watch Time</p>
-                <div className="relative blur-[2px] ">
+
+              <div className="bg-white rounded-lg mt-3 p-4 py-0 w-full md:w-[35vw]  mx-auto">
+                <p className="font-semibold mt-4">Watch Time</p>
+                <div className="relative blur-[2px]">
                   <FiLock className="absolute w-8 h-8 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-500" style={{ color: 'black' }} />
                   <LineChart
-
-                    height={275}
+                    height={255}
                     series={[
                       { data: pData, label: 'Classes' },
                       { data: uData, label: 'Tutorials' },
@@ -205,21 +196,21 @@ const HomePageWeb = () => {
                   />
                 </div>
               </div>
-
             </div>
+
             <div className=" mr-12">
 
-              <div className="  flex flex-col bg-white rounded-lg  md:mb-2    ">
-                <div className="md:mt-0 rounded-xl flex align-middle md:mx-6  ">
+              <div className="  flex flex-col bg-white rounded-lg  md:mb-4 md:w-[34.5vw]   ">
+                <div className="md:mt-0 rounded-xl flex align-middle items-center justify-self-center  ">
                   <div
-                    className="w-full"
+                    className=" flex items-center justify-center w-full"
 
                   >
                     <DateRange
                       ranges={[selectionRange]}
                       onChange={handleSelect}
-                      style={{ width: '440px', fontWeight: '700' }}
-                      className="" // Change font size as needed
+                      style={{fontWeight: '700',width:'450px' }}
+                      className=""
                     />
                   </div>
 
@@ -238,8 +229,8 @@ const HomePageWeb = () => {
                 </div>
 
               </div>
-              <div className="flex flex-col  rounded-lg  bg-white ml-0  w-[350px] md:w-full ">
-                <div className="flex justify-between m-4 ml-3 mb-4">
+              <div className="flex flex-col  rounded-lg  bg-white ml-0  w-full md:w-[34.5vw]">
+                <div className="flex justify-between m-4 ml-3 mb-4 ">
                   <span className="font-[550] text-[16px] md:ml-5">Topic Progress</span>
                 </div>
                 <div className="relative blur-[1.5px]  ">

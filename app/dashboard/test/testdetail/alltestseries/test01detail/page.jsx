@@ -13,7 +13,7 @@ function page() {
         <div className='flex flex-col'>
 
 
-          <div className=" font-Poppins min-h-screen  w-full bg-[#fcfafa] ">
+          <div className=" font-Poppins min-h-screen  w-full bg-[#f7faff] ">
             <DashboardNavbar title="Test series Foundation" />
             <div className=" my-4 flex flex-col mx-8 ">
               <div className='flex bg-slate-200 p-2 px-3 rounded-full w-24'>
