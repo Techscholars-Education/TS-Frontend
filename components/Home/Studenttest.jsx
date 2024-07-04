@@ -72,7 +72,7 @@ const Studenttest = () => {
                 <Image
                   src={testimonialsBorder}
                   alt="border-container-icon "
-                  className="mx-auto md:w-[300px]  lg:w-[400px] w-[300px]  "
+                  className="mx-auto md:w-[300px]  lg:w-[400px] w-[300px] 2xl:w-[385px]  "
                 />
                 <div className="absolute top-10 px-12 md:top-8 md:px-16   lg:top-10 xl:top-8 lg:px-[70px] xl:px-[55px]">
                   <h4 className=" text-xs lg:text-base xl:text-base  font-medium text-justify ">
