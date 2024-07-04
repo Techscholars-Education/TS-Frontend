@@ -38,7 +38,7 @@ const Hero = () => {
 
         <div className="my-4 text-center  ">
           <p className="font-Poppins px-6 leading-normal  md:px-20 lg:px-44 xl:px-80 xl:text-base text-xs md:text-base text-gray-600 tracking-wide ">
-            Transforming average students into toppers with our personalised
+            Transforming average students into toppers with our innovative
             teaching
           </p>
         </div>
@@ -47,7 +47,7 @@ const Hero = () => {
 
         <Searchbar />
 
-        {/* plane arrow */}
+        {/* Tangled arrow */}
 
         <Image
           className="absolute hidden lg:block lg:left-24 lg:top-36 xl:left-64 xl:top-[40%] 2xl:top-[50%] 2xl:left-[22%] w-20 2xl:w-16 mx-10 lg:mx-0 "
@@ -65,7 +65,7 @@ const Hero = () => {
           </div>
           <p className="text-gray-600 text-xs md:text-sm">
             {" "}
-            Affordable pricing
+            Performance Insights
           </p>
         </div>
         <div className="flex space-x-2 justify-center items-center ">
@@ -74,7 +74,7 @@ const Hero = () => {
           </div>
           <p className="text-gray-600  text-xs md:text-sm">
             {" "}
-            Merit based scholarships
+            Study with the top 1%
           </p>
         </div>
         <div className="flex space-x-2 justify-center items-center ">
@@ -82,7 +82,7 @@ const Hero = () => {
             <IoMdCheckmark className="text-blue-600 w-5 text-xs md:text-xl  " />
           </div>
           <p className="text-gray-600 text-xs md:text-sm">
-            24/7 mentor support{" "}
+            24/7 Customer Support
           </p>
         </div>
       </div>
