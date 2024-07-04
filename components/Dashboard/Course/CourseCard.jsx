@@ -30,7 +30,7 @@ const CourseCard = (props) => {
           <div>
             <div className="flex  items-center">
              <div className="h-8 w-8">
-              <Image src={firecourse}/>
+              <Image src={firecourse} alt="fire-course"/>
               
              </div>
              <div className="flex flex-col ml-2">
@@ -44,7 +44,7 @@ const CourseCard = (props) => {
           </p>
           <div className="flex justify-start  items-center">
             <div className="text-darkBlue text-sm items-center flex">
-              <Image src={timmercourse} className="mx-2" />
+              <Image src={timmercourse} className="mx-2"  alt="timmer-course"/>
               150+ Hrs
             </div>
             <div className="text-darkBlue text-sm items-center flex">
