@@ -12,7 +12,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Testimonialsslider from "@/components/Home/Testimonialsslider";
 import Faculties from "./Faculties";
-import Price from "./Price";
+import Pricing from "./Price";
 import sciencebook from "@/public/sciencebook.gif";
 const Home = () => {
   const [isLoaded, setIsLoaded] = useState(true);
@@ -40,7 +40,7 @@ const Home = () => {
           <Benefits />
           <Curriculum />
           <About />
-          <Price />
+          <Pricing />
           <Faculties calling={"home"} />
           <Testimonials />
           <Testimonialsslider />
