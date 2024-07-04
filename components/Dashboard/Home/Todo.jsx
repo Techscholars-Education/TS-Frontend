@@ -148,7 +148,7 @@ function Todo() {
                   <EditIcon className="h-5 w-5" />
                 </IconButton>
                 <IconButton onClick={() => handleDeleteTodo(todo.id)}>
-                  <Image src={deleteicon} className="h-5 w-5 " />
+                  <Image src={deleteicon} className="h-5 w-5 "  alt='delete-icon'/>
                 </IconButton>
               </Box>
             </Box>
@@ -214,7 +214,7 @@ function Todo() {
                             <EditIcon className="h-6 w-6 stdbgclr rounded-full p-1 " />
                           </IconButton>
                           <IconButton onClick={() => handleDeleteTodo(todo.id)}>
-                            <Image src={deleteicon} className="   rounded-full p-1 text-black " />
+                            <Image src={deleteicon} className="   rounded-full p-1 text-black " alt='delete-icon' />
                           </IconButton>
                         </Box>
                       </Box>
