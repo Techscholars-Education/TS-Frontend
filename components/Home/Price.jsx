@@ -29,8 +29,8 @@ const Price = () => {
             <h4 className="text-lg font-Inter font-semibold text-darkBlue/90">
               Starter
             </h4>
-            <h2 className="text-3xl font-semibold text-TechBlue py-2">
-              1999
+            <h2 className="text-3xl font-bold text-TechBlue py-2">
+              &#8377;1999
               <span className="text-xs font-normal text-gray-500">/Year</span>
             </h2>
             <hr />
@@ -113,8 +113,8 @@ const Price = () => {
         <div className="border relative rounded-xl bg-TechBlue hover:shadow-xl hover:scale-105 transition-all duration-200 font-Inter ">
           <div className="px-6 pt-6">
             <h4 className="text-lg font-semibold text-white">Advanced</h4>
-            <h2 className="text-3xl font-semibold  text-white py-2">
-              6999
+            <h2 className="text-3xl font-bold  text-white py-2">
+              &#8377;6999
               <span className="text-xs font-normal text-gray-100">/Year</span>
             </h2>
             <hr />
@@ -201,8 +201,8 @@ const Price = () => {
             <h4 className="text-lg font-Inter font-semibold text-darkBlue/90">
               Ultimate
             </h4>
-            <h2 className="text-3xl font-semibold text-TechBlue py-2">
-              16999
+            <h2 className="text-3xl font-bold text-TechBlue py-2">
+              &#8377;16999
               <span className="text-xs font-normal text-gray-500">/Year</span>
             </h2>
             <hr />

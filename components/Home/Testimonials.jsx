@@ -14,7 +14,7 @@ const Testimonials = () => {
           </h5>
         </div>
         <h2 className="text-darkBlue font-semibold text-xl  md:text-4xl px-10 md:px-4 text-center my-4 font-Poppins ">
-          Hear from Parents: Why they believe is us
+          Hear from Parents: Why they trust us
         </h2>
         <div className="my-4 text-center  ">
           <p className="font-Poppins px-6 leading-normal  md:px-20 lg:px-44 text-xs md:text-sm text-gray-600 tracking-wide ">

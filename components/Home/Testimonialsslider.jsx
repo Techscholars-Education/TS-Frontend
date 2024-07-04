@@ -49,13 +49,13 @@ const Testimonialsslider = () => {
               return (
                 <div key={item.id} className=" w-full sm:w-full py-10  ">
                   <div
-                    className={` mx-4 bg-white relative hover:scale-105 duration-200 border-2 rounded-xl hover:shadow-xl 2xl:h-[340px] xl:h-[270px] lg:h-72 md:h-64 h-52 flex flex-col justify-between `}
+                    className={` mx-4 bg-white relative hover:scale-105 duration-200 border-2 rounded-xl hover:shadow-xl 2xl:h-[340px] xl:h-[280px] lg:h-72 md:h-[280px] h-52 flex flex-col justify-between `}
                   >
                     <div className="pl-6 pt-6 ">
                       <FaQuoteLeft className=" text-2xl md:text-4xl text-TechBlue " />
                     </div>
                     <div className=" absolute top-[60px] md:top-20  px-6   ">
-                      <p className="text-xs md:text-sm xl:text-base text-black leading-normal tracking-wide">
+                      <p className="text-xs md:text-sm xl:text-base text-black leading-normal tracking-wide text-justify font-medium font-Poppins">
                         {item.content}
                       </p>
                     </div>
