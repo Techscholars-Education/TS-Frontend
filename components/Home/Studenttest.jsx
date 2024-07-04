@@ -68,7 +68,7 @@ const Studenttest = () => {
         <Slider {...settings}>
           {studentTestimonials.map((item) => {
             return (
-              <div className="relative">
+              <div key={item.id} className="relative">
                 <Image
                   src={testimonialsBorder}
                   alt="border-container-icon "

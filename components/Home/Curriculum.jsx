@@ -30,7 +30,7 @@ const Curriculum = () => {
           >
             <div className="flex">
               <div>
-                <Image src={JeeIcon}></Image>
+                <Image src={JeeIcon} alt="jee-icon"></Image>
               </div>
               <div className="w-full pl-4  ">
                 <h2 className=" md:text-xl  text-lg font-bold">Jee</h2>
@@ -58,7 +58,7 @@ const Curriculum = () => {
           >
             <div className="flex">
               <div>
-                <Image src={NeetIcon}></Image>
+                <Image src={NeetIcon} alt="neet-icon"></Image>
               </div>
               <div className="w-full pl-4   ">
                 <h2 className=" md:text-xl  text-lg font-bold">Neet</h2>
@@ -86,7 +86,7 @@ const Curriculum = () => {
           >
             <div className="flex">
               <div>
-                <Image src={FoundationIcon}></Image>
+                <Image src={FoundationIcon} alt="foundation-icon"></Image>
               </div>
               <div className="w-full pl-4  ">
                 <h2 className=" md:text-xl  text-lg font-bold">Foundation</h2>
