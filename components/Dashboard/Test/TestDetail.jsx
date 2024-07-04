@@ -18,10 +18,10 @@ function TestDetail() {
       setLoading(true);
       try {
         const cookie = Cookies.get("access_token");
-        if (!cookie) {
-          throw new Error("No access token found");
-        }
-        console.log("Access token:", cookie);
+        // if (!cookie) {
+        //   throw new Error("No access token found");
+        // }
+        // console.log("Access token:", cookie);
 
         const axiosConfig = {
           headers: {
@@ -30,7 +30,7 @@ function TestDetail() {
         };
 
         const response = await axios.get(`https://api.techscholars.in/pdt/v1/ts/list?category_id?category_id=${selectedCategory}`, axiosConfig);
-        console.log(response);
+
         setTestSeries(Array.isArray(response?.data?.test_series) ? response?.data?.test_series : []);
       } catch (error) {
         console.error("Error fetching test series:", error);
@@ -42,37 +42,30 @@ function TestDetail() {
 
     fetchTestSeries();
   }, [selectedCategory]);
+  const handleCategoryChange = (event) => {
+    setSelectedCategory(parseInt(event.target.value, 10));
+  };
 
   return (
-    <div className="font-Poppins min-h-screen bg-[#fcfafa]">
+    <div className="font-Poppins min-h-screen bg-[#f7faff]">
       <DashboardNavbar title="Test Series Foundation" />
       <div className="flex flex-col md:mx-8">
+        <div className="flex md:justify-between mb-8 mr-4">
         <h2 className="text-xl md:text-xl font-semibold text-darkBlue mx-4 my-6">
           Test Series Foundation
         </h2>
-        <div className="flex md:justify-center mb-8 ">
-          <div className="bg-white md:w-92 flex justify-center items-center rounded-full border">
-
-          <button
-            className={` px-4 py-2 rounded-full ${selectedCategory === 1 ? 'bg-[#0079FC] text-white' : 'bg-white text-black'}`}
-            onClick={() => setSelectedCategory(1)}
-          >
-            Category 1
-          </button>
-          <button
-            className={` px-4 py-2 rounded-full ${selectedCategory === 2 ? 'bg-[#0079FC] text-white' : 'bg-white text-black'}`}
-            onClick={() => setSelectedCategory(2)}
-          >
-            Category 2
-          </button>
-          <button
-            className={` px-4 py-2 rounded-full ${selectedCategory === 3 ? 'bg-[#0079FC] text-white' : 'bg-white text-black'}`}
-            onClick={() => setSelectedCategory(3)}
-          >
-            Category 3
-          </button>
+         
+            <select
+              value={selectedCategory}
+              onChange={handleCategoryChange}
+              className="bg-white text-blue-600 font-[500] mt-2 text-sm rounded-full   border-blue-400 border-[2px] h-[50px] w-[190px] pl-8 focus:outline-none"
+            > 
+              <option  className="bg-white text-blue-600 font-[500] text-sm rounded-full    border-blue-400 border-[2px] h-[50px] w-[190px] pl-8" value={1} style={{backgroundClip:'red'}}>Category 1</option>
+              <option  className="bg-white text-blue-600 font-[500] text-sm rounded-full    border-blue-400 border-[2px] h-[50px] w-[190px] pl-8" value={2}>Category 2</option>
+              <option  className="bg-white text-blue-600 font-[500] text-sm rounded-full    border-blue-400 border-[2px] h-[50px] w-[190px] pl-8" value={3}>Category 3</option>
+            </select>
           </div>
-        </div>
+        
         {loading ? (
           <div className="flex justify-center items-center h-screen">
             <Box sx={{ display: "flex" }}>
@@ -84,11 +77,11 @@ function TestDetail() {
             {testSeries.length > 0 ? (
               testSeries.map((item) => (
                 <Link href="/dashboard/test/testdetail/alltestseries" key={item.id}>
-                  <TestSeriesCard 
-                    image={item.poster_image || require('../../../public/Test/1.png')} 
-                    std={item.class_name} 
-                    name={item.name} 
-                    description={item.desc} 
+                  <TestSeriesCard
+                    image={item.poster_image || require('../../../public/Test/1.png')}
+                    std={item.class_name}
+                    name={item.name}
+                    description={item.desc}
                   />
                 </Link>
               ))

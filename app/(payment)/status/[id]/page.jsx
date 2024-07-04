@@ -22,12 +22,16 @@ const Page = () => {
   const [isModalOpen, setIsModalOpen] = useState(true);
   const [status, setStatus] = useState('loading');
   let cookies = Cookies.get("access_token")
-   
  useLayoutEffect(()=>{
   if (!id) return;
       // router.push(`${frontTsUrl}/status/${id}`)
       const currentUrl = window.location.href
       router.replace(currentUrl)
+
+      // if(!ref.current){ 
+      //   ref.current = true
+      //   window.open(`${frontTsUrl}/status/${id}`, "_blank", "noreferrer");
+      // }
 // eslint-disable-next-line react-hooks/exhaustive-deps  
  },[id])
 
