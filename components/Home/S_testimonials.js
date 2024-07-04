@@ -4,7 +4,7 @@ export const studentTestimonials = [
     aspirant: "JEE",
     studentName: "Aarav Singh",
     content:
-      "Techscholars has been a game-changer for me! I struggled with Physics, but the classes here made concepts crystal clear. I scored 95 in my pre-board exams, up from 78 last year. Special thanks to Sayandeep Sir for his motivational sessions and personalised strategy.",
+      "Techscholars is a game-changer for me! I struggled with Physics, but the classes here made concepts crystal clear. I scored 95 in my pre-board exams, up from 78 last year. Special thanks to Sayandeep Sir for his motivational sessions and personalised strategy.",
     class: 12,
     bgColor: "green-100",
   },

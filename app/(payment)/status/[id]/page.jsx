@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useLayoutEffect} from "react";
+import { useState, useEffect} from "react";
 import Image from "next/image";
 import Footer from "@/components/Footer";
 import addtocart from "@/public/payment/addtocart.png";
@@ -22,18 +22,27 @@ const Page = () => {
   const [isModalOpen, setIsModalOpen] = useState(true);
   const [status, setStatus] = useState('loading');
   let cookies = Cookies.get("access_token")
- useLayoutEffect(()=>{
-  if (!id) return;
-      // router.push(`${frontTsUrl}/status/${id}`)
-      const currentUrl = window.location.href
-      router.replace(currentUrl)
 
-      // if(!ref.current){ 
-      //   ref.current = true
-      //   window.open(`${frontTsUrl}/status/${id}`, "_blank", "noreferrer");
-      // }
-// eslint-disable-next-line react-hooks/exhaustive-deps  
- },[id])
+//  useLayoutEffect(()=>{
+//   if (!id) return;
+//       // router.push(`${frontTsUrl}/status/${id}`)
+//       // const currentUrl = window.location.href
+//       // router.replace(currentUrl)
+
+// // eslint-disable-next-line react-hooks/exhaustive-deps  
+//  },[id])
+
+
+
+useEffect(() => {
+  if (!id) return;
+  if (localStorage.getItem('openURLAttempted')) {
+    return;
+  }
+  window.open(`${frontTsUrl}/status/${id}`, "_blank", "noreferrer");
+  localStorage.setItem('openURLAttempted', 'true');
+// eslint-disable-next-line react-hooks/exhaustive-deps 
+}, [id]);
 
  useEffect(()=>{
   if (!id) return;
@@ -64,7 +73,7 @@ const Page = () => {
         fetchData();;
 
 // eslint-disable-next-line react-hooks/exhaustive-deps             
- },[id])
+ },[id,cookies])
 
  const formatDateTime = (isoString) => {
   const date = new Date(isoString);
