@@ -14,7 +14,7 @@ const Benefits = () => {
       <div className=" w-11/12 xl:w-9/12 2xl:w-[1100px] grid grid-cols-1 md:grid-cols-2  mx-auto gap-4 ">
         {/* container -1 */}
         <div className=" bg-[#DCD9F866]/30 rounded-xl flex flex-col items-center justify-center  md:flex md:flex-row px-6 py-6 lg:py-8 xl:py-12 font-Poppins hover:shadow-xl duration-200 transition-all ">
-          <div className="my-auto w-1/2 xl:w-2/3">
+          <div className="my-auto w-1/2 lg:scale-125">
             <Image
               className=" w-full "
               src={Benefit1}
@@ -42,7 +42,7 @@ const Benefits = () => {
 
         {/* 2nd */}
         <div className=" bg-[#FFE6DF]/30 rounded-xl flex flex-col items-center justify-center  md:flex md:flex-row px-3 py-6 lg:py-8 xl:py-12 font-Poppins hover:shadow-xl duration-200 transition-all ">
-          <div className="my-auto w-1/2">
+          <div className="my-auto w-1/2 lg:scale-125">
             <Image
               className=" w-full "
               src={Benefit2}
@@ -70,7 +70,7 @@ const Benefits = () => {
 
         {/* 3rd */}
         <div className=" bg-[#FCE2EB]/30 rounded-xl flex flex-col items-center justify-center  md:flex md:flex-row px-10 py-6 lg:py-8 xl:py-12 font-Poppins hover:shadow-xl duration-200 transition-all ">
-          <div className="my-auto w-1/2 xl:w-2/3">
+          <div className="my-auto w-1/2 ">
             <Image
               className=" w-full "
               src={Benefit3}
@@ -98,7 +98,7 @@ const Benefits = () => {
 
         {/* 4th */}
         <div className=" bg-green-50 rounded-xl flex flex-col items-center justify-center  md:flex md:flex-row px-6 py-6 lg:py-8 xl:py-12 font-Poppins hover:shadow-xl duration-200 transition-all ">
-          <div className="my-auto w-1/2">
+          <div className="my-auto w-1/2 lg:scale-150 ">
             <Image
               className=" w-full "
               src={Benefit4}

@@ -119,7 +119,7 @@ const DivTwo = () => {
     window.location.assign("/admin");
   }
   return(
-<div className="ml-3">
+<div className="ml-3 border-t-2 border-gray-300">
     <ul className="">
       <Li
         url="/admin/settings"

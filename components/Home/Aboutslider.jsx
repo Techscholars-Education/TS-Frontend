@@ -10,6 +10,7 @@ import mentorship from "../../public/Home/mentorship.svg";
 import students from "../../public/Home/students.svg";
 import analysis from "../../public/Home/analysis.svg";
 import HofTech from "../../public/Home/HofTech.svg";
+import ai from "../../public/Home/ai.svg";
 
 const Aboutslider = () => {
   const settings = {
@@ -98,6 +99,14 @@ const Aboutslider = () => {
       bottom: "Discover techscholars communities and activities",
       color: "pink-50",
     },
+    {
+      id: 7,
+      image: ai,
+      top: "Faculty",
+      mid: "Scholar AI [beta]",
+      bottom: "AI-driven personalized engagement and adaptive study support",
+      color: "pink-50",
+    },
   ];
 
   return (
@@ -118,15 +127,17 @@ const Aboutslider = () => {
                   ></Image>
                 </div>
                 <div className={`px-4 text-start mt-4  h-full `}>
-                  <div className="mt-10 md:px-2 xl:px-3">
+                  <div className="mt-10 md:px-2 xl:px-3 ">
                     <h3
-                      className={`rounded-full text-xs py-2  bg-TechBlue/5 inline-block px-4 text-black bg-${item.color}`}
+                      className={`rounded-full text-xs py-1 border border-TechBlue/20  bg-TechBlue/5 inline-block px-4  bg-blue-50  text-TechBlue`}
                     >
                       {item.top}
                     </h3>
                   </div>
                   <div className={` mt-4 xl:h-[90px]`}>
-                    <h3 className="md:px-2 text-xl md:text-2xl xl:text-3xl xl:px-3 font-semibold text-darkBlue/90 py-2">
+                    <h3
+                      className={`md:px-2 text-xl md:text-2xl xl:text-3xl xl:px-3 font-semibold text-darkBlue/90 py-2 `}
+                    >
                       {item.mid}
                     </h3>
                   </div>

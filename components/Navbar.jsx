@@ -167,7 +167,7 @@ const Navbar = () => {
                     className=" bg-TechBlue text-white px-4 py-3 rounded-md hover:bg-black duration-200 "
                     href="/dashboard/home"
                   >
-                    Dashboard
+                    My Dashboard
                   </Link>
                 </li>
               </>
@@ -235,7 +235,7 @@ const Navbar = () => {
                   className=" py-2 rounded-md px-2 bg-TechBlue text-white"
                   href="/dashboard/home"
                 >
-                  Dashboard
+                  My Dashboard
                 </Link>
               </li>
             )}

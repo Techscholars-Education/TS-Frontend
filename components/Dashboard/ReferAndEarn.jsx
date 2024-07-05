@@ -31,13 +31,36 @@ const ReferAndEarn = () => {
 
 
     const faqData = [
-        "What does Techscholars offer?",
-        "What makes us different?",
-        "How do we ensure concept clarity?",
-        "What is included in the All India Test Series?",
-        "How do we support students outside of classes?",
-        "How do we support students outside of classes?",
-        "How do we support students outside of classes?"
+        {
+            id: 1,
+            question: "Why should I join this course and how will this be helpful?",
+            ans: "Joining our course offers expert guidance, comprehensive study materials, and interactive classes, ensuring success in IITJEE and NEET exams.",
+          },    {
+            id: 2,
+            question: "What does Techscholars offers?",
+            ans: "Techscholars provides expert faculty, comprehensive study materials, interactive live classes, practice tests, quizzes, and an All India Test Series.",
+          },
+          {
+            id: 3,
+            question: "What makes us different?",
+            ans: "We offer personalized learning paths, advanced technology integration, focus on concept clarity, and a supportive learning environment.",
+          },
+          {
+            id: 4,
+            question:
+              "How will the classes be conducted? What will happen if I miss a class?",
+            ans: "Classes are live online. If you miss a class, recordings are available for you to catch up at your convenience",
+          },
+          {
+            id: 5,
+            question: "How do we ensure concept clarity?",
+            ans: "We ensure concept clarity through interactive teaching methods, regular doubt clearing sessions, extensive practice exercises, and continuous feedback.",
+          },
+          {
+            id: 6,
+            question: "What is included in the All India Test Series?",
+            ans: "The series includes simulated exams, extensive question banks, performance analytics, and national benchmarking to track your preparation leve",
+          },
     ];
 
 
@@ -56,7 +79,7 @@ const ReferAndEarn = () => {
                                 </div>
                                 <div className='flex flex-col gap-5 w-[30vw]'>
                                     <CopyText copyText="CRYPTO8795" />
-                                    <button className='h-[3vw] w-[18vw] flex items-center justify-center bg-[#0079FC] text-white rounded-full hover:bg-black transition-all ease-in-out duration-300'>Invite Friends</button>
+                                    <button className='h-[3vw] w-[18vw] flex items-center justify-center bg-[#0079FC] text-white rounded-full hover:bg-black transition-all ease-in-out duration-300 hover:shadow-sm hover:shadow-black'>Invite Friends</button>
                                 </div>
                             </div>
                             <Image src={img1} alt='logo' className='h-[60vh] w-[60vw] absolute bottom-0 right-[-11vw] ' />
@@ -69,12 +92,13 @@ const ReferAndEarn = () => {
                             </div>
                             <div className='bg-white h-auto p-5 max-w-[82vw] mt-3 rounded-md'>
                                 <div className="space-y-4">
-                                    {faqData.map((question, index) => (
+                                    {faqData.map((i) => (
                                         <FAQ
-                                            key={index}
-                                            question={question}
-                                            isOpen={openIndex === index}
-                                            onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                                            key={i.id}
+                                            question={i.question}
+                                            isOpen={openIndex === i.id}
+                                            ans={i.ans}
+                                            onClick={() => setOpenIndex(openIndex === i.id ? null : i.id)}
                                         />
                                     ))}
                                 </div>
