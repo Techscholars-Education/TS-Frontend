@@ -192,7 +192,7 @@ const Batch = (props) => {
               <hr />
               <div className="flex items-center flex-wrap my-4">
                 <Link
-                  href="/payment"
+                  href="/dashboard/courses"
                   className="text-white w-full bg-TechBlue rounded-full py-3 font-semibold flex justify-center items-center hover:bg-black duration-200 "
                 >
                   Buy Now

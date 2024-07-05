@@ -88,9 +88,13 @@ const Faculties = (props) => {
             ? facultiesData
                 .filter((item) => [1, 2, 3, 4, 5, 7].includes(item.id))
                 .map((item) => <Facultycard key={item.id} item={item} />)
-            : facultiesData
+            : props.examType === "FOUNDATION"
+            ? facultiesData
                 .filter((item) => [3, 4, 6, 7, 1].includes(item.id))
-                .map((item) => <Facultycard key={item.id} item={item} />)}
+                .map((item) => <Facultycard key={item.id} item={item} />)
+            : facultiesData.map((item) => (
+                <Facultycard key={item.id} item={item} />
+              ))}
         </Slider>
       </div>
     </section>

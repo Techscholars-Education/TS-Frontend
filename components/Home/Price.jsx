@@ -39,62 +39,79 @@ const Price = () => {
           <ul className="pt-6 px-6 space-y-4 font-Inter">
             <li className="flex justify-start space-x-2 items-center">
               <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
-              <span className="text-gray-600 text-xs md:text-sm">Lectures</span>
+              <span className="text-gray-600 font-medium font-Poppins text-xs md:text-sm">
+                Lectures
+              </span>
             </li>
             <li className="flex justify-start space-x-2 items-center">
               <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
-              <span className="text-gray-600 text-xs md:text-sm">DPPs</span>
+              <span className="text-gray-600 font-medium font-Poppins text-xs md:text-sm">
+                DPPs
+              </span>
             </li>
             <li className="flex justify-start space-x-2 items-center  ">
               <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
-              <span className="text-gray-600 text-xs md:text-sm">
+              <span className="text-gray-600 font-medium font-Poppins text-xs md:text-sm">
                 Weekly test series
               </span>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
-              <del className="text-gray-600 text-xs md:text-sm">
-                Access the smartest student community
+              <del className="text-gray-600 font-medium font-Poppins text-xs md:text-sm">
+                All India Test series
               </del>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
-              <del className="text-gray-600 text-xs md:text-sm ">
+              <del className="text-gray-600 font-medium font-Poppins text-xs md:text-sm ">
                 <span className="font-bold text-gray-600">LIVE</span> doubt
                 clearing sessions
               </del>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
-              <del className="text-gray-600 text-xs md:text-sm ">
-                Special Access to{" "}
-                <span className="font-bold text-gray-600"> BRAHMASTRA</span>
-                (Coming Soon)
+              <del className="text-gray-600 font-medium font-Poppins text-xs md:text-sm ">
+                Access to smartest student community
               </del>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
-              <del className="text-gray-600 text-xs md:text-sm ">
-                {" "}
-                <span className="font-bold">24/7</span> Mentorship guide
+              <del className="text-gray-600 font-medium font-Poppins  text-xs md:text-sm ">
+                <span className="font-bold"> One shot</span> Revision series
               </del>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
-              <del className="text-gray-600 text-xs md:text-sm ">
-                Weekly <span className="font-bold">LIVE</span> Mentorship
-                Sessions
+              <del className="text-gray-600 font-medium font-Poppins text-xs md:text-sm ">
+                Scholars
+                <span className="font-bold"> AI </span> (beta)
               </del>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
-              <del className="text-gray-600 text-xs md:text-sm ">
-                Special Access to{" "}
-                <span className="font-bold text-gray-600">
-                  {" "}
-                  Personal AI Mentor
-                </span>
-                (Coming Soon)
+              <del className="text-gray-600 font-medium font-Poppins text-xs md:text-sm ">
+                Personalised Performance Analysis
+              </del>
+            </li>
+            <li className="flex justify-start space-x-2 items-center ">
+              <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
+              <del className="text-gray-600 font-medium font-Poppins text-xs md:text-sm ">
+                One - One <span className="font-bold"> Mentorship </span>{" "}
+                sessions
+              </del>
+            </li>
+            <li className="flex justify-start space-x-2 items-center ">
+              <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
+              <del className="text-gray-600 font-medium font-Poppins text-xs md:text-sm ">
+                Access to<span className="font-bold"> Digital </span> student
+                library
+              </del>
+            </li>
+            <li className="flex justify-start space-x-2 items-center  ">
+              <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
+              <del className="text-gray-600 font-medium font-Poppins text-xs md:text-sm ">
+                Regular Workshops, Strategy and <br /> Councilling
+                Sessions.(with Certifications).
               </del>
             </li>
           </ul>
@@ -120,66 +137,78 @@ const Price = () => {
             <hr />
           </div>
 
-          <ul className="pt-6 px-6 space-y-4">
+          <ul className="pt-6 px-6 space-y-4 font-Inter">
             <li className="flex justify-start space-x-2 items-center">
-              <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
-              <span className=" text-xs md:text-sm text-white">Lectures</span>
+              <MdDone className="bg-white text-xl text-TechBlue font-bold rounded-full p-1" />
+              <span className="text-white text-xs md:text-sm">Lectures</span>
             </li>
             <li className="flex justify-start space-x-2 items-center">
-              <MdDone className="bg-white  text-xl text-TechBlue rounded-full p-1" />
-              <span className=" text-xs md:text-sm text-white">DPPs</span>
+              <MdDone className="bg-white text-xl text-TechBlue font-bold rounded-full p-1" />
+              <span className="text-white text-xs md:text-sm">DPPs</span>
             </li>
             <li className="flex justify-start space-x-2 items-center  ">
-              <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
-              <span className=" text-xs md:text-sm text-white">
+              <MdDone className="bg-white text-xl text-TechBlue font-bold rounded-full p-1" />
+              <span className="text-white text-xs md:text-sm">
                 Weekly test series
               </span>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
-              <MdDone className="bg-white  text-xl text-TechBlue rounded-full p-1" />
-              <span className=" text-xs md:text-sm text-white">
-                Access the smartest student community
-              </span>
-            </li>
-            <li className="flex justify-start space-x-2 items-center ">
-              <MdDone className="bg-white  text-xl text-TechBlue rounded-full p-1" />
-              <span className=" text-xs md:text-sm text-white">
-                <span className="font-bold text-white-600">LIVE</span> doubt
-                clearing sessions
+              <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
+              <span className="text-white text-xs md:text-sm">
+                All India Test series
               </span>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
-              <span className=" text-xs md:text-sm text-white">
-                Special Access to{" "}
-                <span className="font-bold "> BRAHMASTRA</span>
-                (Coming Soon)
+              <span className="text-white text-xs md:text-sm ">
+                <span className="font-bold ">LIVE</span> doubt clearing sessions
+              </span>
+            </li>
+            <li className="flex justify-start space-x-2 items-center ">
+              <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
+              <span className="text-white text-xs md:text-sm ">
+                Access to smartest student community
+              </span>
+            </li>
+            <li className="flex justify-start space-x-2 items-center ">
+              <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
+              <span className="text-white text-xs md:text-sm ">
+                <span className="font-bold"> One shot</span> Revision series
               </span>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
-              <del className="text-white text-xs md:text-sm ">
-                {" "}
-                <span className="font-bold">24/7</span> Mentorship guide
+              <del className="text-white font-medium font-Poppins text-xs md:text-sm ">
+                Scholars
+                <span className="font-bold"> AI </span> (beta)
               </del>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
-              <del className="text-white text-sm ">
-                Weekly <span className="font-bold">LIVE</span> Mentorship
-                Sessions
+              <del className="text-white font-medium font-Poppins text-xs md:text-sm ">
+                Personalised Performance Analysis
+              </del>
+            </li>
+            <li className="flex justify-start space-x-2 items-center  ">
+              <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
+              <del className="text-white font-medium font-Poppins text-xs md:text-sm ">
+                One - One <span> Mentorship </span> sessions
               </del>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
-              <del className="text-white text-xs md:text-sm ">
-                Special Access to{" "}
-                <span className="font-bold "> Personal AI Mentor</span>
-                (Coming Soon)
+              <del className="text-white font-medium font-Poppins text-xs md:text-sm ">
+                Access to<span> Digital </span> student library
+              </del>
+            </li>
+            <li className="flex justify-start space-x-2 items-center  ">
+              <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
+              <del className="text-white font-medium font-Poppins text-xs md:text-sm ">
+                Regular Workshops, Strategy and <br /> Councilling
+                Sessions.(with Certifications).
               </del>
             </li>
           </ul>
-
           <div className="w-full flex justify-center items-center my-6">
             <Link
               href="/dashboard/courses"
@@ -208,68 +237,85 @@ const Price = () => {
             <hr />
           </div>
 
-          <ul className="pt-6 px-6 space-y-4">
+          <ul className="pt-6 px-6 space-y-4 font-Inter">
             <li className="flex justify-start space-x-2 items-center">
               <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
-              <span className="text-gray-600 text-xs md:text-sm">Lectures</span>
+              <span className="text-gray-600 text-xs md:text-sm font-medium font-Poppins ">
+                Lectures
+              </span>
             </li>
             <li className="flex justify-start space-x-2 items-center">
               <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
-              <span className="text-gray-600 text-xs md:text-sm">
+              <span className="text-gray-600 text-xs md:text-sm font-medium font-Poppins ">
+                DPPs
+              </span>
+            </li>
+            <li className="flex justify-start space-x-2 items-center  ">
+              <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
+              <span className="text-gray-600 text-xs md:text-sm font-medium font-Poppins ">
                 Weekly test series
               </span>
             </li>
-            <li className="flex justify-start space-x-2 items-center   ">
+            <li className="flex justify-start space-x-2 items-center ">
               <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
-              <span className="text-gray-500 text-xs md:text-sm font-medium">
-                Doubt clearing sessions
+              <span className="text-gray-600 text-xs md:text-sm font-medium font-Poppins ">
+                All India Test series
               </span>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
-              <span className="text-gray-600 text-xs md:text-sm">
-                Access the smartest student community
-              </span>
-            </li>
-
-            <li className="flex justify-start space-x-2 items-center ">
-              <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
-              <span className=" text-xs md:text-sm text-gray-600">
-                <span className="font-bold text-white-600">LIVE</span> doubt
+              <span className="text-gray-600 text-xs md:text-sm font-medium font-Poppins ">
+                <span className="font-bold text-gray-600">LIVE</span> doubt
                 clearing sessions
               </span>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
-              <span className=" text-xs md:text-sm text-gray-600">
-                Special Access to{" "}
-                <span className="font-bold "> BRAHMASTRA</span>
-                (Coming Soon)
+              <span className="text-gray-600 text-xs md:text-sm font-medium font-Poppins ">
+                Access to smartest student community
               </span>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
-              <span className="text-gray-600 text-xs md:text-sm ">
-                <span className="font-bold">24/7</span> Mentorship guide
+              <span className="text-gray-600 text-xs md:text-sm font-medium font-Poppins ">
+                <span className="font-bold"> One shot</span> Revision series
               </span>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
-              <span className="text-gray-600 text-xs md:text-sm ">
-                Weekly <span className="font-bold">LIVE</span> Mentorship
-                Sessions
+              <span className="text-gray-600 text-xs md:text-sm font-medium font-Poppins ">
+                Scholars
+                <span className="font-bold"> AI </span> (beta)
               </span>
             </li>
             <li className="flex justify-start space-x-2 items-center ">
               <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
-              <span className="text-gray-600 text-xs md:text-sm ">
-                Special Access to
-                <span className="font-bold "> Personal AI Mentor</span>
-                (Coming Soon)
+              <span className="text-gray-600 text-xs md:text-sm font-medium font-Poppins ">
+                Personalised Performance Analysis
+              </span>
+            </li>
+            <li className="flex justify-start space-x-2 items-center ">
+              <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
+              <span className="text-gray-600 text-xs md:text-sm font-medium font-Poppins ">
+                One - One <span className="font-bold"> Mentorship </span>{" "}
+                sessions
+              </span>
+            </li>
+            <li className="flex justify-start space-x-2 items-center ">
+              <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
+              <span className="text-gray-600 text-xs md:text-sm font-medium font-Poppins ">
+                Access to<span className="font-bold"> Digital </span> student
+                library
+              </span>
+            </li>
+            <li className="flex justify-start space-x-2 items-center  ">
+              <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
+              <span className="text-gray-600 text-xs md:text-sm font-medium font-Poppins ">
+                Regular Workshops, Strategy and <br /> Councilling
+                Sessions.(with Certifications).
               </span>
             </li>
           </ul>
-
           <div className="w-full flex justify-center items-center my-6">
             <Link
               href="/dashboard/courses"
