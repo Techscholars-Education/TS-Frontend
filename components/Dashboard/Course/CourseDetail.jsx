@@ -6,8 +6,8 @@ import CourseDetailNavbar from './CourseDetailNavbar'
 import { SlCalender } from "react-icons/sl";
 import { FaStar, FaCheck } from "react-icons/fa";
 import coursePoster from "../../../public/Course/coursePoster.svg";
-import firecourse from '../../../public/dashboard-icon/fireCourse.png'
-import timmercourse from '../../../public/dashboard-icon/timmerCourse.png'
+import firecourse from '../../../public/dashboard-icon/firecourse.png'
+import timmercourse from '../../../public/dashboard-icon/timmercourse.png'
 import vedio from '../../../public/dashboard-icon/vedio.png'
 import Image from "next/image";
 
