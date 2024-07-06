@@ -24,7 +24,7 @@ const Classes = () => {
     {
       id: 3,
       title: "Ultimate",
-      price: "18999",
+      price: "24999",
     },
   ];
   const costing12th = [
@@ -42,7 +42,7 @@ const Classes = () => {
     {
       id: 3,
       title: "Ultimate",
-      price: "18999",
+      price: "24999",
     },
   ];
   const costing13th = [
@@ -60,7 +60,7 @@ const Classes = () => {
     {
       id: 3,
       title: "Ultimate",
-      price: "19999",
+      price: "27999",
     },
   ];
 

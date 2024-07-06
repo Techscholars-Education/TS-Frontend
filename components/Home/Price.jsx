@@ -1,11 +1,12 @@
 import React from "react";
-import { MdOutlineDone } from "react-icons/md";
+import { MdDone } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 import Link from "next/link";
 const Price = () => {
   return (
-    <section className="bg-[#F7FAFF] py-16 font-Poppins w-full  mx-auto  ">
-      <div className=" xl:w-10/12 2xl:w-[1100px] mx-auto  rounded-xl ">
+    <section className="bg-[#F7FAFF] py-16 font-Poppins w-full  mx-auto ">
+      {/* Headings */}
+      <div className=" xl:w-11/12 2xl:w-[1100px] mx-auto  rounded-xl  ">
         <div className=" text-center">
           <h5 className="text-xs font-medium bg-blue-100 text-TechBlue bg-TechBlue/10 font-Poppins py-2 rounded-full px-4 inline-block">
             Pricing
@@ -16,259 +17,309 @@ const Price = () => {
         </h2>
         <div className="my-4 text-center  ">
           <p className="font-Poppins px-6 leading-normal  md:px-20 lg:px-44 text-xs md:text-sm text-gray-600 tracking-wide ">
-            An innovative Ed-tech organisation dedicated to democratising access
-            to high-quality STEM education across India
+            Unlock Excellence: Where High-Quality Education Meets Unbeatable
+            Affordability
           </p>
         </div>
       </div>
 
-      <div className=" grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 w-11/12 xl:w-10/12 2xl:w-[1100px] mx-auto my-10  ">
-        <div className="border-2 border-gray-200 rounded-t-xl hover:border-black duration-300 bg-white ">
-          <div className="p-6 space-y-4 ">
-            <h2 className="font-bold text-xl  md:text-3xl text-darkBlue font-Inter flex items-center">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-4 lg:gap-5 my-10 w-full lg:w-11/12 xl:w-10/12 2xl:w-[1200px]  px-10 lg:px-2 mx-auto ">
+        <div className="border rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-200 bg-white font-Inter ">
+          <div className="px-6 pt-6">
+            <h4 className="text-lg font-Inter font-semibold text-darkBlue/90">
               Starter
+            </h4>
+            <h2 className="text-3xl font-bold text-TechBlue py-2">
+              &#8377;1999
+              <span className="text-xs font-normal text-gray-500">/Year</span>
             </h2>
-            <h3 className=" text-3xl  md:text-5xl font-bold text-darkBlue font-Inter">
-              ₹ 1999
-              <span className="text-sm text-gray-400 font-medium">/year</span>
-            </h3>
+            <hr />
           </div>
 
-          <div>
-            <svg
-              id="wave"
-              viewBox="0 0 1440 490"
-              version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <defs>
-                <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
-                  <stop stopColor="rgba(187, 247, 208, 1)" offset="0%"></stop>
-                  <stop stopColor="rgba(187, 247, 208, 1)" offset="100%"></stop>
-                </linearGradient>
-              </defs>
-              <path
-                className="fill-red-100"
-                d="M0,196L60,163.3C120,131,240,65,360,73.5C480,82,600,163,720,171.5C840,180,960,114,1080,106.2C1200,98,1320,147,1440,155.2C1560,163,1680,131,1800,163.3C1920,196,2040,294,2160,343C2280,392,2400,392,2520,367.5C2640,343,2760,294,2880,261.3C3000,229,3120,212,3240,245C3360,278,3480,359,3600,326.7C3720,294,3840,147,3960,81.7C4080,16,4200,33,4320,40.8C4440,49,4560,49,4680,49C4800,49,4920,49,5040,114.3C5160,180,5280,310,5400,310.3C5520,310,5640,180,5760,179.7C5880,180,6000,310,6120,351.2C6240,392,6360,343,6480,285.8C6600,229,6720,163,6840,163.3C6960,163,7080,229,7200,220.5C7320,212,7440,131,7560,155.2C7680,180,7800,310,7920,334.8C8040,359,8160,278,8280,228.7C8400,180,8520,163,8580,155.2L8640,147L8640,490L8580,490C8520,490,8400,490,8280,490C8160,490,8040,490,7920,490C7800,490,7680,490,7560,490C7440,490,7320,490,7200,490C7080,490,6960,490,6840,490C6720,490,6600,490,6480,490C6360,490,6240,490,6120,490C6000,490,5880,490,5760,490C5640,490,5520,490,5400,490C5280,490,5160,490,5040,490C4920,490,4800,490,4680,490C4560,490,4440,490,4320,490C4200,490,4080,490,3960,490C3840,490,3720,490,3600,490C3480,490,3360,490,3240,490C3120,490,3000,490,2880,490C2760,490,2640,490,2520,490C2400,490,2280,490,2160,490C2040,490,1920,490,1800,490C1680,490,1560,490,1440,490C1320,490,1200,490,1080,490C960,490,840,490,720,490C600,490,480,490,360,490C240,490,120,490,60,490L0,490Z"
-              ></path>
-            </svg>
-          </div>
-
-          <div className="bg-red-100 px-6 pb-6 font-Inter">
-            <ul className="text-start font-semibold text-gray-800 text-xs md:text-sm space-y-2 h-full">
-              <li className="flex items-center">
-                <MdOutlineDone className="text-green-600 text-xl mr-4 border-2 border-green-600 rounded-full " />
+          <ul className="pt-6 px-6 space-y-4 font-Inter">
+            <li className="flex justify-start space-x-2 items-center">
+              <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
+              <span className="text-gray-600 font-medium font-Poppins text-xs md:text-sm">
                 Lectures
-              </li>
-              <li className="flex items-center">
-                <MdOutlineDone className="text-green-600 text-xl mr-4 border-2 border-green-600 rounded-full " />
+              </span>
+            </li>
+            <li className="flex justify-start space-x-2 items-center">
+              <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
+              <span className="text-gray-600 font-medium font-Poppins text-xs md:text-sm">
                 DPPs
-              </li>
-              <li className="flex items-center">
-                <MdOutlineDone className="text-green-600 text-xl mr-4 border-2 border-green-600 rounded-full " />
+              </span>
+            </li>
+            <li className="flex justify-start space-x-2 items-center  ">
+              <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
+              <span className="text-gray-600 font-medium font-Poppins text-xs md:text-sm">
                 Weekly test series
-              </li>
-              <li className="flex items-center text-gray-500">
-                <RxCross2 className="text-red-600 text-xl mr-4 border-2 border-red-600 rounded-full " />
-                <del>Smart student community</del>
-              </li>
-              <li className="flex items-center text-gray-500">
-                <RxCross2 className="text-red-600 text-xl mr-4 border-2 border-red-600 rounded-full " />
-                <del>Live doubt clearing support</del>
-              </li>
-              <li className="flex items-center text-gray-500">
-                <RxCross2 className="text-red-600 text-xl mr-4 border-2 border-red-600 rounded-full " />
-                <del>Access to BRAHMASTRA(coming soon)</del>
-              </li>
-              <li className="flex items-center text-gray-500">
-                <RxCross2 className="text-red-600 text-xl mr-4 border-2 border-red-600 rounded-full " />
-                <del>24/7 Mentorship guide</del>
-              </li>
-              <li className="flex items-center text-gray-500">
-                <RxCross2 className="text-red-600 text-xl mr-4 border-2 border-red-600 rounded-full " />
-                <del>Weekly Live mentorship sessions</del>
-              </li>
-              <li className="flex items-center text-gray-500">
-                <RxCross2 className="text-red-600 text-xl mr-4 border-2 border-red-600 rounded-full " />
-                <del>Access to Personal AI Mentor (coming soon)</del>
-              </li>
-            </ul>
-          </div>
+              </span>
+            </li>
+            <li className="flex justify-start space-x-2 items-center ">
+              <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
+              <del className="text-gray-600 font-medium font-Poppins text-xs md:text-sm">
+                All India Test series
+              </del>
+            </li>
+            <li className="flex justify-start space-x-2 items-center ">
+              <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
+              <del className="text-gray-600 font-medium font-Poppins text-xs md:text-sm ">
+                <span className="font-bold text-gray-600">LIVE</span> doubt
+                clearing sessions
+              </del>
+            </li>
+            <li className="flex justify-start space-x-2 items-center ">
+              <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
+              <del className="text-gray-600 font-medium font-Poppins text-xs md:text-sm ">
+                Access to smartest student community
+              </del>
+            </li>
+            <li className="flex justify-start space-x-2 items-center ">
+              <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
+              <del className="text-gray-600 font-medium font-Poppins  text-xs md:text-sm ">
+                <span className="font-bold"> One shot</span> Revision series
+              </del>
+            </li>
+            <li className="flex justify-start space-x-2 items-center ">
+              <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
+              <del className="text-gray-600 font-medium font-Poppins text-xs md:text-sm ">
+                Scholars
+                <span className="font-bold"> AI </span> (beta)
+              </del>
+            </li>
+            <li className="flex justify-start space-x-2 items-center ">
+              <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
+              <del className="text-gray-600 font-medium font-Poppins text-xs md:text-sm ">
+                Personalised Performance Analysis
+              </del>
+            </li>
+            <li className="flex justify-start space-x-2 items-center ">
+              <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
+              <del className="text-gray-600 font-medium font-Poppins text-xs md:text-sm ">
+                One - One <span className="font-bold"> Mentorship </span>{" "}
+                sessions
+              </del>
+            </li>
+            <li className="flex justify-start space-x-2 items-center ">
+              <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
+              <del className="text-gray-600 font-medium font-Poppins text-xs md:text-sm ">
+                Access to<span className="font-bold"> Digital </span> student
+                library
+              </del>
+            </li>
+            <li className="flex justify-start space-x-2 items-center  ">
+              <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
+              <del className="text-gray-600 font-medium font-Poppins text-xs md:text-sm ">
+                Regular Workshops, Strategy and <br /> Councilling
+                Sessions.(with Certifications).
+              </del>
+            </li>
+          </ul>
 
-          <div className="border border-gray-50"></div>
-          <div className="px-6 py-7 bg-red-100 w-full ">
+          <div className="w-full flex justify-center items-center my-6">
             <Link
-              href="/course"
-              className=" bg-black text-white px-4 py-3 text-xs md:text-base  rounded-full hover:bg-red-600 duration-200 w-full  "
+              href="/dashboard/courses"
+              className="border border-gray-400 w-5/6 rounded-full px-4 md:px-6 py-2 md:py-3 text-center hover:bg-black hover:text-white duration-200 font-Poppins font-semibold "
             >
               Purchase Now
             </Link>
           </div>
         </div>
 
-        <div className="border-2 border-gray-200 rounded-t-xl hover:border-black duration-300  bg-white relative ">
-          <div className="p-6 space-y-4 ">
-            <h2 className="font-bold text-xl  md:text-3xl text-darkBlue font-Inter flex items-center">
-              Advanced{" "}
-              <span className=" px-2 mx-4 text-xs bg-TechBlue text-white py-2 rounded-full font-medium absolute -top-4 -right-6">
-                Most popular
-              </span>{" "}
+        {/* 2nd */}
+        <div className="border relative rounded-xl bg-TechBlue hover:shadow-xl hover:scale-105 transition-all duration-200 font-Inter ">
+          <div className="px-6 pt-6">
+            <h4 className="text-lg font-semibold text-white">Advanced</h4>
+            <h2 className="text-3xl font-bold  text-white py-2">
+              &#8377;6999
+              <span className="text-xs font-normal text-gray-100">/Year</span>
             </h2>
-            <h3 className=" text-3xl  md:text-5xl font-bold text-darkBlue font-Inter">
-              ₹ 7999
-              <span className="text-sm text-gray-400 font-medium">/year</span>
-            </h3>
+            <hr />
           </div>
 
-          <div>
-            <svg
-              id="wave"
-              viewBox="0 0 1440 490"
-              version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <defs>
-                <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
-                  <stop stopColor="rgba(187, 247, 208, 1)" offset="0%"></stop>
-                  <stop stopColor="rgba(187, 247, 208, 1)" offset="100%"></stop>
-                </linearGradient>
-              </defs>
-              <path
-                className="fill-yellow-100"
-                d="M0,196L60,163.3C120,131,240,65,360,73.5C480,82,600,163,720,171.5C840,180,960,114,1080,106.2C1200,98,1320,147,1440,155.2C1560,163,1680,131,1800,163.3C1920,196,2040,294,2160,343C2280,392,2400,392,2520,367.5C2640,343,2760,294,2880,261.3C3000,229,3120,212,3240,245C3360,278,3480,359,3600,326.7C3720,294,3840,147,3960,81.7C4080,16,4200,33,4320,40.8C4440,49,4560,49,4680,49C4800,49,4920,49,5040,114.3C5160,180,5280,310,5400,310.3C5520,310,5640,180,5760,179.7C5880,180,6000,310,6120,351.2C6240,392,6360,343,6480,285.8C6600,229,6720,163,6840,163.3C6960,163,7080,229,7200,220.5C7320,212,7440,131,7560,155.2C7680,180,7800,310,7920,334.8C8040,359,8160,278,8280,228.7C8400,180,8520,163,8580,155.2L8640,147L8640,490L8580,490C8520,490,8400,490,8280,490C8160,490,8040,490,7920,490C7800,490,7680,490,7560,490C7440,490,7320,490,7200,490C7080,490,6960,490,6840,490C6720,490,6600,490,6480,490C6360,490,6240,490,6120,490C6000,490,5880,490,5760,490C5640,490,5520,490,5400,490C5280,490,5160,490,5040,490C4920,490,4800,490,4680,490C4560,490,4440,490,4320,490C4200,490,4080,490,3960,490C3840,490,3720,490,3600,490C3480,490,3360,490,3240,490C3120,490,3000,490,2880,490C2760,490,2640,490,2520,490C2400,490,2280,490,2160,490C2040,490,1920,490,1800,490C1680,490,1560,490,1440,490C1320,490,1200,490,1080,490C960,490,840,490,720,490C600,490,480,490,360,490C240,490,120,490,60,490L0,490Z"
-              ></path>
-            </svg>
-          </div>
-
-          <div className="bg-yellow-100 px-6 pb-6 font-Inter">
-            <ul className="text-start font-semibold text-gray-800 text-xs md:text-sm space-y-2 h-full">
-              <li className="flex items-center">
-                <MdOutlineDone className="text-green-600 text-xl mr-4 border-2 border-green-600 rounded-full " />
-                Lectures
-              </li>
-              <li className="flex items-center">
-                <MdOutlineDone className="text-green-600 text-xl mr-4 border-2 border-green-600 rounded-full " />
-                DPPs
-              </li>
-              <li className="flex items-center">
-                <MdOutlineDone className="text-green-600 text-xl mr-4 border-2 border-green-600 rounded-full " />
+          <ul className="pt-6 px-6 space-y-4 font-Inter">
+            <li className="flex justify-start space-x-2 items-center">
+              <MdDone className="bg-white text-xl text-TechBlue font-bold rounded-full p-1" />
+              <span className="text-white text-xs md:text-sm">Lectures</span>
+            </li>
+            <li className="flex justify-start space-x-2 items-center">
+              <MdDone className="bg-white text-xl text-TechBlue font-bold rounded-full p-1" />
+              <span className="text-white text-xs md:text-sm">DPPs</span>
+            </li>
+            <li className="flex justify-start space-x-2 items-center  ">
+              <MdDone className="bg-white text-xl text-TechBlue font-bold rounded-full p-1" />
+              <span className="text-white text-xs md:text-sm">
                 Weekly test series
-              </li>
-              <li className="flex items-center">
-                <MdOutlineDone className="text-green-600 text-xl mr-4 border-2 border-green-600 rounded-full " />
-                Smart student community
-              </li>
-              <li className="flex items-center">
-                <MdOutlineDone className="text-green-600 text-xl mr-4 border-2 border-green-600 rounded-full " />
-                Live doubt clearing support
-              </li>
-              <li className="flex items-center text-gray-500">
-                <RxCross2 className="text-red-600 text-xl mr-4 border-2 border-red-600 rounded-full " />
-                <del>Access to BRAHMASTRA(coming soon)</del>
-              </li>
-              <li className="flex items-center text-gray-500">
-                <RxCross2 className="text-red-600 text-xl mr-4 border-2 border-red-600 rounded-full " />
-                <del>24/7 Mentorship guide</del>
-              </li>
-              <li className="flex items-center text-gray-500">
-                <RxCross2 className="text-red-600 text-xl mr-4 border-2 border-red-600 rounded-full " />
-                <del>Weekly Live mentorship sessions</del>
-              </li>
-              <li className="flex items-center text-gray-500">
-                <RxCross2 className="text-red-600 text-xl mr-4 border-2 border-red-600 rounded-full " />
-                <del>Access to Personal AI Mentor (coming soon)</del>
-              </li>
-            </ul>
-          </div>
-
-          <div className="border border-gray-50"></div>
-          <div className="px-6 py-7 bg-yellow-100 w-full ">
+              </span>
+            </li>
+            <li className="flex justify-start space-x-2 items-center ">
+              <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
+              <span className="text-white text-xs md:text-sm">
+                All India Test series
+              </span>
+            </li>
+            <li className="flex justify-start space-x-2 items-center ">
+              <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
+              <span className="text-white text-xs md:text-sm ">
+                <span className="font-bold ">LIVE</span> doubt clearing sessions
+              </span>
+            </li>
+            <li className="flex justify-start space-x-2 items-center ">
+              <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
+              <span className="text-white text-xs md:text-sm ">
+                Access to smartest student community
+              </span>
+            </li>
+            <li className="flex justify-start space-x-2 items-center ">
+              <MdDone className="bg-white text-xl text-TechBlue rounded-full p-1" />
+              <span className="text-white text-xs md:text-sm ">
+                <span className="font-bold"> One shot</span> Revision series
+              </span>
+            </li>
+            <li className="flex justify-start space-x-2 items-center ">
+              <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
+              <del className="text-white font-medium font-Poppins text-xs md:text-sm ">
+                Scholars
+                <span className="font-bold"> AI </span> (beta)
+              </del>
+            </li>
+            <li className="flex justify-start space-x-2 items-center ">
+              <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
+              <del className="text-white font-medium font-Poppins text-xs md:text-sm ">
+                Personalised Performance Analysis
+              </del>
+            </li>
+            <li className="flex justify-start space-x-2 items-center  ">
+              <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
+              <del className="text-white font-medium font-Poppins text-xs md:text-sm ">
+                One - One <span> Mentorship </span> sessions
+              </del>
+            </li>
+            <li className="flex justify-start space-x-2 items-center ">
+              <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
+              <del className="text-white font-medium font-Poppins text-xs md:text-sm ">
+                Access to<span> Digital </span> student library
+              </del>
+            </li>
+            <li className="flex justify-start space-x-2 items-center  ">
+              <RxCross2 className="bg-red-400 text-xl text-white rounded-full p-1" />
+              <del className="text-white font-medium font-Poppins text-xs md:text-sm ">
+                Regular Workshops, Strategy and <br /> Councilling
+                Sessions.(with Certifications).
+              </del>
+            </li>
+          </ul>
+          <div className="w-full flex justify-center items-center my-6">
             <Link
-              href="/course"
-              className=" bg-black text-white px-4 py-3 text-xs md:text-base  rounded-full hover:bg-yellow-600 duration-200 w-full  "
+              href="/dashboard/courses"
+              className="border border-gray-400 w-5/6 rounded-full bg-white text-TechBlue px-4 md:px-6 py-2 md:py-3 text-center hover:bg-black hover:text-white duration-200 font-Poppins font-semibold "
             >
               Purchase Now
             </Link>
           </div>
+
+          <span
+            datacontent="MOST POPULAR"
+            className="w-[100px] h-[100px] absolute font-bold flex justify-center items-center -top-2 -right-2 overflow-hidden before:w-[180px] before:h-8 before:bg-white before:absolute before:rotate-45 before:-translate-y-4 before:content-[attr(dataContent)] before:flex before:justify-center before:items-center before:text-xs before:pl-6 before:text-TechBlue before:shadow-md "
+          ></span>
         </div>
 
-        <div className="border-2 border-gray-200 rounded-t-xl hover:border-black duration-300  bg-white ">
-          <div className="p-6 space-y-4 ">
-            <h2 className="font-bold text-xl  md:text-3xl text-darkBlue font-Inter flex items-center">
+        {/* 3rd */}
+        <div className="border rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-200 bg-white font-Inter">
+          <div className="px-6 pt-6">
+            <h4 className="text-lg font-Inter font-semibold text-darkBlue/90">
               Ultimate
+            </h4>
+            <h2 className="text-3xl font-bold text-TechBlue py-2">
+              &#8377;16999
+              <span className="text-xs font-normal text-gray-500">/Year</span>
             </h2>
-            <h3 className=" text-3xl  md:text-5xl font-bold text-darkBlue font-Inter">
-              ₹ 17999
-              <span className="text-sm text-gray-400 font-medium">/year</span>
-            </h3>
+            <hr />
           </div>
 
-          <div>
-            <svg
-              id="wave"
-              viewBox="0 0 1440 490"
-              version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <defs>
-                <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
-                  <stop stopColor="rgba(187, 247, 208, 1)" offset="0%"></stop>
-                  <stop stopColor="rgba(187, 247, 208, 1)" offset="100%"></stop>
-                </linearGradient>
-              </defs>
-              <path
-                className="fill-green-100"
-                d="M0,196L60,163.3C120,131,240,65,360,73.5C480,82,600,163,720,171.5C840,180,960,114,1080,106.2C1200,98,1320,147,1440,155.2C1560,163,1680,131,1800,163.3C1920,196,2040,294,2160,343C2280,392,2400,392,2520,367.5C2640,343,2760,294,2880,261.3C3000,229,3120,212,3240,245C3360,278,3480,359,3600,326.7C3720,294,3840,147,3960,81.7C4080,16,4200,33,4320,40.8C4440,49,4560,49,4680,49C4800,49,4920,49,5040,114.3C5160,180,5280,310,5400,310.3C5520,310,5640,180,5760,179.7C5880,180,6000,310,6120,351.2C6240,392,6360,343,6480,285.8C6600,229,6720,163,6840,163.3C6960,163,7080,229,7200,220.5C7320,212,7440,131,7560,155.2C7680,180,7800,310,7920,334.8C8040,359,8160,278,8280,228.7C8400,180,8520,163,8580,155.2L8640,147L8640,490L8580,490C8520,490,8400,490,8280,490C8160,490,8040,490,7920,490C7800,490,7680,490,7560,490C7440,490,7320,490,7200,490C7080,490,6960,490,6840,490C6720,490,6600,490,6480,490C6360,490,6240,490,6120,490C6000,490,5880,490,5760,490C5640,490,5520,490,5400,490C5280,490,5160,490,5040,490C4920,490,4800,490,4680,490C4560,490,4440,490,4320,490C4200,490,4080,490,3960,490C3840,490,3720,490,3600,490C3480,490,3360,490,3240,490C3120,490,3000,490,2880,490C2760,490,2640,490,2520,490C2400,490,2280,490,2160,490C2040,490,1920,490,1800,490C1680,490,1560,490,1440,490C1320,490,1200,490,1080,490C960,490,840,490,720,490C600,490,480,490,360,490C240,490,120,490,60,490L0,490Z"
-              ></path>
-            </svg>
-          </div>
-
-          <div className="bg-green-100 px-6 pb-6 font-Inter">
-            <ul className="text-start font-semibold text-gray-800 text-xs md:text-sm space-y-2 h-full">
-              <li className="flex items-center">
-                <MdOutlineDone className="text-green-600 text-xl mr-4 border-2 border-green-600 rounded-full " />
+          <ul className="pt-6 px-6 space-y-4 font-Inter">
+            <li className="flex justify-start space-x-2 items-center">
+              <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
+              <span className="text-gray-600 text-xs md:text-sm font-medium font-Poppins ">
                 Lectures
-              </li>
-              <li className="flex items-center">
-                <MdOutlineDone className="text-green-600 text-xl mr-4 border-2 border-green-600 rounded-full " />
+              </span>
+            </li>
+            <li className="flex justify-start space-x-2 items-center">
+              <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
+              <span className="text-gray-600 text-xs md:text-sm font-medium font-Poppins ">
                 DPPs
-              </li>
-              <li className="flex items-center">
-                <MdOutlineDone className="text-green-600 text-xl mr-4 border-2 border-green-600 rounded-full " />
+              </span>
+            </li>
+            <li className="flex justify-start space-x-2 items-center  ">
+              <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
+              <span className="text-gray-600 text-xs md:text-sm font-medium font-Poppins ">
                 Weekly test series
-              </li>
-              <li className="flex items-center">
-                <MdOutlineDone className="text-green-600 text-xl mr-4 border-2 border-green-600 rounded-full " />
-                Smart student community
-              </li>
-              <li className="flex items-center">
-                <MdOutlineDone className="text-green-600 text-xl mr-4 border-2 border-green-600 rounded-full " />
-                Live doubt clearing support
-              </li>
-              <li className="flex items-center">
-                <MdOutlineDone className="text-green-600 text-xl mr-4 border-2 border-green-600 rounded-full " />
-                Access to BRAHMASTRA(coming soon)
-              </li>
-              <li className="flex items-center">
-                <MdOutlineDone className="text-green-600 text-xl mr-4 border-2 border-green-600 rounded-full " />
-                Weekly live mentorship sessions
-              </li>
-              <li className="flex items-center">
-                <MdOutlineDone className="text-green-600 text-xl mr-4 border-2 border-green-600 rounded-full " />
-                24/7 Mentorship guide
-              </li>
-              <li className="flex items-center">
-                <MdOutlineDone className="text-green-600 text-xl mr-4 border-2 border-green-600 rounded-full " />
-                Access to Personal AI Mentor (coming soon)
-              </li>
-            </ul>
-          </div>
-
-          <div className="border border-gray-50"></div>
-          <div className="px-6 py-7 bg-green-100 ">
+              </span>
+            </li>
+            <li className="flex justify-start space-x-2 items-center ">
+              <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
+              <span className="text-gray-600 text-xs md:text-sm font-medium font-Poppins ">
+                All India Test series
+              </span>
+            </li>
+            <li className="flex justify-start space-x-2 items-center ">
+              <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
+              <span className="text-gray-600 text-xs md:text-sm font-medium font-Poppins ">
+                <span className="font-bold text-gray-600">LIVE</span> doubt
+                clearing sessions
+              </span>
+            </li>
+            <li className="flex justify-start space-x-2 items-center ">
+              <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
+              <span className="text-gray-600 text-xs md:text-sm font-medium font-Poppins ">
+                Access to smartest student community
+              </span>
+            </li>
+            <li className="flex justify-start space-x-2 items-center ">
+              <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
+              <span className="text-gray-600 text-xs md:text-sm font-medium font-Poppins ">
+                <span className="font-bold"> One shot</span> Revision series
+              </span>
+            </li>
+            <li className="flex justify-start space-x-2 items-center ">
+              <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
+              <span className="text-gray-600 text-xs md:text-sm font-medium font-Poppins ">
+                Scholars
+                <span className="font-bold"> AI </span> (beta)
+              </span>
+            </li>
+            <li className="flex justify-start space-x-2 items-center ">
+              <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
+              <span className="text-gray-600 text-xs md:text-sm font-medium font-Poppins ">
+                Personalised Performance Analysis
+              </span>
+            </li>
+            <li className="flex justify-start space-x-2 items-center ">
+              <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
+              <span className="text-gray-600 text-xs md:text-sm font-medium font-Poppins ">
+                One - One <span className="font-bold"> Mentorship </span>{" "}
+                sessions
+              </span>
+            </li>
+            <li className="flex justify-start space-x-2 items-center ">
+              <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
+              <span className="text-gray-600 text-xs md:text-sm font-medium font-Poppins ">
+                Access to<span className="font-bold"> Digital </span> student
+                library
+              </span>
+            </li>
+            <li className="flex justify-start space-x-2 items-center  ">
+              <MdDone className="bg-blue-600 text-xl text-white rounded-full p-1" />
+              <span className="text-gray-600 text-xs md:text-sm font-medium font-Poppins ">
+                Regular Workshops, Strategy and <br /> Councilling
+                Sessions.(with Certifications).
+              </span>
+            </li>
+          </ul>
+          <div className="w-full flex justify-center items-center my-6">
             <Link
-              href="/course"
-              className=" bg-black text-white px-4 py-3 text-xs md:text-base  rounded-full hover:bg-green-600 duration-200 w-full  "
+              href="/dashboard/courses"
+              className="border border-gray-400 w-5/6 rounded-full px-4 md:px-6 py-2 md:py-3 text-center hover:bg-black hover:text-white duration-200 font-Poppins font-semibold "
             >
               Purchase Now
             </Link>

@@ -31,7 +31,7 @@ const CourseCard = (props) => {
           <div>
             <div className="flex  items-center">
              <div className="h-8 w-8">
-              <Image src={firecourse}/>
+              <Image src={firecourse} alt="fire-course"/>
               
              </div>
              <div className="flex flex-col ml-2">
