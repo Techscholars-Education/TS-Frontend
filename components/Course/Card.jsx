@@ -5,7 +5,6 @@ import avatar from "../../public/Dashboard/avatar.jpg";
 import Link from "next/link";
 import avatar2 from "@/public/Course/avatar2.jpeg";
 import avatar3 from "@/public/Course/avatar3.jpg";
-// import star from "../../public/Home/star.svg";
 import { FaClock } from "react-icons/fa6";
 import { PiGraduationCapFill } from "react-icons/pi";
 
@@ -13,7 +12,7 @@ const Card = (props) => {
   return (
     <>
       <div
-        className={`flex flex-col rounded-xl border border-gray-100 ${
+        className={`flex flex-col rounded-xl border border-gray-100 bg-white ${
           props.title === "JEE" ? "shadow-lg" : "shadow-sm"
         }   mx-6 font-Poppins relative`}
       >
@@ -31,14 +30,6 @@ const Card = (props) => {
               <h3 className="font-bold text-xl font-Inter  text-darkBlue ">
                 {props.title}
               </h3>
-              {/* <div className="flex items-center text-xs">
-                <Image
-                  src={star}
-                  className="w-[14px] invert mx-2"
-                  alt="rating-star "
-                />
-                4.8
-              </div> */}
             </div>
           </div>
           <p className="font-base text-xs xl:text-sm leading-relaxed text-gray-500 py-3 font-Poppins">
@@ -75,12 +66,12 @@ const Card = (props) => {
 
           <hr />
           <div className="flex justify-start space-x-6 mt-4 items-center">
-            <div className="text-darkBlue text-sm items-center flex">
+            <div className="text-darkBlue text-sm items-center font-medium flex">
               <FaClock className="mx-2 text-xl" />
               400+ Hrs
             </div>
-            <div className="text-darkBlue text-sm items-center flex">
-              <PiGraduationCapFill className="mx-2 text-3xl" />
+            <div className="text-darkBlue text-sm items-center font-medium flex">
+              <PiGraduationCapFill className="mx-2 text-2xl" />
               600+ Lessons
             </div>
           </div>
