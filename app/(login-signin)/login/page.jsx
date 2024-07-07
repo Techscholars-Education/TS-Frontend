@@ -16,6 +16,8 @@ import { IoIosEyeOff } from "react-icons/io";
 import gif1 from "@/public/Ts-Loader.gif";
 import successLoader from "@/public/Auth/successLoader.gif";
 import { useCookieStore } from "@/hooks/useStore";
+import useGoogle from "@/hooks/useGoogle";
+
 
 const Page = () => {
   const [email, setEmail] = useState("");
@@ -35,6 +37,7 @@ const Page = () => {
   };
 
   const { login } = useLogin();
+  const {usegoogle} = useGoogle()
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -72,31 +75,42 @@ const Page = () => {
     }
   };
 
-  const glogin = useGoogleLogin({
-    onSuccess: async (tokenResponse) => {
-      setAuthg(tokenResponse.access_token);
-      const userInfo = await fetch(
-        `https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=${tokenResponse.access_token}`
-      ).then((res) => res.json());
-      localStorage.setItem("userInfo", JSON.stringify(userInfo));
-    },
-    onError: (errorResponse) => console.log("Login Failed:", errorResponse),
-  });
 
-  useEffect(() => {
-    if (authg === "") return;
-    if (authg) {
-      const sessionExpirationTime = new Date(
-        new Date().getTime() + 5 * 60 * 60 * 1000
-      );
-      console.log(authg);
-      Cookies.set("access_token", authg, { expires: sessionExpirationTime });
-      cookieData(authg);
-
-      router.replace("/dashboard/my-course");
+  
+  const handleGoogle = async (event) => {
+    event.preventDefault();
+    try {
+      const res = await usegoogle();
+    } catch (error) {
+      console.log("Some error occured in login");
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [authg]);
+  }
+
+  // const glogin = useGoogleLogin({
+  //   onSuccess: async (tokenResponse) => {
+  //     setAuthg(tokenResponse.access_token);
+  //     const userInfo = await fetch(
+  //       `https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=${tokenResponse.access_token}`
+  //     ).then((res) => res.json());
+  //     localStorage.setItem("userInfo", JSON.stringify(userInfo));
+  //   },
+  //   onError: (errorResponse) => console.log("Login Failed:", errorResponse),
+  // });
+
+  // useEffect(() => {
+  //   if (authg === "") return;
+  //   if (authg) {
+  //     const sessionExpirationTime = new Date(
+  //       new Date().getTime() + 5 * 60 * 60 * 1000
+  //     );
+  //     console.log(authg);
+  //     Cookies.set("access_token", authg, { expires: sessionExpirationTime });
+  //     cookieData(authg);
+
+  //     router.replace("/dashboard/my-course");
+  //   }
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [authg]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -212,13 +226,13 @@ const Page = () => {
                       "Login"
                     )}
                   </button>
-                  {/* <button
-                    onClick={glogin}
+                  <button
+                    onClick={handleGoogle}
                     className="bg-gray-100 text-darkBlue rounded-full py-2 text-sm md:text-md w-full font-normal mt-4 flex items-center justify-center "
                   >
                     <Image src={Google} className="w-8" alt="google-logo" />{" "}
                     Google
-                  </button> */}
+                  </button>
                   <div className="mb-10 mt-6 text-xs md:text-sm flex">
                     <p className="text-gray-600">Do not have an account ?</p>{" "}
                     <Link href="/signin" className="text-TechBlue mx-2">

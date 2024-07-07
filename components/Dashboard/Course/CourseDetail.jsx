@@ -127,7 +127,7 @@ function CourseDetail() {
                 <div>
                   <div className="flex  items-center my-2">
                     <div>
-                      <Image src={firecourse} className="h-8 w-8 " />
+                      <Image src={firecourse} className="h-8 w-8 " alt='fire-course' />
                     </div>
                     <div className="flex flex-col ml-2">
                       <p className="text-[12px] font-[600] text-[#0079FC]">Business Design</p>
@@ -138,11 +138,11 @@ function CourseDetail() {
 
                 <div className="flex justify-start mt-4 items-center">
                   <div className="text-darkBlue text-sm items-center flex mr-2">
-                    <Image src={timmercourse} className="mx-2" />
+                    <Image src={timmercourse} className="mx-2" alt='timmer-course' />
                     85min
                   </div>
                   <div className="text-darkBlue text-sm items-center flex">
-                    <Image src={vedio} className="mx-2" />
+                    <Image src={vedio} className="mx-2" alt='vedio' />
                     400+ Lessons
                   </div>
                 </div>
