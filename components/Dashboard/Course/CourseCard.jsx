@@ -45,11 +45,11 @@ const CourseCard = (props) => {
           </p>
           <div className="flex justify-start  items-center">
             <div className="text-darkBlue text-sm items-center flex mr-2">
-              <Image src={timmercourse} className="mx-2" />
+              <Image src={timmercourse} className="mx-2" alt="timmer-course" />
               150+ Hrs
             </div>
             <div className="text-darkBlue text-sm items-center flex">
-              <Image src={vedio} className="mx-2" />
+              <Image src={vedio} className="mx-2"  alt="video"/>
               400+ Lessons
             </div>
           </div>
