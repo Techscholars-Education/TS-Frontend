@@ -12,7 +12,7 @@ const Course = () => {
       title: "FOUNDATION",
       route: "/course/foundation",
       description:
-        "Build a strong academic base with our foundational courses, designed to prepare you for competitive exams.",
+        "Build a strong academic base with our foundational courses, designed to prepare you for competitive and boards exams.",
       Poster: foundation,
     },
     {
@@ -38,7 +38,7 @@ const Course = () => {
       <div className="bg-white font-Poppins min-h-screen py-10  w-full ">
         <div className="text-center space-y-4 mb-10">
           <h2 className="text-xl md:text-4xl font-semibold text-darkBlue">
-            Explore our courses
+            Explore top courses
           </h2>
           <p className="text-sm text-gray-600 px-10 md:px-40 xl:px-96">
             Discover a wide range of expertly designed courses tailored to equip

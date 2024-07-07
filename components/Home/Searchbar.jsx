@@ -74,12 +74,7 @@ function App() {
         )}
       </div>
       <div>
-        <button
-          className="cursor-pointer text-sm transition-all bg-TechBlue text-white px-6 py-2 rounded-full
-              border-blue-600
-              border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px]
-              active:border-b-[2px] active:brightness-90 active:translate-y-[2px]"
-        >
+        <button className="bg-TechBlue text-white rounded-full py-3 px-9">
           Search
         </button>
       </div>

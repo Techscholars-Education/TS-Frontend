@@ -42,7 +42,7 @@ const Footer = () => {
   return (
     <>
       <ToastContainer />
-      <footer className="bg-gray-900 md:pt-10 text-white body-font grid grid-cols-1 md:grid-cols-3 font-Poppins w-full ">
+      <footer className="bg-[#081321] md:pt-10 text-white body-font grid grid-cols-1 md:grid-cols-3 font-Poppins w-full ">
         <div className="  px-5 pt-6 md:py-0 md:px-10 space-y-5 md:space-y-6  ">
           <div>
             <h1 className="text-sm md:text-xl font-semibold flex items-center  ">
@@ -163,7 +163,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <div className="flex space-x-4 w-full bg-gray-900 text-white py-4  px-8 ">
+      <div className="flex space-x-4 w-full bg-[#081321] text-white py-4  px-8 ">
         <p className="text-sm md:text-base lg:text-base">
           Copyright © 2024 Codementor Hub Education Pvt. Ltd. All rights
           reserved.
