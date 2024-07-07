@@ -1,16 +1,18 @@
-import CourseDetail from '@/components/Dashboard/Course/CourseDetail'
+
+import Tests from '@/components/Dashboard/Course/Tests'
 import DashboardNavbar from '@/components/Dashboard/DashboardNavbar'
 import LeftNavigation from '@/components/LeftNavigation/LeftNavigation'
+
 import React from 'react'
 
 function page() {
     return (
         <div><section className="flex w-full">
-            <LeftNavigation/>
+             <LeftNavigation/>
             <div className='flex flex-col'>
 
                <DashboardNavbar title="Course"/>
-                <CourseDetail/>
+                <Tests/>
 
             </div>
         </section></div>

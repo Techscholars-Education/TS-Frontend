@@ -8,6 +8,7 @@ import { FaClock } from "react-icons/fa6";
 import { PiGraduationCapFill } from "react-icons/pi";
 import firecourse from '../../../public/dashboard-icon/firecourse.png'
 import timmercourse from '../../../public/dashboard-icon/timmercourse.png'
+import vedio from '../../../public/dashboard-icon/vedio.png'
 import { FaFire } from "react-icons/fa6";
 
 const CourseCard = (props) => {
@@ -43,12 +44,12 @@ const CourseCard = (props) => {
             {props.description}
           </p>
           <div className="flex justify-start  items-center">
-            <div className="text-darkBlue text-sm items-center flex">
-              <Image src={timmercourse} className="mx-2"  alt="timmer-course"/>
+            <div className="text-darkBlue text-sm items-center flex mr-2">
+              <Image src={timmercourse} className="mx-2" alt="timmer-course" />
               150+ Hrs
             </div>
             <div className="text-darkBlue text-sm items-center flex">
-              <PiGraduationCapFill className="mx-2" />
+              <Image src={vedio} className="mx-2"  alt="video"/>
               400+ Lessons
             </div>
           </div>

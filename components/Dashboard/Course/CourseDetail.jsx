@@ -6,7 +6,9 @@ import CourseDetailNavbar from './CourseDetailNavbar'
 import { SlCalender } from "react-icons/sl";
 import { FaStar, FaCheck } from "react-icons/fa";
 import coursePoster from "../../../public/Course/coursePoster.svg";
-
+import firecourse from '../../../public/dashboard-icon/firecourse.png'
+import timmercourse from '../../../public/dashboard-icon/timmercourse.png'
+import vedio from '../../../public/dashboard-icon/vedio.png'
 import Image from "next/image";
 
 
@@ -53,7 +55,7 @@ function CourseDetail() {
 
   return (
     <div>
-      <div className="bg-[#f7faff] font-Poppins min-h-screen py-10 md:w-[82vw] mr-4 flex flex-col ">
+      <div className="bg-[#f7faff] font-Poppins min-h-screen py-6 md:w-[82vw] mr-4 flex flex-col ">
         <CourseDetailNavbar />
         <div className='grid md:grid-cols-3 grid-cols-1 md:ml-10 '>
           <div className='flex col-span-2 flex-col bg-white rounded-xl mt-4 md:p-4'>
@@ -125,26 +127,26 @@ function CourseDetail() {
                 <div>
                   <div className="flex  items-center my-2">
                     <div>
-                      <FaFire className="h-6 w-6 text-red-300" />
+                      <Image src={firecourse} className="h-8 w-8 " alt='fire-course' />
                     </div>
                     <div className="flex flex-col ml-2">
-                      <p className="text-[12px] text-[#0079FC]">Business Design</p>
-                      <p className="text-sm">New lession is available</p>
+                      <p className="text-[12px] font-[600] text-[#0079FC]">Business Design</p>
+                      <p className="text-sm font-[500]">New lession is available</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="flex justify-start mt-4 items-center">
-                  <div className="text-darkBlue text-sm items-center flex">
-                    <FaClock className="mx-2" />
-                    150+ Hrs
+                  <div className="text-darkBlue text-sm items-center flex mr-2">
+                    <Image src={timmercourse} className="mx-2" alt='timmer-course' />
+                    85min
                   </div>
                   <div className="text-darkBlue text-sm items-center flex">
-                    <PiGraduationCapFill className="mx-2" />
+                    <Image src={vedio} className="mx-2" alt='vedio' />
                     400+ Lessons
                   </div>
                 </div>
-                <hr />
+                <hr className='mt-2'/>
 
 
 
