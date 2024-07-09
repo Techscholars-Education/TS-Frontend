@@ -34,15 +34,15 @@ const Page = () => {
 
 
 
-useEffect(() => {
-  if (!id) return;
-  if (localStorage.getItem('openURLAttempted')) {
-    return;
-  }
-  window.open(`${frontTsUrl}/status/${id}`, "_blank", "noreferrer");
-  localStorage.setItem('openURLAttempted', 'true');
-// eslint-disable-next-line react-hooks/exhaustive-deps 
-}, [id]);
+// useEffect(() => {
+//   if (!id) return;
+//   if (localStorage.getItem('openURLAttempted')) {
+//     return;
+//   }
+//   window.open(`${frontTsUrl}/status/${id}`, "_blank", "noreferrer");
+//   localStorage.setItem('openURLAttempted', 'true');
+// // eslint-disable-next-line react-hooks/exhaustive-deps 
+// }, [id]);
 
  useEffect(()=>{
   if (!id) return;

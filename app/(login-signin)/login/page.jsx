@@ -16,7 +16,7 @@ import { IoIosEyeOff } from "react-icons/io";
 import gif1 from "@/public/Ts-Loader.gif";
 import successLoader from "@/public/Auth/successLoader.gif";
 import { useCookieStore } from "@/hooks/useStore";
-import useGoogle from "@/hooks/useGoogle";
+import { tsUrl } from '@/config';
 
 
 const Page = () => {
@@ -37,8 +37,7 @@ const Page = () => {
   };
 
   const { login } = useLogin();
-  const {usegoogle} = useGoogle()
-
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -75,16 +74,6 @@ const Page = () => {
     }
   };
 
-
-  
-  const handleGoogle = async (event) => {
-    event.preventDefault();
-    try {
-      const res = await usegoogle();
-    } catch (error) {
-      console.log("Some error occured in login");
-    }
-  }
 
   // const glogin = useGoogleLogin({
   //   onSuccess: async (tokenResponse) => {
@@ -226,13 +215,13 @@ const Page = () => {
                       "Login"
                     )}
                   </button>
-                  <button
-                    onClick={handleGoogle}
+                  <Link
+                   href={`${tsUrl}/auth/v1/oauth/login`}
                     className="bg-gray-100 text-darkBlue rounded-full py-2 text-sm md:text-md w-full font-normal mt-4 flex items-center justify-center "
                   >
                     <Image src={Google} className="w-8" alt="google-logo" />{" "}
                     Google
-                  </button>
+                  </Link>
                   <div className="mb-10 mt-6 text-xs md:text-sm flex">
                     <p className="text-gray-600">Do not have an account ?</p>{" "}
                     <Link href="/signin" className="text-TechBlue mx-2">
