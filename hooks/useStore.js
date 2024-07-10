@@ -66,9 +66,11 @@ export const useProductStore = create(persist((set) => ({
   },
          });
          const data = await res.json();
-         const item13 = data.products.filter((product) => product.class_for === "13");
-         const item12 = data.products.filter((product) => product.class_for === "12");
-         const item11 = data.products.filter((product) => product.class_for === "11");
+        //  console.log(data.products.filter((product) => product.class_name === 13));
+         const item13 = data.products.filter((product) => product.description.includes('class 13th'));
+         const item12 = data.products.filter((product) => product.description.includes('class 12th'));
+         const item11 = data.products.filter((product) => product.description.includes('class 11th'));
+         
             
       // Update Zustand store with filtered data
      
@@ -101,9 +103,9 @@ export const useProductJEEStore = create(persist((set) => ({
   },
          });
          const data = await res.json();
-         const item13 = data.products.filter((product) => product.class_for === "13");
-         const item12 = data.products.filter((product) => product.class_for === "12");
-         const item11 = data.products.filter((product) => product.class_for === "11");
+         const item13 = data.products.filter((product) => product.description.includes('class 13th'));
+         const item12 = data.products.filter((product) => product.description.includes('class 12th'));
+         const item11 = data.products.filter((product) => product.description.includes('class 11th'));
             
       // Update Zustand store with filtered data
      
@@ -135,8 +137,8 @@ export const useProductFoundationStore = create(persist((set) => ({
   },
          });
          const data = await res.json();
-         const item10 = data.products.filter((product) => product.class_for === "10");
-         const item9 = data.products.filter((product) => product.class_for === "9");
+         const item10 = data.products.filter((product) => product.description.includes('class 10'));
+         const item9 = data.products.filter((product) => product.description.includes('class 9'));
             
       // Update Zustand store with filtered data
       // console.log(item10);
