@@ -171,10 +171,13 @@ const HomePageWeb = () => {
                   <div className="relative blur-[2px]">
                     <FiLock className="absolute w-8 h-8 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-500" style={{ color: 'black' }} />
                     <LineChart
-                      xAxis={[{ data: [1, 2, 3, 5, 8, 10] }]}
+                      
                       series={[
-                        { data: [2, 5.5, 2, 8.5, 1.5, 5] },
+                        { data: [2, 5.5, 2, 8.5, 1.5, 5,3],
+                          color: 'black'
+                         },
                       ]}
+                      xAxis={[{ scaleType: 'point', data: ['Sun', 'Mon', 'Tue', 'Wed', 'Thr', 'Fri','Sat' ] }]}
                       height={255}
                       className="text-black"
                     />
@@ -182,17 +185,22 @@ const HomePageWeb = () => {
                 </div>
               </Tooltip>
 
-              <div className="bg-white rounded-lg mt-3 p-4 py-0 w-full md:w-[35vw]  mx-auto">
+              <div className="bg-white rounded-lg mt-3 p-4 py-0 w-full md:max-w-[35vw]  mx-auto">
                 <p className="font-semibold mt-4">Watch Time</p>
                 <div className="relative blur-[2px]">
                   <FiLock className="absolute w-8 h-8 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-500" style={{ color: 'black' }} />
                   <LineChart
                     height={255}
                     series={[
-                      { data: pData, label: 'Classes' },
-                      { data: uData, label: 'Tutorials' },
+                      { data: pData, label: 'Classes',
+                        color: '#891D06'
+                       },
+                      { data: uData, label: 'Tutorials' ,
+                        color: '#ED6214'
+                      },
                     ]}
                     xAxis={[{ scaleType: 'point', data: xLabels }]}
+                    className="text-black"
                   />
                 </div>
               </div>
@@ -200,7 +208,7 @@ const HomePageWeb = () => {
 
             <div className=" mr-12">
 
-              <div className="  flex flex-col bg-white rounded-lg  md:mb-4 md:w-[34.5vw]   ">
+              <div className="  flex flex-col bg-white rounded-lg  md:mb-4 md:max-w-[34.5vw]   ">
                 <div className="md:mt-0 rounded-xl flex align-middle items-center justify-self-center  ">
                   <div
                     className=" flex items-center justify-center w-full"
@@ -210,7 +218,7 @@ const HomePageWeb = () => {
                       ranges={[selectionRange]}
                       onChange={handleSelect}
                       style={{fontWeight: '700',width:'450px' }}
-                      className=""
+                      
                     />
                   </div>
 

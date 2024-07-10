@@ -13,9 +13,9 @@ function Classes() {
       ];
       
   return (
-    <div className=" font-Poppins min-h-screen py-6 md:w-[82vw] flex flex-col bg-[#f7faff] ">
+    <div className=" font-Poppins min-h-screen py-6 md:full md:mr-8 flex flex-col bg-[#f7faff] ">
     <CourseDetailNavbar/>
-    <div className='flex flex-col  bg-white rounded-xl p-3 mt-4 md:ml-10'>
+    <div className='flex flex-col  bg-white rounded-xl p-3 md:mr-10 mt-4 md:ml-10'>
         <div className='m-4'>
             <h2 className='text-[22px] font-[550]'>Subject</h2>
             <p className='text-[14px] text-gray-500 mt-2'>Select your subjects & start learning</p>
