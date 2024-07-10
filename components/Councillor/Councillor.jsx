@@ -58,7 +58,7 @@ const Councillor = () => {
     timing,
   ]);
 
-  // Handle submit function
+  //! Handle submit function
   const handleSubmit = async () => {
     // Validation checks
     if (!validateEmail(email)) {
@@ -147,7 +147,7 @@ const Councillor = () => {
           <div className=" w-full lg:w-1/2  ">
             <div className="grid grid-cols-2 gap-4  ">
               <div className=" space-y-2 text-sm lg:text-base xl:text-lg  ">
-                <label htmlFor="fname">
+                <label className="font-medium" htmlFor="fname">
                   First Name <span className="text-red-500">*</span>{" "}
                 </label>
                 <input
@@ -162,7 +162,7 @@ const Councillor = () => {
                 />
               </div>
               <div className=" space-y-2  text-sm lg:text-base xl:text-lg">
-                <label htmlFor="lname">
+                <label className="font-medium" htmlFor="lname">
                   Last Name <span className="text-red-500">*</span>{" "}
                 </label>
                 <input
@@ -177,7 +177,7 @@ const Councillor = () => {
                 />
               </div>
               <div className=" space-y-2 text-sm lg:text-base xl:text-lg ">
-                <label htmlFor="email">
+                <label className="font-medium" htmlFor="email">
                   Email <span className="text-red-500">*</span>{" "}
                 </label>
                 <input
@@ -192,7 +192,7 @@ const Councillor = () => {
                 />
               </div>
               <div className=" space-y-2  text-sm lg:text-base xl:text-lg">
-                <label htmlFor="phone">
+                <label className="font-medium" htmlFor="phone">
                   Phone Number <span className="text-red-500">*</span>{" "}
                 </label>
                 <input
@@ -207,7 +207,7 @@ const Councillor = () => {
                 />
               </div>
               <div className=" space-y-2 text-sm lg:text-base xl:text-lg ">
-                <label htmlFor="class">
+                <label className="font-medium" htmlFor="class">
                   Class <span className="text-red-500">*</span>{" "}
                 </label>
                 <br />
@@ -246,7 +246,7 @@ const Councillor = () => {
                 </select>
               </div>
               <div className=" space-y-2 text-sm lg:text-base xl:text-lg ">
-                <label htmlFor="goal">
+                <label className="font-medium" htmlFor="goal">
                   Goal <span className="text-red-500">*</span>{" "}
                 </label>
                 <br />
@@ -305,7 +305,7 @@ const Councillor = () => {
                 </select>
               </div>
               <div className=" space-y-2  text-sm lg:text-base xl:text-lg">
-                <label htmlFor="program">
+                <label className="font-medium" htmlFor="program">
                   Preferred Programs <span className="text-red-500">*</span>{" "}
                 </label>
                 <br />
@@ -352,7 +352,7 @@ const Councillor = () => {
                 </select>
               </div>
               <div className=" space-y-2 text-sm lg:text-base xl:text-lg ">
-                <label htmlFor="state">
+                <label className="font-medium" htmlFor="state">
                   State <span className="text-red-500">*</span>{" "}
                 </label>
                 <br />
@@ -592,7 +592,7 @@ const Councillor = () => {
               </div>
             </div>
             <div className=" my-5 space-y-2 text-sm lg:text-base xl:text-lg">
-              <label htmlFor="fname">
+              <label className="font-medium" htmlFor="fname">
                 Pick a slot for our councillor to call you{" "}
                 <span className="text-red-500">*</span>{" "}
               </label>

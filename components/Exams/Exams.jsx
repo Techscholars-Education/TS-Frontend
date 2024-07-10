@@ -54,6 +54,7 @@ const Councillor = () => {
     state,
   ]);
 
+  //! handle submit
   const handleSubmit = async () => {
     // Validation checks
     if (!validateEmail(email)) {
@@ -141,7 +142,7 @@ const Councillor = () => {
           <div className=" w-full lg:w-1/2  ">
             <div className="grid grid-cols-2 gap-4  ">
               <div className=" space-y-2 text-sm lg:text-base xl:text-lg ">
-                <label htmlFor="fname">
+                <label className="font-medium" htmlFor="fname">
                   First Name <span className="text-red-500">*</span>{" "}
                 </label>
                 <input
@@ -156,7 +157,7 @@ const Councillor = () => {
                 />
               </div>
               <div className=" space-y-2  text-sm lg:text-base xl:text-lg">
-                <label htmlFor="lname">
+                <label className="font-medium" htmlFor="lname">
                   Last Name <span className="text-red-500">*</span>{" "}
                 </label>
                 <input
@@ -171,7 +172,7 @@ const Councillor = () => {
                 />
               </div>
               <div className=" space-y-2 text-sm lg:text-base xl:text-lg ">
-                <label htmlFor="email">
+                <label className="font-medium" htmlFor="email">
                   Email <span className="text-red-500">*</span>{" "}
                 </label>
                 <input
@@ -186,7 +187,7 @@ const Councillor = () => {
                 />
               </div>
               <div className=" space-y-2  text-sm lg:text-base xl:text-lg">
-                <label htmlFor="phone">
+                <label className="font-medium" htmlFor="phone">
                   Phone Number <span className="text-red-500">*</span>{" "}
                 </label>
                 <input
@@ -201,7 +202,9 @@ const Councillor = () => {
                 />
               </div>
               <div className=" space-y-2 text-sm lg:text-base xl:text-lg ">
-                <label htmlFor="class">Class</label>
+                <label className="font-medium" htmlFor="class">
+                  Class <span className="text-red-500">*</span>{" "}
+                </label>
                 <br />
                 <select
                   className="w-full bg-white border border-gray-400 p-2 text-sm lg:text-base xl:text-lg "
@@ -238,7 +241,9 @@ const Councillor = () => {
                 </select>
               </div>
               <div className=" space-y-2 text-sm lg:text-base xl:text-lg ">
-                <label htmlFor="Exam">Target Exam</label>
+                <label className="font-medium" htmlFor="Exam">
+                  Target Exam <span className="text-red-500">*</span>{" "}
+                </label>
                 <br />
                 <select
                   className="w-full bg-white border border-gray-400 p-2 text-sm lg:text-base xl:text-lg "
@@ -283,7 +288,9 @@ const Councillor = () => {
                 </select>
               </div>
               <div className=" space-y-2  text-sm lg:text-base xl:text-lg">
-                <label htmlFor="year">Target Year </label>
+                <label className="font-medium" htmlFor="year">
+                  Target Year <span className="text-red-500">*</span>{" "}
+                </label>
                 <br />
 
                 <select
@@ -329,7 +336,9 @@ const Councillor = () => {
                 </select>
               </div>
               <div className=" space-y-2 text-sm lg:text-base xl:text-lg ">
-                <label htmlFor="state">State</label>
+                <label className="font-medium" htmlFor="state">
+                  State <span className="text-red-500">*</span>{" "}
+                </label>
                 <br />
                 <select
                   className="w-full bg-white border border-gray-400 p-2 text-sm lg:text-base xl:text-lg"
@@ -340,13 +349,6 @@ const Councillor = () => {
                     setState(e.target.value);
                   }}
                 >
-                  <option
-                    className="bg-white hover:bg-gray-200 p-2 disabled:cursor-not-allowed"
-                    value=""
-                    disabled
-                  >
-                    Select the state
-                  </option>
                   <option
                     className="bg-white hover:bg-gray-200 p-2 disabled:cursor-not-allowed"
                     value=""
@@ -573,13 +575,16 @@ const Councillor = () => {
                 </select>
               </div>
             </div>
-            <div className=" my-10 space-y-2 text-sm lg:text-base xl:text-lg">
+            <div className="my-4 font-medium">
+              NOTE:
+              <span className="text-red-600"> All fields are required.</span>
+            </div>
+            <div className=" mb-10 space-y-2 text-sm lg:text-base xl:text-lg">
               <p className="text-gray-400">
                 * Our scholarship exam is held every Sunday for 3 hours which is
                 from 10 A.M to 1 P.M{" "}
               </p>
             </div>
-
             <button
               onClick={handleSubmit}
               disabled={showLoader || disableBTN}
