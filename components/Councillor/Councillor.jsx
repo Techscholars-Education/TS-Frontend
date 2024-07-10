@@ -22,7 +22,6 @@ const Councillor = () => {
 
   const [showLoader, setShowLoader] = useState(false);
   const [disableBTN, setDisableBTN] = useState(true);
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   //! Validate email function
   function validateEmail(email) {
@@ -142,37 +141,18 @@ const Councillor = () => {
         </div>
 
         <section className=" space-y-10 lg:space-y-0 lg:space-x-10 w-11/12 xl:w-full flex flex-col lg:flex lg:flex-row xl:space-x-20 mx-auto">
-          {isPopupOpen && (
-            <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-              <div className="w-1/3 p-6 bg-white rounded shadow-lg">
-                <h2 className="mb-4 text-xl font-bold">This is a Popup</h2>
-                <p className="mb-4">
-                  This popup appears when the button is clicked and can be
-                  closed by clicking the close button.
-                </p>
-                <button
-                  className="px-4 py-2 text-white bg-red-500 rounded hover:bg-red-600"
-                  onClick={() => {
-                    setIsPopupOpen(false);
-                  }}
-                >
-                  Close Popup
-                </button>
-              </div>
-            </div>
-          )}
           <div className="mx-auto ">
             <Image src={CouncillorPoster} alt="councillor-icon"></Image>
           </div>
           <div className=" w-full lg:w-1/2  ">
             <div className="grid grid-cols-2 gap-4  ">
-              <div className=" space-y-2 text-sm lg:text-base xl:text-lg ">
+              <div className=" space-y-2 text-sm lg:text-base xl:text-lg  ">
                 <label htmlFor="fname">
                   First Name <span className="text-red-500">*</span>{" "}
                 </label>
                 <input
                   className=" p-2 border border-gray-400 w-full outline-none"
-                  placeholder="Enter you first name"
+                  placeholder="Enter your first name"
                   type="text"
                   value={firstName}
                   onChange={(e) => {
@@ -187,7 +167,7 @@ const Councillor = () => {
                 </label>
                 <input
                   className=" p-2 border border-gray-400 w-full outline-none"
-                  placeholder="Enter you last name"
+                  placeholder="Enter your last name"
                   type="text"
                   value={lastName}
                   onChange={(e) => {
@@ -202,7 +182,7 @@ const Councillor = () => {
                 </label>
                 <input
                   className=" p-2 border border-gray-400 w-full outline-none"
-                  placeholder="Enter you Email"
+                  placeholder="Enter your email"
                   type="email"
                   value={email}
                   onChange={(e) => {
@@ -611,7 +591,7 @@ const Councillor = () => {
                 </select>
               </div>
             </div>
-            <div className=" my-10 space-y-2 text-sm lg:text-base xl:text-lg">
+            <div className=" my-5 space-y-2 text-sm lg:text-base xl:text-lg">
               <label htmlFor="fname">
                 Pick a slot for our councillor to call you{" "}
                 <span className="text-red-500">*</span>{" "}
@@ -652,7 +632,10 @@ const Councillor = () => {
                 </option>
               </select>
             </div>
-
+            <div className="mb-4 font-medium">
+              NOTE:
+              <span className="text-red-600"> All fields are required.</span>
+            </div>
             <button
               onClick={handleSubmit}
               disabled={showLoader || disableBTN}
