@@ -43,7 +43,7 @@ function Tests() {
   return (
     <div className=" font-Poppins min-h-screen py-6 md:w-[82vw] flex flex-col bg-[#f7faff] ">
      <CourseDetailNavbar/>
-    <div className='flex flex-col  bg-white rounded-xl p-3 mt-4 md:ml-10'>
+    <div className='flex flex-col  bg-white rounded-xl p-3 mt-4 md:mr-10 md:ml-10'>
        
         <div className="grid md:grid-cols-4 grid-cols-1">
         {loading ? (
@@ -66,7 +66,7 @@ function Tests() {
                 </Link>
               ))
             ) : (
-              <div className="flex justify-center w-[80vw] items-center md:h-96">
+              <div className="flex justify-center w-[76vw] items-center md:h-96">
                 <p className="text-gray-500">No test series available</p>
               </div>
             )}

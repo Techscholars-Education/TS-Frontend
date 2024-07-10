@@ -17,7 +17,7 @@ function page() {
             <div className='flex flex-col'>
 
 
-                <div className=" font-Poppins min-h-screen  w-full bg-[#f7faff] ">
+                <div className=" font-Poppins min-h-screen  w-[80vw] bg-[#f7faff] ">
                     <DashboardNavbar title="Test series Foundation" />
                     <div className=" my-4 flex flex-col mx-8 blur-[1.5px]">
                         <div className='flex justify-between'>
