@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import CheckBoxIcon from '@mui/icons-material/CheckBox';
-import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
+
 import {
   Box,
   Button,
@@ -32,6 +27,7 @@ import axios from 'axios';
 import Link from 'next/link';
 import Cookies from 'js-cookie';
 import deleteicon from '../../../public/dashboard-icon/deleteicon.png'
+import edit from '../../../public/dashboard-icon/edit.png'
 import { Clear } from '@mui/icons-material';
 import { MdWatchLater } from "react-icons/md";
 import { IoIosPeople } from "react-icons/io";
@@ -120,8 +116,8 @@ function Todo() {
   }
   const list = () => (
     <Box
-      sx={{ width: 400 }}
-      className="w-[300px]"
+    
+      className="max-w-[300px]"
       role="presentation"
 
     >
@@ -161,31 +157,34 @@ function Todo() {
     </Box>
   );
   return (
-    <div> <Box className="flex flex-col rounded-lg md:px-4 md:w-[34.5vw]  mt-4 bg-white md:pl-4 p-8 pl-0 md:pt-2 md:pb-0  overflow-hidden ">
+    <div> <Box className="flex flex-col rounded-lg md:px-4 md:max-w-[34.5vw]  mt-4 bg-white md:pl-4 p-8 pl-0 md:pt-2 md:pb-0  overflow-hidden ">
       <Box className="flex justify-between md:px-5">
-        <h3 className="font-[550] text-[16px]">To Do List</h3>
-        <Box className="flex ">
+        <h3 className="font-[550] text-[16px] mt-2">To Do List</h3>
+      
+        <Box className="flex mt-2 ">
 
           <div>
             <button onClick={() => setShowTodoPopup(true)} className="text-[13px] font-[600] ml-4  text-blue-700">See all</button>
             <Dialog open={showTodoPopup} onClose={closeDialogTodoList}>
               <Box
-                sx={{ width: 466 }}
-                className="w-[430px] h-[531px]"
+                
+                className="max-w-[430px] h-[531px] bg-gray-50 duration-300"
                 role="presentation"
 
               >
                 <List className='p-6'>
-                  <div className='flex justify-between mx-6 my-2'>
+                  <div className='flex justify-between mx-6 my-2 '>
                     <h2 className='font-[600] text-[18px]'>To do list</h2>
+
                     <button onClick={closeDialogTodoList} >
 
                       <Clear className='text-red-500 bg-red-100 rounded-full p-1'></Clear>
                     </button>
                   </div>
+                  <hr />
                   {todos.length > 0 ? (
                     todos.map(todo => (
-                      <Box key={todo.id} className="flex justify-between mt-3  p-3 pr-0">
+                      <Box key={todo.id} className="flex justify-between mt-3  p-3 pr-0 bg-white m-4">
                         <Box className="flex w-[18vw]">
                           <div className='flex mr-2 mt-1'>
                             {
@@ -202,19 +201,20 @@ function Todo() {
                                 {todo.description}
                               </p>
                             </Box>
-                            <div className='flex mt-0.5'>
+                            <div className='flex my-2'>
                               <Link href="#" className='bg-[#FF7512] rounded-full ml-0 mx-2 px-2 text-white text-[12px] py-1'>Medium</Link>
                               <Link href="#" className='bg-[#9F46E4] rounded-full mx-2 px-2 text-white text-[12px] py-1'>Other</Link>
 
                             </div>
+                            <p className='text-[12px] mt-1 '> 10:30 AM | Thursday | 05.12.2024</p>
                           </div>
                         </Box>
-                        <Box className="flex items-center ">
-                          <IconButton onClick={() => {openDialog(todo); closeDialogTodoList()}}>
-                            <EditIcon className="h-6 w-6 stdbgclr rounded-full p-1 " />
-                          </IconButton>
+                        <Box className="flex items-center flex-col ">
                           <IconButton onClick={() => handleDeleteTodo(todo.id)}>
                             <Image src={deleteicon} className="   rounded-full p-1 text-black " alt='delete-icon' />
+                          </IconButton>
+                          <IconButton onClick={() => {openDialog(todo); closeDialogTodoList()}}>
+                            <Image src={edit} className="h-6 w-6  " />
                           </IconButton>
                         </Box>
                       </Box>
@@ -223,7 +223,7 @@ function Todo() {
                     <p>Loading...</p>
                   )}
                 </List>
-                <Divider />
+              
               </Box>
               <div className='flex justify-between p-4 mr-4'>
                 <button variant="outlined" className="h-[40px] w-[76px] text-[13px]  border-[2px] rounded-lg " onClick={() => {
@@ -242,19 +242,20 @@ function Todo() {
           </div>
         </Box>
       </Box>
+      <hr className='mt-1' />
       <Box className='md:px-4'>
         {todos.length > 0 ? (
           // todos.map(todo => (
           <Box className="flex justify-between px-2 my-2 ">
             <Box className="flex">
-            <div className='flex mr-2 mt-1'>
+            <div className='flex mr-2 mt-3'>
                             {
                               todos[0].completed ? <FaCheck className={`h-6 w-6 p-1 text-white rounded-full mt-2 mx-2  bg-green-500 text-white'}`} /> : <div className='border-[2px] border-gray-500 rounded-full h-5 w-5'></div>
                             }
                           </div>
 
               <div>
-                <Box className="flex flex-col ">
+                <Box className="flex flex-col my-1 ">
                   <h2 className="text-gray-900 font-bold text-[14px]">
                     {todos[0].task}
                   </h2>
@@ -263,12 +264,12 @@ function Todo() {
                   </p>
                 </Box>
                 <div className='flex justify-between mt-1'>
-                <div className='flex mt-0.5'>
+                <div className='flex my-1'>
                   <Link href="#" className='bg-[#FF7512] rounded-full ml-0 mx-2 px-2 text-white text-[12px] py-1'>Medium</Link>
                   <Link href="#" className='bg-[#9F46E4] rounded-full mx-2 px-2 text-white text-[12px] py-1'>Other</Link>
 
                 </div>
-                <p className='text-[12px] mt-1 '> 10:30 AM | Thursday | 05.12.2024</p>
+                <p className='text-[12px] my-2 '> 10:30 AM | Thursday | 05.12.2024</p>
                 </div>
               </div>
             </Box>
@@ -286,7 +287,7 @@ function Todo() {
           <p>Loading...</p>
         )}
       </Box>
-      <Dialog open={open} onClose={closeDialog}>
+      <Dialog open={open} onClose={closeDialog} className='duration-300'>
         <DialogTitle className='font-[550]'>{isEditing ? "Edit Todo" : "Add Todo"}</DialogTitle>
         <DialogContent>
           <input

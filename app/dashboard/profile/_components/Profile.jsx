@@ -7,11 +7,14 @@ import { useEffect, useState } from 'react';
 import ConfirmationModal from './Modal';
 import useProfile from '@/hooks/useProfile';
 import useProfileUpdate from '@/hooks/useProfileUpdate';
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer, toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useCookieStore } from '@/hooks/useStore';
+import { tsUrl } from "@/config";
 
 const Profile = () => {
-   
+  
+ 
   const { useprofile} = useProfile()
   const {useprofileupdate} = useProfileUpdate()
   const [userImage,setUserImage] = useState()
@@ -49,25 +52,56 @@ const Profile = () => {
     
   };
 
+  const {cookie} = useCookieStore()
+
   const handleSaveClick = (event) => {
     event.preventDefault();
     setModalOpen(true);
   };
 
+
   const handleFileChange = (event) => {
     const file = event.target.files[0];
-    const data = new FormData()
-    data.append("file",file)
-    data.append("upload_preset","simvlvoa")
-    data.append("cloud_name","dmdgqiaix")
-    fetch("https://api.cloudinary.com/v1_1/dmdgqiaix/image/upload",{
-      method:"POST",
-      body:data
-    }).then((res)=> res.json())
-    .then((data) => {setImageUrl(data.url)})
-  };
 
- 
+    const myHeaders = new Headers();
+myHeaders.append("authorization", cookie);
+
+    const formdata = new FormData();
+    formdata.append("file", file);
+    
+    const requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: formdata,
+      redirect: "follow"
+    };
+    
+    fetch(`${tsUrl}/auth/profile/upload/dp`, requestOptions)
+      .then((response) => response.json())
+      .then((result) => setImageUrl(result.url))
+      .catch((error)=> toast.warn("Select images size lower then 1MB"))
+   
+
+   
+
+    // const datas = new FormData()
+    // datas.append("file",event.target.files[0])
+    // // usedp_profile(datas)
+    // console.log(datas);
+
+    // data.append("file",file)
+    // data.append("upload_preset","simvlvoa")
+    // data.append("cloud_name","dmdgqiaix")
+    // fetch("https://api.cloudinary.com/v1_1/dmdgqiaix/image/upload",{
+    //   method:"POST",
+    //   body:data
+    // }).then((res)=> res.json())
+    // .then((data) => {setImageUrl(data.url)})
+     
+
+  };
+  
+  
   const imageurl = imageUrl === null ? userImage : imageUrl
  
   const handleSubmit = () => {   
@@ -103,7 +137,7 @@ const Profile = () => {
     return (
 
       <>
-      <ToastContainer />
+      <ToastContainer/>
           <div className="bg-white font-Poppins w-full overflow-hidden">
             <DashboardNavbar title={"Profile"} />
             <div className="flex flex-col mr-2 bg-[#fcfafa] h-[86vh] max-w-full pl-5 pr-5 pt-5 gap-1">
