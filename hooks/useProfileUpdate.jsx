@@ -35,7 +35,8 @@ const useProfileUpdate = () => {
                         coin: 900,
                         class_s : 12,
                         target_stream : "jee",
-                        referal_id : null
+                        referal_id : null,
+                        sub:null
                      }),
                     credentials: 'include'
                   });

@@ -154,7 +154,7 @@ function CourseDetail() {
 
                 <div className="flex justify-between mt-4">
                   <Link
-                    href="#"
+                    href="/dashboard/courses"
                     className=" w-full  p-3 px-4 rounded-full text-center bg-TechBlue text-sm text-white"
                   >
                     Buy Now

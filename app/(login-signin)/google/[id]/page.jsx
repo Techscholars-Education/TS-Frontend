@@ -29,7 +29,7 @@ const Page = () => {
   return (
     <div className='h-screen w-ful flex items-center justify-center'>
           
-    <Image src={google} alt='google-loader' className='h-screen w-full'/>
+    <Image src={google} alt='google-loader' className='h-[50%] w-[50%]' priority/>
 
     </div>
   )
