@@ -30,8 +30,8 @@ const Testimonials = () => {
           src="https://www.youtube.com/embed/K2vbrZJHLsY?si=qQKkzvzVnxIf0eUz"
           title="Techscholars | Bharat's best educational platform"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
         ></iframe>
       </div>
     </section>
