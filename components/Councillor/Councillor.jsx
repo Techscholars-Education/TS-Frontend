@@ -111,18 +111,24 @@ const Councillor = () => {
         setTiming("");
       }
     } catch (error) {
+      await new Promise((resolve) => setTimeout(resolve, 2000));
       if (error.response) {
-        toast.error(
-          `An error occurred: ${
-            error.response.data.message || "Please try again later."
-          }`
-        );
+        if (
+          error.response.status === 400 &&
+          error.response.data.detail === "Email already exists."
+        ) {
+          toast("This email already exists.");
+        } else {
+          toast.error("An error occurred. Please try again.");
+        }
       } else if (error.request) {
-        toast.error("No response received from server. Please try again.");
+        toast.error(
+          "No response received from the server. Please check your connection."
+        );
       } else {
-        toast.error("An error occurred. Please try again later.");
+        toast.error("An error occurred while setting up the request.");
       }
-      console.error("Error submitting form:", error);
+      console.error("Error details:", error);
     } finally {
       setShowLoader(false);
     }
