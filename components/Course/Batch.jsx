@@ -17,6 +17,8 @@ import jee12 from "@/public/Course/jee12.png";
 import jee13 from "@/public/Course/jee13.png";
 import F9 from "@/public/Course/F9.png";
 import F10 from "@/public/Course/F10.png";
+import { FaClock } from "react-icons/fa6";
+import { MdOutlineSlowMotionVideo } from "react-icons/md";
 
 const Batch = (props) => {
   const [activeBatch, setActiveBatch] = useState(props.activeBatch);
@@ -72,11 +74,11 @@ const Batch = (props) => {
 
         <ul className="space-y-6 my-6 ">
           <li className="flex items-center justify-start space-x-4">
-            <div className=" border border-gray-400  p-3 rounded-full">
+            <div className="  p-3 rounded-full bg-blue-100">
               <Image className="w-8" src={classroom} alt="class-icon"></Image>
             </div>
             <div className="text-sm">
-              <span>For:</span>
+              <span className="font-semibold">For:</span>
               <p className="font-medium">
                 {activeBatch === "13th" ? "" : "Class"}{" "}
                 <span className="text-TechBlue">
@@ -99,20 +101,20 @@ const Batch = (props) => {
             </div>
           </li>
           <li className="flex items-center justify-start space-x-4">
-            <div className=" border border-gray-400 p-3 rounded-full">
+            <div className="  p-3 rounded-full bg-blue-100">
               <Image className="w-8" src={calendar} alt="calender-icon"></Image>
             </div>
             <div className="text-sm">
-              <span>Course Duration:</span>
+              <span className="font-semibold">Course Duration:</span>
               <p className="font-medium">1 Year | 2024-2025</p>
             </div>
           </li>
           <li className="flex items-center justify-start space-x-4">
-            <div className=" border border-gray-400  p-3 rounded-full">
+            <div className="  p-3 rounded-full bg-blue-100">
               <Image className="w-8" src={books} alt="book-icon"></Image>
             </div>
             <div className="text-sm">
-              <span>Subjects:</span>
+              <span className="font-semibold">Subjects:</span>
               <p className="font-medium">
                 {examType === "NEET"
                   ? "Physics, Chemistry, Biology"
@@ -123,7 +125,7 @@ const Batch = (props) => {
             </div>
           </li>
           <li className="flex items-center justify-start space-x-4">
-            <div className=" border border-gray-400  p-3 rounded-full">
+            <div className="  p-3 rounded-full bg-blue-100">
               <Image
                 className="w-8"
                 src={languages}
@@ -131,7 +133,7 @@ const Batch = (props) => {
               ></Image>
             </div>
             <div className="text-sm">
-              <span>Languages:</span>
+              <span className="font-semibold">Languages:</span>
               <p className="font-medium">English</p>
             </div>
           </li>
@@ -141,26 +143,26 @@ const Batch = (props) => {
         </div>
         <ul className="my-6 space-y-4">
           <li className="flex justify-start space-x-2 items-center">
-            <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
+            <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1 w-6 md:w-7 lg:w-5 xl:w-5" />
             <span className="text-gray-black text-xs md:text-sm">
               PDF Notes of each Class will be uploaded 3 Hours after the class.
             </span>
           </li>
           <li className="flex justify-start space-x-2 items-center">
-            <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
+            <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1 w-8 md:w-8 lg:w-5 xl:w-5" />
             <span className="text-gray-black text-xs md:text-sm">
               Daily Practice Problems with their Solution will be available in
               PDF Format after class.
             </span>
           </li>
           <li className="flex justify-start space-x-2 items-center">
-            <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
+            <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1 w-6 md:w-6 lg:w-5 xl:w-5" />
             <span className="text-gray-black text-xs md:text-sm">
               Scheduled tests will be held according to the planner.
             </span>
           </li>
           <li className="flex justify-start space-x-2 items-center">
-            <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1" />
+            <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1 w-8 md:w-7 lg:w-5 xl:w-5" />
             <span className="text-gray-black text-xs md:text-sm">
               All India Test Series (AITS) will be provided according to the
               Test Planner.
@@ -176,11 +178,13 @@ const Batch = (props) => {
               src={imageMap[`${examType}-${activeBatch}`] || thumbnail}
               alt="blog"
             />
-            <div className="p-6">
+            <div className="p-5">
               <div className="flex items-center justify-start space-x-4  mb-2 ">
-                <Image className="w-12" src={lesson} alt="lesson-icon"></Image>
+                <div className=" p-3 rounded-full bg-blue-100">
+                  <Image className="w-8" src={lesson} alt="lesson-icon"></Image>
+                </div>
                 <div>
-                  <h2 className="text-sm font-medium text-gray-600">
+                  <h2 className="text-base font-medium text-gray-700">
                     For 2026{" "}
                     {examType == "JEE" || examType === "NEET"
                       ? `${examType} aspirants`
@@ -188,7 +192,16 @@ const Batch = (props) => {
                   </h2>
                 </div>
               </div>
-
+              <div className="flex justify-start space-x-6 my-4 items-center">
+                <div className="text-darkBlue text-sm items-center font-semibold font-Inter flex">
+                  <FaClock className="mx-2 text-xl text-TechBlue " />
+                  400+ Hrs
+                </div>
+                <div className="text-darkBlue text-sm items-center font-semibold font-Inter flex">
+                  <MdOutlineSlowMotionVideo className="mx-2 text-2xl text-orange-600" />
+                  600+ Lessons
+                </div>
+              </div>
               <hr />
               <div className="flex items-center flex-wrap my-4">
                 <Link
