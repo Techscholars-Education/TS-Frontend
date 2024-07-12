@@ -23,11 +23,21 @@ import { MdOutlineSlowMotionVideo } from "react-icons/md";
 const Batch = (props) => {
   const [activeBatch, setActiveBatch] = useState(props.activeBatch);
   const [examType, setExamType] = useState(props.examType);
+  const [currYear, setCurrYear] = useState("");
+  const [nxtYear, setNxtYear] = useState("");
+  const [nxtnxtYear, setNxtNxtYear] = useState("");
 
   useEffect(() => {
+    const currYear = new Date().getFullYear();
+    const nxtYear = currYear + 1;
+    const nxtnxtYear = currYear + 2;
+    setCurrYear(currYear);
+    setNxtYear(nxtYear);
+    setNxtNxtYear(nxtnxtYear);
+
     setActiveBatch(props.activeBatch);
     setExamType(props.examType);
-  }, [props.activeBatch, props.examType]);
+  }, [props.activeBatch, props.examType, currYear]);
 
   const imageMap = {
     "NEET-11th": n11,
@@ -56,7 +66,18 @@ const Batch = (props) => {
                 : "EXCEL"}
             </span>{" "}
             Batch for {examType == "JEE" || examType === "NEET" ? examType : ""}{" "}
-            2026{" "}
+            <span>
+              {" "}
+              {activeBatch === "11th"
+                ? `${nxtnxtYear === "" ? "Loading..." : nxtnxtYear}`
+                : activeBatch === "12th"
+                ? `${nxtnxtYear === "" ? "Loading..." : nxtYear}`
+                : activeBatch === "9th"
+                ? `${nxtnxtYear === "" ? "Loading..." : nxtYear}`
+                : activeBatch === "10th"
+                ? `${nxtnxtYear === "" ? "Loading..." : nxtYear}`
+                : `${nxtnxtYear === "" ? "Loading..." : nxtYear}`}
+            </span>{" "}
             <span className="text-TechBlue">
               {activeBatch === "13th"
                 ? "(Droppers)"
@@ -92,7 +113,19 @@ const Batch = (props) => {
                     ? "10"
                     : "Droppers"}
                 </span>{" "}
-                ( 2026{" "}
+                ({" "}
+                <span>
+                  {" "}
+                  {activeBatch === "11th"
+                    ? `${nxtnxtYear === "" ? "Loading..." : nxtnxtYear}`
+                    : activeBatch === "12th"
+                    ? `${nxtnxtYear === "" ? "Loading..." : nxtYear}`
+                    : activeBatch === "9th"
+                    ? `${nxtnxtYear === "" ? "Loading..." : nxtYear}`
+                    : activeBatch === "10th"
+                    ? `${nxtnxtYear === "" ? "Loading..." : nxtYear}`
+                    : `${nxtnxtYear === "" ? "Loading..." : nxtYear}`}
+                </span>{" "}
                 {examType == "JEE" || examType === "NEET"
                   ? `${examType} aspirants`
                   : ""}{" "}
@@ -106,7 +139,15 @@ const Batch = (props) => {
             </div>
             <div className="text-sm">
               <span className="font-semibold">Course Duration:</span>
-              <p className="font-medium">1 Year | 2024-2025</p>
+              <p className="font-medium">
+                1 Year |
+                <span>
+                  {" "}
+                  {`${
+                    nxtYear === "" ? "Loading..." : `${currYear} - ${nxtYear}`
+                  }`}
+                </span>{" "}
+              </p>
             </div>
           </li>
           <li className="flex items-center justify-start space-x-4">
@@ -185,7 +226,18 @@ const Batch = (props) => {
                 </div>
                 <div>
                   <h2 className="text-base font-medium text-gray-700">
-                    For 2026{" "}
+                    <span>
+                      For{" "}
+                      {activeBatch === "11th"
+                        ? `${nxtnxtYear === "" ? "Loading..." : nxtnxtYear}`
+                        : activeBatch === "12th"
+                        ? `${nxtnxtYear === "" ? "Loading..." : nxtYear}`
+                        : activeBatch === "9th"
+                        ? `${nxtnxtYear === "" ? "Loading..." : nxtYear}`
+                        : activeBatch === "10th"
+                        ? `${nxtnxtYear === "" ? "Loading..." : nxtYear}`
+                        : `${nxtnxtYear === "" ? "Loading..." : nxtYear}`}
+                    </span>{" "}
                     {examType == "JEE" || examType === "NEET"
                       ? `${examType} aspirants`
                       : ""}
