@@ -48,6 +48,7 @@ import Calendar from "./Home/Calender";
 import { Tooltip } from "@mui/material";
 import { FiLock, } from "react-icons/fi";
 import Todo from "./Home/Todo";
+import useProfile from "@/hooks/useProfile";
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
@@ -62,8 +63,11 @@ const HomePageWeb = () => {
 
   const { cookie } = useCookieStore()
 
-
-
+  const { useprofile} = useProfile()
+  useEffect(()=>{
+    useprofile()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[1])
 
   useEffect(() => {
     const storedUserInfo = localStorage.getItem("userInfo");

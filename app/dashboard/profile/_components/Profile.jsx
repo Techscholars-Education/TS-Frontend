@@ -19,14 +19,17 @@ const Profile = () => {
   const {useprofileupdate} = useProfileUpdate()
   const [userImage,setUserImage] = useState()
   const [call,setCall] = useState(false)
+  const [premium, setPremium] = useState()
 
    
   useEffect(()=>{
     const image = window?.localStorage?.getItem("profile-storage");
-    const imagejs = JSON.parse(image)
-    setUserImage(imagejs.state.profiles.profile_image);
+    const datajs = JSON.parse(image)
+    setUserImage(datajs.state.profiles.profile_image);
+    setPremium(datajs.state.profiles.is_premium);
         // eslint-disable-next-line react-hooks/exhaustive-deps
   },[call])
+  
   
   
   useEffect(()=>{
@@ -106,7 +109,10 @@ myHeaders.append("authorization", cookie);
  
   const handleSubmit = () => {   
       try {
-      const res = useprofileupdate(name,email,gender,phone,imageurl,dob);
+      const res = useprofileupdate(name,email,gender,phone,imageurl,dob,premium);
+      if(res){
+        toast.success("Profile Updated")
+      }
     } catch (error) {
       console.log("Some error occured in login");
     }
