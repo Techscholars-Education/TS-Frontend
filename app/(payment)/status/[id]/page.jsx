@@ -4,7 +4,6 @@ import Image from "next/image";
 import Footer from "@/components/Footer";
 import addtocart from "@/public/payment/addtocart.png";
 import gif1 from "@/public/Ts-Loader.gif";
-import "react-toastify/dist/ReactToastify.css";
 import { useParams, useRouter } from 'next/navigation';
 import img1 from "@/public/tick.gif"
 import img2 from "@/public/pending.gif"
@@ -13,6 +12,7 @@ import img4 from "@/public/error.gif"
 import Link from "next/link";
 import Cookies from "js-cookie";
 import { frontTsUrl, tsUrl } from "@/config";
+import useProfileUpdate from "@/hooks/useProfileUpdate";
 
 const Page = () => {
   const params = useParams();
@@ -21,7 +21,9 @@ const Page = () => {
   const [order, setOrder] = useState();
   const [isModalOpen, setIsModalOpen] = useState(true);
   const [status, setStatus] = useState('loading');
+  const [premium, setPremium] = useState(false)
   let cookies = Cookies.get("access_token")
+  const {useprofileupdate} = useProfileUpdate()
 
 //  useLayoutEffect(()=>{
 //   if (!id) return;
@@ -63,18 +65,45 @@ const Page = () => {
            const data = await res.json();
            setOrder(data)
            setStatus(data.status)
+           setPremium(data.status === 'CHARGED' ? true : false)
           try {
            
           } catch (error) {
             setError(error.message);
           } 
         }
-    
-        fetchData();;
+          
+        fetchData();
+        
 
 // eslint-disable-next-line react-hooks/exhaustive-deps             
  },[id,cookies])
 
+ useEffect(()=>{
+  if(status === 'CHARGED'){    
+    const update = async()=> {
+      const data = window?.localStorage?.getItem("profile-storage");
+      const datajs = JSON.parse(data)
+      const name = datajs.state.profiles.username
+      const email = datajs.state.profiles.email
+      const gender = datajs.state.profiles.gender
+      const phone = datajs.state.profiles.phone_number
+      const imageurl = datajs.state.profiles.profile_image
+      const dob = datajs.state.profiles.dob
+       
+      // console.log(name,email,gender,phone,imageurl,dob);
+      try {
+        const res = useprofileupdate(name,email,gender,phone,imageurl,dob,premium);
+      } catch (error) {
+        console.log("Some error occured in login");
+      }
+    }
+    update()
+    }
+
+// eslint-disable-next-line react-hooks/exhaustive-deps 
+ },[premium])
+ 
  const formatDateTime = (isoString) => {
   const date = new Date(isoString);
 
