@@ -1,9 +1,9 @@
 import React from "react";
 import Card from "./Card";
 import Link from "next/link";
-import jee from "@/public/Course/jee.png";
-import neet from "@/public/Course/neet.png";
-import foundation from "@/public/Course/foundation.png";
+import jee from "@/public/Course/jee.svg";
+import neet from "@/public/Course/neet.svg";
+import foundation from "@/public/Course/foundation.svg";
 
 const Course = () => {
   const data = [

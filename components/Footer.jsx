@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { toast, ToastContainer } from "react-toastify";
@@ -17,6 +17,8 @@ const Footer = () => {
   const [message, setMessage] = useState("");
   const [isMsgSent, setIsMsgSent] = useState(false);
   const [isLoading, setIsloading] = useState(false);
+
+  const [currYear, setCurrYear] = useState("");
 
   const { sendMessage } = useSendmessage();
 
@@ -39,11 +41,17 @@ const Footer = () => {
   };
 
   const pathname = usePathname();
+
+  useEffect(() => {
+    const currYear = new Date().getFullYear();
+    setCurrYear(currYear);
+  }, [currYear]);
+
   return (
     <>
       <ToastContainer />
       <footer className="bg-[#081321] md:pt-10 text-white body-font grid grid-cols-1 md:grid-cols-3 font-Poppins w-full ">
-        <div className="  px-5 pt-6 md:py-0 md:px-10 space-y-5 md:space-y-6  ">
+        <div className="  px-5 pt-6 md:py-0 md:px-10 space-y-5 md:space-y-6 xl:pl-24 ">
           <div>
             <h1 className="text-sm md:text-xl font-semibold flex items-center  ">
               <Image
@@ -73,7 +81,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-        <div className=" px-5 md:px-0  py-6 md:py-2  grid grid-cols-2 md:grid-cols-3 gap-3">
+        <div className=" px-5 md:px-0  py-6 md:py-2  grid grid-cols-2 md:grid-cols-3 gap-3  xl:h-[200px]">
           <Link className="text-sm lg:text-base" href="/aboutus">
             About us
           </Link>
@@ -106,14 +114,14 @@ const Footer = () => {
           </Link>
         </div>
         <div className=" px-5 py-6 md:py-2   ">
-          <div className="flex flex-col space-y-4">
-            <h3 className="text-base md:text-lg lg:text-xl font-semibold">
-              Get in Touch
+          <div className="flex flex-col space-y-4 xl:pr-16 ">
+            <h3 className="text-base md:text-lg lg:text-xl font-medium">
+              Let&#39;s Get in Touch
             </h3>
 
             <input
-              className="my-2 py-2 rounded-md px-2 w-4/5 text-sm text-darkBlue"
-              placeholder="your email"
+              className="my-2 py-4 rounded-md px-4 w-4/5 text-sm text-darkBlue"
+              placeholder="Your email address"
               type="email"
               value={email}
               onChange={(e) => {
@@ -121,9 +129,10 @@ const Footer = () => {
               }}
             />
             <textarea
-              className="my-2 py-2 rounded-md px-2 w-4/5 text-sm text-darkBlue"
-              placeholder="your message"
+              className="my-2 py-4 rounded-md px-4 w-4/5 text-sm text-darkBlue"
+              placeholder="Your message"
               name="message"
+              rows="4"
               value={message}
               id="message"
               onChange={(e) => {
@@ -135,7 +144,7 @@ const Footer = () => {
               onClick={handleSubmit}
               className={`bg-TechBlue ${
                 isLoading ? "xl:w-[60px]" : "xl:w-[180px]"
-              }  text-white w-[160px] rounded-full hover:bg-black hover:shadow-sm hover:shadow-black transition-all ease-linear duration-200 px-3 py-2 text-sm`}
+              }  text-white w-[160px] rounded-full hover:bg-black hover:shadow-sm hover:shadow-black transition-all ease-linear duration-200 px-3 py-3 font-medium text-sm`}
             >
               {isLoading ? (
                 <>
@@ -164,8 +173,8 @@ const Footer = () => {
         </div>
       </footer>
       <div className="flex space-x-4 w-full bg-[#081321] text-white py-4  px-8 ">
-        <p className="text-sm md:text-base lg:text-base">
-          Copyright © 2024 Codementor Hub Education Pvt. Ltd. All rights
+        <p className="text-sm md:text-base lg:text-base font-medium">
+          Copyright © {currYear} Codementor Hub Education Pvt. Ltd. All rights
           reserved.
         </p>
       </div>
