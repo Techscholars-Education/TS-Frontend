@@ -218,6 +218,12 @@ const { formattedDate, formattedTime } = formatDateTime(order ? order.date_creat
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-8 rounded-lg shadow-lg w-11/12 md:w-1/2 lg:w-[35vw] lg:h-auto">
+          <Link
+          href={ status === 'CHARGED'? "/dashboard/my-course" : " /dashboard/courses"}
+          className="px-8 py-2 bg-TechBlue absolute rounded-md font-normal text-[1.1vw] text-white hover:bg-black transition-all ease-in-out duration-200 hover:shadow-sm hover:shadow-black"
+          >
+            Back
+          </Link>
           {status === 'loading' && (
           <div className="h-[40vh]">
           <Image
