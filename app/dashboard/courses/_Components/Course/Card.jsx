@@ -1,12 +1,22 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import avatar from "../../../../../public/Dashboard/avatar.jpg";
 import Link from "next/link";
 import star from "../../../../../public/Home/star.svg";
 import { FaClock } from "react-icons/fa6";
 import { PiGraduationCapFill } from "react-icons/pi";
 const Card = (props) => {
+
+  const [premium, setPremium] = useState()
+     
+  useEffect(()=>{
+    const image = window?.localStorage?.getItem("profile-storage");
+    const datajs = JSON.parse(image);
+    setPremium(datajs.state.profiles.is_premium);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[1])
+  
   return (
     <>
       <div
@@ -87,12 +97,22 @@ const Card = (props) => {
           </div>
 
           <div className="flex justify-between mt-4">
-            <Link
+          {
+            premium ? (
+                <button 
+                className=" w-full  p-3 px-4 rounded-full text-center bg-red-400 text-sm text-white hover:bg-black hover:shadow-sm hover:shadow-black transition-all ease-linear duration-200"
+                >
+                     You already have a plan
+                </button>
+            ):(
+              <Link
               href={props.route ? props.route : "/"}
               className=" w-full  p-3 px-4 rounded-full text-center bg-TechBlue text-sm text-white hover:bg-black hover:shadow-sm hover:shadow-black transition-all ease-linear duration-200"
             >
               Explore
             </Link>
+            )
+          }
           </div>
         </div>
       </div>
