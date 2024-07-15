@@ -19,7 +19,7 @@ const useProfile = () => {
                headers: myHeaders,
               });
               const data = await res.json();
-              console.log(data);
+              // console.log(data);
               profilesData(data)
               
             } catch (error) {
