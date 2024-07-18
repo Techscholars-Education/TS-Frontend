@@ -1,14 +1,14 @@
 "use client"
 import { useRouter } from "next/navigation";
-import { useCookieStore } from "./useStore";
 import { toast } from "react-toastify"
 import { tsUrl } from "@/config";
+import Cookies from "js-cookie";
 const useProfileUpdate = () => {
 
    const router = useRouter()
 
-    const {cookie} = useCookieStore()
-		const useprofileupdate = async (name,email,gender,phone,imageurl,dob) => {
+   let cookies = Cookies.get("access_token")
+		const useprofileupdate = async (name,email,gender,phone,imageurl,dob,premium) => {
 
 
       const success = handleInputErrors({
@@ -17,7 +17,7 @@ const useProfileUpdate = () => {
       if (!success) return;
 			const myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
-            myHeaders.append("authorization", cookie);
+            myHeaders.append("authorization", cookies);
             try {
                 const res = await fetch(`${tsUrl}/auth/profile/update`, {
                     method: "POST",
@@ -36,16 +36,17 @@ const useProfileUpdate = () => {
                         class_s : 12,
                         target_stream : "jee",
                         referal_id : null,
-                        sub:null
+                        sub:null,
+                        is_premium: premium ? premium : null
                      }),
                     credentials: 'include'
                   });
                   const data = await res.json();
                   // console.log(data);
-                 if(data.username){
-                    toast.success("Profile Updated")
-                    router.push("/dashboard/home")
-                 }
+                //  if(data.username){
+                //     // toast.success("Profile Updated")
+                //     // router.push("/dashboard/home")
+                //  }
             
                   if (data.error) {
                     throw new Error(data.error);

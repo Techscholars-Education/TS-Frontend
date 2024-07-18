@@ -214,7 +214,7 @@ function Todo() {
                             <Image src={deleteicon} className="   rounded-full p-1 text-black " alt='delete-icon' />
                           </IconButton>
                           <IconButton onClick={() => {openDialog(todo); closeDialogTodoList()}}>
-                            <Image src={edit} className="h-6 w-6  " />
+                            <Image src={edit} className="h-6 w-6  " alt='edit' />
                           </IconButton>
                         </Box>
                       </Box>
