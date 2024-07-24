@@ -1,0 +1,87 @@
+.rdp-root {
+    --rdp-accent-color: #066DE6; /* Change the accent color to indigo. */
+    --rdp-accent-background-color: #a4c7ef84;
+    --rdp-day-width:45px;
+    --rdp-font-family: system-ui;
+    --rdp-day_button-border-radius:50px;
+   
+  }
+
+ 
+.rdp-root .rdp-button_previous {
+  position: relative;
+  right: 250px;
+  --rdp-accent-color: black;
+  font-size: small;
+   
+}
+.rdp-root .rdp-button_next{
+      position: relative;
+      left: 3px;
+      --rdp-accent-color: black;
+      
+}
+.calendar-container{
+    position: relative;
+}
+
+#borders{
+    height: 1.3px;
+    width: 20vw;
+    background-color: #E2E8F0;
+    position: absolute;
+    top: 2.8vw;
+    border-radius: 10px;
+    left: .5vw;
+}
+
+
+.rdp-root .rdp-dropdown {
+    appearance: none;
+    position: absolute;
+    inset-block-start: 0;
+    inset-block-end: 0;
+    inset-inline-start: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    cursor: inherit;
+    color: black;
+    border: none;
+    background-color: transparent;
+    line-height: inherit;
+  
+  }
+
+
+.rdp-root .rdp-month_caption {
+    display: flex;
+    align-content: center;
+   margin-left: 8vw;
+  }
+
+  .rdp-root .rdp-selected {
+   font-size: small;
+  }
+.rdp-root .rdp-range_middle .rdp-day_button {
+    border-color: transparent;
+    border: unset;
+    border-radius: unset;
+    color: #066DE6;
+    font-weight: 500;
+  }
+
+  .rdp-root .rdp-week {
+    color: black;
+    font-size: small;
+  }
+  
+  .rdp-root .rdp-weekdays {
+    color: rgb(181, 180, 180);
+  }
+
+  .rdp-root .rdp-week_number_interactive {
+  cursor: pointer;
+}
+
+
