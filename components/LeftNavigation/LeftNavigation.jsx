@@ -48,7 +48,7 @@ const LeftNavigation = () => {
           {/* Logo */}
           <Link href={"/"} className="flex items-center justify-center space-x-2">
             <Image className="w-10 h-10" src={Logo} alt="Techscholars-Logo" />
-            <h1 className="text-gray-800 font-semibold">TECHSCHOLARS</h1>
+            <h1 className="text-gray-800 font-semibold text-xl">Techscholars</h1>
           </Link>
           <div className="border h-[1px] mt-4">
 
