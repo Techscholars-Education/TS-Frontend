@@ -19,7 +19,11 @@ const Councillor = () => {
   const [state, setState] = useState("");
 
   const [showLoader, setShowLoader] = useState(false);
-  const [disableBTN, setDisableBTN] = useState(true);
+  const [isMsgSent, setIsMsgSent] = useState(false);
+  const [year0, setYear0] = useState("");
+  const [year1, setYear1] = useState("");
+  const [year2, setYear2] = useState("");
+  const [year3, setYear3] = useState("");
 
   // VALIDATE EMAIL
   function validateEmail(email) {
@@ -27,36 +31,37 @@ const Councillor = () => {
     return emailRegex.test(email);
   }
 
-  //! Use effect to handle button enabling/disabling
+  //! Use Effect to fetch the current year
   useEffect(() => {
-    if (
-      firstName &&
-      lastName &&
-      email &&
-      phoneNo &&
-      targetClass &&
-      targetExam &&
-      targetYear &&
-      state
-    ) {
-      setDisableBTN(false);
-    } else {
-      setDisableBTN(true);
-    }
-  }, [
-    firstName,
-    lastName,
-    email,
-    phoneNo,
-    targetClass,
-    targetExam,
-    targetYear,
-    state,
-  ]);
+    const currYear = new Date().getFullYear();
+    const year0 = currYear + 1;
+    const year1 = currYear + 2;
+    const year2 = currYear + 3;
+    const year3 = currYear + 4;
+    setYear0(year0);
+    setYear1(year1);
+    setYear2(year2);
+    setYear3(year3);
+  }, []);
 
   //! handle submit
   const handleSubmit = async () => {
-    // Validation checks
+    const fields = {
+      firstName,
+      lastName,
+      email,
+      phoneNo,
+      targetClass,
+      targetExam,
+      targetYear,
+      state,
+    };
+
+    if (Object.values(fields).some((field) => !field)) {
+      toast.error("All fields are required");
+      return;
+    }
+
     if (!validateEmail(email)) {
       toast.error("Please enter a valid email address");
       return;
@@ -89,38 +94,44 @@ const Councillor = () => {
       if (response.status === 200) {
         await new Promise((resolve) => setTimeout(resolve, 2000));
         toast.success("Successfully Applied for SAT");
-        // Reset form fields
-        setFirstName("");
-        setLastName("");
-        setEmail("");
-        setPhoneNo("");
-        setTargetClass();
-        setTargetExam("");
-        setTargetYear("");
-        setState("");
+        resetForm();
+        setIsMsgSent(true);
       }
     } catch (error) {
       await new Promise((resolve) => setTimeout(resolve, 2000));
-      if (error.response) {
-        if (
-          error.response.status === 400 &&
-          error.response.data.detail === "Email already exists."
-        ) {
-          toast("This email already exists.");
-        } else {
-          toast.error("An error occurred. Please try again.");
-        }
-      } else if (error.request) {
-        toast.error(
-          "No response received from the server. Please check your connection."
-        );
-      } else {
-        toast.error("An error occurred while setting up the request.");
-      }
-      console.error("Error details:", error);
+      handleError(error);
     } finally {
       setShowLoader(false);
     }
+  };
+
+  const resetForm = () => {
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setPhoneNo("");
+    setTargetClass();
+    setTargetExam("");
+    setTargetYear("");
+    setState("");
+  };
+
+  const handleError = (error) => {
+    if (error.response) {
+      if (
+        error.response.status === 400 &&
+        error.response.data.detail === "Email already exists."
+      ) {
+        toast("This email already exists.");
+      } else {
+        toast.error("An error occurred. Please try again.");
+      }
+    } else if (error.request) {
+      toast.error("No response received from the server.");
+    } else {
+      toast.error("An error occurred while setting up the request.");
+    }
+    console.error("Error details:", error);
   };
 
   return (
@@ -135,19 +146,18 @@ const Councillor = () => {
           </p>
         </div>
 
-        <section className=" space-y-10 lg:space-y-0 lg:space-x-10 w-11/12 xl:w-full flex flex-col lg:flex lg:flex-row xl:space-x-20 mx-auto">
+        <section className=" space-y-10 lg:space-y-0 lg:space-x-10 w-11/12 xl:w-full flex flex-col lg:flex lg:flex-row xl:space-x-20 mx-auto    my-10 ">
           <div className="mx-auto ">
             <Image src={scholar} alt="scholarship-icon"></Image>
           </div>
           <div className=" w-full lg:w-1/2  ">
-            <div className="grid grid-cols-2 gap-4  ">
-              <div className=" space-y-2 text-sm lg:text-base xl:text-lg ">
-                <label className="font-medium" htmlFor="fname">
-                  First Name <span className="text-red-500">*</span>{" "}
+            <div className="grid grid-cols-2 gap-4 mb-8  ">
+              <div className=" space-y-2 text-sm lg:text-sm  ">
+                <label className="font-medium text-darkBlue/60" htmlFor="fname">
+                  First Name
                 </label>
                 <input
-                  className=" p-2 border border-gray-400 w-full outline-none"
-                  placeholder="Enter your first name"
+                  className=" p-2 border  rounded-sm w-full outline-none focus:border focus:border-TechBlue"
                   type="text"
                   value={firstName}
                   onChange={(e) => {
@@ -156,13 +166,12 @@ const Councillor = () => {
                   required
                 />
               </div>
-              <div className=" space-y-2  text-sm lg:text-base xl:text-lg">
-                <label className="font-medium" htmlFor="lname">
-                  Last Name <span className="text-red-500">*</span>{" "}
+              <div className=" space-y-2 text-sm lg:text-sm  ">
+                <label className="font-medium text-darkBlue/60" htmlFor="lname">
+                  Last Name
                 </label>
                 <input
-                  className=" p-2 border border-gray-400 w-full outline-none"
-                  placeholder="Enter your last name"
+                  className=" p-2 border  rounded-sm w-full outline-none focus:border focus:border-TechBlue"
                   type="text"
                   value={lastName}
                   onChange={(e) => {
@@ -171,13 +180,15 @@ const Councillor = () => {
                   required
                 />
               </div>
-              <div className=" space-y-2 text-sm lg:text-base xl:text-lg ">
-                <label className="font-medium" htmlFor="email">
-                  Email <span className="text-red-500">*</span>{" "}
+              <div className=" space-y-2 text-sm lg:text-sm  ">
+                <label
+                  className="font-medium  text-darkBlue/60"
+                  htmlFor="email"
+                >
+                  Email
                 </label>
                 <input
-                  className=" p-2 border border-gray-400 w-full outline-none"
-                  placeholder="Enter your email"
+                  className=" p-2 border  rounded-sm w-full outline-none focus:border focus:border-TechBlue"
                   type="email"
                   required
                   value={email}
@@ -186,13 +197,15 @@ const Councillor = () => {
                   }}
                 />
               </div>
-              <div className=" space-y-2  text-sm lg:text-base xl:text-lg">
-                <label className="font-medium" htmlFor="phone">
-                  Phone Number <span className="text-red-500">*</span>{" "}
+              <div className=" space-y-2 text-sm lg:text-sm  ">
+                <label
+                  className="font-medium  text-darkBlue/60"
+                  htmlFor="phone"
+                >
+                  Phone Number
                 </label>
                 <input
-                  className=" p-2 border border-gray-400 w-full outline-none"
-                  placeholder="Enter your phone number"
+                  className=" p-2 border  rounded-sm w-full outline-none focus:border focus:border-TechBlue"
                   type="number"
                   value={phoneNo}
                   onChange={(e) => {
@@ -201,13 +214,20 @@ const Councillor = () => {
                   required
                 />
               </div>
-              <div className=" space-y-2 text-sm lg:text-base xl:text-lg ">
-                <label className="font-medium" htmlFor="class">
-                  Class <span className="text-red-500">*</span>{" "}
+              <div
+                className={`space-y-2 text-sm lg:text-sm ${
+                  !targetClass ? "text-gray-500 font-normal " : ""
+                } `}
+              >
+                <label
+                  className="font-medium  text-darkBlue/60"
+                  htmlFor="class"
+                >
+                  Class
                 </label>
                 <br />
                 <select
-                  className="w-full bg-white border border-gray-400 p-2 text-sm lg:text-base xl:text-lg "
+                  className="w-full bg-white border  p-2 outline-none  focus:border focus:border-TechBlue  rounded"
                   name="class"
                   id="class"
                   onChange={(e) => {
@@ -217,36 +237,55 @@ const Councillor = () => {
                   defaultValue=""
                 >
                   <option
-                    className="bg-white hover:bg-gray-200 p-2 disabled:cursor-not-allowed"
+                    className=" text-darkBlue/60 p-2 disabled:cursor-not-allowed "
                     value=""
                     disabled
                   >
-                    Select a class
+                    Select Class
                   </option>
-                  <option className="bg-white hover:bg-gray-200 p-2" value={9}>
+                  <option
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
+                    value={9}
+                  >
                     Class 9
                   </option>
-                  <option className="bg-white hover:bg-gray-200 p-2" value={10}>
+                  <option
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
+                    value={10}
+                  >
                     Class 10
                   </option>
-                  <option className="bg-white hover:bg-gray-200 p-2" value={11}>
+                  <option
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
+                    value={11}
+                  >
                     Class 11
                   </option>
-                  <option className="bg-white hover:bg-gray-200 p-2" value={12}>
+                  <option
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
+                    value={12}
+                  >
                     Class 12
                   </option>
-                  <option className="bg-white hover:bg-gray-200 p-2" value={13}>
+                  <option
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
+                    value={13}
+                  >
                     Class Target 13 (Droppers)
                   </option>
                 </select>
               </div>
-              <div className=" space-y-2 text-sm lg:text-base xl:text-lg ">
-                <label className="font-medium" htmlFor="Exam">
-                  Target Exam <span className="text-red-500">*</span>{" "}
+              <div
+                className={`space-y-2 text-sm lg:text-sm ${
+                  targetExam === "" ? "text-gray-500 font-normal " : ""
+                } `}
+              >
+                <label className="font-medium  text-darkBlue/60" htmlFor="Exam">
+                  Target Exam
                 </label>
                 <br />
                 <select
-                  className="w-full bg-white border border-gray-400 p-2 text-sm lg:text-base xl:text-lg "
+                  className="w-full bg-white border  p-2 outline-none focus:border focus:border-TechBlue  rounded"
                   name="exam"
                   onChange={(e) => {
                     setTargetExam(e.target.value);
@@ -255,46 +294,50 @@ const Councillor = () => {
                   id="exam"
                 >
                   <option
-                    className="bg-white hover:bg-gray-200 p-2 disabled:cursor-not-allowed"
+                    className=" text-darkBlue/60 p-2 disabled:cursor-not-allowed "
                     value=""
                     disabled
                   >
-                    Select a target exam
+                    Select your goal
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="JEE"
                   >
                     JEE
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="JEE Adv"
                   >
                     JEE Adv.
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="NEET"
                   >
                     NEET
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="FOUNDATION"
                   >
                     Foundation
                   </option>
                 </select>
               </div>
-              <div className=" space-y-2  text-sm lg:text-base xl:text-lg">
-                <label className="font-medium" htmlFor="year">
-                  Target Year <span className="text-red-500">*</span>{" "}
+              <div
+                className={`space-y-2 text-sm lg:text-sm ${
+                  targetYear === "" ? "text-gray-500 font-normal " : ""
+                } `}
+              >
+                <label className="font-medium  text-darkBlue/60" htmlFor="year">
+                  Target Year
                 </label>
                 <br />
 
                 <select
-                  className="w-full bg-white border border-gray-400 p-2  text-sm lg:text-base xl:text-lg"
+                  className="w-full bg-white border  p-2 outline-none focus:border focus:border-TechBlue rounded "
                   name="year"
                   id="year"
                   onChange={(e) => {
@@ -303,45 +346,52 @@ const Councillor = () => {
                   value={targetYear}
                 >
                   <option
-                    className="bg-white hover:bg-gray-200 p-2 disabled:cursor-not-allowed"
+                    className="w-full bg-white border  p-2 outline-none "
                     value=""
                     disabled
                   >
-                    Select the target year
+                    Select Preffered
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
-                    value="2025"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800 "
+                    value={year0}
                   >
-                    2025
+                    {year0}
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
-                    value="2026"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
+                    value={year1}
                   >
-                    2026
+                    {year1}
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
-                    value="2027"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
+                    value={year2}
                   >
-                    2027
+                    {year2}
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
-                    value="2028"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
+                    value={year3}
                   >
-                    2028
+                    {year3}
                   </option>
                 </select>
               </div>
-              <div className=" space-y-2 text-sm lg:text-base xl:text-lg ">
-                <label className="font-medium" htmlFor="state">
-                  State <span className="text-red-500">*</span>{" "}
+              <div
+                className={`space-y-2 text-sm lg:text-sm ${
+                  state === "" ? "text-gray-500 font-normal " : ""
+                } `}
+              >
+                <label
+                  className="font-medium  text-darkBlue/60"
+                  htmlFor="state"
+                >
+                  State
                 </label>
                 <br />
                 <select
-                  className="w-full bg-white border border-gray-400 p-2 text-sm lg:text-base xl:text-lg"
+                  className="w-full bg-white border  p-2 outline-none focus:border focus:border-TechBlue  rounded"
                   name="state"
                   id="state"
                   value={state}
@@ -350,224 +400,225 @@ const Councillor = () => {
                   }}
                 >
                   <option
-                    className="bg-white hover:bg-gray-200 p-2 disabled:cursor-not-allowed"
+                    className="w-full bg-white border p-2 outline-none"
                     value=""
                     disabled
                   >
-                    Select the state
+                    Select state
                   </option>
+
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Andhra Pradesh"
                   >
                     Andhra Pradesh
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Arunachal Pradesh"
                   >
                     Arunachal Pradesh
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Assam"
                   >
                     Assam
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Bihar"
                   >
                     Bihar
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Chhattisgarh"
                   >
                     Chhattisgarh
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Gujarat"
                   >
                     Gujarat
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Haryana"
                   >
                     Haryana
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Himachal Pradesh"
                   >
                     Himachal Pradesh
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Jammu and Kashmir"
                   >
                     Jammu and Kashmir
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Goa"
                   >
                     Goa
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Jharkhand"
                   >
                     Jharkhand
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Karnataka"
                   >
                     Karnataka
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Kerala"
                   >
                     Kerala
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Madhya Pradesh"
                   >
                     Madhya Pradesh
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Maharashtra"
                   >
                     Maharashtra
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Manipur"
                   >
                     Manipur
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Meghalaya"
                   >
                     Meghalaya
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Mizoram"
                   >
                     Mizoram
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Nagaland"
                   >
                     Nagaland
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Odisha"
                   >
                     Odisha
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Punjab"
                   >
                     Punjab
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Rajasthan"
                   >
                     Rajasthan
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Sikkim"
                   >
                     Sikkim
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Tamil Nadu"
                   >
                     Tamil Nadu
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Telangana"
                   >
                     Telangana
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Tripura"
                   >
                     Tripura
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Uttarakhand"
                   >
                     Uttarakhand
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Uttar Pradesh"
                   >
                     Uttar Pradesh
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="West Bengal"
                   >
                     West Bengal
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Andaman and Nicobar Islands"
                   >
                     Andaman and Nicobar Islands
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Chandigarh"
                   >
                     Chandigarh
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Dadra and Nagar Haveli"
                   >
                     Dadra and Nagar Haveli
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Daman and Diu"
                   >
                     Daman and Diu
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Delhi"
                   >
                     Delhi
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Lakshadweep"
                   >
                     Lakshadweep
                   </option>
                   <option
-                    className="bg-white hover:bg-gray-200 p-2"
+                    className="bg-white hover:bg-gray-200 p-2 text-gray-800"
                     value="Puducherry"
                   >
                     Puducherry
@@ -575,20 +626,17 @@ const Councillor = () => {
                 </select>
               </div>
             </div>
-            <div className="my-4 font-medium">
-              NOTE:
-              <span className="text-red-600"> All fields are required.</span>
-            </div>
-            <div className=" mb-10 space-y-2 text-sm lg:text-base xl:text-lg">
-              <p className="text-gray-400">
+            <hr />
+            <div className=" my-6 space-y-2 text-sm lg:text-base ">
+              <p className="text-gray-400 font-light">
                 * Our scholarship exam is held every Sunday for 3 hours which is
                 from 10 A.M to 1 P.M{" "}
               </p>
             </div>
             <button
               onClick={handleSubmit}
-              disabled={showLoader || disableBTN}
-              className=" px-2 py-2 text-sm md:text-lg md:px-4 md:py-3 bg-TechBlue rounded text-white hover:bg-black duration-200 disabled:bg-blue-200 disabled:text-red-500 disabled:cursor-not-allowed"
+              disabled={isMsgSent}
+              className=" px-2 py-2 text-sm md:text-lg md:px-6 md:py-2.5 bg-TechBlue rounded-md text-white hover:bg-black duration-200 disabled:cursor-not-allowed disabled:hover:bg-TechBlue "
             >
               {showLoader ? (
                 <svg
@@ -608,7 +656,7 @@ const Councillor = () => {
                   />
                 </svg>
               ) : (
-                "Apply Now"
+                <> {isMsgSent ? "Applied" : "Apply Now"}</>
               )}
             </button>
           </div>
