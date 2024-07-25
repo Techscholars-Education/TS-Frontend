@@ -7,7 +7,7 @@ import Footer from "../Footer";
 import axios from "axios";
 import { tsUrl } from "@/config";
 
-const Councillor = () => {
+const Exams = () => {
   // STATES
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -127,7 +127,7 @@ const Councillor = () => {
         toast.error("An error occurred. Please try again.");
       }
     } else if (error.request) {
-      toast.error("No response received from the server.");
+      toast.error("No response received from the server at the moment");
     } else {
       toast.error("An error occurred while setting up the request.");
     }
@@ -668,4 +668,4 @@ const Councillor = () => {
   );
 };
 
-export default Councillor;
+export default Exams;
