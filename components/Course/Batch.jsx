@@ -50,10 +50,10 @@ const Batch = (props) => {
     "FOUNDATION-10th": F10,
   };
   return (
-    <section className=" w-11/12 xl:w-9/12 2xl:w-[1100px] mx-auto flex flex-col md:flex md:flex-row justify-between font-Poppins my-8 md:space-x-4 space-y-4 ">
-      <div className="border  w-full  md:w-1/2 lg:w-2/3 p-6 rounded-md mt-4 bg-white">
+    <section className=" w-11/12 xl:w-10/12 2xl:w-[1100px] mx-auto flex flex-col md:flex md:flex-row justify-between font-Poppins my-8 md:space-x-4 space-y-4 ">
+      <div className=" w-full  md:w-1/2 lg:w-2/3 p-6 rounded-md mt-4 bg-white">
         <div>
-          <h2 className="font-semibold text-xl">
+          <h2 className="font-semibold text-xl text-darkBlue">
             <span className="text-TechBlue">
               {activeBatch === "11th"
                 ? "ELITE"
@@ -90,7 +90,7 @@ const Batch = (props) => {
           </h2>
         </div>
         <div className="my-4">
-          <h4 className="font-semibold text-xl">Batch Details</h4>
+          <h4 className="font-semibold text-xl text-darkBlue">Batch Details</h4>
         </div>
 
         <ul className="space-y-6 my-6 ">

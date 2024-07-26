@@ -69,7 +69,7 @@ const Classes = () => {
     setActiveBatch(batch);
   };
   return (
-    <section className="bg-gray-100">
+    <section className="bg-gray-100/60">
       <div className="pt-10 space-y-4 font-Poppins ">
         <h1 className=" text-center font-Poppins text-2xl md:text-3xl text-darkBlue font-semibold">
           JEE Mains and Advanced Batches
@@ -80,7 +80,7 @@ const Classes = () => {
         </p>
       </div>
       <div className="flex justify-center items-center">
-        <div className=" justify-center mt-8 font-Poppins font-normal border mx-auto rounded-full inline ">
+        <div className=" justify-center mt-8 font-Poppins border mx-auto rounded-full inline text-darkBlue/60 font-medium ">
           <button
             className={`rounded-full p-2 px-8  transition-all duration-200  ${
               activeBatch === "11th" ? "bg-TechBlue p-2  text-white" : ""
@@ -103,7 +103,7 @@ const Classes = () => {
             }`}
             onClick={() => handleClick("13th")}
           >
-            13th
+            Target 13th
           </button>
         </div>
       </div>
