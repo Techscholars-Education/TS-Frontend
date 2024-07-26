@@ -82,7 +82,7 @@ const Classes = () => {
           </p>
         </div>
         <div className="flex justify-center items-center">
-          <div className=" justify-center mt-8 font-Poppins font-normal border mx-auto rounded-full inline ">
+          <div className=" justify-center mt-8 font-Poppins border mx-auto rounded-full inline text-darkBlue/60 font-medium ">
             <button
               className={`rounded-full p-2 px-8  transition-all duration-200  ${
                 activeBatch === "11th" ? "bg-TechBlue p-2  text-white" : ""
@@ -105,7 +105,7 @@ const Classes = () => {
               }`}
               onClick={() => handleClick("13th")}
             >
-              13th
+              Target 13th
             </button>
           </div>
         </div>

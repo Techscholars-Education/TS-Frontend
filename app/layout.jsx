@@ -10,7 +10,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head></head>
+      <head>
+        <link rel="icon" href="icon.ico" sizes="any" />
+      </head>
       <body suppressHydrationWarning={true}>
         <NextTopLoader color="#0079FC" height={6} />
         <GoogleProvider>

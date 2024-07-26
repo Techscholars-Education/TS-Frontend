@@ -53,7 +53,7 @@ const Classes = () => {
   };
   return (
     <>
-      <section className="bg-gray-100">
+      <section className="bg-gray-100/60">
         <div className="pt-10 space-y-4 font-Poppins ">
           <h1 className=" text-center font-Poppins text-2xl md:text-3xl text-darkBlue font-semibold">
             Foundation Batches

@@ -67,10 +67,10 @@ const Faculties = (props) => {
             Faculties
           </h5>
         </div>
-        <h2 className="text-darkBlue font-semibold text-2xl  md:text-4xl text-center my-4 font-Poppins ">
+        <h2 className="text-darkBlue font-semibold text-2xl  md:text-4xl text-center mt-4 font-Poppins ">
           {props.calling == "home"
             ? "Learn from Bharat's top faculties"
-            : "Top Faculites"}
+            : "Faculties in this batch"}
         </h2>
       </div>
       <div className="my-4 text-center  ">
