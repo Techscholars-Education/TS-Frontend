@@ -36,17 +36,14 @@ const Faqs = () => {
   ]);
 
   return (
-    <section className="font-Poppins">
+    <section className="font-Poppins ">
       <div className="py-10 text-center space-y-4">
         <h1 className=" text-center font-Poppins text-2xl md:text-3xl text-darkBlue font-semibold">
-          Frequently asked questions
+          FAQs
         </h1>
-        <p className="text-gray-500 text-sm md:text-base md:px-40 lg:px-60 xl:px-80 text-center">
-          Clear your doubts
-        </p>
       </div>
 
-      <div className="m-2 space-y-6 w-11/12 lg:w-9/12 2xl:w-[1100px] mx-auto">
+      <div className="m-2 space-y-6 w-11/12 lg:w-10/12 2xl:w-[1100px] mx-auto  p-4 rounded-md bg-white">
         {Faqs.map((item) => {
           return (
             <AccordionItem
@@ -72,12 +69,12 @@ const AccordionItem = ({ title, content }) => {
   };
 
   return (
-    <div className="border-b border-gray-200 bg-white">
+    <div className=" bg-gray-100/60 ">
       <button
-        className="w-full flex justify-between items-center p-4 text-left text-gray-800 focus:outline-none"
+        className="w-full flex justify-between items-center p-4 text-left text-darkBlue focus:outline-none"
         onClick={toggleAccordion}
       >
-        <span className=" text-sm md:text-lg">{title}</span>
+        <span className=" text-sm md:text-lg font-semibold">{title}</span>
         <svg
           className={`w-5 h-5 transition-transform duration-300 ${
             isOpen ? "transform rotate-180" : ""
@@ -102,7 +99,7 @@ const AccordionItem = ({ title, content }) => {
         }}
         className={`overflow-hidden transition-all duration-500 ease-in-out`}
       >
-        <div className="px-4 py-3 text-sm md:text-base text-gray-700">
+        <div className="px-4 pb-3 text-sm md:text-base font-medium text-darkBlue">
           {content}
         </div>
       </div>
