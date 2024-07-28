@@ -2,8 +2,20 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { FiHome, FiBookOpen, FiClipboard, FiUsers, FiRss, FiMessageCircle, FiLogOut, FiMail, FiMenu, FiX, FiLock } from 'react-icons/fi';
-import { MdOutlineLibraryBooks } from 'react-icons/md';
+import {
+  FiHome,
+  FiBookOpen,
+  FiClipboard,
+  FiUsers,
+  FiRss,
+  FiMessageCircle,
+  FiLogOut,
+  FiMail,
+  FiMenu,
+  FiX,
+  FiLock,
+} from "react-icons/fi";
+import { MdOutlineLibraryBooks } from "react-icons/md";
 
 import { Tooltip, Button, Box } from "@mui/material";
 import Logo from "../../public/Logo.svg";
@@ -26,7 +38,6 @@ const LeftNavigation = () => {
   const isActive = (path) => pathname === path;
 
   const lockedPaths = [
-
     // "/dashboard/refer-and-earn",
     "/dashboard/feed",
     "/dashboard/community",
@@ -39,52 +50,99 @@ const LeftNavigation = () => {
           className="md:hidden mt-4 "
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          {isMenuOpen ? <FiX className="text-lg" /> : <FiMenu className="text-lg" />}
+          {isMenuOpen ? (
+            <FiX className="text-lg" />
+          ) : (
+            <FiMenu className="text-lg" />
+          )}
         </button>
       </div>
 
-      <nav className={`bg-white ${isMenuOpen?'block':'hidden'} md:block w-[60vw] md:w-[18vw] py-4 md:px-8 pl-2 flex flex-col justify-between items-center`}>
+      <nav
+        className={`bg-white ${
+          isMenuOpen ? "block" : "hidden"
+        } md:block w-[60vw] md:w-[18vw] xl:w-[280px] py-4 md:px-8 pl-2 flex flex-col justify-between items-center`}
+      >
         <div className="mx-auto fixed">
           {/* Logo */}
-          <Link href={"/"} className="flex items-center justify-center space-x-2">
-            <Image className="w-10 h-10" src={Logo} alt="Techscholars-Logo" />
-            <h1 className="text-gray-800 font-semibold text-xl">Techscholars</h1>
+          <Link
+            href={"/"}
+            className="flex items-center justify-center space-x-2"
+          >
+            <Image className="w-8 h-8" src={Logo} alt="Techscholars-Logo" />
+            <h1 className="text-darkBlue font-semibold text-xl font-Poppins">
+              Techscholars
+            </h1>
           </Link>
-          <div className="border h-[1px] mt-4">
+          <div className="border h-[1px] mt-4"></div>
 
-          </div>
-
-
-          <ul className="mt-6 mx-auto font-Poppins">
+          <ul className="mt-6 mx-auto font-Poppins space-y-1 xl:w-[220px]">
             {[
               { path: "/dashboard/home", icon: FiHome, label: "Home" },
-              { path: "/dashboard/my-course", icon: FiBookOpen, label: "My Course" },
-              { path: "/dashboard/courses", icon: MdOutlineLibraryBooks, label: "Courses" },
-              { path: "/dashboard/test/testdetail", icon: FiClipboard, label: "Test Series" },
-              { path: "/dashboard/refer-and-earn", icon: FiUsers, label: "Refer and Earn" },
+              {
+                path: "/dashboard/my-course",
+                icon: FiBookOpen,
+                label: "My Course",
+              },
+              {
+                path: "/dashboard/courses",
+                icon: MdOutlineLibraryBooks,
+                label: "Courses",
+              },
+              {
+                path: "/dashboard/test/testdetail",
+                icon: FiClipboard,
+                label: "Test Series",
+              },
+              {
+                path: "/dashboard/refer-and-earn",
+                icon: FiUsers,
+                label: "Refer and earn",
+              },
               { path: "/dashboard/feed", icon: FiRss, label: "Feed" },
-              { path: "/dashboard/community", icon: FiMessageCircle, label: "Community" },
+              {
+                path: "/dashboard/community",
+                icon: FiMessageCircle,
+                label: "Community",
+              },
             ].map(({ path, icon: Icon, label }) => (
-              <li key={path} className="flex items-center mb-[4px]">
+              <li key={path} className="flex items-center  ">
                 <Tooltip
-                  title={lockedPaths.includes(path) ? "This feature is locked as of now. Coming soon!" : ""}
+                  title={
+                    lockedPaths.includes(path)
+                      ? "This feature is locked as of now. Coming soon!"
+                      : ""
+                  }
                   placement="right"
                   arrow
                 >
                   <Box
                     component="span"
-                    className={`flex w-full py-2 px-4 rounded-md ${isActive(path)?'bg-gray-100':''} items-center ${lockedPaths.includes(path) ? "blur-[1px] cursor-not-allowed" : ""}`}
+                    className={`flex w-full py-3 px-4 rounded-md   ${
+                      isActive(path) ? "bg-blue-100/40" : ""
+                    } items-center ${
+                      lockedPaths.includes(path)
+                        ? "blur-[1px] cursor-not-allowed"
+                        : ""
+                    }`}
                   >
                     <Icon
-                      className={`mr-2 text-xl ${isActive(path) ? "text-[#0079FC]" : "text-gray-500"}`}
+                      className={`mr-2 text-xl ${
+                        isActive(path) ? "text-TechBlue" : "text-gray-400"
+                      }`}
                     />
                     <Link
                       href={lockedPaths.includes(path) ? "#" : path}
-                      className={`font-semibold flex items-center ${isActive(path) ? "text-[#0079FC] " : "text-gray-500 hover:text-gray-400"
-                        }`}
+                      className={`font-medium flex items-center ${
+                        isActive(path)
+                          ? "text-[#0079FC] "
+                          : "text-gray-400 hover:text-gray-400"
+                      }`}
                     >
                       {label}
-                      {lockedPaths.includes(path) && <FiLock className="ml-2 text-gray-500" />}
+                      {lockedPaths.includes(path) && (
+                        <FiLock className="ml-2 text-gray-500" />
+                      )}
                     </Link>
                   </Box>
                 </Tooltip>
@@ -92,24 +150,24 @@ const LeftNavigation = () => {
             ))}
           </ul>
 
-          <div className="mt-8 flex flex-col">
-
-            <Button
+          <div className="mt-8 flex flex-col   items-start">
+            <button
               onClick={handleSignOut}
-              className="text-white  hover:text-gray-400 "
-              startIcon={<FiLogOut className="text-[#E55858] text-xl" />}
+              className=" py-2 ml-4 hover:text-gray-400 text-red-500 font-medium font-Poppins flex justify-start items-center  "
             >
-              <span className="text-[#E55858] font-bold mr-20">Sign Out</span>
-            </Button>
+              <FiLogOut className="text-[#E55858] text-xl mr-1" /> Sign Out
+            </button>
           </div>
 
-          <div className="relative flex flex-col mt-8 justify-center items-center align-middle bg-[#00003E] text-white rounded-xl h-32 w-48">
+          <div className="relative font-Poppins flex flex-col mt-24 justify-center items-center align-middle bg-[#00003E] text-white rounded-xl h-32 xl:w-[220px] ">
             <div className="absolute -top-6 flex justify-center items-center w-12 h-12 bg-[#00003E] text-white rounded-full border-4 border-white">
               <FiMail className="h-6 w-6" />
             </div>
             <div>
-              <p className="text-sm text-center">Email us at</p>
-              <p className="text-sm mt-1.5">ask@techscholars.in</p>
+              <p className="text-base font-normal text-center">Email us at</p>
+              <p className="text-base font-normal mt-1.5">
+                ask@techscholars.in
+              </p>
             </div>
           </div>
         </div>
