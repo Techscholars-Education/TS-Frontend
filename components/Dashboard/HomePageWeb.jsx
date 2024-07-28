@@ -17,7 +17,6 @@ import Typography from "@mui/material/Typography";
 
 import DashboardNavbar from "./DashboardNavbar";
 
-
 import { DateRange } from "react-date-range";
 import {
   add,
@@ -154,7 +153,6 @@ const HomePageWeb = () => {
     setState({ ...state, [anchor]: open });
   };
 
-  
   // Callback function to handle the range change
   const handleRangeChange = (range) => {
     setSelectedRange(range);
@@ -165,10 +163,10 @@ const HomePageWeb = () => {
     <>
       <div className=" font-Poppins min-h-screen  w-full bg-[#f7faff] overflow-x-hidden overflow-y-hidden ">
         <DashboardNavbar
-          title={`Welcome back${
+          title={`Welcome back, Ayo${
             userInfo?.given_name ? `, ${userInfo.given_name}` : ""
           }! 👋 `}
-          subtitle=""
+          subtitle="You’ve completed 70% of your goal this week! Keep it up and improve."
         />
         <div className="md:mx-6">
           <div className=" my-3  md:mx-4 grid md:grid-cols-2 grid-cols-1 ">
@@ -251,7 +249,7 @@ const HomePageWeb = () => {
                       style={{ fontWeight: "700", width: "450px" }}
                     /> */}
 
-                    <Calenders onRangeChange={handleRangeChange}/>
+                    <Calenders onRangeChange={handleRangeChange} />
                   </div>
 
                   {/* <div className="hidden md:block">

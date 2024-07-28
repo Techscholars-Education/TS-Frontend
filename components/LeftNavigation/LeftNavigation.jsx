@@ -63,18 +63,19 @@ const LeftNavigation = () => {
           isMenuOpen ? "block" : "hidden"
         } md:block w-[60vw] md:w-[18vw] xl:w-[280px] py-4 md:px-8 pl-2 flex flex-col justify-between items-center`}
       >
-        <div className="mx-auto fixed">
+        <div className="mx-auto fixed ">
           {/* Logo */}
           <Link
             href={"/"}
-            className="flex items-center justify-center space-x-2"
+            className="flex items-center justify-center space-x-2 xl:py-4 xl:mb-4"
           >
             <Image className="w-8 h-8" src={Logo} alt="Techscholars-Logo" />
-            <h1 className="text-darkBlue font-semibold text-xl font-Poppins">
+            <h1 className="text-darkBlue font-medium text-2xl font-Poppins">
               Techscholars
             </h1>
           </Link>
-          <div className="border h-[1px] mt-4"></div>
+          {/* <div className="border h-[1px] mt-4"></div> */}
+          <hr />
 
           <ul className="mt-6 mx-auto font-Poppins space-y-1 xl:w-[220px]">
             {[
