@@ -168,15 +168,15 @@ const HomePageWeb = () => {
           }! 👋 `}
           subtitle="You’ve completed 70% of your goal this week! Keep it up and improve."
         />
-        <div className="md:mx-6">
-          <div className=" my-3  md:mx-4 grid md:grid-cols-2 grid-cols-1 ">
+        <div className="md:mx-6 ">
+          <div className=" my-3 grid md:grid-cols-2 grid-cols-1 xl:my-6 ">
             <div className="flex flex-col">
               <Tooltip
                 title="This feature is locked as of now. Coming soon!"
                 placement="right"
                 arrow
               >
-                <div className="bg-white rounded-lg flex flex-col w-full md:w-[35vw] mx-auto md:h-[320px]">
+                <div className="bg-white rounded-lg flex flex-col w-full md:w-[35vw] mx-auto md:h-[320px] xl:pt-4">
                   <p className="font-semibold p-4 pb-0">Performance analysis</p>
                   <div className="relative blur-[2px]">
                     <FiLock
@@ -211,7 +211,7 @@ const HomePageWeb = () => {
                 </div>
               </Tooltip>
 
-              <div className="bg-white rounded-lg mt-3 p-4 py-0 w-full md:max-w-[35vw]  mx-auto">
+              <div className="bg-white rounded-lg mt-3 p-4 py-0 w-full md:max-w-[35vw] xl:h-[340px]  mx-auto xl:pt-4">
                 <p className="font-semibold mt-4">Watch Time</p>
                 <div className="relative blur-[2px]">
                   <FiLock
