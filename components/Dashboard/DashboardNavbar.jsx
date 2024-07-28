@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useEffect, useState } from "react";
 import { FiBell, FiSearch, FiUser } from "react-icons/fi";
 import Image from "next/image";
@@ -7,35 +7,32 @@ import Link from "next/link";
 import useProfile from "@/hooks/useProfile";
 import { IoIosArrowDown } from "react-icons/io";
 
-
 function DashboardNavbar(props) {
-
-  const { useprofile } = useProfile()
-  const [userImage, setUserImage] = useState()
-  const [call, setCall] = useState(false)
+  const { useprofile } = useProfile();
+  const [userImage, setUserImage] = useState();
+  const [call, setCall] = useState(false);
 
   useEffect(() => {
     const image = window?.localStorage?.getItem("profile-storage");
-    const imagejs = JSON.parse(image)
+    const imagejs = JSON.parse(image);
     setUserImage(imagejs.state.profiles.profile_image);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [call])
+  }, [call]);
 
   useEffect(() => {
-    useprofile()
-    setCall(true)
+    useprofile();
+    setCall(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [1])
-
+  }, [1]);
 
   const [search, setSearch] = useState(false);
 
   return (
-    <div className="flex flex-wrap max-w-full place-items-center md:pb-[10px]  my-4 bg-white">
+    <div className="flex flex-wrap max-w-full place-items-center md:pb-[10px] xl:py-5 bg-white">
       <section className="relative ">
         <nav className="flex justify-between text-black md:min-w-[83vw] ">
           <div className="md:px-5 xl:px-12 flex w-full items-center justify-between">
-            <div className="flex flex-col w-72 md:w-96">
+            <div className="flex flex-col w-full md:w-96  xl:w-[500px]">
               {/* <div className='flex bg-slate-200 p-2 px-3 rounded-full w-24 m-3 mt-2 mb-0 md:ml-6 '>
                 <IoMdArrowBack className='mt-1 mr-1' />
 
@@ -43,10 +40,15 @@ function DashboardNavbar(props) {
                   Back
                 </Link>
               </div> */}
-              <a className="md:text-2xl font-bold font-heading " href="#">
+              <Link
+                className="md:text-2xl font-semibold font-Poppins text-darkBlue font-heading "
+                href="#"
+              >
                 {props.title}
-              </a>
-              <p className="md:text-[14px] t text-gray-400">{props.subtitle}</p>
+              </Link>
+              <p className="md:text-[14px]  text-gray-400 pt-2">
+                {props.subtitle}
+              </p>
             </div>
 
             <div className="hidden xl:flex items-center space-x-5 h-8">
@@ -84,21 +86,25 @@ function DashboardNavbar(props) {
                 href={"/dashboard/profile"}
                 className="flex items-center hover:text-TechBlue"
               >
-                {userImage ? <Image
-                  className="h-8 w-8 rounded-md"
-                  src={userImage || iconprofile}
-                  alt="Profile"
-                  width={32}
-                  height={32}
-                /> : <Image
-                  className="h-8 w-8 rounded-md"
-                  src={iconprofile}
-                  unoptimized
-                  alt="Profile"
-                  width="auto"
-                  height="auto"
-                />}
-                <IoIosArrowDown className="ml-2"/>
+                {userImage ? (
+                  <Image
+                    className="h-8 w-8 rounded-md"
+                    src={userImage || iconprofile}
+                    alt="Profile"
+                    width={32}
+                    height={32}
+                  />
+                ) : (
+                  <Image
+                    className="h-8 w-8 rounded-md"
+                    src={iconprofile}
+                    unoptimized
+                    alt="Profile"
+                    width="auto"
+                    height="auto"
+                  />
+                )}
+                <IoIosArrowDown className="ml-2" />
               </Link>
             </div>
           </div>
