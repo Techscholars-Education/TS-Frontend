@@ -37,7 +37,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import { useCookieStore } from "@/hooks/useStore";
 import { DateRangePicker } from "react-date-range";
-import Calendar from "./Home/Calender";
+import ValueCalender from "./Home/Calender";
 import { Tooltip } from "@mui/material";
 import { FiLock } from "react-icons/fi";
 import Todo from "./Home/Todo";
@@ -70,15 +70,15 @@ const HomePageWeb = () => {
     setIsChecked(!isChecked);
   };
 
-  const [selectionRange, setSelectionRange] = useState({
-    startDate: new Date(),
-    endDate: new Date(),
-    key: "selection",
-  });
-  const handleSelect = (ranges) => {
-    setSelectionRange(ranges.selection);
-    console.log(ranges);
-  };
+  // const [selectionRange, setSelectionRange] = useState({
+  //   startDate: new Date(),
+  //   endDate: new Date(),
+  //   key: "selection",
+  // });
+  // const handleSelect = (ranges) => {
+  //   setSelectionRange(ranges.selection);
+  //   console.log(ranges);
+  // };
 
   const data = [
     { x: 1, y: 2 },
@@ -156,8 +156,8 @@ const HomePageWeb = () => {
   // Callback function to handle the range change
   const handleRangeChange = (range) => {
     setSelectedRange(range);
-    console.log(range);
   };
+ 
 
   return (
     <>
@@ -243,25 +243,12 @@ const HomePageWeb = () => {
               <div className="  flex flex-col bg-white rounded-lg  md:mb-4 md:max-w-[34.5vw]   ">
                 <div className="md:mt-0 rounded-xl flex align-middle items-center justify-self-center  ">
                   <div className=" flex items-center justify-center w-full mb-5 mt-3 ">
-                    {/* <DateRange
-                      ranges={[selectionRange]}
-                      onChange={handleSelect}
-                      style={{ fontWeight: "700", width: "450px" }}
-                    /> */}
-
+  
                     <Calenders onRangeChange={handleRangeChange} />
                   </div>
 
-                  {/* <div className="hidden md:block">
-                        <DateRangePicker
-                          ranges={[selectionRange]}
-                          onChange={handleSelect}
-                        />
-                      </div> */}
-
-                  {/* <div className="md:relative">
-                        <Calendar selectionRange={selectionRange} />
-
+                      {/* <div className="md:relative">
+                        <ValueCalender selectedRange={selectedRange} />
                       </div> */}
                 </div>
               </div>

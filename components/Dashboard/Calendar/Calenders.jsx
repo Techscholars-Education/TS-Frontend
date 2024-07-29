@@ -1,15 +1,14 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { addDays, format, isBefore, startOfToday } from 'date-fns';
 import { DayPicker } from 'react-day-picker';
 import "react-day-picker/style.css";
-import cal from "./cal.css"
+import cal from "./cal.css";
 
 const Calenders = ({ onRangeChange }) => {
     const defaultMonth = new Date();
   
-
     const defaultSelected = {
       from: defaultMonth,
       to: addDays(defaultMonth, 4)
@@ -31,25 +30,28 @@ const Calenders = ({ onRangeChange }) => {
       }
     };
 
+    // Notify parent component of the default range on mount
+    useEffect(() => {
+      if (onRangeChange) {
+        onRangeChange(range);
+      }
+    }, [onRangeChange, range]);
+
   return (
     <>
-    <div className="calendar-container">
-      <div id='borders'></div>
-      <DayPicker
-        className={cal}
-        mode="range"
-        defaultMonth={defaultMonth}
-        selected={range}
-        onSelect={handleSelect} // Handle selection change
-        disabled={disablePastDates} // Disable past dates
-      />
-   
-    </div>
-  </>
-
-  )
+      <div className="calendar-container">
+        <div id='borders'></div>
+        <DayPicker
+          className={cal}
+          mode="range"
+          defaultMonth={defaultMonth}
+          selected={range}
+          onSelect={handleSelect} // Handle selection change
+          disabled={disablePastDates} // Disable past dates
+        />
+      </div>
+    </>
+  );
 }
 
-export default Calenders
-
-
+export default Calenders;
