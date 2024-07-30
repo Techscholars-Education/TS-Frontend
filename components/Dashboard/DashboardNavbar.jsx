@@ -16,42 +16,30 @@ function DashboardNavbar(props) {
     const image = window?.localStorage?.getItem("profile-storage");
     const imagejs = JSON.parse(image);
     setUserImage(imagejs.state.profiles.profile_image);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [call]);
 
   useEffect(() => {
     useprofile();
     setCall(true);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [1]);
 
   const [search, setSearch] = useState(false);
 
   return (
-    <div className="flex flex-wrap max-w-full place-items-center md:pb-[10px] xl:py-5 bg-white">
-      <section className="relative ">
-        <nav className="flex justify-between text-black md:min-w-[83vw] ">
+    <div className="flex flex-wrap  place-items-center md:pb-[10px] xl:mt-7 bg-white  ">
+      <section className="relative   ">
+        <nav className="flex justify-between text-black xl:w-[80vw] ">
           <div className="md:px-5 xl:px-12 flex w-full items-center justify-between">
             <div className="flex flex-col w-full md:w-96  xl:w-[500px]">
-              {/* <div className='flex bg-slate-200 p-2 px-3 rounded-full w-24 m-3 mt-2 mb-0 md:ml-6 '>
-                <IoMdArrowBack className='mt-1 mr-1' />
-
-                <Link href="/" className='text-[14px]'>
-                  Back
-                </Link>
-              </div> */}
               <Link
                 className="md:text-2xl font-semibold font-Poppins text-darkBlue font-heading "
                 href="#"
               >
                 {props.title}
               </Link>
-              <p className="md:text-[14px]  text-gray-400 pt-2">
-                {props.subtitle}
-              </p>
             </div>
 
-            <div className="hidden xl:flex items-center space-x-5 h-8">
+            <div className="hidden xl:flex items-center space-x-5 h-8 ">
               <form
                 className={`max-w-md mx-auto ${search ? "block" : "hidden"}`}
               >

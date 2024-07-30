@@ -39,8 +39,8 @@ const LeftNavigation = () => {
 
   const lockedPaths = [
     // "/dashboard/refer-and-earn",
-    "/dashboard/feed",
-    "/dashboard/community",
+    // "/dashboard/feed",
+    // "/dashboard/community",
   ];
 
   return (
@@ -101,6 +101,7 @@ const LeftNavigation = () => {
                 label: "Refer and earn",
               },
               { path: "/dashboard/feed", icon: FiRss, label: "Feed" },
+              { path: "/dashboard/feed/blog", icon: FiRss, label: "Feed" },
               {
                 path: "/dashboard/community",
                 icon: FiMessageCircle,
