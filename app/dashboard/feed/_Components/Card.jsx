@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import avatar from "../../../../public/Dashboard/avatar.jpg";
 import Link from "next/link";
 const Card = (props) => {
   return (

@@ -7,7 +7,7 @@ const Feedblog = () => {
       <DashboardNavbar title={"Feed"} />
       <div className="my-6 flex flex-col mr-2 bg-gray-100/60 h-[85vh] max-w-full pl-5 pr-5 pt-6 overflow-y-auto">
         <div className=" ml-8">
-          <div className="flex flex-col gap-1 space-y-4 ">
+          <div className="flex flex-col gap-1 space-y-4 pr-10 ">
             <h1 className="font-semibold font-Poppins text-2xl text-darkBlue">
               Heading of the blog
             </h1>
@@ -21,7 +21,9 @@ const Feedblog = () => {
             </p>
 
             <div className="bg-gray-200 animate-pulse h-96  flex justify-center items-center rounded-md">
-              Image...
+              <div className="h-10 w-10 animate-spin border-2 border-gray-400 duration-500  rounded-md">
+                {" "}
+              </div>
             </div>
             <p className="leading-relaxed text-lg">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
