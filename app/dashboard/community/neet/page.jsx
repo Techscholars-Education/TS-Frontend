@@ -5,30 +5,31 @@ const page = () => {
   const data = [
     {
       id: 1,
-      title: "JEE ",
+      title: "NEET - Class 11",
       subhead: "Connect with peers across the country and learn together !",
-      btnText: "Explore",
-      linkTo: "/dashboard/community/jee",
+      btnText: "Join",
+      linkTo: "#",
     },
     {
       id: 2,
-      title: "NEET ",
+      title: "NEET - Class 12",
       subhead: "Connect with peers across the country and learn together !",
-      btnText: "Explore",
-      linkTo: "/dashboard/community/neet",
+      btnText: "Join",
+      linkTo: "#",
     },
     {
       id: 3,
-      title: "Foundation",
+      title: "NEET - Droppers",
       subhead: "Connect with peers across the country and learn together !",
-      btnText: "Explore",
-      linkTo: "/dashboard/community/foundation",
+      btnText: "Join",
+      linkTo: "#",
     },
   ];
+
   return (
     <section className="flex">
       <LeftNavigation />
-      <Community data={data} pageTitle={"Student Community"} />
+      <Community data={data} pageTitle={"NEET Community"} />
     </section>
   );
 };

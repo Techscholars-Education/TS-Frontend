@@ -1,46 +1,30 @@
 import React from "react";
 import Communitycards from "./Communitycards";
-const Community = () => {
-  const data = [
-    {
-      id: 1,
-      title: "Class 11th JEE",
-      students: "Ram, Sham and many more...",
-    },
-    {
-      id: 2,
-      title: "Class 12th JEE",
-      students: "Ram, Sham and many more...",
-    },
-    {
-      id: 3,
-      title: "Target 13th JEE",
-      students: "Ram, Sham and many more...",
-    },
-  ];
-
+import DashboardNavbar from "./DashboardNavbar";
+const Community = (props) => {
   return (
-    <div className="w-full min-h-screen bg-[#f7faff] py-16 px-16">
-      <div className=" space-y-3 ">
-        <h3 className="font-Poppins text-2xl font-semibold text-darkBlue">
-          Student Community
-        </h3>
-        <div className="flex justify-between ">
-          <p className="text-xl text-darkBlue">Welcome to JEE community</p>
-          <ul className="flex space-x-10">
-            <li>11th </li>
-            <li>12th </li>
-            <li>Target 13th </li>
-          </ul>
+    <div className="bg-white font-Poppins h-screen w-full flex flex-col ">
+      <DashboardNavbar title={"Community"} />
+      <div className="my-6 flex flex-col mr-2 bg-gray-100/60 h-[85vh] max-w-full pl-5 pr-5 pt-6 overflow-y-auto">
+        <div className="flex justify-between items-center ml-8">
+          <div className="flex flex-col gap-1">
+            <h1 className="font-semibold font-Poppins text-xl text-darkBlue">
+              {props.pageTitle}
+            </h1>
+            <p className="text-gray-500">
+              Join the smartest student community today!
+            </p>
+          </div>
         </div>
-
-        <div className="grid grid-cols-3 py-12 ">
-          {data.map((item) => {
+        <div className="grid grid-cols-3 gap-4 my-10 mx-4 ">
+          {props.data.map((item) => {
             return (
               <Communitycards
                 title={item.title}
                 key={item.id}
-                students={item.students}
+                subhead={item.subhead}
+                btnText={item.btnText}
+                linkTo={item.linkTo}
               />
             );
           })}
