@@ -5,7 +5,7 @@ const Community = (props) => {
   return (
     <div className="bg-white font-Poppins h-screen w-full flex flex-col ">
       <DashboardNavbar title={"Community"} />
-      <div className="my-6 flex flex-col mr-2 bg-gray-100/60 h-[85vh] max-w-full pl-5 pr-5 pt-6 overflow-y-auto">
+      <div className="mb-6 flex flex-col mr-2 bg-gray-100/60 h-[85vh] max-w-full pl-5 pr-5 pt-6 overflow-y-auto">
         <div className="flex justify-between items-center ml-8">
           <div className="flex flex-col gap-1">
             <h1 className="font-semibold font-Poppins text-xl text-darkBlue">
