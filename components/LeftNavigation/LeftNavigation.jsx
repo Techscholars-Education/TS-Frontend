@@ -13,11 +13,9 @@ import {
   FiMail,
   FiMenu,
   FiX,
-  FiLock,
 } from "react-icons/fi";
 import { MdOutlineLibraryBooks } from "react-icons/md";
-
-import { Tooltip, Button, Box } from "@mui/material";
+import { Box } from "@mui/material";
 import Logo from "../../public/Logo.svg";
 import Link from "next/link";
 import Cookies from "js-cookie";
@@ -25,29 +23,55 @@ import Cookies from "js-cookie";
 const LeftNavigation = () => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const handleSignOut = () => {
     Cookies.remove("access_token");
     localStorage.removeItem("course-storage");
     localStorage.removeItem("cookie-storage");
     localStorage.removeItem("profile-storage");
-    // Refresh the page
     window.location.reload();
     window.location.assign("/");
   };
 
-  const isActive = (path) => pathname === path;
+  const isActive = (path) => {
+    if (path === "/dashboard/feed") {
+      return pathname.startsWith("/dashboard/feed");
+    }
+    if (path === "/dashboard/community") {
+      return pathname.startsWith("/dashboard/community");
+    }
+    return pathname === path;
+  };
 
-  const lockedPaths = [
-    // "/dashboard/refer-and-earn",
-    "/dashboard/feed",
-    "/dashboard/community",
+  const lockedPaths = [];
+
+  const navItems = [
+    { path: "/dashboard/home", icon: FiHome, label: "Home" },
+    { path: "/dashboard/my-course", icon: FiBookOpen, label: "My Course" },
+    {
+      path: "/dashboard/courses",
+      icon: MdOutlineLibraryBooks,
+      label: "Courses",
+    },
+    {
+      path: "/dashboard/test/testdetail",
+      icon: FiClipboard,
+      label: "Test Series",
+    },
+    {
+      path: "/dashboard/refer-and-earn",
+      icon: FiUsers,
+      label: "Refer and earn",
+    },
+    { path: "/dashboard/feed", icon: FiRss, label: "Feed" },
+    { path: "/dashboard/community", icon: FiMessageCircle, label: "Community" },
   ];
 
   return (
     <div>
       <div className="m-1">
         <button
-          className="md:hidden mt-4 "
+          className="md:hidden mt-4"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? (
@@ -63,10 +87,9 @@ const LeftNavigation = () => {
           isMenuOpen ? "block" : "hidden"
         } md:block w-[60vw] md:w-[18vw] xl:w-[280px] py-4 md:px-8 pl-2 flex flex-col justify-between items-center`}
       >
-        <div className="mx-auto fixed ">
-          {/* Logo */}
+        <div className="mx-auto fixed">
           <Link
-            href={"/"}
+            href="/"
             className="flex items-center justify-center space-x-2 xl:py-4 xl:mb-4"
           >
             <Image className="w-8 h-8" src={Logo} alt="Techscholars-Logo" />
@@ -74,93 +97,48 @@ const LeftNavigation = () => {
               Techscholars
             </h1>
           </Link>
-          {/* <div className="border h-[1px] mt-4"></div> */}
+
           <hr />
 
           <ul className="mt-6 mx-auto font-Poppins space-y-1 xl:w-[220px]">
-            {[
-              { path: "/dashboard/home", icon: FiHome, label: "Home" },
-              {
-                path: "/dashboard/my-course",
-                icon: FiBookOpen,
-                label: "My Course",
-              },
-              {
-                path: "/dashboard/courses",
-                icon: MdOutlineLibraryBooks,
-                label: "Courses",
-              },
-              {
-                path: "/dashboard/test/testdetail",
-                icon: FiClipboard,
-                label: "Test Series",
-              },
-              {
-                path: "/dashboard/refer-and-earn",
-                icon: FiUsers,
-                label: "Refer and earn",
-              },
-              { path: "/dashboard/feed", icon: FiRss, label: "Feed" },
-              {
-                path: "/dashboard/community",
-                icon: FiMessageCircle,
-                label: "Community",
-              },
-            ].map(({ path, icon: Icon, label }) => (
-              <li key={path} className="flex items-center  ">
-                <Tooltip
-                  title={
-                    lockedPaths.includes(path)
-                      ? "This feature is locked as of now. Coming soon!"
-                      : ""
-                  }
-                  placement="right"
-                  arrow
+            {navItems.map(({ path, icon: Icon, label }) => (
+              <li key={path} className="flex items-center">
+                <Box
+                  component="span"
+                  className={`flex w-full py-3 px-4 rounded-md ${
+                    isActive(path) ? "bg-blue-100/40" : ""
+                  } items-center`}
                 >
-                  <Box
-                    component="span"
-                    className={`flex w-full py-3 px-4 rounded-md   ${
-                      isActive(path) ? "bg-blue-100/40" : ""
-                    } items-center ${
-                      lockedPaths.includes(path)
-                        ? "blur-[1px] cursor-not-allowed"
-                        : ""
+                  <Icon
+                    className={`mr-2 text-xl ${
+                      isActive(path) ? "text-TechBlue" : "text-gray-400"
+                    }`}
+                  />
+                  <Link
+                    href={lockedPaths.includes(path) ? "#" : path}
+                    className={`font-medium flex items-center ${
+                      isActive(path)
+                        ? "text-[#0079FC]"
+                        : "text-gray-400 hover:text-gray-400"
                     }`}
                   >
-                    <Icon
-                      className={`mr-2 text-xl ${
-                        isActive(path) ? "text-TechBlue" : "text-gray-400"
-                      }`}
-                    />
-                    <Link
-                      href={lockedPaths.includes(path) ? "#" : path}
-                      className={`font-medium flex items-center ${
-                        isActive(path)
-                          ? "text-[#0079FC] "
-                          : "text-gray-400 hover:text-gray-400"
-                      }`}
-                    >
-                      {label}
-                      {lockedPaths.includes(path) && (
-                        <FiLock className="ml-2 text-gray-500" />
-                      )}
-                    </Link>
-                  </Box>
-                </Tooltip>
+                    {label}
+                  </Link>
+                </Box>
               </li>
             ))}
           </ul>
 
-          <div className="mt-8 flex flex-col   items-start">
+          <div className="mt-8 flex flex-col items-start">
             <button
               onClick={handleSignOut}
-              className=" py-2 ml-4 hover:text-gray-400 text-red-500 font-medium font-Poppins flex justify-start items-center  "
+              className="py-2 ml-4 hover:text-gray-400 text-red-500 font-medium font-Poppins flex justify-start items-center"
             >
               <FiLogOut className="text-[#E55858] text-xl mr-1" /> Sign Out
             </button>
           </div>
 
-          <div className="relative font-Poppins flex flex-col mt-24 justify-center items-center align-middle bg-[#00003E] text-white rounded-xl h-32 xl:w-[220px] ">
+          <div className="relative  font-Poppins flex flex-col mt-24 justify-center items-center align-middle bg-[#00003E] text-white rounded-xl h-32 xl:w-[220px]">
             <div className="absolute -top-6 flex justify-center items-center w-12 h-12 bg-[#00003E] text-white rounded-full border-4 border-white">
               <FiMail className="h-6 w-6" />
             </div>

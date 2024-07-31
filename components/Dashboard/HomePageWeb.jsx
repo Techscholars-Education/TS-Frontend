@@ -157,14 +157,13 @@ const HomePageWeb = () => {
   const handleRangeChange = (range) => {
     setSelectedRange(range);
   };
- 
 
   return (
     <>
       <div className=" font-Poppins min-h-screen  w-full bg-[#f7faff] overflow-x-hidden overflow-y-hidden ">
         <DashboardNavbar
-          title={`Welcome back, Ayo${
-            userInfo?.given_name ? `, ${userInfo.given_name}` : ""
+          title={`Welcome back, ${
+            userInfo?.given_name ? `, ${userInfo.given_name}` : "Ayo"
           }! 👋 `}
           subtitle="You’ve completed 70% of your goal this week! Keep it up and improve."
         />
@@ -243,11 +242,10 @@ const HomePageWeb = () => {
               <div className="  flex flex-col bg-white rounded-lg  md:mb-4 md:max-w-[34.5vw]   ">
                 <div className="md:mt-0 rounded-xl flex align-middle items-center justify-self-center  ">
                   <div className=" flex items-center justify-center w-full mb-5 mt-3 ">
-  
                     <Calenders onRangeChange={handleRangeChange} />
                   </div>
 
-                      {/* <div className="md:relative">
+                  {/* <div className="md:relative">
                         <ValueCalender selectedRange={selectedRange} />
                       </div> */}
                 </div>
