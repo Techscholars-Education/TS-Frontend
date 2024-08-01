@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import Link from "next/link";
 import CircularProgress from "@mui/material/CircularProgress";
@@ -351,7 +351,26 @@ function TestDetail() {
     },
   ];
 
+  //------------------- FOR THE DROPDOWN---------------------------------------------------
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  // Function to handle clicks outside of the dropdown
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    // Attach the event listener
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   return (
     <div className="font-Poppins min-h-screen bg-[#f7faff] pb-24">
       <DashboardNavbar title="Test Series Foundation" />
@@ -366,12 +385,15 @@ function TestDetail() {
             </p>
           </div>
           {/* Drop-down */}
-          <div className="relative inline-block text-left xl:mt-8">
+          <div
+            className="relative inline-block text-left xl:mt-8"
+            ref={dropdownRef}
+          >
             <div>
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
-                className="inline-flex justify-center w-full rounded-full border border-TechBlue shadow-sm px-4 py-2 bg-white text-sm font-medium text-TechBlue hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className="inline-flex justify-center w-full rounded-full border border-TechBlue shadow-sm px-4 py-2 bg-white text-sm font-medium text-TechBlue hover:bg-gray-50 focus:outline-none"
                 id="menu-button"
                 aria-expanded={isOpen}
                 aria-haspopup="true"
@@ -395,16 +417,16 @@ function TestDetail() {
 
             {isOpen && (
               <div
-                className="origin-top-right absolute right-0 mt-2 w-28 rounded-md  shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50"
+                className="origin-top-right absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50"
                 role="menu"
                 aria-orientation="vertical"
                 aria-labelledby="menu-button"
                 tabIndex="-1"
               >
-                <div className="py-1 " role="none">
+                <div className="py-1" role="none">
                   <Link
                     href="#"
-                    className="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 "
+                    className="text-gray-700 block px-4 py-2 text-sm hover:bg-blue-100"
                     role="menuitem"
                     tabIndex="-1"
                     id="menu-item-0"
@@ -413,7 +435,7 @@ function TestDetail() {
                   </Link>
                   <Link
                     href="#"
-                    className="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 "
+                    className="text-gray-700 block px-4 py-2 text-sm hover:bg-blue-100"
                     role="menuitem"
                     tabIndex="-1"
                     id="menu-item-1"
@@ -422,7 +444,7 @@ function TestDetail() {
                   </Link>
                   <Link
                     href="#"
-                    className="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 "
+                    className="text-gray-700 block px-4 py-2 text-sm hover:bg-blue-100"
                     role="menuitem"
                     tabIndex="-1"
                     id="menu-item-1"
@@ -431,7 +453,7 @@ function TestDetail() {
                   </Link>
                   <Link
                     href="#"
-                    className="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 "
+                    className="text-gray-700 block px-4 py-2 text-sm hover:bg-blue-100"
                     role="menuitem"
                     tabIndex="-1"
                     id="menu-item-1"
@@ -440,7 +462,7 @@ function TestDetail() {
                   </Link>
                   <Link
                     href="#"
-                    className="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 "
+                    className="text-gray-700 block px-4 py-2 text-sm hover:bg-blue-100"
                     role="menuitem"
                     tabIndex="-1"
                     id="menu-item-1"

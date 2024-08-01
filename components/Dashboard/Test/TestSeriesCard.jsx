@@ -1,11 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import star from "../../../public/Home/star.svg";
-import { FaClock } from "react-icons/fa6";
-import { PiGraduationCapFill } from "react-icons/pi";
-import { FaFire } from "react-icons/fa6";
-import Image from "next/image";
-import avatar from "../../../public/Dashboard/avatar.jpg";
+import { GiNotebook } from "react-icons/gi";
+import { FaGraduationCap } from "react-icons/fa";
 
 function TestSeriesCard(props) {
   const item = { ...props.item };
@@ -31,13 +27,23 @@ function TestSeriesCard(props) {
         <div>
           <p className="text-gray-500 text-sm">{item.description}</p>
         </div>
-        <ul className="list-disc ml-4 text-sm font-medium text-gray-500 marker:text-TechBlue space-y-2 ">
+        <ul className="list-disc ml-4 text-sm font-base text-gray-700 marker:text-TechBlue space-y-2 ">
           {item.bulletPoints.map((point) => {
             return <li>{point}</li>;
           })}
         </ul>
 
         <hr />
+        <div className=" pt-2 space-y-2">
+          <div className="flex justify-start space-x-2 items-center ">
+            <GiNotebook className="text-2xl text-darkBlue" />
+            <p className="font-medium">{item.testType}</p>
+          </div>
+          <div className="flex justify-start space-x-2 items-center ">
+            <FaGraduationCap className="text-2xl text-darkBlue" />
+            <p className="font-medium">{item.testSyllabus}</p>
+          </div>
+        </div>
 
         <div className="w-full  ">
           <Link
