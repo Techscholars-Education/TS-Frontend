@@ -276,7 +276,16 @@ const HomePageWeb = () => {
                     {initialRange ? (
                       <Calenders initialRange={initialRange} onRangeChange={(range) => console.log()} />
                     ) : (
-                      <p>Loading...</p>
+                      
+                        <div className="w-full h-[35vh] rounded-md pl-10 pr-10 flex items-center justify-center">
+                          <div className="flex animate-pulse">
+                         <div className="flex flex-col gap-2">
+                         <div className="w-[20vw] bg-gray-300 h-10 rounded-md "></div>
+                         <div className="w-[20vw] bg-gray-300 h-[30vh] rounded-md "></div>
+                         </div>
+                          </div>
+                        </div>
+                   
                     )}
                   </div>
                   <div >
