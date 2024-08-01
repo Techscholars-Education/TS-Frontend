@@ -1,33 +1,34 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import avatar from "../../../../public/Dashboard/avatar.jpg";
+import Link from "next/link";
 const Card = (props) => {
   return (
     <>
-     <div className=" h-[64vh] w-[22vw] bg-white flex flex-col rounded-xl  shadow-md rounded-t-md hover:shadow-md hover:shadow-black transition-all ease-linear duration-200">
-                 <div id="image">
-                      <Image src={props.image} className="h-[25vh] w-full" alt="logo"/>
-                 </div>
-                 <div id="text" className="flex flex-col gap-4 border-b pl-8 pr-8 pb-4">
-                     <div id="head" className="flex flex-col gap-2">
-                            <h2 className="font-normal text-[.9vw] w-28 h-5 flex items-center justify-center text-white bg-purple-500 rounded-full">{props.btn}</h2>
-                            <h1 className="font-bold text-xl font-Poppins">{props.title}</h1>
-                            <p className="font-normal text[.9vw] text-gray-600">{props.description}</p>
-                     </div>
-                     <div id="footer" className="flex justify-between">
-                             <h1 className="font-semibold text-[1.1vw]">{props.name}</h1>
-                             <div className="flex -space-x-4 rtl:space-x-reverse">
-                                   <Image src={avatar} className="w-7 h-7 border-2 border-white rounded-full dark:border-gray-800" alt="avatar"/>
-                                   <Image src={avatar} className="w-7 h-7 border-2 border-white rounded-full dark:border-gray-800" alt="avatar"/>
-                                   <Image src={avatar} className="w-7 h-7 border-2 border-white rounded-full dark:border-gray-800" alt="avatar"/>
-                             </div>
-                     </div>
-                 </div>
-                 <div id="btn" className="pl-6 pr-6 pt-4 flex justify-center">
-                           <button className=" flex items-center justify-center h-[5vh] w-full rounded-full text-lg text-white font-Poppins bg-TechBlue hover:bg-black hover:shadow-sm hover:shadow-black transition-all ease-linear duration-200">Get Started</button>
-                 </div>
-     </div>
+      <div className=" bg-white font-Poppins rounded-md ">
+        <div id="image">
+          <Image src={props.image} className=" w-full" alt="logo" />
+        </div>
+        <div className="my-4 px-2 space-y-2">
+          <div>
+            <h3 className="font-semibold text-xl text-darkBlue"> Heading</h3>
+          </div>
+          <div>
+            <p className="text-gray-500 text-sm">
+              Lorem ipsum dolor sit amet consectetur.
+            </p>
+          </div>
+        </div>
+        <hr />
+        <div className="w-full  ">
+          <Link
+            className="bg-TechBlue mt-4 text-white rounded-full w-full py-3 hover:bg-black duration-200 inline-block text-center font-medium font-Poppins"
+            href="/dashboard/feed/blog"
+          >
+            Read more
+          </Link>
+        </div>
+      </div>
     </>
   );
 };

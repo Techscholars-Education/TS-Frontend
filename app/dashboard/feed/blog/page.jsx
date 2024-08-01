@@ -1,13 +1,14 @@
-import React from "react";
 import LeftNavigation from "@/components/LeftNavigation/LeftNavigation";
-import Testseries1 from "@/components/Dashboard/Testseries1";
-const page = () => {
+import React from "react";
+import Feedblog from "../_Components/Feedblog";
+
+const Page = () => {
   return (
     <section className="flex w-full">
       <LeftNavigation />
-      <Testseries1 />
+      <Feedblog />
     </section>
   );
 };
 
-export default page;
+export default Page;

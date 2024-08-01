@@ -37,12 +37,13 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import { useCookieStore } from "@/hooks/useStore";
 import { DateRangePicker } from "react-date-range";
-import Calendar from "./Home/Calender";
+import ValueCalender from "./Home/Calender";
 import { Tooltip } from "@mui/material";
 import { FiLock } from "react-icons/fi";
 import Todo from "./Home/Todo";
 import useProfile from "@/hooks/useProfile";
 import Calenders from "./Calendar/Calenders";
+import ModalCalendar from "./Calendar/ModalCalendar";
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -70,15 +71,15 @@ const HomePageWeb = () => {
     setIsChecked(!isChecked);
   };
 
-  const [selectionRange, setSelectionRange] = useState({
-    startDate: new Date(),
-    endDate: new Date(),
-    key: "selection",
-  });
-  const handleSelect = (ranges) => {
-    setSelectionRange(ranges.selection);
-    console.log(ranges);
-  };
+  // const [selectionRange, setSelectionRange] = useState({
+  //   startDate: new Date(),
+  //   endDate: new Date(),
+  //   key: "selection",
+  // });
+  // const handleSelect = (ranges) => {
+  //   setSelectionRange(ranges.selection);
+  //   console.log(ranges);
+  // };
 
   const data = [
     { x: 1, y: 2 },
@@ -154,18 +155,47 @@ const HomePageWeb = () => {
   };
 
   // Callback function to handle the range change
-  const handleRangeChange = (range) => {
-    setSelectedRange(range);
-    console.log(range);
-  };
+  // const handleRangeChange = (range) => {
+  //   setSelectedRange(range);
+  //   console.log(range);
+  // };
+
+  const [initialRange, setInitialRange] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    const fetchDateRange = async () => {
+      try {
+        // Mock data for initial date range
+        const mockData = {
+          from: '2024-08-01T00:00:00Z',
+          to: '2024-08-05T00:00:00Z'
+        };
+
+        const { from, to } = mockData;
+        setInitialRange({ from: new Date(from), to: new Date(to) });
+      } catch (error) {
+        console.error("Failed to fetch date range", error);
+      }
+    };
+
+    fetchDateRange();
+
+  }, []);
+
+  const samShow = () => {
+    setShowModal(true)
+  }
+
+
+
 
   return (
     <>
       <div className=" font-Poppins min-h-screen  w-full bg-[#f7faff] overflow-x-hidden overflow-y-hidden ">
         <DashboardNavbar
-          title={`Welcome back, Ayo${
-            userInfo?.given_name ? `, ${userInfo.given_name}` : ""
-          }! 👋 `}
+          title={`Welcome back, ${userInfo?.given_name ? `, ${userInfo.given_name}` : "Ayo"
+            }! 👋 `}
           subtitle="You’ve completed 70% of your goal this week! Keep it up and improve."
         />
         <div className="md:mx-6 ">
@@ -242,26 +272,28 @@ const HomePageWeb = () => {
             <div className=" mr-12">
               <div className="  flex flex-col bg-white rounded-lg  md:mb-4 md:max-w-[34.5vw]   ">
                 <div className="md:mt-0 rounded-xl flex align-middle items-center justify-self-center  ">
-                  <div className=" flex items-center justify-center w-full mb-5 mt-3 ">
-                    {/* <DateRange
-                      ranges={[selectionRange]}
-                      onChange={handleSelect}
-                      style={{ fontWeight: "700", width: "450px" }}
-                    /> */}
-
-                    <Calenders onRangeChange={handleRangeChange} />
+                  <div className=" flex items-center justify-center w-full mb-5 mt-3 cursor-pointer " onClick={samShow}>
+                    {initialRange ? (
+                      <Calenders initialRange={initialRange} onRangeChange={(range) => console.log()} />
+                    ) : (
+                      
+                        <div className="w-full h-[35vh] rounded-md pl-10 pr-10 flex items-center justify-center">
+                          <div className="flex animate-pulse">
+                         <div className="flex flex-col gap-2">
+                         <div className="w-[20vw] bg-gray-300 h-10 rounded-md "></div>
+                         <div className="w-[20vw] bg-gray-300 h-[30vh] rounded-md "></div>
+                         </div>
+                          </div>
+                        </div>
+                   
+                    )}
+                  </div>
+                  <div >
+                    <ModalCalendar showModal={showModal} setShowModal={setShowModal} initialRange={initialRange}></ModalCalendar>
                   </div>
 
-                  {/* <div className="hidden md:block">
-                        <DateRangePicker
-                          ranges={[selectionRange]}
-                          onChange={handleSelect}
-                        />
-                      </div> */}
-
                   {/* <div className="md:relative">
-                        <Calendar selectionRange={selectionRange} />
-
+                        <ValueCalender selectedRange={selectedRange} />
                       </div> */}
                 </div>
               </div>
