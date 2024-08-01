@@ -54,7 +54,7 @@ const LeftNavigation = () => {
       label: "Courses",
     },
     {
-      path: "/dashboard/test/testdetail",
+      path: "/dashboard/testseries",
       icon: FiClipboard,
       label: "Test Series",
     },

@@ -1,10 +1,18 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { GiNotebook } from "react-icons/gi";
 import { FaGraduationCap } from "react-icons/fa";
+import slug from "slug";
 
 function TestSeriesCard(props) {
   const item = { ...props.item };
+  const [url, setUrl] = useState("");
+
+  useEffect(() => {
+    setUrl(slug(item.heading));
+  }, [url, item.heading]);
+
   return (
     <div
       className={`flex flex-col rounded-xl font-Poppins relative bg-white border  `}
@@ -48,7 +56,7 @@ function TestSeriesCard(props) {
         <div className="w-full  ">
           <Link
             className="bg-TechBlue mt-4 text-white rounded-full w-full py-3 hover:bg-black duration-200 inline-block text-center font-medium font-Poppins"
-            href="#"
+            href={`/dashboard/testseries/${url}`}
           >
             Get started
           </Link>
