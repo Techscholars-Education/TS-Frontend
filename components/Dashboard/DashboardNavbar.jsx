@@ -21,6 +21,7 @@ function DashboardNavbar(props) {
   useEffect(() => {
     useprofile();
     setCall(true);
+   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [1]);
 
   const [search, setSearch] = useState(false);
