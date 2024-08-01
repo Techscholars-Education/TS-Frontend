@@ -351,7 +351,7 @@ function TestDetail() {
     },
   ];
 
-  //------------------- FOR THE DROPDOWN---------------------------------------------------
+  // FOR THE DROPDOWN
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -373,7 +373,7 @@ function TestDetail() {
   }, []);
   return (
     <div className="font-Poppins min-h-screen bg-[#f7faff] pb-24">
-      <DashboardNavbar title="Test Series Foundation" />
+      <DashboardNavbar title="Test Series" />
       <div className="flex flex-col md:mx-8">
         <div className="flex md:justify-between mb-8 mr-4 relative z-10">
           <div className="mx-4 my-6">
