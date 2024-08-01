@@ -40,6 +40,9 @@ const LeftNavigation = () => {
     if (path === "/dashboard/community") {
       return pathname.startsWith("/dashboard/community");
     }
+    if (path === "/dashboard/testseries") {
+      return pathname.startsWith("/dashboard/testseries");
+    }
     return pathname === path;
   };
 
