@@ -40,6 +40,9 @@ const LeftNavigation = () => {
     if (path === "/dashboard/community") {
       return pathname.startsWith("/dashboard/community");
     }
+    if (path === "/dashboard/testseries") {
+      return pathname.startsWith("/dashboard/testseries");
+    }
     return pathname === path;
   };
 
@@ -48,13 +51,13 @@ const LeftNavigation = () => {
   const navItems = [
     { path: "/dashboard/home", icon: FiHome, label: "Home" },
     { path: "/dashboard/my-course", icon: FiBookOpen, label: "My Course" },
+    // {
+    //   path: "/dashboard/courses",
+    //   icon: MdOutlineLibraryBooks,
+    //   label: "Courses",
+    // },
     {
-      path: "/dashboard/courses",
-      icon: MdOutlineLibraryBooks,
-      label: "Courses",
-    },
-    {
-      path: "/dashboard/test/testdetail",
+      path: "/dashboard/testseries",
       icon: FiClipboard,
       label: "Test Series",
     },

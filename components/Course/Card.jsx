@@ -18,7 +18,9 @@ const Card = (props) => {
       >
         <div>
           <Image
-            className="w-full rounded-t-xl "
+            className=" rounded-t-xl h-full w-full "
+            width={100}
+            height={100}
             alt="course-posters"
             src={props.image}
           />
