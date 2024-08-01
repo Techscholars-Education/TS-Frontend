@@ -29,7 +29,7 @@ function TestSeriesCard(props) {
         </div>
         <ul className="list-disc ml-4 text-sm font-base text-gray-700 marker:text-TechBlue space-y-2 ">
           {item.bulletPoints.map((point) => {
-            return <li>{point}</li>;
+            return <li key={point}> {point}</li>;
           })}
         </ul>
 

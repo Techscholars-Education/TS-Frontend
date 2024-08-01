@@ -20,10 +20,13 @@ const Card = (props) => {
           </div>
         </div>
         <hr />
-        <div className="w-full px-2 my-6">
-          <button className="bg-TechBlue text-white w-full rounded-full py-3 font-normal hover:bg-black duration-200 ">
-            <Link href="/dashboard/feed/blog">Read more</Link>
-          </button>
+        <div className="w-full  ">
+          <Link
+            className="bg-TechBlue mt-4 text-white rounded-full w-full py-3 hover:bg-black duration-200 inline-block text-center font-medium font-Poppins"
+            href="/dashboard/feed/blog"
+          >
+            Read more
+          </Link>
         </div>
       </div>
     </>
