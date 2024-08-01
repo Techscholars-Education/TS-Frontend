@@ -5,7 +5,7 @@ const Feedblog = () => {
   return (
     <div className="bg-white font-Poppins h-screen w-full flex flex-col ">
       <DashboardNavbar title={"Feed"} />
-      <div className="my-6 flex flex-col mr-2 bg-gray-100/60 h-[85vh] max-w-full pl-5 pr-5 pt-6 overflow-y-auto">
+      <div className="mb-6 flex flex-col mr-2 bg-gray-100/60 h-[85vh] max-w-full pl-5 pr-5 pt-6 overflow-y-auto">
         <div className=" ml-8">
           <div className="flex flex-col gap-1 space-y-4 pr-10 ">
             <h1 className="font-semibold font-Poppins text-2xl text-darkBlue">
