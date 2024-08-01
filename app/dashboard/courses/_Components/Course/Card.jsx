@@ -1,9 +1,11 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import avatar from "../../../../../public/Dashboard/avatar.jpg";
+import avatar from "@/public/Dashboard/avatar.jpg";
 import Link from "next/link";
-import star from "../../../../../public/Home/star.svg";
+import avatar2 from "@/public/Course/avatar2.jpeg";
+import avatar3 from "@/public/Course/avatar3.jpg";
+
 import { FaClock } from "react-icons/fa6";
 import { PiGraduationCapFill } from "react-icons/pi";
 const Card = (props) => {
@@ -18,105 +20,86 @@ const Card = (props) => {
   },[1])
   
   return (
-    <>
-      <div
-        className={`flex flex-col rounded-xl border md:mx-2 font-Poppins relative mt-4 bg-white`}
+  <>
+     <div
+        className={`flex flex-col rounded-xl border border-gray-100 bg-white ${
+          props.title === "JEE" ? "shadow-lg" : "shadow-sm"
+        }   mx-2 font-Poppins relative`}
       >
         <div>
           <Image
-            priority
-            className="w-full rounded-xl "
+            className=" rounded-t-xl h-full w-full "
+            width={100}
+            height={100}
             alt="course-posters"
             src={props.image}
-            width={70}
-            height={30}
           />
         </div>
 
-        <div className="flex flex-col m-4 ">
+        <div className="flex flex-col m-4 my-4">
           <div>
             <div className="flex justify-between items-center">
-              <h3 className="font-bold text-xl font-Inter text-darkBlue ">
+              <h3 className="font-bold text-xl font-Inter  text-darkBlue ">
                 {props.title}
               </h3>
-              <div className="flex items-center text-xs">
-                <Image
-                  src={star}
-                  className="w-[14px] invert mx-2"
-                  alt="rating-star "
-                />
-                4.8
-              </div>
             </div>
           </div>
-          <p className="font-base text-xs xl:text-sm leading-relaxed text-gray-500 py-1 font-Poppins">
+          <p className="font-base text-xs xl:text-sm leading-relaxed text-gray-500 py-3 font-Poppins">
             {props.description}
           </p>
-          <div className=" flex justify-start w-full py-2 ">
+          <div className=" flex justify-start w-full py-4 ">
             <div className="flex -space-x-4 rtl:space-x-reverse">
               <Image
-                className="w-[30px] h-[30px] border-2 border-white rounded-full bg-green-300"
+                className="w-[40px] h-[40px] border-2 border-white rounded-full bg-green-300"
                 src={avatar}
                 alt="avatar-picture"
-                width="40"
-                height="40"
               />
               <Image
-                className="w-[30px] h-[30px] border-2 border-white rounded-full bg-green-300"
-                src={avatar}
+                className="w-[40px] h-[40px] border-2 border-white rounded-full bg-green-300"
+                src={avatar2}
                 alt="avatar-picture"
-                width="40"
-                height="40"
               />
               <Image
-                className="w-[30px] h-[30px] border-2 border-white rounded-full bg-green-300"
-                src={avatar}
+                className="w-[40px] h-[40px] border-2 border-white rounded-full bg-green-300"
+                src={avatar3}
                 alt="avatar-picture"
-                width="40"
-                height="40"
               />
+              <span className="w-[40px] h-[40px] border border-white text-xs font-medium rounded-full bg-TechBlue text-white/90 flex items-center justify-center">
+                +40
+              </span>
               <span
-                className="flex items-center justify-center  px-2 text-xs font-medium text-TechBlue   rounded-full  "
+                className="flex items-center justify-center px-2 lg:text-sm xl:text-base  text-darkBlue font-semibold pl-5 rounded-full  "
                 href="#"
               >
-                +40 students
+                Students Enrolled
               </span>
             </div>
           </div>
 
           <hr />
-          <div className="flex justify-start mt-4 items-center">
-            <div className="text-darkBlue text-sm items-center flex">
-              <FaClock className="mx-2" />
-              150+ Hrs
+          <div className="flex justify-start space-x-6 mt-4 items-center">
+            <div className="text-darkBlue text-sm items-center font-medium flex">
+              <FaClock className="mx-2 text-xl" />
+              400+ Hrs
             </div>
-            <div className="text-darkBlue text-sm items-center flex">
-              <PiGraduationCapFill className="mx-2" />
-              400+ Lessons
+            <div className="text-darkBlue text-sm items-center font-medium flex">
+              <PiGraduationCapFill className="mx-2 text-2xl" />
+              600+ Lessons
             </div>
           </div>
 
-          <div className="flex justify-between mt-4">
-          {
-            premium ? (
-                <button 
-                className=" w-full  p-3 px-4 rounded-full text-center bg-red-400 text-sm text-white hover:bg-black hover:shadow-sm hover:shadow-black transition-all ease-linear duration-200"
-                >
-                     You already have a plan
-                </button>
-            ):(
-              <Link
+          <div className="flex justify-between my-3">
+            <Link
               href={props.route ? props.route : "/"}
-              className=" w-full  p-3 px-4 rounded-full text-center bg-TechBlue text-sm text-white hover:bg-black hover:shadow-sm hover:shadow-black transition-all ease-linear duration-200"
+              className=" w-full  p-3 px-4 rounded-full text-center bg-TechBlue text-sm text-white hover:bg-black hover:text-white duration-200"
             >
               Explore
             </Link>
-            )
-          }
           </div>
         </div>
       </div>
-    </>
+
+  </>
   );
 };
 
