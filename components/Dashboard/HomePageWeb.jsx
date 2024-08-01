@@ -43,6 +43,7 @@ import { FiLock } from "react-icons/fi";
 import Todo from "./Home/Todo";
 import useProfile from "@/hooks/useProfile";
 import Calenders from "./Calendar/Calenders";
+import ModalCalendar from "./Calendar/ModalCalendar";
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -154,17 +155,47 @@ const HomePageWeb = () => {
   };
 
   // Callback function to handle the range change
-  const handleRangeChange = (range) => {
-    setSelectedRange(range);
-  };
+  // const handleRangeChange = (range) => {
+  //   setSelectedRange(range);
+  //   console.log(range);
+  // };
+
+  const [initialRange, setInitialRange] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    const fetchDateRange = async () => {
+      try {
+        // Mock data for initial date range
+        const mockData = {
+          from: '2024-08-01T00:00:00Z',
+          to: '2024-08-05T00:00:00Z'
+        };
+
+        const { from, to } = mockData;
+        setInitialRange({ from: new Date(from), to: new Date(to) });
+      } catch (error) {
+        console.error("Failed to fetch date range", error);
+      }
+    };
+
+    fetchDateRange();
+
+  }, []);
+
+  const samShow = () => {
+    setShowModal(true)
+  }
+
+
+
 
   return (
     <>
       <div className=" font-Poppins min-h-screen  w-full bg-[#f7faff] overflow-x-hidden overflow-y-hidden ">
         <DashboardNavbar
-          title={`Welcome back, ${
-            userInfo?.given_name ? `, ${userInfo.given_name}` : "Ayo"
-          }! 👋 `}
+          title={`Welcome back, ${userInfo?.given_name ? `, ${userInfo.given_name}` : "Ayo"
+            }! 👋 `}
           subtitle="You’ve completed 70% of your goal this week! Keep it up and improve."
         />
         <div className="md:mx-6 ">
@@ -241,8 +272,15 @@ const HomePageWeb = () => {
             <div className=" mr-12">
               <div className="  flex flex-col bg-white rounded-lg  md:mb-4 md:max-w-[34.5vw]   ">
                 <div className="md:mt-0 rounded-xl flex align-middle items-center justify-self-center  ">
-                  <div className=" flex items-center justify-center w-full mb-5 mt-3 ">
-                    <Calenders onRangeChange={handleRangeChange} />
+                  <div className=" flex items-center justify-center w-full mb-5 mt-3 cursor-pointer " onClick={samShow}>
+                    {initialRange ? (
+                      <Calenders initialRange={initialRange} onRangeChange={(range) => console.log()} />
+                    ) : (
+                      <p>Loading...</p>
+                    )}
+                  </div>
+                  <div >
+                    <ModalCalendar showModal={showModal} setShowModal={setShowModal} initialRange={initialRange}></ModalCalendar>
                   </div>
 
                   {/* <div className="md:relative">
