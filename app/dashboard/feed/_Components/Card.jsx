@@ -20,7 +20,7 @@ const Card = (props) => {
           </div>
         </div>
         <hr />
-        <div className="w-full  ">
+        <div className="w-full p-4  ">
           <Link
             className="bg-TechBlue mt-4 text-white rounded-full w-full py-3 hover:bg-black duration-200 inline-block text-center font-medium font-Poppins"
             href="/dashboard/feed/blog"
