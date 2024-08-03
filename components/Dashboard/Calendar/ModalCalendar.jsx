@@ -3,8 +3,20 @@
 import Image from 'next/image';
 import google_1 from  "@/public/gogle_calendar_1.png"
 import Calenders from './Calenders';
+import { useState } from 'react';
+import CalendarInt from './CalenderInt';
 
 const ModalCalendar = ({ showModal, setShowModal,initialRange}) => {
+    const [evntisModalOpen, setEventIsModalOpen] = useState(false);
+
+    const openEventModal = () => {
+        setEventIsModalOpen(true);
+      };
+    
+      const closeEventModal = () => {
+        setEventIsModalOpen(false);
+      };
+
     if (!showModal) return null;
 
     const handleClose = (e) => {
@@ -37,7 +49,7 @@ const ModalCalendar = ({ showModal, setShowModal,initialRange}) => {
                 </div>
 
                 <div id='googleCalender' className='border-gray-300 border rounded-lg h-[5vh] w-[12vw]'>
-                       <button className=' flex gap-2 items-center'>
+                       <button className=' flex gap-2 items-center' onClick={openEventModal}>
                        <Image src={google_1} className='h-auto w-[2vw]'  alt='google'/>
                        <h1 className='text-[.8vw] font-normal'>Add Google Calendar</h1>
                        </button>
@@ -45,6 +57,15 @@ const ModalCalendar = ({ showModal, setShowModal,initialRange}) => {
                 </div>
 
             </div>
+            {evntisModalOpen && (
+        <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
+          <div className="relative top-20 mx-auto p-5 border w-[38vw] shadow-lg rounded-md bg-white">
+            <div className="mt-3 text-center relative">
+              <CalendarInt onClose={closeEventModal} />
+            </div>
+          </div>
+        </div>
+      )}
         </div>
     );
 };
