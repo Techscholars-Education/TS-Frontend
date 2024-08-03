@@ -24,6 +24,7 @@
 
 .calendar-container{
     position: relative;
+    z-index: 0;
 }
 
 #borders{
@@ -37,7 +38,7 @@
 }
 
 
-.rdp-root .rdp-dropdown {
+/* .rdp-root .rdp-dropdown {
     appearance: none;
     position: absolute;
     inset-block-start: 0;
@@ -52,7 +53,7 @@
     background-color: transparent;
     line-height: inherit;
   
-  }
+  } */
 
 
 .rdp-root .rdp-month_caption {
