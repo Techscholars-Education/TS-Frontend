@@ -624,7 +624,7 @@ const Activetest = () => {
                     <button
                       key={questionNumber}
                       onClick={() => jumpToQuestion(questionNumber - 1)}
-                      className={`flex items-center justify-center p-2 rounded-md font-medium ${
+                      className={`flex items-center justify-center p-2 rounded-md font-medium transition-all duration-200 ${
                         questionNumber - 1 === currentQuestionIndex
                           ? "bg-TechBlue text-white"
                           : "bg-TechBlue/15 text-TechBlue"
