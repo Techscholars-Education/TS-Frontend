@@ -51,11 +51,11 @@ const LeftNavigation = () => {
   const navItems = [
     { path: "/dashboard/home", icon: FiHome, label: "Home" },
     { path: "/dashboard/my-course", icon: FiBookOpen, label: "My Course" },
-    {
-      path: "/dashboard/courses",
-      icon: MdOutlineLibraryBooks,
-      label: "Courses",
-    },
+    // {
+    //   path: "/dashboard/courses",
+    //   icon: MdOutlineLibraryBooks,
+    //   label: "Courses",
+    // },
     {
       path: "/dashboard/testseries",
       icon: FiClipboard,

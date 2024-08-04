@@ -58,7 +58,7 @@ function DashboardNavbar(props) {
               />
             </button>
             <a
-              className="hover:bg-[#0079FC] hover:text-white border border-gray-200 hover:border-none bg-[#fcfafa] h-8 w-8 p-2 flex items-center justify-center rounded-md transition-all ease-linear duration-300"
+              className="hover:bg-[#0079FC] hover:text-white border border-gray-200 hover:border-none bg-[#fcfafa] h-8 w-8 p-2 flex items-center justify-center rounded-md transition-all ease-linear duration-300 relative"
               href="#"
             >
               <FiBell className="h-6 w-6 " />
