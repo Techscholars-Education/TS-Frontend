@@ -38,11 +38,11 @@ const PurCourse = () => {
             const formattedData = response.data.map((item) => ({
               id: item.id,
               title: item.name.toUpperCase(),
-              route: `/dashboard/courses/${item.name.toLowerCase().replace(/\s+/g, '')}`,
+              route: `/dashboard/my-course/coursedetail/${item.name.toLowerCase().replace(/\s+/g, '')}`,
               description: item.description,
               Poster: item.banner_img,
             }));
-  
+            console.log(formattedData)
             setData(formattedData);
           } else {
             throw new Error("Data format is not an array");
