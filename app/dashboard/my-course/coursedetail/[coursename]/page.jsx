@@ -3,13 +3,12 @@ import CourseDetailBefore from '@/components/Dashboard/Course/beforepurchase/Cou
 import CourseDetail from '@/components/Dashboard/Course/CourseDetail'
 import DashboardNavbar from '@/components/Dashboard/DashboardNavbar'
 import LeftNavigation from '@/components/LeftNavigation/LeftNavigation'
-import { useParams } from 'next/navigation'
+
 import React from 'react'
 
 
 function page(props) {
-  const a=useParams()
-  console.log(a)
+ 
   
   return (
     <div>
