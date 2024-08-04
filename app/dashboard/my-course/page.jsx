@@ -9,7 +9,7 @@ function page() {
     <section className="flex w-full overflow-x-hidden">
     <LeftNavigation/>
     
-    {  false ? (
+    {  true ? (
       <PurCourse />
     ) :(
       <Course/>
