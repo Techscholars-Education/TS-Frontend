@@ -4,7 +4,7 @@ import Image from 'next/image';
 import google_1 from  "@/public/gogle_calendar_1.png"
 import Calenders from './Calenders';
 import { useState } from 'react';
-// import CalendarInt from './CalenderInt';
+import CalendarInt from './CalenderInt';
 
 const ModalCalendar = ({ showModal, setShowModal,initialRange}) => {
     const [evntisModalOpen, setEventIsModalOpen] = useState(false);
@@ -59,9 +59,9 @@ const ModalCalendar = ({ showModal, setShowModal,initialRange}) => {
             </div>
             {evntisModalOpen && (
         <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
-          <div className="relative top-20 mx-auto p-5 border w-[38vw] shadow-lg rounded-md bg-white">
+          <div className="relative top-20 mx-auto p-5 border w-[32vw] shadow-lg rounded-md bg-white">
             <div className="mt-3 text-center relative">
-              {/* <CalendarInt onClose={closeEventModal} /> */}
+              <CalendarInt onClose={closeEventModal} />
             </div>
           </div>
         </div>
