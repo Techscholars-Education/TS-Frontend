@@ -32,7 +32,7 @@ function TestItem(props) {
       </div>
 
       <Link
-        href="#"
+        href={`/dashboard/testseries/purchased/active-test/${query}`}
         className="md:mt-12  xl:h-[80px] flex flex-col items-center font-Poppins font-medium text-TechBlue group hover:text-black text-lg duration-200 "
       >
         <FaArrowRight className="rounded-full  bg-TechBlue text-white h-10 w-10 p-2  group-hover:scale-110 group-hover:bg-black duration-200" />
