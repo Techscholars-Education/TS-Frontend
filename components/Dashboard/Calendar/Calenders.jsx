@@ -49,7 +49,7 @@ const Calenders = ({ onRangeChange, initialRange }) => {
           defaultMonth={defaultMonth}
           selected={range}
           onSelect={() => {}} // Disable user selection
-          disabled={disablePastDates} // Disable past dates
+          // disabled={disablePastDates} // Disable past dates
         />
       </div>
     </>
