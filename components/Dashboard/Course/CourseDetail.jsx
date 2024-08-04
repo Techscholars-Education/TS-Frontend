@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react'
+import React,{useState} from 'react'
 import DashboardNavbar from '../DashboardNavbar'
 import CourseDetailNavbar from './CourseDetailNavbar'
 import { SlCalender } from "react-icons/sl";
@@ -19,6 +19,11 @@ import { PiGraduationCapFill } from "react-icons/pi";
 import { FaFire } from "react-icons/fa6";
 import CourseCard from './CourseCard';
 function CourseDetail() {
+  const [activeBatch, setActiveBatch] = useState("11th");
+
+  const handleClick = (batch) => {
+    setActiveBatch(batch);
+  };
   const data = [
     {
       id: 1,
@@ -56,6 +61,31 @@ function CourseDetail() {
   return (
     <div>
       <div className="bg-[#f7faff] font-Poppins min-h-screen py-6 md:w-[82vw] mr-4 flex flex-col ">
+      <div className="flex justify-center items-center">
+        {/* <div className=" mt-8 font-Poppins font-normal border mx-auto rounded-full inline ">
+          <button
+            className={`rounded-full p-2 px-8  transition-all duration-200  ${activeBatch === "11th" ? "bg-TechBlue p-2  text-white" : ""
+              }`}
+            onClick={() => handleClick("11th")}
+          >
+            11th
+          </button>
+          <button
+            className={`rounded-full p-2 px-8 transition-all duration-200  ${activeBatch === "12th" ? "bg-TechBlue p-2  text-white" : ""
+              }`}
+            onClick={() => handleClick("12th")}
+          >
+            12th
+          </button>
+          <button
+            className={`rounded-full p-2 px-8 transition-all duration-200  ${activeBatch === "13th" ? "bg-TechBlue p-2  text-white" : ""
+              }`}
+            onClick={() => handleClick("13th")}
+          >
+            13th
+          </button>
+        </div> */}
+      </div>
         <CourseDetailNavbar />
         <div className='grid md:grid-cols-3 grid-cols-1 md:ml-10 '>
           <div className='flex col-span-2 flex-col bg-white rounded-xl mt-4 md:p-4'>

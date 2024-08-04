@@ -37,7 +37,7 @@ const Courses = () => {
           const formattedData = response.data.map((item) => ({
             id: item.id,
             title: item.name.toUpperCase(),
-            route: `/dashboard/courses/${item.name.toLowerCase().replace(/\s+/g, '')}`,
+            route: `/dashboard/my-course/coursedetail/${item.name.toLowerCase().replace(/\s+/g, '')}`,
             description: item.description,
             Poster: item.banner_img,
           }));
@@ -72,8 +72,17 @@ const Courses = () => {
         </div>
       ) : (
         <div className="md:my-6 flex flex-col   h-[82vh] md:max-w-[80vw]  pt-5 ">
+          <div className="mx-8">
+         <h2 className="text-xl md:text-xl font-semibold text-darkBlue mx-4">
+             Courses
+            </h2>
+            <p className="text-sm text-gray-600 mx-4 my-4">
+            Learn from the best courses for your target examination
+            </p>
+       
+         </div>
           <div className="md:max-w-[82vw] w-[90vw]  rounded-md md:pl-9 flex flex-col overflow-y-auto pb-3">
-            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-6  lg:grid-cols-3 gap-4 mt-4 xl:w-10/12 md:mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-6  lg:grid-cols-3 gap-4 mt-4 xl:w-10/12 ">
               {data.map((item) => (
                 <Card
                   key={item.id}
