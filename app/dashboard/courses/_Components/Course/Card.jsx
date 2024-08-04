@@ -90,8 +90,8 @@ const Card = (props) => {
 
           <div className="flex justify-between my-3">
             <Link
-              href={props.route ? props.route : "/"}
-              className=" w-full  p-3 px-4 rounded-full text-center bg-TechBlue text-sm text-white hover:bg-black hover:text-white duration-200"
+              href={props.route}
+              className=" w-full   p-3 px-4 rounded-full text-center bg-TechBlue text-sm text-white hover:bg-black hover:text-white duration-200"
             >
               Explore
             </Link>
