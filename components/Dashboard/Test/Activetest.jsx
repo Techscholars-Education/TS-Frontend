@@ -79,6 +79,8 @@ const Activetest = () => {
       let buttonClass = "w-10 h-10 font-medium text-sm ";
       if (i === currentQuestionIndex) {
         buttonClass += "bg-blue-500 text-white ";
+      } else if (markedForReview[i] && answers[i] !== null) {
+        buttonClass += "bg-teal-500 text-white ";
       } else if (markedForReview[i]) {
         buttonClass += "bg-violet-500 text-white ";
       } else if (answers[i] !== null) {
@@ -106,12 +108,9 @@ const Activetest = () => {
   // Calculate the counts
   const notVisitedCount = totalQuestions - visitedQuestions.size;
   const answeredCount = answers.filter((answer) => answer !== null).length;
-  const markedForReviewCount = markedForReview.filter(
-    (review) => review && answers[currentQuestionIndex] === null
-  ).length;
-  const answeredAndMarkedForReviewCount = markedForReview.filter(
-    (review, index) => review && answers[index] !== null
-  ).length;
+  const markedForReviewCount = markedForReview.filter((review, index) => review && answers[index] === null).length;
+  const answeredAndMarkedForReviewCount = markedForReview.filter((review, index) => review && answers[index] !== null).length;
+
 
   // View Instructions
   const [isModalOpen, setIsModalOpen] = useState(true);
