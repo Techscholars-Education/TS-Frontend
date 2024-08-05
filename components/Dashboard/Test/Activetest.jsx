@@ -9,7 +9,7 @@ const Activetest = () => {
 
   const [heading, setHeading] = useState("");
 
-  // MAIN FUNCTIONLITY
+  // MAIN FUNCTIONALITY
 
   const totalQuestions = 180;
   const questionsPerPage = 30;
@@ -41,6 +41,9 @@ const Activetest = () => {
   const handleSaveAndNext = () => {
     if (currentQuestionIndex < totalQuestions - 1) {
       setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+      setVisitedQuestions((prev) =>
+        new Set(prev).add(currentQuestionIndex + 1)
+      );
     }
   };
 
@@ -53,6 +56,9 @@ const Activetest = () => {
     });
     if (currentQuestionIndex < totalQuestions - 1) {
       setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+      setVisitedQuestions((prev) =>
+        new Set(prev).add(currentQuestionIndex + 1)
+      );
     }
   };
 
@@ -97,10 +103,15 @@ const Activetest = () => {
 
   const currentQuestion = questions[currentQuestionIndex];
 
-  const visitedCount = visitedQuestions.size;
-  const notVisitedCount = totalQuestions - visitedCount;
-  const markedForReviewCount = markedForReview.filter(Boolean).length;
+  // Calculate the counts
+  const notVisitedCount = totalQuestions - visitedQuestions.size;
   const answeredCount = answers.filter((answer) => answer !== null).length;
+  const markedForReviewCount = markedForReview.filter(
+    (review) => review && answers[currentQuestionIndex] === null
+  ).length;
+  const answeredAndMarkedForReviewCount = markedForReview.filter(
+    (review, index) => review && answers[index] !== null
+  ).length;
 
   // View Instructions
   const [isModalOpen, setIsModalOpen] = useState(true);
@@ -109,21 +120,17 @@ const Activetest = () => {
     setIsModalOpen(!isModalOpen);
   };
 
-  useEffect(
-    () => {
-      const newGridPage = Math.floor(currentQuestionIndex / questionsPerPage);
-      setCurrentGridPage(newGridPage);
-      if (slug) {
-        // Convert slug to a more readable format if needed
-        const formattedHeading = slug
-          .replace(/-/g, " ")
-          .replace(/\b\w/g, (l) => l.toUpperCase());
-        setHeading(formattedHeading);
-      }
-    },
-    [slug],
-    [currentQuestionIndex]
-  );
+  useEffect(() => {
+    const newGridPage = Math.floor(currentQuestionIndex / questionsPerPage);
+    setCurrentGridPage(newGridPage);
+    if (slug) {
+      // Convert slug to a more readable format if needed
+      const formattedHeading = slug
+        .replace(/-/g, " ")
+        .replace(/\b\w/g, (l) => l.toUpperCase());
+      setHeading(formattedHeading);
+    }
+  }, [slug, currentQuestionIndex]);
 
   return (
     <div className="bg-white font-Poppins w-full flex flex-col ">
@@ -181,7 +188,7 @@ const Activetest = () => {
         <div className="p-4 mx-auto  w-full  font-Poppins ">
           <div className=" flex  justify-between space-x-4 ">
             {/* QUESTION HEADING, QUESTON ITSELF, BUTTONS */}
-            <div className="mb-6 space-y-4 xl:w-[650px]  ">
+            <div className="mb-6 space-y-4 xl:w-7/12  ">
               {/* QUESTION NUMBER, MARKS */}
               <div className="bg-white flex items-center space-x-5 p-3 rounded-md ">
                 <h2 className="text-xl font-semibold text-white bg-TechBlue inline-block px-3 py-2 rounded-md">
@@ -272,7 +279,7 @@ const Activetest = () => {
             </div>
 
             {/* QUESTION NUMBER CONTAINER */}
-            <div className=" rounded-md xl:w-[400px] bg-white h-full">
+            <div className=" rounded-md xl:w-5/12 bg-white h-full">
               <div className="m-4 bg-gray-100/60 grid grid-cols-2 gap-2 p-4 rounded-md">
                 <div className="text-gray-500 my-2 font-medium flex items-center text-sm ">
                   <span className="bg-green-500 p-2 text-white rounded-md mr-2">
@@ -298,18 +305,10 @@ const Activetest = () => {
                   <p>Marked for review</p>
                 </div>
                 <div className="text-gray-500 my-2 font-medium flex items-center text-sm ">
-                  <span className="bg-gray-500 p-2 text-white rounded-md mr-2">
-                    {markedForReviewCount < 10
-                      ? `0${markedForReviewCount}`
-                      : markedForReviewCount}
-                  </span>
-                  <p>Not visited</p>
-                </div>
-                <div className="text-gray-500 my-2 font-medium flex items-center col-span-2 text-sm ">
                   <span className="bg-orange-500 p-2 text-white rounded-md mr-2">
-                    {markedForReviewCount < 10
-                      ? `0${markedForReviewCount}`
-                      : markedForReviewCount}
+                    {answeredAndMarkedForReviewCount < 10
+                      ? `0${answeredAndMarkedForReviewCount}`
+                      : answeredAndMarkedForReviewCount}
                   </span>
                   <p>Answered & marked for review</p>
                 </div>
