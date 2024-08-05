@@ -34,11 +34,6 @@ const Activetest = () => {
 
   const questions = generateQuestions();
 
-  useEffect(() => {
-    const newGridPage = Math.floor(currentQuestionIndex / questionsPerPage);
-    setCurrentGridPage(newGridPage);
-  }, [currentQuestionIndex]);
-
   const handlePrevious = () => {
     setCurrentQuestionIndex((prevIndex) => Math.max(prevIndex - 1, 0));
   };
@@ -75,7 +70,7 @@ const Activetest = () => {
     const gridItems = [];
 
     for (let i = startIndex; i < endIndex; i++) {
-      let buttonClass = "w-12 h-12 font-medium ";
+      let buttonClass = "w-10 h-10 font-medium text-sm ";
       if (i === currentQuestionIndex) {
         buttonClass += "bg-blue-500 text-white ";
       } else if (markedForReview[i]) {
@@ -108,21 +103,27 @@ const Activetest = () => {
   const answeredCount = answers.filter((answer) => answer !== null).length;
 
   // View Instructions
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(true);
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
 
-  useEffect(() => {
-    if (slug) {
-      // Convert slug to a more readable format if needed
-      const formattedHeading = slug
-        .replace(/-/g, " ")
-        .replace(/\b\w/g, (l) => l.toUpperCase());
-      setHeading(formattedHeading);
-    }
-  }, [slug]);
+  useEffect(
+    () => {
+      const newGridPage = Math.floor(currentQuestionIndex / questionsPerPage);
+      setCurrentGridPage(newGridPage);
+      if (slug) {
+        // Convert slug to a more readable format if needed
+        const formattedHeading = slug
+          .replace(/-/g, " ")
+          .replace(/\b\w/g, (l) => l.toUpperCase());
+        setHeading(formattedHeading);
+      }
+    },
+    [slug],
+    [currentQuestionIndex]
+  );
 
   return (
     <div className="bg-white font-Poppins w-full flex flex-col ">
@@ -191,7 +192,7 @@ const Activetest = () => {
                   Marks: <span className="text-green-500 font-medium">+1</span>{" "}
                   <span className="text-red-500 font-medium">-0.25</span>
                 </div>
-                <div className="space-x-2 border p-2 rounded-full border-gray-600 font-medium text-darkBlue">
+                <div className="space-x-2 border p-2 rounded-full border-gray-600">
                   Type: Single
                 </div>
               </div>
@@ -205,7 +206,7 @@ const Activetest = () => {
                 <div
                   className="space-y-2 "
                   value={answers[currentQuestionIndex]}
-                  onValueChange={handleAnswerChange}
+                  onChange={handleAnswerChange}
                 >
                   {currentQuestion.options.map((option, optionIndex) => (
                     <div
@@ -273,13 +274,13 @@ const Activetest = () => {
             {/* QUESTION NUMBER CONTAINER */}
             <div className=" rounded-md xl:w-[400px] bg-white h-full">
               <div className="m-4 bg-gray-100/60 grid grid-cols-2 gap-2 p-4 rounded-md">
-                <div className="text-gray-500 my-2 font-medium flex items-center">
-                  <span className="bg-green-700 p-2 text-white rounded-md mr-2">
+                <div className="text-gray-500 my-2 font-medium flex items-center text-sm ">
+                  <span className="bg-green-500 p-2 text-white rounded-md mr-2">
                     {answeredCount < 10 ? `0${answeredCount}` : answeredCount}
                   </span>
                   <p>Answered</p>
                 </div>
-                <div className="text-gray-500 my-2 font-medium flex items-center">
+                <div className="text-gray-500 my-2 font-medium flex items-center text-sm ">
                   <span className="bg-orange-700 p-2 text-white rounded-md mr-2">
                     {notVisitedCount < 10
                       ? `0${notVisitedCount}`
@@ -288,7 +289,7 @@ const Activetest = () => {
 
                   <p>Not answered</p>
                 </div>
-                <div className="text-gray-500 my-2 font-medium flex items-center">
+                <div className="text-gray-500 my-2 font-medium flex items-center text-sm ">
                   <span className="bg-violet-700 p-2 text-white rounded-md mr-2">
                     {markedForReviewCount < 10
                       ? `0${markedForReviewCount}`
@@ -296,7 +297,7 @@ const Activetest = () => {
                   </span>
                   <p>Marked for review</p>
                 </div>
-                <div className="text-gray-500 my-2 font-medium flex items-center">
+                <div className="text-gray-500 my-2 font-medium flex items-center text-sm ">
                   <span className="bg-gray-500 p-2 text-white rounded-md mr-2">
                     {markedForReviewCount < 10
                       ? `0${markedForReviewCount}`
@@ -304,7 +305,7 @@ const Activetest = () => {
                   </span>
                   <p>Not visited</p>
                 </div>
-                <div className="text-gray-500 my-2 font-medium flex items-center col-span-2">
+                <div className="text-gray-500 my-2 font-medium flex items-center col-span-2 text-sm ">
                   <span className="bg-orange-500 p-2 text-white rounded-md mr-2">
                     {markedForReviewCount < 10
                       ? `0${markedForReviewCount}`
