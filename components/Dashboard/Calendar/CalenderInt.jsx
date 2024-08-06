@@ -124,7 +124,7 @@ const CalendarInt = ({ onClose }) => {
         <ToastContainer />
             {!isAuthenticated ? (
                 <div className='h-[70vh] w-[30vw] relative'>
-                    <Image src={im1} alt='bg' className='h-[69vh] w-[27.2vw] absolute rounded-md bg-cover object-cover' />
+                    <Image src={im1} alt='bg' className='h-[69vh] pr-2 absolute rounded-md bg-cover object-cover' />
                     <button className='absolute left-5 top-6' onClick={onClose}>
                         <AiOutlineCloseCircle className='text-2xl text-red-500 hover:text-gray-700 transition-all ease-in-out duration-200' />
                     </button>

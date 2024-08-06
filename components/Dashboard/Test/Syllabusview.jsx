@@ -82,7 +82,7 @@ const Syllabusview = () => {
           <div className="mt-10 mb-4">
             <Link
               className="bg-TechBlue text-white px-16 py-3 rounded-full hover:bg-black duration-200"
-              href="#"
+              href={`/dashboard/testseries/purchased/active-test/${slug}`}
             >
               Start Test
             </Link>

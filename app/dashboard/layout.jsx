@@ -1,6 +1,7 @@
-// app/dashboard/layout.js
-"use client";
-
+export const metadata = {
+  title: "Techscholars | Test Series",
+  description: "India's Best Test series to crack competitive exams",
+};
 export default function DashboardLayout({ children }) {
   return (
     <>
