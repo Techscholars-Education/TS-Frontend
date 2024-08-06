@@ -80,7 +80,7 @@ const Activetest = () => {
       if (i === currentQuestionIndex) {
         buttonClass += "bg-blue-500 text-white ";
       } else if (markedForReview[i] && answers[i] !== null) {
-        buttonClass += "bg-teal-500 text-white ";
+        buttonClass += "bg-orange-500 text-white ";
       } else if (markedForReview[i]) {
         buttonClass += "bg-violet-500 text-white ";
       } else if (answers[i] !== null) {
@@ -132,7 +132,7 @@ const Activetest = () => {
   }, [slug, currentQuestionIndex]);
 
   return (
-    <div className="bg-white font-Poppins w-full flex flex-col ">
+    <div className="bg-white font-Poppins w-full flex flex-col">
       <DashboardNavbar title={"Test Series"} />
 
       {/* INSTRUCTION Modal */}
@@ -157,7 +157,7 @@ const Activetest = () => {
       )}
 
       {/* ABOUT TEST */}
-      <div className="mb-6 flex flex-col mr-2 bg-gray-100/60 h-[85vh] max-w-full pl-5 pr-5 pt-6 overflow-y-auto">
+      <div className="flex flex-col mr-2 bg-gray-100/60 h-[86vh] max-w-full pl-5 pr-5 pt-4 overflow-y-auto">
         {/* Test heading, timer, submit, view instructions */}
         <div className="flex justify-between items-center px-4 py-4 bg-white rounded-md">
           <div className="space-y-3">

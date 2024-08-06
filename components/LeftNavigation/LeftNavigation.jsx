@@ -101,7 +101,7 @@ const LeftNavigation = () => {
             </h1>
           </Link>
 
-          <hr />
+          <hr className="mt-[-1vw]" />
 
           <ul className="mt-6 mx-auto font-Poppins space-y-1 xl:w-[220px]">
             {navItems.map(({ path, icon: Icon, label }) => (
