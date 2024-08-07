@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { GiNotebook } from "react-icons/gi";
 import { FaGraduationCap } from "react-icons/fa";
 import coursePoster from "@/public/Course/coursePoster.svg";
 import test_syllabus_icon from "@/public/Test/test_syllabus_icon.svg";
@@ -12,32 +11,19 @@ function TestSeriesCard(props) {
   const item = { ...props.item };
   const [url, setUrl] = useState("");
 
-  const [isThumbnailLoaded, setIsThumbnailLoaded] = useState(false);
-
   useEffect(() => {
     setUrl(slug(item.heading));
-
-    setTimeout(() => {
-      setIsThumbnailLoaded(true);
-    }, 1000);
-  }, [url, item.heading, isThumbnailLoaded]);
+  }, [url, item.heading]);
 
   return (
     <div
       className={`flex flex-col rounded-xl font-Poppins relative bg-white border  `}
     >
-      {isThumbnailLoaded ? (
-        <>
-          {" "}
-          <Image
-            className="w-full rounded-xl"
-            alt="course-posters"
-            src={coursePoster}
-          />
-        </>
-      ) : (
-        <div className="h-52 w-full bg-gray-400 animate-pulse rounded-md"></div>
-      )}
+      <Image
+        className="w-full rounded-xl"
+        alt="course-posters"
+        src={coursePoster}
+      />
 
       <div className="p-4 font-Poppins text-darkBlue space-y-2">
         <div>
@@ -72,7 +58,11 @@ function TestSeriesCard(props) {
         <div className="w-full  ">
           <Link
             className=" border border-darkBlue mt-4 text-darkBlue rounded-full w-full py-3 hover:bg-black hover:text-white duration-200 inline-block text-center font-medium font-Poppins"
-            href={`/dashboard/testseries/${url}`}
+            href={
+              !props.isPurchased
+                ? `/dashboard/testseries/${url}`
+                : `/dashboard/testseries/purchased/${url}`
+            }
           >
             Get Started
           </Link>
