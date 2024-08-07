@@ -1,14 +1,8 @@
 import React from "react";
-import TestDetail from "@/components/Dashboard/Test/TestDetail";
-import LeftNavigation from "@/components/LeftNavigation/LeftNavigation";
+import HeroTestComp from "@/components/Dashboard/Test/HeroTestComp";
 
 const Page = () => {
-  return (
-    <section className="flex w-full">
-      <LeftNavigation />
-      <TestDetail />
-    </section>
-  );
+  return <HeroTestComp />;
 };
 
 export default Page;
