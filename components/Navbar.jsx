@@ -8,14 +8,14 @@ import Logo from "../public/Logo.svg";
 import { usePathname } from "next/navigation";
 import siren from "@/public/Home/siren.gif";
 import speaker from "@/public/Home/speaker.gif";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Cookies from "js-cookie";
 
 const Navbar = () => {
   const [isBurgerClicked, setIsBurgerClicked] = useState(false);
   const [top, setTop] = useState(true);
-  const [popupVisibility, setpopupVisibility] = useState(true);
-  const [popUp, setPopUp] = useState(false);
+  const [popUp, setPopUp] = useState(true);
+  const [popupVisibility, setPopupVisibility] = useState(false);
   const pathname = usePathname();
 
   const [accessToken, setAccessToken] = useState(null);
@@ -31,13 +31,19 @@ const Navbar = () => {
   useEffect(() => {
     setTimeout(() => {
       setPopUp(true);
+      setPopupVisibility(true)
     }, 5000);
     setAccessToken(Cookies.get("access_token"));
   }, []);
 
+  const handleClose = () => {
+    setPopUp(false); 
+    setTimeout(() => setPopupVisibility(false), 100);
+  };
+
   return (
     <>
-      {popUp && (
+      {/* {popUp && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: popUp ? 1 : 0 }}
@@ -71,7 +77,45 @@ const Navbar = () => {
             <RxCross1 className="text-white text-2xl" />
           </button>
         </motion.div>
+      )} */}
+       
+      <AnimatePresence>
+
+      {popupVisibility && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: popUp ? 1 : 0 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+          className="bg-black text-white relative flex justify-center"
+        >
+          <p className="font-Poppins md:pt-2 px-6 font-normal text-xs md:text-sm lg:text-base flex items-center py-3 md:py-0 ">
+            <Image
+              className="hidden md:block w-8 md:mr-10"
+              src={siren} 
+              alt="siren-gif"
+              unoptimized={true}
+            />
+            Enroll today and start your IITJEE and NEET preparation | batches
+            are filling fast!
+            <Image
+              className="hidden md:block w-10 md:w-12 mb-3 md:ml-10"
+              src={speaker} 
+              alt="speaker-gif"
+              unoptimized={true}
+            />
+          </p>
+          <button
+            onClick={handleClose}
+            className="absolute top-[4vw] md:top-[33%] right-2 md:right-4 xl:right-8"
+          >
+            <RxCross1 className="text-white text-2xl" />
+          </button>
+        </motion.div>
       )}
+      </AnimatePresence>
+
+
       <nav
         className={`bg-white font-Poppins border-b  text-stone-800 transition-all duration-200 py-6 md:py-6 w-full sticky top-0 z-10 ${
           !top && "shadow-lg bg-white"
