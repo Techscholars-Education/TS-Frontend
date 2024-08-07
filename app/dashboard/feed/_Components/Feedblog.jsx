@@ -34,7 +34,7 @@ const Feedblog = () => {
             <div className="  flex justify-center items-center rounded-md">
               {isImgLoaded ? (
                 <>
-                  <Image src={sampleImg} />
+                  <Image src={sampleImg} alt="sample-img" />
                 </>
               ) : (
                 <>
