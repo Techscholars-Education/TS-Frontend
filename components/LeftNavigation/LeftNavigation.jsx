@@ -2,19 +2,13 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import {
-  FiHome,
-  FiBookOpen,
-  FiClipboard,
-  FiUsers,
-  FiRss,
-  FiMessageCircle,
-  FiLogOut,
-  FiMail,
-  FiMenu,
-  FiX,
-} from "react-icons/fi";
-import { MdOutlineLibraryBooks } from "react-icons/md";
+import { FiLogOut, FiMail, FiMenu, FiX } from "react-icons/fi";
+import { MdGroups } from "react-icons/md";
+import { GoHome } from "react-icons/go";
+import { TfiCrown } from "react-icons/tfi";
+import { RiGraduationCapFill } from "react-icons/ri";
+import { LuBookMarked } from "react-icons/lu";
+import { FiGift } from "react-icons/fi";
 import { Box } from "@mui/material";
 import Logo from "../../public/Logo.svg";
 import Link from "next/link";
@@ -49,8 +43,8 @@ const LeftNavigation = () => {
   const lockedPaths = [];
 
   const navItems = [
-    { path: "/dashboard/home", icon: FiHome, label: "Home" },
-    { path: "/dashboard/my-course", icon: FiBookOpen, label: "My Course" },
+    { path: "/dashboard/home", icon: GoHome, label: "Home" },
+    { path: "/dashboard/my-course", icon: LuBookMarked, label: "My Course" },
     // {
     //   path: "/dashboard/courses",
     //   icon: MdOutlineLibraryBooks,
@@ -58,16 +52,16 @@ const LeftNavigation = () => {
     // },
     {
       path: "/dashboard/testseries",
-      icon: FiClipboard,
+      icon: RiGraduationCapFill,
       label: "Test Series",
     },
     {
       path: "/dashboard/refer-and-earn",
-      icon: FiUsers,
+      icon: FiGift,
       label: "Refer and earn",
     },
-    { path: "/dashboard/feed", icon: FiRss, label: "Feed" },
-    { path: "/dashboard/community", icon: FiMessageCircle, label: "Community" },
+    { path: "/dashboard/feed", icon: TfiCrown, label: "Feed" },
+    { path: "/dashboard/community", icon: MdGroups, label: "Community" },
   ];
 
   return (

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import DashboardNavbar from "../DashboardNavbar";
 import { LuAlarmClock } from "react-icons/lu";
+import { RxCross1 } from "react-icons/rx";
 
 const Activetest = () => {
   const { slug } = useParams();
@@ -108,15 +109,34 @@ const Activetest = () => {
   // Calculate the counts
   const notVisitedCount = totalQuestions - visitedQuestions.size;
   const answeredCount = answers.filter((answer) => answer !== null).length;
-  const markedForReviewCount = markedForReview.filter((review, index) => review && answers[index] === null).length;
-  const answeredAndMarkedForReviewCount = markedForReview.filter((review, index) => review && answers[index] !== null).length;
-
+  const markedForReviewCount = markedForReview.filter(
+    (review, index) => review && answers[index] === null
+  ).length;
+  const answeredAndMarkedForReviewCount = markedForReview.filter(
+    (review, index) => review && answers[index] !== null
+  ).length;
 
   // View Instructions
   const [isModalOpen, setIsModalOpen] = useState(true);
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
+  };
+  const aboutTest = {
+    Syllabus: [
+      "Physics - FULL SYLLABUS",
+      "Chemistry - FULL SYLLABUS",
+      "Mathematics - FULL SYLLABUS",
+    ],
+    Instructions: [
+      "Duration of the exam: 180 Minutes",
+      "Attempt all the questions",
+      "Marking is (+1) for every correct answer, (-0,2S) for every wrong answer",
+      "Total Marks: ISS -The question paper consists of 3 sections",
+      "Section -I: Physics (40 questions)",
+      "Section -II: Chemistry (40 questions)",
+      "Section -Ill: Mathematics (75 questions)",
+    ],
   };
 
   useEffect(() => {
@@ -139,19 +159,23 @@ const Activetest = () => {
 
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center font-Poppins bg-black bg-opacity-50 backdrop-blur-sm">
-          <div className="bg-white rounded-lg p-4 w-1/3">
-            <h2 className="text-xl font-semibold mb-4 text-darkBlue">
-              Test Instructions
-            </h2>
-            <p className="mb-4">
-              This is a simple modal for instructions for techscholars tests.
-            </p>
-            <button
-              onClick={toggleModal}
-              className="px-4 py-2 text-white bg-red-500 rounded hover:bg-red-600"
-            >
-              Close
-            </button>
+          <div className="bg-white rounded-lg p-8 w-3/5">
+            <div className="flex items-center  justify-between mx-4">
+              <h2 className="text-2xl font-semibold text-darkBlue">
+                Instructions
+              </h2>
+              <button
+                title="The test will start the moment you close this"
+                onClick={toggleModal}
+              >
+                <RxCross1 className="text-2xl text-red-500 hover:scale-110 transition-all" />
+              </button>
+            </div>
+            <ul className="list-none my-4 mx-4 text-gray-500/90 font-normal space-y-1 text-base">
+              {aboutTest.Instructions.map((item, index) => {
+                return <li key={index}>-{item}</li>;
+              })}
+            </ul>
           </div>
         </div>
       )}

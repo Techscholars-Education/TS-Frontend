@@ -1,73 +1,10 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
-import axios from "axios";
 import Link from "next/link";
-import CircularProgress from "@mui/material/CircularProgress";
-import Box from "@mui/material/Box";
 import DashboardNavbar from "../DashboardNavbar";
 import TestSeriesCard from "./TestSeriesCard";
-import Cookies from "js-cookie";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import Button from "@mui/material/Button";
 
-function TestDetail() {
-  const [loading, setLoading] = useState(true);
-  // const [testSeries, setTestSeries] = useState([]);
-  // const [selectedCategory, setSelectedCategory] = useState(2); // default category
-
-  // useEffect(() => {
-  //   const fetchTestSeries = async () => {
-  //     setLoading(true);
-  //     try {
-  //       const cookie = Cookies.get("access_token");
-
-  //       const axiosConfig = {
-  //         headers: {
-  //           Authorization: cookie,
-  //         },
-  //       };
-
-  //       const response = await axios.get(
-  //         `https://api.techscholars.in/pdt/v1/ts/list?category_id=${selectedCategory}`,
-  //         axiosConfig
-  //       );
-
-  //       setTestSeries(
-  //         Array.isArray(response?.data?.test_series)
-  //           ? response?.data?.test_series
-  //           : []
-  //       );
-  //     } catch (error) {
-  //       console.error("Error fetching test series:", error);
-  //       setTestSeries([]);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   fetchTestSeries();
-  // }, [selectedCategory]);
-  // const [open, setOpen] = React.useState(false);
-
-  // const handleChange = (event) => {
-  //   setAge(event.target.value);
-  // };
-
-  // const handleClose = () => {
-  //   setOpen(false);
-  // };
-
-  // const handleOpen = () => {
-  //   setOpen(true);
-  // };
-
-  // const handleCategoryChange = (event) => {
-  //   setSelectedCategory(parseInt(event.target.value, 10));
-  // };
-
+function SeriesNotPurchased() {
   const testSeries = [
     {
       id: 1,
@@ -398,7 +335,7 @@ function TestDetail() {
                 aria-expanded={isOpen}
                 aria-haspopup="true"
               >
-                Categories
+                All
                 <svg
                   className="-mr-1 ml-2 h-5 w-5"
                   xmlns="http://www.w3.org/2000/svg"
@@ -424,15 +361,6 @@ function TestDetail() {
                 tabIndex="-1"
               >
                 <div className="py-1" role="none">
-                  <Link
-                    href="#"
-                    className="text-gray-700 block px-4 py-2 text-sm hover:bg-blue-100"
-                    role="menuitem"
-                    tabIndex="-1"
-                    id="menu-item-0"
-                  >
-                    All
-                  </Link>
                   <Link
                     href="#"
                     className="text-gray-700 block px-4 py-2 text-sm hover:bg-blue-100"
@@ -479,7 +407,9 @@ function TestDetail() {
 
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-10 mx-4 w-full xl:pr-6 ">
           {testSeries.map((item) => {
-            return <TestSeriesCard key={item.id} item={item} />;
+            return (
+              <TestSeriesCard key={item.id} item={item} isPurchased={false} />
+            );
           })}
         </div>
 
@@ -493,4 +423,4 @@ function TestDetail() {
   );
 }
 
-export default TestDetail;
+export default SeriesNotPurchased;
