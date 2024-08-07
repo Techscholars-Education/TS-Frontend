@@ -1,7 +1,18 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import DashboardNavbar from "@/components/Dashboard/DashboardNavbar";
 import Image from "next/image";
+import sampleImg from "@/public/Feed/sampleImg.jpg";
+
 const Feedblog = () => {
+  const [isImgLoaded, setIsImgLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsImgLoaded(true);
+    }, 1500);
+  }, [isImgLoaded]);
+
   return (
     <div className="bg-white font-Poppins h-screen w-full flex flex-col ">
       <DashboardNavbar title={"Feed"} />
@@ -9,7 +20,7 @@ const Feedblog = () => {
         <div className=" ml-8">
           <div className="flex flex-col gap-1 space-y-4 pr-10 ">
             <h1 className="font-semibold font-Poppins text-2xl text-darkBlue">
-              Heading of the blog
+              &#34;Heading of the blog&#34;
             </h1>
 
             <p className="leading-relaxed text-lg">
@@ -20,10 +31,16 @@ const Feedblog = () => {
               officiis et neque earum harum voluptates ea odio.
             </p>
 
-            <div className="bg-gray-200 animate-pulse h-96  flex justify-center items-center rounded-md">
-              <div className="h-10 w-10 animate-spin border-2 border-gray-400 duration-500  rounded-md">
-                {" "}
-              </div>
+            <div className="  flex justify-center items-center rounded-md">
+              {isImgLoaded ? (
+                <>
+                  <Image src={sampleImg} />
+                </>
+              ) : (
+                <>
+                  <div className="h-96 w-full bg-gray-400 animate-pulse rounded-md"></div>
+                </>
+              )}
             </div>
             <p className="leading-relaxed text-lg">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
