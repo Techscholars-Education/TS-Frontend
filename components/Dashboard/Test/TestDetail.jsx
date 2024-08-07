@@ -398,7 +398,7 @@ function TestDetail() {
                 aria-expanded={isOpen}
                 aria-haspopup="true"
               >
-                Categories
+                All
                 <svg
                   className="-mr-1 ml-2 h-5 w-5"
                   xmlns="http://www.w3.org/2000/svg"
@@ -424,15 +424,6 @@ function TestDetail() {
                 tabIndex="-1"
               >
                 <div className="py-1" role="none">
-                  <Link
-                    href="#"
-                    className="text-gray-700 block px-4 py-2 text-sm hover:bg-blue-100"
-                    role="menuitem"
-                    tabIndex="-1"
-                    id="menu-item-0"
-                  >
-                    All
-                  </Link>
                   <Link
                     href="#"
                     className="text-gray-700 block px-4 py-2 text-sm hover:bg-blue-100"
