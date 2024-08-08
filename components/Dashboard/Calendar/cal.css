@@ -7,17 +7,18 @@
   --rdp-day-height: 48px;
 }
 
+/* Hide default navigation buttons */
 .rdp-root .rdp-button_next,
-.rdp-root .rdp-button_previous{
-  font-weight: 400;
-  opacity: 0.8;
+.rdp-root .rdp-button_previous  {
+  visibility: hidden;
+
 }
 
 .rdp-root .rdp-caption_label {
   font-weight: 400;
 }
 
-.rdp-root .rdp-button_previous {
+/* .rdp-root .rdp-button_previous {
   position: relative;
   right: 18vw;
   --rdp-accent-color: black;
@@ -27,7 +28,36 @@
   position: relative;
   left: -3px;
   --rdp-accent-color: black;
+} */
+
+
+.custom-nav-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #001B3F; 
+  font-size: 1.5rem; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 10px; 
+  font-weight: 100;
 }
+.custom-nav-button:hover{
+  color: #066de6; 
+}
+
+.custom-nav-button-prev {
+  left: 10px; 
+}
+
+.custom-nav-button-next {
+  left: 20vw; 
+}
+
 
 .calendar-container {
   position: relative;
@@ -83,4 +113,77 @@
 
 .rdp-root.no-pointer-events .rdp-day {
   pointer-events: none;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+  .rdp-root .rdp-caption_label {
+    font-weight: 400;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  #borders {
+    height: 1.3px;
+    width: 88vw;
+    background-color: #e2e8f0;
+    position: absolute;
+    top: 10.5vw;
+    border-radius: 10px;
+    left: -1.5vw;
+  }
+
+  .custom-nav-button-prev {
+    left: 10px; 
+  } 
+  
+   .custom-nav-button-next {
+    right: -58vw; 
+  } 
+  
+ 
+}
+ 
+@media only screen and (min-width: 400px) and (max-width: 765px){
+
+  .rdp-root .rdp-caption_label {
+    font-weight: 400;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 1.5vw;
+  }
+
+  #borders {
+    height: 1.3px;
+    width: 100%;
+    background-color: #e2e8f0;
+    position: absolute;
+    top: 7vw;
+    border-radius: 10px;
+    
+    padding-left: 20vw;
+    padding-right: 40vw;
+  }
+
+  .custom-nav-button-prev {
+    left: 10px; 
+  }
+  
+  .custom-nav-button-next {
+    right: -33vw; 
+  }
+
+  .rdp-root {
+    --rdp-accent-color: #066de6;
+    --rdp-accent-background-color: #a4c7ef84;
+    --rdp-font-family: system-ui;
+    --rdp-day_button-border-radius: 50px;
+    --rdp-day-width: 60px;
+    --rdp-day-height: 60px;
+  }
+  
+ 
 }

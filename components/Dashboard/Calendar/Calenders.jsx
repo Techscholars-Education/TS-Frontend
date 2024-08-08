@@ -1,10 +1,19 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { addDays, startOfToday, isBefore } from "date-fns";
+import { addDays, startOfToday, isBefore, addMonths, subMonths } from "date-fns";
 import { DayPicker } from "react-day-picker";
-import "react-day-picker/style.css"; // Import DayPicker CSS first
-import "./cal.css"; // Import your custom CSS
+import "react-day-picker/style.css"; 
+import "./cal.css"; 
+import { GoChevronLeft,GoChevronRight } from "react-icons/go";
+
+const CustomNavButton = ({ direction, onClick }) => {
+  return (
+    <button onClick={onClick} className={`custom-nav-button custom-nav-button-${direction} `}>
+      {direction === "prev" ? <GoChevronLeft className="text-3xl" /> : <GoChevronRight className="text-3xl" />}
+    </button>
+  );
+};
 
 const Calenders = ({ onRangeChange, initialRange }) => {
   const defaultMonth = new Date();
@@ -15,6 +24,7 @@ const Calenders = ({ onRangeChange, initialRange }) => {
   };
 
   const [range, setRange] = useState(initialRange || defaultSelected);
+  const [month, setMonth] = useState(defaultMonth);
 
   useEffect(() => {
     if (onRangeChange) {
@@ -41,10 +51,14 @@ const Calenders = ({ onRangeChange, initialRange }) => {
         <DayPicker
           mode="range"
           defaultMonth={defaultMonth}
+          month={month}
+          onMonthChange={setMonth}
           selected={range}
           onSelect={() => {}} // Disable user selection
-          // disabled={disablePastDates} // Disable past dates
+          // disabled={disablePastDates} 
         />
+        <CustomNavButton direction="prev" onClick={() => setMonth(subMonths(month, 1))} />
+        <CustomNavButton direction="next" onClick={() => setMonth(addMonths(month, 1))} />
       </div>
     </>
   );
