@@ -27,7 +27,7 @@ const Testimonials = () => {
       <div className="mt-16 md:mb-10">
         <iframe
           className="mx-auto rounded-xl h-[169px] w-[300px] md:h-[282px] md:w-[500px]  lg:w-[860px] lg:h-[484px] xl:w-[1060px] xl:h-[596px]"
-          src="https://www.youtube.com/embed/K2vbrZJHLsY?si=qQKkzvzVnxIf0eUz"
+          src="https://www.youtube.com/embed/lCcr2OpPrj0?si=D-_03h1-4tWrUwDa"
           title="Techscholars | Bharat's best educational platform"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
