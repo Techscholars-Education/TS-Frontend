@@ -29,7 +29,7 @@ const page = () => {
   return (
     <section className="flex">
       <LeftNavigation />
-      <Community data={data} pageTitle={"Jee Community"} />
+      <Community data={data} pageTitle={"JEE Community"} />
     </section>
   );
 };

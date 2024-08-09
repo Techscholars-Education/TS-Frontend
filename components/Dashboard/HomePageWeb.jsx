@@ -168,10 +168,13 @@ const HomePageWeb = () => {
       try {
         // Mock data for initial date range
         const mockData = {
-          from: '2024-08-01T00:00:00Z',
-          to: '2024-08-05T00:00:00Z'
-        };
-
+          from: new Date(),
+          to: (() => {
+              const today = new Date();
+              today.setDate(today.getDate() + 5);
+              return today;
+          })()
+      }
         const { from, to } = mockData;
         setInitialRange({ from: new Date(from), to: new Date(to) });
       } catch (error) {

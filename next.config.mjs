@@ -16,6 +16,15 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/dashboard/testseries/purchased",
+        destination: "/dashboard/testseries",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

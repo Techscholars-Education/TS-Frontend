@@ -1,12 +1,14 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import { useParams } from "next/navigation";
 import DashboardNavbar from "@/components/Dashboard/DashboardNavbar";
 import { FaFilePdf } from "react-icons/fa6";
-import { GiNotebook } from "react-icons/gi";
 import { FaGraduationCap } from "react-icons/fa";
 import Link from "next/link";
 import TestSeriesCard from "./TestSeriesCard";
+import coursePoster from "@/public/Course/coursePoster.svg";
+import test_syllabus_icon from "@/public/Test/test_syllabus_icon.svg";
 const DetailedView = () => {
   const { slug } = useParams();
 
@@ -136,20 +138,28 @@ const DetailedView = () => {
         {/* container 2 */}
         <div className="xl:w-[500px] bg-white rounded-xl xl:h-[460px] ">
           {/* For image */}
-          <div className="w-full h-52 bg-gray-300 animate-pulse rounded-xl"></div>
+          <Image
+            className="w-full rounded-xl"
+            alt="course-posters"
+            src={coursePoster}
+          />
 
-          <div className="p-4 space-y-2">
+          <div className="p-4 space-y-2 text-darkBlue">
             <span className="text-TechBlue font-[500] text-sm ">
               Class 9- Foundation - 2025
             </span>
             <h2 className="text-lg font-semibold text-darkBlue ">{heading}</h2>
             <hr />
             <div className="flex justify-start space-x-2 items-center ">
-              <GiNotebook className="text-2xl text-darkBlue" />
-              <p className="font-medium">MCQ</p>
+              <FaGraduationCap className="text-2xl text-orange-500" />
+              <p className="font-medium">MCQ test</p>
             </div>
             <div className="flex justify-start space-x-2 items-center ">
-              <FaGraduationCap className="text-2xl text-darkBlue" />
+              <Image
+                className=" w-5"
+                src={test_syllabus_icon}
+                alt="test-icon"
+              />
               <p className="font-medium">Full syllabus MOCK test</p>
             </div>
             <div className="w-full  ">

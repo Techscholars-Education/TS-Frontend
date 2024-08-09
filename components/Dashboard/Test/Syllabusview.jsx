@@ -46,7 +46,7 @@ const Syllabusview = () => {
         {/* Back btn */}
         <Link
           className="flex justify-start items-center "
-          href="/dashboard/testseries/purchased"
+          href={`/dashboard/testseries/purchased/${slug}`}
         >
           <div className=" font-medium xl:w-[105px] bg-blue-100 hover:bg-blue-400 rounded-full p-2 flex justify-center items-center mb-6 ">
             <IoArrowBackOutline className="mr-1 text-lg text-darkBlue " /> Back
@@ -82,7 +82,7 @@ const Syllabusview = () => {
           <div className="mt-10 mb-4">
             <Link
               className="bg-TechBlue text-white px-16 py-3 rounded-full hover:bg-black duration-200"
-              href="#"
+              href={`/dashboard/testseries/purchased/active-test/${slug}`}
             >
               Start Test
             </Link>

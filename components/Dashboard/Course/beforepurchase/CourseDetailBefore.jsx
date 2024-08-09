@@ -483,19 +483,19 @@ function CourseDetailBefore() {
             showDots={false}
           >
             <div className="rounded-lg">
-              <Image src={demolac} height={140} width={200} />
+              <Image src={demolac} height={140} width={200} alt="demalac-1" />
             </div>
             <div className="rounded-lg">
-              <Image src={demolac} height={140} width={200} />
+              <Image src={demolac} height={140} width={200} alt="demalac-2" />
             </div>
             <div className="rounded-lg">
-              <Image src={demolac} height={140} width={200} />
+              <Image src={demolac} height={140} width={200} alt="demalac-3" />
             </div>
             <div className="rounded-lg">
-              <Image src={demolac} height={140} width={200} />
+              <Image src={demolac} height={140} width={200} alt="demalac-4" />
             </div>
             <div className="rounded-lg">
-              <Image src={demolac} height={140} width={200} />
+              <Image src={demolac} height={140} width={200} alt="demalac-5" />
             </div>
           </Carousel>
         </div>
