@@ -45,6 +45,7 @@
   position: absolute;
   top: 10px; 
   font-weight: 100;
+  
 }
 .custom-nav-button:hover{
   color: #066de6; 
@@ -54,9 +55,6 @@
   left: 10px; 
 }
 
-.custom-nav-button-next {
-  left: 20vw; 
-}
 
 
 .calendar-container {
@@ -64,15 +62,6 @@
   z-index: 0;
 }
 
-#borders {
-  height: 1.3px;
-  width: 22vw;
-  background-color: #e2e8f0;
-  position: absolute;
-  top: 2.8vw;
-  border-radius: 10px;
-  left: 0.3vw;
-}
 
 .rdp-root .rdp-month_caption {
   display: flex;
@@ -125,15 +114,7 @@
     transform: translate(-50%, 0);
   }
 
-  #borders {
-    height: 1.3px;
-    width: 88vw;
-    background-color: #e2e8f0;
-    position: absolute;
-    top: 10.5vw;
-    border-radius: 10px;
-    left: -1.5vw;
-  }
+ 
 
   .custom-nav-button-prev {
     left: 10px; 
@@ -156,17 +137,6 @@
     top: 1.5vw;
   }
 
-  #borders {
-    height: 1.3px;
-    width: 100%;
-    background-color: #e2e8f0;
-    position: absolute;
-    top: 7vw;
-    border-radius: 10px;
-    
-    padding-left: 20vw;
-    padding-right: 40vw;
-  }
 
   .custom-nav-button-prev {
     left: 10px; 

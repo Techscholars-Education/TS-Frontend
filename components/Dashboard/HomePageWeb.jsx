@@ -272,7 +272,7 @@ const HomePageWeb = () => {
               </div>
             </div>
 
-            <div className=" mr-12">
+            <div className=" mr-12 max-lg:mr-0 max-lg:mt-3">
               <div className="  flex flex-col bg-white rounded-lg  md:mb-4 md:max-w-[34.5vw]   ">
                 <div className="md:mt-0 rounded-xl flex align-middle items-center justify-self-center  ">
                   <div className=" flex items-center justify-center w-full mb-5 mt-3 cursor-pointer " onClick={samShow}>
@@ -300,7 +300,7 @@ const HomePageWeb = () => {
                       </div> */}
                 </div>
               </div>
-              <div className="flex flex-col  rounded-lg  bg-white ml-0  w-full md:w-[34.5vw]">
+              <div className="flex flex-col  rounded-lg  bg-white ml-0  w-full md:w-[34.5vw] max-lg:mt-3">
                 <div className="flex justify-between m-4 ml-3 mb-4 ">
                   <span className="font-[550] text-[16px] md:ml-5">
                     Topic Progress
