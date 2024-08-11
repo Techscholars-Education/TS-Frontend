@@ -9,9 +9,11 @@ import { GoChevronLeft,GoChevronRight } from "react-icons/go";
 
 const CustomNavButton = ({ direction, onClick }) => {
   return (
-    <button onClick={onClick} className={`custom-nav-button custom-nav-button-${direction} `}>
+  
+    <button onClick={onClick} className={`custom-nav-button custom-nav-button-${direction} ${direction === "next" ? " 2xl:right-2 xl:right-2 lg:right-2 max-md:left-[18vw] max-sm:left-[21vw]   " : ""}  `}>
       {direction === "prev" ? <GoChevronLeft className="text-3xl" /> : <GoChevronRight className="text-3xl" />}
     </button>
+
   );
 };
 
@@ -46,9 +48,9 @@ const Calenders = ({ onRangeChange, initialRange }) => {
 
   return (
     <>
-      <div className="calendar-container">
-        <div id="borders"></div>
-        <DayPicker
+      <div className="calendar-container relative   ">
+        <div className="h-[1.3px] w-full  bg-[#e2e8f0] absolute rounded-md 2xl:top-[2.1vw] xl:top-[3vw] lg:top-[3.3vw] max-md:top-[6.5vw] max-sm:top-[11vw] "></div>
+        <DayPicker 
           mode="range"
           defaultMonth={defaultMonth}
           month={month}
