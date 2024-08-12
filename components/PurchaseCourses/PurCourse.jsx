@@ -16,12 +16,6 @@ const PurCourse = () => {
   const { fetchDataJee } = useProductJEEStore();
   const { fetchDataFoundation } = useProductFoundationStore();
 
-  useEffect(() => {
-    fetchData();
-    fetchDataJee();
-    fetchDataFoundation();
-  }, [fetchData]);
-
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -57,7 +51,9 @@ const PurCourse = () => {
     };
 
     fetchData();
-  }, []);
+    fetchDataJee();
+    fetchDataFoundation();
+  }, [fetchDataFoundation, fetchDataJee]);
 
   return (
     <div className="font-Poppins min-h-screen bg-gray-100/60 pb-24">

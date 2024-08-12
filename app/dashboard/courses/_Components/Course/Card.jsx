@@ -12,13 +12,10 @@ import { PiGraduationCapFill } from "react-icons/pi";
 import coursePoster from "@/public/Course/coursePoster.svg";
 
 const Card = (props) => {
-  const [premium, setPremium] = useState();
-
   useEffect(() => {
     const image = window?.localStorage?.getItem("profile-storage");
     const datajs = JSON.parse(image);
-    setPremium(datajs.state.profiles.is_premium);
-  }, [1]);
+  }, []);
 
   return (
     <>

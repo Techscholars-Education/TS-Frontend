@@ -1,17 +1,7 @@
-import Course from "@/components/Dashboard/Course/Course";
-import LeftNavigation from "@/components/LeftNavigation/LeftNavigation";
-import React from "react";
-import PurCourse from "@/components/PurchaseCourses/PurCourse";
+import HeroCoursesSection from "./HeroCoursesSection";
 
 function page() {
-  const isPurchased = true;
-  return (
-    <section className="flex w-full overflow-x-hidden">
-      <LeftNavigation />
-
-      {isPurchased ? <PurCourse /> : <Course />}
-    </section>
-  );
+  return <HeroCoursesSection />;
 }
 
 export default page;
