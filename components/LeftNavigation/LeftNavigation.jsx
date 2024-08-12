@@ -45,11 +45,6 @@ const LeftNavigation = () => {
   const navItems = [
     { path: "/dashboard/home", icon: GoHome, label: "Home" },
     { path: "/dashboard/my-course", icon: LuBookMarked, label: "My Course" },
-    // {
-    //   path: "/dashboard/courses",
-    //   icon: MdOutlineLibraryBooks,
-    //   label: "Courses",
-    // },
     {
       path: "/dashboard/testseries",
       icon: RiGraduationCapFill,
