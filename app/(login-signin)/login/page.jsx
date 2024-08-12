@@ -16,8 +16,7 @@ import { IoIosEyeOff } from "react-icons/io";
 import gif1 from "@/public/Ts-Loader.gif";
 import successLoader from "@/public/Auth/successLoader.gif";
 import { useCookieStore } from "@/hooks/useStore";
-import { tsUrl } from '@/config';
-
+import { tsUrl } from "@/config";
 
 const Page = () => {
   const [email, setEmail] = useState("");
@@ -37,7 +36,7 @@ const Page = () => {
   };
 
   const { login } = useLogin();
-  
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -73,7 +72,6 @@ const Page = () => {
       console.log("Some error occured in login");
     }
   };
-
 
   // const glogin = useGoogleLogin({
   //   onSuccess: async (tokenResponse) => {
@@ -216,7 +214,7 @@ const Page = () => {
                     )}
                   </button>
                   <Link
-                   href={`${tsUrl}/auth/v1/oauth/login`}
+                    href={`${tsUrl}/auth/v1/oauth/login`}
                     className="bg-gray-100 text-darkBlue rounded-full py-2 text-sm md:text-md w-full font-normal mt-4 flex items-center justify-center "
                   >
                     <Image src={Google} className="w-8" alt="google-logo" />{" "}
@@ -256,7 +254,7 @@ const Page = () => {
                 <Image
                   src={successLoader}
                   alt="success-loader"
-                  className="w-[180px]"
+                  className="w-[120px]"
                 />
                 <br />
                 <h3 className=" animate-pulse text-base md:text-xl xl:text-2xl font-semibold text-blue-500 tracking-wider font-Poppins">
@@ -269,7 +267,7 @@ const Page = () => {
       ) : (
         <>
           <div className="h-screen w-full flex items-center justify-center">
-            <Image src={gif1} alt="gif-loader" className="w-[180px]" />
+            <Image src={gif1} alt="gif-loader" className="w-[120px]" />
           </div>
         </>
       )}

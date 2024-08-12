@@ -30,7 +30,7 @@ const Home = () => {
           <Image
             src={sciencebook}
             alt="science-book-loader"
-            className="w-[180px]  "
+            className="w-[120px] "
           />
         </div>
       ) : (
@@ -40,7 +40,7 @@ const Home = () => {
           <Benefits />
           <Curriculum />
           <About />
-          <Pricing />
+          <Pricing calling="home" />
           <Faculties calling={"home"} />
           <Testimonials />
           <Testimonialsslider />
