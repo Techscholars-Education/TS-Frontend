@@ -1,28 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { SlCalender } from "react-icons/sl";
-import { FaStar, FaCheck } from "react-icons/fa";
 import coursePoster from "../../../../public/Course/coursePoster.svg";
-import firecourse from "../../../../public/dashboard-icon/firecourse.png";
 import timmercourse from "../../../../public/dashboard-icon/timmercourse.png";
 import vedio from "../../../../public/dashboard-icon/vedio.png";
 import Image from "next/image";
-import Faculty from "../../../../public/Faculty.png";
 import Link from "next/link";
-import demolac from "../../../../public/demolac.png";
-import { FaClock } from "react-icons/fa6";
-import { PiGraduationCapFill } from "react-icons/pi";
-import { FaFire } from "react-icons/fa6";
-import CourseCard from "./../CourseCard";
 import Costing from "@/components/Course/Costing";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
-import DropdownFAQ from "./DropdownFAQ";
 import { useParams } from "next/navigation";
 import classroom from "@/public/Course/classroom.png";
 import calendar from "@/public/Course/calendar.png";
@@ -44,13 +27,6 @@ function CourseDetailBefore() {
   const handleClick = (batch) => {
     setActiveBatch(batch);
   };
-
-  const points = [
-    "Understand the basics of Prototype & Animation",
-    "Understand the basics of MicroInteraction",
-    "Creating Animation (20 case studies) for mobile apps",
-    "Presenting designs using Animation",
-  ];
 
   const [costing11th, setCosting11th] = useState([
     {
@@ -166,23 +142,6 @@ function CourseDetailBefore() {
       ],
     },
   ]);
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 5,
-      slidesToSlide: 5, // optional, default to 1.
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-      slidesToSlide: 2, // optional, default to 1.
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-      slidesToSlide: 1, // optional, default to 1.
-    },
-  };
 
   const { coursename } = useParams();
   useEffect(() => {
@@ -273,7 +232,7 @@ function CourseDetailBefore() {
               <div className=" font-Poppins border border-gray-400 py-2 mx-auto rounded-full inline text-darkBlue/60 font-medium ">
                 <button
                   className={`rounded-full p-2 px-8  transition-all duration-200  ${
-                    activeBatch === "11th" ? "bg-TechBlue p-2  text-white" : ""
+                    activeBatch === "9th" ? "bg-TechBlue p-2  text-white" : ""
                   }`}
                   onClick={() => handleClick("9th")}
                 >
@@ -281,7 +240,7 @@ function CourseDetailBefore() {
                 </button>
                 <button
                   className={`rounded-full p-2 px-8 transition-all duration-200  ${
-                    activeBatch === "12th" ? "bg-TechBlue p-2  text-white" : ""
+                    activeBatch === "10th" ? "bg-TechBlue p-2  text-white" : ""
                   }`}
                   onClick={() => handleClick("10th")}
                 >
@@ -479,44 +438,76 @@ function CourseDetailBefore() {
               <div className="flex flex-col m-4 my-10">
                 <div>
                   <div className="flex  items-center my-2">
-                    <div>
-                      <Image
-                        src={firecourse}
-                        className="h-8 w-8 "
-                        alt="fire-course"
-                      />
-                    </div>
                     <div className="flex flex-col ml-2">
-                      <p className="text-[12px] font-[600] text-[#0079FC]">
-                        Business Design
+                      <p className="text-[12px] font-medium text-[#0079FC]">
+                        {coursename === "jee"
+                          ? `JEE Mains & Advanced | class ${activeBatch}`
+                          : coursename === "neet"
+                          ? `NEET | class ${activeBatch}`
+                          : `FOUNDATION | class ${activeBatch}`}
                       </p>
-                      <p className="text-sm font-[500]">
-                        New lession is available
-                      </p>
+                      <h2 className="font-semibold text-base text-darkBlue">
+                        <span className="text-TechBlue">
+                          {activeBatch === "11th"
+                            ? "ELITE"
+                            : activeBatch === "12th"
+                            ? "PRIME"
+                            : activeBatch === "9th"
+                            ? "IGNITE"
+                            : activeBatch === "10th"
+                            ? "RISE"
+                            : "EXCEL"}
+                        </span>{" "}
+                        Batch for{" "}
+                        {coursename == "JEE" || coursename === "NEET"
+                          ? coursename
+                          : ""}{" "}
+                        <span>
+                          {" "}
+                          {activeBatch === "11th"
+                            ? `${nxtnxtYear === "" ? "Loading..." : nxtnxtYear}`
+                            : activeBatch === "12th"
+                            ? `${nxtnxtYear === "" ? "Loading..." : nxtYear}`
+                            : activeBatch === "9th"
+                            ? `${nxtnxtYear === "" ? "Loading..." : nxtYear}`
+                            : activeBatch === "10th"
+                            ? `${nxtnxtYear === "" ? "Loading..." : nxtYear}`
+                            : `${nxtnxtYear === "" ? "Loading..." : nxtYear}`}
+                        </span>{" "}
+                        <span className="text-TechBlue">
+                          {activeBatch === "13th"
+                            ? "(Droppers)"
+                            : activeBatch === "9th"
+                            ? "Class 9"
+                            : activeBatch === "10th"
+                            ? "Class 10 Board exams"
+                            : ""}
+                        </span>
+                      </h2>
                     </div>
                   </div>
                 </div>
 
-                <div className="flex justify-start mt-4 items-center">
-                  <div className="text-darkBlue text-sm items-center flex mr-2">
+                <div className="flex justify-between mt-4 items-center">
+                  <div className="text-darkBlue text-xs  font-medium items-center flex mr-2">
                     <Image
                       src={timmercourse}
                       className="mx-2"
                       alt="timmer-course"
                     />
-                    85min
+                    400+ hours
                   </div>
-                  <div className="text-darkBlue text-sm items-center flex">
+                  <div className="text-darkBlue text-xs font-medium  items-center flex">
                     <Image src={vedio} className="mx-2" alt="vedio" />
-                    400+ Lessons
+                    250+ Lectures
                   </div>
                 </div>
                 <hr className="mt-2" />
 
                 <div className="flex justify-between mt-4">
                   <Link
-                    href="/dashboard/courses"
-                    className=" w-full  p-3 px-4 rounded-full text-center bg-TechBlue text-sm text-white"
+                    href="/dashboard/my-courses"
+                    className=" w-full  p-3 px-4 rounded-full font-medium text-center bg-TechBlue text-sm text-white hover:bg-black duration-200"
                   >
                     Buy Now
                   </Link>
