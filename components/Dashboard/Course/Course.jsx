@@ -96,17 +96,13 @@ const Course = () => {
               responsive={responsive}
               swipeable={false}
               draggable={false}
-             
-              
-              ssr={true} 
+              ssr={true}
               infinite={true}
-             
               autoPlaySpeed={1000}
               keyBoardControl={true}
               customTransition="all .5"
               transitionDuration={500}
               containerClass="carousel-container"
-              
             >
               {courses.length > 0 ? (
                 courses.map((course) => (
@@ -123,26 +119,22 @@ const Course = () => {
               )}
             </Carousel>
           </div>
-         
+
           <div className="w-[80vw] mx-14 flex flex-col">
             <div className="mt-12 mb-6">
-            <h2 className="font-semibold text-xl">Explore Other Courses</h2>
+              <h2 className="font-semibold text-xl">Explore Other Courses</h2>
             </div>
             <Carousel
               responsive={responsive}
               swipeable={false}
               draggable={false}
-             
-              
-              ssr={true} 
+              ssr={true}
               infinite={true}
-             
               autoPlaySpeed={1000}
               keyBoardControl={true}
               customTransition="all .5"
               transitionDuration={500}
               containerClass="carousel-container"
-              
             >
               {courses.length > 0 ? (
                 courses.map((course) => (
@@ -159,8 +151,6 @@ const Course = () => {
               )}
             </Carousel>
           </div>
-        
-          
         </>
       )}
     </div>

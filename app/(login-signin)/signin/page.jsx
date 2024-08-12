@@ -365,7 +365,7 @@ const Page = () => {
         </>
       ) : (
         <div className="h-screen w-full flex items-center justify-center">
-          <Image src={gif1} alt="gif-loader" className="w-[180px]" />
+          <Image src={gif1} alt="gif-loader" className="w-[120px]" />
         </div>
       )}
     </>

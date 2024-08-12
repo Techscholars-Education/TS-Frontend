@@ -57,7 +57,7 @@ function TestSeriesCard(props) {
 
         <div className="w-full  ">
           <Link
-            className=" border border-darkBlue mt-4 text-darkBlue rounded-full w-full py-3 hover:bg-black hover:text-white duration-200 inline-block text-center font-medium font-Poppins"
+            className=" bg-TechBlue mt-4 text-white rounded-full w-full py-3 hover:bg-black hover:text-white duration-200 inline-block text-center font-medium font-Poppins"
             href={
               !props.isPurchased
                 ? `/dashboard/testseries/${url}`
