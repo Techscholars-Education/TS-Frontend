@@ -32,6 +32,8 @@ import books from "@/public/Course/books.png";
 import AboutFaculties from "./AboutFaculties";
 import { MdDone } from "react-icons/md";
 
+import Faqs from "@/components/Faqs/Faqs";
+
 function CourseDetailBefore() {
   const [activeBatch, setActiveBatch] = useState("11th");
   const [currYear, setCurrYear] = useState("");
@@ -534,6 +536,7 @@ function CourseDetailBefore() {
         />
 
         <AboutFaculties />
+        <Faqs />
       </div>
     </div>
   );

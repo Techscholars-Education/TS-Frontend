@@ -22,8 +22,13 @@ const Costing = (props) => {
     { text: "Personalised Performance Analysis", checked: false },
     { text: "One - One Mentorship sessions", checked: false },
     { text: "Access to Digital student library", checked: false },
+
     {
-      text: "Regular Workshops, Strategy and Councilling Sessions.(with Certifications).",
+      text: "Strategy Workshops(with certifications)",
+      checked: false,
+    },
+    {
+      text: "Councilling Workshops(with certifications)",
       checked: false,
     },
   ];
@@ -39,8 +44,13 @@ const Costing = (props) => {
     { text: "Personalised Performance Analysis", checked: false },
     { text: "One - One Mentorship sessions", checked: false },
     { text: "Access to Digital student library", checked: false },
+
     {
-      text: "Regular Workshops, Strategy and Councilling Sessions.(with Certifications).",
+      text: "Strategy Workshops(with certifications)",
+      checked: false,
+    },
+    {
+      text: "Councilling Workshops(with certifications)",
       checked: false,
     },
   ];
@@ -56,8 +66,13 @@ const Costing = (props) => {
     { text: "Personalised Performance Analysis", checked: true },
     { text: "One - One Mentorship sessions", checked: true },
     { text: "Access to Digital student library", checked: true },
+
     {
-      text: "Regular Workshops, Strategy and Councilling Sessions.(with Certifications).",
+      text: "Strategy Workshops(with certifications)",
+      checked: true,
+    },
+    {
+      text: "Councilling Workshops(with certifications)",
       checked: true,
     },
   ];

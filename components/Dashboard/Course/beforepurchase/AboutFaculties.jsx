@@ -51,12 +51,12 @@ const AboutFaculties = () => {
     ],
   };
   return (
-    <section className=" mx-10 font-Poppins">
-      <h2 className="text-darkBlue text-xl font-semibold py-4 ">
+    <section className=" mx-10 font-Poppins bg-gray-100/40 rounded-md">
+      <h2 className="text-darkBlue text-xl font-semibold py-4  ">
         Faculties in this batch
       </h2>
 
-      <div className="  xl:mx-3">
+      <div className=" rounded-md">
         <Slider {...settings}>
           {facultiesData.map((item) => {
             return <EachFaculty key={item.id} item={item} />;
