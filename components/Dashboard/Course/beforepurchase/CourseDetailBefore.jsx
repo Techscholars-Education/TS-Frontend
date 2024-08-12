@@ -29,6 +29,7 @@ import calendar from "@/public/Course/calendar.png";
 import languages from "@/public/Course/languages.png";
 import books from "@/public/Course/books.png";
 
+import AboutFaculties from "./AboutFaculties";
 import { MdDone } from "react-icons/md";
 
 function CourseDetailBefore() {
@@ -531,6 +532,8 @@ function CourseDetailBefore() {
               : costing13th
           }
         />
+
+        <AboutFaculties />
       </div>
     </div>
   );
