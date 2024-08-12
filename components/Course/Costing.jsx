@@ -5,9 +5,6 @@ import { RxCross2 } from "react-icons/rx";
 import Link from "next/link";
 
 const Costing = (props) => {
-  const [advanced, setAdvanced] = useState(false);
-  const [ultimate, setUltimate] = useState(false);
-
   const [isExpanded, setIsExpanded] = useState(false);
 
   const listItems = [
@@ -78,7 +75,11 @@ const Costing = (props) => {
   ];
 
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-4 lg:gap-5 my-10 w-full lg:w-11/12 xl:w-10/12 2xl:w-[1200px]  px-10 lg:px-2 mx-auto ">
+    <div
+      className={`grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-4 lg:gap-5 my-10 w-full lg:w-11/12  ${
+        props.Calling ? "xl:w-11/12" : "xl:w-10/12"
+      } 2xl:w-[1200px]  px-10 lg:px-2 mx-auto `}
+    >
       {/* 1st */}
       <div className="border rounded-xl hover:shadow-xl  transition-all duration-200 bg-white font-Inter ">
         <div className="px-6 pt-6">

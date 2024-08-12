@@ -30,6 +30,7 @@ import languages from "@/public/Course/languages.png";
 import books from "@/public/Course/books.png";
 
 import AboutFaculties from "./AboutFaculties";
+import DemoLectures from "./DemoLectures";
 import { MdDone } from "react-icons/md";
 
 import Faqs from "@/components/Faqs/Faqs";
@@ -526,6 +527,7 @@ function CourseDetailBefore() {
         </div>
 
         <Costing
+          Calling="mycourses"
           CostingData={
             activeBatch === "11th"
               ? costing11th
@@ -536,6 +538,7 @@ function CourseDetailBefore() {
         />
 
         <AboutFaculties />
+        <DemoLectures />
         <Faqs />
       </div>
     </div>
