@@ -8,31 +8,28 @@ import avatar3 from "@/public/Course/avatar3.jpg";
 
 import { FaClock } from "react-icons/fa6";
 import { PiGraduationCapFill } from "react-icons/pi";
-const Card = (props) => {
 
-  const [premium, setPremium] = useState()
-     
-  useEffect(()=>{
+import coursePoster from "@/public/Course/coursePoster.svg";
+
+const Card = (props) => {
+  const [premium, setPremium] = useState();
+
+  useEffect(() => {
     const image = window?.localStorage?.getItem("profile-storage");
     const datajs = JSON.parse(image);
     setPremium(datajs.state.profiles.is_premium);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[1])
-  
+  }, [1]);
+
   return (
-  <>
-     <div
-        className={`flex flex-col rounded-xl border border-gray-100 bg-white ${
-          props.title === "JEE" ? "shadow-lg" : "shadow-sm"
-        }   mx-2 font-Poppins relative`}
+    <>
+      <div
+        className={`flex flex-col rounded-xl border border-gray-100 bg-whit bg-white  mx-2 font-Poppins relative`}
       >
         <div>
           <Image
             className=" rounded-t-xl h-full w-full "
-            width={100}
-            height={100}
             alt="course-posters"
-            src={props.image}
+            src={coursePoster}
           />
         </div>
 
@@ -45,7 +42,11 @@ const Card = (props) => {
             </div>
           </div>
           <p className="font-base text-xs xl:text-sm leading-relaxed text-gray-500 py-3 font-Poppins">
-            {props.description}
+            {props.title === "JEE"
+              ? "Master the concepts and strategies needed to excel in JEE with our comprehensive courses and expert guidance."
+              : props.title === "NEET"
+              ? "Achieve top scores in NEET with our specialized courses, focusing on in-depth understanding of medical concepts."
+              : "Build a strong academic base with our foundational courses, designed to prepare you for competitive and boards exams."}
           </p>
           <div className=" flex justify-start w-full py-4 ">
             <div className="flex -space-x-4 rtl:space-x-reverse">
@@ -98,8 +99,7 @@ const Card = (props) => {
           </div>
         </div>
       </div>
-
-  </>
+    </>
   );
 };
 

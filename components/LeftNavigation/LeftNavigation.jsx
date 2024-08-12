@@ -37,6 +37,9 @@ const LeftNavigation = () => {
     if (path === "/dashboard/testseries") {
       return pathname.startsWith("/dashboard/testseries");
     }
+    if (path === "/dashboard/my-course") {
+      return pathname.startsWith("/dashboard/my-course");
+    }
     return pathname === path;
   };
 
