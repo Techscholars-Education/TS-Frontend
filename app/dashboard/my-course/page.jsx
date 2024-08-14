@@ -1,25 +1,7 @@
-import Course from '@/components/Dashboard/Course/Course'
-import LeftNavigation from '@/components/LeftNavigation/LeftNavigation'
-import React from 'react'
-import PurCourse from '@/components/PurchaseCourses/PurCourse'
+import HeroCoursesSection from "@/components/Dashboard/Course/HeroCoursesSection";
 
 function page() {
-  return (
-   
-    <section className="flex w-full overflow-x-hidden">
-    <LeftNavigation/>
-    
-    {  true ? (
-      <PurCourse />
-    ) :(
-      <Course/>
-    )
-
-    }
-    
-  </section>
-   
-  )
+  return <HeroCoursesSection />;
 }
 
-export default page
+export default page;

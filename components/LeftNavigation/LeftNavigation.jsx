@@ -37,6 +37,9 @@ const LeftNavigation = () => {
     if (path === "/dashboard/testseries") {
       return pathname.startsWith("/dashboard/testseries");
     }
+    if (path === "/dashboard/my-course") {
+      return pathname.startsWith("/dashboard/my-course");
+    }
     return pathname === path;
   };
 
@@ -45,11 +48,6 @@ const LeftNavigation = () => {
   const navItems = [
     { path: "/dashboard/home", icon: GoHome, label: "Home" },
     { path: "/dashboard/my-course", icon: LuBookMarked, label: "My Course" },
-    // {
-    //   path: "/dashboard/courses",
-    //   icon: MdOutlineLibraryBooks,
-    //   label: "Courses",
-    // },
     {
       path: "/dashboard/testseries",
       icon: RiGraduationCapFill,
@@ -99,7 +97,11 @@ const LeftNavigation = () => {
 
           <ul className="mt-6 mx-auto font-Poppins space-y-1 xl:w-[220px]">
             {navItems.map(({ path, icon: Icon, label }) => (
-              <li key={path} className="flex items-center">
+              <Link
+                href={path}
+                key={path}
+                className="flex items-center hover:bg-blue-100/40  rounded-md "
+              >
                 <Box
                   component="span"
                   className={`flex w-full py-3 px-4 rounded-md ${
@@ -111,7 +113,7 @@ const LeftNavigation = () => {
                       isActive(path) ? "text-TechBlue" : "text-gray-400"
                     }`}
                   />
-                  <Link
+                  <p
                     href={lockedPaths.includes(path) ? "#" : path}
                     className={`font-medium flex items-center ${
                       isActive(path)
@@ -120,9 +122,9 @@ const LeftNavigation = () => {
                     }`}
                   >
                     {label}
-                  </Link>
+                  </p>
                 </Box>
-              </li>
+              </Link>
             ))}
           </ul>
 

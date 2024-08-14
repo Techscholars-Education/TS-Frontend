@@ -23,6 +23,11 @@ const nextConfig = {
         destination: "/dashboard/testseries",
         permanent: true,
       },
+      {
+        source: "/dashboard/courses",
+        destination: "/dashboard/my-course",
+        permanent: true,
+      },
     ];
   },
 };

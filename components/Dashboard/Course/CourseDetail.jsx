@@ -1,23 +1,22 @@
 "use client";
 
-import React,{useState} from 'react'
-import DashboardNavbar from '../DashboardNavbar'
-import CourseDetailNavbar from './CourseDetailNavbar'
+import React, { useState } from "react";
+import DashboardNavbar from "../DashboardNavbar";
+import CourseDetailNavbar from "./CourseDetailNavbar";
 import { SlCalender } from "react-icons/sl";
 import { FaStar, FaCheck } from "react-icons/fa";
 import coursePoster from "../../../public/Course/coursePoster.svg";
-import firecourse from '../../../public/dashboard-icon/firecourse.png'
-import timmercourse from '../../../public/dashboard-icon/timmercourse.png'
-import vedio from '../../../public/dashboard-icon/vedio.png'
+import firecourse from "../../../public/dashboard-icon/firecourse.png";
+import timmercourse from "../../../public/dashboard-icon/timmercourse.png";
+import vedio from "../../../public/dashboard-icon/vedio.png";
 import Image from "next/image";
-
 
 import Link from "next/link";
 
 import { FaClock } from "react-icons/fa6";
 import { PiGraduationCapFill } from "react-icons/pi";
 import { FaFire } from "react-icons/fa6";
-import CourseCard from './CourseCard';
+import CourseCard from "./CourseCard";
 function CourseDetail() {
   const [activeBatch, setActiveBatch] = useState("11th");
 
@@ -27,26 +26,23 @@ function CourseDetail() {
   const data = [
     {
       id: 1,
-      
+
       route: "/dashboard/my-course/coursedetail",
-      description:
-        "What do you need to know to create better products?",
+      description: "What do you need to know to create better products?",
       Poster: coursePoster,
     },
     {
       id: 2,
-    
+
       route: "/dashboard/my-course/coursedetail",
-      description:
-        "What do you need to know to create better products?.",
+      description: "What do you need to know to create better products?.",
       Poster: coursePoster,
     },
     {
       id: 3,
-      
+
       route: "/dashboard/my-course/coursedetail",
-      description:
-        "What do you need to know to create better products?",
+      description: "What do you need to know to create better products?",
       Poster: coursePoster,
     },
   ];
@@ -55,14 +51,13 @@ function CourseDetail() {
     "Understand the basics of MicroInteraction",
     "Creating Animation (20 case studies) for mobile apps",
     "Presenting designs using Animation",
-    
   ];
 
   return (
     <div>
       <div className="bg-[#f7faff] font-Poppins min-h-screen py-6 md:w-[82vw] mr-4 flex flex-col ">
-      <div className="flex justify-center items-center">
-        {/* <div className=" mt-8 font-Poppins font-normal border mx-auto rounded-full inline ">
+        <div className="flex justify-center items-center">
+          {/* <div className=" mt-8 font-Poppins font-normal border mx-auto rounded-full inline ">
           <button
             className={`rounded-full p-2 px-8  transition-all duration-200  ${activeBatch === "11th" ? "bg-TechBlue p-2  text-white" : ""
               }`}
@@ -85,62 +80,68 @@ function CourseDetail() {
             13th
           </button>
         </div> */}
-      </div>
+        </div>
         <CourseDetailNavbar />
-        <div className='grid md:grid-cols-3 grid-cols-1 md:ml-10 '>
-          <div className='flex col-span-2 flex-col bg-white rounded-xl mt-4 md:p-4'>
+        <div className="grid md:grid-cols-3 grid-cols-1 md:ml-10 ">
+          <div className="flex col-span-2 flex-col bg-white rounded-xl mt-4 md:p-4">
             <div>
-              <h2 className='text-[20px] font-[550]'>
-                Discription
-              </h2>
-              <p className='text-[14px] my-4 text-[#666666]'>
-                The community s need for applications that can facilitate daily activities is increasing as technology advances. Currently, many companies are looking for developers so that they can sell products (goods or services) that can reach wider buyers online. To become a developer, we are not required to understand all the science of design, but at least we can know the basics so that we can realize the design into code into a complete application more effectively.
+              <h2 className="text-[20px] font-[550]">Discription</h2>
+              <p className="text-[14px] my-4 text-[#666666]">
+                The community s need for applications that can facilitate daily
+                activities is increasing as technology advances. Currently, many
+                companies are looking for developers so that they can sell
+                products (goods or services) that can reach wider buyers online.
+                To become a developer, we are not required to understand all the
+                science of design, but at least we can know the basics so that
+                we can realize the design into code into a complete application
+                more effectively.
               </p>
             </div>
             <div>
-              <h2 className='text-[20px] my-4 font-[550]'>This Batch includes</h2>
-              <div className='flex'>
-                <div className='r'>
+              <h2 className="text-[20px] my-4 font-[550]">
+                This Batch includes
+              </h2>
+              <div className="flex">
+                <div className="r">
                   <SlCalender className="text-red-400 ounded-full mr-3 bg-slate-100 mt-4" />
                 </div>
-                <div className='flex flex-col'>
+                <div className="flex flex-col">
                   <div>
-                    <p className='text-[14px]'>Course duration</p>
+                    <p className="text-[14px]">Course duration</p>
                   </div>
                   <div>
-                    <p className='text-[18px]'>
-                      22 Nov 2023 - 31 May 2024
-                    </p>
+                    <p className="text-[18px]">22 Nov 2023 - 31 May 2024</p>
                   </div>
                 </div>
               </div>
-              <div className='flex'>
-                <div className=''>
+              <div className="flex">
+                <div className="">
                   <FaStar className="text-yellow-400 ounded-full mr-3 bg-slate-100 mt-4" />
                 </div>
-                <div className='flex flex-col'>
+                <div className="flex flex-col">
                   <div>
-                    <p className='text-[14px]'>Validity</p>
+                    <p className="text-[14px]">Validity</p>
                   </div>
                   <div>
-                    <p className='text-[18px]'>
-                      Till JEE Exam 2024
-                    </p>
+                    <p className="text-[18px]">Till JEE Exam 2024</p>
                   </div>
                 </div>
               </div>
             </div>
             <div className="space-y-1">
-              <h2 className='text-[20px] my-4 font-[550]'>Key point</h2>
+              <h2 className="text-[20px] my-4 font-[550]">Key point</h2>
               {points.map((point, index) => (
-                <div key={index} className="flex items-center  rounded-full p-2">
+                <div
+                  key={index}
+                  className="flex items-center  rounded-full p-2"
+                >
                   <FaCheck className="text-white mr-2 bg-blue-500 p-1 rounded-full" />
                   <span>{point}</span>
                 </div>
               ))}
             </div>
           </div>
-          <div className='grid-cols-1'>
+          <div className="grid-cols-1">
             <div
               className={`flex flex-col rounded-xl border 
            font-Poppins relative md:w-[20vw] md:ml-8 bg-white mt-4`}
@@ -157,30 +158,38 @@ function CourseDetail() {
                 <div>
                   <div className="flex  items-center my-2">
                     <div>
-                      <Image src={firecourse} className="h-8 w-8 " alt='fire-course' />
+                      <Image
+                        src={firecourse}
+                        className="h-8 w-8 "
+                        alt="fire-course"
+                      />
                     </div>
                     <div className="flex flex-col ml-2">
-                      <p className="text-[12px] font-[600] text-[#0079FC]">Business Design</p>
-                      <p className="text-sm font-[500]">New lession is available</p>
+                      <p className="text-[12px] font-[600] text-[#0079FC]">
+                        Business Design
+                      </p>
+                      <p className="text-sm font-[500]">
+                        New lession is available
+                      </p>
                     </div>
                   </div>
                 </div>
 
                 <div className="flex justify-start mt-4 items-center">
                   <div className="text-darkBlue text-sm items-center flex mr-2">
-                    <Image src={timmercourse} className="mx-2" alt='timmer-course' />
+                    <Image
+                      src={timmercourse}
+                      className="mx-2"
+                      alt="timmer-course"
+                    />
                     85min
                   </div>
                   <div className="text-darkBlue text-sm items-center flex">
-                    <Image src={vedio} className="mx-2" alt='vedio' />
+                    <Image src={vedio} className="mx-2" alt="vedio" />
                     400+ Lessons
                   </div>
                 </div>
-                <hr className='mt-2'/>
-
-
-
-
+                <hr className="mt-2" />
 
                 <div className="flex justify-between mt-4">
                   <Link
@@ -196,14 +205,14 @@ function CourseDetail() {
         </div>
         <div className="space-y-4 mt-10 flex flex-col mx-12">
           <h2 className="text-xl md:text-xl font-semibold text-darkBlue">
-             Explore Other Courses
+            Explore Other Courses
           </h2>
           <p className="text-sm text-gray-600 ">
-          You ve learned 70% of your goal this week! Keep it up
+            You ve learned 70% of your goal this week! Keep it up
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 xl:w-11/12 mx-auto ">
-          {data.map((item) => {
+          {/* {data.map((item) => {
             return (
               <CourseCard
                 key={item.id}
@@ -213,12 +222,11 @@ function CourseDetail() {
                 image={item.Poster}
               />
             );
-          })}
+          })} */}
         </div>
-
       </div>
     </div>
-  )
+  );
 }
 
-export default CourseDetail
+export default CourseDetail;
