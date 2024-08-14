@@ -1,158 +1,164 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-import Link from "next/link";
-import CircularProgress from "@mui/material/CircularProgress";
-import Box from "@mui/material/Box";
-import coursePoster from "../../../public/Course/coursePoster.svg";
-import CourseCard from "./CourseCard";
 import DashboardNavbar from "../DashboardNavbar";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import CourseCard from "./CourseCard";
+import LoadingTestSeries from "@/components/Dashboard/Test/LoadingTestSeries";
 
 const Course = () => {
-  const [courses, setCourses] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
+  const [isPuchasedClicked, setIsPurchasedClicked] = useState(true);
+
+  const [isContentLoading, setIsContentLoading] = useState(true);
+
+  const myCourses = [
+    {
+      target_year: 2025,
+      year: 2024,
+      course_title: "Introduction to Programming",
+      start_date: "2024-08-15",
+      end_date: "2025-08-15",
     },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
+    {
+      target_year: 2025,
+      year: 2024,
+      course_title: "Advanced Python",
+      start_date: "2024-08-20",
+      end_date: "2025-08-20",
     },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
+    {
+      target_year: 2025,
+      year: 2024,
+      course_title: "Data Structures and Algorithms",
+      start_date: "2024-08-25",
+      end_date: "2025-08-25",
     },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
+    {
+      target_year: 2025,
+      year: 2024,
+      course_title: "Web Development Basics",
+      start_date: "2024-08-30",
+      end_date: "2025-08-30",
     },
-  };
+    {
+      target_year: 2025,
+      year: 2024,
+      course_title: "Machine Learning",
+      start_date: "2024-08-05",
+      end_date: "2025-08-05",
+    },
+    {
+      target_year: 2025,
+      year: 2024,
+      course_title: "Database Management Systems",
+      start_date: "2024-08-10",
+      end_date: "2025-08-10",
+    },
+    {
+      target_year: 2025,
+      year: 2024,
+      course_title: "Cloud Computing Fundamentals",
+      start_date: "2024-08-15",
+      end_date: "2025-08-15",
+    },
+    {
+      target_year: 2025,
+      year: 2024,
+      course_title: "Cybersecurity Essentials",
+      start_date: "2024-08-20",
+      end_date: "2025-08-20",
+    },
+    {
+      target_year: 2025,
+      year: 2024,
+      course_title: "Artificial Intelligence",
+      start_date: "2024-08-25",
+      end_date: "2025-08-25",
+    },
+    {
+      target_year: 2025,
+      year: 2024,
+      course_title: "Software Engineering",
+      start_date: "2024-08-30",
+      end_date: "2025-08-30",
+    },
+  ];
 
   useEffect(() => {
-    const fetchCourses = async () => {
-      try {
-        const response = await axios.get(
-          "https://api.techscholars.in/pdt/v1/product"
-        );
-        console.log(response.data);
-
-        setCourses(
-          Array.isArray(response?.data?.products)
-            ? response?.data?.products
-            : []
-        );
-      } catch (error) {
-        console.error("Error fetching courses:", error);
-        setCourses([]);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchCourses();
-  }, []);
-  console.log(courses);
+    setTimeout(() => {
+      setIsContentLoading(false);
+    }, 2000);
+  }, [setIsPurchasedClicked, isContentLoading]);
 
   return (
-    <div className="font-Poppins min-h-screen w-full  bg-[#f7faff]">
-      <DashboardNavbar title="Course" />
-      {loading ? (
-        <div className="flex justify-center items-center h-screen">
-          <Box sx={{ display: "flex" }}>
-            <CircularProgress />
-          </Box>
-        </div>
-      ) : (
-        <>
-          <div className="my-4 flex flex-col mx-10">
-            <h2 className="text-xl md:text-xl font-semibold text-darkBlue mx-4">
-              My courses
+    <div className="font-Poppins min-h-screen bg-[#f7faff] pb-24">
+      <DashboardNavbar title="Test Series" />
+      <div className="flex flex-col md:mx-8">
+        {/* ABOUT HEADINGS AND BUTTONS  */}
+        <div className="flex md:justify-between  mr-4 relative z-10">
+          <div className="mx-4 my-6">
+            <h2 className="text-xl md:text-xl mb-2 font-semibold text-darkBlue">
+              My Courses
             </h2>
-            <p className="text-sm text-gray-600 mx-4 my-4">
-              You’ve learned 70% of your goal this week! Keep it up
+            <p className="xl:text-xs  text-gray-600">
+              You&apos;ve learned 70% of your goal this week! Keep it up!
             </p>
-            <div className="flex">
-              <Link
-                href=""
-                className="pt-2.5 py-1.5 px-8 mx-4 rounded-full text-center bg-TechBlue text-sm text-white"
+            <div className="flex items-center space-x-4 my-6">
+              <button
+                onClick={() => {
+                  setIsPurchasedClicked(true);
+                }}
+                disabled={isPuchasedClicked}
+                className={` ${
+                  isPuchasedClicked
+                    ? "bg-TechBlue text-white disabled:cursor-not-allowed "
+                    : "bg-blue-100 text-darkBlue"
+                } font-medium py-2 px-8 rounded-full duration-200 transition-all hover:bg-black hover:text-white  `}
               >
-                Paid
-              </Link>
-              <Link
-                href=""
-                className="pt-2 py-1.5 px-8 rounded-full text-center text-sm bg-slate-200"
+                Purchased
+              </button>
+              <button
+                onClick={() => {
+                  setIsPurchasedClicked(false);
+                }}
+                disabled={!isPuchasedClicked}
+                className={` ${
+                  !isPuchasedClicked
+                    ? "bg-TechBlue text-white disabled:cursor-not-allowed"
+                    : "bg-blue-100 text-darkBlue"
+                } font-medium py-2 px-8 rounded-full duration-200 transition-all hover:bg-black hover:text-white `}
               >
                 Free
-              </Link>
+              </button>
             </div>
           </div>
-          <div className="w-[80vw] mx-14">
-            <Carousel
-              responsive={responsive}
-              swipeable={false}
-              draggable={false}
-              ssr={true}
-              infinite={true}
-              autoPlaySpeed={1000}
-              keyBoardControl={true}
-              customTransition="all .5"
-              transitionDuration={500}
-              containerClass="carousel-container"
-            >
-              {courses.length > 0 ? (
-                courses.map((course) => (
-                  <CourseCard
-                    key={course.id}
-                    title={course.name}
-                    description={course.description}
-                    route={`/dashboard/my-course/coursedetail`}
-                    image={coursePoster}
-                  />
-                ))
-              ) : (
-                <p>No courses available</p>
-              )}
-            </Carousel>
-          </div>
+        </div>
 
-          <div className="w-[80vw] mx-14 flex flex-col">
-            <div className="mt-12 mb-6">
-              <h2 className="font-semibold text-xl">Explore Other Courses</h2>
-            </div>
-            <Carousel
-              responsive={responsive}
-              swipeable={false}
-              draggable={false}
-              ssr={true}
-              infinite={true}
-              autoPlaySpeed={1000}
-              keyBoardControl={true}
-              customTransition="all .5"
-              transitionDuration={500}
-              containerClass="carousel-container"
-            >
-              {courses.length > 0 ? (
-                courses.map((course) => (
-                  <CourseCard
-                    key={course.id}
-                    title={course.name}
-                    description={course.description}
-                    route={`/dashboard/my-course/coursedetail`}
-                    image={coursePoster}
-                  />
-                ))
-              ) : (
-                <p>No courses available</p>
-              )}
-            </Carousel>
+        {/* FOR PURCHASED */}
+
+        {isContentLoading && isPuchasedClicked ? (
+          <div className="grid grid-cols-1 xl:grid-cols-3 gap-10 mx-4 w-full xl:pr-6 mt-4 ">
+            {myCourses.map((item) => {
+              return <LoadingTestSeries key={item.id} />;
+            })}
           </div>
-        </>
-      )}
+        ) : (
+          <>
+            {" "}
+            {isPuchasedClicked ? (
+              <div className="grid grid-cols-1 xl:grid-cols-3 gap-10 mx-4 w-full xl:pr-6 mt-4 ">
+                {myCourses.map((item) => {
+                  return (
+                    <CourseCard key={item.id} item={item} isPurchased={true} />
+                  );
+                })}
+              </div>
+            ) : (
+              <p className="text-gray-400 font-medium font-Poppins">
+                Oops!, No free courses available at the moment
+              </p>
+            )}
+          </>
+        )}
+      </div>
     </div>
   );
 };
