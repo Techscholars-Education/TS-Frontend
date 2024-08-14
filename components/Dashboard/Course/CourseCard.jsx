@@ -89,7 +89,7 @@ const CourseCard = (props) => {
 
           <div className="flex justify-between mt-2">
             <Link
-              href="/"
+              href="/dashboard/my-course/coursedetail"
               className=" w-full  p-3 px-4 rounded-full text-center bg-TechBlue text-sm text-white font-medium hover:bg-black duration-200"
             >
               Get Started

@@ -56,7 +56,31 @@ function CourseDetail() {
   return (
     <div>
       <div className="bg-[#f7faff] font-Poppins min-h-screen py-6 md:w-[82vw] mr-4 flex flex-col ">
-        <div className="flex justify-center items-center"></div>
+        <div className="flex justify-center items-center">
+          {/* <div className=" mt-8 font-Poppins font-normal border mx-auto rounded-full inline ">
+          <button
+            className={`rounded-full p-2 px-8  transition-all duration-200  ${activeBatch === "11th" ? "bg-TechBlue p-2  text-white" : ""
+              }`}
+            onClick={() => handleClick("11th")}
+          >
+            11th
+          </button>
+          <button
+            className={`rounded-full p-2 px-8 transition-all duration-200  ${activeBatch === "12th" ? "bg-TechBlue p-2  text-white" : ""
+              }`}
+            onClick={() => handleClick("12th")}
+          >
+            12th
+          </button>
+          <button
+            className={`rounded-full p-2 px-8 transition-all duration-200  ${activeBatch === "13th" ? "bg-TechBlue p-2  text-white" : ""
+              }`}
+            onClick={() => handleClick("13th")}
+          >
+            13th
+          </button>
+        </div> */}
+        </div>
         <CourseDetailNavbar />
         <div className="grid md:grid-cols-3 grid-cols-1 md:ml-10 ">
           <div className="flex col-span-2 flex-col bg-white rounded-xl mt-4 md:p-4">
@@ -188,7 +212,7 @@ function CourseDetail() {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 xl:w-11/12 mx-auto ">
-          {data.map((item) => {
+          {/* {data.map((item) => {
             return (
               <CourseCard
                 key={item.id}
@@ -198,7 +222,7 @@ function CourseDetail() {
                 image={item.Poster}
               />
             );
-          })}
+          })} */}
         </div>
       </div>
     </div>

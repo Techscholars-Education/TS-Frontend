@@ -1,4 +1,4 @@
-import HeroCoursesSection from "./HeroCoursesSection";
+import HeroCoursesSection from "@/components/Dashboard/Course/HeroCoursesSection";
 
 function page() {
   return <HeroCoursesSection />;
