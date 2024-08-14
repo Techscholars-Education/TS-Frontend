@@ -99,7 +99,7 @@ const Course = () => {
               My Courses
             </h2>
             <p className="xl:text-xs  text-gray-600">
-              You've learned 70% of your goal this week! Keep it up!
+              You&apos;ve learned 70% of your goal this week! Keep it up!
             </p>
             <div className="flex items-center space-x-4 my-6">
               <button
