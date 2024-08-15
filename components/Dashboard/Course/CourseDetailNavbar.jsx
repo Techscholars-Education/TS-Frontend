@@ -1,21 +1,21 @@
 "use client";
 import React from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { IoMdArrowBack } from "react-icons/io";
 
 function CourseDetailNavbar() {
   const pathname = usePathname();
-
+  const router = useRouter()
   const isActive = (path) => pathname === path;
   return (
     <div className="flex flex-col md:mx-10">
       <div className="flex bg-blue-100 p-2 px-3 rounded-full w-24">
         <IoMdArrowBack className="mt-1 mr-1" />
 
-        <Link href="/dashboard/home" className="font-medium">
-          Back
-        </Link>
+        <button onClick={() => router.back()} className=''>
+              Back
+            </button>
       </div>
       <nav className="font-Poppins">
         <ul className="mt-4 md:mx-auto font-Poppins flex bg-white rounded-xl items-center align-middle md:p-4">
@@ -57,9 +57,9 @@ function CourseDetailNavbar() {
           </li>
           <li className="flex items-center md:ml-10 ml-4">
             <Link
-              href="/dashboard/my-course/coursedetail/announcements"
+              href="/dashboard/my-course/coursedetail/announcement"
               className={`font-medium ${
-                isActive("/dashboard/my-course/coursedetail/announcements")
+                isActive("/dashboard/my-course/coursedetail/announcement")
                   ? "text-[#0079FC] underline"
                   : "text-darkBlue hover:text-gray-400"
               }`}
