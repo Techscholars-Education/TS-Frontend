@@ -9,18 +9,18 @@ const Subject = ({subject}) => {
     const router = useRouter()
 
     const heads = [
-        { id:1, head: 'All Contents', chapters: 16, para: <div>All Videos • All Exercises • All</div> },
-        { id:2, head: 'Ch “No.” : “Name of the Chapter” ', chapters: 21, para: <div>“No.” Videos • ”No.” DPP • ”No.” Notes</div> },
-        { id:3, head: 'Ch “No.” : “Name of the Chapter” ', chapters: 21, para: <div>“No.” Videos • ”No.” DPP • ”No.” Notes</div> },
-        { id:4, head: 'Ch “No.” : “Name of the Chapter” ', chapters: 21, para: <div>“No.” Videos • ”No.” DPP • ”No.” Notes</div> },
-        { id:5, head: 'Ch “No.” : “Name of the Chapter” ', chapters: 21, para: <div>“No.” Videos • ”No.” DPP • ”No.” Notes</div> },
-        { id:6, head: 'Ch “No.” : “Name of the Chapter” ', chapters: 21, para: <div>“No.” Videos • ”No.” DPP • ”No.” Notes</div> },
-        { id:7, head: 'Ch “No.” : “Name of the Chapter” ', chapters: 21, para: <div>“No.” Videos • ”No.” DPP • ”No.” Notes</div> },
-        { id:8, head: 'Ch “No.” : “Name of the Chapter” ', chapters: 21, para: <div>“No.” Videos • ”No.” DPP • ”No.” Notes</div> },
-        { id:9, head: 'Ch “No.” : “Name of the Chapter” ', chapters: 21, para: <div>“No.” Videos • ”No.” DPP • ”No.” Notes</div> },
-        { id:10, head: 'Ch “No.” : “Name of the Chapter” ', chapters: 21, para: <div>“No.” Videos • ”No.” DPP • ”No.” Notes</div> },
-        { id:11, head: 'Ch “No.” : “Name of the Chapter” ', chapters: 21, para: <div>“No.” Videos • ”No.” DPP • ”No.” Notes</div> },
-        { id:12, head: 'Ch “No.” : “Name of the Chapter” ', chapters: 21, para: <div>“No.” Videos • ”No.” DPP • ”No.” Notes</div> },
+        { id:1, head: 'All Contents',para: <div>All Videos • All Exercises • All</div> },
+        { id:2, head: 'Ch “No.” : “Name of the Chapter” ',para: <div>“No.” Videos • ”No.” DPP • ”No.” Notes</div> },
+        { id:3, head: 'Ch “No.” : “Name of the Chapter” ',para: <div>“No.” Videos • ”No.” DPP • ”No.” Notes</div> },
+        { id:4, head: 'Ch “No.” : “Name of the Chapter” ',para: <div>“No.” Videos • ”No.” DPP • ”No.” Notes</div> },
+        { id:5, head: 'Ch “No.” : “Name of the Chapter” ',para: <div>“No.” Videos • ”No.” DPP • ”No.” Notes</div> },
+        { id:6, head: 'Ch “No.” : “Name of the Chapter” ',para: <div>“No.” Videos • ”No.” DPP • ”No.” Notes</div> },
+        { id:7, head: 'Ch “No.” : “Name of the Chapter” ',para: <div>“No.” Videos • ”No.” DPP • ”No.” Notes</div> },
+        { id:8, head: 'Ch “No.” : “Name of the Chapter” ',para: <div>“No.” Videos • ”No.” DPP • ”No.” Notes</div> },
+        { id:9, head: 'Ch “No.” : “Name of the Chapter” ',para: <div>“No.” Videos • ”No.” DPP • ”No.” Notes</div> },
+        { id:10, head: 'Ch “No.” : “Name of the Chapter” ',para: <div>“No.” Videos • ”No.” DPP • ”No.” Notes</div> },
+        { id:11, head: 'Ch “No.” : “Name of the Chapter” ',para: <div>“No.” Videos • ”No.” DPP • ”No.” Notes</div> },
+        { id:12, head: 'Ch “No.” : “Name of the Chapter” ',para: <div>“No.” Videos • ”No.” DPP • ”No.” Notes</div> },
        
       ];
 
@@ -43,7 +43,7 @@ const Subject = ({subject}) => {
         <div className="grid md:grid-cols-2 grid-cols-1">
         {
                 heads.map((ele)=>(   
-                      <Link href={`/dashboard/my-course/coursedetail/classes/${subject}/${ele.head}`} className='flex gap-3 m-4 border border-gray-100 p-3  pt-5 pb-5 rounded-lg ' key={ele.id}>
+                      <Link href={`/dashboard/my-course/coursedetail/classes/${subject}/${ele.head.replace(/\s+/g, '-')}`} className='flex gap-3 m-4 border border-gray-100 p-3  pt-5 pb-5 rounded-lg ' key={ele.id}>
                         <div className='h-10 w-1 bg-TechBlue rounded-md'></div>
                         <div className='flex flex-col'>
                            
