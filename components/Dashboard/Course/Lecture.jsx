@@ -20,9 +20,6 @@ const Lecture = ({lecture}) => {
         { id:1, head: <h1>Hero to Zero-UX design with Don Norman - <span className='text-TechBlue font-normal'>Class 5</span></h1>,date:{day:28,month:"Jul",year:2024},time:"01:30:00",class:"Class-05" },
         { id:1, head: <h1>Hero to Zero-UX design with Don Norman - <span className='text-TechBlue font-normal'>Class 4</span></h1>,date:{day:28,month:"Jul",year:2024},time:"01:30:00",class:"Class-04" },
         { id:1, head: <h1>Hero to Zero-UX design with Don Norman - <span className='text-TechBlue font-normal'>Class 3</span></h1>,date:{day:28,month:"Jul",year:2024},time:"01:30:00",class:"Class-03" },
-       
-       
-       
       ];
 
   return (
@@ -39,19 +36,36 @@ const Lecture = ({lecture}) => {
           <div className="grid md:grid-cols-3 grid-cols-1">
           {
                 lect.map((ele)=>(   
-                      <div className='flex flex-col m-4 border border-gray-100 rounded-lg w-[20vw]' key={ele.id}>
+                      <div className='flex flex-col m-4 border border-gray-100 rounded-lg w-[21vw]' key={ele.id}>
                         <div className='' id='image'>
                                   <Image src={coursePoster} alt='img' className='h-[20vh] w-full object-cover rounded-t-lg'/>
                         </div>
                         <div id='para' className='pl-4 pr-4'>
                                <div className='font-medium text-[19px]'>{ele.head}</div>
                                <div className='bg-gray-200 h-[0.15vh] w-full rounded-lg'></div>
-                               <div id='icons' className='flex'>
-                                 <div id='icons_1' className='flex'>
+                               <div id='icons' className='flex pt-3 pb-3 gap-2'>
+                                 <div className='flex gap-2'>
+                                 <div id='icons_1' className='flex gap-2'>
                                           <FaCalendarAlt className='text-[1.2vw] text-gray-400'/>
-                                          <h1>{ele.date.day} {ele.date.month},<span>{ele.date.year}</span></h1>
+                                          <h1 className='font-medium'>{ele.date.day} {ele.date.month},<span className='ml-1 text-gray-400 font-normal'>{ele.date.year}</span></h1>
                                  </div>
-                                 <div className='h-5 w-[0.1vw] bg-red-500'></div>
+                                 <div className='h-5 w-[0.1vw] bg-gray-400'></div>
+                                 </div>
+                                 <div className='flex gap-2'>
+                                 <div id='icons_1' className='flex gap-2'>
+                                          <FaClock className='text-[1.2vw] text-gray-400'/>
+                                          <h1>{ele.time}</h1>
+                                 </div>
+                                 <div className='h-5 w-[0.1vw] bg-gray-400'></div>
+                                 </div>
+                                 <div className='flex gap-2'>
+                                 <div id='icons_1' className='flex gap-2'>
+                                          <MdPlayLesson className='text-[1.2vw] text-gray-400'/>
+                                          <h1>{ele.class}</h1>
+                                 </div>
+                                 
+                                 </div>
+                                 
                                  
 
                                </div>
