@@ -17,7 +17,11 @@ import { FaClock } from "react-icons/fa6";
 import { PiGraduationCapFill } from "react-icons/pi";
 import { FaFire } from "react-icons/fa6";
 import CourseCard from "./CourseCard";
+import { useParams } from "next/navigation";
 function CourseDetail() {
+  const params = useParams()
+
+  
   const [activeBatch, setActiveBatch] = useState("11th");
 
   const handleClick = (batch) => {
@@ -81,7 +85,7 @@ function CourseDetail() {
           </button>
         </div> */}
         </div>
-        <CourseDetailNavbar />
+        <CourseDetailNavbar courseRoute={params.coursedetail} />
         <div className="grid md:grid-cols-3 grid-cols-1 md:ml-10 ">
           <div className="flex col-span-2 flex-col bg-white rounded-xl mt-4 md:p-4">
             <div>

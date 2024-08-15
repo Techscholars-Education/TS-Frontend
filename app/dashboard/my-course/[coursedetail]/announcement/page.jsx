@@ -12,7 +12,6 @@ export default function page() {
                 <div className='flex flex-col'>
 
                     <DashboardNavbar title="Course"/>
-                    {/* <Classes/> */}
                     <Announcement/>
                 </div>
             </section></div>

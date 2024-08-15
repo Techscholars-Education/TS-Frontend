@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import CourseDetailNavbar from './CourseDetailNavbar'
 import Image from 'next/image';
@@ -8,9 +9,12 @@ import math from "@/public/Dashboard/Subject/an_math.jpg"
 import eng from "@/public/Dashboard/Subject/an_eng.jpg"
 import cse from "@/public/Dashboard/Subject/an_cse.jpg"
 import bio from "@/public/Dashboard/Subject/an_bio.jpg"
+import { useParams } from 'next/navigation';
 
 const Announcement = () => {
-
+    const params = useParams()
+    console.log(params.coursedetail);
+       
     const announcement = [
         { id: 1, subject: "Physics", img: phy },
         { id: 2, subject: "Chemistry", img: chy },
@@ -22,7 +26,7 @@ const Announcement = () => {
 
     return (
         <div className="font-Poppins min-h-screen py-6 md:full md:mr-8 flex flex-col bg-[#f7faff] ">
-            <CourseDetailNavbar />
+            <CourseDetailNavbar courseRoute={params.coursedetail} />
             <div className='flex flex-col bg-white rounded-xl p-3 md:mr-10 mt-4 md:ml-10'>
                 <div className="grid md:grid-cols-3 grid-cols-1">
                     {announcement.map((ele) => (

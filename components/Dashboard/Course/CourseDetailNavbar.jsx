@@ -4,7 +4,7 @@ import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { IoMdArrowBack } from "react-icons/io";
 
-function CourseDetailNavbar() {
+function CourseDetailNavbar({courseRoute}) {
   const pathname = usePathname();
   const router = useRouter()
   const isActive = (path) => pathname === path;
@@ -21,9 +21,9 @@ function CourseDetailNavbar() {
         <ul className="mt-4 md:mx-auto font-Poppins flex bg-white rounded-xl items-center align-middle md:p-4">
           <li className="flex items-center md:mr-8 mr-6">
             <Link
-              href="/dashboard/my-course/coursedetail"
+              href={`/dashboard/my-course/${courseRoute}`}
               className={`font-medium ${
-                isActive("/dashboard/my-course/coursedetail")
+                isActive(`/dashboard/my-course/${courseRoute}`)
                   ? "text-[#0079FC] underline"
                   : "text-darkBlue hover:text-gray-400"
               }`}
@@ -33,9 +33,9 @@ function CourseDetailNavbar() {
           </li>
           <li className="flex items-center md:mx-10 mx-4">
             <Link
-              href="/dashboard/my-course/coursedetail/classes"
+              href={`/dashboard/my-course/${courseRoute}/classes`}
               className={`font-medium ${
-                isActive("/dashboard/my-course/coursedetail/classes")
+                isActive(`/dashboard/my-course/${courseRoute}/classes`)
                   ? "text-[#0079FC] underline"
                   : "text-darkBlue hover:text-gray-400"
               }`}
@@ -45,9 +45,9 @@ function CourseDetailNavbar() {
           </li>
           <li className="flex items-center md:mx-10 mx-4">
             <Link
-              href="/dashboard/my-course/coursedetail/tests"
+              href= {`/dashboard/my-course/${courseRoute}/tests`}
               className={`font-medium ${
-                isActive("/dashboard/my-course/coursedetail/tests")
+                isActive(`/dashboard/my-course/${courseRoute}/tests`)
                   ? "text-[#0079FC] underline"
                   : "text-darkBlue hover:text-gray-400"
               }`}
@@ -57,9 +57,9 @@ function CourseDetailNavbar() {
           </li>
           <li className="flex items-center md:ml-10 ml-4">
             <Link
-              href="/dashboard/my-course/coursedetail/announcement"
+              href={`/dashboard/my-course/${courseRoute}/announcement`}
               className={`font-medium ${
-                isActive("/dashboard/my-course/coursedetail/announcement")
+                isActive(`/dashboard/my-course/${courseRoute}/announcement`)
                   ? "text-[#0079FC] underline"
                   : "text-darkBlue hover:text-gray-400"
               }`}

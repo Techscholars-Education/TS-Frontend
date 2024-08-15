@@ -7,9 +7,10 @@ import CourseDetailNavbar from './CourseDetailNavbar';
 import TestSeriesCard from '../Test/TestSeriesCard';
 import Box from '@mui/material/Box';
 import Link from 'next/link';
+import { useParams } from 'next/navigation';
 
 function Tests() {
-   
+  const params = useParams()
     const [testSeries, setTestSeries] = useState([]);
     const [loading, setLoading] = useState(true);
     const [selectedCategory, setSelectedCategory] = useState(2); // default category
@@ -42,7 +43,7 @@ function Tests() {
       
   return (
     <div className=" font-Poppins min-h-screen py-6 md:w-[82vw] flex flex-col bg-[#f7faff] ">
-     <CourseDetailNavbar/>
+     <CourseDetailNavbar courseRoute={params.coursedetail} />
     <div className='flex flex-col  bg-white rounded-xl p-3 mt-4 md:mr-10 md:ml-10'>
        
         <div className="grid md:grid-cols-4 grid-cols-1">
