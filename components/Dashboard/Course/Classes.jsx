@@ -98,7 +98,7 @@ function Classes() {
         <div className="grid md:grid-cols-4 grid-cols-1">
           {subjects.map((ele) => (
             <Link
-              href={`/dashboard/my-course/coursedetail/classes/${ele.subject}`}
+              href={`/dashboard/my-course/${params.coursedetail}/classes/${ele.subject}`}
               className="flex gap-3 m-4 border border-gray-100 p-3  pt-5 pb-5 rounded-lg "
               key={ele.id}
             >

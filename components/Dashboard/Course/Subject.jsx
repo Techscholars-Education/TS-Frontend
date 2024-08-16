@@ -1,12 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import React from "react";
 import { IoMdArrowBack } from "react-icons/io";
 
 const Subject = ({ subject }) => {
   const router = useRouter();
+  const params = useParams();
 
   const heads = [
     {
@@ -89,7 +90,7 @@ const Subject = ({ subject }) => {
         <div className="grid md:grid-cols-2 grid-cols-1">
           {heads.map((ele) => (
             <Link
-              href={`/dashboard/my-course/coursedetail/classes/${subject}/${ele.head.replace(
+              href={`/dashboard/my-course/${params.coursedetail}/classes/${subject}/${ele.head.replace(
                 /\s+/g,
                 "-"
               )}`}
