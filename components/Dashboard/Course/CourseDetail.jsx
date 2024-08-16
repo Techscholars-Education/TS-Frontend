@@ -1,233 +1,188 @@
 "use client";
 
-import React, { useState } from "react";
-import DashboardNavbar from "../DashboardNavbar";
-import CourseDetailNavbar from "./CourseDetailNavbar";
-import { SlCalender } from "react-icons/sl";
-import { FaStar, FaCheck } from "react-icons/fa";
-import coursePoster from "../../../public/Course/coursePoster.svg";
-import firecourse from "../../../public/dashboard-icon/firecourse.png";
-import timmercourse from "../../../public/dashboard-icon/timmercourse.png";
-import vedio from "../../../public/dashboard-icon/vedio.png";
-import Image from "next/image";
-
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import classroom from "@/public/Course/classroom.png";
+import calendar from "@/public/Course/calendar.png";
+import languages from "@/public/Course/languages.png";
+import books from "@/public/Course/books.png";
+import coursePoster from "@/public/Course/coursePoster.svg";
+import { MdDone } from "react-icons/md";
 
 import { FaClock } from "react-icons/fa6";
-import { PiGraduationCapFill } from "react-icons/pi";
-import { FaFire } from "react-icons/fa6";
-import CourseCard from "./CourseCard";
+import { MdOutlineSlowMotionVideo } from "react-icons/md";
+
+import CourseDetailNavbar from "./CourseDetailNavbar";
+
 import { useParams } from "next/navigation";
+
 function CourseDetail() {
-  const params = useParams()
+  const params = useParams();
+  const [currYear, setCurrYear] = useState("");
+  const [nxtYear, setNxtYear] = useState("");
 
-  
-  const [activeBatch, setActiveBatch] = useState("11th");
-
-  const handleClick = (batch) => {
-    setActiveBatch(batch);
-  };
-  const data = [
-    {
-      id: 1,
-
-      route: "/dashboard/my-course/coursedetail",
-      description: "What do you need to know to create better products?",
-      Poster: coursePoster,
-    },
-    {
-      id: 2,
-
-      route: "/dashboard/my-course/coursedetail",
-      description: "What do you need to know to create better products?.",
-      Poster: coursePoster,
-    },
-    {
-      id: 3,
-
-      route: "/dashboard/my-course/coursedetail",
-      description: "What do you need to know to create better products?",
-      Poster: coursePoster,
-    },
-  ];
-  const points = [
-    "Understand the basics of Prototype & Animation",
-    "Understand the basics of MicroInteraction",
-    "Creating Animation (20 case studies) for mobile apps",
-    "Presenting designs using Animation",
-  ];
+  useEffect(() => {
+    const currYear = new Date().getFullYear();
+    const nxtYear = currYear + 1;
+    const nxtnxtYear = currYear + 2;
+    setCurrYear(currYear);
+    setNxtYear(nxtYear);
+  }, [currYear]);
 
   return (
     <div>
-      <div className="bg-[#f7faff] font-Poppins min-h-screen py-6 md:w-[82vw] mr-4 flex flex-col ">
-        <div className="flex justify-center items-center">
-          {/* <div className=" mt-8 font-Poppins font-normal border mx-auto rounded-full inline ">
-          <button
-            className={`rounded-full p-2 px-8  transition-all duration-200  ${activeBatch === "11th" ? "bg-TechBlue p-2  text-white" : ""
-              }`}
-            onClick={() => handleClick("11th")}
-          >
-            11th
-          </button>
-          <button
-            className={`rounded-full p-2 px-8 transition-all duration-200  ${activeBatch === "12th" ? "bg-TechBlue p-2  text-white" : ""
-              }`}
-            onClick={() => handleClick("12th")}
-          >
-            12th
-          </button>
-          <button
-            className={`rounded-full p-2 px-8 transition-all duration-200  ${activeBatch === "13th" ? "bg-TechBlue p-2  text-white" : ""
-              }`}
-            onClick={() => handleClick("13th")}
-          >
-            13th
-          </button>
-        </div> */}
-        </div>
+      <div className="bg-gray-100/60 font-Poppins min-h-screen py-6 md:w-[82vw] mr-4 flex flex-col ">
         <CourseDetailNavbar courseRoute={params.coursedetail} />
-        <div className="grid md:grid-cols-3 grid-cols-1 md:ml-10 ">
-          <div className="flex col-span-2 flex-col bg-white rounded-xl mt-4 md:p-4">
+        <section className=" w-11/12 xl:w-11/12 2xl:w-[1100px] mx-auto flex flex-col md:flex md:flex-row justify-between font-Poppins my-8 md:space-x-4 space-y-4 ">
+          <div className=" w-full  md:w-1/2 lg:w-2/3 p-6 rounded-md mt-4 bg-white">
             <div>
-              <h2 className="text-[20px] font-[550]">Discription</h2>
-              <p className="text-[14px] my-4 text-[#666666]">
-                The community s need for applications that can facilitate daily
-                activities is increasing as technology advances. Currently, many
-                companies are looking for developers so that they can sell
-                products (goods or services) that can reach wider buyers online.
-                To become a developer, we are not required to understand all the
-                science of design, but at least we can know the basics so that
-                we can realize the design into code into a complete application
-                more effectively.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-[20px] my-4 font-[550]">
-                This Batch includes
+              <h2 className="font-semibold text-xl text-TechBlue">
+                {params.coursedetail} - {nxtYear}
               </h2>
-              <div className="flex">
-                <div className="r">
-                  <SlCalender className="text-red-400 ounded-full mr-3 bg-slate-100 mt-4" />
-                </div>
-                <div className="flex flex-col">
-                  <div>
-                    <p className="text-[14px]">Course duration</p>
-                  </div>
-                  <div>
-                    <p className="text-[18px]">22 Nov 2023 - 31 May 2024</p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex">
-                <div className="">
-                  <FaStar className="text-yellow-400 ounded-full mr-3 bg-slate-100 mt-4" />
-                </div>
-                <div className="flex flex-col">
-                  <div>
-                    <p className="text-[14px]">Validity</p>
-                  </div>
-                  <div>
-                    <p className="text-[18px]">Till JEE Exam 2024</p>
-                  </div>
-                </div>
-              </div>
             </div>
-            <div className="space-y-1">
-              <h2 className="text-[20px] my-4 font-[550]">Key point</h2>
-              {points.map((point, index) => (
-                <div
-                  key={index}
-                  className="flex items-center  rounded-full p-2"
-                >
-                  <FaCheck className="text-white mr-2 bg-blue-500 p-1 rounded-full" />
-                  <span>{point}</span>
-                </div>
-              ))}
+            <div className="my-4">
+              <h4 className="font-semibold text-xl text-darkBlue">
+                Batch Details
+              </h4>
             </div>
+
+            <ul className="space-y-6 my-6 ">
+              <li className="flex items-center justify-start space-x-4">
+                <div className="  p-3 rounded-full bg-blue-100">
+                  <Image
+                    className="w-8"
+                    src={classroom}
+                    alt="class-icon"
+                  ></Image>
+                </div>
+                <div className="text-sm">
+                  <span className="font-semibold">For:</span>
+                  <p className="font-medium">Batch info</p>
+                </div>
+              </li>
+              <li className="flex items-center justify-start space-x-4">
+                <div className="  p-3 rounded-full bg-blue-100">
+                  <Image
+                    className="w-8"
+                    src={calendar}
+                    alt="calender-icon"
+                  ></Image>
+                </div>
+                <div className="text-sm">
+                  <span className="font-semibold">Course Duration:</span>
+                  <p className="font-medium">
+                    1 Year |
+                    <span>
+                      {" "}
+                      {`${
+                        nxtYear === ""
+                          ? "Loading..."
+                          : `${currYear} - ${nxtYear}`
+                      }`}
+                    </span>{" "}
+                  </p>
+                </div>
+              </li>
+              <li className="flex items-center justify-start space-x-4">
+                <div className="  p-3 rounded-full bg-blue-100">
+                  <Image className="w-8" src={books} alt="book-icon"></Image>
+                </div>
+                <div className="text-sm">
+                  <span className="font-semibold">Subjects:</span>
+                  <p className="font-medium">depends</p>
+                </div>
+              </li>
+              <li className="flex items-center justify-start space-x-4">
+                <div className="  p-3 rounded-full bg-blue-100">
+                  <Image
+                    className="w-8"
+                    src={languages}
+                    alt="languages-icon"
+                  ></Image>
+                </div>
+                <div className="text-sm">
+                  <span className="font-semibold">Languages:</span>
+                  <p className="font-medium">English</p>
+                </div>
+              </li>
+            </ul>
+            <div className="my-4">
+              <h4 className="font-semibold text-xl">Key Points</h4>
+            </div>
+            <ul className="my-6 space-y-4">
+              <li className="flex justify-start space-x-2 items-center">
+                <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1 w-6 md:w-7 lg:w-5 xl:w-5" />
+                <span className="text-gray-black text-xs md:text-sm">
+                  PDF Notes of each Class will be uploaded 3 Hours after the
+                  class.
+                </span>
+              </li>
+              <li className="flex justify-start space-x-2 items-center">
+                <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1 w-8 md:w-8 lg:w-5 xl:w-5" />
+                <span className="text-gray-black text-xs md:text-sm">
+                  Daily Practice Problems with their Solution will be available
+                  in PDF Format after class.
+                </span>
+              </li>
+              <li className="flex justify-start space-x-2 items-center">
+                <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1 w-6 md:w-6 lg:w-5 xl:w-5" />
+                <span className="text-gray-black text-xs md:text-sm">
+                  Scheduled tests will be held according to the planner.
+                </span>
+              </li>
+              <li className="flex justify-start space-x-2 items-center">
+                <MdDone className="bg-TechBlue text-xl text-white rounded-full p-1 w-8 md:w-7 lg:w-5 xl:w-5" />
+                <span className="text-gray-black text-xs md:text-sm">
+                  All India Test Series (AITS) will be provided according to the
+                  Test Planner.
+                </span>
+              </li>
+            </ul>
           </div>
-          <div className="grid-cols-1">
-            <div
-              className={`flex flex-col rounded-xl border 
-           font-Poppins relative md:w-[20vw] md:ml-8 bg-white mt-4`}
-            >
-              <div>
+          <div className=" w-full md:w-1/2 lg:w-1/3  ">
+            <div className="bg-white rounded-lg">
+              <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                 <Image
-                  className="w-full rounded-xl "
-                  alt="course-posters"
+                  className="md:h-52 lg:h-48 xl:h-60 2xl:w-[600px] w-full object-cover object-center"
                   src={coursePoster}
+                  alt="blog"
                 />
-              </div>
-
-              <div className="flex flex-col m-4 my-10">
-                <div>
-                  <div className="flex  items-center my-2">
+                <div className="p-5">
+                  <div className="flex items-center justify-start space-x-4  mb-2 ">
                     <div>
-                      <Image
-                        src={firecourse}
-                        className="h-8 w-8 "
-                        alt="fire-course"
-                      />
-                    </div>
-                    <div className="flex flex-col ml-2">
-                      <p className="text-[12px] font-[600] text-[#0079FC]">
-                        Business Design
+                      <p className="text-[12px] font-medium text-[#0079FC]">
+                        {params.coursedetail} | {nxtYear}
                       </p>
-                      <p className="text-sm font-[500]">
-                        New lession is available
-                      </p>
+                      <h2 className="text-lg font-semibold text-TechBlue">
+                        {params.coursedetail}
+                      </h2>
                     </div>
                   </div>
-                </div>
-
-                <div className="flex justify-start mt-4 items-center">
-                  <div className="text-darkBlue text-sm items-center flex mr-2">
-                    <Image
-                      src={timmercourse}
-                      className="mx-2"
-                      alt="timmer-course"
-                    />
-                    85min
+                  <div className="flex justify-start space-x-6 my-4 items-center">
+                    <div className="text-darkBlue text-sm items-center font-semibold font-Inter flex">
+                      <FaClock className="mx-2 text-xl text-TechBlue " />
+                      400+ Hrs
+                    </div>
+                    <div className="text-darkBlue text-sm items-center font-semibold font-Inter flex">
+                      <MdOutlineSlowMotionVideo className="mx-2 text-2xl text-orange-600" />
+                      600+ Lessons
+                    </div>
                   </div>
-                  <div className="text-darkBlue text-sm items-center flex">
-                    <Image src={vedio} className="mx-2" alt="vedio" />
-                    400+ Lessons
+                  <hr />
+                  <div className="flex items-center flex-wrap my-4">
+                    <Link
+                      href="/dashboard/courses"
+                      className="text-white w-full bg-TechBlue rounded-full py-3 font-semibold flex justify-center items-center hover:bg-black duration-200 "
+                    >
+                      Buy Now
+                    </Link>
                   </div>
-                </div>
-                <hr className="mt-2" />
-
-                <div className="flex justify-between mt-4">
-                  <Link
-                    href="/dashboard/courses"
-                    className=" w-full  p-3 px-4 rounded-full text-center bg-TechBlue text-sm text-white"
-                  >
-                    Buy Now
-                  </Link>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="space-y-4 mt-10 flex flex-col mx-12">
-          <h2 className="text-xl md:text-xl font-semibold text-darkBlue">
-            Explore Other Courses
-          </h2>
-          <p className="text-sm text-gray-600 ">
-            You ve learned 70% of your goal this week! Keep it up
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 xl:w-11/12 mx-auto ">
-          {/* {data.map((item) => {
-            return (
-              <CourseCard
-                key={item.id}
-                title={item.title}
-                description={item.description}
-                route={item.route}
-                image={item.Poster}
-              />
-            );
-          })} */}
-        </div>
+        </section>
       </div>
     </div>
   );
