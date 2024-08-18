@@ -1,12 +1,15 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import React from "react";
 import { IoMdArrowBack } from "react-icons/io";
 
+
 const Subject = ({ subject }) => {
   const router = useRouter();
+  const params = useParams();
 
   const heads = [
     {
@@ -89,13 +92,21 @@ const Subject = ({ subject }) => {
         <div className="grid md:grid-cols-2 grid-cols-1">
           {heads.map((ele) => (
             <Link
-              href={`/dashboard/my-course/coursedetail/classes/${subject}/${ele.head.replace(
+              href={`/dashboard/my-course/${params.coursedetail}/classes/${subject}/${ele.head.replace(
                 /\s+/g,
                 "-"
               )}`}
-              className="flex gap-3 m-4 border border-gray-100 p-3  pt-5 pb-5 rounded-lg "
+              className="m-4"
               key={ele.id}
             >
+                <motion.div
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.15)',
+                }}
+                className="flex gap-3 border border-gray-100 p-3 pt-5 pb-5 rounded-lg transition duration-300 ease-in-out"
+              >
+
               <div className="h-10 w-1 bg-TechBlue rounded-md"></div>
               <div className="flex flex-col">
                 <h2 className="text-[14px] font-semibold">{ele.head}</h2>
@@ -103,6 +114,7 @@ const Subject = ({ subject }) => {
                   {ele.para}
                 </div>
               </div>
+              </motion.div>
             </Link>
           ))}
         </div>

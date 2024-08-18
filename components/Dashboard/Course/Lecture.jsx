@@ -8,6 +8,7 @@ import Image from "next/image";
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaClock } from "react-icons/fa6";
 import { MdPlayLesson } from "react-icons/md";
+import { motion } from "framer-motion";
 
 const Lecture = ({ lecture }) => {
   const router = useRouter();
@@ -99,11 +100,17 @@ const Lecture = ({ lecture }) => {
       <div className=" bg-white rounded-xl p-3 md:mr-10 mt-4 md:ml-10">
         <div className="grid md:grid-cols-3 grid-cols-1">
           {lect.map((ele) => (
-            <div
-              className="flex flex-col m-4 border border-gray-100 rounded-lg w-[21vw]"
+            <motion.div
+            whileHover={{
+              scale: 1.05,
+              boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.15)',
+            }}
+              className="flex flex-col m-4 border border-gray-100 rounded-lg w-[21vw] transition duration-300 ease-in-out hover:cursor-pointer"
               key={ele.id}
             >
-              <div className="" id="image">
+
+              <div className="relative" id="image">
+                <Image src={pause} className="h-16 w-16 center_div" alt="pause_image"/>
                 <Image
                   src={coursePoster}
                   alt="img"
@@ -141,7 +148,7 @@ const Lecture = ({ lecture }) => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
