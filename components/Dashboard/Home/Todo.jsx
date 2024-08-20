@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Divider from '@mui/material/Divider';
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { FaRegEdit } from "react-icons/fa";
+import clock from "@/public/Dashboard/clock_time.png"
 
 import {
   Box,
@@ -37,6 +38,12 @@ import { FaLocationDot } from "react-icons/fa6";
 
 
 import { RiDeleteBin6Line } from "react-icons/ri";
+import HoursForTodo from './HoursForTodo';
+import MinutesForTodo from './MinutesForTodo';
+import AmPmToggle from './AmPmToggle';
+import DaysForTodo from './DaysForTodo';
+import MonthsForTodo from './MonthsForTodo';
+import YearForTodo from './YearForTodo';
 
 
 
@@ -47,6 +54,14 @@ function Todo() {
   const [timepop, setTimepop] = useState(false);
   const [currentTodo, setCurrentTodo] = useState({ task: '', description: '', completed: false });
   const [isEditing, setIsEditing] = useState(false);
+
+  const [selectedTime, setSelectedTime] = useState(null);
+  const [selectMinutes, setSelectMinutes] = useState(null);
+  const [selectedPeriod, setSelectedPeriod] = useState("AM");
+  const [selectedDay, setSelectedDay] = useState(null);
+  const [selectedMonth, setSelectedMonth] = useState(null);
+  const [selectedYear, setSelectedYear] = useState(null);
+
 
   useEffect(() => {
     const fetchTodos = async () => {
@@ -120,6 +135,47 @@ function Todo() {
   const closeTimePop = ()=> {
     setTimepop(false)
   }
+
+// Handles hours
+ const handleTimeSelect = (time) => {
+    setSelectedTime(time);
+    console.log('Selected Time:',time); 
+  }
+// Handles Minutes
+  const handleMinuteSelect = (time) =>{
+    setSelectMinutes(time)
+    console.log('Minutes : ',time);
+    
+  }
+// Handles Periods
+  const handleToggle = (value) => {
+    setSelectedPeriod(value);
+    console.log('Periods:',value);
+    
+  };
+  // Hanles Days
+  const handleDaySelect = (day) => {
+    setSelectedDay(day);
+    console.log('Days:',day);
+  };
+// Handles Months
+  const handleMonthSelect = (month) => {
+    setSelectedMonth(month);
+    console.log('Months:',month);
+  };
+// Handles Year
+  const handleYearSelect = (year) => {
+    setSelectedYear(year);
+    console.log('Years:',year);
+  };
+// For set the values
+  const handleSet = ()=>{
+    console.log(selectedTime,selectMinutes,selectedPeriod,selectedDay,selectedMonth,selectedYear);
+    
+  }
+
+
+
   // const list = () => (
   //   <Box
     
@@ -351,16 +407,35 @@ function Todo() {
         </DialogActions>
       </Dialog>
         
-
-    <div id='TimeSet'>
+           {/* Time Components */}
+    <div id='TimeSet' >
     <Dialog open={timepop} onClose={closeTimePop} className='duration-300'>
-        <DialogTitle className='font-[550]'>Hello</DialogTitle>
-        <DialogContent>
-         
+      <div className='h-[55vh]'>
+      <DialogTitle className='font-[550] flex justify-center items-center '>
+          <Image src={clock} className='h-32 w-32' alt='clock'/>
+        </DialogTitle>
+        <DialogContent className='flex flex-col gap-2 '>
+           <div className='border border-gray-200 rounded-lg p-2 flex justify-between '>
+           <HoursForTodo onTimeSelect={handleTimeSelect} />
+               <div className='h-10 w-[0.1vw] bg-gray-200 '></div>
+               <MinutesForTodo onMinuteSelect={handleMinuteSelect}/>
+               <div className='h-10 w-[0.1vw] bg-gray-200 '></div>             
+               <AmPmToggle onToggle={handleToggle} />
+           </div>
+           <div className='w-[20vw] h-14 border border-gray-200 rounded-lg flex justify-between p-2 '>
+           <DaysForTodo onDaySelect={handleDaySelect} />
+                    <div className='h-10 w-[0.1vw] bg-gray-200 '></div>
+                    <MonthsForTodo onMonthSelect={handleMonthSelect} />
+                    <div className='h-10 w-[0.1vw] bg-gray-200 '></div>
+                    <YearForTodo onYearSelect={handleYearSelect} />
+           </div>
         </DialogContent>
-        <DialogActions className='px-8'>
-        <button onClick={closeTimePop} color="primary"  className="h-[40px] mr-2 w-[76px] text-[13px]  border-[2px] rounded-lg hover:border-black transition-all ease-in-out duration-200" >Back</button>
+        <DialogActions className='px-8 absolute bottom-10 flex justify-center w-full gap-10 '>
+        <button onClick={closeTimePop} className='font-semibold text-[1.2vw] px-8 py-2 rounded-full bg-gray-200 hover:bg-red-300 hover:text-white transition-all ease-in-out duration-200'>Cancel</button>
+        <button onClick={handleSet} className='font-semibold text-[1.2vw] px-16 py-2 rounded-full bg-TechBlue text-white hover:bg-black transition-all ease-in-out duration-200' >set</button>
         </DialogActions>
+      </div>
+       
       </Dialog>
 
 
