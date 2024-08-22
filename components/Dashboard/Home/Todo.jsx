@@ -375,7 +375,7 @@ function Todo() {
           <div className='my-8 flex items-center'>
             <button onClick={()=>{setTimepop(true)}} className='bg-gray-200 rounded-full p-1 mr-2'>
 
-              <MdWatchLater className=' m-1 text-[#066DE6] text-[1.2vw]' />
+              <MdWatchLater className=' m-1 text-[#066DE6] text-[1.2vw] max-xl:text-[2vw] max-lg:text-[2.5vw] max-md:text-[3.8vw] max-sm:text-[6vw]'  />
             </button>
             <div className='text-[15px] flex items-center gap-2 text-gray-800 mr-3'> <h1>10:30 AM | Thursday | 05.12.2024</h1> </div> 
 
@@ -386,10 +386,10 @@ function Todo() {
           <div className='flex my-8 '>
             <button
               // onClick={calIsEditing ? handleCalUpdateEvent : handleCalAddEvent}
-              className="stdbgclr flex mr-4 text-white py-2 px-4 rounded-full  stdbgclr items-center hover:bg-black transition-all ease-in-out duration-200"
+              className="stdbgclr flex mr-4 text-white py-2 px-4 rounded-full justify-center stdbgclr items-center hover:bg-black transition-all ease-in-out duration-200"
             >
 
-              <IoIosPeople className='mt-1 mr-1 text-[1.1vw]' />Add People
+              <IoIosPeople className='mt-1 mr-1 text-[1.3vw] max-xl:text-[2vw] max-lg:text-[2.2vw] max-md:text-[3.5vw] max-sm:text-[5.5vw]' />Add People
             </button>
             <button
               // onClick={calIsEditing ? handleCalUpdateEvent : handleCalAddEvent}
@@ -422,7 +422,7 @@ function Todo() {
                <div className='h-10 w-[0.1vw] bg-gray-200 '></div>             
                <AmPmToggle onToggle={handleToggle} />
            </div>
-           <div className='w-[20vw] h-14 border border-gray-200 rounded-lg flex justify-between p-2 '>
+           <div className='w-[18vw] h-14 border border-gray-200 rounded-lg flex justify-between p-2 max-sm:w-[70vw] max-md:w-[50vw] max-lg:w-[38vw] max-xl:w-[30vw] max-2xl:w-[27vw] '>
            <DaysForTodo onDaySelect={handleDaySelect} />
                     <div className='h-10 w-[0.1vw] bg-gray-200 '></div>
                     <MonthsForTodo onMonthSelect={handleMonthSelect} />
@@ -430,9 +430,9 @@ function Todo() {
                     <YearForTodo onYearSelect={handleYearSelect} />
            </div>
         </DialogContent>
-        <DialogActions className='px-8 absolute bottom-10 flex justify-center w-full gap-10 '>
-        <button onClick={closeTimePop} className='font-semibold text-[1.2vw] px-8 py-2 rounded-full bg-gray-200 hover:bg-red-300 hover:text-white transition-all ease-in-out duration-200'>Cancel</button>
-        <button onClick={handleSet} className='font-semibold text-[1.2vw] px-16 py-2 rounded-full bg-TechBlue text-white hover:bg-black transition-all ease-in-out duration-200' >set</button>
+        <DialogActions className='px-8 absolute bottom-10 flex justify-center w-full '>
+        <button onClick={closeTimePop} className='font-semibold relative left-[-3.8vw] max-2xl:left-[-9vw] max-xl:left-[-11vw]  max-lg:left-[-13vw] max-sm:left-[-25vw] max-md:left-[-20vw] text-[1.2vw] max-xl:text-[1.5vw] max-lg:text-[1.7vw] max-md:text-[2vw] max-sm:text-[2.7vw] px-8 py-2 rounded-full bg-gray-200 hover:bg-red-300 hover:text-white transition-all ease-in-out duration-200'>Cancel</button>
+        <button onClick={handleSet} className='font-semibold text-[1.2vw] max-xl:text-[1.5vw] max-lg:text-[1.7vw] max-md:text-[2vw] max-sm:text-[2.7vw] px-16 max-xl:px-12 max-lg:px-11 max-md:px-10 max-sm:px-10 py-2 rounded-full bg-TechBlue text-white hover:bg-black transition-all ease-in-out duration-200' >set</button>
         </DialogActions>
       </div>
        
