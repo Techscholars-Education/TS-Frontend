@@ -2,16 +2,15 @@
 import React, { useEffect, useState } from "react";
 import { MdDone } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
-import Link from "next/link";
 import { useCourseStore } from "@/hooks/useStore";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { encryptData } from "@/utils";
 const Costing = (props) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  console.log(props);
+  // console.log(props);
 
 
 
@@ -59,6 +58,7 @@ const Costing = (props) => {
         mainName: props.CostingData[2].description,
       });
     }
+         // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.CostingData]);
 
   const handleSubmit = (formdata, id) => {
