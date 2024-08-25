@@ -43,42 +43,6 @@ const Navbar = () => {
 
   return (
     <>
-      {/* {popUp && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: popUp ? 1 : 0 }}
-          transition={{ duration: 1 }}
-          className={`bg-black text-white relative flex justify-center ${
-            !popupVisibility && "hidden"
-          } `}
-        >
-          <p className="font-Poppins md:pt-2 px-6 font-normal text-xs md:text-sm lg:text-base flex items-center py-3 md:py-0 ">
-            <Image
-              className="hidden md:block w-8 md:mr-10 "
-              src={siren}
-              unoptimized={true}
-              alt="siren-gif"
-            ></Image>
-            Enroll today and start your IITJEE and NEET preparation | batches
-            are filling fast!
-            <Image
-              className="hidden md:block w-10 md:w-12 mb-3 md:ml-10 "
-              src={speaker}
-              unoptimized={true}
-              alt="speaker-gif"
-            ></Image>
-          </p>
-          <button
-            onClick={() => {
-              setpopupVisibility(false);
-            }}
-            className="absolute top-[4vw]   md:top-[33%] right-2 md:right-4 xl:right-8"
-          >
-            <RxCross1 className="text-white text-2xl" />
-          </button>
-        </motion.div>
-      )} */}
-
       <AnimatePresence>
         {popupVisibility && (
           <motion.div

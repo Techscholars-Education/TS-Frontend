@@ -8,7 +8,7 @@ const page = () => {
       <Navbar />
       <section className="my-10 w-4/5 2xl:w-[1100px] mx-auto">
         <h1 className="text-darkBlue  font-Poppins font-semibold text-xl md:text-4xl text-center">
-          About TechScholars
+          About Techscholars
         </h1>
 
         <p className="md:text-base text-darkBlue font-Poppins my-10 text-sm ">
