@@ -61,9 +61,10 @@ const HomePageWeb = () => {
   }, [1]);
 
   useEffect(() => {
-    const storedUserInfo = localStorage.getItem("userInfo");
+    const storedUserInfo = localStorage.getItem("profile-storage");
     if (storedUserInfo) {
       setUserInfo(JSON.parse(storedUserInfo));
+      
     }
   }, []);
 
@@ -197,7 +198,7 @@ const HomePageWeb = () => {
     <>
       <div className=" font-Poppins min-h-screen  w-full bg-[#f7faff] overflow-x-hidden overflow-y-hidden ">
         <DashboardNavbar
-          title={`Welcome back, ${userInfo?.given_name ? `, ${userInfo.given_name}` : "Ayo"
+          title={`Welcome back, ${userInfo?.state.profiles.username ? `${userInfo.state.profiles.username}` : "Ayo"
             }! 👋 `}
           subtitle="You’ve completed 70% of your goal this week! Keep it up and improve."
         />
