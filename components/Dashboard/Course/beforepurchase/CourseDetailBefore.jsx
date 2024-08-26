@@ -152,6 +152,15 @@ function CourseDetailBefore() {
     setNxtYear(nxtYear);
     setNxtNxtYear(nxtnxtYear);
   }, [currYear]);
+
+
+  const scrollToSection = () => {
+    document.getElementById("target-section").scrollIntoView({
+      behavior: "smooth"
+    });
+  }
+
+
   return (
     <div>
       <div className="bg-gray-100/60 font-Poppins min-h-screen py-6 md:w-[82vw] mr-4 flex flex-col ">
@@ -505,18 +514,18 @@ function CourseDetailBefore() {
                 <hr className="mt-2" />
 
                 <div className="flex justify-between mt-4">
-                  <Link
-                    href="/dashboard/my-courses"
+                  <button
+                   onClick={scrollToSection}
                     className=" w-full  p-3 px-4 rounded-full font-medium text-center bg-TechBlue text-sm text-white hover:bg-black duration-200"
                   >
                     Buy Now
-                  </Link>
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
+        <section id="target-section">
         <Costing
           Calling="mycourses"
           CostingData={
@@ -527,6 +536,7 @@ function CourseDetailBefore() {
               : costing13th
           }
         />
+        </section>
 
         <AboutFaculties />
         <DemoLectures />
