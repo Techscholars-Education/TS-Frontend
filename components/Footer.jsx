@@ -8,7 +8,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import TsLogo from "../public/Home/TsLogo.svg";
 import { usePathname } from "next/navigation";
-import useSendmessage from "@/hooks/useSendmessage";
+// import useSendmessage from "@/hooks/useSendmessage";
 import "react-toastify/dist/ReactToastify.css";
 import { FaXTwitter } from "react-icons/fa6";
 
