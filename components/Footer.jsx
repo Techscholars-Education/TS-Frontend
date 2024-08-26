@@ -20,24 +20,50 @@ const Footer = () => {
 
   const [currYear, setCurrYear] = useState("");
 
-  const { sendMessage } = useSendmessage();
+  // const { sendMessage } = useSendmessage();
+
+  // Fields validators
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validateMessage = (message) => {
+    return message.trim().length > 0;
+  };
 
   const handleSubmit = async (e) => {
+    // 3rd party mailing
+
+    // e.preventDefault();
+    // setIsloading(true);
+    // try {
+    //   await sendMessage(email, message);
+    //   setIsMsgSent(true);
+    //   setTimeout(() => setIsMsgSent(false), 3000);
+    //   toast.success("Message sent successfully");
+    //   setEmail("");
+    //   setMessage("");
+    // } catch (error) {
+    //   toast.error("Email cannot be sent");
+    //   console.log("Email can't be sent : ", error);
+    // } finally {
+    //   setIsloading(false); // Set loading to false whether it succeeds or fails
+    // }
+
+    // Updated footer mailing procedure
     e.preventDefault();
-    setIsloading(true);
-    try {
-      await sendMessage(email, message);
-      setIsMsgSent(true);
-      setTimeout(() => setIsMsgSent(false), 3000);
-      toast.success("Message sent successfully");
-      setEmail("");
-      setMessage("");
-    } catch (error) {
-      toast.error("Email cannot be sent");
-      console.log("Email can't be sent : ", error);
-    } finally {
-      setIsloading(false); // Set loading to false whether it succeeds or fails
-    }
+
+    const emailValid = validateEmail(email);
+    const messageValid = validateMessage(message);
+
+    if (!emailValid) return toast.error("Enter a valid email");
+    if (!messageValid) return toast.error("Enter message you want to send");
+
+    const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=admin.hrm@techscholarseducation.com&su=Message from ${email}&body=${encodeURIComponent(
+      message
+    )}`;
+    window.open(mailtoLink, "_blank");
   };
 
   const pathname = usePathname();
