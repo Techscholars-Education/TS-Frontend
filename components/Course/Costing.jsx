@@ -1,11 +1,72 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MdDone } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
-import Link from "next/link";
-
+import { useCourseStore } from "@/hooks/useStore";
+import { useRouter } from "next/navigation";
+import Cookies from "js-cookie";
+import { ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { encryptData } from "@/utils";
 const Costing = (props) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  // console.log(props);
+
+
+
+  const router = useRouter();
+  const cookies = Cookies.get("access_token");
+
+  const initialFormState = {
+    prices: "",
+    name: "",
+    auth: "",
+    id: "",
+    mainName: "",
+  };
+
+  const [formdataOne, setFormDataOne] = useState(initialFormState);
+  const [formdataTwo, setFormDataTwo] = useState(initialFormState);
+  const [formdataThree, setFormDataThree] = useState(initialFormState);
+
+  const { course, courseData } = useCourseStore();
+
+  useEffect(() => {
+    if (props.CostingData && props.CostingData.length > 0) {
+      setFormDataOne({
+        ...formdataOne,
+        name: "Starter",
+        prices: props.CostingData[0].price,
+        auth: cookies,
+        id: props.CostingData[0].id,
+        mainName: props.CostingData[0].description,
+      });
+      setFormDataTwo({
+        ...formdataTwo,
+        name: "Advanced",
+        prices: props.CostingData[1].price,
+        auth: cookies,
+        id: props.CostingData[1].id,
+        mainName: props.CostingData[1].description,
+      });
+      setFormDataThree({
+        ...formdataThree,
+        name: "Ultimate",
+        prices: props.CostingData[2].price,
+        auth: cookies,
+        id: props.CostingData[2].id,
+        mainName: props.CostingData[2].description,
+      });
+    }
+         // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.CostingData]);
+
+  const handleSubmit = (formdata, id) => {
+    courseData(formdata);
+    const encryptedParams = encryptData(id);
+    router.replace(`/payment/${encodeURIComponent(encryptedParams)}`);
+  };
+  
 
   const listItems = [
     { text: "Lectures", checked: true },
@@ -75,6 +136,8 @@ const Costing = (props) => {
   ];
 
   return (
+    <>
+ <ToastContainer />
     <div
       className={`grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-4 lg:gap-5 my-10 w-full lg:w-11/12  ${
         props.Calling ? "xl:w-11/12" : "xl:w-10/12"
@@ -134,12 +197,12 @@ const Costing = (props) => {
         </div>
 
         <div className="w-full flex justify-center items-center my-6">
-          <Link
-            href="/dashboard/courses"
+          <button
+           onClick={() => handleSubmit(formdataOne, formdataOne.id)}
             className="border border-gray-400 w-5/6 rounded-full px-4 md:px-6 py-2 md:py-3 text-center hover:bg-black hover:text-white duration-200 font-Poppins font-semibold "
           >
             Purchase Now
-          </Link>
+          </button>
         </div>
       </div>
 
@@ -195,12 +258,12 @@ const Costing = (props) => {
           )}
         </div>
         <div className="w-full flex justify-center items-center my-6">
-          <Link
-            href="/dashboard/courses"
+          <button
+             onClick={() => handleSubmit(formdataTwo, formdataTwo.id)}
             className="border border-gray-400 w-5/6 rounded-full bg-white text-TechBlue px-4 md:px-6 py-2 md:py-3 text-center hover:bg-black hover:text-white duration-200 font-Poppins font-semibold"
           >
             Purchase Now
-          </Link>
+          </button>
         </div>
         <span
           datacontent="MOST POPULAR"
@@ -261,15 +324,16 @@ const Costing = (props) => {
           )}
         </div>
         <div className="w-full flex justify-center items-center my-6">
-          <Link
-            href="/dashboard/courses"
+          <button
+           onClick={() => handleSubmit(formdataThree, formdataThree.id)}
             className="border border-gray-400 w-5/6 rounded-full px-4 md:px-6 py-2 md:py-3 text-center hover:bg-black hover:text-white duration-200 font-Poppins font-semibold "
           >
             Purchase Now
-          </Link>
+          </button>
         </div>
       </div>
     </div>
+    </>
   );
 };
 

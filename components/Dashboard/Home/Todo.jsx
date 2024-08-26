@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import Divider from '@mui/material/Divider';
+import { RiDeleteBin6Fill } from "react-icons/ri";
+import { FaRegEdit } from "react-icons/fa";
+import clock from "@/public/Dashboard/clock_time.png"
 
 import {
   Box,
@@ -35,6 +38,12 @@ import { FaLocationDot } from "react-icons/fa6";
 
 
 import { RiDeleteBin6Line } from "react-icons/ri";
+import HoursForTodo from './HoursForTodo';
+import MinutesForTodo from './MinutesForTodo';
+import AmPmToggle from './AmPmToggle';
+import DaysForTodo from './DaysForTodo';
+import MonthsForTodo from './MonthsForTodo';
+import YearForTodo from './YearForTodo';
 
 
 
@@ -42,8 +51,17 @@ function Todo() {
   const [showTodoPopup, setShowTodoPopup] = useState(false);
   const [todos, setTodos] = useState([]);
   const [open, setOpen] = useState(false);
+  const [timepop, setTimepop] = useState(false);
   const [currentTodo, setCurrentTodo] = useState({ task: '', description: '', completed: false });
   const [isEditing, setIsEditing] = useState(false);
+
+  const [selectedTime, setSelectedTime] = useState(null);
+  const [selectMinutes, setSelectMinutes] = useState(null);
+  const [selectedPeriod, setSelectedPeriod] = useState("AM");
+  const [selectedDay, setSelectedDay] = useState(null);
+  const [selectedMonth, setSelectedMonth] = useState(null);
+  const [selectedYear, setSelectedYear] = useState(null);
+
 
   useEffect(() => {
     const fetchTodos = async () => {
@@ -114,48 +132,92 @@ function Todo() {
   const closeDialogTodoList = () => {
     setShowTodoPopup(false)
   }
-  const list = () => (
-    <Box
+  const closeTimePop = ()=> {
+    setTimepop(false)
+  }
+
+// Handles hours
+ const handleTimeSelect = (time) => {
+    setSelectedTime(time);
+    console.log('Selected Time:',time); 
+  }
+// Handles Minutes
+  const handleMinuteSelect = (time) =>{
+    setSelectMinutes(time)
+    console.log('Minutes : ',time);
     
-      className="max-w-[300px]"
-      role="presentation"
+  }
+// Handles Periods
+  const handleToggle = (value) => {
+    setSelectedPeriod(value);
+    console.log('Periods:',value);
+    
+  };
+  // Hanles Days
+  const handleDaySelect = (day) => {
+    setSelectedDay(day);
+    console.log('Days:',day);
+  };
+// Handles Months
+  const handleMonthSelect = (month) => {
+    setSelectedMonth(month);
+    console.log('Months:',month);
+  };
+// Handles Year
+  const handleYearSelect = (year) => {
+    setSelectedYear(year);
+    console.log('Years:',year);
+  };
+// For set the values
+  const handleSet = ()=>{
+    console.log(selectedTime,selectMinutes,selectedPeriod,selectedDay,selectedMonth,selectedYear);
+    
+  }
 
-    >
-      <List>
-        {todos.length > 0 ? (
-          todos.map(todo => (
-            <Box key={todo.id} className="flex justify-between mt-3  p-3 ">
-              <Box className="flex">
-                {
-                  todo.completed ? <FaCheck className={`h-6 w-6 p-1 rounded-full mt-4  bg-green-500 text-white' text-gray-600'}`} /> : ""
-                }
 
-                <Box className="flex flex-col ml-3">
-                  <h2 className="text-gray-900 font-bold text-[13px]">
-                    {todo.task}
-                  </h2>
-                  <p className="font-medium text-[12px] text-gray-500">
-                    {todo.description}
-                  </p>
-                </Box>
-              </Box>
-              <Box className="flex items-center space-x-2">
-                <IconButton onClick={() => openDialog(todo)}>
-                  <EditIcon className="h-5 w-5" />
-                </IconButton>
-                <IconButton onClick={() => handleDeleteTodo(todo.id)}>
-                  <Image src={deleteicon} className="h-5 w-5 "  alt='delete-icon'/>
-                </IconButton>
-              </Box>
-            </Box>
-          ))
-        ) : (
-          <p>Loading...</p>
-        )}
-      </List>
-      <Divider />
-    </Box>
-  );
+
+  // const list = () => (
+  //   <Box
+    
+  //     className="max-w-[300px]"
+  //     role="presentation"
+
+  //   >
+  //     <List>
+  //       {todos.length > 0 ? (
+  //         todos.map(todo => (
+  //           <Box key={todo.id} className="flex justify-between mt-3  p-3 ">
+  //             <Box className="flex">
+  //               {
+  //                 todo.completed ? <FaCheck className={`h-6 w-6 p-1 rounded-full mt-4  bg-green-500 text-white' text-gray-600'}`} /> : ""
+  //               }
+
+  //               <Box className="flex flex-col ml-3">
+  //                 <h2 className="text-gray-900 font-bold text-[13px]">
+  //                   {todo.task}
+  //                 </h2>
+  //                 <p className="font-medium text-[12px] text-gray-500">
+  //                   {todo.description}
+  //                 </p>
+  //               </Box>
+  //             </Box>
+  //             <Box className="flex items-center space-x-2">
+  //               <IconButton onClick={() => openDialog(todo)}>
+  //                 <EditIcon className="h-5 w-5" />
+  //               </IconButton>
+  //               <IconButton onClick={() => handleDeleteTodo(todo.id)}>
+  //                 <Image src={deleteicon} className="h-5 w-5 "  alt='delete-icon'/>
+  //               </IconButton>
+  //             </Box>
+  //           </Box>
+  //         ))
+  //       ) : (
+  //         <p>Loading...</p>
+  //       )}
+  //     </List>
+  //     <Divider />
+  //   </Box>
+  // );
   return (
     <div> <Box className="flex flex-col rounded-lg md:px-4 md:max-w-[34.5vw]  mt-4 bg-white md:pl-4 p-8 pl-0 md:pt-2 md:pb-0  overflow-hidden ">
       <Box className="flex justify-between md:px-5">
@@ -164,7 +226,7 @@ function Todo() {
         <Box className="flex mt-2 ">
 
           <div>
-            <button onClick={() => setShowTodoPopup(true)} className="text-[13px] font-[600] ml-4  text-blue-700">See all</button>
+            <button onClick={() => setShowTodoPopup(true)} className="text-[13px] font-[600] ml-4  text-blue-700 hover:text-orange-600 transition-all ease-linear duration-200">See all</button>
             <Dialog open={showTodoPopup} onClose={closeDialogTodoList}>
               <Box
                 
@@ -206,15 +268,17 @@ function Todo() {
                               <Link href="#" className='bg-[#9F46E4] rounded-full mx-2 px-2 text-white text-[12px] py-1'>Other</Link>
 
                             </div>
-                            <p className='text-[12px] mt-1 '> 10:30 AM | Thursday | 05.12.2024</p>
+                            <div className='text-[12px] mt-1 flex items-center gap-2 text-gray-800 mr-3'> <h1>8th - 10th July 2024</h1> <p className='h-1.5 w-1.5 bg-TechBlue rounded-full'></p> <h1>8 AM - 9 AM</h1> </div> 
                           </div>
                         </Box>
                         <Box className="flex items-center flex-col ">
                           <IconButton onClick={() => handleDeleteTodo(todo.id)}>
-                            <Image src={deleteicon} className="   rounded-full p-1 text-black " alt='delete-icon' />
+                            {/* <Image src={deleteicon} className="   rounded-full p-1 text-black " alt='delete-icon' /> */}
+                           <div className='rounded-full bg-TechBlue p-1 hover:bg-red-400 transition-all ease-linear duration-200 '> <RiDeleteBin6Fill className="text-white text-[0.9vw] "/></div>
                           </IconButton>
                           <IconButton onClick={() => {openDialog(todo); closeDialogTodoList()}}>
-                            <Image src={edit} className="h-6 w-6  " alt='edit' />
+                            {/* <Image src={edit} className="h-6 w-6  " alt='edit' /> */}
+                            <div  className=''><FaRegEdit className="text-TechBlue text-[1.1vw]  hover:text-green-500 transition-all ease-linear duration-200"/></div>
                           </IconButton>
                         </Box>
                       </Box>
@@ -226,13 +290,13 @@ function Todo() {
               
               </Box>
               <div className='flex justify-between p-4 mr-4'>
-                <button variant="outlined" className="h-[40px] w-[76px] text-[13px]  border-[2px] rounded-lg " onClick={() => {
+                <button variant="outlined" className="h-[40px] w-[76px] text-[13px]  border-[2px] rounded-full hover:border-black transition-all ease-in-out duration-200 " onClick={() => {
                   setOpen(true);
                  
                 }}>Add Todo</button>
                 <div>
-                  <button onClick={closeDialogTodoList} color="primary" className="h-[40px] mr-2 w-[76px] text-[13px]  border-[2px] rounded-lg " >Close</button>
-                  <button onClick={closeDialogTodoList} color="primary" className="h-[40px] w-[76px] text-[14px] stdbgclr border-[2px] rounded-full" >Save</button>
+                  <button onClick={closeDialogTodoList} color="primary" className="h-[40px] mr-2 w-[76px] text-[13px]  border-[2px] rounded-full hover:border-black transition-all ease-in-out duration-200" >Close</button>
+                  <button onClick={closeDialogTodoList} color="primary" className="h-[40px] w-[76px] text-[14px] stdbgclr border-[2px] rounded-full hover:bg-black transition-all ease-in-out duration-200" >Save</button>
                 </div>
 
               </div>
@@ -243,7 +307,7 @@ function Todo() {
         </Box>
       </Box>
       <hr className='mt-1' />
-      <Box className='md:px-4'>
+      <Box className='md:px-4 '>
         {todos.length > 0 ? (
           // todos.map(todo => (
           <Box className="flex justify-between px-2 my-2 ">
@@ -254,7 +318,7 @@ function Todo() {
                             }
                           </div>
 
-              <div>
+              <div className='md:w-[30vw]'>
                 <Box className="flex flex-col my-1 ">
                   <h2 className="text-gray-900 font-bold text-[14px]">
                     {todos[0].task}
@@ -269,7 +333,7 @@ function Todo() {
                   <Link href="#" className='bg-[#9F46E4] rounded-full mx-2 px-2 text-white text-[12px] py-1'>Other</Link>
 
                 </div>
-                <p className='text-[12px] my-2 '> 10:30 AM | Thursday | 05.12.2024</p>
+                <div className='text-[12px] my-2 flex items-center gap-2 text-gray-800 mr-3'> <h1>8th - 10th July 2024</h1> <p className='h-1.5 w-1.5 bg-TechBlue rounded-full'></p> <h1>8 AM - 9 AM</h1> </div> 
                 </div>
               </div>
             </Box>
@@ -307,40 +371,76 @@ function Todo() {
             onChange={(e) => setCurrentTodo({ ...currentTodo, description: e.target.value })}
           />
 
+        
+          <div className='my-8 flex items-center'>
+            <button onClick={()=>{setTimepop(true)}} className='bg-gray-200 rounded-full p-1 mr-2'>
+
+              <MdWatchLater className=' m-1 text-[#066DE6] text-[1.2vw] max-xl:text-[2vw] max-lg:text-[2.5vw] max-md:text-[3.8vw] max-sm:text-[6vw]'  />
+            </button>
+            <div className='text-[15px] flex items-center gap-2 text-gray-800 mr-3'> <h1>10:30 AM | Thursday | 05.12.2024</h1> </div> 
+
+          </div>
           <div className='mt-2'>
             <button className='rounded-full text-white border text-sm py-1  px-3 bg-red-500'>High</button><button className='rounded-full text-white bg-orange-400 border text-sm py-1 ml-2 px-3'>Medium</button><button className='rounded-full border text-sm py-1 text-white bg-green-500 ml-2 px-3'>Low</button>
-          </div>
-          <div className='my-8 flex'>
-            <div className='bg-gray-200 rounded-full p-1 mr-2'>
-
-              <MdWatchLater className=' m-1 text-[#066DE6]' />
-            </div>
-            <p className='text-[14px] mt-1 '> 10:30 AM | Thursday | 05.12.2024</p>
-
           </div>
           <div className='flex my-8 '>
             <button
               // onClick={calIsEditing ? handleCalUpdateEvent : handleCalAddEvent}
-              className="stdbgclr flex mr-4 text-white py-2 px-4 rounded-full  stdbgclr"
+              className="stdbgclr flex mr-4 text-white py-2 px-4 rounded-full justify-center stdbgclr items-center hover:bg-black transition-all ease-in-out duration-200"
             >
 
-              <IoIosPeople className='mt-1 mr-1 ' />Add People
+              <IoIosPeople className='mt-1 mr-1 text-[1.3vw] max-xl:text-[2vw] max-lg:text-[2.2vw] max-md:text-[3.5vw] max-sm:text-[5.5vw]' />Add People
             </button>
             <button
               // onClick={calIsEditing ? handleCalUpdateEvent : handleCalAddEvent}
-              className="bg-gray-100 flex  py-2 px-4 rounded-full "
+              className="bg-gray-100 flex items-center  py-2 px-4 rounded-full hover:text-TechBlue transition-all ease-in-out duration-200"
             >
               <FaLocationDot className='mt-1 mr-1' />Add Location
             </button>
           </div>
         </DialogContent>
         <DialogActions className='px-8'>
-          <button onClick={closeDialog} color="primary"  className="h-[40px] mr-2 w-[76px] text-[13px]  border-[2px] rounded-lg " >Back</button>
-          <buton onClick={isEditing ? handleUpdateTodo : handleAddTodo} color="primary"  className="h-[40px] w-[76px] text-[14px] text-center pt-1.5 stdbgclr border-[2px] rounded-full">
+          <button onClick={closeDialog} color="primary"  className="h-[40px] mr-2 w-[76px] text-[13px]  border-[2px] rounded-lg hover:border-black transition-all ease-in-out duration-200" >Back</button>
+          <buton onClick={isEditing ? handleUpdateTodo : handleAddTodo} color="primary"  className="h-[40px] w-[76px] text-[14px] text-center pt-1.5 stdbgclr border-[2px] rounded-full cursor-pointer hover:bg-black transition-all ease-in-out duration-200">
             {isEditing ? "Update" : "Save"}
           </buton>
         </DialogActions>
       </Dialog>
+        
+           {/* Time Components */}
+    <div id='TimeSet' >
+    <Dialog open={timepop} onClose={closeTimePop} className='duration-300'>
+      <div className='h-[55vh]'>
+      <DialogTitle className='font-[550] flex justify-center items-center '>
+          <Image src={clock} className='h-32 w-32' alt='clock'/>
+        </DialogTitle>
+        <DialogContent className='flex flex-col gap-2 '>
+           <div className='border border-gray-200 rounded-lg p-2 flex justify-between '>
+           <HoursForTodo onTimeSelect={handleTimeSelect} />
+               <div className='h-10 w-[0.1vw] bg-gray-200 '></div>
+               <MinutesForTodo onMinuteSelect={handleMinuteSelect}/>
+               <div className='h-10 w-[0.1vw] bg-gray-200 '></div>             
+               <AmPmToggle onToggle={handleToggle} />
+           </div>
+           <div className='w-[18vw] h-14 border border-gray-200 rounded-lg flex justify-between p-2 max-sm:w-[70vw] max-md:w-[50vw] max-lg:w-[38vw] max-xl:w-[30vw] max-2xl:w-[27vw] '>
+           <DaysForTodo onDaySelect={handleDaySelect} />
+                    <div className='h-10 w-[0.1vw] bg-gray-200 '></div>
+                    <MonthsForTodo onMonthSelect={handleMonthSelect} />
+                    <div className='h-10 w-[0.1vw] bg-gray-200 '></div>
+                    <YearForTodo onYearSelect={handleYearSelect} />
+           </div>
+        </DialogContent>
+        <DialogActions className='px-8 absolute bottom-10 flex justify-center w-full '>
+        <button onClick={closeTimePop} className='font-semibold relative left-[-3.8vw] max-2xl:left-[-9vw] max-xl:left-[-11vw]  max-lg:left-[-13vw] max-sm:left-[-25vw] max-md:left-[-20vw] text-[1.2vw] max-xl:text-[1.5vw] max-lg:text-[1.7vw] max-md:text-[2vw] max-sm:text-[2.7vw] px-8 py-2 rounded-full bg-gray-200 hover:bg-red-300 hover:text-white transition-all ease-in-out duration-200'>Cancel</button>
+        <button onClick={handleSet} className='font-semibold text-[1.2vw] max-xl:text-[1.5vw] max-lg:text-[1.7vw] max-md:text-[2vw] max-sm:text-[2.7vw] px-16 max-xl:px-12 max-lg:px-11 max-md:px-10 max-sm:px-10 py-2 rounded-full bg-TechBlue text-white hover:bg-black transition-all ease-in-out duration-200' >set</button>
+        </DialogActions>
+      </div>
+       
+      </Dialog>
+
+
+    </div>
+
     </Box>
     </div>
   )
