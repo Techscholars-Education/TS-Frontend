@@ -57,6 +57,7 @@ const HomePageWeb = () => {
   // GET USER PROFILE
   useEffect(() => {
     useprofile();
+       // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // ABOUT CALENDER

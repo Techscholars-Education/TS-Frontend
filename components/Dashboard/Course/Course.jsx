@@ -90,7 +90,7 @@ const Course = () => {
 
   return (
     <div className="font-Poppins min-h-screen bg-[#f7faff] pb-24">
-      <DashboardNavbar title="Test Series" />
+      <DashboardNavbar title="Courses" />
       <div className="flex flex-col md:mx-8">
         {/* ABOUT HEADINGS AND BUTTONS  */}
         <div className="flex md:justify-between  mr-4 relative z-10">
