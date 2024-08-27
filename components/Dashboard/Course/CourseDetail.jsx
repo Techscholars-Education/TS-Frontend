@@ -9,7 +9,8 @@ import languages from "@/public/Course/languages.png";
 import books from "@/public/Course/books.png";
 import coursePoster from "@/public/Course/coursePoster.svg";
 import { MdDone } from "react-icons/md";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { FaClock } from "react-icons/fa6";
 import { MdOutlineSlowMotionVideo } from "react-icons/md";
 
@@ -21,6 +22,8 @@ function CourseDetail() {
   const params = useParams();
   const [currYear, setCurrYear] = useState("");
   const [nxtYear, setNxtYear] = useState("");
+  const [userPremium, setUserPremium] = useState(true)
+  const [is_premium,setIs_Premium] = useState(false)
 
   useEffect(() => {
     const currYear = new Date().getFullYear();
@@ -30,8 +33,24 @@ function CourseDetail() {
     setNxtYear(nxtYear);
   }, [currYear]);
 
+  // useEffect(() => {
+  //   const planse = window?.localStorage?.getItem("profile-storage");
+  //   const plans = JSON.parse(planse);
+  //   setUserPremium(plans.state.profiles.is_premium);
+  // }, [1]);
+
+  
+  const handlePremium = () =>{
+        setIs_Premium(userPremium)
+        if(userPremium){
+          toast.info("You already have a plan")
+        }
+  }
+
+
   return (
     <div>
+      <ToastContainer/>
       <div className="bg-gray-100/60 font-Poppins min-h-screen py-6 md:w-[82vw] mr-4 flex flex-col ">
         <CourseDetailNavbar courseRoute={params.coursedetail} />
         <section className=" w-11/12 xl:w-11/12 2xl:w-[1100px] mx-auto flex flex-col md:flex md:flex-row justify-between font-Poppins my-8 md:space-x-4 space-y-4 ">
@@ -171,12 +190,12 @@ function CourseDetail() {
                   </div>
                   <hr />
                   <div className="flex items-center flex-wrap my-4">
-                    <Link
-                      href="/dashboard/courses"
-                      className="text-white w-full bg-TechBlue rounded-full py-3 font-semibold flex justify-center items-center hover:bg-black duration-200 "
+                    <button
+                    onClick={handlePremium}
+                    className="text-white w-full bg-TechBlue rounded-full py-3 font-semibold flex justify-center items-center hover:bg-black duration-200 "
                     >
-                      Buy Now
-                    </Link>
+                    Buy Now
+                    </button>
                   </div>
                 </div>
               </div>
