@@ -11,54 +11,54 @@ import Faqs from "@/components/Faqs/Faqs";
 const Classes = () => {
   const costing11th = [
     {
-      id: 1,
+      id: 10,
       type: "ELITE",
       title: "Starter",
       price: "3999",
     },
     {
-      id: 2,
+      id: 11,
       title: "Advanced",
       price: "8999",
     },
-    {
-      id: 3,
+    {  
+      id: 26,
       title: "Ultimate",
       price: "24999",
     },
   ];
   const costing12th = [
     {
-      id: 1,
+      id: 9,
       type: "PRIME",
       title: "Starter",
       price: "3999",
     },
     {
-      id: 2,
+      id: 12,
       title: "Advanced",
       price: "8999",
     },
     {
-      id: 3,
+      id: 25,
       title: "Ultimate",
       price: "24999",
     },
   ];
   const costing13th = [
     {
-      id: 1,
+      id: 8,
       type: "PRIME",
       title: "Starter",
       price: "4999",
     },
     {
-      id: 2,
+      id: 13,
       title: "Advanced",
       price: "9999",
     },
     {
-      id: 3,
+      id: 24,
       title: "Ultimate",
       price: "27999",
     },
