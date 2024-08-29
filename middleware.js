@@ -46,7 +46,7 @@ export const config = {
     '/dashboard/:path*',
     '/login',
     '/signin',
-    '/payment',
+    '/payment/:path*',
     '/admin/:path*',
   ],
 };

@@ -7,11 +7,12 @@ import { useCourseStore } from "@/hooks/useStore";
 import useGetway from "@/hooks/useGetway";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { decryptData } from "@/utils";
 
 const Page = () => {
   const params = useParams();
+  const router = useRouter()
   const encryptedParams = params.id;
   const { course, courseData } = useCourseStore();
 
@@ -21,6 +22,7 @@ const Page = () => {
   const [, setId] = useState(0);
   const [, setCName] = useState("");
   const [mainName, setMainName] = useState("");
+  const [back,setBack] = useState(false)
 
   useEffect(() => {
     if (course) {
@@ -36,20 +38,29 @@ const Page = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [course.prices]);
 
+  useEffect(()=>{
+ if(back){
+  setTimeout(() => {
+    router.back()
+  }, 4000);
+ }
+  })
   const handleGetway = async (event) => {
     event.preventDefault();
     if (encryptedParams) {
-      const decryptedParams = decryptData(decodeURIComponent(encryptedParams));
-      await getway(decryptedParams);
-    } else {
-      toast.error("Please select package first");
-      courseData(0);
-    }
+      try {
+        const decryptedParams = decryptData(decodeURIComponent(encryptedParams));      
+        await getway(decryptedParams);
+      } catch (error) {
+        toast.error("Invalid parameter please select a package first");
+        setBack(true)
+      }
+    } 
   };
 
   return (
     <>
-      <ToastContainer />
+      <ToastContainer limit={1} />
       <section className=" grid grid-cols-1 lg:grid-cols-2 gap-12 w-full md:w-11/12 lg:md:w-10/12 md:mx-auto min-h-[80vh] py-24  mx-auto  ">
         <div className=" px-10 font-Poppins ">
           <div className="pb-6">
