@@ -74,7 +74,7 @@ const YearForTodo = ({ onYearSelect }) => {
   };
 
   return (
-    <div className='w-[10vw]'>
+    <div className='w-[9.5vw]'>
       <div className='absolute'>
         <Select
           value={selectedYear}

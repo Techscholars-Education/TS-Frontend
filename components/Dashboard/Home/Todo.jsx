@@ -424,9 +424,9 @@ function Todo() {
            </div>
            <div className='w-[18vw] h-14 border border-gray-200 rounded-lg flex justify-between p-2 max-sm:w-[70vw] max-md:w-[50vw] max-lg:w-[38vw] max-xl:w-[30vw] max-2xl:w-[27vw] '>
            <DaysForTodo onDaySelect={handleDaySelect} />
-                    <div className='h-10 w-[0.1vw] bg-gray-200 '></div>
+                    <div className='h-10 w-[0.15vw] bg-gray-200 '></div>
                     <MonthsForTodo onMonthSelect={handleMonthSelect} />
-                    <div className='h-10 w-[0.1vw] bg-gray-200 '></div>
+                    <div className='h-10 w-[0.13vw] bg-gray-200 '></div>
                     <YearForTodo onYearSelect={handleYearSelect} />
            </div>
         </DialogContent>

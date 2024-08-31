@@ -74,7 +74,7 @@ const HoursForTodo = ({ onTimeSelect }) => {
   };
 
   return (
-    <div className='w-[4vw] '>
+    <div className='w-[3.5vw] '>
       <div className='absolute '>
         <Select
           value={selectedTime}
