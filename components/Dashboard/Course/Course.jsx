@@ -3,11 +3,15 @@ import React, { useEffect, useState } from "react";
 import DashboardNavbar from "../DashboardNavbar";
 import CourseCard from "./CourseCard";
 import LoadingTestSeries from "@/components/Dashboard/Test/LoadingTestSeries";
+import useMyCourse from "@/hooks/useMyCourse";
+import { useMyCourseStore } from "@/hooks/useStore";
+
 
 const Course = () => {
   const [isPuchasedClicked, setIsPurchasedClicked] = useState(true);
 
   const [isContentLoading, setIsContentLoading] = useState(true);
+  const {my_course} = useMyCourseStore()
 
   const myCourses = [
     {
@@ -81,6 +85,11 @@ const Course = () => {
       end_date: "2025-08-30",
     },
   ];
+const {usemyCourse} = useMyCourse()
+  useEffect(()=>{
+    usemyCourse()
+    console.log(my_course);
+  })
 
   useEffect(() => {
     setTimeout(() => {

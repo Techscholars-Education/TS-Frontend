@@ -157,6 +157,19 @@ export const useProductFoundationStore = create(persist((set) => ({
 }
 ));
 
+export const useMyCourseStore = create(persist(
+  (set) => ({
+    my_course:{},
+  my_course_Data: ( my_course) => set({ my_course: my_course})
+  
+  }),
+  {
+    name: 'my-course-storage', // unique name for the storage item
+    storage: createJSONStorage(() => localStorage) // specify local storage as the storage
+    
+  }
+));
+
 
 
 

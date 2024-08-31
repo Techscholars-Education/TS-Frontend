@@ -126,7 +126,7 @@ const HomePageWeb = () => {
                     {initialRange ? (
                       <Calenders
                         initialRange={initialRange}
-                        onRangeChange={(range) => console.log()}
+                        onRangeChange={(range) => console.log(range)}
                       />
                     ) : (
                       <div className="w-full h-[35vh] rounded-md pl-10 pr-10 flex items-center justify-center">
