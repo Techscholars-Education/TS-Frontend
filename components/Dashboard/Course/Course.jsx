@@ -89,7 +89,8 @@ const {usemyCourse} = useMyCourse()
   useEffect(()=>{
     usemyCourse()
     console.log(my_course);
-  })
+     // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[1])
 
   useEffect(() => {
     setTimeout(() => {
