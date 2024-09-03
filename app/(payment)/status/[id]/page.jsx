@@ -219,8 +219,8 @@ const { formattedDate, formattedTime } = formatDateTime(order ? order.date_creat
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-8 rounded-lg shadow-lg w-11/12 md:w-1/2 lg:w-[35vw] lg:h-auto">
           <Link
-          href={ status === 'CHARGED'? "/dashboard/my-course" : " /dashboard/courses"}
-          className="px-8 py-2 bg-TechBlue absolute rounded-md font-normal text-[1.1vw] text-white hover:bg-black transition-all ease-in-out duration-200 hover:shadow-sm hover:shadow-black"
+          href={ status === 'CHARGED'? "/dashboard/my-course" : " /dashboard/home"}
+          className="px-8 py-2 bg-TechBlue absolute rounded-md font-normal text-[1.1vw] max-2xl:text-[1.1vw] max-xl:text-[1.2vw] max-lg:text-[1.5vw] max-md:text-[2.1vw] max-sm:text-[2.8vw] text-white hover:bg-black transition-all ease-in-out duration-200 hover:shadow-sm hover:shadow-black"
           >
             Back
           </Link>
@@ -238,8 +238,8 @@ const { formattedDate, formattedTime } = formatDateTime(order ? order.date_creat
   <div className="flex justify-center mb-2">
   <Image
               src={img1}
-              alt="gif-loader"
-              className="lg:h-[5vh] lg:w-[2.5vw] h-[20vh] w-[5vw]  "
+              alt="gif-payment-done"
+              className="lg:h-[5vh] lg:w-[2.5vw] h-[20vh] w-[5vw] max-sm:w-[10vw] max-sm:h-[19vw]"
             />
   </div>
             <div className="text-green-500 text-xl font-semibold text-center mb-3">Payment Success!</div>
@@ -276,8 +276,8 @@ const { formattedDate, formattedTime } = formatDateTime(order ? order.date_creat
           <div className="flex justify-center mb-2">
           <Image
               src={img3}
-              alt="gif-loader"
-              className="lg:h-[5vh] lg:w-[3vw] h-[20vh] w-[5vw]"
+              alt="gif-cross"
+              className="h-[12vh] w-[5vw] max-sm:w-[10vw] max-sm:h-[19vw]"
             />
           </div>
           <div className="text-red-500 text-2xl font-bold text-center mb-4">Payment Failed</div>
@@ -288,8 +288,8 @@ const { formattedDate, formattedTime } = formatDateTime(order ? order.date_creat
           <div className="flex justify-center mb-2">
           <Image
               src={img2}
-              alt="gif-loader"
-              className="lg:h-[5vh] lg:w-[3vw] h-[20vh] w-[5vw]"
+              alt="gif-pending"
+              className="h-[12vh] w-[5vw] max-sm:w-[10vw] max-sm:h-[19vw]"
             />
           </div>
           <div className="text-yellow-500 text-2xl font-bold text-center mb-4">Payment Pending</div>
@@ -300,8 +300,8 @@ const { formattedDate, formattedTime } = formatDateTime(order ? order.date_creat
           <div className="flex justify-center mb-2">
           <Image
               src={img4}
-              alt="gif-loader"
-              className="lg:h-[5vh] lg:w-[3vw] h-[20vh] w-[5vw]"
+              alt="gif-error"
+              className="h-[12vh] w-[5vw] max-sm:w-[10vw] max-sm:h-[19vw]"
             />
           </div>
           <div className="text-red-500 text-2xl font-bold text-center mb-4">Error Fetching Payment Status</div>
