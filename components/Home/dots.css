@@ -1,0 +1,14 @@
+.custom-dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(185, 185, 185);
+    
+    border-radius: 50%;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+.slick-dots li.slick-active .custom-dot {
+    background-color: #0079FC;
+    border-color:#0079FC;
+  }
+  
