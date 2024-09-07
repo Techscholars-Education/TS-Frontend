@@ -79,11 +79,11 @@ const Navbar = () => {
       </AnimatePresence>
 
       <nav
-        className={`bg-white font-Poppins border-b  text-stone-800 transition-all duration-200 py-6 md:py-6 w-full sticky top-0 z-10 ${
-          !top && "shadow-lg bg-white"
+        className={`bg-gray-50 font-Poppins border-b  text-stone-800 transition-all duration-200 py-6 md:py-6 w-full sticky top-0 z-10 ${
+          !top && "shadow-lg bg-gray-50"
         } `}
       >
-        <div className="flex w-11/12 mx-auto justify-between items-center font-Jost  ">
+        <div className="flex w-11/12 mx-auto justify-between items-center font-Jost bg-clip-padding backdrop-filter backdrop-blur-md  ">
           <div className="lg:w-1/4">
             <Link
               href="/"
