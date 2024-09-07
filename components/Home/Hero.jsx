@@ -5,14 +5,26 @@ import Image from "next/image";
 import TangledArrow from "../../public/Home/TangledArrow.svg";
 import { IoMdCheckmark } from "react-icons/io";
 import Searchbar from "./Searchbar";
+import fungs from "@/public/Home/fungs.png";
+import axies from "@/public/Home/axies.png";
+import chemical from "@/public/Home/chemical.png";
+import reactimg from "@/public/Home/react.png";
 const Hero = () => {
   return (
-    <section className=" relative  pb-16   bg-white ">
+    <section className="pb-16 bg-gray-50 relative">
+            
+             <div className="bg-blue-50 backdrop-blur-2xl  rounded-full h-44 w-44 absolute right-10 top-10"></div>
+             <div className="bg-orange-50 filter opacity-75 backdrop-blur-2xl rounded-full h-32 w-32 absolute left-40 bottom-10"></div>
+             <div className="h-auto w-full bg-clip-padding backdrop-filter backdrop-blur-md">
       <div className="py-10 flex flex-col justify-center items-center r ">
+      <Image src={axies} alt="axies" className="h-16 w-16 absolute left-[7vw] top-16"/>
+      <Image src={reactimg} alt="react" className="h-16 w-16 absolute left-[12vw] bottom-16"/>
+      <Image src={fungs} alt="react" className="h-16 w-16 absolute right-[12vw] top-16"/>
+      <Image src={chemical} alt="react" className="h-16 w-16 absolute right-[7vw] bottom-16"/>
         {/* Main heading */}
         <div>
           <h1 className=" text-xl  md:text-4xl lg:text-4xl xl:text-5xl text-darkBlue font-medium font-Poppins text-center md:leading-normal lg:leading-normal xl:leading-normal relative inline-block ">
-            Be in the Top 1%
+            Be in the <span className="text-TechBlue">top 1%</span>
             <br />
             with our{" "}
             <span className="bg-blue-100 text-xl md:text-4xl lg:text-4xl xl:text-5xl font-medium rounded-l-lg md:border-r-4 md:border-TechBlue relative px-2 font-Poppins ">
@@ -49,11 +61,11 @@ const Hero = () => {
 
         {/* Tangled arrow */}
 
-        <Image
+        {/* <Image
           className="absolute hidden lg:block lg:left-24 lg:top-36 xl:left-64 xl:top-[40%] 2xl:top-[50%] 2xl:left-[22%] w-20 2xl:w-16 mx-10 lg:mx-0 "
           src={TangledArrow}
           alt="TangledArrow"
-        ></Image>
+        ></Image> */}
       </div>
 
       {/* tick marks */}
@@ -85,6 +97,8 @@ const Hero = () => {
             24/7 Customer Support
           </p>
         </div>
+      </div>
+      
       </div>
     </section>
   );

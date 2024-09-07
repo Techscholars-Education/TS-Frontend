@@ -45,9 +45,7 @@ function App() {
 
   return (
     <div className=" flex items-center justify-between  my-4 font-Poppins rounded-full border md:w-1/2 lg:w-4/12 pl-4 mx-4 md:mx-0 bg-white ">
-      <div className="flex justify-start rounded-full ">
-        <CiSearch className=" text-xl md:text-5xl text-gray-400" />
-      </div>
+     
       <div className="w-full relative ">
         <input
           type="text"
@@ -74,8 +72,8 @@ function App() {
         )}
       </div>
       <div>
-        <button className="bg-TechBlue text-white rounded-full py-3 px-9">
-          Search
+        <button className="bg-TechBlue flex justify-start rounded-full p-2 hover:bg-black transition-all ease-in-out duration-200">
+        <CiSearch className=" text-xl md:text-4xl text-white" />
         </button>
       </div>
     </div>
