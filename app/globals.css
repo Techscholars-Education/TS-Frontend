@@ -190,3 +190,17 @@ html {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+
+.blue_blur {
+  background: #0079FC;
+  filter: blur(123px);
+}
+
+.orange_blur {
+  background: #FA8958;
+  filter: blur(100px);
+}
+.pink_blur {
+  background: #D74696;
+}
