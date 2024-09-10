@@ -26,6 +26,7 @@ function DashboardNavbar(props) {
 
   const [search, setSearch] = useState(false);
 
+
   return (
     <div className="flex flex-wrap  place-items-center bg-white ">
       <nav className="flex justify-between text-black xl:w-[80vw] py-5 mt-[1vw] ">

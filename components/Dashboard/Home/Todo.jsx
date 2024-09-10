@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import Divider from '@mui/material/Divider';
+import React, { useState, useEffect } from "react";
+import Divider from "@mui/material/Divider";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { FaRegEdit } from "react-icons/fa";
-import clock from "@/public/Dashboard/clock_time.png"
+import clock from "@/public/Dashboard/clock_time.png";
 
 import {
   Box,
@@ -12,47 +12,48 @@ import {
   DialogActions,
   DialogContent,
   DialogTitle,
-  IconButton
-} from '@mui/material';
-import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
-import { FaStar, FaCheck, } from "react-icons/fa";
+  IconButton,
+} from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
+import { FaStar, FaCheck } from "react-icons/fa";
 import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
-import List from '@mui/material/List';
-import SwipeableDrawer from '@mui/material/SwipeableDrawer';
+import List from "@mui/material/List";
+import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import Image from "next/image";
 import { FaHandsClapping } from "react-icons/fa6";
 import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
 import { LiaGreaterThanSolid } from "react-icons/lia";
-import axios from 'axios';
-import Link from 'next/link';
-import Cookies from 'js-cookie';
-import deleteicon from '../../../public/dashboard-icon/deleteicon.png'
-import edit from '../../../public/dashboard-icon/edit.png'
-import { Clear } from '@mui/icons-material';
+import axios from "axios";
+import Link from "next/link";
+import Cookies from "js-cookie";
+import deleteicon from "../../../public/dashboard-icon/deleteicon.png";
+import edit from "../../../public/dashboard-icon/edit.png";
+import { Clear } from "@mui/icons-material";
 import { MdWatchLater } from "react-icons/md";
 import { IoIosPeople } from "react-icons/io";
 import { FaLocationDot } from "react-icons/fa6";
 
-
 import { RiDeleteBin6Line } from "react-icons/ri";
-import HoursForTodo from './HoursForTodo';
-import MinutesForTodo from './MinutesForTodo';
-import AmPmToggle from './AmPmToggle';
-import DaysForTodo from './DaysForTodo';
-import MonthsForTodo from './MonthsForTodo';
-import YearForTodo from './YearForTodo';
-
-
+import HoursForTodo from "./HoursForTodo";
+import MinutesForTodo from "./MinutesForTodo";
+import AmPmToggle from "./AmPmToggle";
+import DaysForTodo from "./DaysForTodo";
+import MonthsForTodo from "./MonthsForTodo";
+import YearForTodo from "./YearForTodo";
 
 function Todo() {
   const [showTodoPopup, setShowTodoPopup] = useState(false);
   const [todos, setTodos] = useState([]);
   const [open, setOpen] = useState(false);
   const [timepop, setTimepop] = useState(false);
-  const [currentTodo, setCurrentTodo] = useState({ task: '', description: '', completed: false });
+  const [currentTodo, setCurrentTodo] = useState({
+    task: "",
+    description: "",
+    completed: false,
+  });
   const [isEditing, setIsEditing] = useState(false);
 
   const [selectedTime, setSelectedTime] = useState(null);
@@ -62,17 +63,19 @@ function Todo() {
   const [selectedMonth, setSelectedMonth] = useState(null);
   const [selectedYear, setSelectedYear] = useState(null);
 
-
   useEffect(() => {
     const fetchTodos = async () => {
       const cookie = Cookies.get("access_token");
       let axiosConfig = {
         headers: {
-          'authorization': cookie,
-        }
+          authorization: cookie,
+        },
       };
-      const response = await axios.get("https://api.techscholars.in/auth/todoAll", axiosConfig);
-      console.log(response)
+      const response = await axios.get(
+        "https://api.techscholars.in/auth/todoAll",
+        axiosConfig
+      );
+      console.log(response);
       setTodos(response.data);
     };
 
@@ -83,39 +86,52 @@ function Todo() {
     const cookie = Cookies.get("access_token");
     let axiosConfig = {
       headers: {
-        'authorization': cookie,
-      }
+        authorization: cookie,
+      },
     };
-    const response = await axios.post("https://api.techscholars.in/auth/todo", currentTodo, axiosConfig);
+    const response = await axios.post(
+      "https://api.techscholars.in/auth/todo",
+      currentTodo,
+      axiosConfig
+    );
     setTodos([...todos, response.data]);
     setOpen(false);
-    setCurrentTodo({ task: '', description: '', completed: false });
+    setCurrentTodo({ task: "", description: "", completed: false });
   };
 
   const handleDeleteTodo = async (id) => {
     const cookie = Cookies.get("access_token");
     let axiosConfig = {
       headers: {
-        'authorization': cookie,
-      }
+        authorization: cookie,
+      },
     };
-    await axios.delete(`https://api.techscholars.in/auth/todo/delete/${id}`, axiosConfig);
-    setTodos(todos.filter(todo => todo.id !== id));
+    await axios.delete(
+      `https://api.techscholars.in/auth/todo/delete/${id}`,
+      axiosConfig
+    );
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
   const handleUpdateTodo = async () => {
     const cookie = Cookies.get("access_token");
     let axiosConfig = {
       headers: {
-        'authorization': cookie,
-      }
+        authorization: cookie,
+      },
     };
-    const response = await axios.post("https://api.techscholars.in/auth/todo/update/", currentTodo, axiosConfig);
-    console.log(response)
-    setTodos(todos.map(todo => (todo.id === response.data.id ? response.data : todo)));
+    const response = await axios.post(
+      "https://api.techscholars.in/auth/todo/update/",
+      currentTodo,
+      axiosConfig
+    );
+    console.log(response);
+    setTodos(
+      todos.map((todo) => (todo.id === response.data.id ? response.data : todo))
+    );
     setOpen(false);
     setIsEditing(false);
-    setCurrentTodo({ task: '', description: '', completed: false });
+    setCurrentTodo({ task: "", description: "", completed: false });
   };
 
   const openDialog = (todo) => {
@@ -127,58 +143,60 @@ function Todo() {
   const closeDialog = () => {
     setIsEditing(false);
     setOpen(false);
-    setCurrentTodo({ task: '', description: '', completed: false });
+    setCurrentTodo({ task: "", description: "", completed: false });
   };
   const closeDialogTodoList = () => {
-    setShowTodoPopup(false)
-  }
-  const closeTimePop = ()=> {
-    setTimepop(false)
-  }
+    setShowTodoPopup(false);
+  };
+  const closeTimePop = () => {
+    setTimepop(false);
+  };
 
-// Handles hours
- const handleTimeSelect = (time) => {
+  // Handles hours
+  const handleTimeSelect = (time) => {
     setSelectedTime(time);
-    console.log('Selected Time:',time); 
-  }
-// Handles Minutes
-  const handleMinuteSelect = (time) =>{
-    setSelectMinutes(time)
-    console.log('Minutes : ',time);
-    
-  }
-// Handles Periods
+    console.log("Selected Time:", time);
+  };
+  // Handles Minutes
+  const handleMinuteSelect = (time) => {
+    setSelectMinutes(time);
+    console.log("Minutes : ", time);
+  };
+  // Handles Periods
   const handleToggle = (value) => {
     setSelectedPeriod(value);
-    console.log('Periods:',value);
-    
+    console.log("Periods:", value);
   };
   // Hanles Days
   const handleDaySelect = (day) => {
     setSelectedDay(day);
-    console.log('Days:',day);
+    console.log("Days:", day);
   };
-// Handles Months
+  // Handles Months
   const handleMonthSelect = (month) => {
     setSelectedMonth(month);
-    console.log('Months:',month);
+    console.log("Months:", month);
   };
-// Handles Year
+  // Handles Year
   const handleYearSelect = (year) => {
     setSelectedYear(year);
-    console.log('Years:',year);
+    console.log("Years:", year);
   };
-// For set the values
-  const handleSet = ()=>{
-    console.log(selectedTime,selectMinutes,selectedPeriod,selectedDay,selectedMonth,selectedYear);
-    
-  }
-
-
+  // For set the values
+  const handleSet = () => {
+    console.log(
+      selectedTime,
+      selectMinutes,
+      selectedPeriod,
+      selectedDay,
+      selectedMonth,
+      selectedYear
+    );
+  };
 
   // const list = () => (
   //   <Box
-    
+
   //     className="max-w-[300px]"
   //     role="presentation"
 
@@ -219,125 +237,196 @@ function Todo() {
   //   </Box>
   // );
   return (
-    <div> <Box className="flex flex-col rounded-lg md:px-4 md:max-w-[34.5vw]  mt-4 bg-white md:pl-4 p-8 pl-0 md:pt-2 md:pb-0  overflow-hidden ">
-      <Box className="flex justify-between md:px-5">
-        <h3 className="font-[550] text-[16px] mt-2">To Do List</h3>
-      
-        <Box className="flex mt-2 ">
+    <div>
+      {" "}
+      <Box className="flex flex-col rounded-lg md:px-4 md:max-w-[34.5vw] mt-4 bg-white md:pl-4 p-8 pl-0 md:pt-2 md:pb-0  overflow-hidden ">
+        <Box className="flex justify-between md:px-5">
+          <h3 className="font-[550] text-[16px] mt-2">To Do List</h3>
 
-          <div>
-            <button onClick={() => setShowTodoPopup(true)} className="text-[13px] font-[600] ml-4  text-blue-700 hover:text-orange-600 transition-all ease-linear duration-200">See all</button>
-            <Dialog open={showTodoPopup} onClose={closeDialogTodoList}>
-              <Box
-                
-                className="max-w-[430px] h-[531px] bg-gray-50 duration-300"
-                role="presentation"
-
+          <Box className="flex mt-2 ">
+            <div>
+              <button
+                onClick={() => setShowTodoPopup(true)}
+                className="text-[13px] font-[600] ml-4  text-blue-700 hover:text-orange-600 transition-all ease-linear duration-200"
               >
-                <List className='p-6'>
-                  <div className='flex justify-between mx-6 my-2 '>
-                    <h2 className='font-[600] text-[18px]'>To do list</h2>
+                See all
+              </button>
+              <Dialog open={showTodoPopup} onClose={closeDialogTodoList}>
+                <Box
+                  className="max-w-[430px] h-[531px] bg-gray-50 duration-300 overflow-y-auto"
+                  role="presentation"
+                >
+                  <List className="p-6">
+                    <div className="flex justify-between mx-6 my-2 ">
+                      <h2 className="font-[600] text-[18px]">To do list</h2>
 
-                    <button onClick={closeDialogTodoList} >
+                      <button onClick={closeDialogTodoList}>
+                        <Clear className="text-red-500 bg-red-100 rounded-full p-1"></Clear>
+                      </button>
+                    </div>
+                    <hr />
+                    {todos.length > 0 ? (
+                      todos.map((todo) => (
+                        <div
+                          id="main"
+                          key={todo.id}
+                          className="flex justify-between mt-3 p-3 pr-0 m-4 max-sm:m-1"
+                        >
+                          <div
+                            id="head"
+                            className="flex w-[18vw] "
+                          >
+                            <div className="flex mr-2 mt-1">
+                              {todos.completed ? (
+                                <FaCheck
+                                  className={`h-6 w-6 p-1 text-white rounded-full mt-2 mx-2 bg-green-500`}
+                                />
+                              ) : (
+                                <div className="border-[2px] border-gray-500 rounded-full h-5 w-5"></div>
+                              )}
+                            </div>
 
-                      <Clear className='text-red-500 bg-red-100 rounded-full p-1'></Clear>
+                            <div>
+                              <div className="flex flex-col">
+                                <h2 className="text-gray-900 font-bold text-[13px]">
+                                  {todo.task}
+                                </h2>
+                                <p className="font-medium text-[12px] text-gray-500">
+                                  {todo.description}
+                                </p>
+                              </div>
+                              <div className="flex my-2">
+                                <Link
+                                  href="#"
+                                  className="bg-[#FF7512] rounded-full ml-0 mx-2 px-2 text-white text-[12px] py-1"
+                                >
+                                  Medium
+                                </Link>
+                                <Link
+                                  href="#"
+                                  className="bg-[#9F46E4] rounded-full mx-2 px-2 text-white text-[12px] py-1"
+                                >
+                                  Other
+                                </Link>
+                              </div>
+                              <div className="text-[12px] mt-1 flex items-center gap-2 text-gray-800 mr-3">
+                                <h1>8th - 10th July 2024</h1>
+                                <p className="h-1.5 w-1.5 max-sm:h-10 bg-TechBlue rounded-full"></p>
+                                <h1>8 AM - 9 AM</h1>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div
+                            id="footer"
+                            className="flex items-center flex-col"
+                          >
+                            <IconButton
+                              onClick={() => handleDeleteTodo(todo.id)}
+                            >
+                              <div className="rounded-full bg-TechBlue p-1 hover:bg-red-400 transition-all ease-linear duration-200">
+                                <RiDeleteBin6Fill className="text-white text-[0.9vw] max-sm:text-[5vw]" />
+                              </div>
+                            </IconButton>
+                            <IconButton
+                              onClick={() => {
+                                openDialog(todo);
+                                closeDialogTodoList();
+                              }}
+                            >
+                              <div className="">
+                                <FaRegEdit className="text-TechBlue text-[1.1vw] hover:text-green-500 transition-all ease-linear duration-200 max-sm:text-[5vw]" />
+                              </div>
+                            </IconButton>
+                          </div>
+                        </div>
+                      ))
+                    ) : (
+                      <p>Loading...</p>
+                    )}
+                  </List>
+                </Box>
+                <div className="flex justify-between p-4 mr-4">
+                  <button
+                    variant="outlined"
+                    className="h-[40px] w-[76px] text-[13px]  border-[2px] rounded-full hover:border-black transition-all ease-in-out duration-200 "
+                    onClick={() => {
+                      setOpen(true);
+                    }}
+                  >
+                    Add Todo
+                  </button>
+                  <div>
+                    <button
+                      onClick={closeDialogTodoList}
+                      color="primary"
+                      className="h-[40px] mr-2 w-[76px] text-[13px]  border-[2px] rounded-full hover:border-black transition-all ease-in-out duration-200"
+                    >
+                      Close
+                    </button>
+                    <button
+                      onClick={closeDialogTodoList}
+                      color="primary"
+                      className="h-[40px] w-[76px] text-[14px] stdbgclr border-[2px] rounded-full hover:bg-black transition-all ease-in-out duration-200"
+                    >
+                      Save
                     </button>
                   </div>
-                  <hr />
-                  {todos.length > 0 ? (
-                    todos.map(todo => (
-                      <Box key={todo.id} className="flex justify-between mt-3  p-3 pr-0 bg-white m-4">
-                        <Box className="flex w-[18vw]">
-                          <div className='flex mr-2 mt-1'>
-                            {
-                              todos.completed ? <FaCheck className={`h-6 w-6 p-1 text-white rounded-full mt-2 mx-2  bg-green-500 text-white'}`} /> : <div className='border-[2px] border-gray-500 rounded-full h-5 w-5'></div>
-                            }
-                          </div>
-
-                          <div>
-                            <Box className="flex flex-col  ">
-                              <h2 className="text-gray-900 font-bold text-[13px]">
-                                {todo.task}
-                              </h2>
-                              <p className="font-medium text-[12px] text-gray-500">
-                                {todo.description}
-                              </p>
-                            </Box>
-                            <div className='flex my-2'>
-                              <Link href="#" className='bg-[#FF7512] rounded-full ml-0 mx-2 px-2 text-white text-[12px] py-1'>Medium</Link>
-                              <Link href="#" className='bg-[#9F46E4] rounded-full mx-2 px-2 text-white text-[12px] py-1'>Other</Link>
-
-                            </div>
-                            <div className='text-[12px] mt-1 flex items-center gap-2 text-gray-800 mr-3'> <h1>8th - 10th July 2024</h1> <p className='h-1.5 w-1.5 bg-TechBlue rounded-full'></p> <h1>8 AM - 9 AM</h1> </div> 
-                          </div>
-                        </Box>
-                        <Box className="flex items-center flex-col ">
-                          <IconButton onClick={() => handleDeleteTodo(todo.id)}>
-                            {/* <Image src={deleteicon} className="   rounded-full p-1 text-black " alt='delete-icon' /> */}
-                           <div className='rounded-full bg-TechBlue p-1 hover:bg-red-400 transition-all ease-linear duration-200 '> <RiDeleteBin6Fill className="text-white text-[0.9vw] "/></div>
-                          </IconButton>
-                          <IconButton onClick={() => {openDialog(todo); closeDialogTodoList()}}>
-                            {/* <Image src={edit} className="h-6 w-6  " alt='edit' /> */}
-                            <div  className=''><FaRegEdit className="text-TechBlue text-[1.1vw]  hover:text-green-500 transition-all ease-linear duration-200"/></div>
-                          </IconButton>
-                        </Box>
-                      </Box>
-                    ))
-                  ) : (
-                    <p>Loading...</p>
-                  )}
-                </List>
-              
-              </Box>
-              <div className='flex justify-between p-4 mr-4'>
-                <button variant="outlined" className="h-[40px] w-[76px] text-[13px]  border-[2px] rounded-full hover:border-black transition-all ease-in-out duration-200 " onClick={() => {
-                  setOpen(true);
-                 
-                }}>Add Todo</button>
-                <div>
-                  <button onClick={closeDialogTodoList} color="primary" className="h-[40px] mr-2 w-[76px] text-[13px]  border-[2px] rounded-full hover:border-black transition-all ease-in-out duration-200" >Close</button>
-                  <button onClick={closeDialogTodoList} color="primary" className="h-[40px] w-[76px] text-[14px] stdbgclr border-[2px] rounded-full hover:bg-black transition-all ease-in-out duration-200" >Save</button>
                 </div>
-
-              </div>
-            </Dialog>
-
-
-          </div>
+              </Dialog>
+            </div>
+          </Box>
         </Box>
-      </Box>
-      <hr className='mt-1' />
-      <Box className='md:px-4 '>
-        {todos.length > 0 ? (
-          // todos.map(todo => (
-          <Box className="flex justify-between px-2 my-2 ">
-            <Box className="flex">
-            <div className='flex mr-2 mt-3'>
-                            {
-                              todos[0].completed ? <FaCheck className={`h-6 w-6 p-1 text-white rounded-full mt-2 mx-2  bg-green-500 text-white'}`} /> : <div className='border-[2px] border-gray-500 rounded-full h-5 w-5'></div>
-                            }
-                          </div>
-
-              <div className='md:w-[30vw]'>
-                <Box className="flex flex-col my-1 ">
-                  <h2 className="text-gray-900 font-bold text-[14px]">
-                    {todos[0].task}
-                  </h2>
-                  <p className="font-medium text-[13px] text-gray-500">
-                    {todos[0].description.substring(0,60)}
-                  </p>
-                </Box>
-                <div className='flex justify-between mt-1'>
-                <div className='flex my-1'>
-                  <Link href="#" className='bg-[#FF7512] rounded-full ml-0 mx-2 px-2 text-white text-[12px] py-1'>Medium</Link>
-                  <Link href="#" className='bg-[#9F46E4] rounded-full mx-2 px-2 text-white text-[12px] py-1'>Other</Link>
-
+        <hr className="mt-1" />
+        <Box className="md:px-4 ">
+          {todos.length > 0 ? (
+            // todos.map(todo => (
+            <Box className="flex justify-between px-2 my-2 ">
+              <Box className="flex">
+                <div className="flex mr-2 mt-3">
+                  {todos[0].completed ? (
+                    <FaCheck
+                      className={`h-6 w-6 p-1 text-white rounded-full mt-2 mx-2  bg-green-500 text-white'}`}
+                    />
+                  ) : (
+                    <div className="border-[2px] border-gray-500 rounded-full h-5 w-5"></div>
+                  )}
                 </div>
-                <div className='text-[12px] my-2 flex items-center gap-2 text-gray-800 mr-3'> <h1>8th - 10th July 2024</h1> <p className='h-1.5 w-1.5 bg-TechBlue rounded-full'></p> <h1>8 AM - 9 AM</h1> </div> 
+
+                <div className="md:w-[30vw]">
+                  <Box className="flex flex-col my-1 ">
+                    <h2 className="text-gray-900 font-bold text-[14px]">
+                      {todos[0].task}
+                    </h2>
+                    <p className="font-medium text-[13px] text-gray-500">
+                      {todos[0].description.substring(0, 60)}
+                    </p>
+                  </Box>
+                  <div className="flex justify-between mt-1 max-sm:flex-col">
+                    <div className="flex my-1">
+                      <Link
+                        href="#"
+                        className="bg-[#FF7512] text-white flex items-center justify-center w-16 h-8  rounded-2xl text-[10px] ml-0 mx-2"
+                      >
+                        Medium
+                      </Link>
+                      <Link
+                        href="#"
+                        className="bg-[#9F46E4] text-white flex items-center justify-center w-16 h-8  rounded-2xl text-[10px] ml-0 mx-2"
+                      >
+                        Other
+                      </Link>
+                    </div>
+                    <div className="text-[12px] my-2 flex items-center gap-2 text-gray-800 mr-3">
+                      {" "}
+                      <h1>8th - 10th July 2024</h1>{" "}
+                      <p className="h-1.5 w-1.5 bg-TechBlue rounded-full"></p>{" "}
+                      <h1>8 AM - 9 AM</h1>{" "}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </Box>
-            {/* <Box className="flex items-center space-x-2">
+              </Box>
+              {/* <Box className="flex items-center space-x-2">
               <IconButton onClick={() => openDialog(todos[0])}>
                 <EditIcon className="h-5 w-5" />
               </IconButton>
@@ -345,105 +434,142 @@ function Todo() {
                 <RiDeleteBin6Line className="h-5 w-5 " />
               </IconButton>
             </Box> */}
-          </Box>
-          // ))
-        ) : (
-          <p>Loading...</p>
-        )}
+            </Box>
+          ) : (
+            // ))
+            <p>Loading...</p>
+          )}
+        </Box>
+        <Dialog open={open} onClose={closeDialog} className="duration-300">
+          <DialogTitle className="font-[550]">
+            {isEditing ? "Edit Todo" : "Add Todo"}
+          </DialogTitle>
+          <DialogContent>
+            <input
+              placeholder="Add title"
+              value={currentTodo.task}
+              className="rounded-xl border bg-[#F7F7F8] px-2 h-[42px] w-full"
+              onChange={(e) =>
+                setCurrentTodo({ ...currentTodo, task: e.target.value })
+              }
+            />
+            <input
+              placeholder="Add Description"
+              type="text"
+              className="h-[77px] px-2 bg-[#F7F7F8] rounded-xl w-full mt-2"
+              value={currentTodo.description}
+              onChange={(e) =>
+                setCurrentTodo({ ...currentTodo, description: e.target.value })
+              }
+            />
+
+            <div className="my-8 flex items-center">
+              <button
+                onClick={() => {
+                  setTimepop(true);
+                }}
+                className="bg-gray-200 rounded-full p-1 mr-2"
+              >
+                <MdWatchLater className=" m-1 text-[#066DE6] text-[1.2vw] max-xl:text-[2vw] max-lg:text-[2.5vw] max-md:text-[3.8vw] max-sm:text-[6vw]" />
+              </button>
+              <div className="text-[15px] flex items-center gap-2 text-gray-800 mr-3">
+                {" "}
+                <h1>10:30 AM | Thursday | 05.12.2024</h1>{" "}
+              </div>
+            </div>
+            <div className="mt-2">
+              <button className="rounded-full text-white border text-sm py-1  px-3 bg-red-500">
+                High
+              </button>
+              <button className="rounded-full text-white bg-orange-400 border text-sm py-1 ml-2 px-3">
+                Medium
+              </button>
+              <button className="rounded-full border text-sm py-1 text-white bg-green-500 ml-2 px-3">
+                Low
+              </button>
+            </div>
+            <div className="flex my-8 ">
+              <button
+                // onClick={calIsEditing ? handleCalUpdateEvent : handleCalAddEvent}
+                className="stdbgclr flex mr-4 text-white py-2 px-4 rounded-full justify-center stdbgclr items-center hover:bg-black transition-all ease-in-out duration-200"
+              >
+                <IoIosPeople className="mt-1 mr-1 text-[1.3vw] max-xl:text-[2vw] max-lg:text-[2.2vw] max-md:text-[3.5vw] max-sm:text-[5.5vw]" />
+                Add People
+              </button>
+              <button
+                // onClick={calIsEditing ? handleCalUpdateEvent : handleCalAddEvent}
+                className="bg-gray-100 flex items-center  py-2 px-4 rounded-full hover:text-TechBlue transition-all ease-in-out duration-200"
+              >
+                <FaLocationDot className="mt-1 mr-1" />
+                Add Location
+              </button>
+            </div>
+          </DialogContent>
+          <DialogActions className="px-8">
+            <button
+              onClick={closeDialog}
+              color="primary"
+              className="h-[40px] mr-2 w-[76px] text-[13px]  border-[2px] rounded-lg hover:border-black transition-all ease-in-out duration-200"
+            >
+              Back
+            </button>
+            <buton
+              onClick={isEditing ? handleUpdateTodo : handleAddTodo}
+              color="primary"
+              className="h-[40px] w-[76px] text-[14px] text-center pt-1.5 stdbgclr border-[2px] rounded-full cursor-pointer hover:bg-black transition-all ease-in-out duration-200"
+            >
+              {isEditing ? "Update" : "Save"}
+            </buton>
+          </DialogActions>
+        </Dialog>
+
+        {/* Time Components */}
+        <div id="TimeSet">
+          <Dialog
+            open={timepop}
+            onClose={closeTimePop}
+            className="duration-300"
+          >
+            <div className="h-[55vh]">
+              <DialogTitle className="font-[550] flex justify-center items-center ">
+                <Image src={clock} className="h-32 w-32" alt="clock" />
+              </DialogTitle>
+              <DialogContent className="flex flex-col gap-2 ">
+                <div className="border border-gray-200 rounded-lg p-2 flex justify-between ">
+                  <HoursForTodo onTimeSelect={handleTimeSelect} />
+                  <div className="h-10 w-[0.1vw] bg-gray-200 "></div>
+                  <MinutesForTodo onMinuteSelect={handleMinuteSelect} />
+                  <div className="h-10 w-[0.1vw] bg-gray-200 "></div>
+                  <AmPmToggle onToggle={handleToggle} />
+                </div>
+                <div className="w-[18vw] h-14 border border-gray-200 rounded-lg flex justify-between p-2 max-sm:w-[70vw] max-md:w-[50vw] max-lg:w-[38vw] max-xl:w-[30vw] max-2xl:w-[27vw] ">
+                  <DaysForTodo onDaySelect={handleDaySelect} />
+                  <div className="h-10 w-[0.15vw] bg-gray-200 "></div>
+                  <MonthsForTodo onMonthSelect={handleMonthSelect} />
+                  <div className="h-10 w-[0.13vw] bg-gray-200 "></div>
+                  <YearForTodo onYearSelect={handleYearSelect} />
+                </div>
+              </DialogContent>
+              <DialogActions className="px-8 absolute bottom-10 flex justify-center w-full ">
+                <button
+                  onClick={closeTimePop}
+                  className="font-semibold relative left-[-3.8vw] max-2xl:left-[-9vw] max-xl:left-[-11vw]  max-lg:left-[-13vw] max-sm:left-[-25vw] max-md:left-[-20vw] text-[1.2vw] max-xl:text-[1.5vw] max-lg:text-[1.7vw] max-md:text-[2vw] max-sm:text-[2.7vw] px-8 py-2 rounded-full bg-gray-200 hover:bg-red-300 hover:text-white transition-all ease-in-out duration-200"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={handleSet}
+                  className="font-semibold text-[1.2vw] max-xl:text-[1.5vw] max-lg:text-[1.7vw] max-md:text-[2vw] max-sm:text-[2.7vw] px-16 max-xl:px-12 max-lg:px-11 max-md:px-10 max-sm:px-10 py-2 rounded-full bg-TechBlue text-white hover:bg-black transition-all ease-in-out duration-200"
+                >
+                  set
+                </button>
+              </DialogActions>
+            </div>
+          </Dialog>
+        </div>
       </Box>
-      <Dialog open={open} onClose={closeDialog} className='duration-300'>
-        <DialogTitle className='font-[550]'>{isEditing ? "Edit Todo" : "Add Todo"}</DialogTitle>
-        <DialogContent>
-          <input
-            placeholder='Add title'
-
-            value={currentTodo.task}
-            className='rounded-xl border bg-[#F7F7F8] px-2 h-[42px] w-full'
-            onChange={(e) => setCurrentTodo({ ...currentTodo, task: e.target.value })}
-          />
-          <input
-            placeholder='Add Description'
-
-            type="text"
-
-            className='h-[77px] px-2 bg-[#F7F7F8] rounded-xl w-full mt-2'
-            value={currentTodo.description}
-            onChange={(e) => setCurrentTodo({ ...currentTodo, description: e.target.value })}
-          />
-
-        
-          <div className='my-8 flex items-center'>
-            <button onClick={()=>{setTimepop(true)}} className='bg-gray-200 rounded-full p-1 mr-2'>
-
-              <MdWatchLater className=' m-1 text-[#066DE6] text-[1.2vw] max-xl:text-[2vw] max-lg:text-[2.5vw] max-md:text-[3.8vw] max-sm:text-[6vw]'  />
-            </button>
-            <div className='text-[15px] flex items-center gap-2 text-gray-800 mr-3'> <h1>10:30 AM | Thursday | 05.12.2024</h1> </div> 
-
-          </div>
-          <div className='mt-2'>
-            <button className='rounded-full text-white border text-sm py-1  px-3 bg-red-500'>High</button><button className='rounded-full text-white bg-orange-400 border text-sm py-1 ml-2 px-3'>Medium</button><button className='rounded-full border text-sm py-1 text-white bg-green-500 ml-2 px-3'>Low</button>
-          </div>
-          <div className='flex my-8 '>
-            <button
-              // onClick={calIsEditing ? handleCalUpdateEvent : handleCalAddEvent}
-              className="stdbgclr flex mr-4 text-white py-2 px-4 rounded-full justify-center stdbgclr items-center hover:bg-black transition-all ease-in-out duration-200"
-            >
-
-              <IoIosPeople className='mt-1 mr-1 text-[1.3vw] max-xl:text-[2vw] max-lg:text-[2.2vw] max-md:text-[3.5vw] max-sm:text-[5.5vw]' />Add People
-            </button>
-            <button
-              // onClick={calIsEditing ? handleCalUpdateEvent : handleCalAddEvent}
-              className="bg-gray-100 flex items-center  py-2 px-4 rounded-full hover:text-TechBlue transition-all ease-in-out duration-200"
-            >
-              <FaLocationDot className='mt-1 mr-1' />Add Location
-            </button>
-          </div>
-        </DialogContent>
-        <DialogActions className='px-8'>
-          <button onClick={closeDialog} color="primary"  className="h-[40px] mr-2 w-[76px] text-[13px]  border-[2px] rounded-lg hover:border-black transition-all ease-in-out duration-200" >Back</button>
-          <buton onClick={isEditing ? handleUpdateTodo : handleAddTodo} color="primary"  className="h-[40px] w-[76px] text-[14px] text-center pt-1.5 stdbgclr border-[2px] rounded-full cursor-pointer hover:bg-black transition-all ease-in-out duration-200">
-            {isEditing ? "Update" : "Save"}
-          </buton>
-        </DialogActions>
-      </Dialog>
-        
-           {/* Time Components */}
-    <div id='TimeSet' >
-    <Dialog open={timepop} onClose={closeTimePop} className='duration-300'>
-      <div className='h-[55vh]'>
-      <DialogTitle className='font-[550] flex justify-center items-center '>
-          <Image src={clock} className='h-32 w-32' alt='clock'/>
-        </DialogTitle>
-        <DialogContent className='flex flex-col gap-2 '>
-           <div className='border border-gray-200 rounded-lg p-2 flex justify-between '>
-           <HoursForTodo onTimeSelect={handleTimeSelect} />
-               <div className='h-10 w-[0.1vw] bg-gray-200 '></div>
-               <MinutesForTodo onMinuteSelect={handleMinuteSelect}/>
-               <div className='h-10 w-[0.1vw] bg-gray-200 '></div>             
-               <AmPmToggle onToggle={handleToggle} />
-           </div>
-           <div className='w-[18vw] h-14 border border-gray-200 rounded-lg flex justify-between p-2 max-sm:w-[70vw] max-md:w-[50vw] max-lg:w-[38vw] max-xl:w-[30vw] max-2xl:w-[27vw] '>
-           <DaysForTodo onDaySelect={handleDaySelect} />
-                    <div className='h-10 w-[0.1vw] bg-gray-200 '></div>
-                    <MonthsForTodo onMonthSelect={handleMonthSelect} />
-                    <div className='h-10 w-[0.1vw] bg-gray-200 '></div>
-                    <YearForTodo onYearSelect={handleYearSelect} />
-           </div>
-        </DialogContent>
-        <DialogActions className='px-8 absolute bottom-10 flex justify-center w-full '>
-        <button onClick={closeTimePop} className='font-semibold relative left-[-3.8vw] max-2xl:left-[-9vw] max-xl:left-[-11vw]  max-lg:left-[-13vw] max-sm:left-[-25vw] max-md:left-[-20vw] text-[1.2vw] max-xl:text-[1.5vw] max-lg:text-[1.7vw] max-md:text-[2vw] max-sm:text-[2.7vw] px-8 py-2 rounded-full bg-gray-200 hover:bg-red-300 hover:text-white transition-all ease-in-out duration-200'>Cancel</button>
-        <button onClick={handleSet} className='font-semibold text-[1.2vw] max-xl:text-[1.5vw] max-lg:text-[1.7vw] max-md:text-[2vw] max-sm:text-[2.7vw] px-16 max-xl:px-12 max-lg:px-11 max-md:px-10 max-sm:px-10 py-2 rounded-full bg-TechBlue text-white hover:bg-black transition-all ease-in-out duration-200' >set</button>
-        </DialogActions>
-      </div>
-       
-      </Dialog>
-
-
     </div>
-
-    </Box>
-    </div>
-  )
+  );
 }
 
-export default Todo
+export default Todo;

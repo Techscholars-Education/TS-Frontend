@@ -14,6 +14,7 @@ import Testimonialsslider from "@/components/Home/Testimonialsslider";
 import Faculties from "./Faculties";
 import Pricing from "./Price";
 import sciencebook from "@/public/sciencebook.gif";
+import AboutCourse from "./AboutCourse";
 const Home = () => {
   const [isLoaded, setIsLoaded] = useState(true);
 
@@ -40,11 +41,12 @@ const Home = () => {
           <Benefits />
           <Curriculum />
           <About />
-          <Pricing calling="home" />
+          <AboutCourse/>
+          {/* <Pricing calling="home" /> */}
           <Faculties calling={"home"} />
           <Testimonials />
-          <Testimonialsslider />
-          <Studenttest />
+          {/* <Testimonialsslider />
+          <Studenttest /> */}
           <Aboutapp />
           <Footer />
         </>

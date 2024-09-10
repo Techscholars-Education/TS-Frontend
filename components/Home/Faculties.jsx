@@ -1,15 +1,17 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { facultiesData } from "./FacultiesData.js";
 import Facultycard from "./Facultycard.jsx";
+import "./aboutcoursedot.css"
 
 const Faculties = (props) => {
   const settings = {
     infinite: true,
     speed: 700,
+    dots: true,
     slidesToShow: 3,
     autoplaySpeed: 2000,
     slidesToScroll: 1,
@@ -17,6 +19,22 @@ const Faculties = (props) => {
     initialSlide: 0,
     rtl: true,
     autoplay: true,
+    customPaging: (i) => (
+      <div className="custom-dot"></div>
+    ),
+    appendDots: (dots) => (
+      <div style={{ bottom: "-40px" }}>
+        <ul
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "10px",
+          }}
+        >
+          {dots}
+        </ul>
+      </div>
+    ),
     responsive: [
       {
         breakpoint: 1440,
@@ -51,6 +69,17 @@ const Faculties = (props) => {
       },
     ],
   };
+
+
+    const [isFaculties, setIsFaculties] = useState(true);
+  
+    const handleToggle = () => {
+      setIsFaculties(!isFaculties);
+      // console.log("Switch is now:", isFaculties ? "Mentors" : "Faculties");
+    };
+
+
+
   return (
     <section
       className={`${
@@ -62,11 +91,55 @@ const Faculties = (props) => {
           <h5
             className={`text-xs ${
               props.calling === "home" ? "" : "hidden"
-            } font-medium bg-blue-100 text-TechBlue bg-TechBlue/10 font-Poppins py-2 rounded-full px-4 inline-block`}
+            } font-medium bg-blue-100 text-TechBlue bg-TechBlue/10 font-Poppins py-2 rounded-full px-4 inline-block uppercase`}
           >
-            Faculties
+            Our Faculties & MENTORS
           </h5>
         </div>
+        
+        <div className=" w-full h-20 flex items-center justify-center mt-4">
+          
+        <div className="flex justify-center items-center h-[100vh] w-full">
+      <label className="relative inline-block w-[240px] h-[50px] cursor-pointer select-none">
+        <input
+          type="checkbox"
+          className="sr-only"
+          checked={isFaculties}
+          onChange={handleToggle}
+        />
+        <span
+          className={`block w-full h-full rounded-full transition-all duration-300 relative cursor-pointer bg-white border-[1px] border-gray-400`}
+        >
+          {/* Circle button */}
+          <span
+            className={`absolute  w-[130px] h-full bg-[#0079FC] text-white rounded-full transition-all duration-300 flex justify-center items-center text-[16px] font-medium shadow-md ${
+              isFaculties ? "left-0" : "left-[108px]"
+            }`}
+          > <div className="w-6 h-6 rounded-full bg-white mr-1"/>
+            {isFaculties ? "FACULTIES" : "MENTORS"}
+          </span>
+        </span>
+        {/* Text for both sides */}
+        <span
+          className={`absolute top-[14px] left-[14px] font-semibold text-[16px] ${
+            isFaculties ? "text-white" : "text-gray-500"
+          }`}
+        >
+          {isFaculties ? "" : "FACULTIES"}
+        </span>
+        <span
+          className={`absolute top-[14px] right-[14px] font-semibold text-[16px] ${
+            isFaculties ? "text-gray-500" : "text-white"
+          }`}
+        >
+         {isFaculties ? "MENTORS" : ""}
+        </span>
+      </label>
+    </div>
+         
+              
+        </div>
+
         <h2 className="text-darkBlue font-semibold text-2xl  md:text-4xl text-center mt-4 font-Poppins ">
           {props.calling == "home"
             ? "Learn from Bharat's top faculties"

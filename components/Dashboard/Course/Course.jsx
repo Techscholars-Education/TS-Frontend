@@ -3,11 +3,15 @@ import React, { useEffect, useState } from "react";
 import DashboardNavbar from "../DashboardNavbar";
 import CourseCard from "./CourseCard";
 import LoadingTestSeries from "@/components/Dashboard/Test/LoadingTestSeries";
+import useMyCourse from "@/hooks/useMyCourse";
+import { useMyCourseStore } from "@/hooks/useStore";
+
 
 const Course = () => {
   const [isPuchasedClicked, setIsPurchasedClicked] = useState(true);
 
   const [isContentLoading, setIsContentLoading] = useState(true);
+  const {my_course} = useMyCourseStore()
 
   const myCourses = [
     {
@@ -81,6 +85,12 @@ const Course = () => {
       end_date: "2025-08-30",
     },
   ];
+const {usemyCourse} = useMyCourse()
+  useEffect(()=>{
+    usemyCourse()
+    console.log(my_course);
+     // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[1])
 
   useEffect(() => {
     setTimeout(() => {
@@ -90,7 +100,7 @@ const Course = () => {
 
   return (
     <div className="font-Poppins min-h-screen bg-[#f7faff] pb-24">
-      <DashboardNavbar title="Test Series" />
+      <DashboardNavbar title="Courses" />
       <div className="flex flex-col md:mx-8">
         {/* ABOUT HEADINGS AND BUTTONS  */}
         <div className="flex md:justify-between  mr-4 relative z-10">

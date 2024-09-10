@@ -74,7 +74,7 @@ const DaysForTodo = ({ onDaySelect }) => {
   };
 
   return (
-    <div className='w-[10vw]'>
+    <div className='w-[7.5vw]'>
       <div className='absolute'>
         <Select
           value={selectedDay}

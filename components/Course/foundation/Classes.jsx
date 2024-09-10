@@ -11,36 +11,36 @@ import Faculties from "@/components/Home/Faculties";
 const Classes = () => {
   const costing9th = [
     {
-      id: 1,
+      id: 2,
       title: "Starter",
       price: "1999",
       type: "IGNITE",
     },
     {
-      id: 2,
+      id: 18,
       title: "Advanced",
       price: "6999",
     },
     {
-      id: 3,
+      id: 19,
       title: "Ultimate",
       price: "16999",
     },
   ];
   const costing10th = [
     {
-      id: 1,
+      id: 4,
       title: "Starter",
       price: "2499",
       type: "RISE",
     },
     {
-      id: 2,
+      id: 17,
       title: "Advanced",
       price: "7999",
     },
     {
-      id: 3,
+      id: 20,
       title: "Ultimate",
       price: "17999",
     },

@@ -5,12 +5,14 @@ import Image from "next/image";
 import { toast, ToastContainer } from "react-toastify";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import TsLogo from "../public/Home/TsLogo.svg";
+import { FaLinkedinIn } from "react-icons/fa";
+import TsLogo from "../public/Logo.svg";
 import { usePathname } from "next/navigation";
 // import useSendmessage from "@/hooks/useSendmessage";
 import "react-toastify/dist/ReactToastify.css";
 import { FaXTwitter } from "react-icons/fa6";
+import footer_left from "@/public/Home/footer_left.png";
+import footer_right from "@/public/Home/footer_right.png";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -76,77 +78,134 @@ const Footer = () => {
   return (
     <>
       <ToastContainer />
-      <footer className="bg-[#081321] md:pt-10 text-white body-font grid grid-cols-1 md:grid-cols-3 font-Poppins w-full ">
-        <div className="  px-5 pt-6 md:py-0 md:px-10 space-y-5 md:space-y-6 xl:pl-24 ">
-          <div>
-            <h1 className="text-sm md:text-xl font-semibold flex items-center  ">
+
+     <footer className="bg-[#F7FAFF] md:pt-12 md:pb-8 text-white body-font font-Poppins w-full h-[40vh] flex  relative">
+     <Image
+          src={footer_left}
+          className="h-full w-auto absolute left-0 top-0"
+          alt="footer_left"
+        />
+        <Image
+          src={footer_right}
+          className="h-full w-auto absolute right-0 top-0"
+          alt="footer_right"
+        />
+
+      <div id="first" className=" w-[20%] px-5 pt-6 md:py-0 md:px-10 space-y-5 md:space-y-6 xl:pl-24 relative">
+      <div>
+            <h1 className="text-sm md:text-xl font-semibold flex items-center">
               <Image
-                className="mr-4 md:text-base md:w-12"
+                className="mr-2 md:text-base md:w-8"
                 src={TsLogo}
                 alt="Techscholar-logo"
               ></Image>
-              Techscholars
+              <span className="text-TechBlue">Techscholars</span>
             </h1>
           </div>
-          <div className=" text-xs md:text-sm lg:text-base xl:text-lg ">
-            <p>
+          <div className=" text-xs md:text-sm lg:text-base xl:text-sm ">
+            <p className="text-gray-400">
               Transforming average students into toppers with our innovative
-              teaching{" "}
+              teaching.
             </p>
           </div>
-          <div className="flex space-x-4 my-2">
-            <Link href="https://www.instagram.com/techscholars.in/reels/">
-              <FaInstagram className="text-2xl md:text-3xl hover:text-pink-600 duration-200" />
+          <div className="flex space-x-4 my-2 absolute">
+          <Link
+              href="https://www.instagram.com/techscholars.in/reels/"
+              className="bg-black rounded-full p-2 hover:text-pink-600 duration-200"
+            >
+              <FaInstagram className="text-2xl md:text-2xl hover:text-pink-600 duration-200" />
             </Link>
-            <FaFacebook className="text-2xl md:text-3xl" />
-            <Link href="https://www.linkedin.com/company/techscholarsindia/mycompany/verification/">
-              <FaLinkedin className="text-2xl md:text-3xl hover:text-blue-600 duration-200" />
+            <Link href="https://www.facebook.com/">
+               <FaFacebook className="text-2xl md:text-4xl text-black hover:text-blue-600 duration-200" />
             </Link>
-            <Link href="https://twitter.com/Techscholars_">
-              <FaXTwitter className="text-2xl md:text-3xl hover:text-blue-600 duration-200" />
+            <Link
+              href="https://www.linkedin.com/company/techscholarsindia/mycompany/verification/"
+              className="bg-black rounded-full p-2"
+            >
+              <FaLinkedinIn className="text-2xl md:text-2xl hover:text-blue-600 duration-200" />
+            </Link>
+            <Link
+              href="https://twitter.com/Techscholars_"
+              className="bg-black rounded-full p-2"
+            >
+              <FaXTwitter className="text-2xl md:text-2xl hover:text-blue-600 duration-200" />
             </Link>
           </div>
-        </div>
-        <div className=" px-5 md:px-0  py-6 md:py-2  grid grid-cols-2 md:grid-cols-3 gap-3  xl:h-[200px]">
-          <Link className="text-sm lg:text-base" href="/aboutus">
-            About us
-          </Link>
-          <Link className="text-sm lg:text-base" href="/privacy">
-            Privacy Policy
-          </Link>
-          <Link className="text-sm lg:text-base" href="/terms-conditions">
-            Terms of services
-          </Link>
-          <Link
-            className="text-sm lg:text-base"
-            href={pathname === "/" ? "#testimonials" : "/#testimonials"}
-          >
-            Testimonials
-          </Link>
-          <Link className="text-sm lg:text-base" href="/faqs">
-            Help/FAQ
-          </Link>
-          <Link className="text-sm lg:text-base" href="/contact">
-            Contact
-          </Link>
-          <Link className="text-sm lg:text-base" href="/councillor">
-            Schedule a call
-          </Link>
-          <Link className="text-sm lg:text-base" href="/course">
-            Courses
-          </Link>
-          <Link className="text-sm lg:text-base" href="/blogs">
-            Blogs
-          </Link>
-        </div>
-        <div className=" px-5 py-6 md:py-2   ">
-          <div className="flex flex-col space-y-4 xl:pr-16 ">
-            <h3 className="text-base md:text-lg lg:text-xl font-medium">
-              Let&#39;s Get in Touch
-            </h3>
+      </div>
+      <div id="mid" className=" w-[50%] flex justify-between">
+      <div className="bg-gray-400 h-[25vh] w-[0.1vw] rounded-md" />
+          <div className="list-none flex flex-col gap-3 text-gray-500 text-sm">
+          <ul className="font-semibold text-xl text-black">Company</ul>
+            <li>
+              <Link
+                className="text-sm lg:text-base hover:text-TechBlue"
+                href="/aboutus"
+              >
+                About us
+              </Link>
+            </li>
+            <li className="text-sm lg:text-base hover:text-TechBlue cursor-pointer">
+              Carrers
+            </li>
+            <li>
+              <Link
+                className="text-sm lg:text-base hover:text-TechBlue"
+                href="/faqs"
+              >
+                Help/FAQ
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-sm lg:text-base hover:text-TechBlue"
+                href={pathname === "/" ? "#testimonials" : "/#testimonials"}
+              >
+                Testimonials
+              </Link>
+            </li>
+          </div>
+      <div className="bg-gray-400 h-[25vh] w-[0.1vw] rounded-md" />
+      <div className="list-none flex flex-col gap-3 text-gray-500 text-sm">
+            
+            <ul className="font-semibold text-xl text-black">Help Links</ul>
+            <li>
+              <Link
+                className="text-sm lg:text-base hover:text-TechBlue"
+                href="/privacy"
+              >
+                Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-sm lg:text-base hover:text-TechBlue"
+                href="/terms-conditions"
+              >
+                Terms of services
+              </Link>
+            </li>
+            <li className="text-sm lg:text-base hover:text-TechBlue cursor-pointer">
+              Schedule a Call
+            </li>
+            <li>
+              <Link
+                className="text-sm lg:text-base hover:text-TechBlue"
+                href="/contact"
+              >
+                Contact
+              </Link>
+            </li>
+          </div>
+      <div className="bg-gray-400 h-[25vh] w-[0.1vw] rounded-md" />
+      </div>
 
+      <div id="last" className=" w-[30%] px-14 py-6 md:py-2 ">
+      <div className="flex flex-col space-y-4 xl:pr-16 ">
+            <h3 className="text-base md:text-lg lg:text-xl text-black font-semibold">
+              Let&#39;s Get in Touch
+            </h3> 
             <input
-              className="my-2 py-4 rounded-md px-4 w-4/5 text-sm text-darkBlue"
+              className="my-2 py-4 rounded-md px-4 text-sm text-darkBlue w-full bg-white"
               placeholder="Your email address"
               type="email"
               value={email}
@@ -155,7 +214,7 @@ const Footer = () => {
               }}
             />
             <textarea
-              className="my-2 py-4 rounded-md px-4 w-4/5 text-sm text-darkBlue"
+              className="my-2 py-4 rounded-md px-4 w-full text-sm text-darkBlue bg-white"
               placeholder="Your message"
               name="message"
               rows="4"
@@ -165,7 +224,7 @@ const Footer = () => {
                 setMessage(e.target.value);
               }}
             ></textarea>
-
+            
             <button
               onClick={handleSubmit}
               className={`bg-TechBlue ${
@@ -195,13 +254,14 @@ const Footer = () => {
                 <> {isMsgSent ? "Message sent" : "Send message"}</>
               )}
             </button>
-          </div>
-        </div>
-      </footer>
-      <div className="flex space-x-4 w-full bg-[#081321] text-white py-4  px-8 ">
+
+             </div>
+      </div>
+      
+     </footer>
+      <div className="flex space-x-4 w-full bg-[#EDF5FF] text-gray-500 py-4 items-center justify-center">
         <p className="text-sm md:text-base lg:text-base font-medium">
-          Copyright © {currYear} Codementor Hub Education Pvt. Ltd. All rights
-          reserved.
+          © {currYear} Codementor Hub Education Pvt. Ltd. All rights reserved.
         </p>
       </div>
     </>
@@ -209,3 +269,36 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
+          {/* 
+          <Link className="text-sm lg:text-base" href="/aboutus">
+            About us
+          </Link>
+          <Link className="text-sm lg:text-base" href="/privacy">
+            Privacy Policy
+          </Link>
+          <Link className="text-sm lg:text-base" href="/terms-conditions">
+            Terms of services
+          </Link>
+          <Link
+            className="text-sm lg:text-base"
+            href={pathname === "/" ? "#testimonials" : "/#testimonials"}
+          >
+            Testimonials
+          </Link>
+          <Link className="text-sm lg:text-base" href="/faqs">
+            Help/FAQ
+          </Link>
+          <Link className="text-sm lg:text-base" href="/contact">
+            Contact
+          </Link>
+          <Link className="text-sm lg:text-base" href="/councillor">
+            Schedule a call
+          </Link>
+          <Link className="text-sm lg:text-base" href="/course">
+            Courses
+          </Link>
+          <Link className="text-sm lg:text-base" href="/blogs">
+            Blogs
+          </Link> */}
