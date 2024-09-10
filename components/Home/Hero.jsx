@@ -13,8 +13,8 @@ const Hero = () => {
   return (
     <section className="pb-16 bg-gray-50 relative">
             
-             <div className="bg-blue-50 backdrop-blur-2xl  rounded-full h-44 w-44 absolute right-10 top-10"></div>
-             <div className="bg-orange-50 filter opacity-75 backdrop-blur-2xl rounded-full h-32 w-32 absolute left-40 bottom-10"></div>
+             <div className="blue_blur rounded-full h-32 w-32 absolute right-[5vw] top-[5vw]"></div>
+             <div className="orange_blur rounded-full h-32 w-32 absolute left-40 bottom-10"></div>
              <div className="h-auto w-full bg-clip-padding backdrop-filter backdrop-blur-md">
       <div className="py-10 flex flex-col justify-center items-center r ">
       <Image src={axies} alt="axies" className="h-16 w-16 absolute left-[7vw] top-16"/>

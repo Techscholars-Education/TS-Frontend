@@ -5,12 +5,14 @@ import Image from "next/image";
 import { toast, ToastContainer } from "react-toastify";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import TsLogo from "../public/Home/TsLogo.svg";
+import { FaLinkedinIn } from "react-icons/fa";
+import TsLogo from "../public/Logo.svg";
 import { usePathname } from "next/navigation";
 // import useSendmessage from "@/hooks/useSendmessage";
 import "react-toastify/dist/ReactToastify.css";
 import { FaXTwitter } from "react-icons/fa6";
+import footer_left from "@/public/Home/footer_left.png";
+import footer_right from "@/public/Home/footer_right.png";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -76,38 +78,129 @@ const Footer = () => {
   return (
     <>
       <ToastContainer />
-      <footer className="bg-[#081321] md:pt-10 text-white body-font grid grid-cols-1 md:grid-cols-3 font-Poppins w-full ">
-        <div className="  px-5 pt-6 md:py-0 md:px-10 space-y-5 md:space-y-6 xl:pl-24 ">
+      <footer className="bg-[#F7FAFF] md:pt-10 text-white body-font flex gap-36 font-Poppins w-full relative ">
+        <Image
+          src={footer_left}
+          className="h-full w-auto absolute left-0 top-0"
+          alt="footer_left"
+        />
+        <Image
+          src={footer_right}
+          className="h-full w-auto absolute right-0 top-0"
+          alt="footer_right"
+        />
+        <div className="  px-5 pt-6 md:py-0 md:px-10 space-y-5 md:space-y-6 w-[20vw] xl:pl-24 relative">
           <div>
             <h1 className="text-sm md:text-xl font-semibold flex items-center  ">
               <Image
-                className="mr-4 md:text-base md:w-12"
+                className="mr-2 md:text-base md:w-8"
                 src={TsLogo}
                 alt="Techscholar-logo"
               ></Image>
-              Techscholars
+              <span className="text-TechBlue">Techscholars</span>
             </h1>
           </div>
-          <div className=" text-xs md:text-sm lg:text-base xl:text-lg ">
-            <p>
+          <div className=" text-xs md:text-sm lg:text-base xl:text-sm ">
+            <p className="text-gray-400">
               Transforming average students into toppers with our innovative
               teaching{" "}
             </p>
           </div>
-          <div className="flex space-x-4 my-2">
-            <Link href="https://www.instagram.com/techscholars.in/reels/">
-              <FaInstagram className="text-2xl md:text-3xl hover:text-pink-600 duration-200" />
+          <div className="flex space-x-4 my-2 absolute">
+            <Link
+              href="https://www.instagram.com/techscholars.in/reels/"
+              className="bg-black rounded-full p-2 hover:text-pink-600 duration-200"
+            >
+              <FaInstagram className="text-2xl md:text-2xl hover:text-pink-600 duration-200" />
             </Link>
-            <FaFacebook className="text-2xl md:text-3xl" />
-            <Link href="https://www.linkedin.com/company/techscholarsindia/mycompany/verification/">
-              <FaLinkedin className="text-2xl md:text-3xl hover:text-blue-600 duration-200" />
+            <Link
+              href="https://www.facebook.com/"
+           
+            >
+               <FaFacebook className="text-2xl md:text-4xl text-black hover:text-blue-600 duration-200" />
             </Link>
-            <Link href="https://twitter.com/Techscholars_">
-              <FaXTwitter className="text-2xl md:text-3xl hover:text-blue-600 duration-200" />
+           
+
+            <Link
+              href="https://www.linkedin.com/company/techscholarsindia/mycompany/verification/"
+              className="bg-black rounded-full p-2"
+            >
+              <FaLinkedinIn className="text-2xl md:text-2xl hover:text-blue-600 duration-200" />
+            </Link>
+            <Link
+              href="https://twitter.com/Techscholars_"
+              className="bg-black rounded-full p-2"
+            >
+              <FaXTwitter className="text-2xl md:text-2xl hover:text-blue-600 duration-200" />
             </Link>
           </div>
         </div>
-        <div className=" px-5 md:px-0  py-6 md:py-2  grid grid-cols-2 md:grid-cols-3 gap-3  xl:h-[200px]">
+
+        <div className="flex gap-28">
+          <div className="bg-gray-400 h-[20vh] w-[0.1vw] rounded-md" />
+          <div className="list-none flex flex-col gap-3 text-gray-500 text-sm">
+            <ul className="font-semibold text-xl text-black">Company</ul>
+            <li>
+              <Link
+                className="text-sm lg:text-base hover:text-TechBlue"
+                href="/aboutus"
+              >
+                About us
+              </Link>
+            </li>
+            <li className="text-sm lg:text-base hover:text-TechBlue cursor-pointer">
+              Carrers
+            </li>
+            <li>
+              <Link
+                className="text-sm lg:text-base hover:text-TechBlue"
+                href="/faqs"
+              >
+                Help/FAQ
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-sm lg:text-base hover:text-TechBlue"
+                href={pathname === "/" ? "#testimonials" : "/#testimonials"}
+              >
+                Testimonials
+              </Link>
+            </li>
+          </div>
+          <div className="bg-gray-400 h-[20vh] w-[0.1vw] rounded-md" />
+          <div className="list-none flex flex-col gap-3 text-gray-500 text-sm">
+            <ul className="font-semibold text-xl text-black">Help Links</ul>
+            <li>
+              <Link
+                className="text-sm lg:text-base hover:text-TechBlue"
+                href="/privacy"
+              >
+                Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-sm lg:text-base hover:text-TechBlue"
+                href="/terms-conditions"
+              >
+                Terms of services
+              </Link>
+            </li>
+            <li className="text-sm lg:text-base hover:text-TechBlue cursor-pointer">
+              Schedule a Call
+            </li>
+            <li>
+              <Link
+                className="text-sm lg:text-base hover:text-TechBlue"
+                href="/contact"
+              >
+                Contact
+              </Link>
+            </li>
+          </div>
+          <div className="bg-gray-400 h-[20vh] w-[0.15vw] rounded-md" />
+          {/* 
           <Link className="text-sm lg:text-base" href="/aboutus">
             About us
           </Link>
@@ -137,11 +230,12 @@ const Footer = () => {
           </Link>
           <Link className="text-sm lg:text-base" href="/blogs">
             Blogs
-          </Link>
+          </Link> */}
         </div>
-        <div className=" px-5 py-6 md:py-2   ">
+
+        <div className=" px-5 py-6 md:py-2 w-[24vw] ">
           <div className="flex flex-col space-y-4 xl:pr-16 ">
-            <h3 className="text-base md:text-lg lg:text-xl font-medium">
+            <h3 className="text-base md:text-lg lg:text-xl text-black font-semibold">
               Let&#39;s Get in Touch
             </h3>
 
@@ -198,10 +292,9 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <div className="flex space-x-4 w-full bg-[#081321] text-white py-4  px-8 ">
+      <div className="flex space-x-4 w-full bg-[#EDF5FF] text-gray-500 py-4 items-center justify-center">
         <p className="text-sm md:text-base lg:text-base font-medium">
-          Copyright © {currYear} Codementor Hub Education Pvt. Ltd. All rights
-          reserved.
+          © {currYear} Codementor Hub Education Pvt. Ltd. All rights reserved.
         </p>
       </div>
     </>
