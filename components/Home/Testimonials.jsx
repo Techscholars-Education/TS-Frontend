@@ -121,12 +121,9 @@ const Testimonials = () => {
         {/* Moving cards */}
         <div id="slider" className="w-full ">
         <div className="h-[40rem] rounded-md flex flex-col antialiased bg-[#F7FAFF] items-center justify-center relative -z-0 overflow-hidden ">
-        {/* <InfiniteMovingCards items={items} direction="left" speed="normal" />
-        <InfiniteMovingCards items={items} direction="right" speed="normal" /> */}
-        
-       
+        <InfiniteMovingCards items={items} direction="left" speed="normal" />
+        <InfiniteMovingCards items={items} direction="right" speed="normal" />
     </div>
-
         </div>
 
         <div className="flex justify-center items-center mt-14 pb-10">

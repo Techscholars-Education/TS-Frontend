@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
-import coursePoster from "@/public/home/coursePoster.png";
+import coursePoster from "../../public/Home/coursePoster.png";
 import { IoCalendarOutline } from "react-icons/io5";
 import { FaClock } from "react-icons/fa6";
 import { MdOutlineSlowMotionVideo } from "react-icons/md";
