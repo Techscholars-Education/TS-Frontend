@@ -6,8 +6,6 @@ import Benefit1 from "../../public/Home/Benefit1.svg";
 import Benefit2 from "../../public/Home/Benefit2.svg";
 import Benefit3 from "../../public/Home/Benefit3.svg";
 import Benefit4 from "../../public/Home/Benefit4.svg";
-import { TiArrowRight } from "react-icons/ti";
-
 const Benefits = () => {
   return (
     <section className="w-full bg-gray-50 py-10  ">

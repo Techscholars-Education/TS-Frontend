@@ -1,20 +1,27 @@
+"use client"
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import youtubeImage from "../../public/Home/youtubeImage.png"
 
 const Aboutapp = () => {
+  const [isVideo, setisVideo]= useState(false)
   return (
-    <div className=" w-full mx-auto  rounded-xl py-6 flex items-center justify-center h-[70vh]">
-          <Image src={youtubeImage} className='h-auto w-[60%]' alt='ytimage'/>
+    <div className=" w-full mx-auto  rounded-xl my-20 flex items-center justify-center">
+          <button className='flex items-center justify-center ' onClick={()=>setisVideo(true)}>
+          {isVideo ? ( <iframe
+  className="mx-auto rounded-xl h-[169px] w-[300px] md:h-[282px] md:w-[500px]  lg:w-[860px] lg:h-[484px] xl:w-[1060px] xl:h-[596px]"
+  src="https://www.youtube.com/embed/lCcr2OpPrj0?si=D-_03h1-4tWrUwDa"
+  title="Techscholars | Bharat's best educational platform"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerPolicy="strict-origin-when-cross-origin"
+  allowFullScreen
+></iframe>) : <Image src={youtubeImage} className='h-[169px] w-[300px] md:h-[282px] md:w-[500px]  lg:w-[860px] lg:h-[484px] xl:w-[1060px] xl:h-[596px]' alt='ytimage'/>}
+          </button>
     </div>
   )
 }
 
 export default Aboutapp
-
-
-
-
 
 // import React from "react";
 // import Image from "next/image";

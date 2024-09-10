@@ -136,7 +136,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex gap-28">
+        <div className="flex gap-16">
           <div className="bg-gray-400 h-[20vh] w-[0.1vw] rounded-md" />
           <div className="list-none flex flex-col gap-3 text-gray-500 text-sm">
             <ul className="font-semibold text-xl text-black">Company</ul>
@@ -168,8 +168,11 @@ const Footer = () => {
               </Link>
             </li>
           </div>
-          <div className="bg-gray-400 h-[20vh] w-[0.1vw] rounded-md" />
+         <div className="flex gap-16">
+         <div className="bg-gray-400 h-[20vh] w-[0.1vw] rounded-md" />
+         
           <div className="list-none flex flex-col gap-3 text-gray-500 text-sm">
+            
             <ul className="font-semibold text-xl text-black">Help Links</ul>
             <li>
               <Link
@@ -199,7 +202,9 @@ const Footer = () => {
               </Link>
             </li>
           </div>
-          <div className="bg-gray-400 h-[20vh] w-[0.15vw] rounded-md" />
+          <div className="bg-gray-400 h-[20vh] w-[0.1vw] rounded-md" />
+          </div>
+          {/* <div className="bg-gray-400 h-[20vh] w-[0.15vw] rounded-md" /> */}
           {/* 
           <Link className="text-sm lg:text-base" href="/aboutus">
             About us
@@ -233,14 +238,14 @@ const Footer = () => {
           </Link> */}
         </div>
 
-        <div className=" px-5 py-6 md:py-2 w-[24vw] ">
+        <div className=" px-5 py-6 md:py-2 relative 2xl:right-[-3vw] right-10 ">
           <div className="flex flex-col space-y-4 xl:pr-16 ">
             <h3 className="text-base md:text-lg lg:text-xl text-black font-semibold">
               Let&#39;s Get in Touch
             </h3>
 
             <input
-              className="my-2 py-4 rounded-md px-4 w-4/5 text-sm text-darkBlue"
+              className="my-2 py-4 rounded-md px-4 text-sm text-darkBlue w-full"
               placeholder="Your email address"
               type="email"
               value={email}
@@ -249,7 +254,7 @@ const Footer = () => {
               }}
             />
             <textarea
-              className="my-2 py-4 rounded-md px-4 w-4/5 text-sm text-darkBlue"
+              className="my-2 py-4 rounded-md px-4 w-full text-sm text-darkBlue"
               placeholder="Your message"
               name="message"
               rows="4"
@@ -291,6 +296,7 @@ const Footer = () => {
             </button>
           </div>
         </div>
+        
       </footer>
       <div className="flex space-x-4 w-full bg-[#EDF5FF] text-gray-500 py-4 items-center justify-center">
         <p className="text-sm md:text-base lg:text-base font-medium">

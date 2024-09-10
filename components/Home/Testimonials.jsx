@@ -1,6 +1,12 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
+import InfiniteMovingCards from "./InfiniteMovingCards";
+import fungs from "@/public/Home/fungs.png";
+import axies from "@/public/Home/axies.png";
+import chemical from "@/public/Home/chemical.png";
+import reactimg from "@/public/Home/react.png";
+import Image from "next/image";
 
 const Testimonials = () => {
   const [isParents, setisParents] = useState(true);
@@ -9,11 +15,57 @@ const Testimonials = () => {
     setisParents(!isParents);
     // console.log("Switch is now:", isParents ? "Parents" : "Student");
   };
+
+
+  const items = [
+    {
+      quote:
+        "Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non.",
+      name: "Janne Cooper",
+      title: "A Tale of Two Cities",
+    },
+    {
+      quote:
+        "Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non.",
+      name: "Janne Cooper",
+      title: "A Tale of Two Cities",
+    },
+    {
+      quote:
+        "Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non.",
+      name: "Janne Cooper",
+      title: "A Tale of Two Cities",
+    },
+    {
+      quote:
+        "Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non.",
+      name: "Janne Cooper",
+      title: "A Tale of Two Cities",
+    },
+    {
+      quote:
+        "Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non.",
+      name: "Janne Cooper",
+      title: "A Tale of Two Cities",
+    },
+    {
+      quote:
+        "Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non.",
+      name: "Janne Cooper",
+      title: "A Tale of Two Cities",
+    },
+    
+  ];
+
   return (
     <section
       id="testimonials"
-      className=" pb-16 bg-[#F7FAFF] font-Poppins w-full mx-auto  "
+      className=" pb-16 bg-[#F7FAFF] font-Poppins w-full mx-auto relative "
     >
+      <Image src={axies} alt="axies" className="h-16 w-16 absolute left-[7vw] top-16"/>
+      <Image src={reactimg} alt="react" className="h-16 w-16 absolute left-[12vw] bottom-16"/>
+      <Image src={fungs} alt="react" className="h-16 w-16 absolute right-[12vw] top-16"/>
+      <Image src={chemical} alt="react" className="h-20 w-20 absolute right-[3vw] bottom-[10vw] z-10"/>
       <div className=" w-full mx-auto  rounded-xl">
         <div className=" text-center">
           <h5 className="text-xs font-medium bg-white text-TechBlue bg-TechBlue/10 font-Poppins py-2 rounded-full px-4 inline-block uppercase">
@@ -67,8 +119,13 @@ const Testimonials = () => {
           Hear from our {isParents ? "parents" : "students"}
         </h2>
         {/* Moving cards */}
-        <div id="slider" className="w-full h-[70vh]">
-
+        <div id="slider" className="w-full ">
+        <div className="h-[40rem] rounded-md flex flex-col antialiased bg-[#F7FAFF] items-center justify-center relative -z-0 overflow-hidden ">
+        <InfiniteMovingCards items={items} direction="left" speed="normal" />
+        <InfiniteMovingCards items={items} direction="right" speed="normal" />
+        
+       
+    </div>
 
         </div>
 
