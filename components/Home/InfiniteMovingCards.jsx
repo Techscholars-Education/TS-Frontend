@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { IoStar } from "react-icons/io5";
 import { FaQuoteLeft } from "react-icons/fa6";
-import imageGirl from "../../public/Home/photoGirl.jpg"
+import imageGirl from "@/public/Home/photoGirl.jpg"
 import Image from "next/image";
 const InfiniteMovingCards = ({
   items,
